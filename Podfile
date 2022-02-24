@@ -9,5 +9,6 @@ target 'Find-and-Learn' do
   pod 'SwiftLint', '~> 0.46.2'
   pod 'SnapKit', '~> 5.0.0'
   pod 'RealmSwift'
+  pod 'SwiftLint', '~> 0.46.2'
 
 end
