@@ -85,7 +85,6 @@
 				0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */,
 				773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -96,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44E59E8627C7A7B30061C14D /* Build configuration list for PBXNativeTarget "Find-and-Learn" */;
 			buildPhases = (
+				448B8A0A27C7DC3600CC65A4 /* SwiftLint */,
 				6B57D475C575F7C9AE5AE37E /* [CP] Check Pods Manifest.lock */,
 				44E59E6E27C7A7B00061C14D /* Sources */,
 				44E59E6F27C7A7B00061C14D /* Frameworks */,
@@ -173,6 +173,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		448B8A0A27C7DC3600CC65A4 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		6B57D475C575F7C9AE5AE37E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
