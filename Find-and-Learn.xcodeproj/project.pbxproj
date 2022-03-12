@@ -71,7 +71,6 @@
 		44E59E7427C7A7B00061C14D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				44E59E7527C7A7B00061C14D /* AppDelegate.swift */,
 				44E59E7927C7A7B00061C14D /* ViewController.swift */,
 			);
 			path = Source;
@@ -89,6 +88,7 @@
 		D2AB637827DCC90400CE4441 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44E59E7527C7A7B00061C14D /* AppDelegate.swift */,
 				44E59E8327C7A7B30061C14D /* Info.plist */,
 			);
 			path = "Supporting Files";
