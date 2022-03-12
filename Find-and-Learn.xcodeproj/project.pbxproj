@@ -51,7 +51,8 @@
 		44E59E6927C7A7B00061C14D = {
 			isa = PBXGroup;
 			children = (
-				44E59E7427C7A7B00061C14D /* Find-and-Learn */,
+				44E59E7427C7A7B00061C14D /* Source */,
+				D2AB637827DCC90400CE4441 /* Supporting Files */,
 				44E59E7327C7A7B00061C14D /* Products */,
 				B37951C05643AA6F11C45359 /* Pods */,
 				00108970D2082C38954BDA71 /* Frameworks */,
@@ -66,7 +67,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		44E59E7427C7A7B00061C14D /* Find-and-Learn */ = {
+		44E59E7427C7A7B00061C14D /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				44E59E7527C7A7B00061C14D /* AppDelegate.swift */,
@@ -74,9 +75,8 @@
 				44E59E7927C7A7B00061C14D /* ViewController.swift */,
 				44E59E7E27C7A7B30061C14D /* Assets.xcassets */,
 				44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */,
-				44E59E8327C7A7B30061C14D /* Info.plist */,
 			);
-			path = "Find-and-Learn";
+			path = Source;
 			sourceTree = "<group>";
 		};
 		B37951C05643AA6F11C45359 /* Pods */ = {
@@ -88,6 +88,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D2AB637827DCC90400CE4441 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				44E59E8327C7A7B30061C14D /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,8 +103,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44E59E8627C7A7B30061C14D /* Build configuration list for PBXNativeTarget "Find-and-Learn" */;
 			buildPhases = (
-				448B8A0A27C7DC3600CC65A4 /* SwiftLint */,
 				6B57D475C575F7C9AE5AE37E /* [CP] Check Pods Manifest.lock */,
+				448B8A0A27C7DC3600CC65A4 /* SwiftLint */,
 				44E59E6E27C7A7B00061C14D /* Sources */,
 				44E59E6F27C7A7B00061C14D /* Frameworks */,
 				44E59E7027C7A7B00061C14D /* Resources */,
@@ -367,7 +375,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BU5S75BK7N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Find-and-Learn/Info.plist";
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -395,7 +403,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BU5S75BK7N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Find-and-Learn/Info.plist";
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
