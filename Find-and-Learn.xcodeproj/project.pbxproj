@@ -71,7 +71,7 @@
 		44E59E7427C7A7B00061C14D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				D2AB637D27DCCC6E00CE4441 /* UI */,
+				D2AB637E27DCCC7A00CE4441 /* Scenarios */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -110,14 +110,6 @@
 				D2AB637B27DCCA0000CE4441 /* Localizable.strings */,
 			);
 			path = Strings;
-			sourceTree = "<group>";
-		};
-		D2AB637D27DCCC6E00CE4441 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				D2AB637E27DCCC7A00CE4441 /* Scenarios */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		D2AB637E27DCCC7A00CE4441 /* Scenarios */ = {
