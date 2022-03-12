@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7527C7A7B00061C14D /* AppDelegate.swift */; };
-		44E59E7A27C7A7B00061C14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7927C7A7B00061C14D /* ViewController.swift */; };
+		44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */; };
 		44E59E7F27C7A7B30061C14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E7E27C7A7B30061C14D /* Assets.xcassets */; };
 		44E59E8227C7A7B30061C14D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */; };
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
@@ -19,7 +19,7 @@
 		0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.debug.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		44E59E7227C7A7B00061C14D /* Find-and-Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-and-Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E59E7527C7A7B00061C14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44E59E7927C7A7B00061C14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		44E59E7E27C7A7B30061C14D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44E59E8127C7A7B30061C14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44E59E8327C7A7B30061C14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		44E59E7427C7A7B00061C14D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				44E59E7927C7A7B00061C14D /* ViewController.swift */,
+				D2AB637D27DCCC6E00CE4441 /* UI */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -110,6 +110,38 @@
 				D2AB637B27DCCA0000CE4441 /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		D2AB637D27DCCC6E00CE4441 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D2AB637E27DCCC7A00CE4441 /* Scenarios */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D2AB637E27DCCC7A00CE4441 /* Scenarios */ = {
+			isa = PBXGroup;
+			children = (
+				D2AB637F27DCCC9200CE4441 /* Entrance */,
+			);
+			path = Scenarios;
+			sourceTree = "<group>";
+		};
+		D2AB637F27DCCC9200CE4441 /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				D2AB638027DCCCA900CE4441 /* Registration */,
+			);
+			path = Entrance;
+			sourceTree = "<group>";
+		};
+		D2AB638027DCCCA900CE4441 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44E59E7A27C7A7B00061C14D /* ViewController.swift in Sources */,
+				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
