@@ -16,6 +16,8 @@
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
 		D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */; };
 		D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168527DE4B230026692E /* RegistrationPresenter.swift */; };
+		D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168927DE78CE0026692E /* CommonTextField.swift */; };
+		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
 		D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
 		D2D1168527DE4B230026692E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		D2D1168927DE78CE0026692E /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
+		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +81,7 @@
 		44E59E7427C7A7B00061C14D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D2D1168727DE78AE0026692E /* Components */,
 				D2AB637E27DCCC7A00CE4441 /* Scenarios */,
 			);
 			path = Source;
@@ -159,6 +164,31 @@
 				D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2D1168727DE78AE0026692E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168B27DE80E20026692E /* Buttons */,
+				D2D1168827DE78B80026692E /* TextFields */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D2D1168827DE78B80026692E /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168927DE78CE0026692E /* CommonTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		D2D1168B27DE80E20026692E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168C27DE80F40026692E /* CommonButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +325,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
+				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
