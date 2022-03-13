@@ -123,7 +123,7 @@
 		D2AB637F27DCCC9200CE4441 /* Entrance */ = {
 			isa = PBXGroup;
 			children = (
-				D2AB638027DCCCA900CE4441 /* Registration */,
+				D2D1167F27DE42D40026692E /* Modules */,
 			);
 			path = Entrance;
 			sourceTree = "<group>";
@@ -134,6 +134,14 @@
 				44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		D2D1167F27DE42D40026692E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D2AB638027DCCCA900CE4441 /* Registration */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
