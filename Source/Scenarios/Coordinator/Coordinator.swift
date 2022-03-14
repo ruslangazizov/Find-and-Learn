@@ -10,7 +10,7 @@ import UIKit
 protocol Coordinator {
     var rootViewController: UINavigationController? { get set }
     
-    func start(window: UIWindow?)
+    func start(window: UIWindow?, viewController: ViewControllers)
     
     func perfomTransition(with type: Transitions)
 }
