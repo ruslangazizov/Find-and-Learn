@@ -30,10 +30,27 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
+    private lazy var registrationButton: UIButton = {
+        let button = CommonButton(text: "Registration", layerColor: UIColor.blue.cgColor)
+        return button
+    }()
+    
+    private lazy var enterButton: UIButton = {
+        let button = CommonButton(text: "Enter", layerColor: UIColor.blue.cgColor)
+        return button
+    }()
+    
     private lazy var textFieldsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = Constants.textFieldsSpacing
+        return stackView
+    }()
+    
+    private lazy var buttonsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = Constants.buttonsSpacing
         return stackView
     }()
     
@@ -55,15 +72,17 @@ final class RegistrationViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(textFieldsStackView)
+        view.addSubview(buttonsStackView)
         textFieldsStackView.addArrangedSubview(emailTextField)
         textFieldsStackView.addArrangedSubview(userNameTextField)
         textFieldsStackView.addArrangedSubview(passwordTextField)
         textFieldsStackView.addArrangedSubview(confirmPasswordTextField)
+        buttonsStackView.addArrangedSubview(registrationButton)
+        buttonsStackView.addArrangedSubview(enterButton)
     }
     
     private func setupUI() {
         setupStackViews()
-        setupButtons()
     }
     
     private func setupStackViews() {
@@ -71,9 +90,10 @@ final class RegistrationViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(Constants.leadingInset)
             make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForTextFieldStackViews)
         }
-    }
-    
-    private func setupButtons() {
+        buttonsStackView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.leadingInset)
+            make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForButtonsStackViews)
+        }
     }
 }
 
@@ -85,9 +105,12 @@ extension RegistrationViewController: RegistrationViewInput {
 private extension RegistrationViewController {
     enum Constants {
         static let cornerRounding: CGFloat = 2
+        
         static let textFieldsSpacing: CGFloat = 20
+        static let buttonsSpacing: CGFloat = 20
         
         static let multiplierForTextFieldStackViews = 0.75
+        static let multiplierForButtonsStackViews = 1.75
         
         static let leadingInset = 30
         static let trailingInset = 30
