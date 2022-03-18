@@ -8,8 +8,9 @@
 import UIKit
 
 protocol Coordinator {
-    var navigationController: UINavigationController? { get set }
-    var rootCoordinator: Coordinator? { get set }
+    associatedtype RouteType
     
-    func start()
+    var navigationController: UINavigationController? { get set }
+    
+    func start(route: RouteType)
 }
