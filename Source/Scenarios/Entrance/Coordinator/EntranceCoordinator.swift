@@ -8,12 +8,9 @@
 import Foundation
 import UIKit
 
-final class EntranceCoordinator: Coordinator {
-    // MARK: - Dependencies
-    var navigationController: UINavigationController?
-    
+final class EntranceCoordinator: ViewCoordinator<EntranceRoute, AppRoute> {
     // MARK: - Routing
-    func start(route: EntranceRoute) {
+    override func start(route: EntranceRoute) {
     }
 }
 

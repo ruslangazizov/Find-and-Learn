@@ -17,6 +17,8 @@
 		D2F6434127E4821C008F6D16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6434027E4821C008F6D16 /* AppCoordinator.swift */; };
 		D2F6434727E484CB008F6D16 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6434627E484CB008F6D16 /* Route.swift */; };
 		D2F6434C27E48A29008F6D16 /* EntranceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6434B27E48A29008F6D16 /* EntranceCoordinator.swift */; };
+		D2F6434E27E48B8A008F6D16 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6434D27E48B8A008F6D16 /* ViewCoordinator.swift */; };
+		D2F6435027E48C9E008F6D16 /* ModuleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6434F27E48C9E008F6D16 /* ModuleCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		D2F6434027E4821C008F6D16 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D2F6434627E484CB008F6D16 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		D2F6434B27E48A29008F6D16 /* EntranceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceCoordinator.swift; sourceTree = "<group>"; };
+		D2F6434D27E48B8A008F6D16 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
+		D2F6434F27E48C9E008F6D16 /* ModuleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCoordinator.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +102,8 @@
 			children = (
 				D2F6433F27E481E6008F6D16 /* Protocols */,
 				D2F6434027E4821C008F6D16 /* AppCoordinator.swift */,
+				D2F6434D27E48B8A008F6D16 /* ViewCoordinator.swift */,
+				D2F6434F27E48C9E008F6D16 /* ModuleCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -318,8 +324,10 @@
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				D2F6434C27E48A29008F6D16 /* EntranceCoordinator.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
+				D2F6435027E48C9E008F6D16 /* ModuleCoordinator.swift in Sources */,
 				D2F6434727E484CB008F6D16 /* Route.swift in Sources */,
 				D26AA7AF27DF5D0F004887D4 /* Coordinator.swift in Sources */,
+				D2F6434E27E48B8A008F6D16 /* ViewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

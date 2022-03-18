@@ -8,17 +8,15 @@
 import Foundation
 import UIKit
 
-final class AppCoordinator: Coordinator {
-    // MARK: - Dependecies
-    var navigationController: UINavigationController?
-    
+final class AppCoordinator: ModuleCoordinator<AppRoute> {
     // MARK: - Init
     init(navigationController: UINavigationController) {
+        super.init()
         self.navigationController = navigationController
     }
     
     // MARK: - Routing
-    func start(route: AppRoute) {
+    override func start(route: AppRoute) {
     }
 }
 
