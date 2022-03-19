@@ -11,32 +11,44 @@ import SnapKit
 final class RegistrationViewController: UIViewController {
     // MARK: - UI
     private lazy var emailTextField: UITextField = {
-        let textField = CommonTextField(placeholder: "Email", layerColor: UIColor.blue.cgColor)
+        let textField = CommonTextField(
+            placeholder: R.string.localizable.registration_screen_email_placeholder(),
+            layerColor: UIColor.blue.cgColor)
         return textField
     }()
     
     private lazy var userNameTextField: UITextField = {
-        let textField = CommonTextField(placeholder: "Username", layerColor: UIColor.blue.cgColor)
+        let textField = CommonTextField(
+            placeholder: R.string.localizable.registration_screen_user_name_placeholder(),
+            layerColor: UIColor.blue.cgColor)
         return textField
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let textField = CommonTextField(placeholder: "Password", layerColor: UIColor.blue.cgColor)
+        let textField = CommonTextField(
+            placeholder: R.string.localizable.registration_screen_password_placeholder(),
+            layerColor: UIColor.blue.cgColor)
         return textField
     }()
     
     private lazy var confirmPasswordTextField: UITextField = {
-        let textField = CommonTextField(placeholder: "Confirm password", layerColor: UIColor.blue.cgColor)
+        let textField = CommonTextField(
+            placeholder: R.string.localizable.registration_screen_confirm_password_placeholder(),
+            layerColor: UIColor.blue.cgColor)
         return textField
     }()
     
     private lazy var registrationButton: UIButton = {
-        let button = CommonButton(text: "Registration", layerColor: UIColor.blue.cgColor)
+        let button = CommonButton(
+            text: R.string.localizable.registration_screen_registration(),
+            layerColor: UIColor.blue.cgColor)
         return button
     }()
     
     private lazy var enterButton: UIButton = {
-        let button = CommonButton(text: "Enter", layerColor: UIColor.blue.cgColor)
+        let button = CommonButton(
+            text: R.string.localizable.register_screen_authorization(),
+            layerColor: UIColor.blue.cgColor)
         return button
     }()
     

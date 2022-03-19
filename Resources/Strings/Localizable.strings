@@ -5,3 +5,11 @@
   Created by Роман Сницарюк on 12.03.2022.
   
 */
+
+// Экран "Регистрация"
+"registration_screen_email_placeholder" = "E-Mail";
+"registration_screen_password_placeholder" = "Пароль";
+"registration_screen_confirm_password_placeholder" = "Повторите пароль";
+"registration_screen_user_name_placeholder" = "Никнейм";
+"registration_screen_registration" = "Зарегестрироваться";
+"register_screen_authorization" = "Есть аккаунт? Войти.";
