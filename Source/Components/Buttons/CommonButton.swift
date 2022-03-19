@@ -28,7 +28,7 @@ final class CommonButton: UIButton {
         setTitle(text, for: .normal)
         setTitleColor(.black, for: .normal)
         layer.cornerRadius = Constants.cornerRounding
-        layer.borderWidth = 1
+        layer.borderWidth = Constants.borderWidth
         layer.borderColor = layerColor
     }
 }
@@ -37,5 +37,7 @@ final class CommonButton: UIButton {
 private extension CommonButton {
     enum Constants {
         static let cornerRounding: CGFloat = 15
+        
+        static let borderWidth: CGFloat = 1
     }
 }
