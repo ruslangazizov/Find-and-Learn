@@ -26,7 +26,7 @@ final class CommonTextField: UITextField {
     // MARK: - Private
     private func initialize(placeholder: String?, layerColor: CGColor) {
         self.placeholder = placeholder
-        layer.borderWidth = 1
+        layer.borderWidth = Constants.borderWidth
         layer.borderColor = layerColor
         layer.cornerRadius = Constants.cornerRounding
     }
@@ -49,6 +49,8 @@ final class CommonTextField: UITextField {
 private extension CommonTextField {
     enum Constants {
         static let cornerRounding: CGFloat = 15
+    
+        static let borderWidth: CGFloat = 1
         
         static let padding = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
     }
