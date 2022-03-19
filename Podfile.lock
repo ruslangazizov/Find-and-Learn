@@ -6,7 +6,7 @@ PODS:
   - SwiftLint (0.46.5)
 
 DEPENDENCIES:
-  - R.swift
+  - R.swift (~> 6.1.0)
   - SnapKit (~> 5.0.0)
   - SwiftLint (~> 0.46.2)
 
@@ -23,6 +23,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: 2c16e8fa99dac2e440dc0c70ea74d2532048f6cf
 
-PODFILE CHECKSUM: b55ad981e89a86fbef18e4eef2b9c4e27edd9533
+PODFILE CHECKSUM: 548d19ca4b6a08b46cc70bdb277b809e003800eb
 
 COCOAPODS: 1.11.2
