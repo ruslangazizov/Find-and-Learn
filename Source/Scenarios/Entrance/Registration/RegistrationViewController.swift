@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RegistrationViewController.swift
 //  Find-and-Learn
 //
 //  Created by Руслан on 24.02.2022.
