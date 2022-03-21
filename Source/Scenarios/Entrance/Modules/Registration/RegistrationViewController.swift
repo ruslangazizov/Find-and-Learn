@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class RegistrationViewController: UIViewController {
-    // MARK: - UI
+    // MARK: UI
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_email_placeholder(),
@@ -66,7 +66,8 @@ final class RegistrationViewController: UIViewController {
         return stackView
     }()
     
-    // MARK: - Dependencies
+    // MARK: Dependencies
+    
     var output: RegistrationViewOutput?
     
     // MARK: - Lifecycle
@@ -110,10 +111,12 @@ final class RegistrationViewController: UIViewController {
 }
 
 // MARK: - ViewInput
+
 extension RegistrationViewController: RegistrationViewInput {
 }
 
 // MARK: - Constants
+
 private extension RegistrationViewController {
     enum Constants {
         static let cornerRounding: CGFloat = 2
@@ -127,4 +130,8 @@ private extension RegistrationViewController {
         static let leadingInset = 30
         static let trailingInset = 30
     }
+}
+
+private extension CGFloat {
+    static let cornerRounding: CGFloat = 2
 }
