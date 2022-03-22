@@ -83,7 +83,6 @@ final class RegistrationViewController: UIViewController {
     // MARK: Private
     
     private func configure() {
-        view.backgroundColor = .white
     }
     
     private func addSubviews() {
