@@ -8,8 +8,9 @@
 import UIKit
 import SnapKit
 
-final class RegistrationViewController: UIViewController {
+final class RegistrationViewController: UIViewController {    
     // MARK: UI
+    
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_email_placeholder(),
@@ -55,14 +56,14 @@ final class RegistrationViewController: UIViewController {
     private lazy var textFieldsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = Constants.textFieldsSpacing
+        stackView.spacing = .textFieldsSpacing
         return stackView
     }()
     
     private lazy var buttonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = Constants.buttonsSpacing
+        stackView.spacing = .buttonsSpacing
         return stackView
     }()
     
@@ -70,7 +71,8 @@ final class RegistrationViewController: UIViewController {
     
     var output: RegistrationViewOutput?
     
-    // MARK: - Lifecycle
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -78,7 +80,8 @@ final class RegistrationViewController: UIViewController {
         setupUI()
     }
     
-    // MARK: - Private
+    // MARK: Private
+    
     private func configure() {
         view.backgroundColor = .white
     }
@@ -119,11 +122,6 @@ extension RegistrationViewController: RegistrationViewInput {
 
 private extension RegistrationViewController {
     enum Constants {
-        static let cornerRounding: CGFloat = 2
-        
-        static let textFieldsSpacing: CGFloat = 20
-        static let buttonsSpacing: CGFloat = 20
-        
         static let multiplierForTextFieldStackViews = 0.75
         static let multiplierForButtonsStackViews = 1.75
         
@@ -133,5 +131,7 @@ private extension RegistrationViewController {
 }
 
 private extension CGFloat {
-    static let cornerRounding: CGFloat = 2
+    static let textFieldsSpacing: CGFloat = 20
+    
+    static let buttonsSpacing: CGFloat = 20
 }

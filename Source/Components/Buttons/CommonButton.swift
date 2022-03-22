@@ -8,7 +8,7 @@
 import UIKit
 
 final class CommonButton: UIButton {
-    // MARK: - Init
+    // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize(text: nil, layerColor: UIColor.black.cgColor)
@@ -23,21 +23,20 @@ final class CommonButton: UIButton {
         fatalError("Not supported")
     }
     
-    // MARK: - Private
+    // MARK: Private
     private func initialize(text: String?, layerColor: CGColor) {
         setTitle(text, for: .normal)
         setTitleColor(.black, for: .normal)
-        layer.cornerRadius = Constants.cornerRounding
-        layer.borderWidth = Constants.borderWidth
+        layer.cornerRadius = .cornerRounding
+        layer.borderWidth = .borderWidth
         layer.borderColor = layerColor
     }
 }
 
 // MARK: - Constants
-private extension CommonButton {
-    enum Constants {
-        static let cornerRounding: CGFloat = 15
+
+private extension CGFloat {
+    static let cornerRounding: CGFloat = 15
         
-        static let borderWidth: CGFloat = 1
-    }
+    static let borderWidth: CGFloat = 1
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 final class CommonTextField: UITextField {
-    // MARK: - Init
+    // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize(placeholder: nil, layerColor: UIColor.black.cgColor)
@@ -23,7 +23,7 @@ final class CommonTextField: UITextField {
         fatalError("Not supported")
     }
     
-    // MARK: - Private
+    // MARK: Private
     private func initialize(placeholder: String?, layerColor: CGColor) {
         self.placeholder = placeholder
         layer.borderWidth = Constants.borderWidth
@@ -31,7 +31,7 @@ final class CommonTextField: UITextField {
         layer.cornerRadius = Constants.cornerRounding
     }
     
-    // MARK: - Override
+    // MARK: Override
     override public func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: Constants.padding)
     }
@@ -46,6 +46,7 @@ final class CommonTextField: UITextField {
 }
 
 // MARK: - Constants
+
 private extension CommonTextField {
     enum Constants {
         static let cornerRounding: CGFloat = 15
