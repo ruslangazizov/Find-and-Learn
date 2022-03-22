@@ -14,6 +14,11 @@
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
+		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
+		D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */; };
+		D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168527DE4B230026692E /* RegistrationPresenter.swift */; };
+		D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168927DE78CE0026692E /* CommonTextField.swift */; };
+		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.release.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.release.xcconfig"; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
+		D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
+		D2D1168527DE4B230026692E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		D2D1168927DE78CE0026692E /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
+		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,6 +84,7 @@
 		44E59E7427C7A7B00061C14D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D2D1168727DE78AE0026692E /* Components */,
 				D2AB637E27DCCC7A00CE4441 /* Scenarios */,
 			);
 			path = Source;
@@ -142,7 +153,9 @@
 		D2AB638027DCCCA900CE4441 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				D2D1168027DE49E20026692E /* Protocols */,
 				44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */,
+				D2D1168527DE4B230026692E /* RegistrationPresenter.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -153,6 +166,40 @@
 				D2AB638027DCCCA900CE4441 /* Registration */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		D2D1168027DE49E20026692E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */,
+				D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2D1168727DE78AE0026692E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168B27DE80E20026692E /* Buttons */,
+				D2D1168827DE78B80026692E /* TextFields */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D2D1168827DE78B80026692E /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168927DE78CE0026692E /* CommonTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		D2D1168B27DE80E20026692E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168C27DE80F40026692E /* CommonButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,8 +358,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
+				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
+				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
+				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
+				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
