@@ -14,42 +14,51 @@ final class RegistrationViewController: UIViewController {
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_email_placeholder(),
-            layerColor: UIColor.blue.cgColor)
+            layerColor: UIColor.blue.cgColor
+        )
+        textField.returnKeyType = .next
         return textField
     }()
     
     private lazy var userNameTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_user_name_placeholder(),
-            layerColor: UIColor.blue.cgColor)
+            layerColor: UIColor.blue.cgColor
+        )
+        textField.returnKeyType = .next
         return textField
     }()
     
     private lazy var passwordTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_password_placeholder(),
-            layerColor: UIColor.blue.cgColor)
+            layerColor: UIColor.blue.cgColor
+        )
+        textField.returnKeyType = .next
         return textField
     }()
     
     private lazy var confirmPasswordTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_confirm_password_placeholder(),
-            layerColor: UIColor.blue.cgColor)
+            layerColor: UIColor.blue.cgColor
+        )
         return textField
     }()
     
     private lazy var registrationButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.registration_screen_registration(),
-            layerColor: UIColor.blue.cgColor)
+            layerColor: UIColor.blue.cgColor
+        )
         return button
     }()
     
     private lazy var enterButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.register_screen_authorization(),
-            layerColor: UIColor.blue.cgColor)
+            layerColor: UIColor.blue.cgColor
+        )
         return button
     }()
     
@@ -83,6 +92,11 @@ final class RegistrationViewController: UIViewController {
     // MARK: Private
     
     private func configure() {
+        emailTextField.delegate = self
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
     
     private func addSubviews() {
@@ -102,19 +116,43 @@ final class RegistrationViewController: UIViewController {
     
     private func setupStackViews() {
         textFieldsStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(Constants.leadingInset)
+            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForTextFieldStackViews)
         }
         buttonsStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(Constants.leadingInset)
+            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForButtonsStackViews)
         }
+    }
+    
+    // Objc
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
     }
 }
 
 // MARK: - ViewInput
 
 extension RegistrationViewController: RegistrationViewInput {
+}
+
+// MARK: - UITextFieldDelegate
+
+extension RegistrationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            userNameTextField.becomeFirstResponder()
+        case userNameTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            confirmPasswordTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 }
 
 // MARK: - Constants
@@ -124,8 +162,7 @@ private extension RegistrationViewController {
         static let multiplierForTextFieldStackViews = 0.75
         static let multiplierForButtonsStackViews = 1.75
         
-        static let leadingInset = 30
-        static let trailingInset = 30
+        static let sidesInsets = 30
     }
 }
 
