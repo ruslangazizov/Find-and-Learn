@@ -8,9 +8,18 @@
 import UIKit
 
 final class PasswordRecoveryViewController: UIViewController {
+    // MARK: Dependencies
+    
+    var output: PasswordRecoveryViewOutput?
 
     // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+// MARK: - ViewInput
+
+extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
 }
