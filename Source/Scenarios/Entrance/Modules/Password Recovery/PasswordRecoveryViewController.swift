@@ -45,7 +45,7 @@ final class PasswordRecoveryViewController: UIViewController {
     
     private var output: PasswordRecoveryViewOutput
     
-    // MARK: Init
+    // MARK: Init && deinit
     
     init(output: PasswordRecoveryViewOutput) {
         self.output = output
@@ -56,15 +56,40 @@ final class PasswordRecoveryViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
         addSubviews()
         setupUI()
     }
     
     // MARK: Private
+    
+    private func configure() {
+        emailTextField.delegate = self
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
     
     private func addSubviews() {
         view.addSubview(emailTextField)
@@ -91,11 +116,38 @@ final class PasswordRecoveryViewController: UIViewController {
             make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForButtonsStackViews)
         }
     }
+    
+    // Objc
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let height = keyboardFrame.cgRectValue.height
+            let bottomSpaving = view.frame.height - (buttonsStackView.frame.height + buttonsStackView.frame.origin.y)
+            view.frame.origin.y -= height - bottomSpaving
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        view.frame.origin.y = 0
+    }
 }
 
 // MARK: - ViewInput
 
 extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
+}
+
+// MARK: - UITextFieldDelegate
+
+extension PasswordRecoveryViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 // MARK: - Constants
