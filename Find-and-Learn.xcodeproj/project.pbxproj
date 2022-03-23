@@ -13,6 +13,7 @@
 		44E59E8227C7A7B30061C14D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */; };
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
 		D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */; };
+		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
@@ -32,6 +33,7 @@
 		44E59E8327C7A7B30061C14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.release.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.release.xcconfig"; sourceTree = "<group>"; };
 		D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */,
+				D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */,
 			);
 			path = "Password Recovery";
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
+				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
