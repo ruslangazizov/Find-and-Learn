@@ -56,7 +56,7 @@ final class RegistrationViewController: UIViewController {
     
     private lazy var enterButton: UIButton = {
         let button = CommonButton(
-            text: R.string.localizable.register_screen_authorization(),
+            text: R.string.localizable.registration_screen_authorization(),
             layerColor: UIColor.blue.cgColor
         )
         return button
