@@ -13,3 +13,8 @@
 "registration_screen_user_name_placeholder" = "Никнейм";
 "registration_screen_registration" = "Зарегистрироваться";
 "registration_screen_authorization" = "Есть аккаунт? Войти";
+
+// Экран "Восстановление пароля"
+"password_recovery_email_placeholder" = "E-Mail";
+"password_recovery_recovery_button" = "Восстановить";
+"password_recovery_enter_button" = "Есть аккаунт? Войти";

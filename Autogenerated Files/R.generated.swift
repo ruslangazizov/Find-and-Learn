@@ -132,10 +132,16 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
     struct localizable {
       /// Value: E-Mail
+      static let password_recovery_email_placeholder = Rswift.StringResource(key: "password_recovery_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: E-Mail
       static let registration_screen_email_placeholder = Rswift.StringResource(key: "registration_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Восстановить
+      static let password_recovery_recovery_button = Rswift.StringResource(key: "password_recovery_recovery_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Есть аккаунт? Войти
+      static let password_recovery_enter_button = Rswift.StringResource(key: "password_recovery_enter_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Есть аккаунт? Войти
       static let registration_screen_authorization = Rswift.StringResource(key: "registration_screen_authorization", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Зарегистрироваться
@@ -148,6 +154,19 @@ struct R: Rswift.Validatable {
       static let registration_screen_confirm_password_placeholder = Rswift.StringResource(key: "registration_screen_confirm_password_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
       /// Value: E-Mail
+      static func password_recovery_email_placeholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("password_recovery_email_placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "password_recovery_email_placeholder"
+        }
+
+        return NSLocalizedString("password_recovery_email_placeholder", bundle: bundle, comment: "")
+      }
+
+      /// Value: E-Mail
       static func registration_screen_email_placeholder(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("registration_screen_email_placeholder", bundle: hostingBundle, comment: "")
@@ -158,6 +177,32 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("registration_screen_email_placeholder", bundle: bundle, comment: "")
+      }
+
+      /// Value: Восстановить
+      static func password_recovery_recovery_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("password_recovery_recovery_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "password_recovery_recovery_button"
+        }
+
+        return NSLocalizedString("password_recovery_recovery_button", bundle: bundle, comment: "")
+      }
+
+      /// Value: Есть аккаунт? Войти
+      static func password_recovery_enter_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("password_recovery_enter_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "password_recovery_enter_button"
+        }
+
+        return NSLocalizedString("password_recovery_enter_button", bundle: bundle, comment: "")
       }
 
       /// Value: Есть аккаунт? Войти
