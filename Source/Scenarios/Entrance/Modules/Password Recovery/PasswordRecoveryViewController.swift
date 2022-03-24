@@ -126,8 +126,8 @@ final class PasswordRecoveryViewController: UIViewController {
     @objc private func keyboardWillShow(notification: Notification) {
         if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let height = keyboardFrame.cgRectValue.height
-            let bottomSpaving = view.frame.height - (buttonsStackView.frame.height + buttonsStackView.frame.origin.y)
-            view.frame.origin.y -= height - bottomSpaving
+            let bottomSpasing = view.frame.height - (buttonsStackView.frame.height + buttonsStackView.frame.origin.y)
+            view.frame.origin.y -= height - bottomSpasing
         }
     }
     
