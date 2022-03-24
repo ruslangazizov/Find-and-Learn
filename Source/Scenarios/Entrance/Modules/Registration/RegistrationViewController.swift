@@ -78,7 +78,18 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: Dependencies
     
-    var output: RegistrationViewOutput?
+    var presenter: RegistrationViewOutput?
+    
+    // MARK: Init && deinit
+    
+    init(presenter: RegistrationViewOutput) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: Lifecycle
     
