@@ -142,9 +142,9 @@ struct R: Rswift.Validatable {
       static let password_recovery_recovery_button = Rswift.StringResource(key: "password_recovery_recovery_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Есть аккаунт? Войти
       static let password_recovery_enter_button = Rswift.StringResource(key: "password_recovery_enter_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Есть аккаунт? Войти.
-      static let register_screen_authorization = Rswift.StringResource(key: "register_screen_authorization", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Зарегестрироваться
+      /// Value: Есть аккаунт? Войти
+      static let registration_screen_authorization = Rswift.StringResource(key: "registration_screen_authorization", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Зарегистрироваться
       static let registration_screen_registration = Rswift.StringResource(key: "registration_screen_registration", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Никнейм
       static let registration_screen_user_name_placeholder = Rswift.StringResource(key: "registration_screen_user_name_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -205,20 +205,20 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("password_recovery_enter_button", bundle: bundle, comment: "")
       }
 
-      /// Value: Есть аккаунт? Войти.
-      static func register_screen_authorization(preferredLanguages: [String]? = nil) -> String {
+      /// Value: Есть аккаунт? Войти
+      static func registration_screen_authorization(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("register_screen_authorization", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("registration_screen_authorization", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "register_screen_authorization"
+          return "registration_screen_authorization"
         }
 
-        return NSLocalizedString("register_screen_authorization", bundle: bundle, comment: "")
+        return NSLocalizedString("registration_screen_authorization", bundle: bundle, comment: "")
       }
 
-      /// Value: Зарегестрироваться
+      /// Value: Зарегистрироваться
       static func registration_screen_registration(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("registration_screen_registration", bundle: hostingBundle, comment: "")

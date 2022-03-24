@@ -11,8 +11,8 @@
 "registration_screen_password_placeholder" = "Пароль";
 "registration_screen_confirm_password_placeholder" = "Повторите пароль";
 "registration_screen_user_name_placeholder" = "Никнейм";
-"registration_screen_registration" = "Зарегестрироваться";
-"register_screen_authorization" = "Есть аккаунт? Войти.";
+"registration_screen_registration" = "Зарегистрироваться";
+"registration_screen_authorization" = "Есть аккаунт? Войти";
 
 // Экран "Восстановление пароля"
 "password_recovery_email_placeholder" = "E-Mail";
