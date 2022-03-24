@@ -140,7 +140,7 @@ struct R: Rswift.Validatable {
       static let registration_screen_email_placeholder = Rswift.StringResource(key: "registration_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Восстановить
       static let password_recovery_recovery_button = Rswift.StringResource(key: "password_recovery_recovery_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Есть аккаунт? Войти.
+      /// Value: Есть аккаунт? Войти
       static let password_recovery_enter_button = Rswift.StringResource(key: "password_recovery_enter_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Есть аккаунт? Войти.
       static let register_screen_authorization = Rswift.StringResource(key: "register_screen_authorization", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -192,7 +192,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("password_recovery_recovery_button", bundle: bundle, comment: "")
       }
 
-      /// Value: Есть аккаунт? Войти.
+      /// Value: Есть аккаунт? Войти
       static func password_recovery_enter_button(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("password_recovery_enter_button", bundle: hostingBundle, comment: "")
