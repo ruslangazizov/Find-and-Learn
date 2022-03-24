@@ -19,9 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         
-        let appRouter = AppRouter()
-        window?.rootViewController = appRouter.assemble()
-        
         return true
     }
 }

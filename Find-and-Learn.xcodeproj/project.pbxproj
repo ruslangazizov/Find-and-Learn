@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		44BE5DD627E52B7F0024F268 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DD527E52B7F0024F268 /* AppRouter.swift */; };
-		44BE5DDA27E52FE40024F268 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DD927E52FE40024F268 /* LoginViewController.swift */; };
 		44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */; };
 		44BE5DDF27E531FD0024F268 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDE27E531FD0024F268 /* Word.swift */; };
+		44D5811227E7B34D00DBCC4E /* AppDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5811127E7B34D00DBCC4E /* AppDataSource.swift */; };
+		44D5811827E7D74500DBCC4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5811727E7D74500DBCC4E /* User.swift */; };
 		44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7527C7A7B00061C14D /* AppDelegate.swift */; };
-		44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */; };
 		44E59E7F27C7A7B30061C14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E7E27C7A7B30061C14D /* Assets.xcassets */; };
 		44E59E8227C7A7B30061C14D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */; };
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
@@ -22,12 +22,12 @@
 /* Begin PBXFileReference section */
 		0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.debug.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		44BE5DD527E52B7F0024F268 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
-		44BE5DD927E52FE40024F268 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewController.swift; sourceTree = "<group>"; };
 		44BE5DDE27E531FD0024F268 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		44D5811127E7B34D00DBCC4E /* AppDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSource.swift; sourceTree = "<group>"; };
+		44D5811727E7D74500DBCC4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		44E59E7227C7A7B00061C14D /* Find-and-Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-and-Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E59E7527C7A7B00061C14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		44E59E7E27C7A7B30061C14D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44E59E8127C7A7B30061C14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44E59E8327C7A7B30061C14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,43 +56,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		44BE5DD127E52A160024F268 /* Login */ = {
+		441F8B6427EC7F500066358F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				44BE5DD927E52FE40024F268 /* LoginViewController.swift */,
+				44BE5DD327E52A3C0024F268 /* Dictionary */,
 			);
-			path = Login;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		44BE5DD227E52A290024F268 /* PasswordRecovery */ = {
+		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				44D5811027E7B34000DBCC4E /* DataSources */,
 			);
-			path = PasswordRecovery;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		441F8B6627EC82AE0066358F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		44BE5DD327E52A3C0024F268 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				44BE5DD427E52A490024F268 /* SearchWords */,
+				441F8B6627EC82AE0066358F /* Modules */,
 			);
 			path = Dictionary;
-			sourceTree = "<group>";
-		};
-		44BE5DD427E52A490024F268 /* SearchWords */ = {
-			isa = PBXGroup;
-			children = (
-				44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */,
-			);
-			path = SearchWords;
 			sourceTree = "<group>";
 		};
 		44BE5DDD27E531F30024F268 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				44BE5DDE27E531FD0024F268 /* Word.swift */,
+				44D5811727E7D74500DBCC4E /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		44D5810F27E7B2F200DBCC4E /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				44BE5DD527E52B7F0024F268 /* AppRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		44D5811027E7B34000DBCC4E /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				44D5811127E7B34D00DBCC4E /* AppDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		44E59E6927C7A7B00061C14D = {
@@ -118,9 +136,10 @@
 		44E59E7427C7A7B00061C14D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				441F8B6527EC81A80066358F /* Services */,
+				44D5810F27E7B2F200DBCC4E /* Routers */,
 				44BE5DDD27E531F30024F268 /* Models */,
 				D2AB637E27DCCC7A00CE4441 /* Scenarios */,
-				44BE5DD527E52B7F0024F268 /* AppRouter.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -164,28 +183,9 @@
 		D2AB637E27DCCC7A00CE4441 /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
-				44BE5DD327E52A3C0024F268 /* Dictionary */,
-				D2AB637F27DCCC9200CE4441 /* Entrance */,
+				441F8B6427EC7F500066358F /* Main */,
 			);
 			path = Scenarios;
-			sourceTree = "<group>";
-		};
-		D2AB637F27DCCC9200CE4441 /* Entrance */ = {
-			isa = PBXGroup;
-			children = (
-				44BE5DD227E52A290024F268 /* PasswordRecovery */,
-				44BE5DD127E52A160024F268 /* Login */,
-				D2AB638027DCCCA900CE4441 /* Registration */,
-			);
-			path = Entrance;
-			sourceTree = "<group>";
-		};
-		D2AB638027DCCCA900CE4441 /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */,
-			);
-			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,10 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
+				44D5811227E7B34D00DBCC4E /* AppDataSource.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
-				44BE5DDA27E52FE40024F268 /* LoginViewController.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
+				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DD627E52B7F0024F268 /* AppRouter.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
 			);
