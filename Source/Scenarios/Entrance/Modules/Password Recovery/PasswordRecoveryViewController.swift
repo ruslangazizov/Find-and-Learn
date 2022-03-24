@@ -106,14 +106,14 @@ final class PasswordRecoveryViewController: UIViewController {
     private func setupTextFields() {
         emailTextField.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().inset(view.frame.height * .multiplierForEmailTextField)
         }
     }
     
     private func setupStackViews() {
         buttonsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForButtonsStackViews)
+            make.bottom.equalToSuperview().inset(Constants.stackViewBottomInset)
         }
     }
     
@@ -126,13 +126,30 @@ final class PasswordRecoveryViewController: UIViewController {
     @objc private func keyboardWillShow(notification: Notification) {
         if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let height = keyboardFrame.cgRectValue.height
-            let bottomSpasing = view.frame.height - (buttonsStackView.frame.height + buttonsStackView.frame.origin.y)
-            view.frame.origin.y -= height - bottomSpasing
+            buttonsStackView.snp.updateConstraints { make in
+                make.bottom.equalToSuperview().inset(height)
+            }
+            
+            let yForStackView = height + buttonsStackView.frame.height
+            if yForStackView >= view.frame.height * CGFloat.multiplierForEmailTextField - emailTextField.frame.height {
+                let inset = view.frame.height - yForStackView - emailTextField.frame.height - CGFloat.buttonsSpacing
+                emailTextField.snp.updateConstraints { make in
+                    make.top.equalToSuperview().inset(inset)
+                }
+            }
+            view.layoutIfNeeded()
         }
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
-        view.frame.origin.y = 0
+        buttonsStackView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(Constants.stackViewBottomInset)
+        }
+        
+        emailTextField.snp.updateConstraints { make in
+            make.top.equalToSuperview().inset(view.frame.height * .multiplierForEmailTextField)
+        }
+        view.layoutIfNeeded()
     }
 }
 
@@ -157,9 +174,12 @@ private extension PasswordRecoveryViewController {
         static let multiplierForButtonsStackViews = 1.75
         
         static let sidesInsets = 30
+        static let stackViewBottomInset = 50
     }
 }
 
 private extension CGFloat {
     static let buttonsSpacing: CGFloat = 20
+    
+    static let multiplierForEmailTextField = 0.5
 }
