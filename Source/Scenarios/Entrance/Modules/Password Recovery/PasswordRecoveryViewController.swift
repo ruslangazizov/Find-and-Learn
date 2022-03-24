@@ -43,12 +43,12 @@ final class PasswordRecoveryViewController: UIViewController {
     
     // MARK: Dependencies
     
-    private var output: PasswordRecoveryViewOutput
+    private var presenter: PasswordRecoveryViewOutput
     
     // MARK: Init && deinit
     
-    init(output: PasswordRecoveryViewOutput) {
-        self.output = output
+    init(presenter: PasswordRecoveryViewOutput) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
