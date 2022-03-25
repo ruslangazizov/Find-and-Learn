@@ -175,7 +175,6 @@ final class AuthorizationViewController: UIViewController {
                     make.top.equalTo(resetPasswordButton.snp.bottom).inset(enterButtonInset)
                 }
             }
-            
             view.layoutIfNeeded()
         }
     }
