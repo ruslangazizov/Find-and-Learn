@@ -12,7 +12,7 @@ final class PasswordRecoveryViewController: UIViewController {
     
     private lazy var emailTextField: CommonTextField = {
         let textField = CommonTextField(
-            placeholder: R.string.localizable.password_recovery_email_placeholder(),
+            placeholder: R.string.localizable.password_recovery_screen_email_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
         return textField
@@ -20,7 +20,7 @@ final class PasswordRecoveryViewController: UIViewController {
     
     private lazy var recoveryButton: UIButton = {
         let button = CommonButton(
-            text: R.string.localizable.password_recovery_recovery_button(),
+            text: R.string.localizable.password_recovery_screen_enter_button(),
             layerColor: UIColor.blue.cgColor
         )
         return button
@@ -28,7 +28,7 @@ final class PasswordRecoveryViewController: UIViewController {
     
     private lazy var enterButton: UIButton = {
         let button = CommonButton(
-            text: R.string.localizable.password_recovery_enter_button(),
+            text: R.string.localizable.password_recovery_screen_enter_button(),
             layerColor: UIColor.blue.cgColor
         )
         return button
