@@ -34,6 +34,7 @@ final class AuthorizationViewController: UIViewController {
             for: .normal
         )
         button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
         return button
     }()
     
@@ -50,6 +51,7 @@ final class AuthorizationViewController: UIViewController {
             text: R.string.localizable.authorization_screen_registration(),
             layerColor: UIColor.blue.cgColor
         )
+        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
         return button
     }()
     
@@ -75,6 +77,11 @@ final class AuthorizationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -91,6 +98,18 @@ final class AuthorizationViewController: UIViewController {
         passwordTextField.delegate = self
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
     private func addSubviews() {
@@ -117,7 +136,7 @@ final class AuthorizationViewController: UIViewController {
     private func setupButtons() {
         resetPasswordButton.snp.makeConstraints { make in
             make.top.equalTo(textFieldsStackView.snp.bottom).offset(CGFloat.textFieldsSpacing)
-            make.trailing.equalTo(textFieldsStackView)
+            make.trailing.equalToSuperview().inset(Constants.sidesInsets)
         }
         enterButton.snp.makeConstraints { make in
             make.leading.trailing.equalTo(textFieldsStackView)
@@ -134,6 +153,48 @@ final class AuthorizationViewController: UIViewController {
     @objc private func hideKeyboard() {
         view.endEditing(true)
     }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let height = keyboardFrame.cgRectValue.height
+            
+            let yForKeyboard = view.frame.height - height
+            if yForKeyboard < enterButton.frame.origin.y + enterButton.frame.height {
+                resetPasswordButton.snp.updateConstraints { make in
+                    make.trailing.equalToSuperview().offset(resetPasswordButton.frame.width)
+                }
+                
+                let spacing = textFieldsStackView.frame.height + enterButton.frame.height + CGFloat.textFieldsSpacing
+                let topInset = view.frame.height - height - spacing
+                textFieldsStackView.snp.updateConstraints { make in
+                    make.top.equalToSuperview().inset(topInset)
+                }
+                
+                let enterButtonInset = .textFieldsSpacing * .multiplierForEnterButton
+                enterButton.snp.updateConstraints { make in
+                    make.top.equalTo(resetPasswordButton.snp.bottom).inset(enterButtonInset)
+                }
+            }
+            
+            view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        let enterButtonInset = .textFieldsSpacing * .multiplierForEnterButton
+        enterButton.snp.updateConstraints { make in
+            make.top.equalTo(resetPasswordButton.snp.bottom).offset(enterButtonInset)
+        }
+        
+        resetPasswordButton.snp.updateConstraints { make in
+            make.trailing.equalToSuperview().inset(Constants.sidesInsets)
+        }
+        
+        textFieldsStackView.snp.updateConstraints { make in
+            make.top.equalToSuperview().inset(view.frame.height * .multiplierForStackView)
+        }
+        view.layoutIfNeeded()
+    }
 }
 
 // MARK: - ViewInput
@@ -145,6 +206,12 @@ extension AuthorizationViewController: AuthorizationViewInput {
 
 extension AuthorizationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
         return true
     }
 }
