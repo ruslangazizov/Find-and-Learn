@@ -78,7 +78,7 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: Dependencies
     
-    var presenter: RegistrationViewOutput?
+    private var presenter: RegistrationViewOutput
     
     // MARK: Init && deinit
     
