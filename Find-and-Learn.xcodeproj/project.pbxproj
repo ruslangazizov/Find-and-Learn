@@ -25,6 +25,8 @@
 		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
 		D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */; };
 		D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */; };
+		D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */; };
+		D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
+		D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewInput.swift; sourceTree = "<group>"; };
+		D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewOutput.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -238,10 +242,20 @@
 		D2FB5D5127EDA4DB00CBDB00 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				D2FB5D5627EDA58700CBDB00 /* Protocols */,
 				D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */,
 				D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		D2FB5D5627EDA58700CBDB00 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */,
+				D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,11 +419,13 @@
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
+				D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */,
 				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
+				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
