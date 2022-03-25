@@ -10,5 +10,5 @@ import Foundation
 final class AuthorizationPresenter: AuthorizationViewOutput {
     // MARK: - Dependecies
     
-    weak var view: RegistrationViewInput?
+    weak var view: AuthorizationViewInput?
 }
