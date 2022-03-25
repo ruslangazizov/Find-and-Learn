@@ -7,5 +7,8 @@
 
 import Foundation
 
-final class AuthorizationPresenter {
+final class AuthorizationPresenter: AuthorizationViewOutput {
+    // MARK: - Dependecies
+    
+    weak var view: RegistrationViewInput?
 }
