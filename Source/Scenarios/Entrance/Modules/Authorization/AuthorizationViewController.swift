@@ -28,11 +28,12 @@ final class AuthorizationViewController: UIViewController {
     }()
     
     private lazy var resetPasswordButton: UIButton = {
-        let button = CommonButton()
+        let button = UIButton()
         button.setTitle(
             R.string.localizable.authorization_screen_reset_password(),
             for: .normal
         )
+        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
@@ -78,6 +79,60 @@ final class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
+        addSubviews()
+        setupUI()
+    }
+    
+    // MARK: Private
+    
+    private func configure() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+    }
+    
+    private func addSubviews() {
+        view.addSubview(textFieldsStackView)
+        textFieldsStackView.addArrangedSubview(emailTextField)
+        textFieldsStackView.addArrangedSubview(passwordTextField)
+        view.addSubview(resetPasswordButton)
+        view.addSubview(enterButton)
+        view.addSubview(registrationButton)
+    }
+    
+    private func setupUI() {
+        setupStackViews()
+        setupButtons()
+    }
+    
+    private func setupStackViews() {
+        textFieldsStackView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
+            make.top.equalToSuperview().inset(view.frame.height * .multiplierForStackView)
+        }
+    }
+    
+    private func setupButtons() {
+        resetPasswordButton.snp.makeConstraints { make in
+            make.top.equalTo(textFieldsStackView.snp.bottom).offset(CGFloat.textFieldsSpacing)
+            make.trailing.equalTo(textFieldsStackView)
+        }
+        enterButton.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(textFieldsStackView)
+            make.top.equalTo(resetPasswordButton.snp.bottom).offset(.textFieldsSpacing * .multiplierForEnterButton)
+        }
+        registrationButton.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(enterButton)
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+        }
+    }
+    
+    // Objc
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -86,8 +141,26 @@ final class AuthorizationViewController: UIViewController {
 extension AuthorizationViewController: AuthorizationViewInput {
 }
 
+// MARK: - UITextFieldDelegate
+
+extension AuthorizationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+}
+
 // MARK: - Constants
+
+private extension AuthorizationViewController {
+    enum Constants {
+        static let sidesInsets = 30
+        static let bottomInset = 50
+    }
+}
 
 private extension CGFloat {
     static let textFieldsSpacing: CGFloat = 20
+    
+    static let multiplierForStackView = 0.35
+    static let multiplierForEnterButton = 1.5
 }
