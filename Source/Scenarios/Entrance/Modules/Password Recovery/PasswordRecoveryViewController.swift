@@ -20,7 +20,7 @@ final class PasswordRecoveryViewController: UIViewController {
     
     private lazy var recoveryButton: UIButton = {
         let button = CommonButton(
-            text: R.string.localizable.password_recovery_screen_enter_button(),
+            text: R.string.localizable.password_recovery_screen_recovery_button(),
             layerColor: UIColor.blue.cgColor
         )
         return button
