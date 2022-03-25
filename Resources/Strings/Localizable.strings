@@ -18,3 +18,10 @@
 "password_recovery_screen_email_placeholder" = "E-Mail";
 "password_recovery_screen_recovery_button" = "Восстановить";
 "password_recovery_screen_enter_button" = "Есть аккаунт? Войти";
+
+// Экран "Авторизация"
+"authorization_screen_email_placeholder" = "E-Mail";
+"authorization_screen_password_placeholder" = "Пароль";
+"authorization_screen_reset_password" = "Восстановить пароль";
+"authorization_screen_enter" = "Войти";
+"authorization_screen_registration" = "Нет аккаунта? Зарегистрироваться";
