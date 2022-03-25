@@ -23,6 +23,7 @@
 		D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168527DE4B230026692E /* RegistrationPresenter.swift */; };
 		D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168927DE78CE0026692E /* CommonTextField.swift */; };
 		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
+		D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		D2D1168527DE4B230026692E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		D2D1168927DE78CE0026692E /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
 		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 		D2D1167F27DE42D40026692E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D2FB5D5127EDA4DB00CBDB00 /* Authorization */,
 				D2AB638027DCCCA900CE4441 /* Registration */,
 				D217568F27EB24C200C3D545 /* Password Recovery */,
 			);
@@ -228,6 +231,14 @@
 				D2D1168C27DE80F40026692E /* CommonButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D2FB5D5127EDA4DB00CBDB00 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
+				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
