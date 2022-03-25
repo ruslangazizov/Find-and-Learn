@@ -24,6 +24,7 @@
 		D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168927DE78CE0026692E /* CommonTextField.swift */; };
 		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
 		D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */; };
+		D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D2D1168927DE78CE0026692E /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
 		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */,
+				D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
+				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
