@@ -10,13 +10,8 @@ import UIKit
 final class CommonButton: UIButton {
     // MARK: Init
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize(text: nil, layerColor: UIColor.black.cgColor)
-    }
-    
-    convenience init(text: String, layerColor: CGColor) {
-        self.init()
+    init(text: String, layerColor: CGColor?) {
+        super.init(frame: .zero)
         initialize(text: text, layerColor: layerColor)
     }
     
@@ -26,9 +21,10 @@ final class CommonButton: UIButton {
     
     // MARK: Private
     
-    private func initialize(text: String?, layerColor: CGColor) {
+    private func initialize(text: String?, layerColor: CGColor?) {
         setTitle(text, for: .normal)
         setTitleColor(.black, for: .normal)
+        guard let layerColor = layerColor else { return }
         layer.cornerRadius = .cornerRounding
         layer.borderWidth = .borderWidth
         layer.borderColor = layerColor

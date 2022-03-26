@@ -10,13 +10,8 @@ import UIKit
 final class CommonTextField: UITextField {
     // MARK: Init
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize(placeholder: nil, layerColor: UIColor.black.cgColor)
-    }
-    
-    convenience init(placeholder: String, layerColor: CGColor) {
-        self.init()
+    init(placeholder: String, layerColor: CGColor?) {
+        super.init(frame: .zero)
         initialize(placeholder: placeholder, layerColor: layerColor)
     }
     
@@ -26,8 +21,9 @@ final class CommonTextField: UITextField {
     
     // MARK: Private
     
-    private func initialize(placeholder: String?, layerColor: CGColor) {
+    private func initialize(placeholder: String?, layerColor: CGColor?) {
         self.placeholder = placeholder
+        guard let layerColor = layerColor else { return }
         layer.borderWidth = .borderWidth
         layer.borderColor = layerColor
         layer.cornerRadius = .cornerRounding
