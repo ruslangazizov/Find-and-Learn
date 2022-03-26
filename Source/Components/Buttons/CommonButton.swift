@@ -9,6 +9,7 @@ import UIKit
 
 final class CommonButton: UIButton {
     // MARK: Init
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize(text: nil, layerColor: UIColor.black.cgColor)
@@ -24,6 +25,7 @@ final class CommonButton: UIButton {
     }
     
     // MARK: Private
+    
     private func initialize(text: String?, layerColor: CGColor) {
         setTitle(text, for: .normal)
         setTitleColor(.black, for: .normal)
