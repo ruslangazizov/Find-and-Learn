@@ -30,7 +30,7 @@ final class RegistrationViewController: UIViewController {
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let textField = CommonTextField(
+        let textField = PasswordTextField(
             placeholder: R.string.localizable.registration_screen_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
@@ -39,7 +39,7 @@ final class RegistrationViewController: UIViewController {
     }()
     
     private lazy var confirmPasswordTextField: UITextField = {
-        let textField = CommonTextField(
+        let textField = PasswordTextField(
             placeholder: R.string.localizable.registration_screen_confirm_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
@@ -78,12 +78,11 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: Dependencies
     
-    private var presenter: RegistrationViewOutput
+    var presenter: RegistrationViewOutput?
     
-    // MARK: Init && deinit
+    // MARK: Init
     
-    init(presenter: RegistrationViewOutput) {
-        self.presenter = presenter
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     

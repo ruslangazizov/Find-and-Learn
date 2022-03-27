@@ -16,6 +16,10 @@
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
 		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
 		D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */; };
+		D2A2AD7127EFAB27000B97D2 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2AD7027EFAB27000B97D2 /* RegistrationService.swift */; };
+		D2A2AD7327EFB1F0000B97D2 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2AD7227EFB1F0000B97D2 /* RegistrationAssembly.swift */; };
+		D2A2AD7D27EFB439000B97D2 /* UnitRegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2AD7C27EFB439000B97D2 /* UnitRegistrationTests.swift */; };
+		D2A2AD8427F05150000B97D2 /* IntegrationRegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2AD8327F05150000B97D2 /* IntegrationRegistrationTests.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
@@ -25,6 +29,16 @@
 		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
 		D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2A2AD7E27EFB439000B97D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44E59E6A27C7A7B00061C14D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44E59E7127C7A7B00061C14D;
+			remoteInfo = "Find-and-Learn";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.debug.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +53,11 @@
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
 		D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewOutput.swift; sourceTree = "<group>"; };
+		D2A2AD7027EFAB27000B97D2 /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
+		D2A2AD7227EFB1F0000B97D2 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
+		D2A2AD7A27EFB439000B97D2 /* Find-and-LearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find-and-LearnTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2A2AD7C27EFB439000B97D2 /* UnitRegistrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRegistrationTests.swift; sourceTree = "<group>"; };
+		D2A2AD8327F05150000B97D2 /* IntegrationRegistrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationRegistrationTests.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
@@ -56,6 +75,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2A2AD7727EFB439000B97D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +103,7 @@
 				D2AB637927DCC9AB00CE4441 /* Resources */,
 				D2AB637827DCC90400CE4441 /* Supporting Files */,
 				D2A5A42D27E5E2D300E503AA /* Autogenerated Files */,
+				D2A2AD7B27EFB439000B97D2 /* Find-and-LearnTests */,
 				44E59E7327C7A7B00061C14D /* Products */,
 				B37951C05643AA6F11C45359 /* Pods */,
 				00108970D2082C38954BDA71 /* Frameworks */,
@@ -87,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				44E59E7227C7A7B00061C14D /* Find-and-Learn.app */,
+				D2A2AD7A27EFB439000B97D2 /* Find-and-LearnTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +154,15 @@
 				D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2A2AD7B27EFB439000B97D2 /* Find-and-LearnTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2A2AD7C27EFB439000B97D2 /* UnitRegistrationTests.swift */,
+				D2A2AD8327F05150000B97D2 /* IntegrationRegistrationTests.swift */,
+			);
+			path = "Find-and-LearnTests";
 			sourceTree = "<group>";
 		};
 		D2A5A42D27E5E2D300E503AA /* Autogenerated Files */ = {
@@ -185,6 +222,8 @@
 				D2D1168027DE49E20026692E /* Protocols */,
 				44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */,
 				D2D1168527DE4B230026692E /* RegistrationPresenter.swift */,
+				D2A2AD7027EFAB27000B97D2 /* RegistrationService.swift */,
+				D2A2AD7227EFB1F0000B97D2 /* RegistrationAssembly.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -257,6 +296,24 @@
 			productReference = 44E59E7227C7A7B00061C14D /* Find-and-Learn.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D2A2AD7927EFB439000B97D2 /* Find-and-LearnTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2A2AD8027EFB439000B97D2 /* Build configuration list for PBXNativeTarget "Find-and-LearnTests" */;
+			buildPhases = (
+				D2A2AD7627EFB439000B97D2 /* Sources */,
+				D2A2AD7727EFB439000B97D2 /* Frameworks */,
+				D2A2AD7827EFB439000B97D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2A2AD7F27EFB439000B97D2 /* PBXTargetDependency */,
+			);
+			name = "Find-and-LearnTests";
+			productName = "Find-and-LearnTests";
+			productReference = D2A2AD7A27EFB439000B97D2 /* Find-and-LearnTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -269,6 +326,10 @@
 				TargetAttributes = {
 					44E59E7127C7A7B00061C14D = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					D2A2AD7927EFB439000B97D2 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 44E59E7127C7A7B00061C14D;
 					};
 				};
 			};
@@ -286,6 +347,7 @@
 			projectRoot = "";
 			targets = (
 				44E59E7127C7A7B00061C14D /* Find-and-Learn */,
+				D2A2AD7927EFB439000B97D2 /* Find-and-LearnTests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,6 +360,13 @@
 				44E59E8227C7A7B30061C14D /* LaunchScreen.storyboard in Resources */,
 				D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */,
 				44E59E7F27C7A7B30061C14D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2A2AD7827EFB439000B97D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +463,9 @@
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
+				D2A2AD7327EFB1F0000B97D2 /* RegistrationAssembly.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
+				D2A2AD7127EFAB27000B97D2 /* RegistrationService.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
@@ -405,7 +476,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2A2AD7627EFB439000B97D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2A2AD7D27EFB439000B97D2 /* UnitRegistrationTests.swift in Sources */,
+				D2A2AD8427F05150000B97D2 /* IntegrationRegistrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2A2AD7F27EFB439000B97D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44E59E7127C7A7B00061C14D /* Find-and-Learn */;
+			targetProxy = D2A2AD7E27EFB439000B97D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */ = {
@@ -591,6 +679,42 @@
 			};
 			name = Release;
 		};
+		D2A2AD8127EFB439000B97D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.sixzr.Find-and-LearnTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Find-and-Learn.app/Find-and-Learn";
+			};
+			name = Debug;
+		};
+		D2A2AD8227EFB439000B97D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.sixzr.Find-and-LearnTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Find-and-Learn.app/Find-and-Learn";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -608,6 +732,15 @@
 			buildConfigurations = (
 				44E59E8727C7A7B30061C14D /* Debug */,
 				44E59E8827C7A7B30061C14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2A2AD8027EFB439000B97D2 /* Build configuration list for PBXNativeTarget "Find-and-LearnTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2A2AD8127EFB439000B97D2 /* Debug */,
+				D2A2AD8227EFB439000B97D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

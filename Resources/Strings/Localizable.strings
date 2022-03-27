@@ -13,6 +13,10 @@
 "registration_screen_user_name_placeholder" = "Никнейм";
 "registration_screen_registration" = "Зарегистрироваться";
 "registration_screen_authorization" = "Есть аккаунт? Войти";
+"registration_screen_email_error" = "Неверный формат E-Mail";
+"registration_screen_nick_error" = "Пустой Никнейм";
+"registration_screen_confirm_password_error" = "Пароли не совпадают";
+"registration_screen_weak_password_error" = "Слабый пароль";
 
 // Экран "Восстановление пароля"
 "password_recovery_screen_email_placeholder" = "E-Mail";

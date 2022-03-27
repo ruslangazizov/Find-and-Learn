@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
+        let assembly = RegistrationAssembly()
+        window?.rootViewController = assembly.getModule()
         return true
     }
     

@@ -10,5 +10,11 @@ import Foundation
 final class RegistrationPresenter: RegistrationViewOutput {
     // MARK: - Dependecies
     
-    weak var view: RegistrationViewInput?
+    private weak var view: RegistrationViewInput?
+    
+    // MARK: Init
+    
+    init(view: RegistrationViewInput) {
+        self.view = view
+    }
 }

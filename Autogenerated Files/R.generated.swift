@@ -156,7 +156,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 13 localization keys.
     struct localizable {
       /// Value: E-Mail
       static let password_recovery_screen_email_placeholder = Rswift.StringResource(key: "password_recovery_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -170,12 +170,20 @@ struct R: Rswift.Validatable {
       static let registration_screen_authorization = Rswift.StringResource(key: "registration_screen_authorization", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Зарегистрироваться
       static let registration_screen_registration = Rswift.StringResource(key: "registration_screen_registration", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Неверный формат E-Mail
+      static let registration_screen_email_error = Rswift.StringResource(key: "registration_screen_email_error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Никнейм
       static let registration_screen_user_name_placeholder = Rswift.StringResource(key: "registration_screen_user_name_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Пароли не совпадают
+      static let registration_screen_confirm_password_error = Rswift.StringResource(key: "registration_screen_confirm_password_error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Пароль
       static let registration_screen_password_placeholder = Rswift.StringResource(key: "registration_screen_password_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Повторите пароль
       static let registration_screen_confirm_password_placeholder = Rswift.StringResource(key: "registration_screen_confirm_password_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Пустой Никнейм
+      static let registration_screen_nick_error = Rswift.StringResource(key: "registration_screen_nick_error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Слабый пароль
+      static let registration_screen_weak_password_error = Rswift.StringResource(key: "registration_screen_weak_password_error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
       /// Value: E-Mail
       static func password_recovery_screen_email_placeholder(preferredLanguages: [String]? = nil) -> String {
@@ -255,6 +263,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("registration_screen_registration", bundle: bundle, comment: "")
       }
 
+      /// Value: Неверный формат E-Mail
+      static func registration_screen_email_error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("registration_screen_email_error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "registration_screen_email_error"
+        }
+
+        return NSLocalizedString("registration_screen_email_error", bundle: bundle, comment: "")
+      }
+
       /// Value: Никнейм
       static func registration_screen_user_name_placeholder(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -266,6 +287,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("registration_screen_user_name_placeholder", bundle: bundle, comment: "")
+      }
+
+      /// Value: Пароли не совпадают
+      static func registration_screen_confirm_password_error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("registration_screen_confirm_password_error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "registration_screen_confirm_password_error"
+        }
+
+        return NSLocalizedString("registration_screen_confirm_password_error", bundle: bundle, comment: "")
       }
 
       /// Value: Пароль
@@ -292,6 +326,32 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("registration_screen_confirm_password_placeholder", bundle: bundle, comment: "")
+      }
+
+      /// Value: Пустой Никнейм
+      static func registration_screen_nick_error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("registration_screen_nick_error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "registration_screen_nick_error"
+        }
+
+        return NSLocalizedString("registration_screen_nick_error", bundle: bundle, comment: "")
+      }
+
+      /// Value: Слабый пароль
+      static func registration_screen_weak_password_error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("registration_screen_weak_password_error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "registration_screen_weak_password_error"
+        }
+
+        return NSLocalizedString("registration_screen_weak_password_error", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
