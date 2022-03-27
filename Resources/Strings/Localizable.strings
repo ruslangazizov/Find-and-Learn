@@ -5,3 +5,7 @@
   Created by Роман Сницарюк on 12.03.2022.
   
 */
+
+// Экран "Словарь"
+"dictionary_screen_title" = "Словарь";
+"dictionary_screen_search_bar_placeholder" = "Введите слово";

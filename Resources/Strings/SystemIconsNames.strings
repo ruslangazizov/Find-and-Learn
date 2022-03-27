@@ -1,0 +1,11 @@
+/* 
+  SystemIconsNames.strings
+  Find-and-Learn
+
+  Created by Руслан on 27.03.2022.
+  
+*/
+
+// Экран "Словарь"
+"dictionary_screen_favorite_words_button" = "heart.fill";
+"dictionary_screen_history_words_button" = "square.stack.3d.up.fill";

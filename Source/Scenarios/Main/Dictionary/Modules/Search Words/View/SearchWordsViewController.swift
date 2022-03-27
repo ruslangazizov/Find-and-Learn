@@ -13,7 +13,7 @@ final class SearchWordsViewController: UIViewController {
     
     lazy private var wordsSearchController: UISearchController = {
         let wordsSearchController = UISearchController()
-        wordsSearchController.searchBar.placeholder = "Введите слово"
+        wordsSearchController.searchBar.placeholder = R.string.localizable.dictionary_screen_search_bar_placeholder()
         wordsSearchController.searchResultsUpdater = self
         return wordsSearchController
     }()
@@ -35,8 +35,6 @@ final class SearchWordsViewController: UIViewController {
     init(presenter: SearchWordsViewOutput) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
-        
-        configureTabBar()
     }
     
     required init?(coder: NSCoder) {
@@ -55,28 +53,20 @@ final class SearchWordsViewController: UIViewController {
     
     // MARK: UI configuration
     
-    private func configureTabBar() {
-        tabBarItem = UITabBarItem(
-            title: "Словарь",
-            image: UIImage(systemName: "list.bullet.rectangle"),
-            selectedImage: UIImage(systemName: "list.bullet.rectangle.fill")
-        )
-    }
-    
     private func configureNavigationBar() {
-        navigationItem.title = "Словарь"
+        navigationItem.title = R.string.localizable.dictionary_screen_title()
         
         navigationItem.searchController = wordsSearchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "heart.fill"),
+            image: UIImage(systemName: R.string.systemIconsNames.dictionary_screen_favorite_words_button()),
             style: .plain,
             target: self,
             action: #selector(didTapFavoriteWordsBarButtonItem)
         )
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "square.stack.3d.up.fill"),
+            image: UIImage(systemName: R.string.systemIconsNames.dictionary_screen_history_words_button()),
             style: .plain,
             target: self,
             action: #selector(didTapHistoryWordsBarButtonItem)
