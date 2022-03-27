@@ -24,7 +24,17 @@
 		44E59E7F27C7A7B30061C14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E7E27C7A7B30061C14D /* Assets.xcassets */; };
 		44E59E8227C7A7B30061C14D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */; };
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
+		D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */; };
+		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
+		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
+		D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */; };
+		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
+		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
+		D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */; };
+		D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168527DE4B230026692E /* RegistrationPresenter.swift */; };
+		D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168927DE78CE0026692E /* CommonTextField.swift */; };
+		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +58,17 @@
 		44E59E8127C7A7B30061C14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44E59E8327C7A7B30061C14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.release.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.release.xcconfig"; sourceTree = "<group>"; };
+		D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
+		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
+		D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewOutput.swift; sourceTree = "<group>"; };
+		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
+		D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
+		D2D1168527DE4B230026692E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		D2D1168927DE78CE0026692E /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
+		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -180,9 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				44E59E7427C7A7B00061C14D /* Source */,
-				D2AB637827DCC90400CE4441 /* Supporting Files */,
 				D2AB637927DCC9AB00CE4441 /* Resources */,
-				44449EF727F0474C008A9624 /* Autogenerated Files */,
+				D2AB637827DCC90400CE4441 /* Supporting Files */,
+				D2A5A42D27E5E2D300E503AA /* Autogenerated Files */,
 				44E59E7327C7A7B00061C14D /* Products */,
 				B37951C05643AA6F11C45359 /* Pods */,
 				00108970D2082C38954BDA71 /* Frameworks */,
@@ -202,6 +222,7 @@
 			children = (
 				441F8B6527EC81A80066358F /* Services */,
 				44BE5DDD27E531F30024F268 /* Models */,
+				D2D1168727DE78AE0026692E /* Components */,
 				D2AB637E27DCCC7A00CE4441 /* Scenarios */,
 			);
 			path = Source;
@@ -214,6 +235,33 @@
 				773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D217568F27EB24C200C3D545 /* Password Recovery */ = {
+			isa = PBXGroup;
+			children = (
+				D217569427EB25BC00C3D545 /* Protocols */,
+				D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */,
+				D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */,
+			);
+			path = "Password Recovery";
+			sourceTree = "<group>";
+		};
+		D217569427EB25BC00C3D545 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */,
+				D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2A5A42D27E5E2D300E503AA /* Autogenerated Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2A5A42E27E5E4E400E503AA /* R.generated.swift */,
+			);
+			path = "Autogenerated Files";
 			sourceTree = "<group>";
 		};
 		D2AB637827DCC90400CE4441 /* Supporting Files */ = {
@@ -252,6 +300,67 @@
 			path = Scenarios;
 			sourceTree = "<group>";
 		};
+		D2AB637F27DCCC9200CE4441 /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1167F27DE42D40026692E /* Modules */,
+			);
+			path = Entrance;
+			sourceTree = "<group>";
+		};
+		D2AB638027DCCCA900CE4441 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168027DE49E20026692E /* Protocols */,
+				44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */,
+				D2D1168527DE4B230026692E /* RegistrationPresenter.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		D2D1167F27DE42D40026692E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D2AB638027DCCCA900CE4441 /* Registration */,
+				D217568F27EB24C200C3D545 /* Password Recovery */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D2D1168027DE49E20026692E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */,
+				D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2D1168727DE78AE0026692E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168B27DE80E20026692E /* Buttons */,
+				D2D1168827DE78B80026692E /* TextFields */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D2D1168827DE78B80026692E /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168927DE78CE0026692E /* CommonTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		D2D1168B27DE80E20026692E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1168C27DE80F40026692E /* CommonButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,11 +369,11 @@
 			buildConfigurationList = 44E59E8627C7A7B30061C14D /* Build configuration list for PBXNativeTarget "Find-and-Learn" */;
 			buildPhases = (
 				6B57D475C575F7C9AE5AE37E /* [CP] Check Pods Manifest.lock */,
-				448B8A0A27C7DC3600CC65A4 /* SwiftLint */,
-				44449EF027F03BF5008A9624 /* R.swift */,
+				D2193CC127E5DEC0003DD2CF /* RSwift generating */,
 				44E59E6E27C7A7B00061C14D /* Sources */,
 				44E59E6F27C7A7B00061C14D /* Frameworks */,
 				44E59E7027C7A7B00061C14D /* Resources */,
+				448B8A0A27C7DC3600CC65A4 /* SwiftLint */,
 				289BE2D462F998A30BC32449 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -401,6 +510,27 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D2193CC127E5DEC0003DD2CF /* RSwift generating */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "RSwift generating";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/Autogenerated Files/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Autogenerated Files/R.generated.swift\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -409,11 +539,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */,
-				44449EF927F0477B008A9624 /* R.generated.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */,
+				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
+				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
+				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
+				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
+				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
+				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
+				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
+				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
+				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
+				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
+				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
