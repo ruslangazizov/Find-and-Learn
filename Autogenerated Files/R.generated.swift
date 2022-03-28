@@ -134,8 +134,8 @@ struct R: Rswift.Validatable {
   struct image {
     /// Image `closed_eye`.
     static let closed_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "closed_eye")
-    /// Image `opend_eye`.
-    static let opend_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "opend_eye")
+    /// Image `opened_eye`.
+    static let opened_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "opened_eye")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "closed_eye", bundle: ..., traitCollection: ...)`
@@ -145,9 +145,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "opend_eye", bundle: ..., traitCollection: ...)`
-    static func opend_eye(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.opend_eye, compatibleWith: traitCollection)
+    /// `UIImage(named: "opened_eye", bundle: ..., traitCollection: ...)`
+    static func opened_eye(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.opened_eye, compatibleWith: traitCollection)
     }
     #endif
 

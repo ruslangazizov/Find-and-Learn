@@ -12,7 +12,7 @@ final class PasswordTextField: UITextField {
     // MARK: Properties
     
     private let closedEyeImage = UIImage(resource: R.image.closed_eye)
-    private let opendEyeImage = UIImage(resource: R.image.opend_eye)
+    private let opendEyeImage = UIImage(resource: R.image.opened_eye)
         
     // MARK: Init
     
