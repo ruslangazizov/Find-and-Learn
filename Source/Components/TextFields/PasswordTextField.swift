@@ -12,7 +12,7 @@ final class PasswordTextField: UITextField {
     // MARK: Properties
     
     private let closedEyeImage = UIImage(resource: R.image.closed_eye)
-    private let opendEyeImage = UIImage(resource: R.image.opened_eye)
+    private let openedEyeImage = UIImage(resource: R.image.opened_eye)
         
     // MARK: Init
     
@@ -41,7 +41,7 @@ final class PasswordTextField: UITextField {
         isSecureTextEntry = true
         
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: .eyeImageSize, height: .eyeImageSize))
-        button.setImage(opendEyeImage, for: .normal)
+        button.setImage(openedEyeImage, for: .normal)
         button.setImage(closedEyeImage, for: .selected)
         button.tintColor = .black
         button.imageEdgeInsets = Constants.imagePadding
