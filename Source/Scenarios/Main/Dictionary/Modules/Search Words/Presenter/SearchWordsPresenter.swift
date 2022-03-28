@@ -11,8 +11,8 @@ class SearchWordsPresenter {
     // MARK: Dependencies
     
     weak var view: SearchWordsViewInput?
-    let router: DictionaryRouterInput
-    let interactor: SearchWordsInteractorProtocol
+    private let router: DictionaryRouterInput
+    private let interactor: SearchWordsInteractorProtocol
     
     // MARK: Initializer
     
@@ -27,7 +27,9 @@ class SearchWordsPresenter {
 extension SearchWordsPresenter: SearchWordsViewOutput {
     func didEnterWord(_ word: String?) {
         interactor.getWords(word) { [weak self] wordModels in
-            self?.view?.showWords(wordModels)
+            DispatchQueue.main.async {
+                self?.view?.showWords(wordModels)
+            }
         }
     }
     

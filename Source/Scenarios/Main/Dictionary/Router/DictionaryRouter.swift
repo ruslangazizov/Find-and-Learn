@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DictionaryRouter: DictionaryRouterInput {
+final class DictionaryRouter: DictionaryRouterInput {
     weak var view: UINavigationController?
     
     func showFavoriteWords() {

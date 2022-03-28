@@ -7,10 +7,10 @@
 
 import Foundation
 
-class SearchWordsInteractor {
+final class SearchWordsInteractor {
     // MARK: Dependencies
     
-    let dataManager: DataManagerProtocol
+    private let dataManager: DataManagerProtocol
     
     // MARK: Initializer
     

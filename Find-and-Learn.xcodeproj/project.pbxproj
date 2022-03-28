@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
 		447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706227EE49820011A7F4 /* DictionaryRouter.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.debug.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.debug.xcconfig"; sourceTree = "<group>"; };
+		4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsTableViewCell.swift; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
 		447D706227EE49820011A7F4 /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */,
 				447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */,
 				447D707127EE4E5C0011A7F4 /* SearchWordsViewOutput.swift */,
+				4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
+				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,

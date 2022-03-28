@@ -11,15 +11,19 @@ import SnapKit
 final class SearchWordsViewController: UIViewController {
     // MARK: UI
     
-    lazy private var wordsSearchController: UISearchController = {
-        let wordsSearchController = UISearchController()
-        wordsSearchController.searchBar.placeholder = R.string.localizable.dictionary_screen_search_bar_placeholder()
-        wordsSearchController.searchResultsUpdater = self
-        return wordsSearchController
+    lazy private var searchWordsController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.searchBar.placeholder = R.string.localizable.dictionary_screen_search_bar_placeholder()
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        return searchController
     }()
     lazy private var wordsTableView: UITableView = {
         let tableView = UITableView()
-        
+        tableView.register(
+            SearchWordsTableViewCell.self,
+            forCellReuseIdentifier: SearchWordsTableViewCell.reuseIdentifier
+        )
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -27,7 +31,7 @@ final class SearchWordsViewController: UIViewController {
     
     // MARK: Dependencies
     
-    let presenter: SearchWordsViewOutput
+    private let presenter: SearchWordsViewOutput
     private var words: [Word] = []
     
     // MARK: Initializers
@@ -56,7 +60,7 @@ final class SearchWordsViewController: UIViewController {
     private func configureNavigationBar() {
         navigationItem.title = R.string.localizable.dictionary_screen_title()
         
-        navigationItem.searchController = wordsSearchController
+        navigationItem.searchController = searchWordsController
         navigationItem.hidesSearchBarWhenScrolling = false
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
@@ -98,8 +102,10 @@ final class SearchWordsViewController: UIViewController {
 
 extension SearchWordsViewController: SearchWordsViewInput {
     func showWords(_ words: [Word]) {
-        self.words = words
-        wordsTableView.reloadData()
+        DispatchQueue.main.async {
+            self.words = words
+            self.wordsTableView.reloadData()
+        }
     }
 }
 
@@ -120,10 +126,14 @@ extension SearchWordsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SearchWordsTableViewCell.reuseIdentifier,
+            for: indexPath
+        ) as? SearchWordsTableViewCell else {
+            return UITableViewCell()
+        }
         let word = words[indexPath.row]
-        cell.textLabel?.text = word.word
-        cell.detailTextLabel?.text = word.translationsString
+        cell.configure(with: word)
         return cell
     }
     
