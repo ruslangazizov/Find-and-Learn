@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SearchWordsPresenter {
+final class SearchWordsPresenter {
     // MARK: Dependencies
     
     weak var view: SearchWordsViewInput?
