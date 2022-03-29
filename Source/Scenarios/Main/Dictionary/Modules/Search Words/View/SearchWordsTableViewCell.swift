@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchWordsTableViewCell: UITableViewCell {
+final class SearchWordsTableViewCell: UITableViewCell {
     static let reuseIdentifier = String(describing: SearchWordsTableViewCell.self)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
