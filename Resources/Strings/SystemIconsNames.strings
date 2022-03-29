@@ -8,4 +8,4 @@
 
 // Экран "Словарь"
 "dictionary_screen_favorite_words_button" = "heart.fill";
-"dictionary_screen_history_words_button" = "square.stack.3d.up.fill";
+"dictionary_screen_history_words_button" = "clock.arrow.circlepath";

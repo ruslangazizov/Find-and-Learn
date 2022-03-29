@@ -305,10 +305,23 @@ struct R: Rswift.Validatable {
 
     /// This `R.string.systemIconsNames` struct is generated, and contains static references to 2 localization keys.
     struct systemIconsNames {
+      /// Value: clock.arrow.circlepath
+      static let dictionary_screen_history_words_button = Rswift.StringResource(key: "dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: heart.fill
       static let dictionary_screen_favorite_words_button = Rswift.StringResource(key: "dictionary_screen_favorite_words_button", tableName: "SystemIconsNames", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: square.stack.3d.up.fill
-      static let dictionary_screen_history_words_button = Rswift.StringResource(key: "dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: clock.arrow.circlepath
+      static func dictionary_screen_history_words_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "SystemIconsNames", preferredLanguages: preferredLanguages) else {
+          return "dictionary_screen_history_words_button"
+        }
+
+        return NSLocalizedString("dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: bundle, comment: "")
+      }
 
       /// Value: heart.fill
       static func dictionary_screen_favorite_words_button(preferredLanguages: [String]? = nil) -> String {
@@ -321,19 +334,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("dictionary_screen_favorite_words_button", tableName: "SystemIconsNames", bundle: bundle, comment: "")
-      }
-
-      /// Value: square.stack.3d.up.fill
-      static func dictionary_screen_history_words_button(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "SystemIconsNames", preferredLanguages: preferredLanguages) else {
-          return "dictionary_screen_history_words_button"
-        }
-
-        return NSLocalizedString("dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
