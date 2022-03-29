@@ -23,6 +23,7 @@
 		D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168527DE4B230026692E /* RegistrationPresenter.swift */; };
 		D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168927DE78CE0026692E /* CommonTextField.swift */; };
 		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
+		D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		D2D1168527DE4B230026692E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		D2D1168927DE78CE0026692E /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
 		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				D2D1168927DE78CE0026692E /* CommonTextField.swift */,
+				D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
+				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
