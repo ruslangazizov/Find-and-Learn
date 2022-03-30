@@ -70,7 +70,7 @@ final class SearchWordsViewController: UIViewController {
             action: #selector(didTapFavoriteWordsBarButtonItem)
         )
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: R.string.systemIconsNames.dictionary_screen_history_words_button()),
+            image: R.image.clock(),
             style: .plain,
             target: self,
             action: #selector(didTapHistoryWordsBarButtonItem)

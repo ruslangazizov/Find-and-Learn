@@ -130,12 +130,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
+    /// Image `clock`.
+    static let clock = Rswift.ImageResource(bundle: R.hostingBundle, name: "clock")
     /// Image `closed_eye`.
     static let closed_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "closed_eye")
     /// Image `opened_eye`.
     static let opened_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "opened_eye")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "clock", bundle: ..., traitCollection: ...)`
+    static func clock(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.clock, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "closed_eye", bundle: ..., traitCollection: ...)`
@@ -327,25 +336,10 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.systemIconsNames` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.systemIconsNames` struct is generated, and contains static references to 1 localization keys.
     struct systemIconsNames {
-      /// Value: clock.arrow.circlepath
-      static let dictionary_screen_history_words_button = Rswift.StringResource(key: "dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: heart.fill
       static let dictionary_screen_favorite_words_button = Rswift.StringResource(key: "dictionary_screen_favorite_words_button", tableName: "SystemIconsNames", bundle: R.hostingBundle, locales: [], comment: nil)
-
-      /// Value: clock.arrow.circlepath
-      static func dictionary_screen_history_words_button(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "SystemIconsNames", preferredLanguages: preferredLanguages) else {
-          return "dictionary_screen_history_words_button"
-        }
-
-        return NSLocalizedString("dictionary_screen_history_words_button", tableName: "SystemIconsNames", bundle: bundle, comment: "")
-      }
 
       /// Value: heart.fill
       static func dictionary_screen_favorite_words_button(preferredLanguages: [String]? = nil) -> String {
