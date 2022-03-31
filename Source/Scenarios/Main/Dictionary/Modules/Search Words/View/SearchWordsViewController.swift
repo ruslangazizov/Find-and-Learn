@@ -27,6 +27,7 @@ final class SearchWordsViewController: UIViewController {
         )
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.keyboardDismissMode = .onDrag
         return tableView
     }()
     
