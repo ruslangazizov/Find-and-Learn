@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DictionaryRouterInput {
+protocol DictionaryRouterProtocol: RouterProtocol {
     func showFavoriteWords()
     func showHistoryWords()
     func showWordDetail(_ word: Word)

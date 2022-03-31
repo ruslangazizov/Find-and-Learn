@@ -11,14 +11,15 @@ import SnapKit
 final class SearchWordsViewController: UIViewController {
     // MARK: UI
     
-    lazy private var searchWordsController: UISearchController = {
+    private lazy var searchWordsController: UISearchController = {
         let searchController = UISearchController()
         searchController.searchBar.placeholder = R.string.localizable.dictionary_screen_search_bar_placeholder()
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
         return searchController
     }()
-    lazy private var wordsTableView: UITableView = {
+    private lazy var wordsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(
             SearchWordsTableViewCell.self,
@@ -102,10 +103,8 @@ final class SearchWordsViewController: UIViewController {
 
 extension SearchWordsViewController: SearchWordsViewInput {
     func showWords(_ words: [Word]) {
-        DispatchQueue.main.async {
-            self.words = words
-            self.wordsTableView.reloadData()
-        }
+        self.words = words
+        self.wordsTableView.reloadData()
     }
 }
 
