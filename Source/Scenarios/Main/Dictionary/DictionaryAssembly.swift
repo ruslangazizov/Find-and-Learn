@@ -11,6 +11,7 @@ import UIKit
 final class DictionaryAssembly: AssemblyProtocol {
     func assemble() -> UIViewController {
         let router = DictionaryRouter()
-        return SearchWordsAssembly(router: router).assemble()
+        let searchWordsViewController = SearchWordsAssembly(router: router).assemble()
+        return UINavigationController(rootViewController: searchWordsViewController)
     }
 }

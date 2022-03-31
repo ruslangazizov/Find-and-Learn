@@ -1,5 +1,5 @@
 //
-//  FlowAssemblyProtocol.swift
+//  AssemblyProtocol.swift
 //  Find-and-Learn
 //
 //  Created by Руслан on 31.03.2022.
