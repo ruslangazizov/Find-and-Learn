@@ -20,7 +20,7 @@ final class AuthorizationViewController: UIViewController {
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let textField = CommonTextField(
+        let textField = PasswordTextField(
             placeholder: R.string.localizable.authorization_screen_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )

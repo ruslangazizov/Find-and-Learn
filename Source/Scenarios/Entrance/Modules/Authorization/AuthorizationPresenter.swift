@@ -8,7 +8,7 @@
 import Foundation
 
 final class AuthorizationPresenter: AuthorizationViewOutput {
-    // MARK: - Dependecies
+    // MARK: - Dependencies
     
     weak var view: AuthorizationViewInput?
 }
