@@ -11,12 +11,12 @@ final class SearchWordsPresenter {
     // MARK: Dependencies
     
     weak var view: SearchWordsViewInput?
-    private let router: DictionaryRouterInput
+    private let router: DictionaryRouterProtocol
     private let interactor: SearchWordsInteractorProtocol
     
     // MARK: Initializer
     
-    init(router: DictionaryRouterInput, interactor: SearchWordsInteractorProtocol) {
+    init(router: DictionaryRouterProtocol, interactor: SearchWordsInteractorProtocol) {
         self.router = router
         self.interactor = interactor
     }

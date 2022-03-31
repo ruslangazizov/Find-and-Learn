@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow()
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
+        window?.rootViewController = DictionaryAssembly.assemble()
         return true
     }
     
