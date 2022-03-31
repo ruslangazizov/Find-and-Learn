@@ -8,13 +8,14 @@
 import Foundation
 import UIKit
 
-final class SearchWordsAssembly: ScreenAssemblyProtocol {
-    static func assemble(with router: RouterProtocol) -> UIViewController {
-        guard let router = router as? DictionaryRouterProtocol else {
-            let routerType = type(of: router)
-            fatalError("Wrong type (\(routerType.self)) was provided for router, expected DictionaryRouterProtocol")
-        }
-        
+final class SearchWordsAssembly: AssemblyProtocol {
+    let router: DictionaryRouterProtocol
+    
+    init(router: DictionaryRouterProtocol) {
+        self.router = router
+    }
+    
+    func assemble() -> UIViewController {
         let interactor = SearchWordsInteractor(dataManager: DataManagerMock())
         let presenter = SearchWordsPresenter(router: router, interactor: interactor)
         let view = SearchWordsViewController(presenter: presenter)

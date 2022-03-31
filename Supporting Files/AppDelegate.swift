@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = DictionaryAssembly.assemble()
+        window?.rootViewController = DictionaryAssembly().assemble()
         return true
     }
     

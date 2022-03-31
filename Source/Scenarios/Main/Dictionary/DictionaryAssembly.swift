@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-final class DictionaryAssembly: FlowAssemblyProtocol {
-    static func assemble() -> UIViewController {
+final class DictionaryAssembly: AssemblyProtocol {
+    func assemble() -> UIViewController {
         let router = DictionaryRouter()
-        return SearchWordsAssembly.assemble(with: router)
+        return SearchWordsAssembly(router: router).assemble()
     }
 }

@@ -13,7 +13,6 @@
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
 		44499F4227F5A7FA0022CF95 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */; };
-		44499F4427F5A82E0022CF95 /* ScreenAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4327F5A82E0022CF95 /* ScreenAssemblyProtocol.swift */; };
 		44499F4627F5A90D0022CF95 /* FlowAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* FlowAssemblyProtocol.swift */; };
 		447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706227EE49820011A7F4 /* DictionaryRouter.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
@@ -53,7 +52,6 @@
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
 		44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
-		44499F4327F5A82E0022CF95 /* ScreenAssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAssemblyProtocol.swift; sourceTree = "<group>"; };
 		44499F4527F5A90D0022CF95 /* FlowAssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowAssemblyProtocol.swift; sourceTree = "<group>"; };
 		447D706227EE49820011A7F4 /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 			children = (
 				44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */,
 				44499F4527F5A90D0022CF95 /* FlowAssemblyProtocol.swift */,
-				44499F4327F5A82E0022CF95 /* ScreenAssemblyProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -556,7 +553,6 @@
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
-				44499F4427F5A82E0022CF95 /* ScreenAssemblyProtocol.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* FlowAssemblyProtocol.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,

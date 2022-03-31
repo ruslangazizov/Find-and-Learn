@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-protocol FlowAssemblyProtocol: AnyObject {
-    static func assemble() -> UIViewController
+protocol AssemblyProtocol: AnyObject {
+    func assemble() -> UIViewController
 }
