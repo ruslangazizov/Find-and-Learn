@@ -130,6 +130,30 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 2 images.
+  struct image {
+    /// Image `closed_eye`.
+    static let closed_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "closed_eye")
+    /// Image `opened_eye`.
+    static let opened_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "opened_eye")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "closed_eye", bundle: ..., traitCollection: ...)`
+    static func closed_eye(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.closed_eye, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "opened_eye", bundle: ..., traitCollection: ...)`
+    static func opened_eye(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.opened_eye, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 14 localization keys.
