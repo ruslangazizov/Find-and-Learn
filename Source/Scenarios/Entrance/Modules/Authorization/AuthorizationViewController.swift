@@ -157,25 +157,24 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let height = keyboardFrame.cgRectValue.height
+        guard let keyboardFrame = notification.keyboardFrame else { return }
+        let height = keyboardFrame.height
+    
+        let yForKeyboard = view.frame.height - height
+        if yForKeyboard < enterButton.frame.origin.y + enterButton.frame.height {
+            resetPasswordButton.snp.updateConstraints { make in
+                make.trailing.equalToSuperview().offset(resetPasswordButton.frame.width)
+            }
             
-            let yForKeyboard = view.frame.height - height
-            if yForKeyboard < enterButton.frame.origin.y + enterButton.frame.height {
-                resetPasswordButton.snp.updateConstraints { make in
-                    make.trailing.equalToSuperview().offset(resetPasswordButton.frame.width)
-                }
-                
-                let spacing = textFieldsStackView.frame.height + enterButton.frame.height + CGFloat.textFieldsSpacing
-                let topInset = view.frame.height - height - spacing
-                textFieldsStackView.snp.updateConstraints { make in
-                    make.top.equalToSuperview().inset(topInset)
-                }
-                
-                let enterButtonInset = .textFieldsSpacing * .multiplierForEnterButton
-                enterButton.snp.updateConstraints { make in
-                    make.top.equalTo(resetPasswordButton.snp.bottom).inset(enterButtonInset)
-                }
+            let spacing = textFieldsStackView.frame.height + enterButton.frame.height + CGFloat.textFieldsSpacing
+            let topInset = view.frame.height - height - spacing
+            textFieldsStackView.snp.updateConstraints { make in
+                make.top.equalToSuperview().inset(topInset)
+            }
+            
+            let enterButtonInset = .textFieldsSpacing * .multiplierForEnterButton
+            enterButton.snp.updateConstraints { make in
+                make.top.equalTo(resetPasswordButton.snp.bottom).inset(enterButtonInset)
             }
             view.layoutIfNeeded()
         }
