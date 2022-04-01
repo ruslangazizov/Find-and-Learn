@@ -585,11 +585,11 @@
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
-				D294305627F7942F001CFEC6 /* Notification+Extensions.swift in Sources */,
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
 				447D707827EE511D0011A7F4 /* DictionaryRouterProtocol.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
+				D294305627F7942F001CFEC6 /* Notification+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
