@@ -36,6 +36,7 @@
 		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
 		D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */; };
 		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
+		D294305627F7942F001CFEC6 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305527F7942F001CFEC6 /* Notification+Extensions.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
@@ -83,6 +84,7 @@
 		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
 		D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewOutput.swift; sourceTree = "<group>"; };
 		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
+		D294305527F7942F001CFEC6 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */,
+				D294305527F7942F001CFEC6 /* Notification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
+				D294305627F7942F001CFEC6 /* Notification+Extensions.swift in Sources */,
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
 				447D707827EE511D0011A7F4 /* DictionaryRouterProtocol.swift in Sources */,
