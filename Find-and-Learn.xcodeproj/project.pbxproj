@@ -130,14 +130,6 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		442BD8EE27F58D9700FE3760 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
 		44499F4027F5A7E80022CF95 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +142,7 @@
 		447D706D27EE4DD00011A7F4 /* Search Words */ = {
 			isa = PBXGroup;
 			children = (
-				442BD8EE27F58D9700FE3760 /* Assembly */,
+				442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */,
 				447D707927EE53F70011A7F4 /* Interactor */,
 				447D707327EE4E9A0011A7F4 /* Presenter */,
 				447D706E27EE4DDC0011A7F4 /* View */,
