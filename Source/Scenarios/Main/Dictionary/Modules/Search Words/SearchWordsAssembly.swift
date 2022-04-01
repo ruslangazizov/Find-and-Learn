@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class SearchWordsAssembly: AssemblyProtocol {
-    let router: DictionaryRouterProtocol
+    private let router: DictionaryRouterProtocol
     
     init(router: DictionaryRouterProtocol) {
         self.router = router

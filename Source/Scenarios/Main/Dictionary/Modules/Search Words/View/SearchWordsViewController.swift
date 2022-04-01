@@ -19,6 +19,7 @@ final class SearchWordsViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         return searchController
     }()
+    
     private lazy var wordsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(
