@@ -130,12 +130,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
+    /// Image `clock`.
+    static let clock = Rswift.ImageResource(bundle: R.hostingBundle, name: "clock")
     /// Image `closed_eye`.
     static let closed_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "closed_eye")
     /// Image `opened_eye`.
     static let opened_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "opened_eye")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "clock", bundle: ..., traitCollection: ...)`
+    static func clock(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.clock, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "closed_eye", bundle: ..., traitCollection: ...)`
@@ -154,14 +163,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
       /// Value: E-Mail
       static let password_recovery_screen_email_placeholder = Rswift.StringResource(key: "password_recovery_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: E-Mail
       static let registration_screen_email_placeholder = Rswift.StringResource(key: "registration_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Введите слово
+      static let dictionary_screen_search_bar_placeholder = Rswift.StringResource(key: "dictionary_screen_search_bar_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Восстановить
       static let password_recovery_screen_recovery_button = Rswift.StringResource(key: "password_recovery_screen_recovery_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Есть аккаунт? Войти
@@ -176,6 +187,8 @@ struct R: Rswift.Validatable {
       static let registration_screen_password_placeholder = Rswift.StringResource(key: "registration_screen_password_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Повторите пароль
       static let registration_screen_confirm_password_placeholder = Rswift.StringResource(key: "registration_screen_confirm_password_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Словарь
+      static let dictionary_screen_title = Rswift.StringResource(key: "dictionary_screen_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
       /// Value: E-Mail
       static func password_recovery_screen_email_placeholder(preferredLanguages: [String]? = nil) -> String {
@@ -201,6 +214,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("registration_screen_email_placeholder", bundle: bundle, comment: "")
+      }
+
+      /// Value: Введите слово
+      static func dictionary_screen_search_bar_placeholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("dictionary_screen_search_bar_placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "dictionary_screen_search_bar_placeholder"
+        }
+
+        return NSLocalizedString("dictionary_screen_search_bar_placeholder", bundle: bundle, comment: "")
       }
 
       /// Value: Восстановить
@@ -292,6 +318,40 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("registration_screen_confirm_password_placeholder", bundle: bundle, comment: "")
+      }
+
+      /// Value: Словарь
+      static func dictionary_screen_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("dictionary_screen_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "dictionary_screen_title"
+        }
+
+        return NSLocalizedString("dictionary_screen_title", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.string.systemIconsNames` struct is generated, and contains static references to 1 localization keys.
+    struct systemIconsNames {
+      /// Value: heart.fill
+      static let dictionary_screen_favorite_words_button = Rswift.StringResource(key: "dictionary_screen_favorite_words_button", tableName: "SystemIconsNames", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: heart.fill
+      static func dictionary_screen_favorite_words_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("dictionary_screen_favorite_words_button", tableName: "SystemIconsNames", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "SystemIconsNames", preferredLanguages: preferredLanguages) else {
+          return "dictionary_screen_favorite_words_button"
+        }
+
+        return NSLocalizedString("dictionary_screen_favorite_words_button", tableName: "SystemIconsNames", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
