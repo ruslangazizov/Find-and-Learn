@@ -18,3 +18,7 @@
 "password_recovery_screen_email_placeholder" = "E-Mail";
 "password_recovery_screen_recovery_button" = "Восстановить";
 "password_recovery_screen_enter_button" = "Есть аккаунт? Войти";
+
+// Экран "Словарь"
+"dictionary_screen_title" = "Словарь";
+"dictionary_screen_search_bar_placeholder" = "Введите слово";
