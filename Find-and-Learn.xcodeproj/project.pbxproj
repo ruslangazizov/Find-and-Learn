@@ -11,6 +11,7 @@
 		442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */; };
 		442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */; };
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
+		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
 		44499F4227F5A7FA0022CF95 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */; };
 		44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */; };
@@ -50,6 +51,7 @@
 		442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAssembly.swift; sourceTree = "<group>"; };
 		442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMock.swift; sourceTree = "<group>"; };
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
+		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
 		44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 				447D706D27EE4DD00011A7F4 /* Search Words */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		4443518A27F7139400C5BE28 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		44499F4027F5A7E80022CF95 /* Protocols */ = {
@@ -239,6 +249,8 @@
 		44E59E7427C7A7B00061C14D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				44E59E7527C7A7B00061C14D /* AppDelegate.swift */,
+				4443518A27F7139400C5BE28 /* Extensions */,
 				44499F4027F5A7E80022CF95 /* Protocols */,
 				441F8B6527EC81A80066358F /* Services */,
 				44BE5DDD27E531F30024F268 /* Models */,
@@ -287,7 +299,6 @@
 		D2AB637827DCC90400CE4441 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				44E59E7527C7A7B00061C14D /* AppDelegate.swift */,
 				44E59E8327C7A7B30061C14D /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -549,6 +560,7 @@
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
+				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,

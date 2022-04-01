@@ -22,10 +22,7 @@ final class SearchWordsViewController: UIViewController {
     
     private lazy var wordsTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(
-            SearchWordsTableViewCell.self,
-            forCellReuseIdentifier: SearchWordsTableViewCell.reuseIdentifier
-        )
+        tableView.register(SearchWordsTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
@@ -127,12 +124,7 @@ extension SearchWordsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: SearchWordsTableViewCell.reuseIdentifier,
-            for: indexPath
-        ) as? SearchWordsTableViewCell else {
-            return UITableViewCell()
-        }
+        let cell = tableView.dequeue(SearchWordsTableViewCell.self, for: indexPath)
         let word = words[indexPath.row]
         cell.configure(with: word)
         return cell

@@ -8,8 +8,6 @@
 import UIKit
 
 final class SearchWordsTableViewCell: UITableViewCell {
-    static let reuseIdentifier = String(describing: SearchWordsTableViewCell.self)
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
     }
