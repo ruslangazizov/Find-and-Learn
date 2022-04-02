@@ -40,6 +40,7 @@
 		D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */; };
 		D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5727F854160007E65D /* AccountPresenter.swift */; };
 		D25FCD5B27F858C10007E65D /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5A27F858C10007E65D /* CircularView.swift */; };
+		D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
@@ -87,6 +88,7 @@
 		D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewOutput.swift; sourceTree = "<group>"; };
 		D25FCD5727F854160007E65D /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		D25FCD5A27F858C10007E65D /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
+		D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				D25FCD5627F854010007E65D /* Presenter */,
 				D25FCD4F27F8534E0007E65D /* View */,
+				D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */,
+				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
