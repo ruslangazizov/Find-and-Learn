@@ -10,9 +10,8 @@ import UIKit
 final class AccountViewController: UIViewController {
     // MARK: UI
     
-    private lazy var avatarImageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
+    private lazy var avatarView: CircularView = {
+        return CircularView()
     }()
     
     // MARK: Dependencies

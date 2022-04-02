@@ -10,7 +10,7 @@ import UIKit
 final class CircularView: UIView {
     // MARK: Properties
     
-    private let defaultAvatar = UIImage()
+    private let defaultAvatar = UIImage(resource: R.image.user_profile)
     
     // MARK: UI
     
@@ -62,6 +62,7 @@ final class CircularView: UIView {
             make.leading.bottom.trailing.top.equalToSuperview().inset(Constants.padding)
         }
 
+        imageView.tintColor = .black
         imageView.image = defaultAvatar
     }
     

@@ -130,7 +130,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
     /// Image `clock`.
     static let clock = Rswift.ImageResource(bundle: R.hostingBundle, name: "clock")
@@ -138,6 +138,8 @@ struct R: Rswift.Validatable {
     static let closed_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "closed_eye")
     /// Image `opened_eye`.
     static let opened_eye = Rswift.ImageResource(bundle: R.hostingBundle, name: "opened_eye")
+    /// Image `user_profile`.
+    static let user_profile = Rswift.ImageResource(bundle: R.hostingBundle, name: "user_profile")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "clock", bundle: ..., traitCollection: ...)`
@@ -157,6 +159,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "opened_eye", bundle: ..., traitCollection: ...)`
     static func opened_eye(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.opened_eye, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "user_profile", bundle: ..., traitCollection: ...)`
+    static func user_profile(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.user_profile, compatibleWith: traitCollection)
     }
     #endif
 
