@@ -8,7 +8,7 @@
 import Foundation
 
 final class AccountPresenter: AccountViewOutput {
-    // MARK: - Dependencies
+    // MARK: Dependencies
     
     weak var view: AccountViewInput?
 }
