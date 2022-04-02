@@ -165,7 +165,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 16 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 17 localization keys.
     struct localizable {
       /// Value: E-Mail
       static let authorization_screen_email_placeholder = Rswift.StringResource(key: "authorization_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -177,6 +177,8 @@ struct R: Rswift.Validatable {
       static let dictionary_screen_search_bar_placeholder = Rswift.StringResource(key: "dictionary_screen_search_bar_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Войти
       static let authorization_screen_enter = Rswift.StringResource(key: "authorization_screen_enter", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Войти как гость
+      static let authorization_screen_enter_as_guest = Rswift.StringResource(key: "authorization_screen_enter_as_guest", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Восстановить
       static let password_recovery_screen_recovery_button = Rswift.StringResource(key: "password_recovery_screen_recovery_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Восстановить пароль
@@ -263,6 +265,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("authorization_screen_enter", bundle: bundle, comment: "")
+      }
+
+      /// Value: Войти как гость
+      static func authorization_screen_enter_as_guest(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authorization_screen_enter_as_guest", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authorization_screen_enter_as_guest"
+        }
+
+        return NSLocalizedString("authorization_screen_enter_as_guest", bundle: bundle, comment: "")
       }
 
       /// Value: Восстановить

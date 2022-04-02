@@ -46,6 +46,15 @@ final class AuthorizationViewController: UIViewController {
         return button
     }()
     
+    private lazy var enterAsGuestButton: UIButton = {
+        let button = CommonButton(
+            text: R.string.localizable.authorization_screen_enter_as_guest(),
+            layerColor: nil
+        )
+        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
+        return button
+    }()
+    
     private lazy var registrationButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.authorization_screen_registration(),
@@ -108,6 +117,7 @@ final class AuthorizationViewController: UIViewController {
         view.addSubview(resetPasswordButton)
         view.addSubview(enterButton)
         view.addSubview(registrationButton)
+        view.addSubview(enterAsGuestButton)
     }
     
     private func setupUI() {
@@ -131,9 +141,13 @@ final class AuthorizationViewController: UIViewController {
             make.leading.trailing.equalTo(textFieldsStackView)
             make.top.equalTo(resetPasswordButton.snp.bottom).offset(.textFieldsSpacing * .multiplierForEnterButton)
         }
+        enterAsGuestButton.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(registrationButton)
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+        }
         registrationButton.snp.makeConstraints { make in
             make.leading.trailing.equalTo(enterButton)
-            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+            make.bottom.equalTo(enterAsGuestButton).inset(Constants.bottomInset)
         }
     }
     
@@ -221,7 +235,7 @@ extension AuthorizationViewController: UITextFieldDelegate {
 private extension AuthorizationViewController {
     enum Constants {
         static let sidesInsets = 30
-        static let bottomInset = 50
+        static let bottomInset = 30
     }
 }
 

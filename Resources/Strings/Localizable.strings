@@ -24,6 +24,7 @@
 "authorization_screen_password_placeholder" = "Пароль";
 "authorization_screen_reset_password" = "Восстановить пароль";
 "authorization_screen_enter" = "Войти";
+"authorization_screen_enter_as_guest" = "Войти как гость";
 "authorization_screen_registration" = "Нет аккаунта? Зарегистрироваться";
 
 // Экран "Словарь"
