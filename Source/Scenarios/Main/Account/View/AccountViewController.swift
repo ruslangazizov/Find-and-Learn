@@ -56,9 +56,14 @@ final class AccountViewController: UIViewController {
     private func configure() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(AccountTableViewCell.self)
     }
     
     private func setupLayout() {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.leading.bottom.trailing.top.equalToSuperview()
+        }
     }
 }
 
@@ -70,20 +75,12 @@ extension AccountViewController: AccountViewInput {
 // MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
-        // Configure the cell...
+        let cell = tableView.dequeue(AccountTableViewCell.self, for: indexPath)
         
         return cell
     }
