@@ -22,3 +22,6 @@
 // Экран "Словарь"
 "dictionary_screen_title" = "Словарь";
 "dictionary_screen_search_bar_placeholder" = "Введите слово";
+
+// Экран "Аккаунт"
+"account_screen_user_name_placeholder" = "Никнейм";

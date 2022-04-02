@@ -14,6 +14,20 @@ final class AccountViewController: UIViewController {
         return CircularView()
     }()
     
+    private lazy var userNameTextField: UITextField = {
+        let textField = CommonTextField(
+            placeholder: R.string.localizable.account_screen_user_name_placeholder(),
+            layerColor: nil
+        )
+        return textField
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.keyboardDismissMode = .onDrag
+        return tableView
+    }()
+    
     // MARK: Dependencies
     
     private let presenter: AccountViewOutput
@@ -33,9 +47,16 @@ final class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
+        setupLayout()
     }
     
     // MARK: Private
+    
+    private func configure() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
     
     private func setupLayout() {
     }
@@ -44,4 +65,26 @@ final class AccountViewController: UIViewController {
 // MARK: - ViewInput
 
 extension AccountViewController: AccountViewInput {
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
+extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        // Configure the cell...
+        
+        return cell
+    }
 }
