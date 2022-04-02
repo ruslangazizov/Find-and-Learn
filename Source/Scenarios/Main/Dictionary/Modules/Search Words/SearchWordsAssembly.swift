@@ -9,13 +9,8 @@ import Foundation
 import UIKit
 
 final class SearchWordsAssembly: AssemblyProtocol {
-    private let router: DictionaryRouterProtocol
-    
-    init(router: DictionaryRouterProtocol) {
-        self.router = router
-    }
-    
-    func assemble() -> UIViewController {
+    static func assemble() -> UIViewController {
+        let router = SearchWordsRouter()
         let interactor = SearchWordsInteractor(dataManager: DataManagerMock())
         let presenter = SearchWordsPresenter(router: router, interactor: interactor)
         let view = SearchWordsViewController(presenter: presenter)
