@@ -13,16 +13,16 @@
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
-		44499F4227F5A7FA0022CF95 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */; };
 		44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */; };
-		447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706227EE49820011A7F4 /* DictionaryRouter.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
 		447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707127EE4E5C0011A7F4 /* SearchWordsViewOutput.swift */; };
 		447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */; };
-		447D707827EE511D0011A7F4 /* DictionaryRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707727EE511D0011A7F4 /* DictionaryRouterProtocol.swift */; };
 		447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707A27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift */; };
 		447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */; };
 		447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D708027EE55600011A7F4 /* DataManagerProtocol.swift */; };
+		44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */; };
+		44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */; };
+		44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAC227F8D50600C1189B /* SearchWordsRouterProtocol.swift */; };
 		44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */; };
 		44BE5DDF27E531FD0024F268 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDE27E531FD0024F268 /* Word.swift */; };
 		44D5811827E7D74500DBCC4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5811727E7D74500DBCC4E /* User.swift */; };
@@ -55,16 +55,16 @@
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
-		44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
-		447D706227EE49820011A7F4 /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
 		447D707127EE4E5C0011A7F4 /* SearchWordsViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewOutput.swift; sourceTree = "<group>"; };
 		447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsPresenter.swift; sourceTree = "<group>"; };
-		447D707727EE511D0011A7F4 /* DictionaryRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouterProtocol.swift; sourceTree = "<group>"; };
 		447D707A27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsInteractorProtocol.swift; sourceTree = "<group>"; };
 		447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsInteractor.swift; sourceTree = "<group>"; };
 		447D708027EE55600011A7F4 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
+		44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsRouter.swift; sourceTree = "<group>"; };
+		44BCCAC227F8D50600C1189B /* SearchWordsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsRouterProtocol.swift; sourceTree = "<group>"; };
 		44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewController.swift; sourceTree = "<group>"; };
 		44BE5DDE27E531FD0024F268 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		44D5811727E7D74500DBCC4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		44499F4027F5A7E80022CF95 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */,
+				44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */,
 				44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */,
 			);
 			path = Protocols;
@@ -158,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */,
+				44BCCABF27F8D49500C1189B /* Router */,
 				447D707927EE53F70011A7F4 /* Interactor */,
 				447D707327EE4E9A0011A7F4 /* Presenter */,
 				447D706E27EE4DDC0011A7F4 /* View */,
@@ -184,15 +185,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		447D707627EE51100011A7F4 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				447D707727EE511D0011A7F4 /* DictionaryRouterProtocol.swift */,
-				447D706227EE49820011A7F4 /* DictionaryRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		447D707927EE53F70011A7F4 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,11 +194,19 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		44BCCABF27F8D49500C1189B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44BCCAC227F8D50600C1189B /* SearchWordsRouterProtocol.swift */,
+				44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		44BE5DD327E52A3C0024F268 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
 				442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */,
-				447D707627EE51100011A7F4 /* Router */,
 				441F8B6627EC82AE0066358F /* Modules */,
 			);
 			path = Dictionary;
@@ -561,6 +561,7 @@
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
+				44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
@@ -568,14 +569,14 @@
 				D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
-				447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
+				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
-				44499F4227F5A7FA0022CF95 /* RouterProtocol.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
+				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
 				447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
@@ -587,7 +588,6 @@
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
-				447D707827EE511D0011A7F4 /* DictionaryRouterProtocol.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
 				D294305627F7942F001CFEC6 /* Notification+Extensions.swift in Sources */,
 			);
