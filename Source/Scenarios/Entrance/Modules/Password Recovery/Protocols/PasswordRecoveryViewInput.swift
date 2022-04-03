@@ -8,4 +8,5 @@
 import Foundation
 
 protocol PasswordRecoveryViewInput: AnyObject {
+    func showError(errors: PasswordRecoveryErrors...)
 }

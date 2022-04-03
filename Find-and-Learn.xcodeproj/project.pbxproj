@@ -37,6 +37,7 @@
 		D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */; };
 		D21E9DAA27F9FF93005513B7 /* ValidationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */; };
 		D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAB27FA000B005513B7 /* ValidationManager.swift */; };
+		D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
@@ -81,6 +82,7 @@
 		D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewOutput.swift; sourceTree = "<group>"; };
 		D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManagerProtocol.swift; sourceTree = "<group>"; };
 		D21E9DAB27FA000B005513B7 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryErrors.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				D217569427EB25BC00C3D545 /* Protocols */,
 				D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */,
 				D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */,
+				D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */,
 			);
 			path = "Password Recovery";
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */,
 				D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */,
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,

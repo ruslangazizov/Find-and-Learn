@@ -8,4 +8,5 @@
 import Foundation
 
 protocol PasswordRecoveryViewOutput: AnyObject {
+    func recoveryPassword(email: String)
 }

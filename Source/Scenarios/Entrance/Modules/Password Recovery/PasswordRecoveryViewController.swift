@@ -156,6 +156,14 @@ final class PasswordRecoveryViewController: UIViewController {
 // MARK: - ViewInput
 
 extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
+    func showError(errors: PasswordRecoveryErrors...) {
+        for error in errors {
+            switch error {
+            case .emailField(let message):
+                print(message)
+            }
+        }
+    }
 }
 
 // MARK: - UITextFieldDelegate
