@@ -7,5 +7,8 @@
 
 import Foundation
 
-protocol ValidationManagerProtocol: AnyObject {
+protocol ValidationManagerProtocol {
+    func isValidEmail(_ email: String) -> Bool
+    func isValidPassword(_ password: String) -> Bool
+    func isValidUserName(_ userName: String) -> Bool
 }
