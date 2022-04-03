@@ -22,3 +22,8 @@
 // Экран "Словарь"
 "dictionary_screen_title" = "Словарь";
 "dictionary_screen_search_bar_placeholder" = "Введите слово";
+
+// Ошибки валидации
+"validation_error_incorrect_email" = "Неверный формат E-Mail";
+"validation_error_empty_email" = "Пустой E-Mail";
+

@@ -10,12 +10,18 @@ import UIKit
 final class PasswordRecoveryViewController: UIViewController {
     // MARK: UI
     
-    private lazy var emailTextField: CommonTextField = {
+    private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.password_recovery_screen_email_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
         return textField
+    }()
+    
+    private lazy var emailErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
     }()
     
     private lazy var recoveryButton: UIButton = {
@@ -68,6 +74,12 @@ final class PasswordRecoveryViewController: UIViewController {
         configure()
         addSubviews()
         setupUI()
+        
+        recoveryButton.addTarget(self, action: #selector(someAction(_:)), for: .touchUpInside)
+    }
+    
+    @objc func someAction(_ sender: UIButton?) {
+        presenter.recoveryPassword(email: emailTextField.text ?? "")
     }
     
     // MARK: Private
@@ -94,6 +106,7 @@ final class PasswordRecoveryViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(emailTextField)
         view.addSubview(buttonsStackView)
+        view.addSubview(emailErrorLabel)
         buttonsStackView.addArrangedSubview(recoveryButton)
         buttonsStackView.addArrangedSubview(enterButton)
     }
@@ -107,6 +120,10 @@ final class PasswordRecoveryViewController: UIViewController {
         emailTextField.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.top.equalToSuperview().inset(view.frame.height * .multiplierForEmailTextField)
+        }
+        emailErrorLabel.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).offset(5)
+            make.leading.trailing.equalTo(emailTextField)
         }
     }
     
@@ -160,7 +177,8 @@ extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
         for error in errors {
             switch error {
             case .emailField(let message):
-                print(message)
+                emailErrorLabel.text = message
+                emailErrorLabel.alpha = 1
             }
         }
     }
