@@ -72,14 +72,8 @@ final class PasswordRecoveryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        addSubviews()
-        setupUI()
-        
-        recoveryButton.addTarget(self, action: #selector(someAction(_:)), for: .touchUpInside)
-    }
-    
-    @objc func someAction(_ sender: UIButton?) {
-        presenter.recoveryPassword(email: emailTextField.text ?? "")
+        setupLayout()
+        addKeyboardObservers()
     }
     
     // MARK: Private
@@ -89,6 +83,36 @@ final class PasswordRecoveryViewController: UIViewController {
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
+        recoveryButton.addTarget(self, action: #selector(recoveryButtonTapped(_:)), for: .touchUpInside)
+    }
+    
+    private func setupLayout() {
+        view.addSubview(emailTextField)
+        emailTextField.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
+            make.top.equalToSuperview().inset(view.frame.height * .multiplierForEmailTextField)
+        }
+        
+        view.addSubview(emailErrorLabel)
+        emailErrorLabel.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).offset(5)
+            make.leading.trailing.equalTo(emailTextField)
+        }
+        
+        view.addSubview(buttonsStackView)
+        buttonsStackView.addArrangedSubview(recoveryButton)
+        buttonsStackView.addArrangedSubview(enterButton)
+        buttonsStackView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
+            make.bottom.equalToSuperview().inset(Constants.stackViewBottomInset)
+        }
+    }
+    
+    @objc private func recoveryButtonTapped(_ sender: UIButton?) {
+        presenter.recoveryPassword(email: emailTextField.text ?? "")
+    }
+    
+    private func addKeyboardObservers() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShow(notification:)),
@@ -102,39 +126,6 @@ final class PasswordRecoveryViewController: UIViewController {
             object: nil
         )
     }
-    
-    private func addSubviews() {
-        view.addSubview(emailTextField)
-        view.addSubview(buttonsStackView)
-        view.addSubview(emailErrorLabel)
-        buttonsStackView.addArrangedSubview(recoveryButton)
-        buttonsStackView.addArrangedSubview(enterButton)
-    }
-    
-    private func setupUI() {
-        setupTextFields()
-        setupStackViews()
-    }
-    
-    private func setupTextFields() {
-        emailTextField.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.top.equalToSuperview().inset(view.frame.height * .multiplierForEmailTextField)
-        }
-        emailErrorLabel.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).offset(5)
-            make.leading.trailing.equalTo(emailTextField)
-        }
-    }
-    
-    private func setupStackViews() {
-        buttonsStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.bottom.equalToSuperview().inset(Constants.stackViewBottomInset)
-        }
-    }
-    
-    // Objc
     
     @objc private func hideKeyboard() {
         view.endEditing(true)
