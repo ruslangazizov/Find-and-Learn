@@ -57,10 +57,19 @@ class HistoryWordsTableViewCell: UITableViewCell {
     
     // MARK: Configuration
     
-    func configure(with wordModel: HistoryWordModel) {
-        wordLabel.text = wordModel.word
-        translationsLabel.text = wordModel.translations
-        searchesCountLabel.text = String(wordModel.searchesCount)
+    func addWord(_ word: String) -> Self {
+        wordLabel.text = word
+        return self
+    }
+    
+    func addTranslations(_ translations: String) -> Self {
+        translationsLabel.text = translations
+        return self
+    }
+    
+    func addSearchesCount(_ searchesCount: Int) -> Self {
+        searchesCountLabel.text = String(searchesCount)
+        return self
     }
 }
 

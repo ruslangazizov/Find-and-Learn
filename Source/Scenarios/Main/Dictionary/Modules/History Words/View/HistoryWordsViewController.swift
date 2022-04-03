@@ -102,7 +102,7 @@ extension HistoryWordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(HistoryWordsTableViewCell.self, for: indexPath)
         let wordModel = words[indexPath.section].words[indexPath.row]
-        cell.configure(with: wordModel)
+        cell.addWord(wordModel.word).addTranslations(wordModel.translations).addSearchesCount(wordModel.searchesCount)
         return cell
     }
 }
