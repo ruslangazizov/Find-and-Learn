@@ -1,5 +1,5 @@
 //
-//  DateFormatter+EEEEMMMd.swift
+//  DateFormatter+Extensions.swift
 //  Find-and-Learn
 //
 //  Created by Руслан on 03.04.2022.

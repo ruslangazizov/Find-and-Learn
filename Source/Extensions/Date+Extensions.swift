@@ -1,5 +1,5 @@
 //
-//  Date+toString.swift
+//  Date+Extensions.swift
 //  Find-and-Learn
 //
 //  Created by Руслан on 03.04.2022.
