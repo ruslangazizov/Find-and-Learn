@@ -141,21 +141,21 @@ final class PasswordRecoveryViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let height = keyboardFrame.cgRectValue.height
-            buttonsStackView.snp.updateConstraints { make in
-                make.bottom.equalToSuperview().inset(height)
-            }
-            
-            let yForStackView = height + buttonsStackView.frame.height
-            if yForStackView >= view.frame.height * CGFloat.multiplierForEmailTextField - emailTextField.frame.height {
-                let inset = view.frame.height - yForStackView - emailTextField.frame.height - CGFloat.buttonsSpacing
-                emailTextField.snp.updateConstraints { make in
-                    make.top.equalToSuperview().inset(inset)
-                }
-            }
-            view.layoutIfNeeded()
+        guard let keyboardFrame = notification.keyboardFrame else { return }
+        let height = keyboardFrame.height
+        
+        buttonsStackView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(height)
         }
+        
+        let yForStackView = height + buttonsStackView.frame.height
+        if yForStackView >= view.frame.height * CGFloat.multiplierForEmailTextField - emailTextField.frame.height {
+            let inset = view.frame.height - yForStackView - emailTextField.frame.height - CGFloat.buttonsSpacing
+            emailTextField.snp.updateConstraints { make in
+                make.top.equalToSuperview().inset(inset)
+            }
+        }
+        view.layoutIfNeeded()
     }
     
     @objc private func keyboardWillHide(notification: Notification) {

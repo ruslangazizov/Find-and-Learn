@@ -8,7 +8,7 @@
 import Foundation
 
 final class PasswordRecoveryPresenter: PasswordRecoveryViewOutput {
-    // MARK: - Dependecnies
+    // MARK: Dependencies
     
     weak var view: PasswordRecoveryViewInput?
     private let validationManager: ValidationManagerProtocol

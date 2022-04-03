@@ -35,6 +35,8 @@
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
 		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
 		D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */; };
+		D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */; };
+		D294305627F7942F001CFEC6 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305527F7942F001CFEC6 /* Notification+Extensions.swift */; };
 		D21E9DAA27F9FF93005513B7 /* ValidationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */; };
 		D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAB27FA000B005513B7 /* ValidationManager.swift */; };
 		D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */; };
@@ -81,6 +83,8 @@
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
 		D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewOutput.swift; sourceTree = "<group>"; };
+		D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryAssembly.swift; sourceTree = "<group>"; };
+		D294305527F7942F001CFEC6 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManagerProtocol.swift; sourceTree = "<group>"; };
 		D21E9DAB27FA000B005513B7 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryErrors.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */,
+				D294305527F7942F001CFEC6 /* Notification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				D217569427EB25BC00C3D545 /* Protocols */,
 				D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */,
 				D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */,
+				D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */,
 				D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */,
 			);
 			path = "Password Recovery";
@@ -590,6 +596,7 @@
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
+				D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
@@ -614,6 +621,7 @@
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
+				D294305627F7942F001CFEC6 /* Notification+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
