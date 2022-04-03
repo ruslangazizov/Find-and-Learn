@@ -167,14 +167,18 @@ final class PasswordRecoveryViewController: UIViewController {
 // MARK: - ViewInput
 
 extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
-    func showError(errors: PasswordRecoveryErrors...) {
-        for error in errors {
-            switch error {
-            case .emailField(let message):
-                emailErrorLabel.text = message
-                emailErrorLabel.alpha = 1
-            }
-        }
+    func showError(error: PasswordRecoveryErrors) {
+        switch error {
+        case .emailField(let message):
+            emailErrorLabel.text = message
+            emailErrorLabel.alpha = 1
+        }        
+    }
+    
+    func showOkAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 

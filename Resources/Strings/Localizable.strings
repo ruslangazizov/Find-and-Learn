@@ -27,3 +27,6 @@
 "validation_error_incorrect_email" = "Неверный формат E-Mail";
 "validation_error_empty_email" = "Пустой E-Mail";
 
+// Успешная валидация
+"validation_success_email_sent_title" = "Письмо с восстановлением пароля отправлено";
+"validation_success_email_sent_message" = "Проверьте свою почту";

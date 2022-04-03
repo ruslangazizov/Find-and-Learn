@@ -24,16 +24,22 @@ final class PasswordRecoveryPresenter: PasswordRecoveryViewOutput {
     func recoveryPassword(email: String) {
         guard !email.isEmpty else {
             DispatchQueue.main.async {
-                self.view?.showError(errors: .emailField(R.string.localizable.validation_error_empty_email()))
+                self.view?.showError(error: .emailField(R.string.localizable.validation_error_empty_email()))
             }
             return
         }
         
         if validationManager.isValidEmail(email) {
             // TODO: send to server
+            DispatchQueue.main.async {
+                self.view?.showOkAlert(
+                    title: R.string.localizable.validation_success_email_sent_title(),
+                    message: R.string.localizable.validation_success_email_sent_message()
+                )
+            }
         } else {
             DispatchQueue.main.async {
-                self.view?.showError(errors: .emailField(R.string.localizable.validation_error_incorrect_email()))
+                self.view?.showError(error: .emailField(R.string.localizable.validation_error_incorrect_email()))
             }
         }
     }
