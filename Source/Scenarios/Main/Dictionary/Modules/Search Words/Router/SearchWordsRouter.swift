@@ -19,10 +19,8 @@ final class SearchWordsRouter: SearchWordsRouterProtocol {
     }
     
     func showHistoryWords() {
-        // здесь будет просто HistoryWordsAssembly.assemble()
-        let mockHistoryWordsViewController = UIViewController()
-        mockHistoryWordsViewController.view.backgroundColor = .green
-        view?.navigationController?.pushViewController(mockHistoryWordsViewController, animated: true)
+        let historyWordsViewController = HistoryWordsAssembly.assemble()
+        view?.navigationController?.pushViewController(historyWordsViewController, animated: true)
     }
     
     func showWordDetail(_ word: Word) {
