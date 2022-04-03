@@ -37,7 +37,7 @@ final class AccountViewController: UIViewController {
     // MARK: Dependencies
     
     private let presenter: AccountViewOutput
-    private let settings: [Settings] = []
+    private var settings: [Settings] = []
     
     // MARK: Init
     
