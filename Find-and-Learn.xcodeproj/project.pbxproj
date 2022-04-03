@@ -23,6 +23,22 @@
 		44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */; };
 		44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */; };
 		44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAC227F8D50600C1189B /* SearchWordsRouterProtocol.swift */; };
+		44BCCAD727F8F6C000C1189B /* HistoryWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAD627F8F6C000C1189B /* HistoryWordsAssembly.swift */; };
+		44BCCADA27F8F6F600C1189B /* HistoryWordsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAD827F8F6F600C1189B /* HistoryWordsRouterProtocol.swift */; };
+		44BCCADB27F8F6F600C1189B /* HistoryWordsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAD927F8F6F600C1189B /* HistoryWordsRouter.swift */; };
+		44BCCADF27F8F6FF00C1189B /* HistoryWordsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCADC27F8F6FF00C1189B /* HistoryWordsInteractorInput.swift */; };
+		44BCCAE027F8F6FF00C1189B /* HistoryWordsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCADD27F8F6FF00C1189B /* HistoryWordsInteractorOutput.swift */; };
+		44BCCAE127F8F6FF00C1189B /* HistoryWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCADE27F8F6FF00C1189B /* HistoryWordsInteractor.swift */; };
+		44BCCAE327F8F70500C1189B /* HistoryWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAE227F8F70500C1189B /* HistoryWordsPresenter.swift */; };
+		44BCCAE727F8F70D00C1189B /* HistoryWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAE427F8F70D00C1189B /* HistoryWordsViewController.swift */; };
+		44BCCAE827F8F70D00C1189B /* HistoryWordsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAE527F8F70D00C1189B /* HistoryWordsViewOutput.swift */; };
+		44BCCAE927F8F70D00C1189B /* HistoryWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAE627F8F70D00C1189B /* HistoryWordsViewInput.swift */; };
+		44BCCAEB27F9CEE300C1189B /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAEA27F9CEE300C1189B /* DateFormatter+Extensions.swift */; };
+		44BCCAED27F9CF3300C1189B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAEC27F9CF3300C1189B /* Date+Extensions.swift */; };
+		44BCCAEF27F9D0B900C1189B /* HistoryWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAEE27F9D0B900C1189B /* HistoryWordsTableViewCell.swift */; };
+		44BCCAF727FA015300C1189B /* HistoryWordsIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAF627FA015300C1189B /* HistoryWordsIntegrationTests.swift */; };
+		44BCCAFE27FA0F0400C1189B /* HistoryWordsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAFD27FA0F0400C1189B /* HistoryWordsInteractorTests.swift */; };
+		44BCCB0027FA142700C1189B /* HistoryWordsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAFF27FA142700C1189B /* HistoryWordsPresenterTests.swift */; };
 		44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */; };
 		44BE5DDF27E531FD0024F268 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDE27E531FD0024F268 /* Word.swift */; };
 		44D5811827E7D74500DBCC4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5811727E7D74500DBCC4E /* User.swift */; };
@@ -45,6 +61,16 @@
 		D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		44BCCAF827FA015300C1189B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44E59E6A27C7A7B00061C14D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44E59E7127C7A7B00061C14D;
+			remoteInfo = "Find-and-Learn";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.debug.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsTableViewCell.swift; sourceTree = "<group>"; };
@@ -63,6 +89,23 @@
 		44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsRouter.swift; sourceTree = "<group>"; };
 		44BCCAC227F8D50600C1189B /* SearchWordsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsRouterProtocol.swift; sourceTree = "<group>"; };
+		44BCCAD627F8F6C000C1189B /* HistoryWordsAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsAssembly.swift; sourceTree = "<group>"; };
+		44BCCAD827F8F6F600C1189B /* HistoryWordsRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsRouterProtocol.swift; sourceTree = "<group>"; };
+		44BCCAD927F8F6F600C1189B /* HistoryWordsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsRouter.swift; sourceTree = "<group>"; };
+		44BCCADC27F8F6FF00C1189B /* HistoryWordsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsInteractorInput.swift; sourceTree = "<group>"; };
+		44BCCADD27F8F6FF00C1189B /* HistoryWordsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsInteractorOutput.swift; sourceTree = "<group>"; };
+		44BCCADE27F8F6FF00C1189B /* HistoryWordsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsInteractor.swift; sourceTree = "<group>"; };
+		44BCCAE227F8F70500C1189B /* HistoryWordsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsPresenter.swift; sourceTree = "<group>"; };
+		44BCCAE427F8F70D00C1189B /* HistoryWordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsViewController.swift; sourceTree = "<group>"; };
+		44BCCAE527F8F70D00C1189B /* HistoryWordsViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsViewOutput.swift; sourceTree = "<group>"; };
+		44BCCAE627F8F70D00C1189B /* HistoryWordsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordsViewInput.swift; sourceTree = "<group>"; };
+		44BCCAEA27F9CEE300C1189B /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		44BCCAEC27F9CF3300C1189B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		44BCCAEE27F9D0B900C1189B /* HistoryWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsTableViewCell.swift; sourceTree = "<group>"; };
+		44BCCAF427FA015300C1189B /* Find-and-Learn-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find-and-Learn-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44BCCAF627FA015300C1189B /* HistoryWordsIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsIntegrationTests.swift; sourceTree = "<group>"; };
+		44BCCAFD27FA0F0400C1189B /* HistoryWordsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsInteractorTests.swift; sourceTree = "<group>"; };
+		44BCCAFF27FA142700C1189B /* HistoryWordsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsPresenterTests.swift; sourceTree = "<group>"; };
 		44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewController.swift; sourceTree = "<group>"; };
 		44BE5DDE27E531FD0024F268 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		44D5811727E7D74500DBCC4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -89,6 +132,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		44BCCAF127FA015300C1189B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44E59E6F27C7A7B00061C14D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +177,7 @@
 		441F8B6627EC82AE0066358F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				44BCCAD127F8F67900C1189B /* History Words */,
 				447D706D27EE4DD00011A7F4 /* Search Words */,
 			);
 			path = Modules;
@@ -136,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */,
+				44BCCAEA27F9CEE300C1189B /* DateFormatter+Extensions.swift */,
+				44BCCAEC27F9CF3300C1189B /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,6 +251,66 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		44BCCAD127F8F67900C1189B /* History Words */ = {
+			isa = PBXGroup;
+			children = (
+				44BCCAD627F8F6C000C1189B /* HistoryWordsAssembly.swift */,
+				44BCCAD227F8F68600C1189B /* Router */,
+				44BCCAD527F8F6A000C1189B /* Interactor */,
+				44BCCAD427F8F69700C1189B /* Presenter */,
+				44BCCAD327F8F68D00C1189B /* View */,
+			);
+			path = "History Words";
+			sourceTree = "<group>";
+		};
+		44BCCAD227F8F68600C1189B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44BCCAD927F8F6F600C1189B /* HistoryWordsRouter.swift */,
+				44BCCAD827F8F6F600C1189B /* HistoryWordsRouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		44BCCAD327F8F68D00C1189B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44BCCAE427F8F70D00C1189B /* HistoryWordsViewController.swift */,
+				44BCCAE627F8F70D00C1189B /* HistoryWordsViewInput.swift */,
+				44BCCAE527F8F70D00C1189B /* HistoryWordsViewOutput.swift */,
+				44BCCAEE27F9D0B900C1189B /* HistoryWordsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44BCCAD427F8F69700C1189B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				44BCCAE227F8F70500C1189B /* HistoryWordsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44BCCAD527F8F6A000C1189B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				44BCCADE27F8F6FF00C1189B /* HistoryWordsInteractor.swift */,
+				44BCCADC27F8F6FF00C1189B /* HistoryWordsInteractorInput.swift */,
+				44BCCADD27F8F6FF00C1189B /* HistoryWordsInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		44BCCAF527FA015300C1189B /* Find-and-Learn-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				44BCCAF627FA015300C1189B /* HistoryWordsIntegrationTests.swift */,
+				44BCCAFD27FA0F0400C1189B /* HistoryWordsInteractorTests.swift */,
+				44BCCAFF27FA142700C1189B /* HistoryWordsPresenterTests.swift */,
+			);
+			path = "Find-and-Learn-Tests";
+			sourceTree = "<group>";
+		};
 		44BE5DD327E52A3C0024F268 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +345,7 @@
 				D2AB637927DCC9AB00CE4441 /* Resources */,
 				D2AB637827DCC90400CE4441 /* Supporting Files */,
 				D2A5A42D27E5E2D300E503AA /* Autogenerated Files */,
+				44BCCAF527FA015300C1189B /* Find-and-Learn-Tests */,
 				44E59E7327C7A7B00061C14D /* Products */,
 				B37951C05643AA6F11C45359 /* Pods */,
 				00108970D2082C38954BDA71 /* Frameworks */,
@@ -242,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				44E59E7227C7A7B00061C14D /* Find-and-Learn.app */,
+				44BCCAF427FA015300C1189B /* Find-and-Learn-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -397,6 +512,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		44BCCAF327FA015300C1189B /* Find-and-Learn-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44BCCAFA27FA015300C1189B /* Build configuration list for PBXNativeTarget "Find-and-Learn-Tests" */;
+			buildPhases = (
+				44BCCAF027FA015300C1189B /* Sources */,
+				44BCCAF127FA015300C1189B /* Frameworks */,
+				44BCCAF227FA015300C1189B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44BCCAF927FA015300C1189B /* PBXTargetDependency */,
+			);
+			name = "Find-and-Learn-Tests";
+			productName = "Find-and-Learn-Tests";
+			productReference = 44BCCAF427FA015300C1189B /* Find-and-Learn-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		44E59E7127C7A7B00061C14D /* Find-and-Learn */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44E59E8627C7A7B30061C14D /* Build configuration list for PBXNativeTarget "Find-and-Learn" */;
@@ -428,6 +561,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					44BCCAF327FA015300C1189B = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 44E59E7127C7A7B00061C14D;
+					};
 					44E59E7127C7A7B00061C14D = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -447,11 +584,19 @@
 			projectRoot = "";
 			targets = (
 				44E59E7127C7A7B00061C14D /* Find-and-Learn */,
+				44BCCAF327FA015300C1189B /* Find-and-Learn-Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		44BCCAF227FA015300C1189B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44E59E7027C7A7B00061C14D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,45 +692,76 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		44BCCAF027FA015300C1189B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44BCCB0027FA142700C1189B /* HistoryWordsPresenterTests.swift in Sources */,
+				44BCCAFE27FA0F0400C1189B /* HistoryWordsInteractorTests.swift in Sources */,
+				44BCCAF727FA015300C1189B /* HistoryWordsIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44E59E6E27C7A7B00061C14D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44BCCADF27F8F6FF00C1189B /* HistoryWordsInteractorInput.swift in Sources */,
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
+				44BCCAE327F8F70500C1189B /* HistoryWordsPresenter.swift in Sources */,
+				44BCCAE127F8F6FF00C1189B /* HistoryWordsInteractor.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
+				44BCCAE027F8F6FF00C1189B /* HistoryWordsInteractorOutput.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
+				44BCCADA27F8F6F600C1189B /* HistoryWordsRouterProtocol.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
+				44BCCAEB27F9CEE300C1189B /* DateFormatter+Extensions.swift in Sources */,
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
 				447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */,
+				44BCCAEF27F9D0B900C1189B /* HistoryWordsTableViewCell.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
+				44BCCAD727F8F6C000C1189B /* HistoryWordsAssembly.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
+				44BCCAE727F8F70D00C1189B /* HistoryWordsViewController.swift in Sources */,
+				44BCCADB27F8F6F600C1189B /* HistoryWordsRouter.swift in Sources */,
+				44BCCAE927F8F70D00C1189B /* HistoryWordsViewInput.swift in Sources */,
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
+				44BCCAE827F8F70D00C1189B /* HistoryWordsViewOutput.swift in Sources */,
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
+				44BCCAED27F9CF3300C1189B /* Date+Extensions.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44BCCAF927FA015300C1189B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44E59E7127C7A7B00061C14D /* Find-and-Learn */;
+			targetProxy = 44BCCAF827FA015300C1189B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */ = {
@@ -599,6 +775,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		44BCCAFB27FA015300C1189B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BU5S75BK7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Tinkoff-practice.Find-and-Learn-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Find-and-Learn.app/Find-and-Learn";
+			};
+			name = Debug;
+		};
+		44BCCAFC27FA015300C1189B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BU5S75BK7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Tinkoff-practice.Find-and-Learn-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Find-and-Learn.app/Find-and-Learn";
+			};
+			name = Release;
+		};
 		44E59E8427C7A7B30061C14D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -636,6 +850,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -697,6 +912,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -774,6 +990,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		44BCCAFA27FA015300C1189B /* Build configuration list for PBXNativeTarget "Find-and-Learn-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44BCCAFB27FA015300C1189B /* Debug */,
+				44BCCAFC27FA015300C1189B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		44E59E6D27C7A7B00061C14D /* Build configuration list for PBXProject "Find-and-Learn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
