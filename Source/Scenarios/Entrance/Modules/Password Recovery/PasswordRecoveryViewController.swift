@@ -95,7 +95,7 @@ final class PasswordRecoveryViewController: UIViewController {
         
         view.addSubview(emailErrorLabel)
         emailErrorLabel.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).offset(5)
+            make.top.equalTo(emailTextField.snp.bottom).offset(Constants.topOffset)
             make.leading.trailing.equalTo(emailTextField)
         }
         
@@ -109,6 +109,7 @@ final class PasswordRecoveryViewController: UIViewController {
     }
     
     @objc private func recoveryButtonTapped(_ sender: UIButton?) {
+        hideKeyboard()
         presenter.recoveryPassword(email: emailTextField.text ?? "")
     }
     
@@ -132,6 +133,8 @@ final class PasswordRecoveryViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
+        emailErrorLabel.alpha = 0
+        
         guard let keyboardFrame = notification.keyboardFrame else { return }
         let height = keyboardFrame.height
         
@@ -192,6 +195,8 @@ private extension PasswordRecoveryViewController {
         
         static let sidesInsets = 30
         static let stackViewBottomInset = 50
+        
+        static let topOffset = 5
     }
 }
 
