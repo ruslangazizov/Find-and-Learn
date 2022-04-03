@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class PasswordRecoveryAssembly: AssemblyProtocol {
-    func assemble() -> UIViewController {
+    static func assemble() -> UIViewController {
         let presenter = PasswordRecoveryPresenter()
         
         let viewController = PasswordRecoveryViewController(presenter: presenter)

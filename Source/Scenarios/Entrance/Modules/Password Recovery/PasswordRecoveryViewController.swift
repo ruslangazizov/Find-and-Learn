@@ -43,7 +43,7 @@ final class PasswordRecoveryViewController: UIViewController {
     
     // MARK: Dependencies
     
-    private var presenter: PasswordRecoveryViewOutput
+    private let presenter: PasswordRecoveryViewOutput
     
     // MARK: Init && deinit
     
