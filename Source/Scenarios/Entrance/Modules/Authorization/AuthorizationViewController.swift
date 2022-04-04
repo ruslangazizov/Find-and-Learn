@@ -32,7 +32,7 @@ final class AuthorizationViewController: UIViewController {
             text: R.string.localizable.authorization_screen_reset_password(),
             layerColor: nil
         )
-        button.setFontSize(14)
+        button.setFontSize(.textFontSize)
         return button
     }()
     
@@ -49,7 +49,7 @@ final class AuthorizationViewController: UIViewController {
             text: R.string.localizable.authorization_screen_enter_as_guest(),
             layerColor: nil
         )
-        button.setFontSize(14)
+        button.setFontSize(.textFontSize)
         return button
     }()
     
@@ -58,7 +58,7 @@ final class AuthorizationViewController: UIViewController {
             text: R.string.localizable.authorization_screen_registration(),
             layerColor: UIColor.blue.cgColor
         )
-        button.setFontSize(14)
+        button.setFontSize(.textFontSize)
         return button
     }()
     
@@ -242,4 +242,6 @@ private extension CGFloat {
     
     static let multiplierForStackView = 0.35
     static let multiplierForEnterButton = 1.5
+    
+    static let textFontSize: CGFloat = 14
 }
