@@ -8,7 +8,7 @@
 import Foundation
 
 final class PasswordRecoveryPresenter: PasswordRecoveryViewOutput {
-    // MARK: - Dependecies
+    // MARK: - Dependencies
     
     weak var view: PasswordRecoveryViewInput?
 }
