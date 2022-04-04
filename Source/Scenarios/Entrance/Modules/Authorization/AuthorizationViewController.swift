@@ -28,13 +28,11 @@ final class AuthorizationViewController: UIViewController {
     }()
     
     private lazy var resetPasswordButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(
-            R.string.localizable.authorization_screen_reset_password(),
-            for: .normal
+        let button = CommonButton(
+            text: R.string.localizable.authorization_screen_reset_password(),
+            layerColor: nil
         )
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
+        button.setFontSize(14)
         return button
     }()
     
@@ -51,7 +49,7 @@ final class AuthorizationViewController: UIViewController {
             text: R.string.localizable.authorization_screen_enter_as_guest(),
             layerColor: nil
         )
-        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
+        button.setFontSize(14)
         return button
     }()
     
@@ -60,7 +58,7 @@ final class AuthorizationViewController: UIViewController {
             text: R.string.localizable.authorization_screen_registration(),
             layerColor: UIColor.blue.cgColor
         )
-        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
+        button.setFontSize(14)
         return button
     }()
     
@@ -75,7 +73,7 @@ final class AuthorizationViewController: UIViewController {
     
     private var presenter: AuthorizationViewOutput
     
-    // MARK: Init
+    // MARK: Init & deinit
     
     init(presenter: AuthorizationViewOutput) {
         self.presenter = presenter
