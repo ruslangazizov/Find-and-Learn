@@ -71,7 +71,7 @@ final class AuthorizationViewController: UIViewController {
     
     // MARK: Dependencies
     
-    private var presenter: AuthorizationViewOutput
+    private let presenter: AuthorizationViewOutput
     
     // MARK: Init & deinit
     
