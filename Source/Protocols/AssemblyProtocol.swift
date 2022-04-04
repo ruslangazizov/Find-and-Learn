@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol AssemblyProtocol: AnyObject {
-    func assemble() -> UIViewController
+    static func assemble() -> UIViewController
 }
