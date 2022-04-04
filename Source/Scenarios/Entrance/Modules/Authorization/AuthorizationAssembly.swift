@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class AuthorizationAssembly: AssemblyProtocol {
-    func assemble() -> UIViewController {
+    static func assemble() -> UIViewController {
         let presenter = AuthorizationPresenter()
         
         let viewController = AuthorizationViewController(presenter: presenter)
