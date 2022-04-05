@@ -48,6 +48,8 @@
 		D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */; };
 		D2BC64B727FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B627FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift */; };
 		D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B827FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift */; };
+		D2BC64BC27FC443900F2E15F /* AuthorizationInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */; };
+		D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
 		D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */; };
 		D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168527DE4B230026692E /* RegistrationPresenter.swift */; };
@@ -105,6 +107,8 @@
 		D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		D2BC64B627FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryInteractorProtocol.swift; sourceTree = "<group>"; };
 		D2BC64B827FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryInteractor.swift; sourceTree = "<group>"; };
+		D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractorProtocol.swift; sourceTree = "<group>"; };
+		D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractor.swift; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
 		D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
 		D2D1168527DE4B230026692E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
@@ -413,6 +417,15 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		D2BC64BA27FC441900F2E15F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */,
+				D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		D2D1167F27DE42D40026692E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +475,7 @@
 		D2FB5D5127EDA4DB00CBDB00 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				D2BC64BA27FC441900F2E15F /* Interactor */,
 				D2FB5D5627EDA58700CBDB00 /* Protocols */,
 				D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */,
 				D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */,
@@ -652,9 +666,11 @@
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */,
+				D2BC64BC27FC443900F2E15F /* AuthorizationInteractorProtocol.swift in Sources */,
 				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
+				D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
