@@ -186,7 +186,7 @@ extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
 
 extension PasswordRecoveryViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        recoveryButtonTapped(nil)
         return true
     }
 }
