@@ -110,7 +110,10 @@ final class PasswordRecoveryViewController: UIViewController {
     
     @objc private func recoveryButtonTapped(_ sender: UIButton?) {
         hideKeyboard()
-        presenter.recoveryPassword(email: emailTextField.text ?? "")
+        let text = emailTextField.text ?? ""
+        DispatchQueue.global(qos: .utility).async { 
+            self.presenter.recoveryPassword(email: text)
+        }
     }
     
     private func addKeyboardObservers() {
@@ -175,8 +178,12 @@ extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
         }        
     }
     
-    func showOkAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    func showOkAlert() {
+        let alert = UIAlertController(
+            title: R.string.localizable.validation_success_email_sent_title(),
+            message: R.string.localizable.validation_success_email_sent_message(),
+            preferredStyle: .alert
+        )
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }

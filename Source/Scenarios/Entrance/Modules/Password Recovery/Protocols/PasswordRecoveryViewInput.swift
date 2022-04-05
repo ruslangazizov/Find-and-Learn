@@ -9,5 +9,5 @@ import Foundation
 
 protocol PasswordRecoveryViewInput: AnyObject {
     func showError(error: PasswordRecoveryErrors)
-    func showOkAlert(title: String, message: String)
+    func showOkAlert()
 }

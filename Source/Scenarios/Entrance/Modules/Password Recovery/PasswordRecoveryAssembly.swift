@@ -10,7 +10,9 @@ import UIKit
 
 final class PasswordRecoveryAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let presenter = PasswordRecoveryPresenter(validationManager: ValidationManager())
+        let interactor = PasswordRecoveryInteractor(validationManager: ValidationManager())
+        
+        let presenter = PasswordRecoveryPresenter(interactor: interactor)
         
         let viewController = PasswordRecoveryViewController(presenter: presenter)
         presenter.view = viewController

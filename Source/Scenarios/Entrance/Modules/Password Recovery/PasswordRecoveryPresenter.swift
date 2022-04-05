@@ -11,35 +11,26 @@ final class PasswordRecoveryPresenter: PasswordRecoveryViewOutput {
     // MARK: Dependencies
     
     weak var view: PasswordRecoveryViewInput?
-    private let validationManager: ValidationManagerProtocol
+    private let interactor: PasswordRecoveryInteractorProtocol
     
     // MARK: Init
     
-    init(validationManager: ValidationManagerProtocol) {
-        self.validationManager = validationManager
+    init(interactor: PasswordRecoveryInteractorProtocol) {
+        self.interactor = interactor
     }
     
     // MARK: PasswordRecoveryViewOutput
     
     func recoveryPassword(email: String) {
-        guard !email.isEmpty else {
-            DispatchQueue.main.async {
-                self.view?.showError(error: .emailField(R.string.localizable.validation_error_empty_email()))
-            }
-            return
-        }
-        
-        if validationManager.isValidEmail(email) {
-            // TODO: send to server
-            DispatchQueue.main.async {
-                self.view?.showOkAlert(
-                    title: R.string.localizable.validation_success_email_sent_title(),
-                    message: R.string.localizable.validation_success_email_sent_message()
-                )
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.view?.showError(error: .emailField(R.string.localizable.validation_error_incorrect_email()))
+        interactor.recoveryPassword(email: email) { [weak self] flag, message in
+            if flag {
+                DispatchQueue.main.async {
+                    self?.view?.showOkAlert()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.view?.showError(error: .emailField(message))
+                }
             }
         }
     }
