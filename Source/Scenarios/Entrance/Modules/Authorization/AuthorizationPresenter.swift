@@ -22,15 +22,15 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
     // MARK: ViewOutput
     
     func enter(email: String, password: String) {
-        interactor.enter(email: email, password: password) { result in
+        interactor.enter(email: email, password: password) { [weak self] result in
             switch result {
             case .emailTextField(let message):
                 DispatchQueue.main.async {
-                    self.view?.showError(.emailTextField(message))
+                    self?.view?.showError(.emailTextField(message))
                 }
             case .passwordTextField(let message):
                 DispatchQueue.main.async {
-                    self.view?.showError(.passwordTextField(message))
+                    self?.view?.showError(.passwordTextField(message))
                 }
             case .success:
                 // TODO: Routing
