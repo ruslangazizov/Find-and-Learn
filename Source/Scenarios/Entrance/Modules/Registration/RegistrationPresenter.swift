@@ -8,7 +8,7 @@
 import Foundation
 
 final class RegistrationPresenter: RegistrationViewOutput {
-    // MARK: - Dependecies
+    // MARK: - Dependencies
     
     weak var view: RegistrationViewInput?
 }
