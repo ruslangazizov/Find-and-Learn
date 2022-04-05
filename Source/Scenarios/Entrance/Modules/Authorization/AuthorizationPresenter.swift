@@ -38,4 +38,13 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
             }
         }
     }
+    
+    func enterAsGuest() {
+    }
+    
+    func resetPassword() {
+    }
+    
+    func registration() {
+    }
 }

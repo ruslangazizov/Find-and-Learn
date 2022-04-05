@@ -184,6 +184,24 @@ final class AuthorizationViewController: UIViewController {
         }
     }
     
+    @objc private func enterAsGuestButtonTapped(_ sender: UIButton?) {
+        DispatchQueue.global(qos: .utility).async {
+            self.presenter.enterAsGuest()
+        }
+    }
+    
+    @objc private func registrationButtonTapped(_ sender: UIButton?) {
+        DispatchQueue.global(qos: .utility).async {
+            self.presenter.registration()
+        }
+    }
+    
+    @objc private func resetPasswordButtonTapped(_ sender: UIButton?) {
+        DispatchQueue.global(qos: .utility).async {
+            self.presenter.resetPassword()
+        }
+    }
+    
     private func addKeyboardObservers() {
         NotificationCenter.default.addObserver(
             self,
