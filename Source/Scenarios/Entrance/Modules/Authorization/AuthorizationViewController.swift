@@ -28,13 +28,11 @@ final class AuthorizationViewController: UIViewController {
     }()
     
     private lazy var resetPasswordButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(
-            R.string.localizable.authorization_screen_reset_password(),
-            for: .normal
+        let button = CommonButton(
+            text: R.string.localizable.authorization_screen_reset_password(),
+            layerColor: nil
         )
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
+        button.setFontSize(.textFontSize)
         return button
     }()
     
@@ -46,12 +44,21 @@ final class AuthorizationViewController: UIViewController {
         return button
     }()
     
+    private lazy var enterAsGuestButton: UIButton = {
+        let button = CommonButton(
+            text: R.string.localizable.authorization_screen_enter_as_guest(),
+            layerColor: nil
+        )
+        button.setFontSize(.textFontSize)
+        return button
+    }()
+    
     private lazy var registrationButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.authorization_screen_registration(),
             layerColor: UIColor.blue.cgColor
         )
-        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
+        button.setFontSize(.textFontSize)
         return button
     }()
     
@@ -64,9 +71,9 @@ final class AuthorizationViewController: UIViewController {
     
     // MARK: Dependencies
     
-    private var presenter: AuthorizationViewOutput
+    private let presenter: AuthorizationViewOutput
     
-    // MARK: Init
+    // MARK: Init & deinit
     
     init(presenter: AuthorizationViewOutput) {
         self.presenter = presenter
@@ -108,6 +115,7 @@ final class AuthorizationViewController: UIViewController {
         view.addSubview(resetPasswordButton)
         view.addSubview(enterButton)
         view.addSubview(registrationButton)
+        view.addSubview(enterAsGuestButton)
     }
     
     private func setupUI() {
@@ -131,9 +139,13 @@ final class AuthorizationViewController: UIViewController {
             make.leading.trailing.equalTo(textFieldsStackView)
             make.top.equalTo(resetPasswordButton.snp.bottom).offset(.textFieldsSpacing * .multiplierForEnterButton)
         }
+        enterAsGuestButton.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(registrationButton)
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+        }
         registrationButton.snp.makeConstraints { make in
             make.leading.trailing.equalTo(enterButton)
-            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+            make.bottom.equalTo(enterAsGuestButton).inset(Constants.bottomInset)
         }
     }
     
@@ -221,7 +233,7 @@ extension AuthorizationViewController: UITextFieldDelegate {
 private extension AuthorizationViewController {
     enum Constants {
         static let sidesInsets = 30
-        static let bottomInset = 50
+        static let bottomInset = 30
     }
 }
 
@@ -230,4 +242,6 @@ private extension CGFloat {
     
     static let multiplierForStackView = 0.35
     static let multiplierForEnterButton = 1.5
+    
+    static let textFontSize: CGFloat = 14
 }

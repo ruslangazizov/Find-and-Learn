@@ -165,16 +165,24 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 15 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
     struct localizable {
+      /// Value: E-Mail
+      static let authorization_screen_email_placeholder = Rswift.StringResource(key: "authorization_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: E-Mail
       static let password_recovery_screen_email_placeholder = Rswift.StringResource(key: "password_recovery_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: E-Mail
       static let registration_screen_email_placeholder = Rswift.StringResource(key: "registration_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Введите слово
       static let dictionary_screen_search_bar_placeholder = Rswift.StringResource(key: "dictionary_screen_search_bar_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Войти
+      static let authorization_screen_enter = Rswift.StringResource(key: "authorization_screen_enter", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Войти как гость
+      static let authorization_screen_enter_as_guest = Rswift.StringResource(key: "authorization_screen_enter_as_guest", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Восстановить
       static let password_recovery_screen_recovery_button = Rswift.StringResource(key: "password_recovery_screen_recovery_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Восстановить пароль
+      static let authorization_screen_reset_password = Rswift.StringResource(key: "authorization_screen_reset_password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Есть аккаунт? Войти
       static let password_recovery_screen_enter_button = Rswift.StringResource(key: "password_recovery_screen_enter_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Есть аккаунт? Войти
@@ -183,8 +191,12 @@ struct R: Rswift.Validatable {
       static let registration_screen_registration = Rswift.StringResource(key: "registration_screen_registration", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Неверный формат E-Mail
       static let validation_error_incorrect_email = Rswift.StringResource(key: "validation_error_incorrect_email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Нет аккаунта? Зарегистрироваться
+      static let authorization_screen_registration = Rswift.StringResource(key: "authorization_screen_registration", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Никнейм
       static let registration_screen_user_name_placeholder = Rswift.StringResource(key: "registration_screen_user_name_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Пароль
+      static let authorization_screen_password_placeholder = Rswift.StringResource(key: "authorization_screen_password_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Пароль
       static let registration_screen_password_placeholder = Rswift.StringResource(key: "registration_screen_password_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Письмо с восстановлением пароля отправлено
@@ -197,6 +209,19 @@ struct R: Rswift.Validatable {
       static let validation_error_empty_email = Rswift.StringResource(key: "validation_error_empty_email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Словарь
       static let dictionary_screen_title = Rswift.StringResource(key: "dictionary_screen_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: E-Mail
+      static func authorization_screen_email_placeholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authorization_screen_email_placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authorization_screen_email_placeholder"
+        }
+
+        return NSLocalizedString("authorization_screen_email_placeholder", bundle: bundle, comment: "")
+      }
 
       /// Value: E-Mail
       static func password_recovery_screen_email_placeholder(preferredLanguages: [String]? = nil) -> String {
@@ -237,6 +262,32 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("dictionary_screen_search_bar_placeholder", bundle: bundle, comment: "")
       }
 
+      /// Value: Войти
+      static func authorization_screen_enter(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authorization_screen_enter", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authorization_screen_enter"
+        }
+
+        return NSLocalizedString("authorization_screen_enter", bundle: bundle, comment: "")
+      }
+
+      /// Value: Войти как гость
+      static func authorization_screen_enter_as_guest(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authorization_screen_enter_as_guest", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authorization_screen_enter_as_guest"
+        }
+
+        return NSLocalizedString("authorization_screen_enter_as_guest", bundle: bundle, comment: "")
+      }
+
       /// Value: Восстановить
       static func password_recovery_screen_recovery_button(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -248,6 +299,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("password_recovery_screen_recovery_button", bundle: bundle, comment: "")
+      }
+
+      /// Value: Восстановить пароль
+      static func authorization_screen_reset_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authorization_screen_reset_password", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authorization_screen_reset_password"
+        }
+
+        return NSLocalizedString("authorization_screen_reset_password", bundle: bundle, comment: "")
       }
 
       /// Value: Есть аккаунт? Войти
@@ -302,6 +366,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("validation_error_incorrect_email", bundle: bundle, comment: "")
       }
 
+      /// Value: Нет аккаунта? Зарегистрироваться
+      static func authorization_screen_registration(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authorization_screen_registration", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authorization_screen_registration"
+        }
+
+        return NSLocalizedString("authorization_screen_registration", bundle: bundle, comment: "")
+      }
+
       /// Value: Никнейм
       static func registration_screen_user_name_placeholder(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -313,6 +390,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("registration_screen_user_name_placeholder", bundle: bundle, comment: "")
+      }
+
+      /// Value: Пароль
+      static func authorization_screen_password_placeholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authorization_screen_password_placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authorization_screen_password_placeholder"
+        }
+
+        return NSLocalizedString("authorization_screen_password_placeholder", bundle: bundle, comment: "")
       }
 
       /// Value: Пароль
