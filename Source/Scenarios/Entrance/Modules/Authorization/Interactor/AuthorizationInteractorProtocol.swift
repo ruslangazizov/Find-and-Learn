@@ -8,4 +8,5 @@
 import Foundation
 
 protocol AuthorizationInteractorProtocol: AnyObject {
+    func enter(email: String, password: String, _ result: (AuthorizationResultState) -> Void)
 }

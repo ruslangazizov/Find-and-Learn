@@ -33,6 +33,7 @@
 
 // Ошибки валидации
 "validation_error_incorrect_email" = "Неверный формат E-Mail";
+"validation_error_incorrect_password" = "Неверный формат пароля";
 "validation_error_empty_email" = "Пустой E-Mail";
 
 // Успешная валидация

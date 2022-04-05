@@ -15,7 +15,27 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
     
     // MARK: Init
     
-    init (interactor: AuthorizationInteractorProtocol) {
+    init(interactor: AuthorizationInteractorProtocol) {
         self.interactor = interactor
+    }
+    
+    // MARK: ViewOutput
+    
+    func enter(email: String, password: String) {
+        interactor.enter(email: email, password: password) { result in
+            switch result {
+            case .emailTextField(let message):
+                DispatchQueue.main.async {
+                    self.view?.showError(.emailTextField(message))
+                }
+            case .passwordTextField(let message):
+                DispatchQueue.main.async {
+                    self.view?.showError(.passwordTextField(message))
+                }
+            case .success:
+                // TODO: Routing
+                print("OK")
+            }
+        }
     }
 }

@@ -8,4 +8,5 @@
 import Foundation
 
 protocol AuthorizationViewOutput: AnyObject {
+    func enter(email: String, password: String)
 }

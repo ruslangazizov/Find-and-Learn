@@ -31,6 +31,8 @@
 		44E59E7F27C7A7B30061C14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E7E27C7A7B30061C14D /* Assets.xcassets */; };
 		44E59E8227C7A7B30061C14D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */; };
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
+		D2037FB327FCA00F0036E0A5 /* AuthorizationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB227FCA00F0036E0A5 /* AuthorizationErrors.swift */; };
+		D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */; };
 		D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */; };
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
 		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
@@ -90,6 +92,8 @@
 		44E59E8127C7A7B30061C14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44E59E8327C7A7B30061C14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.release.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.release.xcconfig"; sourceTree = "<group>"; };
+		D2037FB227FCA00F0036E0A5 /* AuthorizationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationErrors.swift; sourceTree = "<group>"; };
+		D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationResultState.swift; sourceTree = "<group>"; };
 		D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
@@ -422,6 +426,7 @@
 			children = (
 				D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */,
 				D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */,
+				D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */,
 				D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */,
 				D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */,
+				D2037FB227FCA00F0036E0A5 /* AuthorizationErrors.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 				D2BC64B727FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
+				D2037FB327FCA00F0036E0A5 /* AuthorizationErrors.swift in Sources */,
 				D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */,
@@ -683,6 +690,7 @@
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				D21E9DAA27F9FF93005513B7 /* ValidationManagerProtocol.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
+				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
 				447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */,
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,

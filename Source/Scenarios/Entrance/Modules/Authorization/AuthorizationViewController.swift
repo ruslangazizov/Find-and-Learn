@@ -19,12 +19,24 @@ final class AuthorizationViewController: UIViewController {
         return textField
     }()
     
+    private lazy var emailErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
+    }()
+    
     private lazy var passwordTextField: UITextField = {
         let textField = PasswordTextField(
             placeholder: R.string.localizable.authorization_screen_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
         return textField
+    }()
+    
+    private lazy var passwordErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
     }()
     
     private lazy var resetPasswordButton: UIButton = {
@@ -106,12 +118,16 @@ final class AuthorizationViewController: UIViewController {
         passwordTextField.delegate = self
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        enterButton.addTarget(self, action: #selector(enterButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func addSubviews() {
         view.addSubview(textFieldsStackView)
         textFieldsStackView.addArrangedSubview(emailTextField)
+        view.addSubview(emailErrorLabel)
         textFieldsStackView.addArrangedSubview(passwordTextField)
+        view.addSubview(passwordErrorLabel)
         view.addSubview(resetPasswordButton)
         view.addSubview(enterButton)
         view.addSubview(registrationButton)
@@ -127,6 +143,14 @@ final class AuthorizationViewController: UIViewController {
         textFieldsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.top.equalToSuperview().inset(view.frame.height * .multiplierForStackView)
+        }
+        emailErrorLabel.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).offset(Constants.topOffset)
+            make.leading.equalTo(emailTextField)
+        }
+        passwordErrorLabel.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(Constants.topOffset)
+            make.leading.equalTo(passwordTextField)
         }
     }
     
@@ -149,6 +173,17 @@ final class AuthorizationViewController: UIViewController {
         }
     }
     
+    @objc private func enterButtonTapped(_ sender: UIButton?) {
+        hideErrors()
+        
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        DispatchQueue.global(qos: .utility).async {
+            self.presenter.enter(email: email, password: password)
+        }
+    }
+    
     private func addKeyboardObservers() {
         NotificationCenter.default.addObserver(
             self,
@@ -164,11 +199,18 @@ final class AuthorizationViewController: UIViewController {
         )
     }
     
+    private func hideErrors() {
+        emailErrorLabel.alpha = 0
+        passwordErrorLabel.alpha = 0
+    }
+    
     @objc private func hideKeyboard() {
         view.endEditing(true)
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
+        hideErrors()
+        
         guard let keyboardFrame = notification.keyboardFrame else { return }
         let height = keyboardFrame.height
     
@@ -184,7 +226,7 @@ final class AuthorizationViewController: UIViewController {
                 make.top.equalToSuperview().inset(topInset)
             }
             
-            let enterButtonInset = .textFieldsSpacing * .multiplierForEnterButton
+            let enterButtonInset = CGFloat.textFieldsSpacing
             enterButton.snp.updateConstraints { make in
                 make.top.equalTo(resetPasswordButton.snp.bottom).inset(enterButtonInset)
             }
@@ -212,6 +254,16 @@ final class AuthorizationViewController: UIViewController {
 // MARK: - ViewInput
 
 extension AuthorizationViewController: AuthorizationViewInput {
+    func showError(_ error: AuthorizationErrors) {
+        switch error {
+        case .emailTextField(let message):
+            emailErrorLabel.text = message
+            emailErrorLabel.alpha = 1
+        case .passwordTextField(let message):
+            passwordErrorLabel.text = message
+            passwordErrorLabel.alpha = 1
+        }
+    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -222,6 +274,7 @@ extension AuthorizationViewController: UITextFieldDelegate {
         case emailTextField:
             passwordTextField.becomeFirstResponder()
         default:
+            enterButtonTapped(nil)
             textField.resignFirstResponder()
         }
         return true
@@ -234,11 +287,13 @@ private extension AuthorizationViewController {
     enum Constants {
         static let sidesInsets = 30
         static let bottomInset = 30
+        
+        static let topOffset = 5
     }
 }
 
 private extension CGFloat {
-    static let textFieldsSpacing: CGFloat = 20
+    static let textFieldsSpacing: CGFloat = 30
     
     static let multiplierForStackView = 0.35
     static let multiplierForEnterButton = 1.5
