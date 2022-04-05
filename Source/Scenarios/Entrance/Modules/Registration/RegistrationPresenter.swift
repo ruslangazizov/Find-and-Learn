@@ -11,4 +11,11 @@ final class RegistrationPresenter: RegistrationViewOutput {
     // MARK: - Dependencies
     
     weak var view: RegistrationViewInput?
+    private let interactor: RegistrationInteractorProtocol
+    
+    // MARK: Init
+    
+    init(interactor: RegistrationInteractorProtocol) {
+        self.interactor = interactor
+    }
 }

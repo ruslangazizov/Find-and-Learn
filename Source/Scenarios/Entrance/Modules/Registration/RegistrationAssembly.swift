@@ -10,7 +10,9 @@ import UIKit
 
 final class RegistrationAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let presenter = RegistrationPresenter()
+        let interactor = RegistrationInteractor(validationManager: ValidationManager())
+        
+        let presenter = RegistrationPresenter(interactor: interactor)
         
         let viewController = RegistrationViewController(presenter: presenter)
         presenter.view = viewController
