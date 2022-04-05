@@ -14,7 +14,7 @@ final class ErrorLabel: UILabel {
         super.init(frame: .zero)
         numberOfLines = 0
         textColor = .red
-        font = font.withSize(.fontSize)
+        setFontSize(.fontSize)
     }
     
     required init?(coder: NSCoder) {
