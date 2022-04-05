@@ -120,6 +120,9 @@ final class AuthorizationViewController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         enterButton.addTarget(self, action: #selector(enterButtonTapped(_:)), for: .touchUpInside)
+        resetPasswordButton.addTarget(self, action: #selector(resetPasswordButtonTapped(_:)), for: .touchUpInside)
+        enterAsGuestButton.addTarget(self, action: #selector(enterAsGuestButtonTapped(_:)), for: .touchUpInside)
+        registrationButton.addTarget(self, action: #selector(registrationButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func addSubviews() {
