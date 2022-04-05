@@ -8,4 +8,13 @@
 import Foundation
 
 final class AuthorizationInteractor: AuthorizationInteractorProtocol {
+    // MARK: Dependencies
+    
+    private let validationManager: ValidationManagerProtocol
+    
+    // MARK: Init
+    
+    init(validationManager: ValidationManagerProtocol) {
+        self.validationManager = validationManager
+    }
 }
