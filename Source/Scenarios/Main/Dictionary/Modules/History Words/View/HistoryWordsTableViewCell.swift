@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HistoryWordsTableViewCell: UITableViewCell {
+final class HistoryWordsTableViewCell: UITableViewCell {
     // MARK: UI
     
     private lazy var wordLabel: UILabel = {
