@@ -84,8 +84,8 @@ private extension CGFloat {
 
 private extension PasswordTextField {
     enum Constants {
-        static let padding = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 50)
+        static let padding = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 40)
         
-        static let imagePadding = UIEdgeInsets(top: 4, left: 2, bottom: 0, right: 2)
+        static let imagePadding = UIEdgeInsets(top: 6, left: 4, bottom: 2, right: 4)
     }
 }
