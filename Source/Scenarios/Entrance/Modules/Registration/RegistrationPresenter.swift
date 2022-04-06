@@ -50,4 +50,7 @@ final class RegistrationPresenter: RegistrationViewOutput {
                 }
         }
     }
+    
+    func enter() {
+    }
 }

@@ -135,6 +135,7 @@ final class RegistrationViewController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         registrationButton.addTarget(self, action: #selector(registrationButtonTapped(_:)), for: .touchUpInside)
+        enterButton.addTarget(self, action: #selector(enterButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func addSubviews() {
@@ -198,6 +199,10 @@ final class RegistrationViewController: UIViewController {
                 confirmPassword: confirmPassword
             )
         }
+    }
+    
+    @objc private func enterButtonTapped(_ sender: UIButton? = nil) {
+        presenter.enter()
     }
     
     private func hideErrors() {
