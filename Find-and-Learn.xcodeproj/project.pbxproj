@@ -54,6 +54,7 @@
 		D28814C827FD97AE007332A8 /* EntranceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C727FD97AE007332A8 /* EntranceAssembly.swift */; };
 		D28814CB27FD989C007332A8 /* AuthorizationRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CA27FD989C007332A8 /* AuthorizationRouterProtocol.swift */; };
 		D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CC27FD98BA007332A8 /* AuthorizationRouter.swift */; };
+		D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */; };
 		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
@@ -125,6 +126,7 @@
 		D28814C727FD97AE007332A8 /* EntranceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceAssembly.swift; sourceTree = "<group>"; };
 		D28814CA27FD989C007332A8 /* AuthorizationRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouterProtocol.swift; sourceTree = "<group>"; };
 		D28814CC27FD98BA007332A8 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
+		D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */,
 				D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */,
 				D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */,
+				D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
+				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
 				D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */,
 				D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */,
