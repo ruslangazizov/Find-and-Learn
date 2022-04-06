@@ -176,7 +176,7 @@ final class AuthorizationViewController: UIViewController {
         }
     }
     
-    @objc private func enterButtonTapped(_ sender: UIButton?) {
+    @objc private func enterButtonTapped(_ sender: UIButton? = nil) {
         hideErrors()
         
         let email = emailTextField.text ?? ""
@@ -187,19 +187,19 @@ final class AuthorizationViewController: UIViewController {
         }
     }
     
-    @objc private func enterAsGuestButtonTapped(_ sender: UIButton?) {
+    @objc private func enterAsGuestButtonTapped(_ sender: UIButton? = nil) {
         DispatchQueue.global(qos: .utility).async {
             self.presenter.enterAsGuest()
         }
     }
     
-    @objc private func registrationButtonTapped(_ sender: UIButton?) {
+    @objc private func registrationButtonTapped(_ sender: UIButton? = nil) {
         DispatchQueue.global(qos: .utility).async {
             self.presenter.registration()
         }
     }
     
-    @objc private func resetPasswordButtonTapped(_ sender: UIButton?) {
+    @objc private func resetPasswordButtonTapped(_ sender: UIButton? = nil) {
         DispatchQueue.global(qos: .utility).async {
             self.presenter.resetPassword()
         }
@@ -295,7 +295,7 @@ extension AuthorizationViewController: UITextFieldDelegate {
         case emailTextField:
             passwordTextField.becomeFirstResponder()
         default:
-            enterButtonTapped(nil)
+            enterButtonTapped()
             textField.resignFirstResponder()
         }
         return true
