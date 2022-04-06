@@ -8,4 +8,5 @@
 import Foundation
 
 protocol RegistrationViewOutput: AnyObject {
+    func registration(email: String, userName: String, password: String, confirmPassword: String)
 }

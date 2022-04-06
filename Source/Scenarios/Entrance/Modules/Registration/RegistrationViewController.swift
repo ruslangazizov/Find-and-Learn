@@ -42,7 +42,7 @@ final class RegistrationViewController: UIViewController {
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let textField = CommonTextField(
+        let textField = PasswordTextField(
             placeholder: R.string.localizable.registration_screen_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
@@ -57,7 +57,7 @@ final class RegistrationViewController: UIViewController {
     }()
     
     private lazy var confirmPasswordTextField: UITextField = {
-        let textField = CommonTextField(
+        let textField = PasswordTextField(
             placeholder: R.string.localizable.registration_screen_confirm_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
@@ -133,6 +133,8 @@ final class RegistrationViewController: UIViewController {
         confirmPasswordTextField.delegate = self
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        registrationButton.addTarget(self, action: #selector(registrationButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func addSubviews() {
@@ -181,6 +183,23 @@ final class RegistrationViewController: UIViewController {
         }
     }
     
+    @objc private func registrationButtonTapped(_ sender: UIButton? = nil) {
+        hideErrors()
+        let email = emailTextField.text ?? ""
+        let userName = userNameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let confirmPassword = confirmPasswordTextField.text ?? ""
+        
+        DispatchQueue.global(qos: .utility).async {
+            self.presenter.registration(
+                email: email,
+                userName: userName,
+                password: password,
+                confirmPassword: confirmPassword
+            )
+        }
+    }
+    
     private func hideErrors() {
         emailErrorLabel.alpha = 0
         userNameErrorLabel.alpha = 0
@@ -197,6 +216,22 @@ final class RegistrationViewController: UIViewController {
 // MARK: - ViewInput
 
 extension RegistrationViewController: RegistrationViewInput {
+    func showError(_ error: RegistrationErrors) {
+        switch error {
+        case .emailTextField(let message):
+            emailErrorLabel.text = message
+            emailErrorLabel.alpha = 1
+        case .userNameTextField(let message):
+            userNameErrorLabel.text = message
+            userNameErrorLabel.alpha = 1
+        case .passwordTextField(let message):
+            passwordErrorLabel.text = message
+            passwordErrorLabel.alpha = 1
+        case .confirmPasswordTextField(let message):
+            confirmPasswordErrorLabel.text = message
+            confirmPasswordErrorLabel.alpha = 1
+        }
+    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -211,6 +246,7 @@ extension RegistrationViewController: UITextFieldDelegate {
         case passwordTextField:
             confirmPasswordTextField.becomeFirstResponder()
         default:
+            registrationButtonTapped()
             textField.resignFirstResponder()
         }
         return true

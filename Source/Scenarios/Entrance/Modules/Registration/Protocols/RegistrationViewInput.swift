@@ -8,4 +8,5 @@
 import Foundation
 
 protocol RegistrationViewInput: AnyObject {
+    func showError(_ error: RegistrationErrors)
 }
