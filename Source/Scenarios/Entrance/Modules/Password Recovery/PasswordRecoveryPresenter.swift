@@ -12,11 +12,13 @@ final class PasswordRecoveryPresenter: PasswordRecoveryViewOutput {
     
     weak var view: PasswordRecoveryViewInput?
     private let interactor: PasswordRecoveryInteractorProtocol
+    private let router: PasswordRecoveryRouterProtocol
     
     // MARK: Init
     
-    init(interactor: PasswordRecoveryInteractorProtocol) {
+    init(interactor: PasswordRecoveryInteractorProtocol, router: PasswordRecoveryRouterProtocol) {
         self.interactor = interactor
+        self.router = router
     }
     
     // MARK: PasswordRecoveryViewOutput
@@ -33,5 +35,9 @@ final class PasswordRecoveryPresenter: PasswordRecoveryViewOutput {
                 }
             }
         }
+    }
+    
+    func enter() {
+        router.showAuthorization()
     }
 }

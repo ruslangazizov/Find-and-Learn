@@ -65,6 +65,7 @@ final class PasswordRecoveryViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        print("dead")
     }
     
     // MARK: Lifecycle
@@ -84,6 +85,7 @@ final class PasswordRecoveryViewController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         recoveryButton.addTarget(self, action: #selector(recoveryButtonTapped(_:)), for: .touchUpInside)
+        enterButton.addTarget(self, action: #selector(enterButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func setupLayout() {
@@ -108,12 +110,16 @@ final class PasswordRecoveryViewController: UIViewController {
         }
     }
     
-    @objc private func recoveryButtonTapped(_ sender: UIButton?) {
+    @objc private func recoveryButtonTapped(_ sender: UIButton? = nil) {
         hideKeyboard()
         let text = emailTextField.text ?? ""
         DispatchQueue.global(qos: .utility).async { 
             self.presenter.recoveryPassword(email: text)
         }
+    }
+    
+    @objc private func enterButtonTapped(_ sender: UIButton? = nil) {
+        presenter.enter()
     }
     
     private func addKeyboardObservers() {
@@ -193,7 +199,7 @@ extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
 
 extension PasswordRecoveryViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        recoveryButtonTapped(nil)
+        recoveryButtonTapped()
         return true
     }
 }
