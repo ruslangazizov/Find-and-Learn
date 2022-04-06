@@ -20,6 +20,12 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
+    private lazy var emailErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
+    }()
+    
     private lazy var userNameTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_user_name_placeholder(),
@@ -27,6 +33,12 @@ final class RegistrationViewController: UIViewController {
         )
         textField.returnKeyType = .next
         return textField
+    }()
+    
+    private lazy var userNameErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
     }()
     
     private lazy var passwordTextField: UITextField = {
@@ -38,12 +50,24 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
+    private lazy var passwordErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
+    }()
+    
     private lazy var confirmPasswordTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_confirm_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
         return textField
+    }()
+    
+    private lazy var confirmPasswordErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
     }()
     
     private lazy var registrationButton: UIButton = {
@@ -78,7 +102,7 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: Dependencies
     
-    private var presenter: RegistrationViewOutput
+    private let presenter: RegistrationViewOutput
     
     // MARK: Init && deinit
     
@@ -107,6 +131,7 @@ final class RegistrationViewController: UIViewController {
         userNameTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
     
@@ -114,9 +139,13 @@ final class RegistrationViewController: UIViewController {
         view.addSubview(textFieldsStackView)
         view.addSubview(buttonsStackView)
         textFieldsStackView.addArrangedSubview(emailTextField)
+        view.addSubview(emailErrorLabel)
         textFieldsStackView.addArrangedSubview(userNameTextField)
+        view.addSubview(userNameErrorLabel)
         textFieldsStackView.addArrangedSubview(passwordTextField)
+        view.addSubview(passwordErrorLabel)
         textFieldsStackView.addArrangedSubview(confirmPasswordTextField)
+        view.addSubview(confirmPasswordErrorLabel)
         buttonsStackView.addArrangedSubview(registrationButton)
         buttonsStackView.addArrangedSubview(enterButton)
     }
@@ -130,15 +159,37 @@ final class RegistrationViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForTextFieldStackViews)
         }
+        emailErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(emailTextField)
+            make.top.equalTo(emailTextField.snp.bottom).offset(Constants.topOffset)
+        }
+        userNameErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(userNameTextField)
+            make.top.equalTo(userNameTextField.snp.bottom).offset(Constants.topOffset)
+        }
+        passwordErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(passwordTextField)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(Constants.topOffset)
+        }
+        confirmPasswordErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(confirmPasswordTextField)
+            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(Constants.topOffset)
+        }
         buttonsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForButtonsStackViews)
         }
     }
     
-    // Objc
+    private func hideErrors() {
+        emailErrorLabel.alpha = 0
+        userNameErrorLabel.alpha = 0
+        passwordErrorLabel.alpha = 0
+        confirmPasswordErrorLabel.alpha = 0
+    }
     
     @objc private func hideKeyboard() {
+        hideErrors()
         view.endEditing(true)
     }
 }
@@ -174,11 +225,13 @@ private extension RegistrationViewController {
         static let multiplierForButtonsStackViews = 1.75
         
         static let sidesInsets = 30
+        
+        static let topOffset = 5
     }
 }
 
 private extension CGFloat {
-    static let textFieldsSpacing: CGFloat = 20
+    static let textFieldsSpacing: CGFloat = 30
     
     static let buttonsSpacing: CGFloat = 20
 }
