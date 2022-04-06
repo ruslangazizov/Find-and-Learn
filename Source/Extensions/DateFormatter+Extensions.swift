@@ -8,7 +8,7 @@
 import Foundation
 
 extension DateFormatter {
-    static let EEEEMMMd: DateFormatter = {
+    static let weekDayMonthDayFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM d"
         return formatter

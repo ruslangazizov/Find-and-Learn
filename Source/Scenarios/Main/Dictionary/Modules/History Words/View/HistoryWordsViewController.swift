@@ -23,13 +23,13 @@ final class HistoryWordsViewController: UIViewController {
     
     // MARK: Dependencies
     
-    private let output: HistoryWordsViewOutput
+    private let presenter: HistoryWordsViewOutput
     private var words: [HistoryWordsSection] = []
     
     // MARK: Initializers
     
-    init(output: HistoryWordsViewOutput) {
-        self.output = output
+    init(presenter: HistoryWordsViewOutput) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,7 +46,7 @@ final class HistoryWordsViewController: UIViewController {
         configureSubviews()
         configureLayout()
         
-        output.viewDidLoad()
+        presenter.viewDidLoad()
     }
     
     // MARK: UI configuration
@@ -79,7 +79,7 @@ extension HistoryWordsViewController: HistoryWordsViewInput {
 
 extension HistoryWordsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        output.didSelectWord(words[indexPath.section].words[indexPath.row])
+        presenter.didSelectWord(words[indexPath.section].words[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

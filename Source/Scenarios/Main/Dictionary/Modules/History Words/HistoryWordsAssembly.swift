@@ -13,7 +13,7 @@ final class HistoryWordsAssembly: AssemblyProtocol {
         let router = HistoryWordsRouter()
         let interactor = HistoryWordsInteractor(dataManager: DataManagerMock())
         let presenter = HistoryWordsPresenter(interactor: interactor, router: router)
-        let view = HistoryWordsViewController(output: presenter)
+        let view = HistoryWordsViewController(presenter: presenter)
         
         presenter.view = view
         router.view = view

@@ -32,10 +32,10 @@ class HistoryWordsTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    // MARK: Life cycle
+    // MARK: Initializers
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(labelsStackView)
         labelsStackView.addArrangedSubview(wordLabel)
@@ -49,11 +49,8 @@ class HistoryWordsTableViewCell: UITableViewCell {
         translationsLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        wordLabel.text = nil
-        translationsLabel.text = nil
-        searchesCountLabel.text = nil
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: Configuration
