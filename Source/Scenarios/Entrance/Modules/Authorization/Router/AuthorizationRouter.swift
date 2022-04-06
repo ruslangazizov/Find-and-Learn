@@ -26,7 +26,6 @@ final class AuthorizationRouter: AuthorizationRouterProtocol {
     }
     
     func finish() {
-        let viewController = DictionaryAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController, with: .fromBottom)
+        print("Push for main")
     }
 }

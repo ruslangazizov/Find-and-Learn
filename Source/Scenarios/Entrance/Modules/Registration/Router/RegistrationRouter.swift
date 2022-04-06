@@ -21,7 +21,6 @@ final class RegistrationRouter: RegistrationRouterProtocol {
     }
     
     func finish() {
-        let viewController = DictionaryAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController, with: .fromTop)
+        print("Push for main")
     }
 }
