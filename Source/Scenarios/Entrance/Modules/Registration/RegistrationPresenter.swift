@@ -12,11 +12,13 @@ final class RegistrationPresenter: RegistrationViewOutput {
     
     weak var view: RegistrationViewInput?
     private let interactor: RegistrationInteractorProtocol
+    private let router: RegistrationRouterProtocol
     
     // MARK: Init
     
-    init(interactor: RegistrationInteractorProtocol) {
+    init(interactor: RegistrationInteractorProtocol, router: RegistrationRouterProtocol) {
         self.interactor = interactor
+        self.router = router
     }
  
     // MARK: ViewOutput
@@ -52,5 +54,14 @@ final class RegistrationPresenter: RegistrationViewOutput {
     }
     
     func enter() {
+        DispatchQueue.main.async {
+            self.router.showAuthorization()
+        }
+    }
+    
+    private func finish() {
+        DispatchQueue.main.async {
+            self.router.finish()
+        }
     }
 }
