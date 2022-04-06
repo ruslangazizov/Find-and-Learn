@@ -12,11 +12,13 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
     
     weak var view: AuthorizationViewInput?
     private let interactor: AuthorizationInteractorProtocol
+    private let router: AuthorizationRouterProtocol
     
     // MARK: Init
     
-    init(interactor: AuthorizationInteractorProtocol) {
+    init(interactor: AuthorizationInteractorProtocol, router: AuthorizationRouterProtocol) {
         self.interactor = interactor
+        self.router = router
     }
     
     // MARK: ViewOutput
@@ -40,11 +42,26 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
     }
     
     func enterAsGuest() {
+        DispatchQueue.main.async {
+            self.router.finish()
+        }
     }
     
     func resetPassword() {
+        DispatchQueue.main.async {
+            self.router.showRecoveryPassword()
+        }
     }
     
     func registration() {
+        DispatchQueue.main.async {
+            self.router.showRegistration()
+        }
+    }
+    
+    private func finish() {
+        DispatchQueue.main.async {
+            self.router.finish()
+        }
     }
 }

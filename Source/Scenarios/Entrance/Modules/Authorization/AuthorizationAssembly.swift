@@ -11,11 +11,14 @@ import UIKit
 final class AuthorizationAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let interactor = AuthorizationInteractor(validationManager: ValidationManager())
+        let router = AuthorizationRouter()
         
-        let presenter = AuthorizationPresenter(interactor: interactor)
+        let presenter = AuthorizationPresenter(interactor: interactor, router: router)
         
         let viewController = AuthorizationViewController(presenter: presenter)
+        viewController.view.backgroundColor = .systemBackground
         presenter.view = viewController
+        router.view = viewController
         
         return viewController
     }

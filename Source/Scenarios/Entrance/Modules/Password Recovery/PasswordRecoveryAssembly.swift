@@ -16,6 +16,7 @@ final class PasswordRecoveryAssembly: AssemblyProtocol {
         let presenter = PasswordRecoveryPresenter(interactor: interactor, router: router)
         
         let viewController = PasswordRecoveryViewController(presenter: presenter)
+        viewController.view.backgroundColor = .systemBackground
         presenter.view = viewController
         router.view = viewController
         
