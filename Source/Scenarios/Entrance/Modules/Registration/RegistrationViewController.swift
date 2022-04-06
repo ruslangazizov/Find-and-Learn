@@ -122,6 +122,12 @@ final class RegistrationViewController: UIViewController {
         configure()
         addSubviews()
         setupUI()
+        addKeyboardObservers()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // MARK: Private
@@ -212,9 +218,38 @@ final class RegistrationViewController: UIViewController {
         confirmPasswordErrorLabel.alpha = 0
     }
     
+    private func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
     @objc private func hideKeyboard() {
         hideErrors()
         view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        hideErrors()
+        
+        guard let keyboardFrame = notification.keyboardFrame else { return }
+        let height = keyboardFrame.height
+        
+        view.layoutIfNeeded()
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        
+        view.layoutIfNeeded()
     }
 }
 
