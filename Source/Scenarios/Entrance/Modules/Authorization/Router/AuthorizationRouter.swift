@@ -17,16 +17,16 @@ final class AuthorizationRouter: AuthorizationRouterProtocol {
     
     func showRegistration() {
         let viewController = RegistrationAssembly.assemble()
-        view?.navigationController?.setViewControllers([viewController], animated: true)
+        view?.navigationController?.setViewController(viewController: viewController, with: .fromRight)
     }
     
     func showRecoveryPassword() {
         let viewController = PasswordRecoveryAssembly.assemble()
-        view?.navigationController?.setViewControllers([viewController], animated: true)
+        view?.navigationController?.setViewController(viewController: viewController, with: .fromLeft)
     }
     
     func finish() {
         let viewController = DictionaryAssembly.assemble()
-        view?.navigationController?.setViewControllers([viewController], animated: true)
+        view?.navigationController?.setViewController(viewController: viewController, with: .fromBottom)
     }
 }

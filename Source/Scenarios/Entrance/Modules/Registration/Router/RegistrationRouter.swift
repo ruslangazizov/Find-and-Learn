@@ -17,11 +17,11 @@ final class RegistrationRouter: RegistrationRouterProtocol {
     
     func showAuthorization() {
         let viewController = AuthorizationAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController)
+        view?.navigationController?.setViewController(viewController: viewController, with: .fromLeft)
     }
     
     func finish() {
         let viewController = DictionaryAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController)
+        view?.navigationController?.setViewController(viewController: viewController, with: .fromTop)
     }
 }

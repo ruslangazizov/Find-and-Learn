@@ -17,6 +17,6 @@ final class PasswordRecoveryRouter: PasswordRecoveryRouterProtocol {
     
     func showAuthorization() {
         let viewController = AuthorizationAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController)
+        view?.navigationController?.setViewController(viewController: viewController, with: .fromRight)
     }
 }
