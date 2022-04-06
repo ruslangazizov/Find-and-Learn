@@ -86,6 +86,6 @@ private extension PasswordTextField {
     enum Constants {
         static let padding = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 40)
         
-        static let imagePadding = UIEdgeInsets(top: 6, left: 4, bottom: 2, right: 4)
+        static let imagePadding = UIEdgeInsets(top: 8, left: 6, bottom: 4, right: 6)
     }
 }
