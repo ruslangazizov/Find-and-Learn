@@ -30,3 +30,6 @@
 // Экран "Словарь"
 "dictionary_screen_title" = "Словарь";
 "dictionary_screen_search_bar_placeholder" = "Введите слово";
+
+// Экран "История"
+"history_words_screen_title" = "История";
