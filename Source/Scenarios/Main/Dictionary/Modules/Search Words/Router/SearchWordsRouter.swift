@@ -12,10 +12,8 @@ final class SearchWordsRouter: SearchWordsRouterProtocol {
     weak var view: UIViewController?
     
     func showFavoriteWords() {
-        // здесь будет просто FavoriteWordsAssembly.assemble()
-        let mockFavoriteWordsViewController = UIViewController()
-        mockFavoriteWordsViewController.view.backgroundColor = .green
-        view?.navigationController?.pushViewController(mockFavoriteWordsViewController, animated: true)
+        let favoriteWordsViewController = FavoriteWordsAssembly.assemble()
+        view?.navigationController?.pushViewController(favoriteWordsViewController, animated: true)
     }
     
     func showHistoryWords() {
