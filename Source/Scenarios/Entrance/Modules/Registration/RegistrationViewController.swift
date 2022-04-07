@@ -194,19 +194,12 @@ final class RegistrationViewController: UIViewController {
     
     @objc private func registrationButtonTapped(_ sender: UIButton? = nil) {
         hideErrors()
-        let email = emailTextField.text ?? ""
-        let userName = userNameTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let confirmPassword = confirmPasswordTextField.text ?? ""
-        
-        DispatchQueue.global(qos: .utility).async {
-            self.presenter.registration(
-                email: email,
-                userName: userName,
-                password: password,
-                confirmPassword: confirmPassword
-            )
-        }
+        presenter.registration(
+            email: emailTextField.text ?? "",
+            userName: userNameTextField.text ?? "",
+            password: passwordTextField.text ?? "",
+            confirmPassword: confirmPasswordTextField.text ?? ""
+        )
     }
     
     @objc private func enterButtonTapped(_ sender: UIButton? = nil) {
