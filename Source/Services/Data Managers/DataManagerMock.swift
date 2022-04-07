@@ -52,4 +52,12 @@ final class DataManagerMock: DataManagerProtocol {
                 searchesCount: 3)
         ])
     }
+    
+    func fetchFavoriteWords(completion: @escaping ([Word]) -> Void) {
+        completion([
+            Word(word: "Слово1", translations: ["Перевод1", "Перевод2", "Перевод7", "Перевод8"]),
+            Word(word: "Слово2", translations: ["Перевод3", "Перевод4"]),
+            Word(word: "Слово3", translations: ["Перевод5", "Перевод6"])
+        ])
+    }
 }

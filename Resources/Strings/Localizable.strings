@@ -33,3 +33,6 @@
 
 // Экран "История"
 "history_words_screen_title" = "История";
+
+// Экран "Избранное"
+"favorite_words_screen_title" = "Избранное";

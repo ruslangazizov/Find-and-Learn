@@ -16,6 +16,11 @@ struct Word {
     }
 }
 
+struct WordModel {
+    let word: String
+    let translations: String
+}
+
 struct HistoryWord {
     let word: String
     let translations: [String]
