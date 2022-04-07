@@ -165,7 +165,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 24 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 26 localization keys.
     struct localizable {
       /// Value: E-Mail
       static let authorization_screen_email_placeholder = Rswift.StringResource(key: "authorization_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -363,6 +363,32 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("registration_screen_registration", bundle: bundle, comment: "")
       }
 
+      /// Value: Избранное
+      static func favorite_words_screen_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("favorite_words_screen_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "favorite_words_screen_title"
+        }
+
+        return NSLocalizedString("favorite_words_screen_title", bundle: bundle, comment: "")
+      }
+
+      /// Value: История
+      static func history_words_screen_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history_words_screen_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history_words_screen_title"
+        }
+
+        return NSLocalizedString("history_words_screen_title", bundle: bundle, comment: "")
+      }
+
       /// Value: Неверный формат E-Mail
       static func validation_error_incorrect_email(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -400,32 +426,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("validation_error_incorrect_password", bundle: bundle, comment: "")
-      }
-
-      /// Value: Избранное
-      static func favorite_words_screen_title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("favorite_words_screen_title", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "favorite_words_screen_title"
-        }
-
-        return NSLocalizedString("favorite_words_screen_title", bundle: bundle, comment: "")
-      }
-
-      /// Value: История
-      static func history_words_screen_title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("history_words_screen_title", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "history_words_screen_title"
-        }
-
-        return NSLocalizedString("history_words_screen_title", bundle: bundle, comment: "")
       }
 
       /// Value: Нет аккаунта? Зарегистрироваться
