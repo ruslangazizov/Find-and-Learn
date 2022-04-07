@@ -32,6 +32,10 @@ final class PasswordTextField: UITextField {
         textContentType = .oneTimeCode
         adjustsFontSizeToFitWidth = true
         minimumFontSize = .minimumFontSize
+        autocorrectionType = .no
+        autocapitalizationType = .none
+        autocorrectionType = .no
+        spellCheckingType = .no
         if let layerColor = layerColor {
             layer.borderWidth = .borderWidth
             layer.borderColor = layerColor

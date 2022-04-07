@@ -81,8 +81,9 @@ final class RegistrationViewController: UIViewController {
     private lazy var enterButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.registration_screen_authorization(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: nil
         )
+        button.setFontSize(14)
         return button
     }()
     
@@ -164,9 +165,10 @@ final class RegistrationViewController: UIViewController {
     }
     
     private func setupStackViews() {
+        let topInset = (view.frame.height - textFieldsStackView.frame.height) / .multiplierForTextFieldStackViews
         textFieldsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForTextFieldStackViews)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(topInset)
         }
         emailErrorLabel.snp.makeConstraints { make in
             make.leading.equalTo(emailTextField)
@@ -186,7 +188,7 @@ final class RegistrationViewController: UIViewController {
         }
         buttonsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForButtonsStackViews)
+            make.bottom.equalToSuperview().inset(20)
         }
     }
     
@@ -244,10 +246,32 @@ final class RegistrationViewController: UIViewController {
         guard let keyboardFrame = notification.keyboardFrame else { return }
         let height = keyboardFrame.height
         
+        let sizeForFreeView = view.frame.height - height
+        let heightForElements = textFieldsStackView.frame.height + buttonsStackView.frame.height + .textFieldsSpacing
+        
+        let topInset = (sizeForFreeView - textFieldsStackView.frame.height) / 2
+        
+        textFieldsStackView.snp.updateConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(0)
+        }
+        
+        buttonsStackView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(height)
+        }
+        
         view.layoutIfNeeded()
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
+        let topInset = (view.frame.height - textFieldsStackView.frame.height) / .multiplierForTextFieldStackViews
+        
+        textFieldsStackView.snp.updateConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(topInset)
+        }
+        
+        buttonsStackView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(20)
+        }
         
         view.layoutIfNeeded()
     }
@@ -297,7 +321,6 @@ extension RegistrationViewController: UITextFieldDelegate {
 
 private extension RegistrationViewController {
     enum Constants {
-        static let multiplierForTextFieldStackViews = 0.75
         static let multiplierForButtonsStackViews = 1.75
         
         static let sidesInsets = 30
@@ -309,5 +332,7 @@ private extension RegistrationViewController {
 private extension CGFloat {
     static let textFieldsSpacing: CGFloat = 30
     
-    static let buttonsSpacing: CGFloat = 20
+    static let buttonsSpacing: CGFloat = 10
+    
+    static let multiplierForTextFieldStackViews: CGFloat = 5
 }
