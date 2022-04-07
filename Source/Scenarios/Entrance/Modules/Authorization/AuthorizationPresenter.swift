@@ -24,19 +24,20 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
     // MARK: ViewOutput
     
     func enter(email: String, password: String) {
-        interactor.enter(email: email, password: password) { [weak self] result in
-            switch result {
-            case .emailTextField(let message):
-                DispatchQueue.main.async {
-                    self?.view?.showError(.emailTextField(message))
+        DispatchQueue.global(qos: .utility).async {
+            self.interactor.enter(email: email, password: password) { [weak self] result in
+                switch result {
+                case .emailTextField(let message):
+                    DispatchQueue.main.async {
+                        self?.view?.showError(.emailTextField(message))
+                    }
+                case .passwordTextField(let message):
+                    DispatchQueue.main.async {
+                        self?.view?.showError(.passwordTextField(message))
+                    }
+                case .success:
+                    self?.finish()
                 }
-            case .passwordTextField(let message):
-                DispatchQueue.main.async {
-                    self?.view?.showError(.passwordTextField(message))
-                }
-            case .success:
-                // TODO: Routing
-                print("OK")
             }
         }
     }

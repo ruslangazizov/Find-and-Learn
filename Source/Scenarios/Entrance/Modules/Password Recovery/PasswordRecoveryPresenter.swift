@@ -24,14 +24,16 @@ final class PasswordRecoveryPresenter: PasswordRecoveryViewOutput {
     // MARK: PasswordRecoveryViewOutput
     
     func recoveryPassword(email: String) {
-        interactor.recoveryPassword(email: email) { [weak self] flag, message in
-            if flag {
-                DispatchQueue.main.async {
-                    self?.view?.showOkAlert()
-                }
-            } else {
-                DispatchQueue.main.async {
-                    self?.view?.showError(error: .emailField(message))
+        DispatchQueue.global(qos: .utility).async {
+            self.interactor.recoveryPassword(email: email) { [weak self] flag, message in
+                if flag {
+                    DispatchQueue.main.async {
+                        self?.view?.showOkAlert()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self?.view?.showError(error: .emailField(message))
+                    }
                 }
             }
         }

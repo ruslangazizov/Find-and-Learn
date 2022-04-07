@@ -178,31 +178,22 @@ final class AuthorizationViewController: UIViewController {
     
     @objc private func enterButtonTapped(_ sender: UIButton? = nil) {
         hideErrors()
-        
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        
-        DispatchQueue.global(qos: .utility).async {
-            self.presenter.enter(email: email, password: password)
-        }
+        presenter.enter(
+            email: emailTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        )
     }
     
     @objc private func enterAsGuestButtonTapped(_ sender: UIButton? = nil) {
-        DispatchQueue.global(qos: .utility).async {
-            self.presenter.enterAsGuest()
-        }
+        presenter.enterAsGuest()
     }
     
     @objc private func registrationButtonTapped(_ sender: UIButton? = nil) {
-        DispatchQueue.global(qos: .utility).async {
-            self.presenter.registration()
-        }
+        presenter.registration()
     }
     
     @objc private func resetPasswordButtonTapped(_ sender: UIButton? = nil) {
-        DispatchQueue.global(qos: .utility).async {
-            self.presenter.resetPassword()
-        }
+        presenter.resetPassword()
     }
     
     private func addKeyboardObservers() {

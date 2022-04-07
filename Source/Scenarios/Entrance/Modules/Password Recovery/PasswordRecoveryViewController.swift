@@ -111,10 +111,7 @@ final class PasswordRecoveryViewController: UIViewController {
     
     @objc private func recoveryButtonTapped(_ sender: UIButton? = nil) {
         hideKeyboard()
-        let text = emailTextField.text ?? ""
-        DispatchQueue.global(qos: .utility).async { 
-            self.presenter.recoveryPassword(email: text)
-        }
+        presenter.recoveryPassword(email: emailTextField.text ?? "")
     }
     
     @objc private func enterButtonTapped(_ sender: UIButton? = nil) {
