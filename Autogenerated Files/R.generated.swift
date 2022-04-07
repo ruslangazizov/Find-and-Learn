@@ -189,6 +189,10 @@ struct R: Rswift.Validatable {
       static let registration_screen_authorization = Rswift.StringResource(key: "registration_screen_authorization", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Зарегистрироваться
       static let registration_screen_registration = Rswift.StringResource(key: "registration_screen_registration", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Избранное
+      static let favorite_words_screen_title = Rswift.StringResource(key: "favorite_words_screen_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: История
+      static let history_words_screen_title = Rswift.StringResource(key: "history_words_screen_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Неверный формат E-Mail
       static let validation_error_incorrect_email = Rswift.StringResource(key: "validation_error_incorrect_email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Неверный формат никнейма
@@ -396,6 +400,32 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("validation_error_incorrect_password", bundle: bundle, comment: "")
+      }
+
+      /// Value: Избранное
+      static func favorite_words_screen_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("favorite_words_screen_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "favorite_words_screen_title"
+        }
+
+        return NSLocalizedString("favorite_words_screen_title", bundle: bundle, comment: "")
+      }
+
+      /// Value: История
+      static func history_words_screen_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("history_words_screen_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "history_words_screen_title"
+        }
+
+        return NSLocalizedString("history_words_screen_title", bundle: bundle, comment: "")
       }
 
       /// Value: Нет аккаунта? Зарегистрироваться

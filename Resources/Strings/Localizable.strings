@@ -31,6 +31,12 @@
 "dictionary_screen_title" = "Словарь";
 "dictionary_screen_search_bar_placeholder" = "Введите слово";
 
+// Экран "История"
+"history_words_screen_title" = "История";
+
+// Экран "Избранное"
+"favorite_words_screen_title" = "Избранное";
+
 // Ошибки валидации
 "validation_error_incorrect_email" = "Неверный формат E-Mail";
 "validation_error_incorrect_password" = "Неверный формат пароля";
