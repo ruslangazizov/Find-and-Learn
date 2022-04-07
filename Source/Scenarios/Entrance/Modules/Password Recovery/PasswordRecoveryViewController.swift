@@ -143,17 +143,18 @@ final class PasswordRecoveryViewController: UIViewController {
         guard let keyboardFrame = notification.keyboardFrame else { return }
         let height = keyboardFrame.height
         
-        buttonsStackView.snp.updateConstraints { make in
-            make.bottom.equalToSuperview().inset(height)
+        let freeSpace = view.frame.height - height
+        let neededSpace = emailTextField.frame.height + buttonsStackView.frame.height + .buttonsSpacing
+        let inset = (freeSpace - neededSpace) / 2
+        
+        emailTextField.snp.updateConstraints { make in
+            make.top.equalToSuperview().inset(inset)
         }
         
-        let yForStackView = height + buttonsStackView.frame.height
-        if yForStackView >= view.frame.height * CGFloat.multiplierForEmailTextField - emailTextField.frame.height {
-            let inset = view.frame.height - yForStackView - emailTextField.frame.height - CGFloat.buttonsSpacing
-            emailTextField.snp.updateConstraints { make in
-                make.top.equalToSuperview().inset(inset)
-            }
+        buttonsStackView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(height + inset)
         }
+        
         view.layoutIfNeeded()
     }
     
