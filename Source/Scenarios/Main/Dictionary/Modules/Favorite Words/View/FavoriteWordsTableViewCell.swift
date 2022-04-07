@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoriteWordsTableViewCell: UITableViewCell {
+final class FavoriteWordsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
     }
