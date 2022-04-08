@@ -8,4 +8,7 @@
 import Foundation
 
 protocol AccountViewInput: AnyObject {
+    func askForDownloadingDictionary()
+    func askForExit()
+    func askForDeletingAccount()
 }

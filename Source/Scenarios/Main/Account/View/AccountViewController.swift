@@ -54,6 +54,7 @@ final class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
         configure()
         setupLayout()
     }
@@ -91,6 +92,14 @@ final class AccountViewController: UIViewController {
 // MARK: - ViewInput
 
 extension AccountViewController: AccountViewInput {
+    func askForDownloadingDictionary() {
+    }
+    
+    func askForExit() {
+    }
+    
+    func askForDeletingAccount() {
+    }
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
@@ -112,6 +121,8 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let setting = settings[indexPath.row]
+        presenter.settingsTapped(with: setting.type)
     }
 }
 

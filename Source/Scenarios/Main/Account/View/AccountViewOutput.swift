@@ -8,4 +8,10 @@
 import Foundation
 
 protocol AccountViewOutput: AnyObject {
+    func viewDidLoad()
+    func changeUserName(for userName: String)
+    func settingsTapped(with type: SettingsType)
+    func downloadDictionary()
+    func exit()
+    func deleteAccount()
 }
