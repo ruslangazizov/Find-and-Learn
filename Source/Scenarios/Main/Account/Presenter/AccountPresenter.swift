@@ -12,11 +12,13 @@ final class AccountPresenter: AccountViewOutput {
     
     weak var view: AccountViewInput?
     private let interactor: AccountInteractorProtocol
+    private let router: AccountRouterProtocol
     
     // MARK: Init
     
-    init(interactor: AccountInteractorProtocol) {
+    init(interactor: AccountInteractorProtocol, router: AccountRouterProtocol) {
         self.interactor = interactor
+        self.router = router
     }
     
     // MARK: ViewOutput
@@ -71,14 +73,18 @@ final class AccountPresenter: AccountViewOutput {
     // MARK: Private
     
     private func showConfirmEmail() {
+        router.showConfirmEmail()
     }
     
     private func showAchievements() {
+        router.showAchievements()
     }
     
     private func showChangePassword() {
+        router.showChangePassword()
     }
     
     private func showRegistration() {
+        router.showRegistration()
     }
 }
