@@ -24,6 +24,7 @@ final class AccountViewController: UIViewController {
             layerColor: nil
         )
         textField.setFontSize(.fontSize)
+        textField.returnKeyType = .done
         textField.textAlignment = .center
         return textField
     }()
@@ -67,6 +68,10 @@ final class AccountViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AccountTableViewCell.self)
+        
+        userNameTextField.delegate = self
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
     
     private func setupLayout() {
@@ -88,6 +93,11 @@ final class AccountViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.leading.bottom.trailing.top.equalToSuperview()
         }
+    }
+    
+    @objc private func hideKeyboard() {
+        presenter.changeUserName(for: userNameTextField.text ?? "")
+        userNameTextField.resignFirstResponder()
     }
 }
 
@@ -140,6 +150,15 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let setting = settings[indexPath.row]
         presenter.settingsTapped(with: setting.type)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension AccountViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboard()
+        return true
     }
 }
 
