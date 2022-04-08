@@ -92,6 +92,11 @@ final class AccountViewController: UIViewController {
 // MARK: - ViewInput
 
 extension AccountViewController: AccountViewInput {
+    func setupSettings(with settings: [Settings]) {
+        self.settings = settings
+        tableView.reloadData()
+    }
+    
     func askForDownloadingDictionary() {
     }
     
