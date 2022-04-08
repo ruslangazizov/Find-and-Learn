@@ -20,6 +20,10 @@ extension UIViewController {
             style: .default,
             handler: handler)
         )
+        alert.addAction(UIAlertAction(
+            title: R.string.localizable.alert_cancel(),
+            style: .cancel)
+        )
         present(alert, animated: true)
     }
 }

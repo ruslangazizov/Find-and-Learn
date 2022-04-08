@@ -59,6 +59,10 @@ final class AccountViewController: UIViewController {
         setupLayout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        askForDownloadingDictionary()
+    }
+    
     // MARK: Private
     
     private func configure() {
@@ -98,12 +102,21 @@ extension AccountViewController: AccountViewInput {
     }
     
     func askForDownloadingDictionary() {
+        showAskAlert(message: R.string.localizable.alert_download_dictionary()) { [weak self] _ in
+            self?.presenter.downloadDictionary()
+        }
     }
     
     func askForExit() {
+        showAskAlert(message: R.string.localizable.alert_exit()) { [weak self] _ in
+            self?.presenter.exit()
+        }
     }
     
     func askForDeletingAccount() {
+        showAskAlert(message: R.string.localizable.alert_delete_account()) { [weak self] _ in
+            self?.presenter.deleteAccount()
+        }
     }
 }
 
