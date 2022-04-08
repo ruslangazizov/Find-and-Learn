@@ -47,3 +47,12 @@
 "alert_download_dictionary" = "Вы уверены, что хотите скачать словарь на телефон?";
 "alert_exit" = "Вы уверены, что хотите выйти из аккаунта?";
 "alert_delete_account" = "Вы уверены, что хотите удалить аккаунт?";
+
+// Settings
+"settings_show_achievements" = "Мои достижения";
+"settings_change_password" = "Изменить пароль";
+"settings_download_dictionary" = "Скачать словарь";
+"settings_exit" = "Выйти";
+"settings_delete_account" = "Удалить аккаунт";
+"settings_registration" = "Зарегистрироваться";
+"settings_confirm_email" = "Подтвердить E-Mail";

@@ -22,6 +22,13 @@ final class AccountPresenter: AccountViewOutput {
     // MARK: ViewOutput
     
     func viewDidLoad() {
+        DispatchQueue.global(qos: .utility).async {
+            self.interactor.loadSettings { [weak self] settings in
+                DispatchQueue.main.async {
+                    self?.view?.setupSettings(with: settings)
+                }
+            }
+        }
     }
     
     func changeUserName(for userName: String) {
@@ -47,6 +54,8 @@ final class AccountPresenter: AccountViewOutput {
             DispatchQueue.main.async {
                 self.view?.askForDeletingAccount()
             }
+        case .registration:
+            showRegistration()
         }
     }
     
@@ -68,5 +77,8 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     private func showChangePassword() {
+    }
+    
+    private func showRegistration() {
     }
 }

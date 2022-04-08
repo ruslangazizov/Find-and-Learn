@@ -10,8 +10,8 @@ import UIKit
 final class AccountViewController: UIViewController {
     // MARK: UI
     
-    private lazy var headerView: UIView = {
-        return UIView()
+    private lazy var headerView: UITableViewHeaderFooterView = {
+        return UITableViewHeaderFooterView()
     }()
     
     private lazy var avatarView: CircularView = {
@@ -31,6 +31,7 @@ final class AccountViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.keyboardDismissMode = .onDrag
         tableView.backgroundColor = .systemBackground
+        tableView.estimatedSectionHeaderHeight = .estimatedSectionHeaderHeight
         return tableView
     }()
     
@@ -68,16 +69,16 @@ final class AccountViewController: UIViewController {
     }
     
     private func setupLayout() {
-        headerView.addSubview(avatarView)
+        headerView.contentView.addSubview(avatarView)
         avatarView.snp.makeConstraints { make in
-            make.height.equalTo(avatarView.snp.width)
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(view.frame.width / .multiplier)
+            make.height.equalTo(avatarView.snp.width).priority(.high)
         }
 
-        headerView.addSubview(userNameTextField)
+        headerView.contentView.addSubview(userNameTextField)
         userNameTextField.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(view.frame.width / .multiplier)
+            make.leading.trailing.equalTo(avatarView)
             make.top.equalTo(avatarView.snp.bottom).offset(Constants.bottomOffset)
             make.bottom.equalToSuperview().inset(Constants.bottomInset)
         }
@@ -153,4 +154,6 @@ private extension AccountViewController {
 
 private extension CGFloat {
     static let multiplier: CGFloat = 4
+    
+    static let estimatedSectionHeaderHeight: CGFloat = 200
 }

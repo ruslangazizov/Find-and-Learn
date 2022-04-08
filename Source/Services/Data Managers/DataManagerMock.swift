@@ -16,6 +16,14 @@ final class DataManagerMock: DataManagerProtocol {
         ])
     }
     
+    func getUser(completion: ((User) -> Void)) {
+        completion(User(
+            email: "testEmail@test.com",
+            password: "Hash123456",
+            state: .active)
+        )
+    }
+    
     func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void) {
         let today = Date()
         let dayInterval: Double = 60 * 60 * 24

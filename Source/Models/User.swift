@@ -10,4 +10,11 @@ import Foundation
 struct User {
     let email: String
     let password: String
+    let state: AccountState
+}
+
+enum AccountState {
+    case guest
+    case inactive
+    case active
 }

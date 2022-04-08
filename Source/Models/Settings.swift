@@ -11,10 +11,10 @@ import UIKit
 struct Settings {
     let type: SettingsType
     let name: String
-    let color: UIColor
 }
 
 enum SettingsType {
+    case registration
     case confirmEmail
     case showAchievements
     case changePassword
