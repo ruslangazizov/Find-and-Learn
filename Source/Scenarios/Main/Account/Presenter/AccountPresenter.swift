@@ -11,6 +11,13 @@ final class AccountPresenter: AccountViewOutput {
     // MARK: Dependencies
     
     weak var view: AccountViewInput?
+    private let interactor: AccountInteractorProtocol
+    
+    // MARK: Init
+    
+    init(interactor: AccountInteractorProtocol) {
+        self.interactor = interactor
+    }
     
     // MARK: ViewOutput
     
