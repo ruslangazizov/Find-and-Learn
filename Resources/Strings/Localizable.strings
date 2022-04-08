@@ -39,3 +39,11 @@
 
 // Экран "Аккаунт"
 "account_screen_user_name_placeholder" = "Никнейм";
+
+// Alerts
+"alert_title" = "Подтвердите действие";
+"alert_confirm" = "Да";
+"alert_cancel" = "Отмена";
+"alert_download_dictionary" = "Вы уверены, что хотите скачать словарь на телефон?";
+"alert_exit" = "Вы уверены, что хотите выйти из аккаунта?";
+"alert_delete_account" = "Вы уверены, что хотите удалить аккаунт?";
