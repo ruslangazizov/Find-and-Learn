@@ -68,6 +68,7 @@
 		D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */; };
 		D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */; };
 		D25FCD6227F8666C0007E65D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD6127F8666C0007E65D /* Settings.swift */; };
+		D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */; };
 		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
@@ -148,6 +149,7 @@
 		D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembly.swift; sourceTree = "<group>"; };
 		D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		D25FCD6127F8666C0007E65D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				44F379DF27FC41A6001F02F4 /* DateFormatter+Extensions.swift */,
 				D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */,
 				D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */,
+				D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
 				D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */,
 				D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */,
+				D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */,
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
 				D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
