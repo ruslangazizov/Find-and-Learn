@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RegistrationRouterProtocol: AnyObject {
+protocol RegistrationRouterProtocol: RouterProtocol {
     func showAuthorization()
     func finish()
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol PasswordRecoveryRouterProtocol: AnyObject {
+protocol PasswordRecoveryRouterProtocol: RouterProtocol {
     func showAuthorization()
 }
