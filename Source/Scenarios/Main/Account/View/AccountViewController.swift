@@ -23,6 +23,7 @@ final class AccountViewController: UIViewController {
             placeholder: R.string.localizable.account_screen_user_name_placeholder(),
             layerColor: nil
         )
+        textField.setFontSize(.fontSize)
         textField.textAlignment = .center
         return textField
     }()
@@ -157,4 +158,6 @@ private extension CGFloat {
     static let multiplier: CGFloat = 4
     
     static let estimatedSectionHeaderHeight: CGFloat = 200
+    
+    static let fontSize: CGFloat = 30
 }
