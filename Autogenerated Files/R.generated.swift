@@ -174,11 +174,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-<<<<<<< HEAD
-    /// This `R.string.localizable` struct is generated, and contains static references to 12 localization keys.
-=======
-    /// This `R.string.localizable` struct is generated, and contains static references to 19 localization keys.
->>>>>>> main
+    /// This `R.string.localizable` struct is generated, and contains static references to 20 localization keys.
     struct localizable {
       /// Value: E-Mail
       static let authorization_screen_email_placeholder = Rswift.StringResource(key: "authorization_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)

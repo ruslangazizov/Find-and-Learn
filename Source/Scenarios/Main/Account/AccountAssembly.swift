@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class AccountAssembly: AssemblyProtocol {
-    func assemble() -> UIViewController {
+    static func assemble() -> UIViewController {
         let presenter = AccountPresenter()
         
         let viewController = AccountViewController(presenter: presenter)

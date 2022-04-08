@@ -60,7 +60,6 @@
 		D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */; };
 		D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */; };
 		D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */; };
-		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5027F8536B0007E65D /* AccountViewController.swift */; };
 		D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5227F853A10007E65D /* AccountViewInput.swift */; };
 		D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */; };
@@ -69,6 +68,7 @@
 		D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */; };
 		D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */; };
 		D25FCD6227F8666C0007E65D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD6127F8666C0007E65D /* Settings.swift */; };
+		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
@@ -140,7 +140,6 @@
 		D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryAssembly.swift; sourceTree = "<group>"; };
-		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D25FCD5027F8536B0007E65D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		D25FCD5227F853A10007E65D /* AccountViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewInput.swift; sourceTree = "<group>"; };
 		D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewOutput.swift; sourceTree = "<group>"; };
@@ -149,6 +148,7 @@
 		D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembly.swift; sourceTree = "<group>"; };
 		D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		D25FCD6127F8666C0007E65D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
@@ -474,9 +474,9 @@
 		D25FCD4E27F852FD0007E65D /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */,
 				D25FCD5627F854010007E65D /* Presenter */,
 				D25FCD4F27F8534E0007E65D /* View */,
-				D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -836,7 +836,6 @@
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
-				447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */,
 				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
 				D25FCD6227F8666C0007E65D /* Settings.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
@@ -925,7 +924,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = arm86;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -987,7 +986,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = arm86;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
