@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AccountViewInput: AnyObject {
-    func setupSettings(with settings: [Settings])
+    func setup(with settings: [Settings], userName: String?)
     func askForDownloadingDictionary()
     func askForExit()
     func askForDeletingAccount()

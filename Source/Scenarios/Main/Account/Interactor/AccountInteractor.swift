@@ -22,9 +22,9 @@ final class AccountInteractor: AccountInteractorProtocol {
     
     // MARK: AccountInteractorProtocol
     
-    func loadSettings(_ completion: (([Settings]) -> Void)) {
+    func loadSettings(_ completion: (([Settings], String) -> Void)) {
         dataManager.getUser { [weak self] user in
-            completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [])
+            completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [], user.userName)
         }
     }
 }

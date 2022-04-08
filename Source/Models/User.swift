@@ -9,6 +9,7 @@ import Foundation
 
 struct User {
     let email: String
+    let userName: String
     let password: String
     let state: AccountState
 }

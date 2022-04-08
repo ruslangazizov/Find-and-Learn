@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AccountInteractorProtocol: AnyObject {
-    func loadSettings(_ completion: (([Settings]) -> Void))
+    func loadSettings(_ completion: (([Settings], String) -> Void))
 }

@@ -93,8 +93,9 @@ final class AccountViewController: UIViewController {
 // MARK: - ViewInput
 
 extension AccountViewController: AccountViewInput {
-    func setupSettings(with settings: [Settings]) {
+    func setup(with settings: [Settings], userName: String?) {
         self.settings = settings
+        userNameTextField.text = userName
         tableView.reloadData()
     }
     
