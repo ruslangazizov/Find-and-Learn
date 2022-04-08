@@ -15,3 +15,26 @@ struct Word {
         return translations.joined(separator: ", ")
     }
 }
+
+struct WordModel {
+    let word: String
+    let translations: String
+}
+
+struct HistoryWord {
+    let word: String
+    let translations: [String]
+    let dateAdded: Date
+    let searchesCount: Int
+}
+
+struct HistoryWordModel {
+    let word: String
+    let translations: String
+    let searchesCount: Int
+}
+
+struct HistoryWordsSection {
+    let title: String
+    let words: [HistoryWordModel]
+}

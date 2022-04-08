@@ -13,28 +13,54 @@
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
-		44499F4227F5A7FA0022CF95 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */; };
 		44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */; };
-		447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706227EE49820011A7F4 /* DictionaryRouter.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
 		447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707127EE4E5C0011A7F4 /* SearchWordsViewOutput.swift */; };
 		447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */; };
-		447D707827EE511D0011A7F4 /* DictionaryRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707727EE511D0011A7F4 /* DictionaryRouterProtocol.swift */; };
 		447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707A27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift */; };
 		447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */; };
 		447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D708027EE55600011A7F4 /* DataManagerProtocol.swift */; };
+		44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */; };
+		44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */; };
+		44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAC227F8D50600C1189B /* SearchWordsRouterProtocol.swift */; };
 		44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */; };
 		44BE5DDF27E531FD0024F268 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDE27E531FD0024F268 /* Word.swift */; };
 		44D5811827E7D74500DBCC4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5811727E7D74500DBCC4E /* User.swift */; };
+		44DC5FE627FF090E005EACAE /* FavoriteWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FE527FF090E005EACAE /* FavoriteWordsAssembly.swift */; };
+		44DC5FEC27FF0A05005EACAE /* FavoriteWordsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FEB27FF0A05005EACAE /* FavoriteWordsRouterProtocol.swift */; };
+		44DC5FEE27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FED27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift */; };
+		44DC5FF027FF0A31005EACAE /* FavoriteWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FEF27FF0A31005EACAE /* FavoriteWordsViewInput.swift */; };
+		44DC5FF227FF0A39005EACAE /* FavoriteWordsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FF127FF0A39005EACAE /* FavoriteWordsViewOutput.swift */; };
+		44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FF327FF0C6C005EACAE /* FavoriteWordsRouter.swift */; };
+		44DC5FF627FF0CD5005EACAE /* FavoriteWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FF527FF0CD5005EACAE /* FavoriteWordsInteractor.swift */; };
+		44DC5FF827FF0E0B005EACAE /* FavoriteWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FF727FF0E0B005EACAE /* FavoriteWordsPresenter.swift */; };
+		44DC5FFA27FF24B4005EACAE /* FavoriteWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FF927FF24B4005EACAE /* FavoriteWordsViewController.swift */; };
+		44DC5FFC27FF260D005EACAE /* FavoriteWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FFB27FF260D005EACAE /* FavoriteWordsTableViewCell.swift */; };
 		44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7527C7A7B00061C14D /* AppDelegate.swift */; };
 		44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */; };
 		44E59E7F27C7A7B30061C14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E7E27C7A7B30061C14D /* Assets.xcassets */; };
 		44E59E8227C7A7B30061C14D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E8027C7A7B30061C14D /* LaunchScreen.storyboard */; };
+		44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379DD27FC407B001F02F4 /* Date+Extensions.swift */; };
+		44F379E027FC41A6001F02F4 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379DF27FC41A6001F02F4 /* DateFormatter+Extensions.swift */; };
+		44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379E427FC4389001F02F4 /* HistoryWordsAssembly.swift */; };
+		44F379E827FC43C0001F02F4 /* HistoryWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379E727FC43C0001F02F4 /* HistoryWordsInteractor.swift */; };
+		44F379EA27FC43F0001F02F4 /* HistoryWordsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379E927FC43F0001F02F4 /* HistoryWordsInteractorProtocol.swift */; };
+		44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379EC27FC4510001F02F4 /* HistoryWordsPresenter.swift */; };
+		44F379F027FC45BE001F02F4 /* HistoryWordsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379EF27FC45BE001F02F4 /* HistoryWordsRouter.swift */; };
+		44F379F227FC45D7001F02F4 /* HistoryWordsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379F127FC45D7001F02F4 /* HistoryWordsRouterProtocol.swift */; };
+		44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379F427FC4616001F02F4 /* HistoryWordsTableViewCell.swift */; };
+		44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379F627FC466A001F02F4 /* HistoryWordsViewController.swift */; };
+		44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379F827FC46A9001F02F4 /* HistoryWordsViewInput.swift */; };
+		44F379FB27FC46C2001F02F4 /* HistoryWordsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379FA27FC46C2001F02F4 /* HistoryWordsViewOutput.swift */; };
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
 		D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */; };
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
 		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
 		D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */; };
+		D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */; };
+		D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */; };
+		D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */; };
+		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5027F8536B0007E65D /* AccountViewController.swift */; };
 		D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5227F853A10007E65D /* AccountViewInput.swift */; };
 		D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */; };
@@ -51,6 +77,10 @@
 		D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168927DE78CE0026692E /* CommonTextField.swift */; };
 		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
 		D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */; };
+		D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */; };
+		D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */; };
+		D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */; };
+		D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,30 +91,56 @@
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
-		44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
-		447D706227EE49820011A7F4 /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
 		447D707127EE4E5C0011A7F4 /* SearchWordsViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewOutput.swift; sourceTree = "<group>"; };
 		447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsPresenter.swift; sourceTree = "<group>"; };
-		447D707727EE511D0011A7F4 /* DictionaryRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouterProtocol.swift; sourceTree = "<group>"; };
 		447D707A27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsInteractorProtocol.swift; sourceTree = "<group>"; };
 		447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsInteractor.swift; sourceTree = "<group>"; };
 		447D708027EE55600011A7F4 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
+		44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsRouter.swift; sourceTree = "<group>"; };
+		44BCCAC227F8D50600C1189B /* SearchWordsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsRouterProtocol.swift; sourceTree = "<group>"; };
 		44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewController.swift; sourceTree = "<group>"; };
 		44BE5DDE27E531FD0024F268 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		44D5811727E7D74500DBCC4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		44DC5FE527FF090E005EACAE /* FavoriteWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsAssembly.swift; sourceTree = "<group>"; };
+		44DC5FEB27FF0A05005EACAE /* FavoriteWordsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsRouterProtocol.swift; sourceTree = "<group>"; };
+		44DC5FED27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsInteractorProtocol.swift; sourceTree = "<group>"; };
+		44DC5FEF27FF0A31005EACAE /* FavoriteWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsViewInput.swift; sourceTree = "<group>"; };
+		44DC5FF127FF0A39005EACAE /* FavoriteWordsViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsViewOutput.swift; sourceTree = "<group>"; };
+		44DC5FF327FF0C6C005EACAE /* FavoriteWordsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsRouter.swift; sourceTree = "<group>"; };
+		44DC5FF527FF0CD5005EACAE /* FavoriteWordsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsInteractor.swift; sourceTree = "<group>"; };
+		44DC5FF727FF0E0B005EACAE /* FavoriteWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsPresenter.swift; sourceTree = "<group>"; };
+		44DC5FF927FF24B4005EACAE /* FavoriteWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsViewController.swift; sourceTree = "<group>"; };
+		44DC5FFB27FF260D005EACAE /* FavoriteWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsTableViewCell.swift; sourceTree = "<group>"; };
 		44E59E7227C7A7B00061C14D /* Find-and-Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-and-Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E59E7527C7A7B00061C14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		44E59E7E27C7A7B30061C14D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44E59E8127C7A7B30061C14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44E59E8327C7A7B30061C14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44F379DD27FC407B001F02F4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		44F379DF27FC41A6001F02F4 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		44F379E427FC4389001F02F4 /* HistoryWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsAssembly.swift; sourceTree = "<group>"; };
+		44F379E727FC43C0001F02F4 /* HistoryWordsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsInteractor.swift; sourceTree = "<group>"; };
+		44F379E927FC43F0001F02F4 /* HistoryWordsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsInteractorProtocol.swift; sourceTree = "<group>"; };
+		44F379EC27FC4510001F02F4 /* HistoryWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsPresenter.swift; sourceTree = "<group>"; };
+		44F379EF27FC45BE001F02F4 /* HistoryWordsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsRouter.swift; sourceTree = "<group>"; };
+		44F379F127FC45D7001F02F4 /* HistoryWordsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsRouterProtocol.swift; sourceTree = "<group>"; };
+		44F379F427FC4616001F02F4 /* HistoryWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsTableViewCell.swift; sourceTree = "<group>"; };
+		44F379F627FC466A001F02F4 /* HistoryWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsViewController.swift; sourceTree = "<group>"; };
+		44F379F827FC46A9001F02F4 /* HistoryWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsViewInput.swift; sourceTree = "<group>"; };
+		44F379FA27FC46C2001F02F4 /* HistoryWordsViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsViewOutput.swift; sourceTree = "<group>"; };
 		773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.release.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.release.xcconfig"; sourceTree = "<group>"; };
 		D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
 		D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewOutput.swift; sourceTree = "<group>"; };
+		D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
+		D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryAssembly.swift; sourceTree = "<group>"; };
+		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D25FCD5027F8536B0007E65D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		D25FCD5227F853A10007E65D /* AccountViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewInput.swift; sourceTree = "<group>"; };
 		D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewOutput.swift; sourceTree = "<group>"; };
@@ -101,6 +157,10 @@
 		D2D1168927DE78CE0026692E /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
 		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
+		D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewInput.swift; sourceTree = "<group>"; };
+		D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewOutput.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,6 +204,8 @@
 		441F8B6627EC82AE0066358F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				44DC5FE427FF08F4005EACAE /* Favorite Words */,
+				44F379E127FC4356001F02F4 /* History Words */,
 				447D706D27EE4DD00011A7F4 /* Search Words */,
 			);
 			path = Modules;
@@ -153,6 +215,10 @@
 			isa = PBXGroup;
 			children = (
 				4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */,
+				44F379DD27FC407B001F02F4 /* Date+Extensions.swift */,
+				44F379DF27FC41A6001F02F4 /* DateFormatter+Extensions.swift */,
+				D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */,
+				D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,7 +226,7 @@
 		44499F4027F5A7E80022CF95 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				44499F4127F5A7FA0022CF95 /* RouterProtocol.swift */,
+				44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */,
 				44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */,
 			);
 			path = Protocols;
@@ -170,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */,
+				44BCCABF27F8D49500C1189B /* Router */,
 				447D707927EE53F70011A7F4 /* Interactor */,
 				447D707327EE4E9A0011A7F4 /* Presenter */,
 				447D706E27EE4DDC0011A7F4 /* View */,
@@ -196,15 +263,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		447D707627EE51100011A7F4 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				447D707727EE511D0011A7F4 /* DictionaryRouterProtocol.swift */,
-				447D706227EE49820011A7F4 /* DictionaryRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		447D707927EE53F70011A7F4 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,11 +272,19 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		44BCCABF27F8D49500C1189B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44BCCAC227F8D50600C1189B /* SearchWordsRouterProtocol.swift */,
+				44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		44BE5DD327E52A3C0024F268 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
 				442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */,
-				447D707627EE51100011A7F4 /* Router */,
 				441F8B6627EC82AE0066358F /* Modules */,
 			);
 			path = Dictionary;
@@ -241,6 +307,55 @@
 				442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */,
 			);
 			path = "Data Managers";
+			sourceTree = "<group>";
+		};
+		44DC5FE427FF08F4005EACAE /* Favorite Words */ = {
+			isa = PBXGroup;
+			children = (
+				44DC5FE527FF090E005EACAE /* FavoriteWordsAssembly.swift */,
+				44DC5FEA27FF0938005EACAE /* Router */,
+				44DC5FE927FF0932005EACAE /* Interactor */,
+				44DC5FE827FF092C005EACAE /* Presenter */,
+				44DC5FE727FF0925005EACAE /* View */,
+			);
+			path = "Favorite Words";
+			sourceTree = "<group>";
+		};
+		44DC5FE727FF0925005EACAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44DC5FEF27FF0A31005EACAE /* FavoriteWordsViewInput.swift */,
+				44DC5FF127FF0A39005EACAE /* FavoriteWordsViewOutput.swift */,
+				44DC5FF927FF24B4005EACAE /* FavoriteWordsViewController.swift */,
+				44DC5FFB27FF260D005EACAE /* FavoriteWordsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44DC5FE827FF092C005EACAE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				44DC5FF727FF0E0B005EACAE /* FavoriteWordsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44DC5FE927FF0932005EACAE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				44DC5FED27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift */,
+				44DC5FF527FF0CD5005EACAE /* FavoriteWordsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		44DC5FEA27FF0938005EACAE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44DC5FEB27FF0A05005EACAE /* FavoriteWordsRouterProtocol.swift */,
+				44DC5FF327FF0C6C005EACAE /* FavoriteWordsRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		44E59E6927C7A7B00061C14D = {
@@ -278,6 +393,55 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		44F379E127FC4356001F02F4 /* History Words */ = {
+			isa = PBXGroup;
+			children = (
+				44F379E427FC4389001F02F4 /* HistoryWordsAssembly.swift */,
+				44F379EE27FC45AA001F02F4 /* Router */,
+				44F379E627FC43A3001F02F4 /* Interactor */,
+				44F379EB27FC4507001F02F4 /* Presenter */,
+				44F379F327FC45F7001F02F4 /* View */,
+			);
+			path = "History Words";
+			sourceTree = "<group>";
+		};
+		44F379E627FC43A3001F02F4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				44F379E927FC43F0001F02F4 /* HistoryWordsInteractorProtocol.swift */,
+				44F379E727FC43C0001F02F4 /* HistoryWordsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		44F379EB27FC4507001F02F4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				44F379EC27FC4510001F02F4 /* HistoryWordsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44F379EE27FC45AA001F02F4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44F379F127FC45D7001F02F4 /* HistoryWordsRouterProtocol.swift */,
+				44F379EF27FC45BE001F02F4 /* HistoryWordsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		44F379F327FC45F7001F02F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44F379F827FC46A9001F02F4 /* HistoryWordsViewInput.swift */,
+				44F379FA27FC46C2001F02F4 /* HistoryWordsViewOutput.swift */,
+				44F379F627FC466A001F02F4 /* HistoryWordsViewController.swift */,
+				44F379F427FC4616001F02F4 /* HistoryWordsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B37951C05643AA6F11C45359 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +457,7 @@
 				D217569427EB25BC00C3D545 /* Protocols */,
 				D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */,
 				D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */,
+				D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */,
 			);
 			path = "Password Recovery";
 			sourceTree = "<group>";
@@ -416,6 +581,7 @@
 		D2D1167F27DE42D40026692E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D2FB5D5127EDA4DB00CBDB00 /* Authorization */,
 				D2AB638027DCCCA900CE4441 /* Registration */,
 				D217568F27EB24C200C3D545 /* Password Recovery */,
 			);
@@ -456,6 +622,26 @@
 				D2D1168C27DE80F40026692E /* CommonButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D2FB5D5127EDA4DB00CBDB00 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				D2FB5D5627EDA58700CBDB00 /* Protocols */,
+				D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */,
+				D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */,
+				D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		D2FB5D5627EDA58700CBDB00 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */,
+				D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -617,42 +803,73 @@
 			files = (
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
+				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
+				44DC5FF227FF0A39005EACAE /* FavoriteWordsViewOutput.swift in Sources */,
 				D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
+				D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */,
+				44DC5FFA27FF24B4005EACAE /* FavoriteWordsViewController.swift in Sources */,
+				44DC5FF627FF0CD5005EACAE /* FavoriteWordsInteractor.swift in Sources */,
+				44DC5FF027FF0A31005EACAE /* FavoriteWordsViewInput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */,
+				44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */,
+				44F379FB27FC46C2001F02F4 /* HistoryWordsViewOutput.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
+				44DC5FE627FF090E005EACAE /* FavoriteWordsAssembly.swift in Sources */,
+				44F379E827FC43C0001F02F4 /* HistoryWordsInteractor.swift in Sources */,
+				D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */,
+				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
+				44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */,
+				44F379F227FC45D7001F02F4 /* HistoryWordsRouterProtocol.swift in Sources */,
+				44DC5FEC27FF0A05005EACAE /* FavoriteWordsRouterProtocol.swift in Sources */,
+				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D25FCD5B27F858C10007E65D /* CircularView.swift in Sources */,
+				44DC5FF827FF0E0B005EACAE /* FavoriteWordsPresenter.swift in Sources */,
+				44F379E027FC41A6001F02F4 /* DateFormatter+Extensions.swift in Sources */,
+				44F379F027FC45BE001F02F4 /* HistoryWordsRouter.swift in Sources */,
+				D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */,
+				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
+				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				447D706327EE49820011A7F4 /* DictionaryRouter.swift in Sources */,
 				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
 				D25FCD6227F8666C0007E65D /* Settings.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
+				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
-				44499F4227F5A7FA0022CF95 /* RouterProtocol.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
+				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
+				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
 				447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */,
+				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
+				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
 				D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */,
 				D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */,
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
 				D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
+				44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */,
+				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
+				44DC5FEE27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
+				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
+				44DC5FFC27FF260D005EACAE /* FavoriteWordsTableViewCell.swift in Sources */,
+				44F379EA27FC43F0001F02F4 /* HistoryWordsInteractorProtocol.swift in Sources */,
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
-				447D707827EE511D0011A7F4 /* DictionaryRouterProtocol.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,6 +925,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -769,6 +987,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
