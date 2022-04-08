@@ -59,10 +59,6 @@ final class AccountViewController: UIViewController {
         setupLayout()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        askForDownloadingDictionary()
-    }
-    
     // MARK: Private
     
     private func configure() {
