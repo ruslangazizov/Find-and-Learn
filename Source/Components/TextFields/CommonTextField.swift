@@ -25,7 +25,6 @@ final class CommonTextField: UITextField {
         self.placeholder = placeholder
         autocorrectionType = .no
         autocapitalizationType = .none
-        autocorrectionType = .no
         spellCheckingType = .no
         guard let layerColor = layerColor else { return }
         layer.borderWidth = .borderWidth
