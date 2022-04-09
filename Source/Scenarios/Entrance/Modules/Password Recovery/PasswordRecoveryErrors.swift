@@ -8,5 +8,5 @@
 import Foundation
 
 enum PasswordRecoveryErrors {
-    case emailField(String?)
+    case email(String?)
 }

@@ -20,17 +20,17 @@ final class PasswordRecoveryInteractor: PasswordRecoveryInteractorProtocol {
     
     // MARK: PasswordRecoveryInteractorProtocol
     
-    func recoveryPassword(email: String, _ result: (Bool, String?) -> Void) {
+    func recoveryPassword(email: String, _ result: (String?) -> Void) {
         guard !email.isEmpty else {
-            result(false, R.string.localizable.validation_error_empty_email())
+            result(R.string.localizable.validation_error_empty_email())
             return
         }
         
         if validationManager.isValidEmail(email) {
             // TODO: send to server
-            result(true, nil)
+            result(nil)
         } else {
-            result(false, R.string.localizable.validation_error_incorrect_email())
+            result(R.string.localizable.validation_error_incorrect_email())
         }
     }
 }

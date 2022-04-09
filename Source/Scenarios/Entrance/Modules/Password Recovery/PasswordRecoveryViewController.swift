@@ -177,7 +177,7 @@ final class PasswordRecoveryViewController: UIViewController {
 extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
     func showError(error: PasswordRecoveryErrors) {
         switch error {
-        case .emailField(let message):
+        case .email(let message):
             emailErrorLabel.text = message
             emailErrorLabel.alpha = 1
         }        

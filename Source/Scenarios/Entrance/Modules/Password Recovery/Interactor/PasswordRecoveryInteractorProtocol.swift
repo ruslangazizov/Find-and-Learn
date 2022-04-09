@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PasswordRecoveryInteractorProtocol: AnyObject {
-    func recoveryPassword(email: String, _ result: (Bool, String?) -> Void)
+    func recoveryPassword(email: String, _ result: (String?) -> Void)
 }
