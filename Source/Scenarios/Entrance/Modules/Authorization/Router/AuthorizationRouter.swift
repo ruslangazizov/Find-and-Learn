@@ -15,17 +15,17 @@ final class AuthorizationRouter: AuthorizationRouterProtocol {
     
     // MARK: AuthorizationRouterProtocol
     
-    func showRegistration() {
+    func showRegistrationModule() {
         let viewController = RegistrationAssembly.assemble()
         view?.navigationController?.setViewController(viewController: viewController, with: .fromRight)
     }
     
-    func showRecoveryPassword() {
+    func showRecoveryPasswordModule() {
         let viewController = PasswordRecoveryAssembly.assemble()
         view?.navigationController?.setViewController(viewController: viewController, with: .fromLeft)
     }
     
-    func finish() {
+    func finishFlow() {
         print("Push for main")
     }
 }

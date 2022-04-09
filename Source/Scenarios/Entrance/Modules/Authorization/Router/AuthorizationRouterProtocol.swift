@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AuthorizationRouterProtocol: RouterProtocol {
-    func showRegistration()
-    func showRecoveryPassword()
-    func finish()
+    func showRegistrationModule()
+    func showRecoveryPasswordModule()
+    func finishFlow()
 }

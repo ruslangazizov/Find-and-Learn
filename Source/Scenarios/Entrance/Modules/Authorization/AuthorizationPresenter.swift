@@ -43,18 +43,18 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
     }
     
     func enterAsGuest() {
-        self.router.finish()
+        self.router.finishFlow()
     }
     
     func resetPassword() {
-        self.router.showRecoveryPassword()
+        self.router.showRecoveryPasswordModule()
     }
     
     func registration() {
-        self.router.showRegistration()
+        self.router.showRegistrationModule()
     }
     
     private func finish() {
-        self.router.finish()
+        self.router.finishFlow()
     }
 }
