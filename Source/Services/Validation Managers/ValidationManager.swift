@@ -8,7 +8,7 @@
 import Foundation
 
 struct ValidationManager: ValidationManagerProtocol {
-    // MARK: - Properties
+    // MARK: Properties
     
     private static let emailRegularExpression = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?"
         + "@"
