@@ -8,6 +8,6 @@
 import Foundation
 
 enum AuthorizationErrors {
-    case emailTextField(String)
-    case passwordTextField(String)
+    case email(String)
+    case password(String)
 }

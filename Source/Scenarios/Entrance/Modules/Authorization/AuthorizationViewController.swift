@@ -270,10 +270,10 @@ final class AuthorizationViewController: UIViewController {
 extension AuthorizationViewController: AuthorizationViewInput {
     func showError(_ error: AuthorizationErrors) {
         switch error {
-        case .emailTextField(let message):
+        case .email(let message):
             emailErrorLabel.text = message
             emailErrorLabel.alpha = 1
-        case .passwordTextField(let message):
+        case .password(let message):
             passwordErrorLabel.text = message
             passwordErrorLabel.alpha = 1
         }

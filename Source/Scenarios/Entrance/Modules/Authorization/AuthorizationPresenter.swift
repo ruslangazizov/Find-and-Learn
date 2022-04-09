@@ -29,11 +29,11 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
                 switch result {
                 case .emailTextField(let message):
                     DispatchQueue.main.async {
-                        self?.view?.showError(.emailTextField(message))
+                        self?.view?.showError(.email(message))
                     }
                 case .passwordTextField(let message):
                     DispatchQueue.main.async {
-                        self?.view?.showError(.passwordTextField(message))
+                        self?.view?.showError(.password(message))
                     }
                 case .success:
                     self?.finish()
