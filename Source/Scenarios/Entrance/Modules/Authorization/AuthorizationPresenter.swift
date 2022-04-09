@@ -43,26 +43,18 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
     }
     
     func enterAsGuest() {
-        DispatchQueue.main.async {
-            self.router.finish()
-        }
+        self.router.finish()
     }
     
     func resetPassword() {
-        DispatchQueue.main.async {
-            self.router.showRecoveryPassword()
-        }
+        self.router.showRecoveryPassword()
     }
     
     func registration() {
-        DispatchQueue.main.async {
-            self.router.showRegistration()
-        }
+        self.router.showRegistration()
     }
     
     private func finish() {
-        DispatchQueue.main.async {
-            self.router.finish()
-        }
+        self.router.finish()
     }
 }

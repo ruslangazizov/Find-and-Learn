@@ -55,14 +55,10 @@ final class RegistrationPresenter: RegistrationViewOutput {
     }
     
     func enter() {
-        DispatchQueue.main.async {
-            self.router.showAuthorization()
-        }
+        self.router.showAuthorization()
     }
     
     private func finish() {
-        DispatchQueue.main.async {
-            self.router.finish()
-        }
+        self.router.finish()
     }
 }
