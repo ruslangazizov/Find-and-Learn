@@ -16,7 +16,7 @@ final class AuthorizationAssembly: AssemblyProtocol {
         let presenter = AuthorizationPresenter(interactor: interactor, router: router)
         
         let viewController = AuthorizationViewController(presenter: presenter)
-        viewController.view.backgroundColor = .systemBackground
+        
         presenter.view = viewController
         router.view = viewController
         

@@ -143,6 +143,8 @@ final class RegistrationViewController: UIViewController {
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
         
+        view.backgroundColor = .systemBackground
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         registrationButton.addTarget(self, action: #selector(registrationButtonTapped(_:)), for: .touchUpInside)

@@ -117,6 +117,8 @@ final class AuthorizationViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        view.backgroundColor = .systemBackground
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         enterButton.addTarget(self, action: #selector(enterButtonTapped(_:)), for: .touchUpInside)

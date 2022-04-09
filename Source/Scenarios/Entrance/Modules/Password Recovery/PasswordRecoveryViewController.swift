@@ -81,6 +81,8 @@ final class PasswordRecoveryViewController: UIViewController {
     private func configure() {
         emailTextField.delegate = self
         
+        view.backgroundColor = .systemBackground
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         recoveryButton.addTarget(self, action: #selector(recoveryButtonTapped(_:)), for: .touchUpInside)

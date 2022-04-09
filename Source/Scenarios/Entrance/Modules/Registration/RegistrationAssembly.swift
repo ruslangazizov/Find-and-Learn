@@ -16,7 +16,6 @@ final class RegistrationAssembly: AssemblyProtocol {
         let presenter = RegistrationPresenter(interactor: interactor, router: router)
         
         let viewController = RegistrationViewController(presenter: presenter)
-        viewController.view.backgroundColor = .systemBackground
         
         presenter.view = viewController
         router.view = viewController
