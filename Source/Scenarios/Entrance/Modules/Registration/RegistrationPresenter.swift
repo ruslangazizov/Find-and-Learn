@@ -55,10 +55,10 @@ final class RegistrationPresenter: RegistrationViewOutput {
     }
     
     func enter() {
-        self.router.showAuthorization()
+        router.showAuthorization()
     }
     
     private func finish() {
-        self.router.finish()
+        router.finish()
     }
 }
