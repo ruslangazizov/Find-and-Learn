@@ -45,17 +45,11 @@ final class AccountPresenter: AccountViewOutput {
         case .changePassword:
             showChangePassword()
         case .downloadDictionary:
-            DispatchQueue.main.async {
-                self.view?.askForDownloadingDictionary()
-            }
+            view?.askForDownloadingDictionary()
         case .exit:
-            DispatchQueue.main.async {
-                self.view?.askForExit()
-            }
+            view?.askForExit()
         case .deleteAccount:
-            DispatchQueue.main.async {
-                self.view?.askForDeletingAccount()
-            }
+            view?.askForDeletingAccount()
         case .registration:
             showRegistration()
         }
