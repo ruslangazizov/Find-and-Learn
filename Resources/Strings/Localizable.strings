@@ -40,7 +40,7 @@
 // Экран "Аккаунт"
 "account_screen_user_name_placeholder" = "Никнейм";
 
-// Alerts
+// Уведомления для экрана "Аккаунт"
 "alert_title" = "Подтвердите действие";
 "alert_confirm" = "Да";
 "alert_cancel" = "Отмена";
@@ -48,7 +48,7 @@
 "alert_exit" = "Вы уверены, что хотите выйти из аккаунта?";
 "alert_delete_account" = "Вы уверены, что хотите удалить аккаунт?";
 
-// Settings
+// Настройки для экрана "Аккаунт"
 "settings_show_achievements" = "Мои достижения";
 "settings_change_password" = "Изменить пароль";
 "settings_download_dictionary" = "Скачать словарь";
