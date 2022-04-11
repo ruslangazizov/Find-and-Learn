@@ -44,13 +44,10 @@ final class CircularView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = frame.size.height / .multiplier
+        layer.cornerRadius = frame.size.height / .divider
         clipsToBounds = true
         
-        drawRingFittingInsideSquareView()
-        shapeLayer.removeFromSuperlayer()
-        
-        imageView.layer.cornerRadius = imageView.frame.size.height / .multiplier
+        imageView.layer.cornerRadius = imageView.frame.size.height / .divider
         imageView.clipsToBounds = true
     }
     
@@ -67,11 +64,11 @@ final class CircularView: UIView {
     }
     
     private func drawRingFittingInsideSquareView() {
-        let centerPoint = bounds.size.width / .multiplier
+        let centerPoint = bounds.size.width / .divider
         
         let circlePath = UIBezierPath(
             arcCenter: CGPoint(x: centerPoint, y: centerPoint),
-            radius: centerPoint - (.lineWidth / .multiplier),
+            radius: centerPoint - (.lineWidth / .divider),
             startAngle: .startAngle,
             endAngle: Double.pi * .multiplier,
             clockwise: true
@@ -95,6 +92,7 @@ private extension CircularView {
 
 private extension CGFloat {
     static let multiplier: CGFloat = 2
+    static let divider: CGFloat = 2
     
     static let lineWidth: CGFloat = 2
     
