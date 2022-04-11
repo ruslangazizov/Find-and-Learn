@@ -15,18 +15,16 @@ final class CircularView: UIView {
     // MARK: UI
     
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
+        return UIImageView()
     }()
     
     private lazy var shapeLayer: CAShapeLayer = {
-        let layer = CAShapeLayer()
-        return layer
+        return CAShapeLayer()
     }()
     
     var image: UIImage? { didSet { imageView.image = image } }
     
-    // MARK: Lifecycle
+    // MARK: Init
     
     init() {
         super.init(frame: .zero)
@@ -36,6 +34,8 @@ final class CircularView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("Not supported")
     }
+    
+    // MARK: Lifecycle
     
     override func draw(_ rect: CGRect) {
         drawRingFittingInsideSquareView()
@@ -73,7 +73,7 @@ final class CircularView: UIView {
             arcCenter: CGPoint(x: centerPoint, y: centerPoint),
             radius: centerPoint - (.lineWidth / .multiplier),
             startAngle: .startAngle,
-            endAngle: Double.pi * CGFloat.multiplier,
+            endAngle: Double.pi * .multiplier,
             clockwise: true
         )
         
