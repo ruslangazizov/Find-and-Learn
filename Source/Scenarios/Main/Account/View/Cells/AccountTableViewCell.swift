@@ -27,7 +27,7 @@ final class AccountTableViewCell: UITableViewCell {
     
     // MARK: Configure
     
-    func configure(with settings: Settings) {
+    func configure(with settings: Setting) {
         textLabel?.text = settings.name
     }
 }

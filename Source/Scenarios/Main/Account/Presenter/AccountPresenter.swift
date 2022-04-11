@@ -40,7 +40,7 @@ final class AccountPresenter: AccountViewOutput {
     func changeAvatar(for avatar: UIImage) {
     }
     
-    func settingsTapped(with type: SettingsType) {
+    func settingsTapped(with type: SettingType) {
         switch type {
         case .confirmEmail:
             showConfirmEmail()

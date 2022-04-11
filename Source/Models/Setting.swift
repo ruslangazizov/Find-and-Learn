@@ -1,5 +1,5 @@
 //
-//  Settings.swift
+//  Setting.swift
 //  Find-and-Learn
 //
 //  Created by Роман Сницарюк on 02.04.2022.
@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-struct Settings {
-    let type: SettingsType
+struct Setting {
+    let type: SettingType
     let name: String
 }
 
-enum SettingsType {
+enum SettingType {
     case registration
     case confirmEmail
     case showAchievements

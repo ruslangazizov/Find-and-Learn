@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SettingsManagerProtocol {
-    func getSettingsByState(by state: AccountState) -> [Settings]
+    func getSettingsByState(by state: AccountState) -> [Setting]
 }

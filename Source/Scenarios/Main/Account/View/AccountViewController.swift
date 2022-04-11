@@ -40,7 +40,7 @@ final class AccountViewController: UIViewController {
     // MARK: Dependencies
     
     private let presenter: AccountViewOutput
-    private var settings: [Settings] = []
+    private var settings: [Setting] = []
     
     // MARK: Init
     
@@ -114,7 +114,7 @@ final class AccountViewController: UIViewController {
 // MARK: - ViewInput
 
 extension AccountViewController: AccountViewInput {
-    func setup(with settings: [Settings], userName: String?) {
+    func setup(with settings: [Setting], userName: String?) {
         self.settings = settings
         userNameTextField.text = userName
         tableView.reloadData()

@@ -12,7 +12,7 @@ protocol AccountViewOutput: AnyObject {
     func viewDidLoad()
     func changeUserName(for userName: String)
     func changeAvatar(for avatar: UIImage)
-    func settingsTapped(with type: SettingsType)
+    func settingsTapped(with type: SettingType)
     func downloadDictionary()
     func exit()
     func deleteAccount()
