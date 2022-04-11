@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .systemBackground
         return true
     }
     
