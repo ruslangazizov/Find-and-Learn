@@ -16,7 +16,7 @@ final class DataManagerMock: DataManagerProtocol {
         ])
     }
     
-    func getUser(completion: ((User) -> Void)) {
+    func getUser(completion: (User) -> Void) {
         completion(User(
             email: "testEmail@test.com",
             userName: "Test",
