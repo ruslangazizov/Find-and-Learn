@@ -71,7 +71,7 @@ final class AccountViewController: UIViewController {
         
         userNameTextField.delegate = self
         
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
     
     private func setupLayout() {
