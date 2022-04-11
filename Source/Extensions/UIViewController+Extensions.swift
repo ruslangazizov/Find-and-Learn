@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func showAskAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+    func showAskAlert(message: String, handler: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(
             title: R.string.localizable.alert_title(),
             message: message,
