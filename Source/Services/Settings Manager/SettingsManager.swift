@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SettingsManager: SettingsManagerProtocol {
+struct SettingsManager: SettingsManagerProtocol {
     // MARK: Properties
     
     private static let activeAccountSettings: [Settings] = [

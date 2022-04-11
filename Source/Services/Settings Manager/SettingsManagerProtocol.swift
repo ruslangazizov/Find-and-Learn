@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol SettingsManagerProtocol: AnyObject {
+protocol SettingsManagerProtocol {
     func getSettingsByState(by state: AccountState) -> [Settings]
 }
