@@ -72,6 +72,7 @@ final class AccountViewController: UIViewController {
         userNameTextField.delegate = self
         
         headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        avatarView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pickPhoto)))
     }
     
     private func setupLayout() {
@@ -98,6 +99,15 @@ final class AccountViewController: UIViewController {
     @objc private func hideKeyboard() {
         presenter.changeUserName(for: userNameTextField.text ?? "")
         userNameTextField.resignFirstResponder()
+    }
+                                        
+    @objc private func pickPhoto() {
+        let viewController = UIImagePickerController()
+        viewController.sourceType = .photoLibrary
+        viewController.delegate = self
+        viewController.allowsEditing = true
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
 }
 
@@ -159,6 +169,21 @@ extension AccountViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         hideKeyboard()
         return true
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+
+extension AccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
+        if let image = info[.editedImage] as? UIImage {
+            avatarView.image = image
+            presenter.changeAvatar(for: image)
+        }
+        picker.dismiss(animated: true)
     }
 }
 

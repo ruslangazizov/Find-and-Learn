@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class AccountPresenter: AccountViewOutput {
     // MARK: Dependencies
@@ -34,6 +35,9 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     func changeUserName(for userName: String) {
+    }
+    
+    func changeAvatar(for avatar: UIImage) {
     }
     
     func settingsTapped(with type: SettingsType) {
