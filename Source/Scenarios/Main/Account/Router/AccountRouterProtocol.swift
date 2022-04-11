@@ -8,8 +8,8 @@
 import Foundation
 
 protocol AccountRouterProtocol: RouterProtocol {
-    func showConfirmEmail()
-    func showAchievements()
-    func showChangePassword()
-    func showRegistration()
+    func showConfirmEmailModule()
+    func showAchievementsModule()
+    func showChangePasswordModule()
+    func showRegistrationModule()
 }

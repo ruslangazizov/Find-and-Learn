@@ -71,18 +71,18 @@ final class AccountPresenter: AccountViewOutput {
     // MARK: Private
     
     private func showConfirmEmail() {
-        router.showConfirmEmail()
+        router.showConfirmEmailModule()
     }
     
     private func showAchievements() {
-        router.showAchievements()
+        router.showAchievementsModule()
     }
     
     private func showChangePassword() {
-        router.showChangePassword()
+        router.showChangePasswordModule()
     }
     
     private func showRegistration() {
-        router.showRegistration()
+        router.showRegistrationModule()
     }
 }

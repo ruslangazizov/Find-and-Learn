@@ -15,15 +15,15 @@ final class AccountRouter: AccountRouterProtocol {
     
     // MARK: AccountRouterProtocol
     
-    func showConfirmEmail() {
+    func showConfirmEmailModule() {
     }
     
-    func showAchievements() {
+    func showAchievementsModule() {
     }
     
-    func showChangePassword() {
+    func showChangePasswordModule() {
     }
     
-    func showRegistration() {
+    func showRegistrationModule() {
     }
 }
