@@ -36,3 +36,14 @@
 
 // Экран "Избранное"
 "favorite_words_screen_title" = "Избранное";
+
+// Ошибки валидации
+"validation_error_incorrect_email" = "Неверный формат E-Mail";
+"validation_error_incorrect_password" = "Неверный формат пароля";
+"validation_error_empty_email" = "Пустой E-Mail";
+"validation_error_incorrect_user_name" = "Неверный формат никнейма";
+"validation_error_password_not_equals" = "Пароли не совпадают";
+
+// Успешная валидация
+"validation_success_email_sent_title" = "Письмо с восстановлением пароля отправлено";
+"validation_success_email_sent_message" = "Проверьте свою почту";

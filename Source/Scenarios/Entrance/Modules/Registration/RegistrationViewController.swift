@@ -20,6 +20,12 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
+    private lazy var emailErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
+    }()
+    
     private lazy var userNameTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_user_name_placeholder(),
@@ -27,6 +33,12 @@ final class RegistrationViewController: UIViewController {
         )
         textField.returnKeyType = .next
         return textField
+    }()
+    
+    private lazy var userNameErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
     }()
     
     private lazy var passwordTextField: UITextField = {
@@ -38,12 +50,24 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
+    private lazy var passwordErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
+    }()
+    
     private lazy var confirmPasswordTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_confirm_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
         return textField
+    }()
+    
+    private lazy var confirmPasswordErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
     }()
     
     private lazy var registrationButton: UIButton = {
@@ -57,8 +81,9 @@ final class RegistrationViewController: UIViewController {
     private lazy var enterButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.registration_screen_authorization(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: nil
         )
+        button.setFontSize(14)
         return button
     }()
     
@@ -78,7 +103,7 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: Dependencies
     
-    private var presenter: RegistrationViewOutput
+    private let presenter: RegistrationViewOutput
     
     // MARK: Init && deinit
     
@@ -91,12 +116,22 @@ final class RegistrationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         addSubviews()
+        addKeyboardObservers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupUI()
     }
     
@@ -107,45 +142,156 @@ final class RegistrationViewController: UIViewController {
         userNameTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+        
+        view.backgroundColor = .systemBackground
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        registrationButton.addTarget(self, action: #selector(registrationButtonTapped(_:)), for: .touchUpInside)
+        enterButton.addTarget(self, action: #selector(enterButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func addSubviews() {
         view.addSubview(textFieldsStackView)
         view.addSubview(buttonsStackView)
         textFieldsStackView.addArrangedSubview(emailTextField)
+        view.addSubview(emailErrorLabel)
         textFieldsStackView.addArrangedSubview(userNameTextField)
+        view.addSubview(userNameErrorLabel)
         textFieldsStackView.addArrangedSubview(passwordTextField)
+        view.addSubview(passwordErrorLabel)
         textFieldsStackView.addArrangedSubview(confirmPasswordTextField)
+        view.addSubview(confirmPasswordErrorLabel)
         buttonsStackView.addArrangedSubview(registrationButton)
         buttonsStackView.addArrangedSubview(enterButton)
     }
     
     private func setupUI() {
-        setupStackViews()
-    }
-    
-    private func setupStackViews() {
+        let topInset = view.frame.height / .multiplierForTextFieldStackViews
         textFieldsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForTextFieldStackViews)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(topInset)
+        }
+        emailErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(emailTextField)
+            make.top.equalTo(emailTextField.snp.bottom).offset(Constants.topOffset)
+        }
+        userNameErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(userNameTextField)
+            make.top.equalTo(userNameTextField.snp.bottom).offset(Constants.topOffset)
+        }
+        passwordErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(passwordTextField)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(Constants.topOffset)
+        }
+        confirmPasswordErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(confirmPasswordTextField)
+            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(Constants.topOffset)
         }
         buttonsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.centerY.equalToSuperview().multipliedBy(Constants.multiplierForButtonsStackViews)
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
         }
     }
     
-    // Objc
+    @objc private func registrationButtonTapped(_ sender: UIButton? = nil) {
+        hideErrors()
+        presenter.registration(
+            email: emailTextField.text ?? "",
+            userName: userNameTextField.text ?? "",
+            password: passwordTextField.text ?? "",
+            confirmPassword: confirmPasswordTextField.text ?? ""
+        )
+    }
+    
+    @objc private func enterButtonTapped(_ sender: UIButton? = nil) {
+        presenter.enter()
+    }
+    
+    private func hideErrors() {
+        emailErrorLabel.alpha = 0
+        userNameErrorLabel.alpha = 0
+        passwordErrorLabel.alpha = 0
+        confirmPasswordErrorLabel.alpha = 0
+    }
+    
+    private func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
     
     @objc private func hideKeyboard() {
+        hideErrors()
         view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        hideErrors()
+        
+        guard let keyboardFrame = notification.keyboardFrame else { return }
+        let height = keyboardFrame.height
+        
+        let sizeForFreeView = view.frame.height - height
+        let heightForElements = textFieldsStackView.frame.height + buttonsStackView.frame.height + .textFieldsSpacing
+
+        let inset = (sizeForFreeView - heightForElements) / .multiplierForHalf
+        
+        textFieldsStackView.snp.updateConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(inset)
+        }
+        
+        let bottomSpace = view.frame.height - (inset + heightForElements + view.safeAreaInsets.top)
+        buttonsStackView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(bottomSpace)
+        }
+        
+        view.layoutIfNeeded()
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        let topInset = view.frame.height / .multiplierForTextFieldStackViews
+        
+        textFieldsStackView.snp.updateConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(topInset)
+        }
+        
+        buttonsStackView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+        }
+        
+        view.layoutIfNeeded()
     }
 }
 
 // MARK: - ViewInput
 
 extension RegistrationViewController: RegistrationViewInput {
+    func showError(_ error: RegistrationErrors) {
+        switch error {
+        case .emailTextField(let message):
+            emailErrorLabel.text = message
+            emailErrorLabel.alpha = 1
+        case .userNameTextField(let message):
+            userNameErrorLabel.text = message
+            userNameErrorLabel.alpha = 1
+        case .passwordTextField(let message):
+            passwordErrorLabel.text = message
+            passwordErrorLabel.alpha = 1
+        case .confirmPasswordTextField(let message):
+            confirmPasswordErrorLabel.text = message
+            confirmPasswordErrorLabel.alpha = 1
+        }
+    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -160,6 +306,7 @@ extension RegistrationViewController: UITextFieldDelegate {
         case passwordTextField:
             confirmPasswordTextField.becomeFirstResponder()
         default:
+            registrationButtonTapped()
             textField.resignFirstResponder()
         }
         return true
@@ -170,15 +317,22 @@ extension RegistrationViewController: UITextFieldDelegate {
 
 private extension RegistrationViewController {
     enum Constants {
-        static let multiplierForTextFieldStackViews = 0.75
         static let multiplierForButtonsStackViews = 1.75
         
         static let sidesInsets = 30
+        
+        static let topOffset = 5
+        
+        static let bottomInset = 20
     }
 }
 
 private extension CGFloat {
-    static let textFieldsSpacing: CGFloat = 20
+    static let textFieldsSpacing: CGFloat = 30
     
-    static let buttonsSpacing: CGFloat = 20
+    static let buttonsSpacing: CGFloat = 10
+    
+    static let multiplierForTextFieldStackViews: CGFloat = 5
+    
+    static let multiplierForHalf: CGFloat = 2
 }

@@ -8,4 +8,5 @@
 import Foundation
 
 protocol AuthorizationViewInput: AnyObject {
+    func showError(_ error: AuthorizationErrors)
 }

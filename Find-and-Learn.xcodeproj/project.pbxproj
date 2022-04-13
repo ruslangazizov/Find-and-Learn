@@ -53,16 +53,40 @@
 		44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379F827FC46A9001F02F4 /* HistoryWordsViewInput.swift */; };
 		44F379FB27FC46C2001F02F4 /* HistoryWordsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379FA27FC46C2001F02F4 /* HistoryWordsViewOutput.swift */; };
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
+		D2037FB327FCA00F0036E0A5 /* AuthorizationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB227FCA00F0036E0A5 /* AuthorizationErrors.swift */; };
+		D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */; };
+		D2037FB727FCAA9D0036E0A5 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB627FCAA9D0036E0A5 /* RegistrationAssembly.swift */; };
+		D2037FBA27FCAB460036E0A5 /* RegistrationInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB927FCAB460036E0A5 /* RegistrationInteractorProtocol.swift */; };
+		D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FBB27FCAB510036E0A5 /* RegistrationInteractor.swift */; };
 		D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */; };
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
 		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
 		D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */; };
+		D21E9DAA27F9FF93005513B7 /* ValidationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */; };
+		D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAB27FA000B005513B7 /* ValidationManager.swift */; };
+		D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */; };
+		D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */; };
 		D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */; };
 		D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */; };
 		D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */; };
+		D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */; };
+		D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C027FD825F007332A8 /* RegistrationErrors.swift */; };
+		D28814C427FD8F5B007332A8 /* PasswordRecoveryRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C327FD8F5B007332A8 /* PasswordRecoveryRouterProtocol.swift */; };
+		D28814C627FD8F67007332A8 /* PasswordRecoveryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C527FD8F67007332A8 /* PasswordRecoveryRouter.swift */; };
+		D28814C827FD97AE007332A8 /* EntranceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C727FD97AE007332A8 /* EntranceAssembly.swift */; };
+		D28814CB27FD989C007332A8 /* AuthorizationRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CA27FD989C007332A8 /* AuthorizationRouterProtocol.swift */; };
+		D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CC27FD98BA007332A8 /* AuthorizationRouter.swift */; };
+		D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */; };
+		D28814D227FDA1C8007332A8 /* RegistrationRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814D127FDA1C8007332A8 /* RegistrationRouterProtocol.swift */; };
+		D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */; };
 		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
+		D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */; };
+		D2BC64B727FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B627FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift */; };
+		D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B827FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift */; };
+		D2BC64BC27FC443900F2E15F /* AuthorizationInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */; };
+		D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
 		D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */; };
 		D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168527DE4B230026692E /* RegistrationPresenter.swift */; };
@@ -125,16 +149,40 @@
 		44F379F827FC46A9001F02F4 /* HistoryWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsViewInput.swift; sourceTree = "<group>"; };
 		44F379FA27FC46C2001F02F4 /* HistoryWordsViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsViewOutput.swift; sourceTree = "<group>"; };
 		773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.release.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.release.xcconfig"; sourceTree = "<group>"; };
+		D2037FB227FCA00F0036E0A5 /* AuthorizationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationErrors.swift; sourceTree = "<group>"; };
+		D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationResultState.swift; sourceTree = "<group>"; };
+		D2037FB627FCAA9D0036E0A5 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
+		D2037FB927FCAB460036E0A5 /* RegistrationInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorProtocol.swift; sourceTree = "<group>"; };
+		D2037FBB27FCAB510036E0A5 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
 		D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewOutput.swift; sourceTree = "<group>"; };
+		D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManagerProtocol.swift; sourceTree = "<group>"; };
+		D21E9DAB27FA000B005513B7 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryErrors.swift; sourceTree = "<group>"; };
+		D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
 		D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryAssembly.swift; sourceTree = "<group>"; };
+		D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResultState.swift; sourceTree = "<group>"; };
+		D28814C027FD825F007332A8 /* RegistrationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationErrors.swift; sourceTree = "<group>"; };
+		D28814C327FD8F5B007332A8 /* PasswordRecoveryRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryRouterProtocol.swift; sourceTree = "<group>"; };
+		D28814C527FD8F67007332A8 /* PasswordRecoveryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryRouter.swift; sourceTree = "<group>"; };
+		D28814C727FD97AE007332A8 /* EntranceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceAssembly.swift; sourceTree = "<group>"; };
+		D28814CA27FD989C007332A8 /* AuthorizationRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouterProtocol.swift; sourceTree = "<group>"; };
+		D28814CC27FD98BA007332A8 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
+		D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		D28814D127FDA1C8007332A8 /* RegistrationRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouterProtocol.swift; sourceTree = "<group>"; };
+		D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		D2BC64B627FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryInteractorProtocol.swift; sourceTree = "<group>"; };
+		D2BC64B827FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryInteractor.swift; sourceTree = "<group>"; };
+		D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractorProtocol.swift; sourceTree = "<group>"; };
+		D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractor.swift; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
 		D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
 		D2D1168527DE4B230026692E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
@@ -179,6 +227,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D21E9DA827F9FF64005513B7 /* Validation Managers */,
 				44D5811027E7B34000DBCC4E /* Data Managers */,
 			);
 			path = Services;
@@ -202,6 +251,8 @@
 				44F379DF27FC41A6001F02F4 /* DateFormatter+Extensions.swift */,
 				D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */,
 				D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */,
+				D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */,
+				D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,13 +484,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D2037FB827FCAB240036E0A5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D2037FB927FCAB460036E0A5 /* RegistrationInteractorProtocol.swift */,
+				D2037FBB27FCAB510036E0A5 /* RegistrationInteractor.swift */,
+				D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		D217568F27EB24C200C3D545 /* Password Recovery */ = {
 			isa = PBXGroup;
 			children = (
+				D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */,
+				D28814C227FD8F41007332A8 /* Router */,
+				D2BC64B527FC3E5F00F2E15F /* Interactor */,
 				D217569427EB25BC00C3D545 /* Protocols */,
 				D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */,
 				D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */,
-				D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */,
+				D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */,
 			);
 			path = "Password Recovery";
 			sourceTree = "<group>";
@@ -451,6 +515,50 @@
 				D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D21E9DA827F9FF64005513B7 /* Validation Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */,
+				D21E9DAB27FA000B005513B7 /* ValidationManager.swift */,
+			);
+			path = "Validation Managers";
+			sourceTree = "<group>";
+		};
+		D21E9DAF27FA08A3005513B7 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		D28814C227FD8F41007332A8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D28814C327FD8F5B007332A8 /* PasswordRecoveryRouterProtocol.swift */,
+				D28814C527FD8F67007332A8 /* PasswordRecoveryRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D28814C927FD9881007332A8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D28814CA27FD989C007332A8 /* AuthorizationRouterProtocol.swift */,
+				D28814CC27FD98BA007332A8 /* AuthorizationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D28814D027FDA1AD007332A8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D28814D127FDA1C8007332A8 /* RegistrationRouterProtocol.swift */,
+				D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		D2A5A42D27E5E2D300E503AA /* Autogenerated Files */ = {
@@ -500,6 +608,7 @@
 		D2AB637F27DCCC9200CE4441 /* Entrance */ = {
 			isa = PBXGroup;
 			children = (
+				D28814C727FD97AE007332A8 /* EntranceAssembly.swift */,
 				D2D1167F27DE42D40026692E /* Modules */,
 			);
 			path = Entrance;
@@ -508,11 +617,34 @@
 		D2AB638027DCCCA900CE4441 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				D2037FB627FCAA9D0036E0A5 /* RegistrationAssembly.swift */,
+				D28814D027FDA1AD007332A8 /* Router */,
+				D2037FB827FCAB240036E0A5 /* Interactor */,
 				D2D1168027DE49E20026692E /* Protocols */,
 				44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */,
 				D2D1168527DE4B230026692E /* RegistrationPresenter.swift */,
+				D28814C027FD825F007332A8 /* RegistrationErrors.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		D2BC64B527FC3E5F00F2E15F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D2BC64B627FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift */,
+				D2BC64B827FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D2BC64BA27FC441900F2E15F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */,
+				D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */,
+				D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		D2D1167F27DE42D40026692E /* Modules */ = {
@@ -537,6 +669,7 @@
 		D2D1168727DE78AE0026692E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D21E9DAF27FA08A3005513B7 /* Labels */,
 				D2D1168B27DE80E20026692E /* Buttons */,
 				D2D1168827DE78B80026692E /* TextFields */,
 			);
@@ -563,10 +696,13 @@
 		D2FB5D5127EDA4DB00CBDB00 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */,
+				D28814C927FD9881007332A8 /* Router */,
+				D2BC64BA27FC441900F2E15F /* Interactor */,
 				D2FB5D5627EDA58700CBDB00 /* Protocols */,
 				D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */,
 				D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */,
-				D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */,
+				D2037FB227FCA00F0036E0A5 /* AuthorizationErrors.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -737,11 +873,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */,
+				D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */,
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
+				D2BC64B727FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
 				44DC5FF227FF0A39005EACAE /* FavoriteWordsViewOutput.swift in Sources */,
+				D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
+				D2037FB327FCA00F0036E0A5 /* AuthorizationErrors.swift in Sources */,
 				D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */,
 				44DC5FFA27FF24B4005EACAE /* FavoriteWordsViewController.swift in Sources */,
 				44DC5FF627FF0CD5005EACAE /* FavoriteWordsInteractor.swift in Sources */,
@@ -755,29 +896,41 @@
 				D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */,
 				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
+				D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
 				44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */,
 				44F379F227FC45D7001F02F4 /* HistoryWordsRouterProtocol.swift in Sources */,
 				44DC5FEC27FF0A05005EACAE /* FavoriteWordsRouterProtocol.swift in Sources */,
 				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
+				D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				44DC5FF827FF0E0B005EACAE /* FavoriteWordsPresenter.swift in Sources */,
 				44F379E027FC41A6001F02F4 /* DateFormatter+Extensions.swift in Sources */,
 				44F379F027FC45BE001F02F4 /* HistoryWordsRouter.swift in Sources */,
 				D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */,
+				D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */,
+				D2BC64BC27FC443900F2E15F /* AuthorizationInteractorProtocol.swift in Sources */,
 				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
+				D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
+				D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
+				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
+				D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */,
+				D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */,
+				D28814CB27FD989C007332A8 /* AuthorizationRouterProtocol.swift in Sources */,
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
+				D21E9DAA27F9FF93005513B7 /* ValidationManagerProtocol.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
+				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
 				447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */,
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
@@ -789,15 +942,22 @@
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
 				44DC5FEE27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
+				D2037FBA27FCAB460036E0A5 /* RegistrationInteractorProtocol.swift in Sources */,
+				D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */,
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
 				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
 				44DC5FFC27FF260D005EACAE /* FavoriteWordsTableViewCell.swift in Sources */,
 				44F379EA27FC43F0001F02F4 /* HistoryWordsInteractorProtocol.swift in Sources */,
+				D2037FB727FCAA9D0036E0A5 /* RegistrationAssembly.swift in Sources */,
+				D28814C427FD8F5B007332A8 /* PasswordRecoveryRouterProtocol.swift in Sources */,
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
+				D28814C627FD8F67007332A8 /* PasswordRecoveryRouter.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
+				D28814D227FDA1C8007332A8 /* RegistrationRouterProtocol.swift in Sources */,
+				D28814C827FD97AE007332A8 /* EntranceAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,7 +1101,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BU5S75BK7N;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -969,7 +1129,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BU5S75BK7N;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
