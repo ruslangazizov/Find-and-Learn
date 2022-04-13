@@ -69,6 +69,22 @@
 		D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */; };
 		D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */; };
 		D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */; };
+		D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5027F8536B0007E65D /* AccountViewController.swift */; };
+		D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5227F853A10007E65D /* AccountViewInput.swift */; };
+		D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */; };
+		D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5727F854160007E65D /* AccountPresenter.swift */; };
+		D25FCD5B27F858C10007E65D /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5A27F858C10007E65D /* CircularView.swift */; };
+		D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */; };
+		D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */; };
+		D25FCD6227F8666C0007E65D /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD6127F8666C0007E65D /* Setting.swift */; };
+		D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */; };
+		D26EFF03280085830019F1EC /* AccountInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF02280085830019F1EC /* AccountInteractorProtocol.swift */; };
+		D26EFF05280085950019F1EC /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF04280085950019F1EC /* AccountInteractor.swift */; };
+		D26EFF082800886D0019F1EC /* SettingsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF072800886D0019F1EC /* SettingsManagerProtocol.swift */; };
+		D26EFF0A280088780019F1EC /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF09280088780019F1EC /* SettingsManager.swift */; };
+		D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */; };
+		D26EFF0F2800A3430019F1EC /* AccountRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */; };
+		D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF102800A4240019F1EC /* AccountRouter.swift */; };
 		D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */; };
 		D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C027FD825F007332A8 /* RegistrationErrors.swift */; };
 		D28814C427FD8F5B007332A8 /* PasswordRecoveryRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C327FD8F5B007332A8 /* PasswordRecoveryRouterProtocol.swift */; };
@@ -165,6 +181,22 @@
 		D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryAssembly.swift; sourceTree = "<group>"; };
+		D25FCD5027F8536B0007E65D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		D25FCD5227F853A10007E65D /* AccountViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewInput.swift; sourceTree = "<group>"; };
+		D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewOutput.swift; sourceTree = "<group>"; };
+		D25FCD5727F854160007E65D /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		D25FCD5A27F858C10007E65D /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
+		D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembly.swift; sourceTree = "<group>"; };
+		D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		D25FCD6127F8666C0007E65D /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		D26EFF02280085830019F1EC /* AccountInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractorProtocol.swift; sourceTree = "<group>"; };
+		D26EFF04280085950019F1EC /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
+		D26EFF072800886D0019F1EC /* SettingsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManagerProtocol.swift; sourceTree = "<group>"; };
+		D26EFF09280088780019F1EC /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouterProtocol.swift; sourceTree = "<group>"; };
+		D26EFF102800A4240019F1EC /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
 		D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResultState.swift; sourceTree = "<group>"; };
 		D28814C027FD825F007332A8 /* RegistrationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationErrors.swift; sourceTree = "<group>"; };
 		D28814C327FD8F5B007332A8 /* PasswordRecoveryRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryRouterProtocol.swift; sourceTree = "<group>"; };
@@ -220,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				44BE5DD327E52A3C0024F268 /* Dictionary */,
+				D25FCD4E27F852FD0007E65D /* Account */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -227,6 +260,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D26EFF06280088480019F1EC /* Settings Manager */,
 				D21E9DA827F9FF64005513B7 /* Validation Managers */,
 				44D5811027E7B34000DBCC4E /* Data Managers */,
 			);
@@ -251,6 +285,8 @@
 				44F379DF27FC41A6001F02F4 /* DateFormatter+Extensions.swift */,
 				D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */,
 				D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */,
+				D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */,
+				D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */,
 				D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */,
 				D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */,
 			);
@@ -329,6 +365,7 @@
 			children = (
 				44BE5DDE27E531FD0024F268 /* Word.swift */,
 				44D5811727E7D74500DBCC4E /* User.swift */,
+				D25FCD6127F8666C0007E65D /* Setting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -517,6 +554,80 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		D25FCD4E27F852FD0007E65D /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */,
+				D26EFF0D2800A3310019F1EC /* Router */,
+				D26EFF01280085560019F1EC /* Interactor */,
+				D25FCD5627F854010007E65D /* Presenter */,
+				D25FCD4F27F8534E0007E65D /* View */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		D25FCD4F27F8534E0007E65D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D25FCD5E27F866370007E65D /* Cells */,
+				D25FCD5027F8536B0007E65D /* AccountViewController.swift */,
+				D25FCD5227F853A10007E65D /* AccountViewInput.swift */,
+				D25FCD5427F853AF0007E65D /* AccountViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D25FCD5627F854010007E65D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D25FCD5727F854160007E65D /* AccountPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D25FCD5927F858960007E65D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D25FCD5A27F858C10007E65D /* CircularView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D25FCD5E27F866370007E65D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D26EFF01280085560019F1EC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D26EFF02280085830019F1EC /* AccountInteractorProtocol.swift */,
+				D26EFF04280085950019F1EC /* AccountInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D26EFF06280088480019F1EC /* Settings Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D26EFF072800886D0019F1EC /* SettingsManagerProtocol.swift */,
+				D26EFF09280088780019F1EC /* SettingsManager.swift */,
+			);
+			path = "Settings Manager";
+			sourceTree = "<group>";
+		};
+		D26EFF0D2800A3310019F1EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */,
+				D26EFF102800A4240019F1EC /* AccountRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		D21E9DA827F9FF64005513B7 /* Validation Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +780,7 @@
 		D2D1168727DE78AE0026692E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D25FCD5927F858960007E65D /* Views */,
 				D21E9DAF27FA08A3005513B7 /* Labels */,
 				D2D1168B27DE80E20026692E /* Buttons */,
 				D2D1168827DE78B80026692E /* TextFields */,
@@ -879,7 +991,9 @@
 				D2BC64B727FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
+				D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */,
 				44DC5FF227FF0A39005EACAE /* FavoriteWordsViewOutput.swift in Sources */,
+				D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */,
 				D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D2037FB327FCA00F0036E0A5 /* AuthorizationErrors.swift in Sources */,
@@ -888,10 +1002,12 @@
 				44DC5FF627FF0CD5005EACAE /* FavoriteWordsInteractor.swift in Sources */,
 				44DC5FF027FF0A31005EACAE /* FavoriteWordsViewInput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
+				D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */,
 				44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */,
 				44F379FB27FC46C2001F02F4 /* HistoryWordsViewOutput.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
 				44DC5FE627FF090E005EACAE /* FavoriteWordsAssembly.swift in Sources */,
+				D26EFF0A280088780019F1EC /* SettingsManager.swift in Sources */,
 				44F379E827FC43C0001F02F4 /* HistoryWordsInteractor.swift in Sources */,
 				D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */,
 				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
@@ -904,6 +1020,9 @@
 				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
 				D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
+				D26EFF05280085950019F1EC /* AccountInteractor.swift in Sources */,
+				D25FCD5B27F858C10007E65D /* CircularView.swift in Sources */,
+				D26EFF0F2800A3430019F1EC /* AccountRouterProtocol.swift in Sources */,
 				44DC5FF827FF0E0B005EACAE /* FavoriteWordsPresenter.swift in Sources */,
 				44F379E027FC41A6001F02F4 /* DateFormatter+Extensions.swift in Sources */,
 				44F379F027FC45BE001F02F4 /* HistoryWordsRouter.swift in Sources */,
@@ -911,11 +1030,15 @@
 				D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */,
 				D2BC64BC27FC443900F2E15F /* AuthorizationInteractorProtocol.swift in Sources */,
 				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
+				D26EFF03280085830019F1EC /* AccountInteractorProtocol.swift in Sources */,
 				D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
+				D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */,
 				D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
+				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
+				D25FCD6227F8666C0007E65D /* Setting.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
 				447D707B27EE53FF0011A7F4 /* SearchWordsInteractorProtocol.swift in Sources */,
@@ -935,12 +1058,17 @@
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
+				D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */,
+				D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */,
+				D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */,
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
+				D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
 				44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */,
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
 				44DC5FEE27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift in Sources */,
+				D26EFF082800886D0019F1EC /* SettingsManagerProtocol.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
 				D2037FBA27FCAB460036E0A5 /* RegistrationInteractorProtocol.swift in Sources */,
 				D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */,
@@ -1012,7 +1140,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = arm86;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1074,7 +1202,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = arm86;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

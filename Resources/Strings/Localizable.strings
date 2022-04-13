@@ -37,6 +37,26 @@
 // Экран "Избранное"
 "favorite_words_screen_title" = "Избранное";
 
+// Экран "Аккаунт"
+"account_screen_user_name_placeholder" = "Никнейм";
+
+// Уведомления для экрана "Аккаунт"
+"alert_title" = "Подтвердите действие";
+"alert_confirm" = "Да";
+"alert_cancel" = "Отмена";
+"alert_download_dictionary" = "Вы уверены, что хотите скачать словарь на телефон?";
+"alert_exit" = "Вы уверены, что хотите выйти из аккаунта?";
+"alert_delete_account" = "Вы уверены, что хотите удалить аккаунт?";
+
+// Настройки для экрана "Аккаунт"
+"settings_show_achievements" = "Мои достижения";
+"settings_change_password" = "Изменить пароль";
+"settings_download_dictionary" = "Скачать словарь";
+"settings_exit" = "Выйти";
+"settings_delete_account" = "Удалить аккаунт";
+"settings_registration" = "Зарегистрироваться";
+"settings_confirm_email" = "Подтвердить E-Mail";
+
 // Ошибки валидации
 "validation_error_incorrect_email" = "Неверный формат E-Mail";
 "validation_error_incorrect_password" = "Неверный формат пароля";
