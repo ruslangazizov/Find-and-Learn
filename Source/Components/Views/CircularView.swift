@@ -44,9 +44,6 @@ final class CircularView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = frame.size.height / .divider
-        clipsToBounds = true
-        
         imageView.layer.cornerRadius = imageView.frame.size.height / .divider
         imageView.clipsToBounds = true
     }
