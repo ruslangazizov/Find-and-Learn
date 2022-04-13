@@ -32,6 +32,9 @@ final class PasswordTextField: UITextField {
         textContentType = .oneTimeCode
         adjustsFontSizeToFitWidth = true
         minimumFontSize = .minimumFontSize
+        autocorrectionType = .no
+        autocapitalizationType = .none
+        spellCheckingType = .no
         if let layerColor = layerColor {
             layer.borderWidth = .borderWidth
             layer.borderColor = layerColor
@@ -84,8 +87,8 @@ private extension CGFloat {
 
 private extension PasswordTextField {
     enum Constants {
-        static let padding = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 50)
+        static let padding = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 40)
         
-        static let imagePadding = UIEdgeInsets(top: 4, left: 2, bottom: 0, right: 2)
+        static let imagePadding = UIEdgeInsets(top: 8, left: 6, bottom: 4, right: 6)
     }
 }

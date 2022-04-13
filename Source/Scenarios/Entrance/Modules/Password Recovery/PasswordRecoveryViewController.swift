@@ -10,12 +10,18 @@ import UIKit
 final class PasswordRecoveryViewController: UIViewController {
     // MARK: UI
     
-    private lazy var emailTextField: CommonTextField = {
+    private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.password_recovery_screen_email_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
         return textField
+    }()
+    
+    private lazy var emailErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.alpha = 0
+        return label
     }()
     
     private lazy var recoveryButton: UIButton = {
@@ -66,8 +72,8 @@ final class PasswordRecoveryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        addSubviews()
-        setupUI()
+        setupLayout()
+        addKeyboardObservers()
     }
     
     // MARK: Private
@@ -75,8 +81,46 @@ final class PasswordRecoveryViewController: UIViewController {
     private func configure() {
         emailTextField.delegate = self
         
+        view.backgroundColor = .systemBackground
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
+        recoveryButton.addTarget(self, action: #selector(recoveryButtonTapped(_:)), for: .touchUpInside)
+        enterButton.addTarget(self, action: #selector(enterButtonTapped(_:)), for: .touchUpInside)
+    }
+    
+    private func setupLayout() {
+        view.addSubview(emailTextField)
+        emailTextField.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
+            make.top.equalToSuperview().inset(view.frame.height * .multiplierForEmailTextField)
+        }
+        
+        view.addSubview(emailErrorLabel)
+        emailErrorLabel.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).offset(Constants.topOffset)
+            make.leading.trailing.equalTo(emailTextField)
+        }
+        
+        view.addSubview(buttonsStackView)
+        buttonsStackView.addArrangedSubview(recoveryButton)
+        buttonsStackView.addArrangedSubview(enterButton)
+        buttonsStackView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
+            make.bottom.equalToSuperview().inset(Constants.stackViewBottomInset)
+        }
+    }
+    
+    @objc private func recoveryButtonTapped(_ sender: UIButton? = nil) {
+        hideKeyboard()
+        presenter.recoveryPassword(email: emailTextField.text ?? "")
+    }
+    
+    @objc private func enterButtonTapped(_ sender: UIButton? = nil) {
+        presenter.enter()
+    }
+    
+    private func addKeyboardObservers() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShow(notification:)),
@@ -91,53 +135,28 @@ final class PasswordRecoveryViewController: UIViewController {
         )
     }
     
-    private func addSubviews() {
-        view.addSubview(emailTextField)
-        view.addSubview(buttonsStackView)
-        buttonsStackView.addArrangedSubview(recoveryButton)
-        buttonsStackView.addArrangedSubview(enterButton)
-    }
-    
-    private func setupUI() {
-        setupTextFields()
-        setupStackViews()
-    }
-    
-    private func setupTextFields() {
-        emailTextField.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.top.equalToSuperview().inset(view.frame.height * .multiplierForEmailTextField)
-        }
-    }
-    
-    private func setupStackViews() {
-        buttonsStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
-            make.bottom.equalToSuperview().inset(Constants.stackViewBottomInset)
-        }
-    }
-    
-    // Objc
-    
     @objc private func hideKeyboard() {
         view.endEditing(true)
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
+        emailErrorLabel.alpha = 0
+        
         guard let keyboardFrame = notification.keyboardFrame else { return }
         let height = keyboardFrame.height
         
-        buttonsStackView.snp.updateConstraints { make in
-            make.bottom.equalToSuperview().inset(height)
+        let freeSpace = view.frame.height - height
+        let neededSpace = emailTextField.frame.height + buttonsStackView.frame.height + .buttonsSpacing
+        let inset = (freeSpace - neededSpace) / 2
+        
+        emailTextField.snp.updateConstraints { make in
+            make.top.equalToSuperview().inset(inset)
         }
         
-        let yForStackView = height + buttonsStackView.frame.height
-        if yForStackView >= view.frame.height * CGFloat.multiplierForEmailTextField - emailTextField.frame.height {
-            let inset = view.frame.height - yForStackView - emailTextField.frame.height - CGFloat.buttonsSpacing
-            emailTextField.snp.updateConstraints { make in
-                make.top.equalToSuperview().inset(inset)
-            }
+        buttonsStackView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(height + inset)
         }
+        
         view.layoutIfNeeded()
     }
     
@@ -156,13 +175,30 @@ final class PasswordRecoveryViewController: UIViewController {
 // MARK: - ViewInput
 
 extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
+    func showError(error: PasswordRecoveryErrors) {
+        switch error {
+        case .email(let message):
+            emailErrorLabel.text = message
+            emailErrorLabel.alpha = 1
+        }        
+    }
+    
+    func showOkAlert() {
+        let alert = UIAlertController(
+            title: R.string.localizable.validation_success_email_sent_title(),
+            message: R.string.localizable.validation_success_email_sent_message(),
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITextFieldDelegate
 
 extension PasswordRecoveryViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        recoveryButtonTapped()
         return true
     }
 }
@@ -175,6 +211,8 @@ private extension PasswordRecoveryViewController {
         
         static let sidesInsets = 30
         static let stackViewBottomInset = 50
+        
+        static let topOffset = 5
     }
 }
 
