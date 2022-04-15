@@ -17,7 +17,7 @@ final class RegistrationRouter: RegistrationRouterProtocol {
     
     func showAuthorization() {
         let viewController = AuthorizationAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController, with: .fromLeft)
+        view?.navigationController?.setViewController(viewController: viewController, animated: true)
     }
     
     func finish() {
