@@ -62,7 +62,6 @@
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
 		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
 		D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */; };
-		D21E9DAA27F9FF93005513B7 /* ValidationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */; };
 		D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAB27FA000B005513B7 /* ValidationManager.swift */; };
 		D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */; };
 		D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */; };
@@ -80,7 +79,6 @@
 		D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */; };
 		D26EFF03280085830019F1EC /* AccountInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF02280085830019F1EC /* AccountInteractorProtocol.swift */; };
 		D26EFF05280085950019F1EC /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF04280085950019F1EC /* AccountInteractor.swift */; };
-		D26EFF082800886D0019F1EC /* SettingsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF072800886D0019F1EC /* SettingsManagerProtocol.swift */; };
 		D26EFF0A280088780019F1EC /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF09280088780019F1EC /* SettingsManager.swift */; };
 		D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */; };
 		D26EFF0F2800A3430019F1EC /* AccountRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */; };
@@ -174,7 +172,6 @@
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
 		D217569727EB25F100C3D545 /* PasswordRecoveryViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewOutput.swift; sourceTree = "<group>"; };
-		D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManagerProtocol.swift; sourceTree = "<group>"; };
 		D21E9DAB27FA000B005513B7 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryErrors.swift; sourceTree = "<group>"; };
 		D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
@@ -192,7 +189,6 @@
 		D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		D26EFF02280085830019F1EC /* AccountInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractorProtocol.swift; sourceTree = "<group>"; };
 		D26EFF04280085950019F1EC /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
-		D26EFF072800886D0019F1EC /* SettingsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManagerProtocol.swift; sourceTree = "<group>"; };
 		D26EFF09280088780019F1EC /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouterProtocol.swift; sourceTree = "<group>"; };
@@ -554,6 +550,22 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		D21E9DA827F9FF64005513B7 /* Validation Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D21E9DAB27FA000B005513B7 /* ValidationManager.swift */,
+			);
+			path = "Validation Managers";
+			sourceTree = "<group>";
+		};
+		D21E9DAF27FA08A3005513B7 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		D25FCD4E27F852FD0007E65D /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,7 +625,6 @@
 		D26EFF06280088480019F1EC /* Settings Manager */ = {
 			isa = PBXGroup;
 			children = (
-				D26EFF072800886D0019F1EC /* SettingsManagerProtocol.swift */,
 				D26EFF09280088780019F1EC /* SettingsManager.swift */,
 			);
 			path = "Settings Manager";
@@ -626,23 +637,6 @@
 				D26EFF102800A4240019F1EC /* AccountRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		D21E9DA827F9FF64005513B7 /* Validation Managers */ = {
-			isa = PBXGroup;
-			children = (
-				D21E9DA927F9FF93005513B7 /* ValidationManagerProtocol.swift */,
-				D21E9DAB27FA000B005513B7 /* ValidationManager.swift */,
-			);
-			path = "Validation Managers";
-			sourceTree = "<group>";
-		};
-		D21E9DAF27FA08A3005513B7 /* Labels */ = {
-			isa = PBXGroup;
-			children = (
-				D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */,
-			);
-			path = Labels;
 			sourceTree = "<group>";
 		};
 		D28814C227FD8F41007332A8 /* Router */ = {
@@ -1051,7 +1045,6 @@
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
-				D21E9DAA27F9FF93005513B7 /* ValidationManagerProtocol.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
 				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
 				447D707227EE4E5C0011A7F4 /* SearchWordsViewOutput.swift in Sources */,
@@ -1068,7 +1061,6 @@
 				44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */,
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
 				44DC5FEE27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift in Sources */,
-				D26EFF082800886D0019F1EC /* SettingsManagerProtocol.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
 				D2037FBA27FCAB460036E0A5 /* RegistrationInteractorProtocol.swift in Sources */,
 				D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */,
