@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol PasswordRecoveryInteractorProtocol: AnyObject {
+    func recoveryPassword(email: String, _ result: (String?) -> Void)
+}
+
 final class PasswordRecoveryInteractor: PasswordRecoveryInteractorProtocol {
     // MARK: Dependencies
     

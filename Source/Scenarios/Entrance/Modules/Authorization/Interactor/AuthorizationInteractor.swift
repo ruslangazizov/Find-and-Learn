@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol AuthorizationInteractorProtocol: AnyObject {
+    func enter(email: String, password: String, _ result: (AuthorizationResultState) -> Void)
+}
+
 final class AuthorizationInteractor: AuthorizationInteractorProtocol {
     // MARK: Dependencies
     

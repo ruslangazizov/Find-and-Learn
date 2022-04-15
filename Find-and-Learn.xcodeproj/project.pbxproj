@@ -56,7 +56,6 @@
 		D2037FB327FCA00F0036E0A5 /* AuthorizationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB227FCA00F0036E0A5 /* AuthorizationErrors.swift */; };
 		D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */; };
 		D2037FB727FCAA9D0036E0A5 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB627FCAA9D0036E0A5 /* RegistrationAssembly.swift */; };
-		D2037FBA27FCAB460036E0A5 /* RegistrationInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FB927FCAB460036E0A5 /* RegistrationInteractorProtocol.swift */; };
 		D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FBB27FCAB510036E0A5 /* RegistrationInteractor.swift */; };
 		D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */; };
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
@@ -94,9 +93,7 @@
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
 		D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */; };
-		D2BC64B727FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B627FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift */; };
 		D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64B827FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift */; };
-		D2BC64BC27FC443900F2E15F /* AuthorizationInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */; };
 		D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */; };
 		D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */; };
 		D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */; };
@@ -163,7 +160,6 @@
 		D2037FB227FCA00F0036E0A5 /* AuthorizationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationErrors.swift; sourceTree = "<group>"; };
 		D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationResultState.swift; sourceTree = "<group>"; };
 		D2037FB627FCAA9D0036E0A5 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
-		D2037FB927FCAB460036E0A5 /* RegistrationInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorProtocol.swift; sourceTree = "<group>"; };
 		D2037FBB27FCAB510036E0A5 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
@@ -201,9 +197,7 @@
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
-		D2BC64B627FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryInteractorProtocol.swift; sourceTree = "<group>"; };
 		D2BC64B827FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryInteractor.swift; sourceTree = "<group>"; };
-		D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractorProtocol.swift; sourceTree = "<group>"; };
 		D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractor.swift; sourceTree = "<group>"; };
 		D2D1168127DE49FE0026692E /* RegistrationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
 		D2D1168327DE4A0F0026692E /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
@@ -514,7 +508,6 @@
 		D2037FB827FCAB240036E0A5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				D2037FB927FCAB460036E0A5 /* RegistrationInteractorProtocol.swift */,
 				D2037FBB27FCAB510036E0A5 /* RegistrationInteractor.swift */,
 				D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */,
 			);
@@ -727,7 +720,6 @@
 		D2BC64B527FC3E5F00F2E15F /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				D2BC64B627FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift */,
 				D2BC64B827FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift */,
 			);
 			path = Interactor;
@@ -736,7 +728,6 @@
 		D2BC64BA27FC441900F2E15F /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				D2BC64BB27FC443900F2E15F /* AuthorizationInteractorProtocol.swift */,
 				D2BC64BD27FC444F00F2E15F /* AuthorizationInteractor.swift */,
 				D2037FB427FCA3970036E0A5 /* AuthorizationResultState.swift */,
 			);
@@ -973,7 +964,6 @@
 				D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */,
 				D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */,
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
-				D2BC64B727FC3E8500F2E15F /* PasswordRecoveryInteractorProtocol.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
 				D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */,
@@ -1013,7 +1003,6 @@
 				44F379F027FC45BE001F02F4 /* HistoryWordsRouter.swift in Sources */,
 				D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */,
 				D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */,
-				D2BC64BC27FC443900F2E15F /* AuthorizationInteractorProtocol.swift in Sources */,
 				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
 				D26EFF03280085830019F1EC /* AccountInteractorProtocol.swift in Sources */,
 				D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */,
@@ -1052,7 +1041,6 @@
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
 				44DC5FEE27FF0A25005EACAE /* FavoriteWordsInteractorProtocol.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
-				D2037FBA27FCAB460036E0A5 /* RegistrationInteractorProtocol.swift in Sources */,
 				D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */,
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
 				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
