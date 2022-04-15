@@ -76,7 +76,6 @@
 		D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */; };
 		D25FCD6227F8666C0007E65D /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD6127F8666C0007E65D /* Setting.swift */; };
 		D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */; };
-		D26EFF03280085830019F1EC /* AccountInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF02280085830019F1EC /* AccountInteractorProtocol.swift */; };
 		D26EFF05280085950019F1EC /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF04280085950019F1EC /* AccountInteractor.swift */; };
 		D26EFF0A280088780019F1EC /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF09280088780019F1EC /* SettingsManager.swift */; };
 		D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */; };
@@ -180,7 +179,6 @@
 		D25FCD5F27F8664F0007E65D /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		D25FCD6127F8666C0007E65D /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		D26EFEFF28007E560019F1EC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		D26EFF02280085830019F1EC /* AccountInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractorProtocol.swift; sourceTree = "<group>"; };
 		D26EFF04280085950019F1EC /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
 		D26EFF09280088780019F1EC /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
@@ -603,7 +601,6 @@
 		D26EFF01280085560019F1EC /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				D26EFF02280085830019F1EC /* AccountInteractorProtocol.swift */,
 				D26EFF04280085950019F1EC /* AccountInteractor.swift */,
 			);
 			path = Interactor;
@@ -1004,7 +1001,6 @@
 				D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */,
 				D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */,
 				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
-				D26EFF03280085830019F1EC /* AccountInteractorProtocol.swift in Sources */,
 				D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
