@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+protocol AuthorizationRouterProtocol: RouterProtocol {
+    func showRegistrationModule()
+    func showRecoveryPasswordModule()
+    func finishFlow()
+}
+
 final class AuthorizationRouter: AuthorizationRouterProtocol {
     // MARK: Dependencies
     

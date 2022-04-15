@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol PasswordRecoveryRouterProtocol: RouterProtocol {
+    func showAuthorization()
+}
+
 final class PasswordRecoveryRouter: PasswordRecoveryRouterProtocol {
     // MARK: Dependencies
     
