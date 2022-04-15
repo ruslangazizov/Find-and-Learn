@@ -10,13 +10,9 @@ import UIKit
 final class AccountViewController: UIViewController {
     // MARK: UI
     
-    private lazy var headerView: UITableViewHeaderFooterView = {
-        return UITableViewHeaderFooterView()
-    }()
+    private lazy var headerView = UITableViewHeaderFooterView()
     
-    private lazy var avatarView: CircularView = {
-        return CircularView()
-    }()
+    private lazy var avatarView = CircularView()
     
     private lazy var userNameTextField: UITextField = {
         let textField = CommonTextField(
@@ -57,9 +53,9 @@ final class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
         configure()
         setupLayout()
+        presenter.viewDidLoad()
     }
     
     // MARK: Private
