@@ -27,11 +27,9 @@ final class AccountInteractor: AccountInteractorProtocol {
     // MARK: AccountInteractorProtocol
     
     func loadSettings(_ completion: @escaping (([Setting], String) -> Void)) {
-        DispatchQueue.global(qos: .utility).async {
-            self.dataManager.getUser { [weak self] user in
-                DispatchQueue.main.async {
-                    completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [], user.userName)
-                }
+        dataManager.getUser { [weak self] user in
+            DispatchQueue.main.async {
+                completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [], user.userName)
             }
         }
     }
