@@ -21,7 +21,7 @@ final class AuthorizationViewController: UIViewController {
     
     private lazy var emailErrorLabel: UILabel = {
         let label = ErrorLabel()
-        label.alpha = 0
+        label.isHidden = true
         return label
     }()
     
@@ -35,7 +35,7 @@ final class AuthorizationViewController: UIViewController {
     
     private lazy var passwordErrorLabel: UILabel = {
         let label = ErrorLabel()
-        label.alpha = 0
+        label.isHidden = true
         return label
     }()
     
@@ -214,8 +214,8 @@ final class AuthorizationViewController: UIViewController {
     }
     
     private func hideErrors() {
-        emailErrorLabel.alpha = 0
-        passwordErrorLabel.alpha = 0
+        emailErrorLabel.isHidden = true
+        passwordErrorLabel.isHidden = true
     }
     
     @objc private func hideKeyboard() {
@@ -272,10 +272,10 @@ extension AuthorizationViewController: AuthorizationViewInput {
         switch error {
         case .email(let message):
             emailErrorLabel.text = message
-            emailErrorLabel.alpha = 1
+            emailErrorLabel.isHidden = false
         case .password(let message):
             passwordErrorLabel.text = message
-            passwordErrorLabel.alpha = 1
+            passwordErrorLabel.isHidden = false
         }
     }
 }

@@ -25,12 +25,8 @@ final class AccountPresenter: AccountViewOutput {
     // MARK: ViewOutput
     
     func viewDidLoad() {
-        DispatchQueue.global(qos: .utility).async {
-            self.interactor.loadSettings { [weak self] settings, userName in
-                DispatchQueue.main.async {
-                    self?.view?.setup(with: settings, userName: userName)
-                }
-            }
+        interactor.loadSettings { [weak self] settings, userName in
+            self?.view?.setup(with: settings, userName: userName)
         }
     }
     

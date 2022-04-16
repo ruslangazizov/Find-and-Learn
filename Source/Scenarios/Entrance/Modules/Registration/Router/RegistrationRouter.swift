@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+protocol RegistrationRouterProtocol: RouterProtocol {
+    func showAuthorization()
+    func finish()
+}
+
 final class RegistrationRouter: RegistrationRouterProtocol {
     // MARK: Dependencies
     
@@ -17,7 +22,7 @@ final class RegistrationRouter: RegistrationRouterProtocol {
     
     func showAuthorization() {
         let viewController = AuthorizationAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController, with: .fromLeft)
+        view?.navigationController?.setViewController(viewController: viewController, animated: true)
     }
     
     func finish() {

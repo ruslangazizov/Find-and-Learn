@@ -20,7 +20,7 @@ final class PasswordRecoveryViewController: UIViewController {
     
     private lazy var emailErrorLabel: UILabel = {
         let label = ErrorLabel()
-        label.alpha = 0
+        label.isHidden = true
         return label
     }()
     
@@ -140,7 +140,7 @@ final class PasswordRecoveryViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
-        emailErrorLabel.alpha = 0
+        emailErrorLabel.isHidden = true
         
         guard let keyboardFrame = notification.keyboardFrame else { return }
         let height = keyboardFrame.height
@@ -179,7 +179,7 @@ extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
         switch error {
         case .email(let message):
             emailErrorLabel.text = message
-            emailErrorLabel.alpha = 1
+            emailErrorLabel.isHidden = false
         }        
     }
     

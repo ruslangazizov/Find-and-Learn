@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol AccountInteractorProtocol: AnyObject {
+    func loadSettings(_ completion: @escaping (([Setting], String) -> Void))
+}
+
 final class AccountInteractor: AccountInteractorProtocol {
     // MARK: Dependencies
     
@@ -22,9 +26,11 @@ final class AccountInteractor: AccountInteractorProtocol {
     
     // MARK: AccountInteractorProtocol
     
-    func loadSettings(_ completion: (([Setting], String) -> Void)) {
+    func loadSettings(_ completion: @escaping (([Setting], String) -> Void)) {
         dataManager.getUser { [weak self] user in
-            completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [], user.userName)
+            DispatchQueue.main.async {
+                completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [], user.userName)
+            }
         }
     }
 }

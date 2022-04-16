@@ -22,7 +22,7 @@ final class RegistrationViewController: UIViewController {
     
     private lazy var emailErrorLabel: UILabel = {
         let label = ErrorLabel()
-        label.alpha = 0
+        label.isHidden = true
         return label
     }()
     
@@ -37,7 +37,7 @@ final class RegistrationViewController: UIViewController {
     
     private lazy var userNameErrorLabel: UILabel = {
         let label = ErrorLabel()
-        label.alpha = 0
+        label.isHidden = true
         return label
     }()
     
@@ -52,7 +52,7 @@ final class RegistrationViewController: UIViewController {
     
     private lazy var passwordErrorLabel: UILabel = {
         let label = ErrorLabel()
-        label.alpha = 0
+        label.isHidden = true
         return label
     }()
     
@@ -66,7 +66,7 @@ final class RegistrationViewController: UIViewController {
     
     private lazy var confirmPasswordErrorLabel: UILabel = {
         let label = ErrorLabel()
-        label.alpha = 0
+        label.isHidden = true
         return label
     }()
     
@@ -209,10 +209,10 @@ final class RegistrationViewController: UIViewController {
     }
     
     private func hideErrors() {
-        emailErrorLabel.alpha = 0
-        userNameErrorLabel.alpha = 0
-        passwordErrorLabel.alpha = 0
-        confirmPasswordErrorLabel.alpha = 0
+        emailErrorLabel.isHidden = true
+        userNameErrorLabel.isHidden = true
+        passwordErrorLabel.isHidden = true
+        confirmPasswordErrorLabel.isHidden = true
     }
     
     private func addKeyboardObservers() {
@@ -280,16 +280,16 @@ extension RegistrationViewController: RegistrationViewInput {
         switch error {
         case .emailTextField(let message):
             emailErrorLabel.text = message
-            emailErrorLabel.alpha = 1
+            emailErrorLabel.isHidden = false
         case .userNameTextField(let message):
             userNameErrorLabel.text = message
-            userNameErrorLabel.alpha = 1
+            userNameErrorLabel.isHidden = false
         case .passwordTextField(let message):
             passwordErrorLabel.text = message
-            passwordErrorLabel.alpha = 1
+            passwordErrorLabel.isHidden = false
         case .confirmPasswordTextField(let message):
             confirmPasswordErrorLabel.text = message
-            confirmPasswordErrorLabel.alpha = 1
+            confirmPasswordErrorLabel.isHidden = false
         }
     }
 }

@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol PasswordRecoveryRouterProtocol: RouterProtocol {
+    func showAuthorization()
+}
+
 final class PasswordRecoveryRouter: PasswordRecoveryRouterProtocol {
     // MARK: Dependencies
     
@@ -17,6 +21,6 @@ final class PasswordRecoveryRouter: PasswordRecoveryRouterProtocol {
     
     func showAuthorization() {
         let viewController = AuthorizationAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController, with: .fromRight)
+        view?.navigationController?.setViewController(viewController: viewController, animated: true)
     }
 }

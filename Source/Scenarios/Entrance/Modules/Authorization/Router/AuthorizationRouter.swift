@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+protocol AuthorizationRouterProtocol: RouterProtocol {
+    func showRegistrationModule()
+    func showRecoveryPasswordModule()
+    func finishFlow()
+}
+
 final class AuthorizationRouter: AuthorizationRouterProtocol {
     // MARK: Dependencies
     
@@ -17,12 +23,12 @@ final class AuthorizationRouter: AuthorizationRouterProtocol {
     
     func showRegistrationModule() {
         let viewController = RegistrationAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController, with: .fromRight)
+        view?.navigationController?.setViewController(viewController: viewController, animated: true)
     }
     
     func showRecoveryPasswordModule() {
         let viewController = PasswordRecoveryAssembly.assemble()
-        view?.navigationController?.setViewController(viewController: viewController, with: .fromLeft)
+        view?.navigationController?.setViewController(viewController: viewController, animated: true)
     }
     
     func finishFlow() {
