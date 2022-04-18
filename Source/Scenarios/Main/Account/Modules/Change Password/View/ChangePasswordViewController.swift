@@ -63,6 +63,16 @@ final class ChangePasswordViewController: UIViewController {
         setupLayout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addKeyboardObservers()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        removeKeyboardObservers()
+    }
+    
     // MARK: Private
     
     private func configure() {
@@ -70,6 +80,8 @@ final class ChangePasswordViewController: UIViewController {
         
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
     
     private func setupLayout() {
@@ -88,6 +100,62 @@ final class ChangePasswordViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.bottom.equalToSuperview().inset(Constants.bottomInset)
         }
+    }
+    
+    private func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    private func removeKeyboardObservers() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardFrame = notification.keyboardFrame else { return }
+        let height = keyboardFrame.height
+    
+        let sizeForFreeView = view.frame.height - height
+        let neededHeight = textFieldsStackView.frame.height + changePasswordButton.frame.height + .textFieldsSpacing
+        
+        let inset = (sizeForFreeView - neededHeight) / .dividerForHalf
+        textFieldsStackView.snp.updateConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(inset)
+        }
+        
+        let bottomSpace = view.frame.height - (inset + neededHeight + view.safeAreaInsets.top)
+        changePasswordButton.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(bottomSpace)
+        }
+        
+        view.layoutIfNeeded()
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        let topInset = view.frame.height / .topInsetDivider
+        textFieldsStackView.snp.updateConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(topInset)
+        }
+        
+        changePasswordButton.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+        }
+        view.layoutIfNeeded()
     }
 }
 
@@ -117,6 +185,7 @@ private extension ChangePasswordViewController {
 
 private extension CGFloat {
     static let topInsetDivider: CGFloat = 5
+    static let dividerForHalf: CGFloat = 2
     
     static let textFieldsSpacing: CGFloat = 30
 }
