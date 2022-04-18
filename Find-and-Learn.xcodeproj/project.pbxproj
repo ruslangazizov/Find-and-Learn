@@ -512,6 +512,26 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		D20F32F2280DAF8C0003D9DD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D20F32F3280DAF960003D9DD /* Account */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D20F32F3280DAF960003D9DD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */,
+				D26EFF0D2800A3310019F1EC /* Router */,
+				D26EFF01280085560019F1EC /* Interactor */,
+				D25FCD5627F854010007E65D /* Presenter */,
+				D25FCD4F27F8534E0007E65D /* View */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		D217568F27EB24C200C3D545 /* Password Recovery */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,11 +574,7 @@
 		D25FCD4E27F852FD0007E65D /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				D25FCD5C27F85EB80007E65D /* AccountAssembly.swift */,
-				D26EFF0D2800A3310019F1EC /* Router */,
-				D26EFF01280085560019F1EC /* Interactor */,
-				D25FCD5627F854010007E65D /* Presenter */,
-				D25FCD4F27F8534E0007E65D /* View */,
+				D20F32F2280DAF8C0003D9DD /* Modules */,
 			);
 			path = Account;
 			sourceTree = "<group>";
