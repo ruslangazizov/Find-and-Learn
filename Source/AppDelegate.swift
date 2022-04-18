@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow()
         window?.makeKeyAndVisible()
+        window?.rootViewController = DictionaryAssembly.assemble()
         return true
     }
     

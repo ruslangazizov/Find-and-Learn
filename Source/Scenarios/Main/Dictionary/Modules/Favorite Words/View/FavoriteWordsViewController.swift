@@ -41,11 +41,11 @@ final class FavoriteWordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.viewDidLoad()
-        
         configureNavigationBar()
         configureSubviews()
         configureLayout()
+        
+        presenter.viewDidLoad()
     }
     
     // MARK: UI configuration
