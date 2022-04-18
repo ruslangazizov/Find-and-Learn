@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class FavoriteWordsInteractor {
+protocol FavoriteWordsInteractorProtocol: AnyObject {
+    func fetchFavoriteWords(completion: @escaping ([Word]) -> Void)
+}
+
+final class FavoriteWordsInteractor: FavoriteWordsInteractorProtocol {
     // MARK: Dependencies
     
     private let dataManager: DataManagerProtocol
@@ -17,11 +21,9 @@ final class FavoriteWordsInteractor {
     init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager
     }
-}
-
-// MARK: - FavoriteWordsInteractorProtocol
-
-extension FavoriteWordsInteractor: FavoriteWordsInteractorProtocol {
+    
+    // MARK: FavoriteWordsInteractorProtocol
+    
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void) {
         dataManager.fetchFavoriteWords { words in
             completion(words)

@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+protocol SearchWordsRouterProtocol: RouterProtocol {
+    func showFavoriteWords()
+    func showHistoryWords()
+    func showWordDetail(_ word: Word)
+}
+
 final class SearchWordsRouter: SearchWordsRouterProtocol {
     weak var view: UIViewController?
     

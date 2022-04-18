@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SearchWordsPresenter {
+final class SearchWordsPresenter: SearchWordsViewOutput {
     // MARK: Dependencies
     
     weak var view: SearchWordsViewInput?
@@ -20,11 +20,9 @@ final class SearchWordsPresenter {
         self.router = router
         self.interactor = interactor
     }
-}
-
-// MARK: - SearchWordsViewOutput
-
-extension SearchWordsPresenter: SearchWordsViewOutput {
+    
+    // MARK: SearchWordsViewOutput
+    
     func didEnterWord(_ word: String?) {
         interactor.getWords(word) { [weak self] wordModels in
             DispatchQueue.main.async {
