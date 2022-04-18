@@ -7,6 +7,9 @@
 
 import Foundation
 
+protocol ChangePasswordViewOutput: AnyObject {
+}
+
 final class ChangePasswordPresenter: ChangePasswordViewOutput {
     // MARK: Dependencies
     

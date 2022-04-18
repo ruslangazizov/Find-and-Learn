@@ -59,7 +59,6 @@
 		D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2037FBB27FCAB510036E0A5 /* RegistrationInteractor.swift */; };
 		D20F32F6280DAFF00003D9DD /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F32F5280DAFF00003D9DD /* ChangePasswordViewController.swift */; };
 		D20F32F9280DB0270003D9DD /* ChangePasswordViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F32F8280DB0270003D9DD /* ChangePasswordViewInput.swift */; };
-		D20F32FB280DB0340003D9DD /* ChangePasswordViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F32FA280DB0340003D9DD /* ChangePasswordViewOutput.swift */; };
 		D20F32FE280DB07F0003D9DD /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F32FD280DB07F0003D9DD /* ChangePasswordPresenter.swift */; };
 		D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */; };
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
@@ -166,7 +165,6 @@
 		D2037FBB27FCAB510036E0A5 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		D20F32F5280DAFF00003D9DD /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		D20F32F8280DB0270003D9DD /* ChangePasswordViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewInput.swift; sourceTree = "<group>"; };
-		D20F32FA280DB0340003D9DD /* ChangePasswordViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewOutput.swift; sourceTree = "<group>"; };
 		D20F32FD280DB07F0003D9DD /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
 		D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
@@ -555,7 +553,6 @@
 			children = (
 				D20F32F5280DAFF00003D9DD /* ChangePasswordViewController.swift */,
 				D20F32F8280DB0270003D9DD /* ChangePasswordViewInput.swift */,
-				D20F32FA280DB0340003D9DD /* ChangePasswordViewOutput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1059,7 +1056,6 @@
 				D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
-				D20F32FB280DB0340003D9DD /* ChangePasswordViewOutput.swift in Sources */,
 				D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */,
 				D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
