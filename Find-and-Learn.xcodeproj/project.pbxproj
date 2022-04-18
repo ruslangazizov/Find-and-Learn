@@ -60,6 +60,7 @@
 		D20F32F6280DAFF00003D9DD /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F32F5280DAFF00003D9DD /* ChangePasswordViewController.swift */; };
 		D20F32F9280DB0270003D9DD /* ChangePasswordViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F32F8280DB0270003D9DD /* ChangePasswordViewInput.swift */; };
 		D20F32FE280DB07F0003D9DD /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F32FD280DB07F0003D9DD /* ChangePasswordPresenter.swift */; };
+		D20F3301280DC4AC0003D9DD /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F3300280DC4AC0003D9DD /* ChangePasswordInteractor.swift */; };
 		D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */; };
 		D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */; };
 		D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */; };
@@ -166,6 +167,7 @@
 		D20F32F5280DAFF00003D9DD /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		D20F32F8280DB0270003D9DD /* ChangePasswordViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewInput.swift; sourceTree = "<group>"; };
 		D20F32FD280DB07F0003D9DD /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		D20F3300280DC4AC0003D9DD /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		D217569027EB250800C3D545 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		D217569227EB257F00C3D545 /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		D217569527EB25E200C3D545 /* PasswordRecoveryViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewInput.swift; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 		D20F32F4280DAFD20003D9DD /* Change Password */ = {
 			isa = PBXGroup;
 			children = (
+				D20F32FF280DC4960003D9DD /* Interactor */,
 				D20F32FC280DB06B0003D9DD /* Presenter */,
 				D20F32F7280DB0110003D9DD /* View */,
 			);
@@ -563,6 +566,14 @@
 				D20F32FD280DB07F0003D9DD /* ChangePasswordPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D20F32FF280DC4960003D9DD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D20F3300280DC4AC0003D9DD /* ChangePasswordInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		D217568F27EB24C200C3D545 /* Password Recovery */ = {
@@ -1084,6 +1095,7 @@
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
 				D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
+				D20F3301280DC4AC0003D9DD /* ChangePasswordInteractor.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
 				44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */,
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
