@@ -29,15 +29,11 @@ final class FavoriteWordsPresenter: FavoriteWordsViewOutput {
     // MARK: FavoriteWordsViewOutput
     
     func viewDidLoad() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.interactor.fetchFavoriteWords { [weak self] words in
-                let wordModels = words.map { word in
-                    WordModel(word: word.word, translations: word.translationsString)
-                }
-                DispatchQueue.main.async {
-                    self?.view?.showWords(wordModels)
-                }
+        interactor.fetchFavoriteWords { [weak self] words in
+            let wordModels = words.map { word in
+                WordModel(word: word.word, translations: word.translationsString)
             }
+            self?.view?.showWords(wordModels)
         }
     }
     

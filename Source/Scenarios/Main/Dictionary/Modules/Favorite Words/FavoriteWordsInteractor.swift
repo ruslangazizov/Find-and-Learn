@@ -26,7 +26,9 @@ final class FavoriteWordsInteractor: FavoriteWordsInteractorProtocol {
     
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void) {
         dataManager.fetchFavoriteWords { words in
-            completion(words)
+            DispatchQueue.main.async {
+                completion(words)
+            }
         }
     }
 }

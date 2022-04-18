@@ -32,9 +32,7 @@ final class SearchWordsPresenter: SearchWordsViewOutput {
     
     func didEnterWord(_ word: String?) {
         interactor.getWords(word) { [weak self] wordModels in
-            DispatchQueue.main.async {
-                self?.view?.showWords(wordModels)
-            }
+            self?.view?.showWords(wordModels)
         }
     }
     

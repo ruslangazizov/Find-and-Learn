@@ -26,7 +26,9 @@ final class HistoryWordsInteractor: HistoryWordsInteractorProtocol {
     
     func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void) {
         dataManager.fetchHistoryWords { historyWords in
-            completion(historyWords)
+            DispatchQueue.main.async {
+                completion(historyWords)
+            }
         }
     }
 }
