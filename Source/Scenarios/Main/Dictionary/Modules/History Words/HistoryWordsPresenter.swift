@@ -7,7 +7,12 @@
 
 import Foundation
 
-final class HistoryWordsPresenter {
+protocol HistoryWordsViewOutput: AnyObject {
+    func viewDidLoad()
+    func didSelectWord(_ word: HistoryWordModel)
+}
+
+final class HistoryWordsPresenter: HistoryWordsViewOutput {
     // MARK: Dependencies
     
     weak var view: HistoryWordsViewInput?
@@ -20,11 +25,9 @@ final class HistoryWordsPresenter {
         self.interactor = interactor
         self.router = router
     }
-}
-
-// MARK: - HistoryWordsViewOutput
-
-extension HistoryWordsPresenter: HistoryWordsViewOutput {
+    
+    // MARK: HistoryWordsViewOutput
+    
     func viewDidLoad() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.interactor.fetchHistoryWords { [weak self] historyWords in

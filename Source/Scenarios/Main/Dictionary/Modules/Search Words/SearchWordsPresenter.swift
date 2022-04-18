@@ -7,6 +7,13 @@
 
 import Foundation
 
+protocol SearchWordsViewOutput: AnyObject {
+    func didEnterWord(_ word: String?)
+    func didTapFavoriteWordsBarButtonItem()
+    func didTapHistoryWordsBarButtonItem()
+    func didSelectWord(_ word: Word)
+}
+
 final class SearchWordsPresenter: SearchWordsViewOutput {
     // MARK: Dependencies
     

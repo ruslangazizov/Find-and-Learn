@@ -7,7 +7,12 @@
 
 import Foundation
 
-final class FavoriteWordsPresenter {
+protocol FavoriteWordsViewOutput: AnyObject {
+    func viewDidLoad()
+    func didSelectWord(_ word: WordModel)
+}
+
+final class FavoriteWordsPresenter: FavoriteWordsViewOutput {
     // MARK: Dependencies
     
     weak var view: FavoriteWordsViewInput?
@@ -20,11 +25,9 @@ final class FavoriteWordsPresenter {
         self.router = router
         self.interactor = interactor
     }
-}
-
-// MARK: - FavoriteWordsViewOutput
-
-extension FavoriteWordsPresenter: FavoriteWordsViewOutput {
+    
+    // MARK: FavoriteWordsViewOutput
+    
     func viewDidLoad() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.interactor.fetchFavoriteWords { [weak self] words in
