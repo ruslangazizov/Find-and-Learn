@@ -11,11 +11,13 @@ import UIKit
 final class ChangePasswordAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let interactor = ChangePasswordInteractor(validationManager: ValidationManager())
+        let router = ChangePasswordRouter()
         
-        let presenter = ChangePasswordPresenter(interactor: interactor)
+        let presenter = ChangePasswordPresenter(interactor: interactor, router: router)
         let viewController = ChangePasswordViewController(presenter: presenter)
         
         presenter.view = viewController
+        router.view = viewController
         
         return viewController
     }

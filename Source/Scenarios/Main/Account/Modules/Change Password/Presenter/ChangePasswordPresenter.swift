@@ -9,6 +9,7 @@ import Foundation
 
 protocol ChangePasswordViewOutput: AnyObject {
     func changePassword(password: String, confirmPassword: String)
+    func showPreviousModule()
 }
 
 final class ChangePasswordPresenter: ChangePasswordViewOutput {
@@ -16,14 +17,17 @@ final class ChangePasswordPresenter: ChangePasswordViewOutput {
     
     weak var view: ChangePasswordViewInput?
     private let interactor: ChangePasswordInteractorProtocol
+    private let router: ChangePasswordRouterProtocol
     
     // MARK: Init
     
-    init(interactor: ChangePasswordInteractorProtocol) {
+    init(interactor: ChangePasswordInteractorProtocol, router: ChangePasswordRouterProtocol) {
         self.interactor = interactor
+        self.router = router
     }
     
     // MARK: ViewOutput
+    
     func changePassword(password: String, confirmPassword: String) {
         interactor.changePassword(password: password, confirmPassword: confirmPassword) { result in
             switch result {
@@ -32,9 +36,12 @@ final class ChangePasswordPresenter: ChangePasswordViewOutput {
             case .confirmPassword:
                 view?.showError(.confirmPassword(R.string.localizable.validation_error_password_not_equals()))
             case .success:
-                // TODO: routing
-                print(1)
+                view?.showOkAlert()
             }
         }
+    }
+    
+    func showPreviousModule() {
+        router.showPreviousModule()
     }
 }

@@ -72,3 +72,5 @@
 // Успешная валидация
 "validation_success_email_sent_title" = "Письмо с восстановлением пароля отправлено";
 "validation_success_email_sent_message" = "Проверьте свою почту";
+"validation_success_password_changed_title" = "Успешно";
+"validation_success_password_changed_message" = "Пароль изменен";

@@ -171,7 +171,7 @@ final class ChangePasswordViewController: UIViewController {
         
         guard let keyboardFrame = notification.keyboardFrame else { return }
         let height = keyboardFrame.height
-    
+        
         let sizeForFreeView = view.frame.height - height
         let neededHeight = textFieldsStackView.frame.height + changePasswordButton.frame.height + .textFieldsSpacing
         
@@ -213,6 +213,18 @@ extension ChangePasswordViewController: ChangePasswordViewInput {
             confirmPasswordErrorLabel.text = message
             confirmPasswordErrorLabel.isHidden = false
         }
+    }
+    
+    func showOkAlert() {
+        let alert = UIAlertController(
+            title: R.string.localizable.validation_success_password_changed_title(),
+            message: R.string.localizable.validation_success_password_changed_message(),
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { _ in
+            self.presenter.showPreviousModule()
+        })
+        present(alert, animated: true, completion: nil)
     }
 }
 

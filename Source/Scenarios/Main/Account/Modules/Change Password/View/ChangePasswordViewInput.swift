@@ -9,4 +9,5 @@ import Foundation
 
 protocol ChangePasswordViewInput: AnyObject {
     func showError(_ error: ChangePasswordError)
+    func showOkAlert()
 }
