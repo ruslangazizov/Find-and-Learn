@@ -8,6 +8,7 @@
 import Foundation
 
 protocol ChangePasswordInteractorProtocol: AnyObject {
+    func changePassword(password: String, confirmPassword: String, _ result: (ChangePasswordResultState) -> Void)
 }
 
 final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
@@ -19,5 +20,18 @@ final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
     
     init(validationManager: ValidationManagerProtocol) {
         self.validationManager = validationManager
+    }
+    
+    // MARK: ChangePasswordInteractorProtocol
+    
+    func changePassword(password: String, confirmPassword: String, _ result: (ChangePasswordResultState) -> Void) {
+        if !validationManager.isValidPassword(password) {
+            result(.password)
+        } else if password != confirmPassword {
+            result(.confirmPassword)
+        } else {
+            // TODO: API request
+            result(.success)
+        }
     }
 }

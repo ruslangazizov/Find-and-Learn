@@ -19,11 +19,23 @@ final class ChangePasswordViewController: UIViewController {
         return textField
     }()
     
+    private lazy var passwordErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.isHidden = true
+        return label
+    }()
+    
     private lazy var confirmPasswordTextField: UITextField = {
         CommonTextField(
             placeholder: R.string.localizable.change_password_screen_confirm_password_placeholder(),
             layerColor: UIColor.blue.cgColor
         )
+    }()
+    
+    private lazy var confirmPasswordErrorLabel: UILabel = {
+        let label = ErrorLabel()
+        label.isHidden = true
+        return label
     }()
     
     private lazy var textFieldsStackView: UIStackView = {
@@ -82,6 +94,8 @@ final class ChangePasswordViewController: UIViewController {
         confirmPasswordTextField.delegate = self
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        changePasswordButton.addTarget(self, action: #selector(changePasswordButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func setupLayout() {
@@ -95,11 +109,36 @@ final class ChangePasswordViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(topInset)
         }
         
+        view.addSubview(passwordErrorLabel)
+        passwordErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(passwordTextField)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(Constants.topOffset)
+        }
+        
+        view.addSubview(confirmPasswordErrorLabel)
+        confirmPasswordErrorLabel.snp.makeConstraints { make in
+            make.leading.equalTo(confirmPasswordTextField)
+            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(Constants.topOffset)
+        }
+        
         view.addSubview(changePasswordButton)
         changePasswordButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.bottom.equalToSuperview().inset(Constants.bottomInset)
         }
+    }
+    
+    @objc private func changePasswordButtonTapped(_ sender: UIButton? = nil) {
+        hideErrors()
+        presenter.changePassword(
+            password: passwordTextField.text ?? "",
+            confirmPassword: confirmPasswordTextField.text ?? ""
+        )
+    }
+    
+    private func hideErrors() {
+        passwordErrorLabel.isHidden = true
+        confirmPasswordErrorLabel.isHidden = true
     }
     
     private func addKeyboardObservers() {
@@ -123,10 +162,13 @@ final class ChangePasswordViewController: UIViewController {
     }
     
     @objc private func hideKeyboard() {
+        hideErrors()
         view.endEditing(true)
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
+        hideErrors()
+        
         guard let keyboardFrame = notification.keyboardFrame else { return }
         let height = keyboardFrame.height
     
@@ -159,6 +201,21 @@ final class ChangePasswordViewController: UIViewController {
     }
 }
 
+// MARK: - ViewInput
+
+extension ChangePasswordViewController: ChangePasswordViewInput {
+    func showError(_ error: ChangePasswordError) {
+        switch error {
+        case .password(let message):
+            passwordErrorLabel.text = message
+            passwordErrorLabel.isHidden = false
+        case .confirmPassword(let message):
+            confirmPasswordErrorLabel.text = message
+            confirmPasswordErrorLabel.isHidden = false
+        }
+    }
+}
+
 // MARK: - UITextFieldDelegate
 
 extension ChangePasswordViewController: UITextFieldDelegate {
@@ -167,6 +224,7 @@ extension ChangePasswordViewController: UITextFieldDelegate {
         case passwordTextField:
             confirmPasswordTextField.becomeFirstResponder()
         default:
+            changePasswordButtonTapped()
             textField.resignFirstResponder()
         }
         return true
@@ -178,8 +236,9 @@ extension ChangePasswordViewController: UITextFieldDelegate {
 private extension ChangePasswordViewController {
     enum Constants {
         static let sidesInsets = 30
-        
         static let bottomInset = 30
+        
+        static let topOffset = 5
     }
 }
 
