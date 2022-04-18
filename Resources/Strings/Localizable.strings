@@ -40,6 +40,11 @@
 // Экран "Аккаунт"
 "account_screen_user_name_placeholder" = "Никнейм";
 
+// Экран "Смена пароля"
+"change_password_screen_password_placeholder" = "Пароль";
+"change_password_screen_confirm_password_placeholder" = "Повторите пароль";
+"change_password_screen_change_password" = "Изменить пароль";
+
 // Уведомления для экрана "Аккаунт"
 "alert_title" = "Подтвердите действие";
 "alert_confirm" = "Да";
