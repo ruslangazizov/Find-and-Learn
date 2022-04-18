@@ -14,4 +14,11 @@ final class ChangePasswordPresenter: ChangePasswordViewOutput {
     // MARK: Dependencies
     
     weak var view: ChangePasswordViewInput?
+    private let interactor: ChangePasswordInteractorProtocol
+    
+    // MARK: Init
+    
+    init(interactor: ChangePasswordInteractorProtocol) {
+        self.interactor = interactor
+    }
 }

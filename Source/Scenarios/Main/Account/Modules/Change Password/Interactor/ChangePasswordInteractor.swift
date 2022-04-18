@@ -11,4 +11,13 @@ protocol ChangePasswordInteractorProtocol: AnyObject {
 }
 
 final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
+    // MARK: Dependencies
+    
+    private let validationManager: ValidationManagerProtocol
+    
+    // MARK: Init
+    
+    init(validationManager: ValidationManagerProtocol) {
+        self.validationManager = validationManager
+    }
 }
