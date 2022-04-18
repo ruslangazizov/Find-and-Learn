@@ -11,9 +11,7 @@ import UIKit
 final class HistoryWordsTableViewCell: UITableViewCell {
     // MARK: UI
     
-    private lazy var wordLabel: UILabel = {
-        return UILabel()
-    }()
+    private lazy var wordLabel = UILabel()
     
     private lazy var translationsLabel: UILabel = {
         let label = UILabel()
@@ -21,9 +19,7 @@ final class HistoryWordsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var searchesCountLabel: UILabel = {
-        return UILabel()
-    }()
+    private lazy var searchesCountLabel = UILabel()
     
     private lazy var labelsStackView: UIStackView = {
         let stackView = UIStackView()

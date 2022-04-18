@@ -281,8 +281,8 @@
 		447D706E27EE4DDC0011A7F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */,
 				447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */,
+				44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */,
 				4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */,
 			);
 			path = View;
