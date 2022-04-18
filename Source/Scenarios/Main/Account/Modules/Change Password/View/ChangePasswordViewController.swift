@@ -67,6 +67,9 @@ final class ChangePasswordViewController: UIViewController {
     
     private func configure() {
         view.backgroundColor = .systemBackground
+        
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
     }
     
     private func setupLayout() {
@@ -85,6 +88,20 @@ final class ChangePasswordViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.bottom.equalToSuperview().inset(Constants.bottomInset)
         }
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension ChangePasswordViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case passwordTextField:
+            confirmPasswordTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        return true
     }
 }
 
