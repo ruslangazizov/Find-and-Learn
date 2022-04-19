@@ -8,7 +8,7 @@
 import Foundation
 
 final class DataManagerMock: DataManagerProtocol {
-    func getWords(_ word: String, completion: @escaping ([Word]) -> Void) {
+    func getWords(_ word: String, completion: ([Word]) -> Void) {
         completion([
             Word(word: "Слово1", translations: ["Перевод1", "Перевод2", "Перевод7", "Перевод8"]),
             Word(word: "Слово2", translations: ["Перевод3", "Перевод4"]),
@@ -25,7 +25,7 @@ final class DataManagerMock: DataManagerProtocol {
         )
     }
     
-    func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void) {
+    func fetchHistoryWords(completion: ([HistoryWord]) -> Void) {
         let today = Date()
         let dayInterval: Double = 60 * 60 * 24
         completion([
@@ -62,7 +62,7 @@ final class DataManagerMock: DataManagerProtocol {
         ])
     }
     
-    func fetchFavoriteWords(completion: @escaping ([Word]) -> Void) {
+    func fetchFavoriteWords(completion: ([Word]) -> Void) {
         completion([
             Word(word: "Слово1", translations: ["Перевод1", "Перевод2", "Перевод7", "Перевод8"]),
             Word(word: "Слово2", translations: ["Перевод3", "Перевод4"]),

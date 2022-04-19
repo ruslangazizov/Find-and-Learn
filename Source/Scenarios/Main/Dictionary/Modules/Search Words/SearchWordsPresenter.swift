@@ -7,7 +7,14 @@
 
 import Foundation
 
-final class SearchWordsPresenter {
+protocol SearchWordsViewOutput: AnyObject {
+    func didEnterWord(_ word: String?)
+    func didTapFavoriteWordsBarButtonItem()
+    func didTapHistoryWordsBarButtonItem()
+    func didSelectWord(_ word: Word)
+}
+
+final class SearchWordsPresenter: SearchWordsViewOutput {
     // MARK: Dependencies
     
     weak var view: SearchWordsViewInput?
@@ -20,16 +27,12 @@ final class SearchWordsPresenter {
         self.router = router
         self.interactor = interactor
     }
-}
-
-// MARK: - SearchWordsViewOutput
-
-extension SearchWordsPresenter: SearchWordsViewOutput {
+    
+    // MARK: SearchWordsViewOutput
+    
     func didEnterWord(_ word: String?) {
         interactor.getWords(word) { [weak self] wordModels in
-            DispatchQueue.main.async {
-                self?.view?.showWords(wordModels)
-            }
+            self?.view?.showWords(wordModels)
         }
     }
     

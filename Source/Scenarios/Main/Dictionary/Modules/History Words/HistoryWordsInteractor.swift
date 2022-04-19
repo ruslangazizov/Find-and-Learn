@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class HistoryWordsInteractor {
+protocol HistoryWordsInteractorProtocol: AnyObject {
+    func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void)
+}
+
+final class HistoryWordsInteractor: HistoryWordsInteractorProtocol {
     // MARK: Dependencies
     
     private let dataManager: DataManagerProtocol
@@ -17,14 +21,14 @@ final class HistoryWordsInteractor {
     init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager
     }
-}
-
-// MARK: - HistoryWordsInteractorInput
-
-extension HistoryWordsInteractor: HistoryWordsInteractorProtocol {
+    
+    // MARK: HistoryWordsInteractorProtocol
+    
     func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void) {
         dataManager.fetchHistoryWords { historyWords in
-            completion(historyWords)
+            DispatchQueue.main.async {
+                completion(historyWords)
+            }
         }
     }
 }

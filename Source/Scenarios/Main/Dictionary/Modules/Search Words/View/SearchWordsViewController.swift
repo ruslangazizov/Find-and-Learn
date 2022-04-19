@@ -75,11 +75,6 @@ final class SearchWordsViewController: UIViewController {
             target: self,
             action: #selector(didTapHistoryWordsBarButtonItem)
         )
-        
-        let barAppearance = UINavigationBarAppearance()
-        barAppearance.backgroundColor = .clear
-        navigationController?.navigationBar.standardAppearance = barAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = barAppearance
     }
     
     private func configureSubviews() {
