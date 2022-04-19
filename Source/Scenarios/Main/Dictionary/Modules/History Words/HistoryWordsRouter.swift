@@ -1,14 +1,18 @@
 //
-//  FavoriteWordsRouter.swift
+//  HistoryWordsRouter.swift
 //  Find-and-Learn
 //
-//  Created by Руслан on 07.04.2022.
+//  Created by Руслан on 05.04.2022.
 //
 
 import Foundation
 import UIKit
 
-final class FavoriteWordsRouter: FavoriteWordsRouterProtocol {
+protocol HistoryWordsRouterProtocol: RouterProtocol {
+    func showWordDetail(_ word: String)
+}
+
+final class HistoryWordsRouter: HistoryWordsRouterProtocol {
     weak var view: UIViewController?
     
     func showWordDetail(_ word: String) {

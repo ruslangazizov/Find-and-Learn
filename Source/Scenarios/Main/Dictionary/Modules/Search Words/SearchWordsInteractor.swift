@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class SearchWordsInteractor {
+protocol SearchWordsInteractorProtocol: AnyObject {
+    func getWords(_ word: String?, completion: @escaping ([Word]) -> Void)
+}
+
+final class SearchWordsInteractor: SearchWordsInteractorProtocol {
     // MARK: Dependencies
     
     private let dataManager: DataManagerProtocol
@@ -17,18 +21,18 @@ final class SearchWordsInteractor {
     init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager
     }
-}
-
-// MARK: - SearchWordsInteractorProtocol
-
-extension SearchWordsInteractor: SearchWordsInteractorProtocol {
+    
+    // MARK: SearchWordsInteractorProtocol
+    
     func getWords(_ word: String?, completion: @escaping ([Word]) -> Void) {
-        if let word = word, word.count > 1 {
-            dataManager.getWords(word) { wordModels in
+        guard let word = word, word.count > 1 else {
+            completion([])
+            return
+        }
+        dataManager.getWords(word) { wordModels in
+            DispatchQueue.main.async {
                 completion(wordModels)
             }
-        } else {
-            completion([])
         }
     }
 }
