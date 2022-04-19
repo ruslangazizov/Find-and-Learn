@@ -56,6 +56,12 @@ final class ChangePasswordViewController: UIViewController {
     
     private let presenter: ChangePasswordViewOutput
     
+    // MARK: Properties
+    
+    private var topInset: CGFloat {
+        view.frame.height / .topInsetDivider
+    }
+    
     // MARK: Init
     
     init(presenter: ChangePasswordViewOutput) {
@@ -99,8 +105,6 @@ final class ChangePasswordViewController: UIViewController {
     }
     
     private func setupLayout() {
-        let topInset = view.frame.height / .topInsetDivider
-        
         view.addSubview(textFieldsStackView)
         textFieldsStackView.addArrangedSubview(passwordTextField)
         textFieldsStackView.addArrangedSubview(confirmPasswordTextField)
@@ -189,7 +193,6 @@ final class ChangePasswordViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
-        let topInset = view.frame.height / .topInsetDivider
         textFieldsStackView.snp.updateConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(topInset)
         }
