@@ -10,11 +10,12 @@ import UIKit
 final class ErrorLabel: UILabel {
     // MARK: Init
     
-    init() {
+    init(isHidden: Bool) {
         super.init(frame: .zero)
         numberOfLines = 0
         textColor = .red
         setFontSize(.fontSize)
+        self.isHidden = isHidden
     }
     
     required init?(coder: NSCoder) {

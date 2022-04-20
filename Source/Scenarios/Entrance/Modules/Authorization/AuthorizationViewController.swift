@@ -19,11 +19,7 @@ final class AuthorizationViewController: UIViewController {
         return textField
     }()
     
-    private lazy var emailErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var emailErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var passwordTextField: UITextField = {
         let textField = PasswordTextField(
@@ -33,11 +29,7 @@ final class AuthorizationViewController: UIViewController {
         return textField
     }()
     
-    private lazy var passwordErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var passwordErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var resetPasswordButton: UIButton = {
         let button = CommonButton(

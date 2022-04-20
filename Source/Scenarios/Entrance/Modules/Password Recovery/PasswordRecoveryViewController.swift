@@ -18,11 +18,7 @@ final class PasswordRecoveryViewController: UIViewController {
         return textField
     }()
     
-    private lazy var emailErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var emailErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var recoveryButton: UIButton = {
         let button = CommonButton(

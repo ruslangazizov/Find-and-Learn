@@ -19,11 +19,7 @@ final class ChangePasswordViewController: UIViewController {
         return textField
     }()
     
-    private lazy var passwordErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var passwordErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var confirmPasswordTextField: UITextField = {
         CommonTextField(
@@ -32,11 +28,7 @@ final class ChangePasswordViewController: UIViewController {
         )
     }()
     
-    private lazy var confirmPasswordErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var confirmPasswordErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var textFieldsStackView: UIStackView = {
         let stackView = UIStackView()
