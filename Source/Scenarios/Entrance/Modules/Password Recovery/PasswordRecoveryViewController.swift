@@ -180,17 +180,15 @@ extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
         case .email(let message):
             emailErrorLabel.text = message
             emailErrorLabel.isHidden = false
-        }        
+        }
     }
     
     func showOkAlert() {
-        let alert = UIAlertController(
+        showOkAlert(
             title: R.string.localizable.validation_success_email_sent_title(),
             message: R.string.localizable.validation_success_email_sent_message(),
-            preferredStyle: .alert
+            handler: nil
         )
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
     }
 }
 

@@ -219,15 +219,12 @@ extension ChangePasswordViewController: ChangePasswordViewInput {
     }
     
     func showOkAlert() {
-        let alert = UIAlertController(
-            title: R.string.localizable.validation_success_password_changed_title(),
-            message: R.string.localizable.validation_success_password_changed_message(),
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Ok", style: .default) { _ in
+        showOkAlert(
+            title: R.string.localizable.validation_success_password_changed_message(),
+            message: R.string.localizable.validation_success_password_changed_title()
+        ) { _ in
             self.presenter.showPreviousModule()
-        })
-        present(alert, animated: true, completion: nil)
+        }
     }
 }
 
