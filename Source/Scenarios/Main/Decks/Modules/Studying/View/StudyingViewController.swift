@@ -10,6 +10,13 @@ import UIKit
 final class StudyingViewController: UIViewController {
     // MARK: UI
     
+    private lazy var titleProgressLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
+    
     private lazy var progressBar: UIProgressView = {
         let progressView = UIProgressView(progressViewStyle: .bar)
         progressView.trackTintColor = .red
@@ -22,6 +29,10 @@ final class StudyingViewController: UIViewController {
     private let cards: [FlashCard]
     
     private var cardsViews: [FlashCardView] = []
+    
+    private var cardsDeleted: Int {
+        cards.count - cardsViews.count
+    }
     
     private lazy var halfPoint: CGFloat = view.frame.width / .halfDivider
     
@@ -67,7 +78,7 @@ final class StudyingViewController: UIViewController {
         }
         cardsViews.last?.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard(_:))))
         
-        progressBar.setProgress(0.5, animated: true)
+        titleProgressLabel.text = "0 / \(cards.count)"
     }
     
     private func setupCenterPoint() {
@@ -76,10 +87,16 @@ final class StudyingViewController: UIViewController {
     }
     
     private func setupLayout() {
+        view.addSubview(titleProgressLabel)
+        titleProgressLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
+        }
+        
         view.addSubview(progressBar)
         progressBar.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
+            make.top.equalTo(titleProgressLabel.snp.bottom).offset(20)
         }
         
         for element in cardsViews {
@@ -109,6 +126,7 @@ final class StudyingViewController: UIViewController {
                         target: self,
                         action: #selector(self.panCard(_:)))
                     )
+                    self.nextStep()
                 }
                 return
             }
@@ -135,6 +153,11 @@ final class StudyingViewController: UIViewController {
         card.messageAlpha = abs(point.x / view.center.x)
         let scale = min(.pointsFromCenter / abs(point.x), 1)
         card.transform = CGAffineTransform(rotationAngle: point.x / dividerForAngle).scaledBy(x: scale, y: scale)
+    }
+    
+    private func nextStep() {
+        progressBar.setProgress(Float(cardsDeleted) / Float(cards.count), animated: true)
+        titleProgressLabel.text = "\(cardsDeleted) / \(cards.count)"
     }
 }
 
