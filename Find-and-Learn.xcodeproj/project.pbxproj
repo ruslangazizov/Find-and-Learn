@@ -105,6 +105,7 @@
 		D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */; };
 		D2FD923B2813FCE400D93BC4 /* StudyingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923A2813FCE400D93BC4 /* StudyingViewInput.swift */; };
 		D2FD923D2813FD0900D93BC4 /* StudyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923C2813FD0900D93BC4 /* StudyingViewController.swift */; };
+		D2FD92402813FD4F00D93BC4 /* StudyingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +210,7 @@
 		D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewOutput.swift; sourceTree = "<group>"; };
 		D2FD923A2813FCE400D93BC4 /* StudyingViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewInput.swift; sourceTree = "<group>"; };
 		D2FD923C2813FD0900D93BC4 /* StudyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewController.swift; sourceTree = "<group>"; };
+		D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingPresenter.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -806,6 +808,7 @@
 		D2FD92382813FC9400D93BC4 /* Studying */ = {
 			isa = PBXGroup;
 			children = (
+				D2FD923E2813FD3D00D93BC4 /* Presenter */,
 				D2FD92392813FCC800D93BC4 /* View */,
 			);
 			path = Studying;
@@ -818,6 +821,14 @@
 				D2FD923C2813FD0900D93BC4 /* StudyingViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D2FD923E2813FD3D00D93BC4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1052,6 +1063,7 @@
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				D20F3301280DC4AC0003D9DD /* ChangePasswordInteractor.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
+				D2FD92402813FD4F00D93BC4 /* StudyingPresenter.swift in Sources */,
 				D20F3305280DD1170003D9DD /* ChangePasswordError.swift in Sources */,
 				44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */,
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,

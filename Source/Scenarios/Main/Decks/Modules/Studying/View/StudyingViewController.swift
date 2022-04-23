@@ -12,5 +12,12 @@ final class StudyingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configure()
+    }
+    
+    // MARK: Private
+    
+    private func configure() {
     }
 }
