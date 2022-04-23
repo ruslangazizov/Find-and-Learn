@@ -48,6 +48,7 @@
 // Экран "Изучение слов"
 "studying_screen_study_more" = "Изучать еще";
 "studying_screen_learned" = "Усвоено";
+"studying_screen_exit_message" = "Вы уверены, что хотите выйти?";
 
 // Уведомления для экрана "Аккаунт"
 "alert_title" = "Подтвердите действие";

@@ -174,7 +174,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 47 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 48 localization keys.
     struct localizable {
       /// Value: E-Mail
       static let authorization_screen_email_placeholder = Rswift.StringResource(key: "authorization_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -194,6 +194,8 @@ struct R: Rswift.Validatable {
       static let authorization_screen_reset_password = Rswift.StringResource(key: "authorization_screen_reset_password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Вы уверены, что хотите выйти из аккаунта?
       static let alert_exit = Rswift.StringResource(key: "alert_exit", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Вы уверены, что хотите выйти?
+      static let studying_screen_exit_message = Rswift.StringResource(key: "studying_screen_exit_message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Вы уверены, что хотите скачать словарь на телефон?
       static let alert_download_dictionary = Rswift.StringResource(key: "alert_download_dictionary", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Вы уверены, что хотите удалить аккаунт?
@@ -386,6 +388,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("alert_exit", bundle: bundle, comment: "")
+      }
+
+      /// Value: Вы уверены, что хотите выйти?
+      static func studying_screen_exit_message(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("studying_screen_exit_message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "studying_screen_exit_message"
+        }
+
+        return NSLocalizedString("studying_screen_exit_message", bundle: bundle, comment: "")
       }
 
       /// Value: Вы уверены, что хотите скачать словарь на телефон?

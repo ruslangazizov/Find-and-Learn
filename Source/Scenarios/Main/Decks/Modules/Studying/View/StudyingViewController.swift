@@ -10,6 +10,12 @@ import UIKit
 final class StudyingViewController: UIViewController {
     // MARK: UI
     
+    private lazy var exitButton: UIButton = {
+        let button = UIButton(type: .close)
+        button.tintColor = .black
+        return button
+    }()
+    
     private lazy var titleProgressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -90,6 +96,8 @@ final class StudyingViewController: UIViewController {
         cardsViews.last?.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard(_:))))
         
         titleProgressLabel.text = "0 / \(cards.count)"
+        
+        exitButton.addTarget(self, action: #selector(exitButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func setupCenterPoint() {
@@ -102,6 +110,12 @@ final class StudyingViewController: UIViewController {
         titleProgressLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(Constants.topInset)
+        }
+        
+        view.addSubview(exitButton)
+        exitButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(Constants.sideInset)
+            make.centerY.equalTo(titleProgressLabel)
         }
         
         view.addSubview(progressBar)
@@ -117,6 +131,12 @@ final class StudyingViewController: UIViewController {
                 make.bottom.equalToSuperview().inset(Constants.bottomInset)
                 make.top.equalTo(progressBar).inset(Constants.topInset)
             }
+        }
+    }
+    
+    @objc private func exitButtonTapped(_ sender: UIButton) {
+        showAskAlert(message: R.string.localizable.studying_screen_exit_message()) { _ in
+            self.presenter.endStudying()
         }
     }
     
