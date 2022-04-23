@@ -30,7 +30,7 @@ final class StudyingViewController: UIViewController {
     
     // MARK: Properties
     
-    private let cards: [FlashCard]
+    var cards: [FlashCard] = []
     
     private var cardsViews: [FlashCardView] = []
     
@@ -48,9 +48,8 @@ final class StudyingViewController: UIViewController {
     
     // MARK: Init
     
-    init(presenter: StudyingViewOutput, cards: [FlashCard]) {
+    init(presenter: StudyingViewOutput) {
         self.presenter = presenter
-        self.cards = cards
         super.init(nibName: nil, bundle: nil)
     }
     

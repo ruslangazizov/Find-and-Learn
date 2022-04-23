@@ -109,6 +109,9 @@
 		D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD92412814005C00D93BC4 /* FlashCardView.swift */; };
 		D2FD9244281400FC00D93BC4 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD9243281400FC00D93BC4 /* FlashCard.swift */; };
 		D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD92452814209C00D93BC4 /* MessageView.swift */; };
+		D2FD924B2814618F00D93BC4 /* StudyingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924A2814618F00D93BC4 /* StudyingRouter.swift */; };
+		D2FD924D2814629D00D93BC4 /* StudyingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */; };
+		D2FD92502814632300D93BC4 /* StudyingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -217,6 +220,9 @@
 		D2FD92412814005C00D93BC4 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		D2FD9243281400FC00D93BC4 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		D2FD92452814209C00D93BC4 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		D2FD924A2814618F00D93BC4 /* StudyingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingRouter.swift; sourceTree = "<group>"; };
+		D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingAssembly.swift; sourceTree = "<group>"; };
+		D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingInteractor.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -817,6 +823,9 @@
 		D2FD92382813FC9400D93BC4 /* Studying */ = {
 			isa = PBXGroup;
 			children = (
+				D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */,
+				D2FD92492814617E00D93BC4 /* Router */,
+				D2FD924E281462F400D93BC4 /* Interactor */,
 				D2FD923E2813FD3D00D93BC4 /* Presenter */,
 				D2FD92392813FCC800D93BC4 /* View */,
 			);
@@ -838,6 +847,22 @@
 				D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D2FD92492814617E00D93BC4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD924A2814618F00D93BC4 /* StudyingRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D2FD924E281462F400D93BC4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1059,6 +1084,7 @@
 				D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */,
 				D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */,
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
+				D2FD92502814632300D93BC4 /* StudyingInteractor.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
@@ -1070,6 +1096,7 @@
 				D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */,
 				D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */,
 				D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */,
+				D2FD924D2814629D00D93BC4 /* StudyingAssembly.swift in Sources */,
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
 				D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
@@ -1092,6 +1119,7 @@
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
 				D28814C627FD8F67007332A8 /* PasswordRecoveryRouter.swift in Sources */,
+				D2FD924B2814618F00D93BC4 /* StudyingRouter.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
 				D28814C827FD97AE007332A8 /* EntranceAssembly.swift in Sources */,
 			);

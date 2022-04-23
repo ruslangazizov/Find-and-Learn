@@ -14,10 +14,14 @@ final class StudyingPresenter: StudyingViewOutput {
     // MARK: Dependencies
     
     weak var view: StudyingViewInput?
+    private let interactor: StudyingInteractorProtocol
+    private let router: StudyingRouterProtocol
     
     // MARK: Init
     
-    init() {
+    init(router: StudyingRouterProtocol, interactor: StudyingInteractorProtocol) {
+        self.interactor = interactor
+        self.router = router
     }
     
     // MARK: StudyingViewOutput
