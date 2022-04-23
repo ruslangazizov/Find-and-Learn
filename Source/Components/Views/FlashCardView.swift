@@ -22,6 +22,10 @@ final class FlashCardView: UIView {
     
     private let card: FlashCard
     
+    private var isFrontSide = true
+    
+    private lazy var halfPoint: CGFloat = frame.width / .halfDivider
+    
     // MARK: Init
     
     init(card: FlashCard) {
@@ -42,6 +46,8 @@ final class FlashCardView: UIView {
         textLabel.text = card.frontSide
         
         layer.cornerRadius = .cornerRadius
+        
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flip(_:))))
     }
     
     private func setupLayout() {
@@ -50,6 +56,18 @@ final class FlashCardView: UIView {
             make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
             make.centerY.equalToSuperview()
         }
+    }
+    
+    @objc private func flip(_ sender: UITapGestureRecognizer) {
+        let isFromRight = sender.location(in: self).x <= halfPoint
+        textLabel.text = isFrontSide ? card.backSide : card.frontSide
+        isFrontSide.toggle()
+        UIView.transition(
+            with: self,
+            duration: 0.5,
+            options: isFromRight ? .transitionFlipFromRight : .transitionFlipFromLeft,
+            animations: nil
+        )
     }
 }
 
@@ -63,4 +81,6 @@ private extension FlashCardView {
 
 private extension CGFloat {
     static let cornerRadius: CGFloat = 10
+    
+    static let halfDivider: CGFloat = 2
 }
