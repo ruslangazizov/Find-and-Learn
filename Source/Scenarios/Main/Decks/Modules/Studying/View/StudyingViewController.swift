@@ -24,6 +24,10 @@ final class StudyingViewController: UIViewController {
         return progressView
     }()
     
+    // MARK: Dependencies
+    
+    private let presenter: StudyingViewOutput
+    
     // MARK: Properties
     
     private let cards: [FlashCard]
@@ -44,7 +48,8 @@ final class StudyingViewController: UIViewController {
     
     // MARK: Init
     
-    init(cards: [FlashCard]) {
+    init(presenter: StudyingViewOutput, cards: [FlashCard]) {
+        self.presenter = presenter
         self.cards = cards
         super.init(nibName: nil, bundle: nil)
     }
@@ -166,6 +171,11 @@ final class StudyingViewController: UIViewController {
         progressBar.setProgress(Float(cardsDeleted) / Float(cards.count), animated: true)
         titleProgressLabel.text = "\(cardsDeleted) / \(cards.count)"
     }
+}
+
+// MARK: - ViewInput
+
+extension StudyingViewController: StudyingViewInput {
 }
 
 // MARK: - Constants
