@@ -112,6 +112,7 @@
 		D2FD924B2814618F00D93BC4 /* StudyingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924A2814618F00D93BC4 /* StudyingRouter.swift */; };
 		D2FD924D2814629D00D93BC4 /* StudyingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */; };
 		D2FD92502814632300D93BC4 /* StudyingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */; };
+		D2FD925228146EB100D93BC4 /* FinishStudyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,6 +224,7 @@
 		D2FD924A2814618F00D93BC4 /* StudyingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingRouter.swift; sourceTree = "<group>"; };
 		D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingAssembly.swift; sourceTree = "<group>"; };
 		D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingInteractor.swift; sourceTree = "<group>"; };
+		D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishStudyingView.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -589,6 +591,7 @@
 				D25FCD5A27F858C10007E65D /* CircularView.swift */,
 				D2FD92412814005C00D93BC4 /* FlashCardView.swift */,
 				D2FD92452814209C00D93BC4 /* MessageView.swift */,
+				D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1031,6 +1034,7 @@
 				D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */,
 				D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */,
 				D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */,
+				D2FD925228146EB100D93BC4 /* FinishStudyingView.swift in Sources */,
 				D2FD923D2813FD0900D93BC4 /* StudyingViewController.swift in Sources */,
 				D20F32FE280DB07F0003D9DD /* ChangePasswordPresenter.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,

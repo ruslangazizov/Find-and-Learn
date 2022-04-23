@@ -30,6 +30,8 @@ final class StudyingViewController: UIViewController {
         return progressView
     }()
     
+    private lazy var finishView = FinishStudyingView()
+    
     // MARK: Dependencies
     
     private let presenter: StudyingViewOutput
@@ -122,6 +124,13 @@ final class StudyingViewController: UIViewController {
         progressBar.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
             make.top.equalTo(titleProgressLabel.snp.bottom).offset(Constants.topOffset)
+        }
+        
+        view.addSubview(finishView)
+        finishView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+            make.top.equalTo(progressBar).inset(Constants.topInset)
         }
         
         for element in cardsViews {

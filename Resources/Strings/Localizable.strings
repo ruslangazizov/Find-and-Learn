@@ -49,6 +49,11 @@
 "studying_screen_study_more" = "Изучать еще";
 "studying_screen_learned" = "Усвоено";
 "studying_screen_exit_message" = "Вы уверены, что хотите выйти?";
+"studying_screen_restart" = "Начать сначала";
+"studying_screen_continue" = "Продолжить";
+"studying_screen_nice_work" = "Хорошая работа!";
+"studying_screen_has_mistakes_message" = "Вы еще не выучили все слова, если хотите изучать только их, нажмите \"Продолжить\"";
+"studying_screen_has_not_mistakes_message" = "Поздравляем!";
 
 // Уведомления для экрана "Аккаунт"
 "alert_title" = "Подтвердите действие";
