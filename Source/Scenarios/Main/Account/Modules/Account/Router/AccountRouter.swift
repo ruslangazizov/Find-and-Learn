@@ -22,6 +22,7 @@ final class AccountRouter: AccountRouterProtocol {
     }
     
     func showChangePasswordModule() {
+        view?.navigationController?.pushViewController(ChangePasswordAssembly.assemble(), animated: true)
     }
     
     func showRegistrationModule() {

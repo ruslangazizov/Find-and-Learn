@@ -18,11 +18,7 @@ final class PasswordRecoveryViewController: UIViewController {
         return textField
     }()
     
-    private lazy var emailErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var emailErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var recoveryButton: UIButton = {
         let button = CommonButton(
@@ -180,17 +176,15 @@ extension PasswordRecoveryViewController: PasswordRecoveryViewInput {
         case .email(let message):
             emailErrorLabel.text = message
             emailErrorLabel.isHidden = false
-        }        
+        }
     }
     
     func showOkAlert() {
-        let alert = UIAlertController(
+        showOkAlert(
             title: R.string.localizable.validation_success_email_sent_title(),
             message: R.string.localizable.validation_success_email_sent_message(),
-            preferredStyle: .alert
+            handler: nil
         )
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
     }
 }
 

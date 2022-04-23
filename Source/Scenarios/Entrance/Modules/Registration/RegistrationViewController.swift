@@ -20,11 +20,7 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
-    private lazy var emailErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var emailErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var userNameTextField: UITextField = {
         let textField = CommonTextField(
@@ -35,11 +31,7 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
-    private lazy var userNameErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var userNameErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var passwordTextField: UITextField = {
         let textField = CommonTextField(
@@ -50,11 +42,7 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
-    private lazy var passwordErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var passwordErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var confirmPasswordTextField: UITextField = {
         let textField = CommonTextField(
@@ -64,11 +52,7 @@ final class RegistrationViewController: UIViewController {
         return textField
     }()
     
-    private lazy var confirmPasswordErrorLabel: UILabel = {
-        let label = ErrorLabel()
-        label.isHidden = true
-        return label
-    }()
+    private lazy var confirmPasswordErrorLabel = ErrorLabel(isHidden: true)
     
     private lazy var registrationButton: UIButton = {
         let button = CommonButton(

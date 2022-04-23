@@ -26,4 +26,14 @@ extension UIViewController {
         )
         present(alert, animated: true)
     }
+    
+    func showOkAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: handler))
+        present(alert, animated: true, completion: nil)
+    }
 }
