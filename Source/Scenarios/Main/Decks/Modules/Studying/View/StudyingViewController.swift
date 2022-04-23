@@ -10,7 +10,12 @@ import UIKit
 final class StudyingViewController: UIViewController {
     // MARK: UI
     
-    private lazy var cardView = FlashCardView(card: .init(frontSide: "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и", backSide: "Not some"))
+    private lazy var progressBar: UIProgressView = {
+        let progressView = UIProgressView(progressViewStyle: .bar)
+        progressView.trackTintColor = .red
+        progressView.progressTintColor = .blue
+        return progressView
+    }()
     
     // MARK: Properties
     
@@ -23,6 +28,8 @@ final class StudyingViewController: UIViewController {
     /* (view.frame.width / 2) - делим экран на 2 части; (.pi / 6) - максимальный угол наклона будет 30 градусов;
     Если мы разделим центр карточки на это число, то получим нужный угол наклона */
     private lazy var dividerForAngle: CGFloat = (view.frame.width / .halfDivider) / (.pi / 6)
+    
+    private lazy var cardCenter: CGPoint = .zero
     
     // MARK: Init
     
@@ -44,6 +51,12 @@ final class StudyingViewController: UIViewController {
         setupLayout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupCenterPoint()
+    }
+    
     // MARK: Private
     
     private func configure() {
@@ -53,14 +66,28 @@ final class StudyingViewController: UIViewController {
             cardsViews.append(FlashCardView(card: element))
         }
         cardsViews.last?.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard(_:))))
+        
+        progressBar.setProgress(0.5, animated: true)
+    }
+    
+    private func setupCenterPoint() {
+        guard let cardView = cardsViews.last else { return }
+        cardCenter = cardView.center
     }
     
     private func setupLayout() {
+        view.addSubview(progressBar)
+        progressBar.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
+        }
+        
         for element in cardsViews {
             view.addSubview(element)
             element.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview().inset(20)
-                make.top.bottom.equalToSuperview().inset(50)
+                make.bottom.equalToSuperview().inset(50)
+                make.top.equalTo(progressBar).inset(30)
             }
         }
     }
@@ -87,7 +114,7 @@ final class StudyingViewController: UIViewController {
             }
             
             UIView.animate(withDuration: 0.2) {
-                card.center = self.view.center
+                card.center = self.cardCenter
                 card.messageAlpha = .zero
                 card.transform = CGAffineTransform.identity
             }
