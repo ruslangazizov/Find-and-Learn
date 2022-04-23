@@ -8,6 +8,7 @@
 import Foundation
 
 protocol StudyingViewOutput: AnyObject {
+    func endStudying()
 }
 
 final class StudyingPresenter: StudyingViewOutput {
@@ -25,4 +26,8 @@ final class StudyingPresenter: StudyingViewOutput {
     }
     
     // MARK: StudyingViewOutput
+    
+    func endStudying() {
+        router.goToPreviousModule()
+    }
 }
