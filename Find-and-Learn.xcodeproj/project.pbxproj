@@ -106,6 +106,8 @@
 		D2FD923B2813FCE400D93BC4 /* StudyingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923A2813FCE400D93BC4 /* StudyingViewInput.swift */; };
 		D2FD923D2813FD0900D93BC4 /* StudyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923C2813FD0900D93BC4 /* StudyingViewController.swift */; };
 		D2FD92402813FD4F00D93BC4 /* StudyingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */; };
+		D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD92412814005C00D93BC4 /* FlashCardView.swift */; };
+		D2FD9244281400FC00D93BC4 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD9243281400FC00D93BC4 /* FlashCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,6 +213,8 @@
 		D2FD923A2813FCE400D93BC4 /* StudyingViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewInput.swift; sourceTree = "<group>"; };
 		D2FD923C2813FD0900D93BC4 /* StudyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewController.swift; sourceTree = "<group>"; };
 		D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingPresenter.swift; sourceTree = "<group>"; };
+		D2FD92412814005C00D93BC4 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		D2FD9243281400FC00D93BC4 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -326,6 +330,7 @@
 				44BE5DDE27E531FD0024F268 /* Word.swift */,
 				44D5811727E7D74500DBCC4E /* User.swift */,
 				D25FCD6127F8666C0007E65D /* Setting.swift */,
+				D2FD9243281400FC00D93BC4 /* FlashCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				D25FCD5A27F858C10007E65D /* CircularView.swift */,
+				D2FD92412814005C00D93BC4 /* FlashCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1006,6 +1012,7 @@
 				44DC5FF627FF0CD5005EACAE /* FavoriteWordsInteractor.swift in Sources */,
 				44DC5FF027FF0A31005EACAE /* FavoriteWordsViewInput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
+				D2FD9244281400FC00D93BC4 /* FlashCard.swift in Sources */,
 				D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */,
 				D20F330A280DD6810003D9DD /* ChangePasswordRouter.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
@@ -1052,6 +1059,7 @@
 				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
 				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
+				D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */,
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
