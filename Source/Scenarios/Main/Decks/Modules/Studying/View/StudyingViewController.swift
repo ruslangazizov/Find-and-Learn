@@ -19,8 +19,8 @@ final class StudyingViewController: UIViewController {
     
     private lazy var progressBar: UIProgressView = {
         let progressView = UIProgressView(progressViewStyle: .bar)
-        progressView.trackTintColor = .red
-        progressView.progressTintColor = .blue
+        progressView.trackTintColor = .lightGray
+        progressView.progressTintColor = .systemGreen
         return progressView
     }()
     
