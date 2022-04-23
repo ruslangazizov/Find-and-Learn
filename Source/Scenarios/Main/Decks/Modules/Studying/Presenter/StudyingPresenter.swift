@@ -11,4 +11,14 @@ protocol StudyingViewOutput: AnyObject {
 }
 
 final class StudyingPresenter: StudyingViewOutput {
+    // MARK: Dependencies
+    
+    weak var view: StudyingViewInput?
+    
+    // MARK: Init
+    
+    init() {
+    }
+    
+    // MARK: StudyingViewOutput
 }
