@@ -89,22 +89,22 @@ final class StudyingViewController: UIViewController {
     private func setupLayout() {
         view.addSubview(titleProgressLabel)
         titleProgressLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
+            make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(Constants.topInset)
         }
         
         view.addSubview(progressBar)
         progressBar.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(titleProgressLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
+            make.top.equalTo(titleProgressLabel.snp.bottom).offset(Constants.topOffset)
         }
         
         for element in cardsViews {
             view.addSubview(element)
             element.snp.makeConstraints { make in
-                make.leading.trailing.equalToSuperview().inset(20)
-                make.bottom.equalToSuperview().inset(50)
-                make.top.equalTo(progressBar).inset(30)
+                make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
+                make.bottom.equalToSuperview().inset(Constants.bottomInset)
+                make.top.equalTo(progressBar).inset(Constants.topInset)
             }
         }
     }
@@ -116,7 +116,7 @@ final class StudyingViewController: UIViewController {
             if card.center.x < .pointsFromSide || card.center.x > (view.frame.width - .pointsFromSide) {
                 UIView.animate(withDuration: 0.2) {
                     card.center = CGPoint(
-                        x: card.center.x < .pointsFromSide ? card.center.x - 200 : card.center.x + 200,
+                        x: card.center.x < .pointsFromSide ? card.center.x - .spacer : card.center.x + .spacer,
                         y: card.center.y
                     )
                     card.alpha = .zero
@@ -163,7 +163,19 @@ final class StudyingViewController: UIViewController {
 
 // MARK: - Constants
 
+private extension StudyingViewController {
+    enum Constants {
+        static let sideInset = 20
+        static let topInset = 20
+        static let bottomInset = 50
+        
+        static let topOffset = 20
+    }
+}
+
 private extension CGFloat {
+    static let spacer: CGFloat = 200
+    
     static let halfDivider: CGFloat = 2
     
     static let pointsFromCenter: CGFloat = 60
