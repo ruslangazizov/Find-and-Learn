@@ -45,6 +45,10 @@
 "change_password_screen_confirm_password_placeholder" = "Повторите пароль";
 "change_password_screen_change_password" = "Изменить пароль";
 
+// Экран "Изучение слов"
+"studying_screen_study_more" = "Изучать еще";
+"studying_screen_learned" = "Усвоено";
+
 // Уведомления для экрана "Аккаунт"
 "alert_title" = "Подтвердите действие";
 "alert_confirm" = "Да";

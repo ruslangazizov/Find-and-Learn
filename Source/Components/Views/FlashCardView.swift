@@ -12,13 +12,25 @@ final class FlashCardView: UIView {
     
     private lazy var textLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         return label
     }()
     
+    private lazy var studyMoreMessageView = MessageView()
+    
+    private lazy var learnedMessageView = MessageView()
+    
     // MARK: Properties
+    
+    var messageAlpha: CGFloat = 0 {
+        didSet {
+            studyMoreMessageView.alpha = messageAlpha
+            learnedMessageView.alpha = messageAlpha
+        }
+    }
     
     private let card: FlashCard
     
@@ -39,13 +51,43 @@ final class FlashCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Public
+    
+    func showStudyMoreView() {
+        learnedMessageView.isHidden = true
+        studyMoreMessageView.isHidden = false
+    }
+    
+    func showLearnedView() {
+        studyMoreMessageView.isHidden = true
+        learnedMessageView.isHidden = false
+    }
+    
     // MARK: Private
     
     private func configure() {
-        backgroundColor = .lightGray
-        textLabel.text = card.frontSide
-        
+        backgroundColor = .white
+        layer.borderWidth = .borderWidth
+        layer.borderColor = UIColor.lightGray.cgColor
         layer.cornerRadius = .cornerRadius
+        
+        studyMoreMessageView.text = R.string.localizable.studying_screen_study_more()
+        studyMoreMessageView.textColor = .black
+        studyMoreMessageView.backgroundColor = .studyMoreColor
+        studyMoreMessageView.clipsToBounds = true
+        studyMoreMessageView.layer.cornerRadius = .cornerRadius
+        studyMoreMessageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        studyMoreMessageView.isHidden = true
+        
+        learnedMessageView.text = R.string.localizable.studying_screen_learned()
+        learnedMessageView.textColor = .white
+        learnedMessageView.backgroundColor = .learnedColor
+        learnedMessageView.clipsToBounds = true
+        learnedMessageView.layer.cornerRadius = .cornerRadius
+        learnedMessageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        learnedMessageView.isHidden = true
+        
+        textLabel.text = card.frontSide
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flip(_:))))
     }
@@ -55,6 +97,18 @@ final class FlashCardView: UIView {
         textLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
             make.centerY.equalToSuperview()
+        }
+        
+        addSubview(studyMoreMessageView)
+        studyMoreMessageView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(Constants.messageViewHeight)
+        }
+        
+        addSubview(learnedMessageView)
+        learnedMessageView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(Constants.messageViewHeight)
         }
     }
     
@@ -76,11 +130,20 @@ final class FlashCardView: UIView {
 private extension FlashCardView {
     enum Constants {
         static let sideInset = 20
+        
+        static let messageViewHeight = 40
     }
 }
 
 private extension CGFloat {
+    static let borderWidth: CGFloat = 2
+    
     static let cornerRadius: CGFloat = 10
     
     static let halfDivider: CGFloat = 2
+}
+
+private extension UIColor {
+    static let studyMoreColor = UIColor(red: 217 / 255, green: 181 / 255, blue: 143 / 255, alpha: 1)
+    static let learnedColor = UIColor(red: 145 / 255, green: 194 / 255, blue: 125 / 255, alpha: 1)
 }

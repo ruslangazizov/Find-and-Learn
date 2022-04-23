@@ -174,7 +174,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 45 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 47 localization keys.
     struct localizable {
       /// Value: E-Mail
       static let authorization_screen_email_placeholder = Rswift.StringResource(key: "authorization_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -216,6 +216,8 @@ struct R: Rswift.Validatable {
       static let change_password_screen_change_password = Rswift.StringResource(key: "change_password_screen_change_password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Изменить пароль
       static let settings_change_password = Rswift.StringResource(key: "settings_change_password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Изучать еще
+      static let studying_screen_study_more = Rswift.StringResource(key: "studying_screen_study_more", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: История
       static let history_words_screen_title = Rswift.StringResource(key: "history_words_screen_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Мои достижения
@@ -264,6 +266,8 @@ struct R: Rswift.Validatable {
       static let dictionary_screen_title = Rswift.StringResource(key: "dictionary_screen_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Удалить аккаунт
       static let settings_delete_account = Rswift.StringResource(key: "settings_delete_account", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Усвоено
+      static let studying_screen_learned = Rswift.StringResource(key: "studying_screen_learned", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Успешно
       static let validation_success_password_changed_title = Rswift.StringResource(key: "validation_success_password_changed_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
@@ -525,6 +529,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings_change_password", bundle: bundle, comment: "")
+      }
+
+      /// Value: Изучать еще
+      static func studying_screen_study_more(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("studying_screen_study_more", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "studying_screen_study_more"
+        }
+
+        return NSLocalizedString("studying_screen_study_more", bundle: bundle, comment: "")
       }
 
       /// Value: История
@@ -837,6 +854,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("settings_delete_account", bundle: bundle, comment: "")
+      }
+
+      /// Value: Усвоено
+      static func studying_screen_learned(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("studying_screen_learned", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "studying_screen_learned"
+        }
+
+        return NSLocalizedString("studying_screen_learned", bundle: bundle, comment: "")
       }
 
       /// Value: Успешно

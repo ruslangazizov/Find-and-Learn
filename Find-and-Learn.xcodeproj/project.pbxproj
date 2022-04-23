@@ -108,6 +108,7 @@
 		D2FD92402813FD4F00D93BC4 /* StudyingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */; };
 		D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD92412814005C00D93BC4 /* FlashCardView.swift */; };
 		D2FD9244281400FC00D93BC4 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD9243281400FC00D93BC4 /* FlashCard.swift */; };
+		D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD92452814209C00D93BC4 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -215,6 +216,7 @@
 		D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingPresenter.swift; sourceTree = "<group>"; };
 		D2FD92412814005C00D93BC4 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		D2FD9243281400FC00D93BC4 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
+		D2FD92452814209C00D93BC4 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -580,6 +582,7 @@
 			children = (
 				D25FCD5A27F858C10007E65D /* CircularView.swift */,
 				D2FD92412814005C00D93BC4 /* FlashCardView.swift */,
+				D2FD92452814209C00D93BC4 /* MessageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -996,6 +999,7 @@
 			files = (
 				D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */,
 				D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */,
+				D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */,
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
