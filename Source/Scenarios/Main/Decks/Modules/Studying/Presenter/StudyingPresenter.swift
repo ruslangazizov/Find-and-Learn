@@ -8,6 +8,9 @@
 import Foundation
 
 protocol StudyingViewOutput: AnyObject {
+    func actionWithCard(card: FlashCard, action: CardAction)
+    func continueLearning()
+    func restart()
     func endStudying()
 }
 
@@ -26,6 +29,25 @@ final class StudyingPresenter: StudyingViewOutput {
     }
     
     // MARK: StudyingViewOutput
+    
+    func actionWithCard(card: FlashCard, action: CardAction) {
+        if action == .studyMore {
+            interactor.studyMoreCard(card: card) {
+                view?.showHasMistakesFinish()
+            }
+        }
+    }
+    
+    func continueLearning() {
+        interactor.getLearnMoreWords { cards in
+            view?.continueLearning(cards: cards.shuffled())
+        }
+        interactor.restartManager()
+    }
+    
+    func restart() {
+        interactor.restartManager()
+    }
     
     func endStudying() {
         router.goToPreviousModule()

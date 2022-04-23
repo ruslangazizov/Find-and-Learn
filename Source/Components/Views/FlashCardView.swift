@@ -32,7 +32,7 @@ final class FlashCardView: UIView {
         }
     }
     
-    private let card: FlashCard
+    let card: FlashCard
     
     private var isFrontSide = true
     

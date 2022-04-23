@@ -100,6 +100,8 @@ final class StudyingViewController: UIViewController {
         titleProgressLabel.text = "0 / \(cards.count)"
         
         exitButton.addTarget(self, action: #selector(exitButtonTapped(_:)), for: .touchUpInside)
+        finishView.restartButton.addTarget(self, action: #selector(restartButtonTapped(_:)), for: .touchUpInside)
+        finishView.continueButton.addTarget(self, action: #selector(continueButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func setupCenterPoint() {
@@ -133,6 +135,10 @@ final class StudyingViewController: UIViewController {
             make.top.equalTo(progressBar).inset(Constants.topInset)
         }
         
+        addCardsViews()
+    }
+    
+    private func addCardsViews() {
         for element in cardsViews {
             view.addSubview(element)
             element.snp.makeConstraints { make in
@@ -147,6 +153,28 @@ final class StudyingViewController: UIViewController {
         showAskAlert(message: R.string.localizable.studying_screen_exit_message()) { _ in
             self.presenter.endStudying()
         }
+    }
+    
+    @objc private func restartButtonTapped(_ sender: UIButton) {
+        presenter.restart()
+        cards.shuffle()
+        start()
+    }
+    
+    @objc private func continueButtonTapped(_ sender: UIButton) {
+        presenter.continueLearning()
+    }
+    
+    private func start() {
+        titleProgressLabel.text = "0 / \(cards.count)"
+        
+        cards.forEach { element in
+            cardsViews.append(FlashCardView(card: element))
+        }
+        cardsViews.last?.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard(_:))))
+        
+        addCardsViews()
+        finishView.userHasMistakes = false
     }
     
     @objc private func panCard(_ sender: UIPanGestureRecognizer) {
@@ -167,6 +195,10 @@ final class StudyingViewController: UIViewController {
                         action: #selector(self.panCard(_:)))
                     )
                     self.nextStep()
+                    self.presenter.actionWithCard(
+                        card: card.card,
+                        action: card.center.x < .pointsFromSide ? .studyMore : .learned
+                    )
                 }
                 return
             }
@@ -204,6 +236,14 @@ final class StudyingViewController: UIViewController {
 // MARK: - ViewInput
 
 extension StudyingViewController: StudyingViewInput {
+    func showHasMistakesFinish() {
+        finishView.userHasMistakes = true
+    }
+    
+    func continueLearning(cards: [FlashCard]) {
+        self.cards = cards
+        start()
+    }
 }
 
 // MARK: - Constants
@@ -212,7 +252,7 @@ private extension StudyingViewController {
     enum Constants {
         static let sideInset = 20
         static let topInset = 20
-        static let bottomInset = 50
+        static let bottomInset = 20
         
         static let topOffset = 20
     }

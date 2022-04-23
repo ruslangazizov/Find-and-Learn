@@ -113,6 +113,8 @@
 		D2FD924D2814629D00D93BC4 /* StudyingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */; };
 		D2FD92502814632300D93BC4 /* StudyingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */; };
 		D2FD925228146EB100D93BC4 /* FinishStudyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */; };
+		D2FD925528148B2A00D93BC4 /* StudyingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD925428148B2A00D93BC4 /* StudyingManager.swift */; };
+		D2FD925728148BD600D93BC4 /* CardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD925628148BD600D93BC4 /* CardAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,6 +227,8 @@
 		D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingAssembly.swift; sourceTree = "<group>"; };
 		D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingInteractor.swift; sourceTree = "<group>"; };
 		D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishStudyingView.swift; sourceTree = "<group>"; };
+		D2FD925428148B2A00D93BC4 /* StudyingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingManager.swift; sourceTree = "<group>"; };
+		D2FD925628148BD600D93BC4 /* CardAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAction.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -261,6 +265,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D2FD925328148AF000D93BC4 /* Studying Manager */,
 				D26EFF06280088480019F1EC /* Settings Manager */,
 				D21E9DA827F9FF64005513B7 /* Validation Managers */,
 				44D5811027E7B34000DBCC4E /* Data Managers */,
@@ -848,6 +853,7 @@
 			isa = PBXGroup;
 			children = (
 				D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */,
+				D2FD925628148BD600D93BC4 /* CardAction.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -866,6 +872,14 @@
 				D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D2FD925328148AF000D93BC4 /* Studying Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD925428148B2A00D93BC4 /* StudyingManager.swift */,
+			);
+			path = "Studying Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1082,6 +1096,7 @@
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				D20F3307280DD5380003D9DD /* ChangePasswordAssembly.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
+				D2FD925728148BD600D93BC4 /* CardAction.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
@@ -1095,6 +1110,7 @@
 				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
 				D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */,
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
+				D2FD925528148B2A00D93BC4 /* StudyingManager.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
 				D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */,
