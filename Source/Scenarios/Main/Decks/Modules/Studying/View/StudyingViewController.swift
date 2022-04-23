@@ -14,11 +14,26 @@ final class StudyingViewController: UIViewController {
     
     // MARK: Properties
     
+    private let cards: [FlashCard]
+    
+    private var cardsViews: [FlashCardView] = []
+    
     private lazy var halfPoint: CGFloat = view.frame.width / .halfDivider
     
     /* (view.frame.width / 2) - делим экран на 2 части; (.pi / 6) - максимальный угол наклона будет 30 градусов;
     Если мы разделим центр карточки на это число, то получим нужный угол наклона */
     private lazy var dividerForAngle: CGFloat = (view.frame.width / .halfDivider) / (.pi / 6)
+    
+    // MARK: Init
+    
+    init(cards: [FlashCard]) {
+        self.cards = cards
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: Lifecycle
     
@@ -34,14 +49,19 @@ final class StudyingViewController: UIViewController {
     private func configure() {
         view.backgroundColor = .white
         
-        cardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard(_:))))
+        cards.forEach { element in
+            cardsViews.append(FlashCardView(card: element))
+        }
+        cardsViews.last?.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard(_:))))
     }
     
     private func setupLayout() {
-        view.addSubview(cardView)
-        cardView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.bottom.equalToSuperview().inset(50)
+        for element in cardsViews {
+            view.addSubview(element)
+            element.snp.makeConstraints { make in
+                make.leading.trailing.equalToSuperview().inset(20)
+                make.top.bottom.equalToSuperview().inset(50)
+            }
         }
     }
     
@@ -57,7 +77,11 @@ final class StudyingViewController: UIViewController {
                     )
                     card.alpha = .zero
                 } completion: { _ in
-                    card.removeFromSuperview()
+                    self.cardsViews.removeLast().removeFromSuperview()
+                    self.cardsViews.last?.addGestureRecognizer(UIPanGestureRecognizer(
+                        target: self,
+                        action: #selector(self.panCard(_:)))
+                    )
                 }
                 return
             }
