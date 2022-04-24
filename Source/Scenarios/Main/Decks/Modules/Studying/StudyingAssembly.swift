@@ -17,10 +17,10 @@ final class StudyingAssembly: AssemblyProtocol {
         let viewController = StudyingViewController(presenter: presenter)
         // TODO: delete when will be merge
         viewController.cards = [
-            FlashCard(frontSide: "1", backSide: "1"),
-            FlashCard(frontSide: "2", backSide: "2"),
-            FlashCard(frontSide: "3", backSide: "3"),
-            FlashCard(frontSide: "4", backSide: "4")
+            FlashCard(frontSide: "1", backSide: "1", comment: "1"),
+            FlashCard(frontSide: "2", backSide: "2", comment: "2"),
+            FlashCard(frontSide: "3", backSide: "3", comment: "3"),
+            FlashCard(frontSide: "4", backSide: "4", comment: "4")
         ]
         
         presenter.view = viewController

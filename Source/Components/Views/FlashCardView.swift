@@ -19,6 +19,15 @@ final class FlashCardView: UIView {
         return label
     }()
     
+    private lazy var showCommentButton: UIButton = {
+        let button = CommonButton(
+            text: R.string.localizable.studying_screen_show_comment(),
+            layerColor: nil
+        )
+        button.tintColor = .black
+        return button
+    }()
+    
     private lazy var studyMoreMessageView = MessageView()
     
     private lazy var learnedMessageView = MessageView()
@@ -88,8 +97,10 @@ final class FlashCardView: UIView {
         learnedMessageView.isHidden = true
         
         textLabel.text = card.frontSide
+        showCommentButton.isHidden = true
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flip(_:))))
+        showCommentButton.addTarget(self, action: #selector(showCommentButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func setupLayout() {
@@ -97,6 +108,12 @@ final class FlashCardView: UIView {
         textLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
             make.centerY.equalToSuperview()
+        }
+        
+        addSubview(showCommentButton)
+        showCommentButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
+            make.centerX.equalToSuperview()
         }
         
         addSubview(studyMoreMessageView)
@@ -116,12 +133,18 @@ final class FlashCardView: UIView {
         let isFromRight = sender.location(in: self).x <= halfPoint
         textLabel.text = isFrontSide ? card.backSide : card.frontSide
         isFrontSide.toggle()
+        showCommentButton.isHidden = isFrontSide
         UIView.transition(
             with: self,
             duration: 0.5,
             options: isFromRight ? .transitionFlipFromRight : .transitionFlipFromLeft,
             animations: nil
         )
+    }
+    
+    @objc private func showCommentButtonTapped(_ sender: UIButton) {
+        showCommentButton.isHidden = true
+        textLabel.text = "\(textLabel.text ?? "") \n\n \(card.comment)"
     }
 }
 
@@ -130,6 +153,7 @@ final class FlashCardView: UIView {
 private extension FlashCardView {
     enum Constants {
         static let sideInset = 20
+        static let bottomInset = 10
         
         static let messageViewHeight = 40
     }

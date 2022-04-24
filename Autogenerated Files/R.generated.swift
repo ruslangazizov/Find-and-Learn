@@ -183,7 +183,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 53 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 54 localization keys.
     struct localizable {
       /// Value: E-Mail
       static let authorization_screen_email_placeholder = Rswift.StringResource(key: "authorization_screen_email_placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -273,6 +273,8 @@ struct R: Rswift.Validatable {
       static let settings_confirm_email = Rswift.StringResource(key: "settings_confirm_email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Поздравляем!
       static let studying_screen_has_not_mistakes_message = Rswift.StringResource(key: "studying_screen_has_not_mistakes_message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Посмотреть комментарий
+      static let studying_screen_show_comment = Rswift.StringResource(key: "studying_screen_show_comment", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Проверьте свою почту
       static let validation_success_email_sent_message = Rswift.StringResource(key: "validation_success_email_sent_message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Продолжить
@@ -862,6 +864,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("studying_screen_has_not_mistakes_message", bundle: bundle, comment: "")
+      }
+
+      /// Value: Посмотреть комментарий
+      static func studying_screen_show_comment(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("studying_screen_show_comment", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "studying_screen_show_comment"
+        }
+
+        return NSLocalizedString("studying_screen_show_comment", bundle: bundle, comment: "")
       }
 
       /// Value: Проверьте свою почту
