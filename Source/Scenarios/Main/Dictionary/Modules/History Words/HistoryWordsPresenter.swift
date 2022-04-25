@@ -30,21 +30,27 @@ final class HistoryWordsPresenter: HistoryWordsViewOutput {
     
     func viewDidLoad() {
         interactor.fetchHistoryWords { [weak self] historyWords in
-            var dateToWords: [Date: [HistoryWordModel]] = [:]
-            historyWords.forEach { historyWord in
-                let historyWordModel = HistoryWordModel(
-                    word: historyWord.word,
-                    translations: historyWord.translations.joined(separator: ", "),
-                    searchesCount: historyWord.searchesCount)
-                dateToWords[historyWord.dateAdded.truncatingTime(), default: []].append(historyWordModel)
+            let words = Dictionary(grouping: historyWords) { historyWord in
+                historyWord.dateAdded.truncatingTime()
             }
-            var words: [HistoryWordsSection] = []
-            dateToWords.sorted { $0.key > $1.key }.forEach { date, historyWordModels in
-                words.append(HistoryWordsSection(
-                    title: date.toString(using: .weekDayMonthDayFormatter),
-                    words: historyWordModels
-                ))
-            }
+                .mapValues { historyWords in
+                    historyWords.map { historyWord in
+                        HistoryWordModel(
+                            word: historyWord.word,
+                            translations: historyWord.translations.joined(separator: ", "),
+                            searchesCount: historyWord.searchesCount
+                        )
+                    }
+                }
+                .sorted {
+                    $0.key > $1.key
+                }
+                .map { date, historyWordModels in
+                    HistoryWordsSection(
+                        title: date.toString(using: .weekDayMonthDayFormatter),
+                        words: historyWordModels
+                    )
+                }
             self?.view?.showWords(words)
         }
     }
