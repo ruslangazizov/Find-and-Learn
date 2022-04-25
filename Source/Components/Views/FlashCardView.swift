@@ -82,7 +82,7 @@ final class FlashCardView: UIView {
         
         studyMoreMessageView.text = R.string.localizable.studying_screen_study_more()
         studyMoreMessageView.textColor = .black
-        studyMoreMessageView.backgroundColor = .studyMoreColor
+        studyMoreMessageView.backgroundColor = R.color.studyMoreColor()
         studyMoreMessageView.clipsToBounds = true
         studyMoreMessageView.layer.cornerRadius = .cornerRadius
         studyMoreMessageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -90,7 +90,7 @@ final class FlashCardView: UIView {
         
         learnedMessageView.text = R.string.localizable.studying_screen_learned()
         learnedMessageView.textColor = .white
-        learnedMessageView.backgroundColor = .learnedColor
+        learnedMessageView.backgroundColor = R.color.learnedColor()
         learnedMessageView.clipsToBounds = true
         learnedMessageView.layer.cornerRadius = .cornerRadius
         learnedMessageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -167,9 +167,4 @@ private extension CGFloat {
     static let cornerRadius: CGFloat = 10
     
     static let halfDivider: CGFloat = 2
-}
-
-private extension UIColor {
-    static let studyMoreColor = UIColor(red: 217 / 255, green: 181 / 255, blue: 143 / 255, alpha: 1)
-    static let learnedColor = UIColor(red: 145 / 255, green: 194 / 255, blue: 125 / 255, alpha: 1)
 }
