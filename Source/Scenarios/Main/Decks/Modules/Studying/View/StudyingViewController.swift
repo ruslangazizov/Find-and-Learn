@@ -253,7 +253,7 @@ private extension StudyingViewController {
     enum Constants {
         static let sideInset = 20
         static let topInset = 20
-        static let bottomInset = 20
+        static let bottomInset = 50
         
         static let topOffset = 20
     }
