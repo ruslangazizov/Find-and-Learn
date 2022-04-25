@@ -250,9 +250,10 @@
 		441F8B6627EC82AE0066358F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				447D706D27EE4DD00011A7F4 /* Search Words */,
 				44DC5FE427FF08F4005EACAE /* Favorite Words */,
 				44F379E127FC4356001F02F4 /* History Words */,
-				447D706D27EE4DD00011A7F4 /* Search Words */,
+				447F98652816660F000E153D /* Word Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -302,6 +303,13 @@
 				4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		447F98652816660F000E153D /* Word Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Word Detail";
 			sourceTree = "<group>";
 		};
 		44BE5DD327E52A3C0024F268 /* Dictionary */ = {
@@ -958,8 +966,6 @@
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
 				D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */,
 				D20F330A280DD6810003D9DD /* ChangePasswordRouter.swift in Sources */,
-				44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */,
-				44F379FB27FC46C2001F02F4 /* HistoryWordsViewOutput.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
 				44DC5FE627FF090E005EACAE /* FavoriteWordsAssembly.swift in Sources */,
 				D26EFF0A280088780019F1EC /* SettingsManager.swift in Sources */,
