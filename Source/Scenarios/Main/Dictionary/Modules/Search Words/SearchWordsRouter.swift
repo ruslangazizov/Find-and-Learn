@@ -11,7 +11,7 @@ import UIKit
 protocol SearchWordsRouterProtocol: RouterProtocol {
     func showFavoriteWords()
     func showHistoryWords()
-    func showWordDetail(_ word: Word)
+    func showWordDetail(_ word: WordModel)
 }
 
 final class SearchWordsRouter: SearchWordsRouterProtocol {
@@ -27,10 +27,8 @@ final class SearchWordsRouter: SearchWordsRouterProtocol {
         view?.navigationController?.pushViewController(historyWordsViewController, animated: true)
     }
     
-    func showWordDetail(_ word: Word) {
-        // здесь будет просто WordDetailAssembly.assemble()
-        let mockWordDetailViewController = UIViewController()
-        mockWordDetailViewController.view.backgroundColor = .cyan
-        view?.navigationController?.pushViewController(mockWordDetailViewController, animated: true)
+    func showWordDetail(_ word: WordModel) {
+        let wordDetailViewController = WordDetailAssembly.assemble(with: word)
+        view?.navigationController?.pushViewController(wordDetailViewController, animated: true)
     }
 }

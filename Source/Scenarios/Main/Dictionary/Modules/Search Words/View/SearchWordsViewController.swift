@@ -32,7 +32,7 @@ final class SearchWordsViewController: UIViewController {
     // MARK: Dependencies
     
     private let presenter: SearchWordsViewOutput
-    private var words: [Word] = []
+    private var words: [WordModel] = []
     
     // MARK: Initializers
     
@@ -101,7 +101,7 @@ final class SearchWordsViewController: UIViewController {
 // MARK: - SearchWordsViewInput
 
 extension SearchWordsViewController: SearchWordsViewInput {
-    func showWords(_ words: [Word]) {
+    func showWords(_ words: [WordModel]) {
         self.words = words
         self.wordsTableView.reloadData()
     }

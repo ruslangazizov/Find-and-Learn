@@ -50,6 +50,6 @@ final class HistoryWordsPresenter: HistoryWordsViewOutput {
     }
     
     func didSelectWord(_ word: HistoryWordModel) {
-        router.showWordDetail(word.word)
+        router.showWordDetail(WordModel(word: word.word, translations: word.translations))
     }
 }

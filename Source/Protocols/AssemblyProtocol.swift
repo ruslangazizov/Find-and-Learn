@@ -11,3 +11,9 @@ import UIKit
 protocol AssemblyProtocol: AnyObject {
     static func assemble() -> UIViewController
 }
+
+protocol TransitionAssemblyProtocol: AnyObject {
+    associatedtype DataModel
+    
+    static func assemble(with model: DataModel) -> UIViewController
+}

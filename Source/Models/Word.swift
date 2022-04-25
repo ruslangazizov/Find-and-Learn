@@ -10,10 +10,6 @@ import Foundation
 struct Word {
     let word: String
     let translations: [String]
-
-    var translationsString: String {
-        return translations.joined(separator: ", ")
-    }
 }
 
 struct WordModel {

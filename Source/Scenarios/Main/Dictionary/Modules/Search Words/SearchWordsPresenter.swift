@@ -11,7 +11,7 @@ protocol SearchWordsViewOutput: AnyObject {
     func didEnterWord(_ word: String?)
     func didTapFavoriteWordsBarButtonItem()
     func didTapHistoryWordsBarButtonItem()
-    func didSelectWord(_ word: Word)
+    func didSelectWord(_ word: WordModel)
 }
 
 final class SearchWordsPresenter: SearchWordsViewOutput {
@@ -31,7 +31,10 @@ final class SearchWordsPresenter: SearchWordsViewOutput {
     // MARK: SearchWordsViewOutput
     
     func didEnterWord(_ word: String?) {
-        interactor.getWords(word) { [weak self] wordModels in
+        interactor.getWords(word) { [weak self] words in
+            let wordModels = words.map {
+                WordModel(word: $0.word, translations: $0.translations.joined(separator: ", "))
+            }
             self?.view?.showWords(wordModels)
         }
     }
@@ -44,7 +47,7 @@ final class SearchWordsPresenter: SearchWordsViewOutput {
         router.showHistoryWords()
     }
     
-    func didSelectWord(_ word: Word) {
+    func didSelectWord(_ word: WordModel) {
         router.showWordDetail(word)
     }
 }

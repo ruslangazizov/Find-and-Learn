@@ -9,17 +9,14 @@ import Foundation
 import UIKit
 
 protocol HistoryWordsRouterProtocol: RouterProtocol {
-    func showWordDetail(_ word: String)
+    func showWordDetail(_ word: WordModel)
 }
 
 final class HistoryWordsRouter: HistoryWordsRouterProtocol {
     weak var view: UIViewController?
     
-    func showWordDetail(_ word: String) {
-        // здесь будет просто WordDetailAssembly.assemble()
-        let mockWordDetailViewController = UIViewController()
-        mockWordDetailViewController.view.backgroundColor = .cyan
-        mockWordDetailViewController.title = word
-        view?.navigationController?.pushViewController(mockWordDetailViewController, animated: true)
+    func showWordDetail(_ word: WordModel) {
+        let wordDetailViewController = WordDetailAssembly.assemble(with: word)
+        view?.navigationController?.pushViewController(wordDetailViewController, animated: true)
     }
 }

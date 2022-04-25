@@ -16,8 +16,8 @@ final class SearchWordsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with word: Word) {
+    func configure(with word: WordModel) {
         textLabel?.text = word.word
-        detailTextLabel?.text = word.translationsString
+        detailTextLabel?.text = word.translations
     }
 }
