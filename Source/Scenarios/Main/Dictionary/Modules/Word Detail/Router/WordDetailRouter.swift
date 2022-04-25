@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-protocol WordDetailProtocol: RouterProtocol {
+protocol WordDetailRouterProtocol: RouterProtocol {
 }
 
-final class WordDetail: WordDetailProtocol {
+final class WordDetailRouter: WordDetailRouterProtocol {
     weak var view: UIViewController?
 }

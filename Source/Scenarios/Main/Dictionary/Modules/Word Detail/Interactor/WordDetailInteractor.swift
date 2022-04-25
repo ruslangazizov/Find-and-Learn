@@ -11,4 +11,9 @@ protocol WordDetailInteractorProtocol: AnyObject {
 }
 
 final class WordDetailInteractor: WordDetailInteractorProtocol {
+    private let dataManager: DataManagerProtocol
+    
+    init(dataManager: DataManagerProtocol) {
+        self.dataManager = dataManager
+    }
 }
