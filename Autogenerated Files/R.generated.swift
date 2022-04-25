@@ -201,7 +201,7 @@ struct R: Rswift.Validatable {
       static let password_recovery_screen_recovery_button = Rswift.StringResource(key: "password_recovery_screen_recovery_button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Восстановить пароль
       static let authorization_screen_reset_password = Rswift.StringResource(key: "authorization_screen_reset_password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Вы еще не выучили все слова, если хотите изучать только их, нажмите "Продолжить"
+      /// Value: Вы выучили еще не все слова. Если хотите изучать только их, нажмите "Продолжить".
       static let studying_screen_has_mistakes_message = Rswift.StringResource(key: "studying_screen_has_mistakes_message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Вы уверены, что хотите выйти из аккаунта?
       static let alert_exit = Rswift.StringResource(key: "alert_exit", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -272,7 +272,7 @@ struct R: Rswift.Validatable {
       /// Value: Подтвердить E-Mail
       static let settings_confirm_email = Rswift.StringResource(key: "settings_confirm_email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Поздравляем!
-      static let studying_screen_has_not_mistakes_message = Rswift.StringResource(key: "studying_screen_has_not_mistakes_message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      static let studying_screen_has_no_mistakes_message = Rswift.StringResource(key: "studying_screen_has_no_mistakes_message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Посмотреть комментарий
       static let studying_screen_show_comment = Rswift.StringResource(key: "studying_screen_show_comment", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Проверьте свою почту
@@ -398,7 +398,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("authorization_screen_reset_password", bundle: bundle, comment: "")
       }
 
-      /// Value: Вы еще не выучили все слова, если хотите изучать только их, нажмите "Продолжить"
+      /// Value: Вы выучили еще не все слова. Если хотите изучать только их, нажмите "Продолжить".
       static func studying_screen_has_mistakes_message(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("studying_screen_has_mistakes_message", bundle: hostingBundle, comment: "")
@@ -854,16 +854,16 @@ struct R: Rswift.Validatable {
       }
 
       /// Value: Поздравляем!
-      static func studying_screen_has_not_mistakes_message(preferredLanguages: [String]? = nil) -> String {
+      static func studying_screen_has_no_mistakes_message(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("studying_screen_has_not_mistakes_message", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("studying_screen_has_no_mistakes_message", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "studying_screen_has_not_mistakes_message"
+          return "studying_screen_has_no_mistakes_message"
         }
 
-        return NSLocalizedString("studying_screen_has_not_mistakes_message", bundle: bundle, comment: "")
+        return NSLocalizedString("studying_screen_has_no_mistakes_message", bundle: bundle, comment: "")
       }
 
       /// Value: Посмотреть комментарий

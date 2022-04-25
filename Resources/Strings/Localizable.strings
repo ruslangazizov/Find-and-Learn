@@ -53,8 +53,8 @@
 "studying_screen_continue" = "Продолжить";
 "studying_screen_show_comment" = "Посмотреть комментарий";
 "studying_screen_nice_work" = "Хорошая работа!";
-"studying_screen_has_mistakes_message" = "Вы еще не выучили все слова, если хотите изучать только их, нажмите \"Продолжить\"";
-"studying_screen_has_not_mistakes_message" = "Поздравляем!";
+"studying_screen_has_mistakes_message" = "Вы выучили еще не все слова. Если хотите изучать только их, нажмите \"Продолжить\".";
+"studying_screen_has_no_mistakes_message" = "Поздравляем!";
 
 // Уведомления для экрана "Аккаунт"
 "alert_title" = "Подтвердите действие";

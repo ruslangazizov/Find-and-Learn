@@ -55,7 +55,7 @@ final class FinishStudyingView: UIView {
                 textLabel.text = R.string.localizable.studying_screen_has_mistakes_message()
             } else {
                 continueButton.isHidden = true
-                textLabel.text = R.string.localizable.studying_screen_has_not_mistakes_message()
+                textLabel.text = R.string.localizable.studying_screen_has_no_mistakes_message()
             }
         }
     }
@@ -82,7 +82,7 @@ final class FinishStudyingView: UIView {
         layer.cornerRadius = .cornerRadius
         
         continueButton.isHidden = true
-        textLabel.text = R.string.localizable.studying_screen_has_not_mistakes_message()
+        textLabel.text = R.string.localizable.studying_screen_has_no_mistakes_message()
     }
     
     private func setupLayout() {
