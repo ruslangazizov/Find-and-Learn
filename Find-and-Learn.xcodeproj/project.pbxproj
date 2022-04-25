@@ -103,6 +103,18 @@
 		D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */; };
 		D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */; };
 		D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */; };
+		D2FD923B2813FCE400D93BC4 /* StudyingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923A2813FCE400D93BC4 /* StudyingViewInput.swift */; };
+		D2FD923D2813FD0900D93BC4 /* StudyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923C2813FD0900D93BC4 /* StudyingViewController.swift */; };
+		D2FD92402813FD4F00D93BC4 /* StudyingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */; };
+		D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD92412814005C00D93BC4 /* FlashCardView.swift */; };
+		D2FD9244281400FC00D93BC4 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD9243281400FC00D93BC4 /* FlashCard.swift */; };
+		D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD92452814209C00D93BC4 /* MessageView.swift */; };
+		D2FD924B2814618F00D93BC4 /* StudyingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924A2814618F00D93BC4 /* StudyingRouter.swift */; };
+		D2FD924D2814629D00D93BC4 /* StudyingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */; };
+		D2FD92502814632300D93BC4 /* StudyingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */; };
+		D2FD925228146EB100D93BC4 /* FinishStudyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */; };
+		D2FD925528148B2A00D93BC4 /* StudyingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD925428148B2A00D93BC4 /* StudyingManager.swift */; };
+		D2FD925728148BD600D93BC4 /* CardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD925628148BD600D93BC4 /* CardAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +217,18 @@
 		D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewInput.swift; sourceTree = "<group>"; };
 		D2FB5D5927EDA5B300CBDB00 /* AuthorizationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewOutput.swift; sourceTree = "<group>"; };
+		D2FD923A2813FCE400D93BC4 /* StudyingViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewInput.swift; sourceTree = "<group>"; };
+		D2FD923C2813FD0900D93BC4 /* StudyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewController.swift; sourceTree = "<group>"; };
+		D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingPresenter.swift; sourceTree = "<group>"; };
+		D2FD92412814005C00D93BC4 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		D2FD9243281400FC00D93BC4 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
+		D2FD92452814209C00D93BC4 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		D2FD924A2814618F00D93BC4 /* StudyingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingRouter.swift; sourceTree = "<group>"; };
+		D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingAssembly.swift; sourceTree = "<group>"; };
+		D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingInteractor.swift; sourceTree = "<group>"; };
+		D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishStudyingView.swift; sourceTree = "<group>"; };
+		D2FD925428148B2A00D93BC4 /* StudyingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingManager.swift; sourceTree = "<group>"; };
+		D2FD925628148BD600D93BC4 /* CardAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAction.swift; sourceTree = "<group>"; };
 		F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -232,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				44BE5DD327E52A3C0024F268 /* Dictionary */,
+				D2FD92362813FC7700D93BC4 /* Decks */,
 				D25FCD4E27F852FD0007E65D /* Account */,
 			);
 			path = Main;
@@ -240,6 +265,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D2FD925328148AF000D93BC4 /* Studying Manager */,
 				D26EFF06280088480019F1EC /* Settings Manager */,
 				D21E9DA827F9FF64005513B7 /* Validation Managers */,
 				44D5811027E7B34000DBCC4E /* Data Managers */,
@@ -319,6 +345,7 @@
 				44BE5DDE27E531FD0024F268 /* Word.swift */,
 				44D5811727E7D74500DBCC4E /* User.swift */,
 				D25FCD6127F8666C0007E65D /* Setting.swift */,
+				D2FD9243281400FC00D93BC4 /* FlashCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -567,6 +594,9 @@
 			isa = PBXGroup;
 			children = (
 				D25FCD5A27F858C10007E65D /* CircularView.swift */,
+				D2FD92412814005C00D93BC4 /* FlashCardView.swift */,
+				D2FD92452814209C00D93BC4 /* MessageView.swift */,
+				D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -782,6 +812,76 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		D2FD92362813FC7700D93BC4 /* Decks */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD92372813FC8700D93BC4 /* Modules */,
+			);
+			path = Decks;
+			sourceTree = "<group>";
+		};
+		D2FD92372813FC8700D93BC4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD92382813FC9400D93BC4 /* Studying */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D2FD92382813FC9400D93BC4 /* Studying */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD924C2814629D00D93BC4 /* StudyingAssembly.swift */,
+				D2FD92492814617E00D93BC4 /* Router */,
+				D2FD924E281462F400D93BC4 /* Interactor */,
+				D2FD923E2813FD3D00D93BC4 /* Presenter */,
+				D2FD92392813FCC800D93BC4 /* View */,
+			);
+			path = Studying;
+			sourceTree = "<group>";
+		};
+		D2FD92392813FCC800D93BC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD923A2813FCE400D93BC4 /* StudyingViewInput.swift */,
+				D2FD923C2813FD0900D93BC4 /* StudyingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2FD923E2813FD3D00D93BC4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD923F2813FD4F00D93BC4 /* StudyingPresenter.swift */,
+				D2FD925628148BD600D93BC4 /* CardAction.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D2FD92492814617E00D93BC4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD924A2814618F00D93BC4 /* StudyingRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D2FD924E281462F400D93BC4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD924F2814632300D93BC4 /* StudyingInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D2FD925328148AF000D93BC4 /* Studying Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD925428148B2A00D93BC4 /* StudyingManager.swift */,
+			);
+			path = "Studying Manager";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -941,12 +1041,15 @@
 			files = (
 				D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */,
 				D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */,
+				D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */,
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
 				D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */,
 				D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */,
 				D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */,
+				D2FD925228146EB100D93BC4 /* FinishStudyingView.swift in Sources */,
+				D2FD923D2813FD0900D93BC4 /* StudyingViewController.swift in Sources */,
 				D20F32FE280DB07F0003D9DD /* ChangePasswordPresenter.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D2037FB327FCA00F0036E0A5 /* AuthorizationErrors.swift in Sources */,
@@ -956,10 +1059,9 @@
 				44DC5FF627FF0CD5005EACAE /* FavoriteWordsInteractor.swift in Sources */,
 				44DC5FF027FF0A31005EACAE /* FavoriteWordsViewInput.swift in Sources */,
 				D217569127EB250800C3D545 /* PasswordRecoveryViewController.swift in Sources */,
+				D2FD9244281400FC00D93BC4 /* FlashCard.swift in Sources */,
 				D25FCD6027F8664F0007E65D /* AccountTableViewCell.swift in Sources */,
 				D20F330A280DD6810003D9DD /* ChangePasswordRouter.swift in Sources */,
-				44BCCAC327F8D50600C1189B /* SearchWordsRouterProtocol.swift in Sources */,
-				44F379FB27FC46C2001F02F4 /* HistoryWordsViewOutput.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
 				44DC5FE627FF090E005EACAE /* FavoriteWordsAssembly.swift in Sources */,
 				D26EFF0A280088780019F1EC /* SettingsManager.swift in Sources */,
@@ -994,27 +1096,33 @@
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				D20F3307280DD5380003D9DD /* ChangePasswordAssembly.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
+				D2FD925728148BD600D93BC4 /* CardAction.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
 				D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */,
 				D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */,
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
+				D2FD92502814632300D93BC4 /* StudyingInteractor.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
 				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
+				D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */,
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
+				D2FD925528148B2A00D93BC4 /* StudyingManager.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
 				D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */,
 				D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */,
 				D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */,
+				D2FD924D2814629D00D93BC4 /* StudyingAssembly.swift in Sources */,
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
 				D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
 				D20F3301280DC4AC0003D9DD /* ChangePasswordInteractor.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
+				D2FD92402813FD4F00D93BC4 /* StudyingPresenter.swift in Sources */,
 				D20F3305280DD1170003D9DD /* ChangePasswordError.swift in Sources */,
 				44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */,
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
@@ -1025,11 +1133,13 @@
 				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
+				D2FD923B2813FCE400D93BC4 /* StudyingViewInput.swift in Sources */,
 				44DC5FFC27FF260D005EACAE /* FavoriteWordsTableViewCell.swift in Sources */,
 				D2037FB727FCAA9D0036E0A5 /* RegistrationAssembly.swift in Sources */,
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
 				D28814C627FD8F67007332A8 /* PasswordRecoveryRouter.swift in Sources */,
+				D2FD924B2814618F00D93BC4 /* StudyingRouter.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
 				D28814C827FD97AE007332A8 /* EntranceAssembly.swift in Sources */,
 			);
