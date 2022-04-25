@@ -8,12 +8,13 @@
 import Foundation
 
 protocol WordDetailViewOutput: AnyObject {
+    func viewDidLoad()
 }
 
 final class WordDetailPresenter: WordDetailViewOutput {
     // MARK: Properties
     
-    let word: WordModel
+    let wordModel: WordModel
     
     // MARK: Dependencies
     
@@ -23,9 +24,17 @@ final class WordDetailPresenter: WordDetailViewOutput {
     
     // MARK: Initializer
     
-    init(interactor: WordDetailInteractorProtocol, router: WordDetailRouterProtocol, word: WordModel) {
+    init(interactor: WordDetailInteractorProtocol, router: WordDetailRouterProtocol, wordModel: WordModel) {
         self.interactor = interactor
         self.router = router
-        self.word = word
+        self.wordModel = wordModel
+    }
+    
+    // MARK: WordDetailViewOutput
+    
+    func viewDidLoad() {
+        interactor.getWordDetail { [weak self] wordDetail in
+            self?.view?.showWord(wordDetail)
+        }
     }
 }

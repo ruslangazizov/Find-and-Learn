@@ -8,4 +8,5 @@
 import Foundation
 
 protocol WordDetailViewInput: AnyObject {
+    func showWord(_ wordDetail: WordDetail)
 }

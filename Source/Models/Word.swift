@@ -34,3 +34,6 @@ struct HistoryWordsSection {
     let title: String
     let words: [HistoryWordModel]
 }
+
+struct WordDetail {
+}

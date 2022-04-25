@@ -12,6 +12,10 @@ class WordDetailViewController: UIViewController {
     
     private let presenter: WordDetailViewOutput
     
+    // MARK: Properties
+    
+    private var wordDetail: WordDetail?
+    
     // MARK: Initializers
     
     init(presenter: WordDetailViewOutput) {
@@ -31,4 +35,7 @@ class WordDetailViewController: UIViewController {
 }
 
 extension WordDetailViewController: WordDetailViewInput {
+    func showWord(_ wordDetail: WordDetail) {
+        self.wordDetail = wordDetail
+    }
 }

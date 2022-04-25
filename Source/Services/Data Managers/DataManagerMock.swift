@@ -69,4 +69,8 @@ final class DataManagerMock: DataManagerProtocol {
             Word(word: "Слово3", translations: ["Перевод5", "Перевод6"])
         ])
     }
+    
+    func fetchWordDetail(completion: @escaping (WordDetail) -> Void) {
+        completion(WordDetail())
+    }
 }
