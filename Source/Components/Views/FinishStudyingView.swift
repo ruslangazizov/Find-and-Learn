@@ -92,7 +92,7 @@ final class FinishStudyingView: UIView {
         addSubview(buttonsStackView)
         buttonsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sideInset)
-            make.bottom.equalToSuperview().inset(Constants.sideInset)
+            make.bottom.equalToSuperview().inset(Constants.bottomInset)
         }
         
         addSubview(congratulationsImageView)
@@ -115,6 +115,7 @@ private extension FinishStudyingView {
     enum Constants {
         static let topInset = 50
         static let sideInset = 8
+        static let bottomInset = 15
         
         static let topOffset = 20
     }
