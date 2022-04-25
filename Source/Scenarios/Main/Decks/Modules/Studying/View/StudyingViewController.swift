@@ -166,6 +166,7 @@ final class StudyingViewController: UIViewController {
     }
     
     private func start() {
+        progressBar.setProgress(0, animated: true)
         titleProgressLabel.text = "0 / \(cards.count)"
         
         cards.forEach { element in
