@@ -110,10 +110,12 @@ final class FlashCardView: UIView {
             make.centerY.equalToSuperview()
         }
         
-        addSubview(showCommentButton)
-        showCommentButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(Constants.bottomInset)
-            make.centerX.equalToSuperview()
+        if card.comment != nil {
+            addSubview(showCommentButton)
+            showCommentButton.snp.makeConstraints { make in
+                make.bottom.equalToSuperview().inset(Constants.bottomInset)
+                make.centerX.equalToSuperview()
+            }
         }
         
         addSubview(studyMoreMessageView)
@@ -144,7 +146,7 @@ final class FlashCardView: UIView {
     
     @objc private func showCommentButtonTapped(_ sender: UIButton) {
         showCommentButton.isHidden = true
-        textLabel.text = "\(textLabel.text ?? "") \n\n \(card.comment)"
+        textLabel.text = "\(textLabel.text ?? "") \n\n \(card.comment ?? "")"
     }
 }
 

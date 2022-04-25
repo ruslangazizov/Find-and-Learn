@@ -10,5 +10,5 @@ import Foundation
 struct FlashCard {
     let frontSide: String
     let backSide: String
-    let comment: String
+    let comment: String?
 }
