@@ -36,4 +36,21 @@ struct HistoryWordsSection {
 }
 
 struct WordDetail {
+    let id: Int
+    let word: String
+    let translations: [Translation]
+}
+
+struct Translation {
+    let id: Int
+    let translation: String
+    let speechPart: String
+    let transcription: String?
+    let examples: [Example]
+}
+
+struct Example {
+    let id: Int
+    let example: String
+    let translation: String?
 }

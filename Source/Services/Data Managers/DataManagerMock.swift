@@ -71,6 +71,39 @@ final class DataManagerMock: DataManagerProtocol {
     }
     
     func fetchWordDetail(completion: @escaping (WordDetail) -> Void) {
-        completion(WordDetail())
+        completion(WordDetail(id: 1, word: "break", translations: [
+            Translation(
+                id: 1,
+                translation: "перерыв",
+                speechPart: "существительное",
+                transcription: "перерыв",
+                examples: [
+                    Example(id: 1, example: "We work without a break.", translation: "Мы работаем без перерыва."),
+                    Example(id: 2, example: "We work without a break.", translation: "Мы работаем без перерыва."),
+                    Example(id: 3, example: "We work without a break.", translation: "Мы работаем без перерыва.")
+                ]
+            ),
+            Translation(
+                id: 2,
+                translation: "разрыв",
+                speechPart: "существительное",
+                transcription: "разрыв",
+                examples: [
+                    Example(id: 4, example: "break in the pipe-line", translation: "разрыв трубопровода"),
+                    Example(id: 5, example: "break in the pipe-line", translation: "разрыв трубопровода"),
+                    Example(id: 6, example: "break in the pipe-line", translation: "разрыв трубопровода")
+                ]
+            ),
+            Translation(
+                id: 3,
+                translation: "ломать",
+                speechPart: "глагол",
+                transcription: "ломать",
+                examples: [
+                    Example(id: 7, example: "to break in two", translation: "разломить, сломать пополам"),
+                    Example(id: 8, example: "to break one's leg", translation: "сломать ногу")
+                ]
+            )
+        ]))
     }
 }
