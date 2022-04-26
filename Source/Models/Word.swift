@@ -38,6 +38,7 @@ struct HistoryWordsSection {
 struct WordDetail {
     let id: Int
     let word: String
+    let isFavorite: Bool
     let translations: [Translation]
 }
 

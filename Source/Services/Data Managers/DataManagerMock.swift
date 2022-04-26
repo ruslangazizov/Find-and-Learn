@@ -71,7 +71,7 @@ final class DataManagerMock: DataManagerProtocol {
     }
     
     func fetchWordDetail(_ word: String, completion: @escaping (WordDetail) -> Void) {
-        completion(WordDetail(id: 1, word: "break", translations: [
+        completion(WordDetail(id: 1, word: "break", isFavorite: false, translations: [
             Translation(
                 id: 1,
                 translation: "перерыв",
