@@ -33,7 +33,7 @@ final class WordDetailPresenter: WordDetailViewOutput {
     // MARK: WordDetailViewOutput
     
     func viewDidLoad() {
-        interactor.getWordDetail { [weak self] wordDetail in
+        interactor.getWordDetail(wordModel) { [weak self] wordDetail in
             self?.view?.showWord(wordDetail)
         }
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol WordDetailInteractorProtocol: AnyObject {
-    func getWordDetail(completion: @escaping (WordDetail) -> Void)
+    func getWordDetail(_ wordModel: WordModel, completion: @escaping (WordDetail) -> Void)
 }
 
 final class WordDetailInteractor: WordDetailInteractorProtocol {
@@ -18,8 +18,8 @@ final class WordDetailInteractor: WordDetailInteractorProtocol {
         self.dataManager = dataManager
     }
     
-    func getWordDetail(completion: @escaping (WordDetail) -> Void) {
-        dataManager.fetchWordDetail { wordDetail in
+    func getWordDetail(_ wordModel: WordModel, completion: @escaping (WordDetail) -> Void) {
+        dataManager.fetchWordDetail(wordModel.word) { wordDetail in
             DispatchQueue.main.async {
                 completion(wordDetail)
             }
