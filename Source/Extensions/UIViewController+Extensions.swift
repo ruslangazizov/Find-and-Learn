@@ -27,7 +27,7 @@ extension UIViewController {
         present(alert, animated: true)
     }
     
-    func showOkAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
+    func showOkAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(
             title: title,
             message: message,

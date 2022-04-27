@@ -38,7 +38,7 @@ struct HistoryWordsSection {
 struct WordDetail {
     let id: Int
     let word: String
-    let isFavorite: Bool
+    var isFavorite: Bool
     let translations: [Translation]
 }
 
@@ -54,4 +54,37 @@ struct Example {
     let id: Int
     let example: String
     let translation: String?
+}
+
+struct WordDetailModel {
+    let word: String
+    var isFavorite: Bool
+    let speechParts: [SpeechPartModel]
+}
+
+struct SpeechPartModel {
+    let speechPart: String
+    let transcription: String?
+    let translations: [TranslationModel]
+}
+
+struct TranslationModel: Equatable {
+    let translationWithSynonyms: String
+    var isSelected = false
+    let examples: [ExampleModel]
+    
+    init(_ translation: Translation) {
+        translationWithSynonyms = translation.translation
+        examples = translation.examples.map { ExampleModel($0) }
+    }
+}
+
+struct ExampleModel: Equatable {
+    let example: String
+    let translation: String?
+    
+    init(_ example: Example) {
+        self.example = example.example
+        translation = example.translation
+    }
 }

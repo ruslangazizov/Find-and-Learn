@@ -8,5 +8,7 @@
 import Foundation
 
 protocol WordDetailViewInput: AnyObject {
-    func showWord(_ wordDetail: WordDetail)
+    func showWord(_ wordDetail: WordDetailModel)
+    func setIsFavoriteWord(_ isFavorite: Bool)
+    func showNoChosenTranslationsAlert()
 }

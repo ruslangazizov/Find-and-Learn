@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4411E53A28198C76001ABB53 /* TranslationExampleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */; };
+		4411E53C28199265001ABB53 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */; };
+		4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */; };
+		4411E5402819B3CE001ABB53 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53F2819B3CE001ABB53 /* Flashcard.swift */; };
 		4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */; };
 		442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */; };
 		442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */; };
@@ -14,6 +18,7 @@
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
 		44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */; };
+		4459D86A2816E645002D2EAF /* WordDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
 		447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */; };
 		447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */; };
@@ -113,6 +118,10 @@
 
 /* Begin PBXFileReference section */
 		0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.debug.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.debug.xcconfig"; sourceTree = "<group>"; };
+		4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationExampleLabel.swift; sourceTree = "<group>"; };
+		4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailSectionHeaderView.swift; sourceTree = "<group>"; };
+		4411E53F2819B3CE001ABB53 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsTableViewCell.swift; sourceTree = "<group>"; };
 		442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAssembly.swift; sourceTree = "<group>"; };
 		442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMock.swift; sourceTree = "<group>"; };
@@ -120,6 +129,7 @@
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
 		44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
+		4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailTableViewCell.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
 		447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsPresenter.swift; sourceTree = "<group>"; };
 		447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsInteractor.swift; sourceTree = "<group>"; };
@@ -282,6 +292,7 @@
 				D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */,
 				D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */,
 				D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */,
+				4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,8 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */,
-				44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */,
 				4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */,
+				44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,6 +353,8 @@
 			children = (
 				447F9872281667EC000E153D /* WordDetailViewInput.swift */,
 				447F987428166803000E153D /* WordDetailViewController.swift */,
+				4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */,
+				4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,6 +390,7 @@
 				44BE5DDE27E531FD0024F268 /* Word.swift */,
 				44D5811727E7D74500DBCC4E /* User.swift */,
 				D25FCD6127F8666C0007E65D /* Setting.swift */,
+				4411E53F2819B3CE001ABB53 /* Flashcard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -590,6 +604,7 @@
 			isa = PBXGroup;
 			children = (
 				D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */,
+				4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -1019,6 +1034,7 @@
 				D20F330A280DD6810003D9DD /* ChangePasswordRouter.swift in Sources */,
 				D2D1168227DE49FE0026692E /* RegistrationViewInput.swift in Sources */,
 				44DC5FE627FF090E005EACAE /* FavoriteWordsAssembly.swift in Sources */,
+				4459D86A2816E645002D2EAF /* WordDetailTableViewCell.swift in Sources */,
 				D26EFF0A280088780019F1EC /* SettingsManager.swift in Sources */,
 				44F379E827FC43C0001F02F4 /* HistoryWordsInteractor.swift in Sources */,
 				D20F32F9280DB0270003D9DD /* ChangePasswordViewInput.swift in Sources */,
@@ -1027,6 +1043,7 @@
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
+				4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */,
 				44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */,
 				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
 				D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */,
@@ -1049,6 +1066,7 @@
 				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
 				D25FCD6227F8666C0007E65D /* Setting.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
+				4411E53A28198C76001ABB53 /* TranslationExampleLabel.swift in Sources */,
 				447F986D281666DB000E153D /* WordDetailRouter.swift in Sources */,
 				D20F3307280DD5380003D9DD /* ChangePasswordAssembly.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
@@ -1066,6 +1084,7 @@
 				447F9871281667C0000E153D /* WordDetailPresenter.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
+				4411E5402819B3CE001ABB53 /* Flashcard.swift in Sources */,
 				D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */,
 				D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */,
 				447F986F28166772000E153D /* WordDetailInteractor.swift in Sources */,
@@ -1092,6 +1111,7 @@
 				44BE5DDF27E531FD0024F268 /* Word.swift in Sources */,
 				D28814C627FD8F67007332A8 /* PasswordRecoveryRouter.swift in Sources */,
 				447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */,
+				4411E53C28199265001ABB53 /* UIStackView+Extensions.swift in Sources */,
 				447F986A281666BE000E153D /* WordDetailAssembly.swift in Sources */,
 				D28814C827FD97AE007332A8 /* EntranceAssembly.swift in Sources */,
 			);
@@ -1148,7 +1168,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				EXCLUDED_ARCHS = arm86;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1210,7 +1230,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXCLUDED_ARCHS = arm86;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1238,6 +1258,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1266,6 +1287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -74,3 +74,7 @@
 "validation_success_email_sent_message" = "Проверьте свою почту";
 "validation_success_password_changed_title" = "Успешно";
 "validation_success_password_changed_message" = "Пароль изменен";
+
+// Уведомления для экрана "Детальная информация по слову"
+"no_chosen_translations_alert_title" = "Не выбран ни один перевод";
+"no_chosen_translations_alert_message" = "Выберите переводы, которые вы хотите выучить";
