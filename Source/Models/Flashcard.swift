@@ -12,3 +12,9 @@ struct NewFlashcardModel {
     let backSide: String
     let comment: String
 }
+
+struct FlashCard {
+	let frontSide: String
+	let backSide: String
+	let comment: String?
+}

@@ -45,6 +45,17 @@
 "change_password_screen_confirm_password_placeholder" = "Повторите пароль";
 "change_password_screen_change_password" = "Изменить пароль";
 
+// Экран "Изучение слов"
+"studying_screen_study_more" = "Изучать еще";
+"studying_screen_learned" = "Усвоено";
+"studying_screen_exit_message" = "Вы уверены, что хотите выйти?";
+"studying_screen_restart" = "Начать сначала";
+"studying_screen_continue" = "Продолжить";
+"studying_screen_show_comment" = "Посмотреть комментарий";
+"studying_screen_nice_work" = "Хорошая работа!";
+"studying_screen_has_mistakes_message" = "Вы выучили еще не все слова. Если хотите изучать только их, нажмите \"Продолжить\".";
+"studying_screen_has_no_mistakes_message" = "Поздравляем!";
+
 // Уведомления для экрана "Аккаунт"
 "alert_title" = "Подтвердите действие";
 "alert_confirm" = "Да";
