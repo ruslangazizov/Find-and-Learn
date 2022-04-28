@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WordDetailSectionHeaderView: UIView {
+final class WordDetailSectionHeaderView: UIView {
     init(text: String) {
         super.init(frame: .zero)
         

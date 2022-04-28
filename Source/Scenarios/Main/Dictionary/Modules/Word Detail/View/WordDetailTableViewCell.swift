@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import SnapKit
 
-class WordDetailTableViewCell: UITableViewCell {
+final class WordDetailTableViewCell: UITableViewCell {
     // MARK: UI
     
     private lazy var checkboxButton: UIButton = {

@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import SnapKit
 
-class WordDetailViewController: UIViewController {
+final class WordDetailViewController: UIViewController {
     // MARK: UI
     
     private lazy var tableView: UITableView = {

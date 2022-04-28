@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TranslationExampleLabel: UILabel {
+final class TranslationExampleLabel: UILabel {
     init(text: String) {
         super.init(frame: .zero)
         
