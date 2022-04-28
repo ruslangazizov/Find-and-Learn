@@ -16,7 +16,6 @@ final class WordDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.keyboardDismissMode = .onDrag
         
         tableView.backgroundColor = .tableViewBackgroundColor
         tableView.tableHeaderView = UIView(frame: CGRect(
@@ -100,13 +99,9 @@ final class WordDetailViewController: UIViewController {
     }
     
     @objc private func didTapNewFlashcardButton() {
-        let translationModels = tableView.visibleCells.compactMap { cell -> TranslationModel? in
-            if let cell = cell as? WordDetailTableViewCell,
-               let translationModel = cell.translationModel,
-               translationModel.isSelected {
-                return translationModel
-            }
-            return nil
+        guard let wordDetail = wordDetail else { return }
+        let translationModels = wordDetail.speechParts.flatMap { speechPartModel in
+            speechPartModel.translations.filter { $0.isSelected }
         }
         presenter.didTapNewFlashcardButton(translationModels)
     }
@@ -155,6 +150,12 @@ extension WordDetailViewController: UITableViewDelegate {
         }
         return WordDetailSectionHeaderView(text: title)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        wordDetail?.speechParts[indexPath.section].translations[indexPath.row].isSelected.toggle()
+        tableView.reloadRows(at: [indexPath], with: .fade)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -174,9 +175,7 @@ extension WordDetailViewController: UITableViewDataSource {
             return cell
         }
         
-        if indexPath.row < translations.count - 1 {
-            cell.bottomSeparatorViewIsHidden = true
-        }
+        cell.bottomSeparatorViewIsHidden = indexPath.row < translations.count - 1
         cell.configure(with: translations[indexPath.row])
         return cell
     }

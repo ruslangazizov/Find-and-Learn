@@ -10,13 +10,12 @@ import UIKit
 final class WordDetailTableViewCell: UITableViewCell {
     // MARK: UI
     
-    private lazy var checkboxButton: UIButton = {
-        let button = UIButton()
-        button.layer.borderWidth = .borderWidth
-        button.layer.borderColor = .buttonBorderColor
-        button.layer.backgroundColor = .buttonBackgroundColorPassive
-        button.addTarget(self, action: #selector(didTapCheckboxButton(_:)), for: .touchUpInside)
-        return button
+    private lazy var checkboxView: UIView = {
+        let view = UIView()
+        view.layer.borderWidth = .checkboxBorderWidth
+        view.layer.borderColor = .checkboxBorderColor
+        view.layer.backgroundColor = .checkboxPassiveColor
+        return view
     }()
     
     private lazy var translationLabel: UILabel = {
@@ -76,18 +75,18 @@ final class WordDetailTableViewCell: UITableViewCell {
             make.height.equalTo(Constants.separatorViewHeight)
         }
         
-        addSubview(checkboxButton)
-        checkboxButton.snp.makeConstraints { make in
-            make.height.width.equalTo(Constants.checkboxButtonSize)
+        addSubview(checkboxView)
+        checkboxView.snp.makeConstraints { make in
+            make.height.width.equalTo(Constants.checkboxViewSize)
             make.leading.equalToSuperview().inset(Constants.standardInset)
         }
         
         addSubview(translationLabel)
         translationLabel.snp.makeConstraints { make in
-            make.leading.equalTo(checkboxButton.snp.trailing).offset(Constants.standardInset)
+            make.leading.equalTo(checkboxView.snp.trailing).offset(Constants.standardInset)
             make.top.equalTo(topSeparatorView).inset(Constants.standardInset)
         }
-        checkboxButton.snp.makeConstraints { make in
+        checkboxView.snp.makeConstraints { make in
             make.centerY.equalTo(translationLabel)
         }
         
@@ -123,29 +122,22 @@ final class WordDetailTableViewCell: UITableViewCell {
             }
             return TranslationExampleLabel(text: labelText)
         })
-    }
-    
-    // MARK: Actions
-    
-    @objc private func didTapCheckboxButton(_ sender: UIButton) {
-        translationModel?.isSelected.toggle()
-        guard let isSelected = translationModel?.isSelected else { return }
-        checkboxButton.layer.backgroundColor = isSelected ? .buttonBackgroundColorActive : .buttonBackgroundColorPassive
+        checkboxView.layer.backgroundColor = translationModel.isSelected ? .checkboxActiveColor : .checkboxPassiveColor
     }
 }
 
 // MARK: - Constants
 
 private extension CGFloat {
-    static let borderWidth: CGFloat = 2
+    static let checkboxBorderWidth: CGFloat = 2
     static let translationLabelFontSize: CGFloat = 18
     static let examplesStackViewSpacing: CGFloat = 4
 }
 
 private extension CGColor {
-    static let buttonBorderColor: CGColor = UIColor.lightGray.cgColor
-    static let buttonBackgroundColorActive: CGColor = UIColor.green.cgColor
-    static let buttonBackgroundColorPassive: CGColor = UIColor.white.cgColor
+    static let checkboxBorderColor: CGColor = UIColor.lightGray.cgColor
+    static let checkboxActiveColor: CGColor = UIColor.green.cgColor
+    static let checkboxPassiveColor: CGColor = UIColor.white.cgColor
 }
 
 private extension UIColor {
@@ -155,6 +147,6 @@ private extension UIColor {
 
 private enum Constants {
     static let separatorViewHeight = 2
-    static let checkboxButtonSize = 12
+    static let checkboxViewSize = 12
     static let standardInset = 8
 }

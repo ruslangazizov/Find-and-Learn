@@ -59,13 +59,13 @@ struct Example {
 struct WordDetailModel {
     let word: String
     var isFavorite: Bool
-    let speechParts: [SpeechPartModel]
+    var speechParts: [SpeechPartModel]
 }
 
 struct SpeechPartModel {
     let speechPart: String
     let transcription: String?
-    let translations: [TranslationModel]
+    var translations: [TranslationModel]
 }
 
 struct TranslationModel: Equatable {
