@@ -123,12 +123,9 @@ extension WordDetailViewController: WordDetailViewInput {
     
     func setIsFavoriteWord(_ isFavorite: Bool) {
         wordDetail?.isFavorite = isFavorite
-        let imageSystemName: String
-        if isFavorite {
-            imageSystemName = R.string.systemIconsNames.word_detail_screen_favorite_word_button_active()
-        } else {
-            imageSystemName = R.string.systemIconsNames.word_detail_screen_favorite_word_button_passive()
-        }
+		let activeButtonImageSystemName = R.string.systemIconsNames.word_detail_screen_favorite_word_button_active()
+		let passiveButtonImageSystemName = R.string.systemIconsNames.word_detail_screen_favorite_word_button_passive()
+		let imageSystemName = isFavorite ? activeButtonImageSystemName : passiveButtonImageSystemName
         favoriteWordBarButtonItem.image = UIImage(systemName: imageSystemName)
     }
     
