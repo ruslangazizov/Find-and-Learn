@@ -8,3 +8,8 @@
 
 // Экран "Словарь"
 "dictionary_screen_favorite_words_button" = "heart.fill";
+
+// Экран "Детальная информация по слову"
+"word_detail_screen_favorite_word_button_active" = "bookmark.fill";
+"word_detail_screen_favorite_word_button_passive" = "bookmark";
+"word_detail_screen_new_flashcard_button" = "plus.circle.fill";

@@ -38,7 +38,7 @@ final class StudyingViewController: UIViewController {
     
     // MARK: Properties
     
-    var cards: [FlashCard] = []
+    var cards: [FlashcardModel] = []
     
     private var cardsViews: [FlashCardView] = []
     
@@ -241,7 +241,7 @@ extension StudyingViewController: StudyingViewInput {
         finishView.userHasMistakes = true
     }
     
-    func continueLearning(cards: [FlashCard]) {
+    func continueLearning(cards: [FlashcardModel]) {
         self.cards = cards
         start()
     }

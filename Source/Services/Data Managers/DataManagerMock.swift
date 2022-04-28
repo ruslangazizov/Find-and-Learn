@@ -69,4 +69,43 @@ final class DataManagerMock: DataManagerProtocol {
             Word(word: "Слово3", translations: ["Перевод5", "Перевод6"])
         ])
     }
+    
+    func fetchWordDetail(_ word: String, completion: @escaping (WordDetail) -> Void) {
+        completion(WordDetail(id: 1, word: "break", isFavorite: false, translations: [
+            Translation(
+                id: 1,
+                translation: "перерыв",
+                speechPart: "существительное",
+                transcription: "breɪk",
+                examples: [
+                    Example(id: 1, example: "We work without a break.", translation: "Мы работаем без перерыва."),
+                    Example(id: 2, example: "Do you need a break?", translation: "Нужен ли тебе перерыв?")
+                ]
+            ),
+            Translation(
+                id: 2,
+                translation: "разрыв",
+                speechPart: "существительное",
+                transcription: "breɪk",
+                examples: [
+                    Example(id: 4, example: "break in the pipe-line", translation: "разрыв трубопровода"),
+                    Example(id: 5, example: "text break", translation: "разрыв текста"),
+                    Example(id: 6, example: "break in relations", translation: "разрыв отношений")
+                ]
+            ),
+            Translation(
+                id: 3,
+                translation: "ломать",
+                speechPart: "глагол",
+                transcription: "breɪk",
+                examples: [
+                    Example(id: 7, example: "to break in two", translation: "разломить, сломать пополам"),
+                    Example(id: 8, example: "to break one's leg", translation: "сломать ногу")
+                ]
+            )
+        ]))
+    }
+    
+    func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
+    }
 }

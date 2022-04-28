@@ -12,4 +12,6 @@ protocol DataManagerProtocol: AnyObject {
     func getUser(completion: @escaping (User) -> Void)
     func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void)
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void)
+    func fetchWordDetail(_ word: String, completion: @escaping (WordDetail) -> Void)
+    func changeWordStatus(_ wordId: Int, isFavorite: Bool)
 }

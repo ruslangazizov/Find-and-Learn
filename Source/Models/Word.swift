@@ -10,10 +10,6 @@ import Foundation
 struct Word {
     let word: String
     let translations: [String]
-
-    var translationsString: String {
-        return translations.joined(separator: ", ")
-    }
 }
 
 struct WordModel {
@@ -37,4 +33,58 @@ struct HistoryWordModel {
 struct HistoryWordsSection {
     let title: String
     let words: [HistoryWordModel]
+}
+
+struct WordDetail {
+    let id: Int
+    let word: String
+    var isFavorite: Bool
+    let translations: [Translation]
+}
+
+struct Translation {
+    let id: Int
+    let translation: String
+    let speechPart: String
+    let transcription: String?
+    let examples: [Example]
+}
+
+struct Example {
+    let id: Int
+    let example: String
+    let translation: String?
+}
+
+struct WordDetailModel {
+    let word: String
+    var isFavorite: Bool
+    var speechParts: [SpeechPartModel]
+}
+
+struct SpeechPartModel {
+    let speechPart: String
+    let transcription: String?
+    var translations: [TranslationModel]
+}
+
+struct TranslationModel: Equatable {
+    let translationWithSynonyms: String
+    var isSelected = false
+    let examples: [ExampleModel]
+    
+    init(_ translation: Translation) {
+        translationWithSynonyms = translation.translation
+        examples = translation.examples.map { ExampleModel($0) }
+    }
+}
+
+struct ExampleModel: Equatable {
+    let example: String
+    let translation: String?
+    
+    init(_ example: Example) {
+        self.example = example.example
+        translation = example.translation
+    }
 }

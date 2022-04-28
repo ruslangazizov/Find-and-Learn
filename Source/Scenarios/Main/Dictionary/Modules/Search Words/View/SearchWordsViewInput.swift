@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SearchWordsViewInput: AnyObject {
-    func showWords(_ words: [Word])
+    func showWords(_ words: [WordModel])
 }
