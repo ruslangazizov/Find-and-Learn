@@ -41,7 +41,7 @@ final class FlashCardView: UIView {
         }
     }
     
-    let card: FlashCard
+    let card: FlashcardModel
     
     private var isFrontSide = true
     
@@ -49,7 +49,7 @@ final class FlashCardView: UIView {
     
     // MARK: Init
     
-    init(card: FlashCard) {
+    init(card: FlashcardModel) {
         self.card = card
         super.init(frame: .zero)
         setupLayout()

@@ -86,7 +86,7 @@ final class WordDetailPresenter: WordDetailViewOutput {
                 return text
             }
         }
-        let newFlashcardModel = NewFlashcardModel(
+        let newFlashcardModel = FlashcardModel(
             frontSide: wordDetail.word,
             backSide: translationsWithSynonyms.joined(separator: "\n"),
             comment: translationsExamples.joined(separator: "\n")

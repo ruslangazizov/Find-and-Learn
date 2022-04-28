@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 protocol WordDetailRouterProtocol: RouterProtocol {
-    func showNewFlashcard(_ flashcardModel: NewFlashcardModel)
+    func showNewFlashcard(_ flashcardModel: FlashcardModel)
 }
 
 final class WordDetailRouter: WordDetailRouterProtocol {
     weak var view: UIViewController?
     
-    func showNewFlashcard(_ flashcardModel: NewFlashcardModel) {
+    func showNewFlashcard(_ flashcardModel: FlashcardModel) {
         // TODO: transition to screen with new flashcard configuration
     }
 }

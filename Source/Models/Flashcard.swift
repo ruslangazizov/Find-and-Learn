@@ -7,13 +7,7 @@
 
 import Foundation
 
-struct NewFlashcardModel {
-    let frontSide: String
-    let backSide: String
-    let comment: String
-}
-
-struct FlashCard {
+struct FlashcardModel {
 	let frontSide: String
 	let backSide: String
 	let comment: String?

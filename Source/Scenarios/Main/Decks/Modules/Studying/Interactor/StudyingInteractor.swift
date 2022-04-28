@@ -8,8 +8,8 @@
 import Foundation
 
 protocol StudyingInteractorProtocol: AnyObject {
-    func getLearnMoreWords(_ completion: ([FlashCard]) -> Void)
-    func studyMoreCard(card: FlashCard, _ completion: () -> Void)
+    func getLearnMoreWords(_ completion: ([FlashcardModel]) -> Void)
+    func studyMoreCard(card: FlashcardModel, _ completion: () -> Void)
     func restartManager()
 }
 
@@ -26,12 +26,12 @@ final class StudyingInteractor: StudyingInteractorProtocol {
     
     // MARK: StudyingInteractorProtocol
     
-    func getLearnMoreWords(_ completion: ([FlashCard]) -> Void) {
+    func getLearnMoreWords(_ completion: ([FlashcardModel]) -> Void) {
         completion(studyingManager.getLearnMoreCards())
     }
     
     // Вызывается completion, если был добавлен первый элемент == пользователь не вспомнил слово
-    func studyMoreCard(card: FlashCard, _ completion: () -> Void) {
+    func studyMoreCard(card: FlashcardModel, _ completion: () -> Void) {
         if studyingManager.logFlashCard(card: card) {
             completion()
         }

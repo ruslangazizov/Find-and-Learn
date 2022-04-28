@@ -9,5 +9,5 @@ import Foundation
 
 protocol StudyingViewInput: AnyObject {
     func showHasMistakesFinish()
-    func continueLearning(cards: [FlashCard])
+    func continueLearning(cards: [FlashcardModel])
 }
