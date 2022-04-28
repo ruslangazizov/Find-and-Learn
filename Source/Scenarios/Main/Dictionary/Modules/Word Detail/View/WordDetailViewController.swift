@@ -135,8 +135,8 @@ extension WordDetailViewController: WordDetailViewInput {
     
     func showNoChosenTranslationsAlert() {
         showOkAlert(
-            title: R.string.localizable.no_chosen_translations_alert_title(),
-            message: R.string.localizable.no_chosen_translations_alert_message()
+            title: R.string.localizable.word_detail_screen_no_chosen_translations_alert_title(),
+            message: R.string.localizable.word_detail_screen_no_chosen_translations_alert_message()
         )
     }
 }

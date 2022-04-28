@@ -87,5 +87,5 @@
 "validation_success_password_changed_message" = "Пароль изменен";
 
 // Уведомления для экрана "Детальная информация по слову"
-"no_chosen_translations_alert_title" = "Не выбран ни один перевод";
-"no_chosen_translations_alert_message" = "Выберите переводы, которые вы хотите выучить";
+"word_detail_screen_no_chosen_translations_alert_title" = "Не выбран ни один перевод";
+"word_detail_screen_no_chosen_translations_alert_message" = "Выберите переводы, которые вы хотите выучить";
