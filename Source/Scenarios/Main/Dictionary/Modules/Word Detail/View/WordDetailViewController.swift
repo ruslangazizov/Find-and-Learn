@@ -102,8 +102,8 @@ final class WordDetailViewController: UIViewController {
     @objc private func didTapNewFlashcardButton() {
         let translationModels = tableView.visibleCells.compactMap { cell -> TranslationModel? in
             if let cell = cell as? WordDetailTableViewCell,
-                let translationModel = cell.translationModel,
-                translationModel.isSelected {
+               let translationModel = cell.translationModel,
+               translationModel.isSelected {
                 return translationModel
             }
             return nil
@@ -123,9 +123,9 @@ extension WordDetailViewController: WordDetailViewInput {
     
     func setIsFavoriteWord(_ isFavorite: Bool) {
         wordDetail?.isFavorite = isFavorite
-		let activeButtonImageSystemName = R.string.systemIconsNames.word_detail_screen_favorite_word_button_active()
-		let passiveButtonImageSystemName = R.string.systemIconsNames.word_detail_screen_favorite_word_button_passive()
-		let imageSystemName = isFavorite ? activeButtonImageSystemName : passiveButtonImageSystemName
+        let activeButtonImageSystemName = R.string.systemIconsNames.word_detail_screen_favorite_word_button_active()
+        let passiveButtonImageSystemName = R.string.systemIconsNames.word_detail_screen_favorite_word_button_passive()
+        let imageSystemName = isFavorite ? activeButtonImageSystemName : passiveButtonImageSystemName
         favoriteWordBarButtonItem.image = UIImage(systemName: imageSystemName)
     }
     
