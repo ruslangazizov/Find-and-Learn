@@ -20,6 +20,10 @@ final class AchievementsViewController: UIViewController {
     
     private let presenter: AchievementsViewOutput
     
+    // MARK: Properties
+    
+    private var achievements: [Achievement] = []
+    
     // MARK: Init
     
     init(presenter: AchievementsViewOutput) {
@@ -42,6 +46,7 @@ final class AchievementsViewController: UIViewController {
     // MARK: Private
     
     private func configure() {
+        tableView.register(AchievementTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -67,10 +72,17 @@ extension AchievementsViewController: AchievementsViewInput {
 
 extension AchievementsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        achievements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeue(AchievementTableViewCell.self, for: indexPath)
+        let achievement = achievements[indexPath.row]
+        cell.configure(with: achievement)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
