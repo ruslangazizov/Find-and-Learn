@@ -112,6 +112,7 @@
 		D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */; };
 		D2DFEE45281C5FFD006F452E /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE44281C5FFD006F452E /* AchievementsViewController.swift */; };
 		D2DFEE47281C6042006F452E /* AchievementsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE46281C6042006F452E /* AchievementsViewInput.swift */; };
+		D2DFEE4A281C609E006F452E /* AchievementsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE49281C609E006F452E /* AchievementsPresenter.swift */; };
 		D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */; };
 		D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */; };
 		D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */; };
@@ -238,6 +239,7 @@
 		D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		D2DFEE44281C5FFD006F452E /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		D2DFEE46281C6042006F452E /* AchievementsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewInput.swift; sourceTree = "<group>"; };
+		D2DFEE49281C609E006F452E /* AchievementsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsPresenter.swift; sourceTree = "<group>"; };
 		D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewInput.swift; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 		D2DFEE48281C605D006F452E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D2DFEE49281C609E006F452E /* AchievementsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1193,6 +1196,7 @@
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
 				D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */,
+				D2DFEE4A281C609E006F452E /* AchievementsPresenter.swift in Sources */,
 				D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
