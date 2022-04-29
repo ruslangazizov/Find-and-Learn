@@ -10,8 +10,9 @@ import UIKit
 
 final class AchievementsAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let presenter = AchievementsPresenter()
+        let interactor = AchievementsInteractor(dataManager: DataManagerMock())
         
+        let presenter = AchievementsPresenter(interactor: interactor)
         let viewController = AchievementsViewController(presenter: presenter)
         presenter.view = viewController
         
