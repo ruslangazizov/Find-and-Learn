@@ -8,4 +8,5 @@
 import Foundation
 
 protocol AchievementsViewInput: AnyObject {
+    func setupData(_ achievements: [Achievement])
 }

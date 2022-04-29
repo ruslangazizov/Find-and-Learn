@@ -8,6 +8,7 @@
 import Foundation
 
 protocol AchievementsViewOutput: AnyObject {
+    func viewDidLoad()
 }
 
 final class AchievementsPresenter: AchievementsViewOutput {
@@ -16,4 +17,7 @@ final class AchievementsPresenter: AchievementsViewOutput {
     weak var view: AchievementsViewInput?
     
     // MARK: AchievementsViewOutput
+    
+    func viewDidLoad() {
+    }
 }

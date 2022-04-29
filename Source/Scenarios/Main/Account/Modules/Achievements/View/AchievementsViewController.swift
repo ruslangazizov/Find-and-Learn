@@ -41,6 +41,8 @@ final class AchievementsViewController: UIViewController {
         super.viewDidLoad()
         configure()
         setupLayout()
+        
+        presenter.viewDidLoad()
     }
     
     // MARK: Private
@@ -66,6 +68,10 @@ final class AchievementsViewController: UIViewController {
 // MARK: - AchievementsViewInput
 
 extension AchievementsViewController: AchievementsViewInput {
+    func setupData(_ achievements: [Achievement]) {
+        self.achievements = achievements
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
