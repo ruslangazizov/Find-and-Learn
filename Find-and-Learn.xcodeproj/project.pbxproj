@@ -880,6 +880,7 @@
 			children = (
 				D2DFEE44281C5FFD006F452E /* AchievementsViewController.swift */,
 				D2DFEE46281C6042006F452E /* AchievementsViewInput.swift */,
+				D2DFEE4B281C61C0006F452E /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -890,6 +891,13 @@
 				D2DFEE49281C609E006F452E /* AchievementsPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D2DFEE4B281C61C0006F452E /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		D2FB5D5127EDA4DB00CBDB00 /* Authorization */ = {
