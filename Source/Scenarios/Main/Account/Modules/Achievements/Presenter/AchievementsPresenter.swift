@@ -11,5 +11,9 @@ protocol AchievementsViewOutput: AnyObject {
 }
 
 final class AchievementsPresenter: AchievementsViewOutput {
+    // MARK: Dependencies
+
+    weak var view: AchievementsViewInput?
+    
     // MARK: AchievementsViewOutput
 }
