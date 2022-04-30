@@ -13,7 +13,6 @@ final class NewFlashcardView: UIView {
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.showsHorizontalScrollIndicator = false
         scrollView.keyboardDismissMode = .onDrag
         return scrollView
     }()
