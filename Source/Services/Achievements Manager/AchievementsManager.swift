@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 protocol AchievementsManagerProtocol: AnyObject {
-    func getAchievements() -> [Achievement]
+    func getAllAchievements() -> [Achievement]
 }
 
 final class AchievementsManager: AchievementsManagerProtocol {
-    func getAchievements() -> [Achievement] {
+    func getAllAchievements() -> [Achievement] {
         return [
             Achievement(
                 id: 0,
