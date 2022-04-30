@@ -19,6 +19,6 @@ final class AccountAssembly: AssemblyProtocol {
         presenter.view = viewController
         router.view = viewController
         
-        return viewController
+        return UINavigationController(rootViewController: viewController)
     }
 }
