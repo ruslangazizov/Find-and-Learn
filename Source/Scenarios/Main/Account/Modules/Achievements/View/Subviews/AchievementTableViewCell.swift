@@ -46,7 +46,8 @@ final class AchievementTableViewCell: UITableViewCell {
         iconImageView.image = achievement.image
         descriptionLabel.text = achievement.description
         if let date = achievement.dateOfGetting {
-            dateOfGettingLabel.text = R.string.localizable.achievements_screen_date_of_getting_text() + date
+            dateOfGettingLabel.text = R.string.localizable.achievements_screen_date_of_getting_text()
+                + date.toString(using: .commonDateFormatter)
         }
     }
     

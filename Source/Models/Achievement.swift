@@ -13,5 +13,5 @@ struct Achievement {
     let name: String
     let description: String
     let image: UIImage?
-    let dateOfGetting: String? 
+    let dateOfGetting: Date? 
 }
