@@ -73,7 +73,7 @@ final class AchievementTableViewCell: UITableViewCell {
         
         contentView.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(iconImageView.snp.bottom).offset(CGFloat.defaultInset)
+            make.top.equalTo(iconImageView.snp.bottom).offset(CGFloat.smallInset)
             make.leading.trailing.equalToSuperview().inset(CGFloat.smallInset)
             make.bottom.equalToSuperview().inset(CGFloat.smallInset).priority(.low)
         }
