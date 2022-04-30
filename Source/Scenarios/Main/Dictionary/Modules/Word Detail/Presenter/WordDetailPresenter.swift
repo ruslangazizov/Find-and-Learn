@@ -16,8 +16,8 @@ protocol WordDetailViewOutput: AnyObject {
 final class WordDetailPresenter: WordDetailViewOutput {
     // MARK: Properties
     
-    let wordModel: WordModel
-    var wordDetail: WordDetail?
+    private let wordModel: WordModel
+    private var wordDetail: WordDetail?
     
     // MARK: Dependencies
     
