@@ -61,6 +61,7 @@ final class DropdownButton: UIButton {
         
         setTitle(title, for: .normal)
         setTitleColor(.lightGray, for: .normal)
+        titleLabel?.font = .preferredFont(forTextStyle: .callout)
         layer.borderColor = borderColor
         layer.cornerRadius = cornerRadius
         layer.borderWidth = borderWidth
@@ -109,6 +110,7 @@ extension DropdownButton: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(UITableViewCell.self, for: indexPath)
         cell.textLabel?.text = dataSource?[indexPath.row]
+        cell.textLabel?.font = .preferredFont(forTextStyle: .callout)
         return cell
     }
 }

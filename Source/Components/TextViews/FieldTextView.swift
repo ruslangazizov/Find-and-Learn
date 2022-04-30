@@ -12,7 +12,7 @@ final class FieldTextView: UITextView {
         super.init(frame: .zero, textContainer: nil)
         
         isScrollEnabled = false
-        font = .preferredFont(forTextStyle: .body)
+        font = .preferredFont(forTextStyle: .callout)
         textAlignment = .center
         
         layer.borderColor = borderColor

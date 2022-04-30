@@ -78,6 +78,7 @@ final class NewFlashcardView: UIView {
     
     lazy var commentStackView: FieldStackView = {
         let label = UILabel(R.string.localizable.new_flashcard_screen_comment_label_text())
+        label.font = .preferredFont(forTextStyle: .callout)
         let stackView = UIStackView(arrangedSubviews: [label, commentInfoButton, UIView()])
         stackView.spacing = .stackViewWithInfoButtonSpacing
         return FieldStackView(
@@ -110,6 +111,7 @@ final class NewFlashcardView: UIView {
     
     lazy var createReversedFlashcardStackView: UIStackView = {
         let label = UILabel(R.string.localizable.new_flashcard_screen_create_reversed_flashcard_label_text())
+        label.setFontSize(.createReversedFlashcardLabelFontSize)
         let dummyView = UIView()  // it will fill the trailing gap in stack view
         let stackView = UIStackView(arrangedSubviews: [
             checkboxButton, label, createReversedFlashcardInfoButton, dummyView
@@ -175,6 +177,8 @@ final class NewFlashcardView: UIView {
     }
 }
 
+// MARK: - DropdownButtonDelegate
+
 extension NewFlashcardView: DropdownButtonDelegate {
     func addOrRemoveTableView(_ tableView: UITableView, height: CGFloat) {
         guard tableView.superview == nil else {
@@ -223,6 +227,8 @@ private extension CGFloat {
     
     static let fieldBorderWidth: CGFloat = 1
     static let checkboxBorderWidth: CGFloat = 1
+    
+    static let createReversedFlashcardLabelFontSize: CGFloat = 15
 }
 
 private extension CGColor {
