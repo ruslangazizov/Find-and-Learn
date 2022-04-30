@@ -96,6 +96,6 @@
 
 // Достижения
 "achievement_iterator_name" = "Итератор";
-"achievement_iterator_description" = "На протяжении 7 дней каждый день изучить хотя бы 1 колоду";
+"achievement_iterator_description" = "На протяжении 7 дней каждый день изучать хотя бы 1 колоду";
 "achievement_wasserman_name" = "Вассерман";
 "achievement_wasserman_description" = "5 раз полностью вспомнить все слова в колоде";
