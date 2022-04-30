@@ -215,7 +215,7 @@ private enum Constants {
 }
 
 private extension CGFloat {
-    static let fieldStackViewSpacing: CGFloat = 12
+    static let fieldStackViewSpacing: CGFloat = 16
     static let stackViewWithInfoButtonSpacing: CGFloat = 8
     static let innerStackViewSpacing: CGFloat = 6
     
