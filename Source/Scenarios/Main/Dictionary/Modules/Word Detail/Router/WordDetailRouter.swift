@@ -16,6 +16,7 @@ final class WordDetailRouter: WordDetailRouterProtocol {
     weak var view: UIViewController?
     
     func showNewFlashcard(_ flashcardModel: FlashcardModel) {
-        // TODO: transition to screen with new flashcard configuration
+        let newFlashcardViewController = NewFlashcardAssembly.assemble(with: flashcardModel)
+        view?.navigationController?.pushViewController(newFlashcardViewController, animated: true)
     }
 }

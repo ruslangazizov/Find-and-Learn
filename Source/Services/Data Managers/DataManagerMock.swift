@@ -108,4 +108,17 @@ final class DataManagerMock: DataManagerProtocol {
     
     func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
     }
+    
+    func fetchDecks(completion: @escaping ([Deck]) -> Void) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            completion([
+                Deck(id: 5432134, name: "Колода 1", createdAt: Date.init(timeInterval: -1800, since: Date())),
+                Deck(id: 7624853, name: "Колода 2", createdAt: Date.init(timeInterval: -1200, since: Date())),
+                Deck(id: 3124786, name: "Колода 3", createdAt: Date.init(timeInterval: -600, since: Date()))
+            ])
+        }
+    }
+    
+    func saveNewFlashcard(_ newFlashcard: NewFlashcard) {
+    }
 }
