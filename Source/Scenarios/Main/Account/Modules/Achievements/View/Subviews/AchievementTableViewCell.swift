@@ -10,15 +10,9 @@ import UIKit
 final class AchievementTableViewCell: UITableViewCell {
     // MARK: UI
     
-    private lazy var iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
+    private lazy var iconImageView = UIImageView()
     
-    private lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
+    private lazy var nameLabel = UILabel()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
