@@ -10,11 +10,7 @@ import UIKit
 final class AchievementsViewController: UIViewController {
     // MARK: UI
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.separatorStyle = .none
-        return tableView
-    }()
+    private lazy var tableView = UITableView()
     
     // MARK: Dependencies
     
