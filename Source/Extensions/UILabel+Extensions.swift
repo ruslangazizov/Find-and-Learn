@@ -12,4 +12,9 @@ extension UILabel {
     func setFontSize(_ size: CGFloat) {
         font = font.withSize(size)
     }
+    
+    convenience init(_ text: String) {
+        self.init(frame: .zero)
+        self.text = text
+    }
 }

@@ -94,6 +94,26 @@
 "word_detail_screen_no_chosen_translations_alert_title" = "Не выбран ни один перевод";
 "word_detail_screen_no_chosen_translations_alert_message" = "Выберите переводы, которые вы хотите выучить";
 
+// Экран "Новая карточка"
+"new_flashcard_screen_title" = "Новая карточка";
+"new_flashcard_screen_save_button_title" = "Сохранить";
+"new_flashcard_screen_front_side_label_text" = "Лицевая сторона:";
+"new_flashcard_screen_back_side_label_text" = "Обратная сторона:";
+"new_flashcard_screen_deck_choice_label_text" = "Добавить в колоду:";
+"new_flashcard_screen_dropdown_button_text" = "Выберите колоду";
+"new_flashcard_screen_comment_label_text" = "Дополнительная информация:";
+"new_flashcard_screen_create_reversed_flashcard_label_text" = "Создать обратную карточку";
+
+// Уведомления для экрана "Новая карточка"
+"new_flashcard_screen_comment_info_title" = "Дополнительная информация";
+"new_flashcard_screen_comment_info_message" = "В этом поле вы можете указать дополнительную информацию, возможность посмотреть которую будет при изучении карточки.\nВы можете использовать его для лучшего запоминания слова, приведя примеры употребления или просто сделав заметку для себя :)";
+"new_flashcard_screen_reversed_flashcard_info_title" = "Создать обратную карточку";
+"new_flashcard_screen_reversed_flashcard_info_message" = "С помощью этой опции вы можете за одно сохранение создать сразу две карточки - на первой лицевая и обратная сторона будут такими, как вы указали, а на второй - с точностью до наоборот. Это поможет выстроить связь между словом и его переводом в обоих направлениях - как с русского на английский, так и vice versa :)";
+"new_flashcard_screen_empty_front_or_back_side_title" = "Пустая лицевая или обратная сторона";
+"new_flashcard_screen_empty_front_or_back_side_message" = "Введите хотя бы одно слово для каждой стороны карточки";
+"new_flashcard_screen_no_deck_chosen_title" = "Не выбрана колода";
+"new_flashcard_screen_no_deck_chosen_message" = "Выберите колоду, в которой вы бы хотели изучать эту карточку";
+
 // Достижения
 "achievement_iterator_name" = "Итератор";
 "achievement_iterator_description" = "На протяжении 7 дней каждый день изучать хотя бы 1 колоду";

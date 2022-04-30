@@ -16,8 +16,10 @@
 		442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */; };
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
+		4443AB5F281D89B700112B35 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443AB5E281D89B700112B35 /* Deck.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
 		44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */; };
+		444B2813281D349E0037CDA8 /* NewFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B2812281D349E0037CDA8 /* NewFlashcardView.swift */; };
 		4459D86A2816E645002D2EAF /* WordDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
 		447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */; };
@@ -33,6 +35,15 @@
 		44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */; };
 		44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */; };
 		44BE5DDF27E531FD0024F268 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE5DDE27E531FD0024F268 /* Word.swift */; };
+		44CA5425281BE5C400B6DDE8 /* NewFlashcardAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA5424281BE5C400B6DDE8 /* NewFlashcardAssembly.swift */; };
+		44CA5427281BE5D800B6DDE8 /* NewFlashcardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA5426281BE5D800B6DDE8 /* NewFlashcardRouter.swift */; };
+		44CA5429281BE5E200B6DDE8 /* NewFlashcardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA5428281BE5E200B6DDE8 /* NewFlashcardInteractor.swift */; };
+		44CA542B281BE5EA00B6DDE8 /* NewFlashcardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA542A281BE5EA00B6DDE8 /* NewFlashcardPresenter.swift */; };
+		44CA542D281BE5FA00B6DDE8 /* NewFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA542C281BE5FA00B6DDE8 /* NewFlashcardViewController.swift */; };
+		44CA542F281BE60300B6DDE8 /* NewFlashcardViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA542E281BE60300B6DDE8 /* NewFlashcardViewInput.swift */; };
+		44CA5438281C38AF00B6DDE8 /* FieldStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA5437281C38AF00B6DDE8 /* FieldStackView.swift */; };
+		44CA543E281C467300B6DDE8 /* FieldTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA543D281C467300B6DDE8 /* FieldTextView.swift */; };
+		44CA5440281C4B2C00B6DDE8 /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA543F281C4B2C00B6DDE8 /* DropdownButton.swift */; };
 		44D5811827E7D74500DBCC4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5811727E7D74500DBCC4E /* User.swift */; };
 		44DC5FE627FF090E005EACAE /* FavoriteWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FE527FF090E005EACAE /* FavoriteWordsAssembly.swift */; };
 		44DC5FF027FF0A31005EACAE /* FavoriteWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FEF27FF0A31005EACAE /* FavoriteWordsViewInput.swift */; };
@@ -147,8 +158,10 @@
 		442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMock.swift; sourceTree = "<group>"; };
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		4443AB5E281D89B700112B35 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
 		44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
+		444B2812281D349E0037CDA8 /* NewFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardView.swift; sourceTree = "<group>"; };
 		4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailTableViewCell.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
 		447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsPresenter.swift; sourceTree = "<group>"; };
@@ -164,6 +177,15 @@
 		44BCCAC027F8D4FF00C1189B /* SearchWordsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsRouter.swift; sourceTree = "<group>"; };
 		44BE5DDB27E530490024F268 /* SearchWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewController.swift; sourceTree = "<group>"; };
 		44BE5DDE27E531FD0024F268 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		44CA5424281BE5C400B6DDE8 /* NewFlashcardAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardAssembly.swift; sourceTree = "<group>"; };
+		44CA5426281BE5D800B6DDE8 /* NewFlashcardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardRouter.swift; sourceTree = "<group>"; };
+		44CA5428281BE5E200B6DDE8 /* NewFlashcardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardInteractor.swift; sourceTree = "<group>"; };
+		44CA542A281BE5EA00B6DDE8 /* NewFlashcardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardPresenter.swift; sourceTree = "<group>"; };
+		44CA542C281BE5FA00B6DDE8 /* NewFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardViewController.swift; sourceTree = "<group>"; };
+		44CA542E281BE60300B6DDE8 /* NewFlashcardViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardViewInput.swift; sourceTree = "<group>"; };
+		44CA5437281C38AF00B6DDE8 /* FieldStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldStackView.swift; sourceTree = "<group>"; };
+		44CA543D281C467300B6DDE8 /* FieldTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTextView.swift; sourceTree = "<group>"; };
+		44CA543F281C4B2C00B6DDE8 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		44D5811727E7D74500DBCC4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		44DC5FE527FF090E005EACAE /* FavoriteWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsAssembly.swift; sourceTree = "<group>"; };
 		44DC5FEF27FF0A31005EACAE /* FavoriteWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsViewInput.swift; sourceTree = "<group>"; };
@@ -319,6 +341,7 @@
 				44DC5FE427FF08F4005EACAE /* Favorite Words */,
 				44F379E127FC4356001F02F4 /* History Words */,
 				447F98652816660F000E153D /* Word Detail */,
+				44CA541F281BE55F00B6DDE8 /* New Flashcard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -435,9 +458,72 @@
 				44D5811727E7D74500DBCC4E /* User.swift */,
 				D25FCD6127F8666C0007E65D /* Setting.swift */,
 				4411E53F2819B3CE001ABB53 /* Flashcard.swift */,
+				4443AB5E281D89B700112B35 /* Deck.swift */,
 				D2DFEE4E281C64B3006F452E /* Achievement.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		44CA541F281BE55F00B6DDE8 /* New Flashcard */ = {
+			isa = PBXGroup;
+			children = (
+				44CA5424281BE5C400B6DDE8 /* NewFlashcardAssembly.swift */,
+				44CA5423281BE5A700B6DDE8 /* Router */,
+				44CA5422281BE59E00B6DDE8 /* Interactor */,
+				44CA5421281BE59700B6DDE8 /* Presenter */,
+				44CA5420281BE59100B6DDE8 /* View */,
+			);
+			path = "New Flashcard";
+			sourceTree = "<group>";
+		};
+		44CA5420281BE59100B6DDE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44CA542E281BE60300B6DDE8 /* NewFlashcardViewInput.swift */,
+				44CA542C281BE5FA00B6DDE8 /* NewFlashcardViewController.swift */,
+				444B2812281D349E0037CDA8 /* NewFlashcardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44CA5421281BE59700B6DDE8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				44CA542A281BE5EA00B6DDE8 /* NewFlashcardPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44CA5422281BE59E00B6DDE8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				44CA5428281BE5E200B6DDE8 /* NewFlashcardInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		44CA5423281BE5A700B6DDE8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44CA5426281BE5D800B6DDE8 /* NewFlashcardRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		44CA5436281C389500B6DDE8 /* StackViews */ = {
+			isa = PBXGroup;
+			children = (
+				44CA5437281C38AF00B6DDE8 /* FieldStackView.swift */,
+			);
+			path = StackViews;
+			sourceTree = "<group>";
+		};
+		44CA543C281C465D00B6DDE8 /* TextViews */ = {
+			isa = PBXGroup;
+			children = (
+				44CA543D281C467300B6DDE8 /* FieldTextView.swift */,
+			);
+			path = TextViews;
 			sourceTree = "<group>";
 		};
 		44D5811027E7B34000DBCC4E /* Data Managers */ = {
@@ -864,6 +950,8 @@
 		D2D1168727DE78AE0026692E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				44CA543C281C465D00B6DDE8 /* TextViews */,
+				44CA5436281C389500B6DDE8 /* StackViews */,
 				D25FCD5927F858960007E65D /* Views */,
 				D21E9DAF27FA08A3005513B7 /* Labels */,
 				D2D1168B27DE80E20026692E /* Buttons */,
@@ -885,6 +973,7 @@
 			isa = PBXGroup;
 			children = (
 				D2D1168C27DE80F40026692E /* CommonButton.swift */,
+				44CA543F281C4B2C00B6DDE8 /* DropdownButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1190,15 +1279,20 @@
 				447F987528166803000E153D /* WordDetailViewController.swift in Sources */,
 				D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */,
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
+				444B2813281D349E0037CDA8 /* NewFlashcardView.swift in Sources */,
+				44CA542B281BE5EA00B6DDE8 /* NewFlashcardPresenter.swift in Sources */,
 				D2DFEE54281C69CC006F452E /* AchievementsInteractor.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
 				D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */,
 				D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */,
+				44CA543E281C467300B6DDE8 /* FieldTextView.swift in Sources */,
+				44CA542D281BE5FA00B6DDE8 /* NewFlashcardViewController.swift in Sources */,
 				D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */,
 				D2FD925228146EB100D93BC4 /* FinishStudyingView.swift in Sources */,
 				D2FD923D2813FD0900D93BC4 /* StudyingViewController.swift in Sources */,
 				D20F32FE280DB07F0003D9DD /* ChangePasswordPresenter.swift in Sources */,
+				44CA5427281BE5D800B6DDE8 /* NewFlashcardRouter.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
 				D2037FB327FCA00F0036E0A5 /* AuthorizationErrors.swift in Sources */,
 				D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */,
@@ -1220,11 +1314,13 @@
 				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
 				D2DFEE47281C6042006F452E /* AchievementsViewInput.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
+				44CA5438281C38AF00B6DDE8 /* FieldStackView.swift in Sources */,
 				D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
 				4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */,
 				44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */,
 				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
+				44CA5440281C4B2C00B6DDE8 /* DropdownButton.swift in Sources */,
 				D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */,
 				D2854EDC281D35FC006188D2 /* CGFloat+Extensions.swift in Sources */,
 				D2854EDA281D320D006188D2 /* AchievementsManager.swift in Sources */,
@@ -1235,6 +1331,7 @@
 				44DC5FF827FF0E0B005EACAE /* FavoriteWordsPresenter.swift in Sources */,
 				44F379E027FC41A6001F02F4 /* DateFormatter+Extensions.swift in Sources */,
 				44F379F027FC45BE001F02F4 /* HistoryWordsRouter.swift in Sources */,
+				44CA5425281BE5C400B6DDE8 /* NewFlashcardAssembly.swift in Sources */,
 				D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */,
 				D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */,
 				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
@@ -1256,6 +1353,7 @@
 				D2DFEE4F281C64B3006F452E /* Achievement.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
+				4443AB5F281D89B700112B35 /* Deck.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
 				D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */,
 				D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */,
@@ -1280,6 +1378,7 @@
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
 				D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */,
 				44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */,
+				44CA542F281BE60300B6DDE8 /* NewFlashcardViewInput.swift in Sources */,
 				D20F3301280DC4AC0003D9DD /* ChangePasswordInteractor.swift in Sources */,
 				D2D1168427DE4A0F0026692E /* RegistrationViewOutput.swift in Sources */,
 				D2FD92402813FD4F00D93BC4 /* StudyingPresenter.swift in Sources */,
@@ -1290,6 +1389,7 @@
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
 				D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */,
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
+				44CA5429281BE5E200B6DDE8 /* NewFlashcardInteractor.swift in Sources */,
 				D20F3303280DCF4B0003D9DD /* ChangePasswordResultState.swift in Sources */,
 				D2DFEE4D281C6431006F452E /* AchievementsAssembly.swift in Sources */,
 				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
