@@ -130,6 +130,7 @@ final class NewFlashcardViewController: UIViewController {
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+        newFlashcardView.deckChoiceButton.hideDropdownList()
     }
 }
 
@@ -169,6 +170,10 @@ extension NewFlashcardViewController: UITextViewDelegate {
         default:
             break
         }
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        newFlashcardView.deckChoiceButton.hideDropdownList()
     }
 }
 

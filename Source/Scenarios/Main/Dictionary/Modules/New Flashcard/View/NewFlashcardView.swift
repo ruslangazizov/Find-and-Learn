@@ -14,6 +14,7 @@ final class NewFlashcardView: UIView {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
+        scrollView.keyboardDismissMode = .onDrag
         return scrollView
     }()
     
@@ -130,9 +131,7 @@ final class NewFlashcardView: UIView {
         self.delegate = delegate
         super.init(frame: .zero)
         
-        backgroundColor = .systemBackground
-        addGestureRecognizer(UITapGestureRecognizer(target: delegate, action: #selector(delegate.hideKeyboard)))
-        
+        configureView()
         configureTextViewDelegates()
         configureLayout()
     }
@@ -142,6 +141,13 @@ final class NewFlashcardView: UIView {
     }
     
     // MARK: UI configuration
+    
+    private func configureView() {
+        backgroundColor = .systemBackground
+        let gestureRecognizer = UITapGestureRecognizer(target: delegate, action: #selector(delegate?.hideKeyboard))
+        addGestureRecognizer(gestureRecognizer)
+        gestureRecognizer.delegate = self
+    }
     
     private func configureTextViewDelegates() {
         [frontSideTextView, backSideTextView, commentTextView].forEach {
@@ -180,14 +186,9 @@ final class NewFlashcardView: UIView {
 // MARK: - DropdownButtonDelegate
 
 extension NewFlashcardView: DropdownButtonDelegate {
-    func addOrRemoveTableView(_ tableView: UITableView, height: CGFloat) {
-        guard tableView.superview == nil else {
-            removeTableView(tableView)
-            return
-        }
-        
+    func addTableView(_ tableView: UITableView, height: CGFloat) {
+        endEditing(true)
         addSubview(tableView)
-        gestureRecognizers?.forEach { $0.isEnabled = false }
         tableView.alpha = 0
         tableView.snp.makeConstraints { make in
             make.top.equalTo(deckChoiceButton.snp.bottom)
@@ -204,8 +205,15 @@ extension NewFlashcardView: DropdownButtonDelegate {
             tableView.alpha = 0
         } completion: { _ in
             tableView.removeFromSuperview()
-            self.gestureRecognizers?.forEach { $0.isEnabled = true }
         }
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
+
+extension NewFlashcardView: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !(touch.view?.isDescendant(of: deckChoiceButton.tableView) ?? false)
     }
 }
 

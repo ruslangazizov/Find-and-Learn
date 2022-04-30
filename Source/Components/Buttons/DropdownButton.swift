@@ -8,14 +8,14 @@
 import UIKit
 
 protocol DropdownButtonDelegate: AnyObject {
-    func addOrRemoveTableView(_ tableView: UITableView, height: CGFloat)
+    func addTableView(_ tableView: UITableView, height: CGFloat)
     func removeTableView(_ tableView: UITableView)
 }
 
 final class DropdownButton: UIButton {
     // MARK: UI
     
-    private lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -78,11 +78,20 @@ final class DropdownButton: UIButton {
     
     @objc private func didTapButton() {
         guard var rowsCount = dataSource?.count else { return }
+        guard tableView.superview == nil else {
+            delegate?.removeTableView(tableView)
+            return
+        }
+        
         if rowsCount > Constants.maxTableViewVisibleRowsCount {
             rowsCount = Constants.maxTableViewVisibleRowsCount
         }
         let tableViewHeight = CGFloat(rowsCount) * CGFloat.heightForTableViewRow
-        delegate?.addOrRemoveTableView(tableView, height: tableViewHeight)
+        delegate?.addTableView(tableView, height: tableViewHeight)
+    }
+    
+    func hideDropdownList() {
+        delegate?.removeTableView(tableView)
     }
 }
 
