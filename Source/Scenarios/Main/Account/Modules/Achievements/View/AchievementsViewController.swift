@@ -45,6 +45,11 @@ final class AchievementsViewController: UIViewController {
         presenter.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     // MARK: Private
     
     private func configure() {
