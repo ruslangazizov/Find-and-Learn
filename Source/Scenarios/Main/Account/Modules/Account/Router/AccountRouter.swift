@@ -19,6 +19,7 @@ final class AccountRouter: AccountRouterProtocol {
     }
     
     func showAchievementsModule() {
+        view?.navigationController?.pushViewController(AchievementsAssembly.assemble(), animated: true)
     }
     
     func showChangePasswordModule() {

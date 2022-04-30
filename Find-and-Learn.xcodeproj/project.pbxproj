@@ -102,6 +102,8 @@
 		D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */; };
 		D26EFF0F2800A3430019F1EC /* AccountRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */; };
 		D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF102800A4240019F1EC /* AccountRouter.swift */; };
+		D2854EDA281D320D006188D2 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2854ED9281D320D006188D2 /* AchievementsManager.swift */; };
+		D2854EDC281D35FC006188D2 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */; };
 		D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */; };
 		D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C027FD825F007332A8 /* RegistrationErrors.swift */; };
 		D28814C627FD8F67007332A8 /* PasswordRecoveryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C527FD8F67007332A8 /* PasswordRecoveryRouter.swift */; };
@@ -121,6 +123,13 @@
 		D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168927DE78CE0026692E /* CommonTextField.swift */; };
 		D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1168C27DE80F40026692E /* CommonButton.swift */; };
 		D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */; };
+		D2DFEE45281C5FFD006F452E /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE44281C5FFD006F452E /* AchievementsViewController.swift */; };
+		D2DFEE47281C6042006F452E /* AchievementsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE46281C6042006F452E /* AchievementsViewInput.swift */; };
+		D2DFEE4A281C609E006F452E /* AchievementsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE49281C609E006F452E /* AchievementsPresenter.swift */; };
+		D2DFEE4D281C6431006F452E /* AchievementsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE4C281C6431006F452E /* AchievementsAssembly.swift */; };
+		D2DFEE4F281C64B3006F452E /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE4E281C64B3006F452E /* Achievement.swift */; };
+		D2DFEE51281C65AF006F452E /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE50281C65AF006F452E /* AchievementTableViewCell.swift */; };
+		D2DFEE54281C69CC006F452E /* AchievementsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFEE53281C69CC006F452E /* AchievementsInteractor.swift */; };
 		D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */; };
 		D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */; };
 		D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */; };
@@ -237,6 +246,8 @@
 		D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouterProtocol.swift; sourceTree = "<group>"; };
 		D26EFF102800A4240019F1EC /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
+		D2854ED9281D320D006188D2 /* AchievementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
+		D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResultState.swift; sourceTree = "<group>"; };
 		D28814C027FD825F007332A8 /* RegistrationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationErrors.swift; sourceTree = "<group>"; };
 		D28814C527FD8F67007332A8 /* PasswordRecoveryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryRouter.swift; sourceTree = "<group>"; };
@@ -256,6 +267,13 @@
 		D2D1168927DE78CE0026692E /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
 		D2D1168C27DE80F40026692E /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		D2D3C24627EF4EEA003394A1 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		D2DFEE44281C5FFD006F452E /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		D2DFEE46281C6042006F452E /* AchievementsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewInput.swift; sourceTree = "<group>"; };
+		D2DFEE49281C609E006F452E /* AchievementsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsPresenter.swift; sourceTree = "<group>"; };
+		D2DFEE4C281C6431006F452E /* AchievementsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsAssembly.swift; sourceTree = "<group>"; };
+		D2DFEE4E281C64B3006F452E /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		D2DFEE50281C65AF006F452E /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
+		D2DFEE53281C69CC006F452E /* AchievementsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsInteractor.swift; sourceTree = "<group>"; };
 		D2FB5D5227EDA50900CBDB00 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		D2FB5D5427EDA54800CBDB00 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		D2FB5D5727EDA5A700CBDB00 /* AuthorizationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewInput.swift; sourceTree = "<group>"; };
@@ -307,6 +325,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D2854ED8281D31E7006188D2 /* Achievements Manager */,
 				D2FD925328148AF000D93BC4 /* Studying Manager */,
 				D26EFF06280088480019F1EC /* Settings Manager */,
 				D21E9DA827F9FF64005513B7 /* Validation Managers */,
@@ -340,6 +359,7 @@
 				D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */,
 				D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */,
 				4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */,
+				D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -439,6 +459,7 @@
 				D25FCD6127F8666C0007E65D /* Setting.swift */,
 				4411E53F2819B3CE001ABB53 /* Flashcard.swift */,
 				4443AB5E281D89B700112B35 /* Deck.swift */,
+				D2DFEE4E281C64B3006F452E /* Achievement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -614,6 +635,7 @@
 		D20F32F2280DAF8C0003D9DD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D2DFEE42281C54A6006F452E /* Achievements */,
 				D20F32F4280DAFD20003D9DD /* Change Password */,
 				D20F32F3280DAF960003D9DD /* Account */,
 			);
@@ -790,6 +812,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		D2854ED8281D31E7006188D2 /* Achievements Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D2854ED9281D320D006188D2 /* AchievementsManager.swift */,
+			);
+			path = "Achievements Manager";
+			sourceTree = "<group>";
+		};
 		D28814C227FD8F41007332A8 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -946,6 +976,51 @@
 				44CA543F281C4B2C00B6DDE8 /* DropdownButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D2DFEE42281C54A6006F452E /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				D2DFEE4C281C6431006F452E /* AchievementsAssembly.swift */,
+				D2DFEE52281C69AC006F452E /* Interactor */,
+				D2DFEE48281C605D006F452E /* Presenter */,
+				D2DFEE43281C5FB3006F452E /* View */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		D2DFEE43281C5FB3006F452E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2DFEE44281C5FFD006F452E /* AchievementsViewController.swift */,
+				D2DFEE46281C6042006F452E /* AchievementsViewInput.swift */,
+				D2DFEE4B281C61C0006F452E /* Subviews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2DFEE48281C605D006F452E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D2DFEE49281C609E006F452E /* AchievementsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D2DFEE4B281C61C0006F452E /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				D2DFEE50281C65AF006F452E /* AchievementTableViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		D2DFEE52281C69AC006F452E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D2DFEE53281C69CC006F452E /* AchievementsInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		D2FB5D5127EDA4DB00CBDB00 /* Authorization */ = {
@@ -1198,6 +1273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2DFEE45281C5FFD006F452E /* AchievementsViewController.swift in Sources */,
 				D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */,
 				D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */,
 				447F987528166803000E153D /* WordDetailViewController.swift in Sources */,
@@ -1205,6 +1281,7 @@
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
 				444B2813281D349E0037CDA8 /* NewFlashcardView.swift in Sources */,
 				44CA542B281BE5EA00B6DDE8 /* NewFlashcardPresenter.swift in Sources */,
+				D2DFEE54281C69CC006F452E /* AchievementsInteractor.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
 				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
 				D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */,
@@ -1233,7 +1310,9 @@
 				44F379E827FC43C0001F02F4 /* HistoryWordsInteractor.swift in Sources */,
 				D20F32F9280DB0270003D9DD /* ChangePasswordViewInput.swift in Sources */,
 				D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */,
+				D2DFEE51281C65AF006F452E /* AchievementTableViewCell.swift in Sources */,
 				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
+				D2DFEE47281C6042006F452E /* AchievementsViewInput.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				44CA5438281C38AF00B6DDE8 /* FieldStackView.swift in Sources */,
 				D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */,
@@ -1243,6 +1322,8 @@
 				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
 				44CA5440281C4B2C00B6DDE8 /* DropdownButton.swift in Sources */,
 				D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */,
+				D2854EDC281D35FC006188D2 /* CGFloat+Extensions.swift in Sources */,
+				D2854EDA281D320D006188D2 /* AchievementsManager.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D26EFF05280085950019F1EC /* AccountInteractor.swift in Sources */,
 				D25FCD5B27F858C10007E65D /* CircularView.swift in Sources */,
@@ -1258,6 +1339,7 @@
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
 				D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */,
+				D2DFEE4A281C609E006F452E /* AchievementsPresenter.swift in Sources */,
 				D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
@@ -1268,6 +1350,7 @@
 				D20F3307280DD5380003D9DD /* ChangePasswordAssembly.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
 				D2FD925728148BD600D93BC4 /* CardAction.swift in Sources */,
+				D2DFEE4F281C64B3006F452E /* Achievement.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				4443AB5F281D89B700112B35 /* Deck.swift in Sources */,
@@ -1308,6 +1391,7 @@
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
 				44CA5429281BE5E200B6DDE8 /* NewFlashcardInteractor.swift in Sources */,
 				D20F3303280DCF4B0003D9DD /* ChangePasswordResultState.swift in Sources */,
+				D2DFEE4D281C6431006F452E /* AchievementsAssembly.swift in Sources */,
 				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,

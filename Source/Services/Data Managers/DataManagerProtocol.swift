@@ -10,6 +10,7 @@ import Foundation
 protocol DataManagerProtocol: AnyObject {
     func getWords(_ word: String, completion: @escaping ([Word]) -> Void)
     func getUser(completion: @escaping (User) -> Void)
+    func getAchievements(completion: ([Achievement]) -> Void)
     func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void)
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void)
     func fetchWordDetail(_ word: String, completion: @escaping (WordDetail) -> Void)
