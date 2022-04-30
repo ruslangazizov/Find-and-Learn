@@ -34,9 +34,3 @@ struct NewFlashcard {
     var comment: String?
     var createReversed: Bool
 }
-
-struct Deck {
-    let id: Int
-    let name: String
-    let createdAt: Date
-}

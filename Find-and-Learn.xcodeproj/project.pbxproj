@@ -16,6 +16,7 @@
 		442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */; };
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
+		4443AB5F281D89B700112B35 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443AB5E281D89B700112B35 /* Deck.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
 		44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */; };
 		444B2813281D349E0037CDA8 /* NewFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B2812281D349E0037CDA8 /* NewFlashcardView.swift */; };
@@ -148,6 +149,7 @@
 		442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMock.swift; sourceTree = "<group>"; };
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		4443AB5E281D89B700112B35 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
 		44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
 		444B2812281D349E0037CDA8 /* NewFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardView.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				44D5811727E7D74500DBCC4E /* User.swift */,
 				D25FCD6127F8666C0007E65D /* Setting.swift */,
 				4411E53F2819B3CE001ABB53 /* Flashcard.swift */,
+				4443AB5E281D89B700112B35 /* Deck.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1267,6 +1270,7 @@
 				D2FD925728148BD600D93BC4 /* CardAction.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
+				4443AB5F281D89B700112B35 /* Deck.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
 				D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */,
 				D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */,
