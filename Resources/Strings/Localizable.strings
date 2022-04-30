@@ -56,6 +56,10 @@
 "studying_screen_has_mistakes_message" = "Вы выучили еще не все слова. Если хотите изучать только их, нажмите \"Продолжить\".";
 "studying_screen_has_no_mistakes_message" = "Поздравляем!";
 
+// Экран "Достижения"
+"achievements_screen_title" = "Достижения";
+"achievements_screen_date_of_getting_text" = "Получено: ";
+
 // Уведомления для экрана "Аккаунт"
 "alert_title" = "Подтвердите действие";
 "alert_confirm" = "Да";
@@ -89,3 +93,9 @@
 // Уведомления для экрана "Детальная информация по слову"
 "word_detail_screen_no_chosen_translations_alert_title" = "Не выбран ни один перевод";
 "word_detail_screen_no_chosen_translations_alert_message" = "Выберите переводы, которые вы хотите выучить";
+
+// Достижения
+"achievement_iterator_name" = "Итератор";
+"achievement_iterator_description" = "На протяжении 7 дней каждый день изучить хотя бы 1 колоду";
+"achievement_wasserman_name" = "Вассерман";
+"achievement_wasserman_description" = "5 раз полностью вспомнить все слова в колоде";

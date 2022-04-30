@@ -15,18 +15,24 @@ final class AchievementsInteractor: AchievementsInteractorProtocol {
     // MARK: Dependencies
     
     private let dataManager: DataManagerProtocol
+    private let achievementManager: AchievementsManagerProtocol
     
     // MARK: Init
     
-    init(dataManager: DataManagerProtocol) {
+    init(dataManager: DataManagerProtocol, achievementManager: AchievementsManagerProtocol) {
         self.dataManager = dataManager
+        self.achievementManager = achievementManager
     }
     
     // MARK: AchievementsInteractorProtocol
     
     func getAchievements(_ completion: ([Achievement]) -> Void) {
-        dataManager.getAchievements {
-            completion($0)
+        dataManager.getAchievements { achievements in
+            var allAchievements = achievementManager.getAchievements()
+            achievements.forEach {
+                allAchievements[$0.id] = $0
+            }
+            completion(allAchievements)
         }
     }
 }

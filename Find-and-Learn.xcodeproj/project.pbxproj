@@ -91,6 +91,8 @@
 		D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */; };
 		D26EFF0F2800A3430019F1EC /* AccountRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */; };
 		D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF102800A4240019F1EC /* AccountRouter.swift */; };
+		D2854EDA281D320D006188D2 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2854ED9281D320D006188D2 /* AchievementsManager.swift */; };
+		D2854EDC281D35FC006188D2 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */; };
 		D28814BF27FD7D8E007332A8 /* RegistrationResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */; };
 		D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C027FD825F007332A8 /* RegistrationErrors.swift */; };
 		D28814C627FD8F67007332A8 /* PasswordRecoveryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814C527FD8F67007332A8 /* PasswordRecoveryRouter.swift */; };
@@ -222,6 +224,8 @@
 		D26EFF0B28009F480019F1EC /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		D26EFF0E2800A3430019F1EC /* AccountRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouterProtocol.swift; sourceTree = "<group>"; };
 		D26EFF102800A4240019F1EC /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
+		D2854ED9281D320D006188D2 /* AchievementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
+		D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		D28814BE27FD7D8E007332A8 /* RegistrationResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResultState.swift; sourceTree = "<group>"; };
 		D28814C027FD825F007332A8 /* RegistrationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationErrors.swift; sourceTree = "<group>"; };
 		D28814C527FD8F67007332A8 /* PasswordRecoveryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryRouter.swift; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D2854ED8281D31E7006188D2 /* Achievements Manager */,
 				D2FD925328148AF000D93BC4 /* Studying Manager */,
 				D26EFF06280088480019F1EC /* Settings Manager */,
 				D21E9DA827F9FF64005513B7 /* Validation Managers */,
@@ -331,6 +336,7 @@
 				D2BC64B327FC3DCA00F2E15F /* UILabel+Extensions.swift */,
 				D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */,
 				4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */,
+				D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -718,6 +724,14 @@
 				D26EFF102800A4240019F1EC /* AccountRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		D2854ED8281D31E7006188D2 /* Achievements Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D2854ED9281D320D006188D2 /* AchievementsManager.swift */,
+			);
+			path = "Achievements Manager";
 			sourceTree = "<group>";
 		};
 		D28814C227FD8F41007332A8 /* Router */ = {
@@ -1212,6 +1226,8 @@
 				44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */,
 				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
 				D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */,
+				D2854EDC281D35FC006188D2 /* CGFloat+Extensions.swift in Sources */,
+				D2854EDA281D320D006188D2 /* AchievementsManager.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D26EFF05280085950019F1EC /* AccountInteractor.swift in Sources */,
 				D25FCD5B27F858C10007E65D /* CircularView.swift in Sources */,

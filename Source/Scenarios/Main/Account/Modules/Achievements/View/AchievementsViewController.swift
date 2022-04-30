@@ -48,10 +48,12 @@ final class AchievementsViewController: UIViewController {
     // MARK: Private
     
     private func configure() {
+        title = R.string.localizable.achievements_screen_title()
+        
         tableView.register(AchievementTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         if #available(iOS 15, *) {
             tableView.sectionHeaderTopPadding = 0
         }
@@ -86,9 +88,5 @@ extension AchievementsViewController: UITableViewDelegate, UITableViewDataSource
         let achievement = achievements[indexPath.row]
         cell.configure(with: achievement)
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

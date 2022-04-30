@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 struct Achievement {
+    let id: Int
     let name: String
+    let description: String
     let image: UIImage?
-    let dateOfGetting: String?
+    let dateOfGetting: String? 
 }
