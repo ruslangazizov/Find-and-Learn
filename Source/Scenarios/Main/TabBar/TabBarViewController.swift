@@ -33,7 +33,7 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func setupControllers() {
-        let viewControllers = TabBarItem.allCases.map { (item: TabBarItem) -> UIViewController in
+        let viewControllers = TabBarItem.allCases.map { item -> UIViewController in
             let controller = item.asController
             controller.tabBarItem = item.asTabBarItem
             return controller
