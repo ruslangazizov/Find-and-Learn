@@ -18,3 +18,8 @@
 "new_flashcard_screen_info_button" = "questionmark.circle.fill";
 "new_flashcard_screen_dropdown_button" = "arrow.down.circle";
 "new_flashcard_screen_checkbox_button" = "checkmark.square.fill";
+
+// ТабБар
+"tab_bar_dictionary" = "book";
+"tab_bar_decks" = "square.stack";
+"tab_bar_account" = "person";
