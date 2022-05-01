@@ -54,6 +54,7 @@ final class WordDetailViewController: UIViewController {
     init(presenter: WordDetailViewOutput) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {

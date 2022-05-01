@@ -30,6 +30,7 @@ final class FavoriteWordsViewController: UIViewController {
     init(presenter: FavoriteWordsViewOutput) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {

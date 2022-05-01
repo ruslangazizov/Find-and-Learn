@@ -25,6 +25,7 @@ final class AchievementsViewController: UIViewController {
     init(presenter: AchievementsViewOutput) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {
