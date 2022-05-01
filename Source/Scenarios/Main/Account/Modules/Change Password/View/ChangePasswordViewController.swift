@@ -59,6 +59,7 @@ final class ChangePasswordViewController: UIViewController {
     init(presenter: ChangePasswordViewOutput) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {

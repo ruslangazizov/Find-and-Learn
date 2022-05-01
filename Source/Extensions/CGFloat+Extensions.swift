@@ -27,5 +27,5 @@ extension CGFloat {
 
     static let defaultCornerRadius: CGFloat = 8
 
-    static let defaultBorderWidth: CGFloat = 1
+    static let defaultBorderWidth: CGFloat = 0.5
 }

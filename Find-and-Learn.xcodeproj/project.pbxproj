@@ -86,6 +86,9 @@
 		D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */; };
 		D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */; };
 		D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */; };
+		D2268952281DD07A0095E9FA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2268951281DD07A0095E9FA /* TabBarViewController.swift */; };
+		D2268955281DD20E0095E9FA /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2268954281DD20E0095E9FA /* TabBarItem.swift */; };
+		D2278691281F1665003C3D8A /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2278690281F1665003C3D8A /* AppearanceConfigurator.swift */; };
 		D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */; };
 		D228F69C27F799B70012E3C1 /* PasswordRecoveryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */; };
 		D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25FCD5027F8536B0007E65D /* AccountViewController.swift */; };
@@ -230,6 +233,9 @@
 		D21E9DAD27FA07AB005513B7 /* PasswordRecoveryErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryErrors.swift; sourceTree = "<group>"; };
 		D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
 		D223696A27FB5A6500C5F1C3 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
+		D2268951281DD07A0095E9FA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D2268954281DD20E0095E9FA /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		D2278690281F1665003C3D8A /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
 		D228053527FAC2E000D8B60E /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		D228F69B27F799B70012E3C1 /* PasswordRecoveryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryAssembly.swift; sourceTree = "<group>"; };
 		D25FCD5027F8536B0007E65D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +321,7 @@
 		441F8B6427EC7F500066358F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D2268950281DD05D0095E9FA /* TabBar */,
 				44BE5DD327E52A3C0024F268 /* Dictionary */,
 				D2FD92362813FC7700D93BC4 /* Decks */,
 				D25FCD4E27F852FD0007E65D /* Account */,
@@ -325,6 +332,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D227868F281F1653003C3D8A /* Appearance Manager */,
 				D2854ED8281D31E7006188D2 /* Achievements Manager */,
 				D2FD925328148AF000D93BC4 /* Studying Manager */,
 				D26EFF06280088480019F1EC /* Settings Manager */,
@@ -739,6 +747,23 @@
 				4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		D2268950281DD05D0095E9FA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D2268951281DD07A0095E9FA /* TabBarViewController.swift */,
+				D2268954281DD20E0095E9FA /* TabBarItem.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D227868F281F1653003C3D8A /* Appearance Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D2278690281F1665003C3D8A /* AppearanceConfigurator.swift */,
+			);
+			path = "Appearance Manager";
 			sourceTree = "<group>";
 		};
 		D25FCD4E27F852FD0007E65D /* Account */ = {
@@ -1337,6 +1362,7 @@
 				D2FB5D5527EDA54800CBDB00 /* AuthorizationPresenter.swift in Sources */,
 				D2037FBC27FCAB510036E0A5 /* RegistrationInteractor.swift in Sources */,
 				D2D1168627DE4B230026692E /* RegistrationPresenter.swift in Sources */,
+				D2268952281DD07A0095E9FA /* TabBarViewController.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
 				D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */,
 				D2DFEE4A281C609E006F452E /* AchievementsPresenter.swift in Sources */,
@@ -1354,6 +1380,7 @@
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				4443AB5F281D89B700112B35 /* Deck.swift in Sources */,
+				D2278691281F1665003C3D8A /* AppearanceConfigurator.swift in Sources */,
 				447D708127EE55600011A7F4 /* DataManagerProtocol.swift in Sources */,
 				D2BC64B427FC3DCA00F2E15F /* UILabel+Extensions.swift in Sources */,
 				D2BC64B927FC3E9E00F2E15F /* PasswordRecoveryInteractor.swift in Sources */,
@@ -1374,6 +1401,7 @@
 				D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */,
 				447F986F28166772000E153D /* WordDetailInteractor.swift in Sources */,
 				D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */,
+				D2268955281DD20E0095E9FA /* TabBarItem.swift in Sources */,
 				D2FD924D2814629D00D93BC4 /* StudyingAssembly.swift in Sources */,
 				D2D3C24727EF4EEA003394A1 /* PasswordTextField.swift in Sources */,
 				D25FCD5527F853AF0007E65D /* AccountViewOutput.swift in Sources */,

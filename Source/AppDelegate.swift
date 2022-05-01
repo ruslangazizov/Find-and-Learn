@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        AppearanceConfigurator.configure()
+        
         window = UIWindow()
         window?.makeKeyAndVisible()
         return true

@@ -63,6 +63,11 @@ final class AccountViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hideKeyboard()
+    }
+    
     // MARK: Private
     
     private func configure() {
