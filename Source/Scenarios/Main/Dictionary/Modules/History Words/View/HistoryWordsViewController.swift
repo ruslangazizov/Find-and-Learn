@@ -15,6 +15,7 @@ final class HistoryWordsViewController: UIViewController {
     private lazy var wordsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(HistoryWordsTableViewCell.self)
+        tableView.separatorInset.left = 8
         tableView.delegate = self
         tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
@@ -106,6 +107,7 @@ extension HistoryWordsViewController: UITableViewDataSource {
         let cell = tableView.dequeue(HistoryWordsTableViewCell.self, for: indexPath)
         let wordModel = words[indexPath.section].words[indexPath.row]
         cell.configure(with: wordModel)
+        cell.separatorInset.left = 0
         return cell
     }
 }
