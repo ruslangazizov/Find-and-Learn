@@ -30,9 +30,6 @@ final class WordDetailViewController: UIViewController {
             bottom: 0,
             right: 0
         )
-        if #available(iOS 15, *) {
-            tableView.sectionHeaderTopPadding = 0
-        }
         
         return tableView
     }()

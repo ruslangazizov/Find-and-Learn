@@ -51,14 +51,13 @@ final class AchievementsViewController: UIViewController {
     
     private func configure() {
         title = R.string.localizable.achievements_screen_title()
+        view.backgroundColor = R.color.defaultBackgroundColor()
         
         tableView.register(AchievementTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine
-        if #available(iOS 15, *) {
-            tableView.sectionHeaderTopPadding = 0
-        }
+        tableView.backgroundColor = R.color.defaultBackgroundColor()
     }
     
     private func setupLayout() {
