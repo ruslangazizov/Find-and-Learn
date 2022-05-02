@@ -13,7 +13,7 @@ final class ChangePasswordViewController: UIViewController {
     private lazy var passwordTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.change_password_screen_password_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
         textField.returnKeyType = .next
         return textField
@@ -24,7 +24,7 @@ final class ChangePasswordViewController: UIViewController {
     private lazy var confirmPasswordTextField: UITextField = {
         CommonTextField(
             placeholder: R.string.localizable.change_password_screen_confirm_password_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
     }()
     
@@ -38,10 +38,13 @@ final class ChangePasswordViewController: UIViewController {
     }()
     
     private lazy var changePasswordButton: UIButton = {
-        CommonButton(
+        let button = CommonButton(
             text: R.string.localizable.change_password_screen_change_password(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: UIColor.clear.cgColor
         )
+        button.backgroundColor = R.color.buttonsBackgroundColor()
+        button.setTextColor(R.color.buttonsTextColor())
+        return button
     }()
     
     // MARK: Dependencies
@@ -92,7 +95,7 @@ final class ChangePasswordViewController: UIViewController {
     // MARK: Private
     
     private func configure() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = R.color.defaultBackgroundColor()
         
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self

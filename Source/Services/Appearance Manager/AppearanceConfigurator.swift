@@ -11,5 +11,6 @@ import UIKit
 enum AppearanceConfigurator {
     static func configure() {
         UITableView.appearance().separatorInset = .zero
+        UINavigationBar.appearance().tintColor = R.color.navigationBarItemsColor()
     }
 }
