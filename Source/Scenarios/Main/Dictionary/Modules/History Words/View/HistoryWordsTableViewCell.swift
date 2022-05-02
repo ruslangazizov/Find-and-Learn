@@ -33,6 +33,7 @@ final class HistoryWordsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        backgroundColor = R.color.defaultBackgroundColor()
         contentView.addSubview(labelsStackView)
         labelsStackView.addArrangedSubview(wordLabel)
         labelsStackView.addArrangedSubview(translationsLabel)

@@ -18,6 +18,7 @@ final class HistoryWordsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
+        tableView.backgroundColor = R.color.defaultBackgroundColor()
         return tableView
     }()
     
@@ -43,6 +44,7 @@ final class HistoryWordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = R.color.defaultBackgroundColor()
         configureNavigationBar()
         configureSubviews()
         configureLayout()
