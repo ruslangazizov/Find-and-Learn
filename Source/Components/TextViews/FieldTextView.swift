@@ -11,6 +11,7 @@ final class FieldTextView: UITextView {
     init(borderColor: CGColor, cornerRadius: CGFloat, borderWidth: CGFloat) {
         super.init(frame: .zero, textContainer: nil)
         
+        backgroundColor = R.color.defaultBackgroundColor()
         isScrollEnabled = false
         font = .preferredFont(forTextStyle: .callout)
         textAlignment = .center

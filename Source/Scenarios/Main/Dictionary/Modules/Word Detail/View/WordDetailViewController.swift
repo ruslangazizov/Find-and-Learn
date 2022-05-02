@@ -30,6 +30,7 @@ final class WordDetailViewController: UIViewController {
             bottom: 0,
             right: 0
         )
+        tableView.backgroundColor = R.color.defaultBackgroundColor()
         
         return tableView
     }()
@@ -63,6 +64,7 @@ final class WordDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = R.color.defaultBackgroundColor()
         configureNavigationBar()
         configureSubviews()
         
