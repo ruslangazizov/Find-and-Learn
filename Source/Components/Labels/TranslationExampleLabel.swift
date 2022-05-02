@@ -15,10 +15,14 @@ final class TranslationExampleLabel: UILabel {
         numberOfLines = 0
         lineBreakMode = .byWordWrapping
         textAlignment = .center
-        textColor = .gray
+        textColor = .translationExampleTextColor
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+private extension UIColor {
+    static let translationExampleTextColor = R.color.translationExampleTextColor()
 }
