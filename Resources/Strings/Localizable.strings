@@ -17,7 +17,8 @@
 // Экран "Восстановление пароля"
 "password_recovery_screen_email_placeholder" = "E-Mail";
 "password_recovery_screen_recovery_button" = "Восстановить";
-"password_recovery_screen_enter_button" = "Есть аккаунт? Войти";
+"password_recovery_screen_enter_button_full" = "Есть аккаунт? Войти";
+"password_recovery_screen_enter_button" = "Войти";
 
 // Экран "Авторизация"
 "authorization_screen_email_placeholder" = "E-Mail";
