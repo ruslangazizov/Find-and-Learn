@@ -18,7 +18,7 @@ final class StudyingViewController: UIViewController {
     
     private lazy var titleProgressLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = R.color.textColor()
         label.textAlignment = .center
         return label
     }()
@@ -74,23 +74,20 @@ final class StudyingViewController: UIViewController {
         setupLayout()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        setupCenterPoint()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.isNavigationBarHidden = false
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupCenterPoint()
     }
     
     // MARK: Private
     
     private func configure() {
-        view.backgroundColor = .white
+        view.backgroundColor = R.color.studyingBackgroundColor()
         
         cards.forEach { element in
             cardsViews.append(FlashCardView(card: element))
