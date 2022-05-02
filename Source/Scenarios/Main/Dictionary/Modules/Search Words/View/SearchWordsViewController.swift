@@ -17,6 +17,7 @@ final class SearchWordsViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.backgroundColor = R.color.defaultBackgroundColor()
         return searchController
     }()
     
@@ -26,6 +27,7 @@ final class SearchWordsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
+        tableView.backgroundColor = R.color.defaultBackgroundColor()
         return tableView
     }()
     
@@ -50,6 +52,7 @@ final class SearchWordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = R.color.defaultBackgroundColor()
         configureNavigationBar()
         configureSubviews()
         configureLayout()
@@ -75,6 +78,12 @@ final class SearchWordsViewController: UIViewController {
             target: self,
             action: #selector(didTapHistoryWordsBarButtonItem)
         )
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = R.color.defaultBackgroundColor()
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     private func configureSubviews() {

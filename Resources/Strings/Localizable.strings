@@ -12,12 +12,14 @@
 "registration_screen_confirm_password_placeholder" = "Повторите пароль";
 "registration_screen_user_name_placeholder" = "Никнейм";
 "registration_screen_registration" = "Зарегистрироваться";
-"registration_screen_authorization" = "Есть аккаунт? Войти";
+"registration_screen_authorization_full" = "Есть аккаунт? Войти";
+"registration_screen_authorization" = "Войти";
 
 // Экран "Восстановление пароля"
 "password_recovery_screen_email_placeholder" = "E-Mail";
 "password_recovery_screen_recovery_button" = "Восстановить";
-"password_recovery_screen_enter_button" = "Есть аккаунт? Войти";
+"password_recovery_screen_enter_button_full" = "Есть аккаунт? Войти";
+"password_recovery_screen_enter_button" = "Войти";
 
 // Экран "Авторизация"
 "authorization_screen_email_placeholder" = "E-Mail";
@@ -25,7 +27,8 @@
 "authorization_screen_reset_password" = "Восстановить пароль";
 "authorization_screen_enter" = "Войти";
 "authorization_screen_enter_as_guest" = "Войти как гость";
-"authorization_screen_registration" = "Нет аккаунта? Зарегистрироваться";
+"authorization_screen_registration_full" = "Нет аккаунта? Зарегистрироваться";
+"authorization_screen_registration" = "Зарегистрироваться";
 
 // Экран "Словарь"
 "dictionary_screen_title" = "Словарь";

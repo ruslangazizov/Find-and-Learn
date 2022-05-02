@@ -13,7 +13,7 @@ final class PasswordRecoveryViewController: UIViewController {
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.password_recovery_screen_email_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
         return textField
     }()
@@ -23,16 +23,24 @@ final class PasswordRecoveryViewController: UIViewController {
     private lazy var recoveryButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.password_recovery_screen_recovery_button(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: UIColor.clear.cgColor
         )
+        button.backgroundColor = R.color.buttonsBackgroundColor()
+        button.setTextColor(R.color.buttonsTextColor())
         return button
     }()
     
     private lazy var enterButton: UIButton = {
-        let button = CommonButton(
-            text: R.string.localizable.password_recovery_screen_enter_button(),
-            layerColor: UIColor.blue.cgColor
-        )
+        let button = CommonButton()
+        button.setFontSize(.textFontSize)
+        button.setTextColor(R.color.textColor())
+        
+        let fullString = R.string.localizable.password_recovery_screen_enter_button_full()
+        let partString = R.string.localizable.password_recovery_screen_enter_button()
+        
+        // swiftlint:disable:next force_unwrapping
+        let attributedString = fullString.applyColorForRange(of: partString, with: R.color.buttonsPartTextColor()!)
+        button.setAttributedTitle(attributedString, for: .normal)
         return button
     }()
     
@@ -75,9 +83,9 @@ final class PasswordRecoveryViewController: UIViewController {
     // MARK: Private
     
     private func configure() {
-        emailTextField.delegate = self
+        view.backgroundColor = R.color.defaultBackgroundColor()
         
-        view.backgroundColor = .systemBackground
+        emailTextField.delegate = self
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
@@ -214,4 +222,6 @@ private extension CGFloat {
     static let buttonsSpacing: CGFloat = 20
     
     static let multiplierForEmailTextField = 0.5
+    
+    static let textFontSize: CGFloat = 14
 }

@@ -28,7 +28,7 @@ final class AccountViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.keyboardDismissMode = .onDrag
-        tableView.backgroundColor = .systemBackground
+        tableView.backgroundColor = R.color.defaultBackgroundColor()
         tableView.estimatedSectionHeaderHeight = .estimatedSectionHeaderHeight
         return tableView
     }()
@@ -71,6 +71,8 @@ final class AccountViewController: UIViewController {
     // MARK: Private
     
     private func configure() {
+        view.backgroundColor = R.color.defaultBackgroundColor()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AccountTableViewCell.self)

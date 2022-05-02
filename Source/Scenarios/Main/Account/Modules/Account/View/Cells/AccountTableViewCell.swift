@@ -12,6 +12,7 @@ final class AccountTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        backgroundColor = R.color.defaultBackgroundColor()
         setupView()
     }
     
@@ -19,15 +20,15 @@ final class AccountTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Private
-    
-    private func setupView() {
-        textLabel?.textAlignment = .center
-    }
-    
     // MARK: Configure
     
     func configure(with settings: Setting) {
         textLabel?.text = settings.name
+    }
+    
+    // MARK: Private
+    
+    private func setupView() {
+        textLabel?.textAlignment = .center
     }
 }

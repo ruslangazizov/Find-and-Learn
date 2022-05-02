@@ -13,7 +13,7 @@ final class AuthorizationViewController: UIViewController {
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.authorization_screen_email_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
         textField.returnKeyType = .next
         return textField
@@ -24,7 +24,7 @@ final class AuthorizationViewController: UIViewController {
     private lazy var passwordTextField: UITextField = {
         let textField = PasswordTextField(
             placeholder: R.string.localizable.authorization_screen_password_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
         return textField
     }()
@@ -37,14 +37,17 @@ final class AuthorizationViewController: UIViewController {
             layerColor: nil
         )
         button.setFontSize(.textFontSize)
+        button.setTextColor(R.color.secondaryTextColor())
         return button
     }()
     
     private lazy var enterButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.authorization_screen_enter(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: UIColor.clear.cgColor
         )
+        button.backgroundColor = R.color.buttonsBackgroundColor()
+        button.setTextColor(R.color.buttonsTextColor())
         return button
     }()
     
@@ -54,15 +57,21 @@ final class AuthorizationViewController: UIViewController {
             layerColor: nil
         )
         button.setFontSize(.textFontSize)
+        button.setTextColor(R.color.secondaryTextColor())
         return button
     }()
     
     private lazy var registrationButton: UIButton = {
-        let button = CommonButton(
-            text: R.string.localizable.authorization_screen_registration(),
-            layerColor: UIColor.blue.cgColor
-        )
+        let button = CommonButton()
         button.setFontSize(.textFontSize)
+        button.setTextColor(R.color.textColor())
+        
+        let fullString = R.string.localizable.authorization_screen_registration_full()
+        let partString = R.string.localizable.authorization_screen_registration()
+        
+        // swiftlint:disable:next force_unwrapping
+        let attributedString = fullString.applyColorForRange(of: partString, with: R.color.buttonsPartTextColor()!)
+        button.setAttributedTitle(attributedString, for: .normal)
         return button
     }()
     
@@ -109,7 +118,7 @@ final class AuthorizationViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = R.color.defaultBackgroundColor()
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         

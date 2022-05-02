@@ -14,7 +14,7 @@ final class RegistrationViewController: UIViewController {
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_email_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
         textField.returnKeyType = .next
         return textField
@@ -25,7 +25,7 @@ final class RegistrationViewController: UIViewController {
     private lazy var userNameTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_user_name_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
         textField.returnKeyType = .next
         return textField
@@ -36,7 +36,7 @@ final class RegistrationViewController: UIViewController {
     private lazy var passwordTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_password_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
         textField.returnKeyType = .next
         return textField
@@ -47,7 +47,7 @@ final class RegistrationViewController: UIViewController {
     private lazy var confirmPasswordTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_confirm_password_placeholder(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: R.color.defaultTextFieldsBorderColor()?.cgColor
         )
         return textField
     }()
@@ -57,17 +57,24 @@ final class RegistrationViewController: UIViewController {
     private lazy var registrationButton: UIButton = {
         let button = CommonButton(
             text: R.string.localizable.registration_screen_registration(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: UIColor.clear.cgColor
         )
+        button.backgroundColor = R.color.buttonsBackgroundColor()
+        button.setTextColor(R.color.buttonsTextColor())
         return button
     }()
     
     private lazy var enterButton: UIButton = {
-        let button = CommonButton(
-            text: R.string.localizable.registration_screen_authorization(),
-            layerColor: nil
-        )
-        button.setFontSize(14)
+        let button = CommonButton()
+        button.setFontSize(.fontSize)
+        button.setTextColor(R.color.textColor())
+        
+        let fullString = R.string.localizable.registration_screen_authorization_full()
+        let partString = R.string.localizable.registration_screen_authorization()
+        
+        // swiftlint:disable:next force_unwrapping
+        let attributedString = fullString.applyColorForRange(of: partString, with: R.color.buttonsPartTextColor()!)
+        button.setAttributedTitle(attributedString, for: .normal)
         return button
     }()
     
@@ -127,7 +134,7 @@ final class RegistrationViewController: UIViewController {
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = R.color.defaultBackgroundColor()
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
@@ -319,4 +326,6 @@ private extension CGFloat {
     static let multiplierForTextFieldStackViews: CGFloat = 5
     
     static let multiplierForHalf: CGFloat = 2
+    
+    static let fontSize: CGFloat = 14
 }

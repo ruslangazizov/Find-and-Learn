@@ -21,19 +21,24 @@ final class DropdownButton: UIButton {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self)
         tableView.separatorInset.left = .tableViewSeparatorLeftInset
+        tableView.backgroundColor = R.color.defaultBackgroundColor()
         return tableView
     }()
     
-    private lazy var downArrowImageView = UIImageView(image: UIImage(
-        systemName: R.string.systemIconsNames.new_flashcard_screen_dropdown_button()
-    ))
+    private lazy var downArrowImageView: UIImageView = {
+        let imageView = UIImageView(
+            image: UIImage(systemName: R.string.systemIconsNames.new_flashcard_screen_dropdown_button())
+        )
+        imageView.tintColor = R.color.buttonsBackgroundColor()
+        return imageView
+    }()
     
     // MARK: Dependencies & properties
     
     private weak var delegate: DropdownButtonDelegate?
     var dataSource: [String]? {
         didSet {
-            setTitleColor(.black, for: .normal)
+            setTextColor(R.color.textColor())
             addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
             addSubview(downArrowImageView)
             downArrowImageView.snp.makeConstraints { make in
@@ -59,8 +64,9 @@ final class DropdownButton: UIButton {
         self.delegate = delegate
         self.dataSource = dataSource
         
+        backgroundColor = R.color.defaultBackgroundColor()
         setTitle(title, for: .normal)
-        setTitleColor(.lightGray, for: .normal)
+        setTextColor(R.color.secondaryTextColor())
         titleLabel?.font = .preferredFont(forTextStyle: .callout)
         layer.borderColor = borderColor
         layer.cornerRadius = cornerRadius
@@ -120,6 +126,7 @@ extension DropdownButton: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeue(UITableViewCell.self, for: indexPath)
         cell.textLabel?.text = dataSource?[indexPath.row]
         cell.textLabel?.font = .preferredFont(forTextStyle: .callout)
+        cell.backgroundColor = R.color.defaultBackgroundColor()
         return cell
     }
 }

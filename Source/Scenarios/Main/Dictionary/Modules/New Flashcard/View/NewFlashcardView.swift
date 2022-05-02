@@ -13,7 +13,6 @@ final class NewFlashcardView: UIView {
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.keyboardDismissMode = .onDrag
         return scrollView
     }()
     
@@ -73,6 +72,7 @@ final class NewFlashcardView: UIView {
         let imageSystemName = R.string.systemIconsNames.new_flashcard_screen_info_button()
         button.setImage(UIImage(systemName: imageSystemName), for: .normal)
         button.addTarget(delegate, action: #selector(delegate?.didTapCommentInfoButton), for: .touchUpInside)
+        button.tintColor = R.color.buttonsBackgroundColor()
         return button
     }()
     
@@ -94,6 +94,7 @@ final class NewFlashcardView: UIView {
         button.layer.borderColor = .checkboxBorderColor
         button.layer.backgroundColor = .checkboxPassiveColor
         button.addTarget(delegate, action: #selector(delegate?.didTapCheckboxButton), for: .touchUpInside)
+        button.tintColor = R.color.buttonsBackgroundColor()
         return button
     }()
     
@@ -106,6 +107,7 @@ final class NewFlashcardView: UIView {
             action: #selector(delegate?.didTapCreateReversedFlashcardInfoButton),
             for: .touchUpInside
         )
+        button.tintColor = R.color.buttonsBackgroundColor()
         return button
     }()
     
@@ -142,7 +144,7 @@ final class NewFlashcardView: UIView {
     // MARK: UI configuration
     
     private func configureView() {
-        backgroundColor = .systemBackground
+        backgroundColor = R.color.defaultBackgroundColor()
         let gestureRecognizer = UITapGestureRecognizer(target: delegate, action: #selector(delegate?.hideKeyboard))
         addGestureRecognizer(gestureRecognizer)
         gestureRecognizer.delegate = self

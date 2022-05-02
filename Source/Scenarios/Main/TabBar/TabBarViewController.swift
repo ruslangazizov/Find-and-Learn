@@ -19,8 +19,10 @@ final class TabBarViewController: UITabBarController {
     // MARK: Private
     
     private func configureAppearance() {
+        tabBar.backgroundColor = R.color.defaultBackgroundColor()
+        
         tabBar.tintColor = R.color.tabBarActiveIconColor()
-        tabBar.barTintColor = .white
+        tabBar.barTintColor = R.color.defaultBackgroundColor()
         
         let borderView = UIView(frame: .init(
             x: 0,
@@ -36,7 +38,7 @@ final class TabBarViewController: UITabBarController {
         let viewControllers = TabBarItem.allCases.map { item -> UIViewController in
             let controller = item.asController
             controller.tabBarItem = item.asTabBarItem
-            return controller
+            return UINavigationController(rootViewController: controller)
         }
         setViewControllers(viewControllers, animated: true)
     }

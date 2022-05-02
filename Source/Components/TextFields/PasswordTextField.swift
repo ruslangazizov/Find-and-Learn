@@ -46,7 +46,7 @@ final class PasswordTextField: UITextField {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: .eyeImageSize, height: .eyeImageSize))
         button.setImage(openedEyeImage, for: .normal)
         button.setImage(closedEyeImage, for: .selected)
-        button.tintColor = .black
+        button.tintColor = R.color.passwordEyeColor()
         button.imageEdgeInsets = Constants.imagePadding
         button.addTarget(self, action: #selector(showHidePassword(_:)), for: .touchUpInside)
         

@@ -18,7 +18,7 @@ final class StudyingViewController: UIViewController {
     
     private lazy var titleProgressLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = R.color.textColor()
         label.textAlignment = .center
         return label
     }()
@@ -74,23 +74,20 @@ final class StudyingViewController: UIViewController {
         setupLayout()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        setupCenterPoint()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.isNavigationBarHidden = false
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupCenterPoint()
     }
     
     // MARK: Private
     
     private func configure() {
-        view.backgroundColor = .white
+        view.backgroundColor = R.color.studyingBackgroundColor()
         
         cards.forEach { element in
             cardsViews.append(FlashCardView(card: element))
@@ -224,7 +221,7 @@ final class StudyingViewController: UIViewController {
             card.showLearnedView()
         }
         card.messageAlpha = abs(point.x / view.center.x)
-        let scale = min(.pointsFromCenter / abs(point.x), 1)
+        let scale = max(min(.pointsFromCenter * 1.5 / abs(point.x), 1), 0.75)
         card.transform = CGAffineTransform(rotationAngle: point.x / dividerForAngle).scaledBy(x: scale, y: scale)
     }
     

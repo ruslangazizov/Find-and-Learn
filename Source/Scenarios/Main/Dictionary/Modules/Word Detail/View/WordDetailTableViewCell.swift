@@ -14,7 +14,7 @@ final class WordDetailTableViewCell: UITableViewCell {
         let view = UIView()
         view.layer.borderWidth = .checkboxBorderWidth
         view.layer.borderColor = .checkboxBorderColor
-        view.layer.backgroundColor = .checkboxPassiveColor
+        view.layer.backgroundColor = UIColor.checkboxPassiveColor.cgColor
         return view
     }()
     
@@ -57,7 +57,7 @@ final class WordDetailTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = .viewBackgroundColor
+        backgroundColor = R.color.defaultBackgroundColor()
         configureSubviews()
     }
     
@@ -122,7 +122,18 @@ final class WordDetailTableViewCell: UITableViewCell {
             }
             return TranslationExampleLabel(text: labelText)
         })
-        checkboxView.layer.backgroundColor = translationModel.isSelected ? .checkboxActiveColor : .checkboxPassiveColor
+        let checkboxColor: UIColor? = translationModel.isSelected ? .checkboxActiveColor : .checkboxPassiveColor
+        checkboxView.layer.backgroundColor = checkboxColor?.cgColor
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection),
+            let isSelected = translationModel?.isSelected {
+            let checkboxColor: UIColor? = isSelected ? .checkboxActiveColor : .checkboxPassiveColor
+            checkboxView.layer.backgroundColor = checkboxColor?.cgColor
+        }
     }
 }
 
@@ -136,12 +147,14 @@ private extension CGFloat {
 
 private extension CGColor {
     static let checkboxBorderColor: CGColor = UIColor.lightGray.cgColor
-    static let checkboxActiveColor: CGColor = UIColor.green.cgColor
-    static let checkboxPassiveColor: CGColor = UIColor.white.cgColor
 }
 
 private extension UIColor {
-    static let viewBackgroundColor = UIColor(red: 250 / 255, green: 250 / 255, blue: 250 / 255, alpha: 1)
+    static let checkboxActiveColor: UIColor? = R.color.buttonsBackgroundColor()
+    static let checkboxPassiveColor: UIColor = .white
+}
+
+private extension UIColor {
     static let separatorViewBackgroundColor = UIColor(red: 190 / 255, green: 190 / 255, blue: 190 / 255, alpha: 1)
 }
 

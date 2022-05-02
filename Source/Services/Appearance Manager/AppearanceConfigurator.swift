@@ -10,6 +10,10 @@ import UIKit
 
 enum AppearanceConfigurator {
     static func configure() {
+        if #available(iOS 15, *) {
+            UITableView.appearance().sectionHeaderTopPadding = 0
+        }
         UITableView.appearance().separatorInset = .zero
+        UINavigationBar.appearance().tintColor = R.color.navigationBarItemsColor()
     }
 }

@@ -17,6 +17,7 @@ final class FavoriteWordsViewController: UIViewController {
         tableView.register(FavoriteWordsTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = R.color.defaultBackgroundColor()
         return tableView
     }()
     
@@ -42,6 +43,7 @@ final class FavoriteWordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = R.color.defaultBackgroundColor()
         configureNavigationBar()
         configureSubviews()
         configureLayout()

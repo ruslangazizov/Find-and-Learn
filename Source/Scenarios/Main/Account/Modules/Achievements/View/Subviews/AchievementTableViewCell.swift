@@ -54,6 +54,7 @@ final class AchievementTableViewCell: UITableViewCell {
     // MARK: Private
     
     private func configure() {
+        backgroundColor = R.color.defaultBackgroundColor()
         iconImageView.contentMode = .scaleAspectFit
         isUserInteractionEnabled = false
     }

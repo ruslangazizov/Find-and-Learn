@@ -75,7 +75,7 @@ final class FlashCardView: UIView {
     // MARK: Private
     
     private func configure() {
-        backgroundColor = .white
+        backgroundColor = R.color.flashCardBackgroundColor()
         layer.borderWidth = .borderWidth
         layer.borderColor = UIColor.lightGray.cgColor
         layer.cornerRadius = .cornerRadius

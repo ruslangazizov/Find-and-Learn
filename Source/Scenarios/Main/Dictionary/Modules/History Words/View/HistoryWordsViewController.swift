@@ -15,9 +15,11 @@ final class HistoryWordsViewController: UIViewController {
     private lazy var wordsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(HistoryWordsTableViewCell.self)
+        tableView.separatorInset.left = 8
         tableView.delegate = self
         tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
+        tableView.backgroundColor = R.color.defaultBackgroundColor()
         return tableView
     }()
     
@@ -43,6 +45,7 @@ final class HistoryWordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = R.color.defaultBackgroundColor()
         configureNavigationBar()
         configureSubviews()
         configureLayout()
@@ -104,6 +107,7 @@ extension HistoryWordsViewController: UITableViewDataSource {
         let cell = tableView.dequeue(HistoryWordsTableViewCell.self, for: indexPath)
         let wordModel = words[indexPath.section].words[indexPath.row]
         cell.configure(with: wordModel)
+        cell.separatorInset.left = 0
         return cell
     }
 }

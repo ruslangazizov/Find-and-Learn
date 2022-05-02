@@ -11,17 +11,23 @@ final class FinishStudyingView: UIView {
     // MARK: UI
     
     lazy var continueButton: UIButton = {
-        return CommonButton(
+        let button = CommonButton(
             text: R.string.localizable.studying_screen_continue(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: UIColor.clear.cgColor
         )
+        button.backgroundColor = R.color.buttonsBackgroundColor()
+        button.setTextColor(R.color.buttonsTextColor())
+        return button
     }()
     
     lazy var restartButton: UIButton = {
-        return CommonButton(
+        let button = CommonButton(
             text: R.string.localizable.studying_screen_restart(),
-            layerColor: UIColor.blue.cgColor
+            layerColor: UIColor.clear.cgColor
         )
+        button.backgroundColor = R.color.buttonsBackgroundColor()
+        button.setTextColor(R.color.buttonsTextColor())
+        return button
     }()
     
     private lazy var congratulationsImageView: UIImageView = {
@@ -76,7 +82,7 @@ final class FinishStudyingView: UIView {
     // MARK: Private
     
     private func configure() {
-        backgroundColor = .white
+        backgroundColor = R.color.flashCardBackgroundColor()
         layer.borderWidth = .borderWidth
         layer.borderColor = UIColor.lightGray.cgColor
         layer.cornerRadius = .cornerRadius

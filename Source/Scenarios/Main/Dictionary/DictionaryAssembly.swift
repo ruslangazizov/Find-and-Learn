@@ -10,15 +10,6 @@ import UIKit
 
 final class DictionaryAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let searchWordsViewController = SearchWordsAssembly.assemble()
-        let navigationController = UINavigationController(rootViewController: searchWordsViewController)
-        navigationController.view.backgroundColor = .systemBackground
-        
-        let barAppearance = UINavigationBarAppearance()
-        barAppearance.backgroundColor = .systemBackground
-        navigationController.navigationBar.standardAppearance = barAppearance
-        navigationController.navigationBar.scrollEdgeAppearance = barAppearance
-        
-        return navigationController
+        return SearchWordsAssembly.assemble()
     }
 }
