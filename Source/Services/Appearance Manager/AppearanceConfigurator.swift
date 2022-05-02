@@ -14,6 +14,11 @@ enum AppearanceConfigurator {
             UITableView.appearance().sectionHeaderTopPadding = 0
         }
         UITableView.appearance().separatorInset = .zero
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = R.color.defaultBackgroundColor()
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = R.color.navigationBarItemsColor()
     }
 }
