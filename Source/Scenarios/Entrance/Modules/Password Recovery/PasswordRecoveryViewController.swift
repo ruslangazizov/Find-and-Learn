@@ -35,16 +35,11 @@ final class PasswordRecoveryViewController: UIViewController {
         button.setFontSize(.textFontSize)
         button.setTextColor(R.color.textColor())
         
-        var fullString = R.string.localizable.password_recovery_screen_enter_button_full()
-        var partString = R.string.localizable.password_recovery_screen_enter_button()
+        let fullString = R.string.localizable.password_recovery_screen_enter_button_full()
+        let partString = R.string.localizable.password_recovery_screen_enter_button()
         
-        var range = (fullString as NSString).range(of: partString)
-        var attributedString = NSMutableAttributedString(string: fullString)
-        attributedString.addAttributes(
-            // swiftlint:disable:next force_unwrapping
-            [.foregroundColor: R.color.buttonsPartTextColor()!],
-            range: range
-        )
+        // swiftlint:disable:next force_unwrapping
+        let attributedString = fullString.applyColorForRange(of: partString, with: R.color.buttonsPartTextColor()!)
         button.setAttributedTitle(attributedString, for: .normal)
         return button
     }()

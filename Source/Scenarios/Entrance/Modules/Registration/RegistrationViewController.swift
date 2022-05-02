@@ -69,16 +69,11 @@ final class RegistrationViewController: UIViewController {
         button.setFontSize(.fontSize)
         button.setTextColor(R.color.textColor())
         
-        var fullString = R.string.localizable.registration_screen_authorization_full()
-        var partString = R.string.localizable.registration_screen_authorization()
+        let fullString = R.string.localizable.registration_screen_authorization_full()
+        let partString = R.string.localizable.registration_screen_authorization()
         
-        var range = (fullString as NSString).range(of: partString)
-        var attributedString = NSMutableAttributedString(string: fullString)
-        attributedString.addAttributes(
-            // swiftlint:disable:next force_unwrapping
-            [.foregroundColor: R.color.buttonsPartTextColor()!],
-            range: range
-        )
+        // swiftlint:disable:next force_unwrapping
+        let attributedString = fullString.applyColorForRange(of: partString, with: R.color.buttonsPartTextColor()!)
         button.setAttributedTitle(attributedString, for: .normal)
         return button
     }()

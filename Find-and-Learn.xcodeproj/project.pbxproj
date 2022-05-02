@@ -52,6 +52,7 @@
 		44DC5FF827FF0E0B005EACAE /* FavoriteWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FF727FF0E0B005EACAE /* FavoriteWordsPresenter.swift */; };
 		44DC5FFA27FF24B4005EACAE /* FavoriteWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FF927FF24B4005EACAE /* FavoriteWordsViewController.swift */; };
 		44DC5FFC27FF260D005EACAE /* FavoriteWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DC5FFB27FF260D005EACAE /* FavoriteWordsTableViewCell.swift */; };
+		44DD6AB728203D72001FE38F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DD6AB628203D72001FE38F /* String+Extensions.swift */; };
 		44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7527C7A7B00061C14D /* AppDelegate.swift */; };
 		44E59E7A27C7A7B00061C14D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */; };
 		44E59E7F27C7A7B30061C14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E59E7E27C7A7B30061C14D /* Assets.xcassets */; };
@@ -197,6 +198,7 @@
 		44DC5FF727FF0E0B005EACAE /* FavoriteWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsPresenter.swift; sourceTree = "<group>"; };
 		44DC5FF927FF24B4005EACAE /* FavoriteWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsViewController.swift; sourceTree = "<group>"; };
 		44DC5FFB27FF260D005EACAE /* FavoriteWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWordsTableViewCell.swift; sourceTree = "<group>"; };
+		44DD6AB628203D72001FE38F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		44E59E7227C7A7B00061C14D /* Find-and-Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-and-Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E59E7527C7A7B00061C14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44E59E7927C7A7B00061C14D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */,
 				4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */,
 				D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */,
+				44DD6AB628203D72001FE38F /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1390,6 +1393,7 @@
 				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
 				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
+				44DD6AB728203D72001FE38F /* String+Extensions.swift in Sources */,
 				D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */,
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
 				447F9871281667C0000E153D /* WordDetailPresenter.swift in Sources */,

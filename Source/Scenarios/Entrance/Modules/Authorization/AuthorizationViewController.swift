@@ -66,16 +66,11 @@ final class AuthorizationViewController: UIViewController {
         button.setFontSize(.textFontSize)
         button.setTextColor(R.color.textColor())
         
-        var fullString = R.string.localizable.authorization_screen_registration_full()
-        var partString = R.string.localizable.authorization_screen_registration()
+        let fullString = R.string.localizable.authorization_screen_registration_full()
+        let partString = R.string.localizable.authorization_screen_registration()
         
-        var range = (fullString as NSString).range(of: partString)
-        var attributedString = NSMutableAttributedString(string: fullString)
-        attributedString.addAttributes(
-            // swiftlint:disable:next force_unwrapping
-            [.foregroundColor: R.color.buttonsPartTextColor()!],
-            range: range
-        )
+        // swiftlint:disable:next force_unwrapping
+        let attributedString = fullString.applyColorForRange(of: partString, with: R.color.buttonsPartTextColor()!)
         button.setAttributedTitle(attributedString, for: .normal)
         return button
     }()
