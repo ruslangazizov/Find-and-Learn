@@ -15,6 +15,11 @@ final class CommonButton: UIButton {
         initialize(text: text, layerColor: layerColor)
     }
     
+    init() {
+        super.init(frame: .zero)
+        initialize(text: nil, layerColor: nil)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("Not supported")
     }

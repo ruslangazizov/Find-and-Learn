@@ -25,7 +25,8 @@
 "authorization_screen_reset_password" = "Восстановить пароль";
 "authorization_screen_enter" = "Войти";
 "authorization_screen_enter_as_guest" = "Войти как гость";
-"authorization_screen_registration" = "Нет аккаунта? Зарегистрироваться";
+"authorization_screen_registration_full" = "Нет аккаунта? Зарегистрироваться";
+"authorization_screen_registration" = "Зарегистрироваться";
 
 // Экран "Словарь"
 "dictionary_screen_title" = "Словарь";
