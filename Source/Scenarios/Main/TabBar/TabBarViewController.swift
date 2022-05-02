@@ -38,7 +38,7 @@ final class TabBarViewController: UITabBarController {
         let viewControllers = TabBarItem.allCases.map { item -> UIViewController in
             let controller = item.asController
             controller.tabBarItem = item.asTabBarItem
-            return controller
+            return UINavigationController(rootViewController: controller)
         }
         setViewControllers(viewControllers, animated: true)
     }
