@@ -221,7 +221,7 @@ final class StudyingViewController: UIViewController {
             card.showLearnedView()
         }
         card.messageAlpha = abs(point.x / view.center.x)
-        let scale = min(.pointsFromCenter / abs(point.x), 1)
+        let scale = max(min(.pointsFromCenter * 1.5 / abs(point.x), 1), 0.75)
         card.transform = CGAffineTransform(rotationAngle: point.x / dividerForAngle).scaledBy(x: scale, y: scale)
     }
     
