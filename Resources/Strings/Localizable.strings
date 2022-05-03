@@ -117,6 +117,10 @@
 "new_flashcard_screen_no_deck_chosen_title" = "Не выбрана колода";
 "new_flashcard_screen_no_deck_chosen_message" = "Выберите колоду, в которой вы бы хотели изучать эту карточку";
 
+// Экран "Новая карточка"
+"decks_screen_title" = "Колоды";
+"decks_screen_search_bar_placeholder" = "Введите название колоды";
+
 // Достижения
 "achievement_iterator_name" = "Итератор";
 "achievement_iterator_description" = "На протяжении 7 дней каждый день изучать хотя бы 1 колоду";

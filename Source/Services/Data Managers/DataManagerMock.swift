@@ -113,12 +113,44 @@ final class DataManagerMock: DataManagerProtocol {
     func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
     }
     
-    func fetchDecks(completion: @escaping ([Deck]) -> Void) {
+    func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void) {
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            let flashcards = !includeFlashcards ? nil : [
+                FlashcardModel(
+                    frontSide: "Передняя сторона 1",
+                    backSide: "Задняя сторона 1",
+                    comment: "Suspendisse ut neque at urna fermentum accumsan sit amet eget felis"
+                ),
+                FlashcardModel(
+                    frontSide: "Передняя сторона 2",
+                    backSide: "Задняя сторона 2",
+                    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                ),
+                FlashcardModel(
+                    frontSide: "Передняя сторона 3",
+                    backSide: "Задняя сторона 3",
+                    comment: "In id aliquet magna, sed rutrum justo"
+                )
+            ]
             completion([
-                Deck(id: 5432134, name: "Колода 1", createdAt: Date.init(timeInterval: -1800, since: Date())),
-                Deck(id: 7624853, name: "Колода 2", createdAt: Date.init(timeInterval: -1200, since: Date())),
-                Deck(id: 3124786, name: "Колода 3", createdAt: Date.init(timeInterval: -600, since: Date()))
+                Deck(
+                    id: 5432134,
+                    name: "Колода 1",
+                    createdAt: .init(timeInterval: -1800, since: Date()),
+                    flashcards: flashcards
+                ),
+                Deck(
+                    id: 7624853,
+                    name: "Колода 2",
+                    createdAt: .init(timeInterval: -1200, since: Date()),
+                    flashcards: flashcards
+                ),
+                Deck(
+                    id: 3124786,
+                    name: "Колода 3",
+                    createdAt: .init(timeInterval: -600, since: Date()),
+                    flashcards: flashcards
+                )
             ])
         }
     }

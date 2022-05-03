@@ -11,4 +11,10 @@ struct Deck {
     let id: Int
     let name: String
     let createdAt: Date
+    let flashcards: [FlashcardModel]?
+}
+
+struct DeckModel {
+    let name: String
+    let flashcardsCountString: String?
 }

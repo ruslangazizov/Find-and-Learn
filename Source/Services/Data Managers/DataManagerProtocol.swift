@@ -15,6 +15,12 @@ protocol DataManagerProtocol: AnyObject {
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void)
     func fetchWordDetail(_ word: String, completion: @escaping (WordDetail) -> Void)
     func changeWordStatus(_ wordId: Int, isFavorite: Bool)
-    func fetchDecks(completion: @escaping ([Deck]) -> Void)
+    func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void)
     func saveNewFlashcard(_ newFlashcard: NewFlashcard)
+}
+
+extension DataManagerProtocol {
+    func fetchDecks(completion: @escaping ([Deck]) -> Void) {
+        return fetchDecks(includeFlashcards: false, completion: completion)
+    }
 }
