@@ -28,9 +28,17 @@ struct NewFlashcardModel {
 }
 
 struct NewFlashcard {
-    var frontSide: String
-    var backSide: String
-    var deckId: Int
-    var comment: String?
-    var createReversed: Bool
+    let frontSide: String
+    let backSide: String
+    let deckId: Int
+    let comment: String?
+    let createReversed: Bool
+}
+
+// TODO: есть идея везде заменить FlashcardModel на Flashcard, т.к. часто нужно будет знать id карточки
+struct Flashcard {
+    let id: Int
+    let frontSide: String
+    let backSide: String
+    let comment: String?
 }

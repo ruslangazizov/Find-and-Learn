@@ -11,6 +11,8 @@ protocol DecksViewOutput: AnyObject {
     func viewDidLoad()
     func didSelectRow(_ row: Int)
     func didEnter(_ searchString: String)
+    func didDeleteRow(_ row: Int)
+    func didCreateNewDeck(name: String)
 }
 
 final class DecksPresenter: DecksViewOutput {
@@ -53,5 +55,23 @@ final class DecksPresenter: DecksViewOutput {
         view?.showDecks(
             decksModels.filter { $0.name.lowercased().contains(searchString.lowercased()) }
         )
+    }
+    
+    func didDeleteRow(_ row: Int) {
+        let removedDeck = decks.remove(at: row)
+        decksModels.remove(at: row)
+        interactor.deleteDeck(deckId: removedDeck.id)
+    }
+    
+    func didCreateNewDeck(name: String) {
+        let newDeckModel = DeckModel(
+            name: name,
+            flashcardsCountString: interactor.formatFlashcardsCount(0)
+        )
+        decksModels.append(newDeckModel)
+        interactor.createDeck(name: name) { [weak self] newDeck in
+            self?.decks.append(newDeck)
+        }
+        view?.appendDeck(newDeckModel)
     }
 }

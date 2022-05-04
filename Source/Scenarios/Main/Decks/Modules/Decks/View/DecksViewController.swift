@@ -64,6 +64,12 @@ final class DecksViewController: UIViewController {
         navigationItem.title = R.string.localizable.decks_screen_title()
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(didTapAddDeckButton)
+        )
     }
     
     private func configureLayout() {
@@ -71,6 +77,21 @@ final class DecksViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.leading.top.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+    
+    // MARK: Actions
+    
+    @objc private func didTapAddDeckButton() {
+        let alert = UIAlertController(title: "Добавить колоду", message: nil, preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = "Введите название колоды"
+        }
+        alert.addAction(UIAlertAction(title: "Добавить", style: .default) { _ in
+            guard let newDeckName = alert.textFields?.first?.text else { return }
+            self.presenter.didCreateNewDeck(name: newDeckName)
+        })
+        alert.addAction(UIAlertAction(title: "Отменить", style: .cancel))
+        present(alert, animated: true)
     }
 }
 
@@ -80,6 +101,12 @@ extension DecksViewController: DecksViewInput {
     func showDecks(_ models: [DeckModel]) {
         decksModels = models
         tableView.reloadData()
+    }
+    
+    func appendDeck(_ model: DeckModel) {
+        decksModels.append(model)
+        let indexPath = IndexPath(row: decksModels.count - 1, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
     }
 }
 
@@ -98,6 +125,26 @@ extension DecksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         presenter.didSelectRow(indexPath.row)
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        editingStyleForRowAt indexPath: IndexPath
+    ) -> UITableViewCell.EditingStyle {
+        .delete
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
+    ) {
+        guard editingStyle == .delete else {
+            return
+        }
+        decksModels.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        presenter.didDeleteRow(indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -114,19 +114,22 @@ final class DataManagerMock: DataManagerProtocol {
     }
     
     func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void) {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
             let flashcards = !includeFlashcards ? nil : [
-                FlashcardModel(
+                Flashcard(
+                    id: 34875,
                     frontSide: "Передняя сторона 1",
                     backSide: "Задняя сторона 1",
                     comment: "Suspendisse ut neque at urna fermentum accumsan sit amet eget felis"
                 ),
-                FlashcardModel(
+                Flashcard(
+                    id: 835761,
                     frontSide: "Передняя сторона 2",
                     backSide: "Задняя сторона 2",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
                 ),
-                FlashcardModel(
+                Flashcard(
+                    id: 435738,
                     frontSide: "Передняя сторона 3",
                     backSide: "Задняя сторона 3",
                     comment: "In id aliquet magna, sed rutrum justo"
@@ -156,5 +159,14 @@ final class DataManagerMock: DataManagerProtocol {
     }
     
     func saveNewFlashcard(_ newFlashcard: NewFlashcard) {
+    }
+    
+    func deleteDeck(deckId: Int) {
+    }
+    
+    func createDeck(name: String, completion: @escaping (Deck) -> Void) {
+        DispatchQueue.global().async {
+            completion(Deck(id: UUID().hashValue, name: name, createdAt: Date(), flashcards: []))
+        }
     }
 }

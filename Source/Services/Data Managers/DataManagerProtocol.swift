@@ -17,6 +17,8 @@ protocol DataManagerProtocol: AnyObject {
     func changeWordStatus(_ wordId: Int, isFavorite: Bool)
     func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void)
     func saveNewFlashcard(_ newFlashcard: NewFlashcard)
+    func deleteDeck(deckId: Int)
+    func createDeck(name: String, completion: @escaping (Deck) -> Void)
 }
 
 extension DataManagerProtocol {
