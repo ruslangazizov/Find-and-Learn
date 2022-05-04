@@ -28,7 +28,7 @@ final class CommonButton: UIButton {
     
     private func initialize(text: String?, layerColor: CGColor?) {
         setTitle(text, for: .normal)
-        setTitleColor(.black, for: .normal)
+        setTextColor(.black)
         guard let layerColor = layerColor else { return }
         layer.cornerRadius = .cornerRounding
         layer.borderWidth = .borderWidth
