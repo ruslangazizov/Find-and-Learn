@@ -82,15 +82,25 @@ final class DecksViewController: UIViewController {
     // MARK: Actions
     
     @objc private func didTapAddDeckButton() {
-        let alert = UIAlertController(title: "Добавить колоду", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: R.string.localizable.decks_screen_add_deck_title(),
+            message: nil,
+            preferredStyle: .alert
+        )
         alert.addTextField { textField in
-            textField.placeholder = "Введите название колоды"
+            textField.placeholder = R.string.localizable.decks_screen_add_deck_text_placeholder()
         }
-        alert.addAction(UIAlertAction(title: "Добавить", style: .default) { _ in
+        alert.addAction(UIAlertAction(
+            title: R.string.localizable.decks_screen_add_action_title(),
+            style: .default
+        ) { _ in
             guard let newDeckName = alert.textFields?.first?.text else { return }
             self.presenter.didCreateNewDeck(name: newDeckName)
         })
-        alert.addAction(UIAlertAction(title: "Отменить", style: .cancel))
+        alert.addAction(UIAlertAction(
+            title: R.string.localizable.decks_screen_cancel_action_title(),
+            style: .cancel
+        ))
         present(alert, animated: true)
     }
 }

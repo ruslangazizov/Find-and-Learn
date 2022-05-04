@@ -117,9 +117,19 @@
 "new_flashcard_screen_no_deck_chosen_title" = "Не выбрана колода";
 "new_flashcard_screen_no_deck_chosen_message" = "Выберите колоду, в которой вы бы хотели изучать эту карточку";
 
-// Экран "Новая карточка"
+// Экран "Колоды"
 "decks_screen_title" = "Колоды";
 "decks_screen_search_bar_placeholder" = "Введите название колоды";
+
+// Уведомления для экрана "Колоды"
+"decks_screen_add_deck_title" = "Добавить колоду";
+"decks_screen_add_deck_text_placeholder" = "Введите название колоды";
+"decks_screen_add_action_title" = "Добавить";
+"decks_screen_cancel_action_title" = "Отменить";
+
+// Экран "Детальная информация по колоде"
+"deck_detail_screen_search_bar_placeholder" = "Введите лицевую или обратную сторону";
+"deck_detail_screen_study_button_title" = "Изучать";
 
 // Достижения
 "achievement_iterator_name" = "Итератор";
