@@ -48,7 +48,13 @@ final class DropdownButton: UIButton {
             }
         }
     }
-    var selectedRow: Int?
+    var selectedRow: Int? {
+        didSet {
+            guard let selectedRow = selectedRow else { return }
+            let choice = dataSource?[selectedRow]
+            setTitle(choice, for: .normal)
+        }
+    }
     
     // MARK: Initializers
     
@@ -109,11 +115,7 @@ extension DropdownButton: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let dataSource = dataSource else { return }
-        
         selectedRow = indexPath.row
-        let choice = dataSource[indexPath.row]
-        setTitle(choice, for: .normal)
         delegate?.removeTableView(tableView)
         tableView.deselectRow(at: indexPath, animated: true)
     }

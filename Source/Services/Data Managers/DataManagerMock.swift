@@ -114,7 +114,7 @@ final class DataManagerMock: DataManagerProtocol {
     }
     
     func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void) {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.global().async {
             let flashcards = !includeFlashcards ? nil : [
                 Flashcard(
                     id: 34875,
@@ -168,5 +168,17 @@ final class DataManagerMock: DataManagerProtocol {
         DispatchQueue.global().async {
             completion(Deck(id: UUID().hashValue, name: name, createdAt: Date(), flashcards: []))
         }
+    }
+    
+    func deleteFlashcard(flashcardId: Int) {
+    }
+    
+    func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void) {
+        fetchDecks(includeFlashcards: true) { decks in
+            completion(decks.first { $0.id == deckId }?.flashcards)
+        }
+    }
+    
+    func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int) {
     }
 }

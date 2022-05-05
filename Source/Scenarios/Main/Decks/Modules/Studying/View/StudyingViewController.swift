@@ -38,7 +38,7 @@ final class StudyingViewController: UIViewController {
     
     // MARK: Properties
     
-    var cards: [FlashcardModel] = []
+    var cards: [Flashcard] = []
     
     private var cardsViews: [FlashCardView] = []
     
@@ -56,8 +56,9 @@ final class StudyingViewController: UIViewController {
     
     // MARK: Init
     
-    init(presenter: StudyingViewOutput) {
+    init(presenter: StudyingViewOutput, cards: [Flashcard]) {
         self.presenter = presenter
+        self.cards = cards
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -82,6 +83,11 @@ final class StudyingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupCenterPoint()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: Private
@@ -238,7 +244,7 @@ extension StudyingViewController: StudyingViewInput {
         finishView.userHasMistakes = true
     }
     
-    func continueLearning(cards: [FlashcardModel]) {
+    func continueLearning(cards: [Flashcard]) {
         self.cards = cards
         start()
     }

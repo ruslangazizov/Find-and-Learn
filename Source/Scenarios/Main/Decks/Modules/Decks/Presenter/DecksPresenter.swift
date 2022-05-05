@@ -9,6 +9,7 @@ import Foundation
 
 protocol DecksViewOutput: AnyObject {
     func viewDidLoad()
+    func viewDidAppear()
     func didSelectRow(_ row: Int)
     func didEnter(_ searchString: String)
     func didDeleteRow(_ row: Int)
@@ -28,18 +29,30 @@ final class DecksPresenter: DecksViewOutput {
         self.router = router
     }
     
+    private func updateDecks(with decks: [Deck]) {
+        self.decks = decks
+        let decksModels: [DeckModel] = decks.map {
+            var flashcardsCountString: String?
+            if let flashcardsCount = $0.flashcards?.count {
+                flashcardsCountString = interactor.formatFlashcardsCount(flashcardsCount)
+            }
+            return DeckModel(name: $0.name, flashcardsCountString: flashcardsCountString)
+        }
+        self.decksModels = decksModels
+        view?.showDecks(decksModels)
+    }
+    
     func viewDidLoad() {
         interactor.fetchDecks { [weak self] decks in
-            self?.decks = decks
-            let decksModels: [DeckModel] = decks.map {
-                var flashcardsCountString: String?
-                if let flashcardsCount = $0.flashcards?.count {
-                    flashcardsCountString = self?.interactor.formatFlashcardsCount(flashcardsCount)
-                }
-                return DeckModel(name: $0.name, flashcardsCountString: flashcardsCountString)
+            self?.updateDecks(with: decks)
+        }
+    }
+    
+    func viewDidAppear() {
+        interactor.fetchDecks { [weak self] decks in
+            if self?.decks != decks {
+                self?.updateDecks(with: decks)
             }
-            self?.decksModels = decksModels
-            self?.view?.showDecks(decksModels)
         }
     }
     
@@ -52,8 +65,9 @@ final class DecksPresenter: DecksViewOutput {
             view?.showDecks(decksModels)
             return
         }
+        let searchString = searchString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         view?.showDecks(
-            decksModels.filter { $0.name.lowercased().contains(searchString.lowercased()) }
+            decksModels.filter { $0.name.lowercased().contains(searchString) }
         )
     }
     

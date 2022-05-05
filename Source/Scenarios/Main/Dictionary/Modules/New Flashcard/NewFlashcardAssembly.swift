@@ -8,15 +8,13 @@
 import Foundation
 import UIKit
 
-final class NewFlashcardAssembly: TransitionAssemblyProtocol {
-    typealias DataModel = FlashcardModel?
-    
-    static func assemble(with model: FlashcardModel?) -> UIViewController {
-        let newFlashcardModel = NewFlashcardModel(model)
+enum NewFlashcardAssembly {
+    static func assemble(with newFlashcardModel: NewFlashcardModel?, deckId: Int? = nil) -> UIViewController {
+        let newFlashcardModel = newFlashcardModel ?? NewFlashcardModel()
         
         let router = NewFlashcardRouter()
         let interactor = NewFlashcardInteractor(dataManager: DataManagerMock())
-        let presenter = NewFlashcardPresenter(interactor: interactor, router: router)
+        let presenter = NewFlashcardPresenter(interactor: interactor, router: router, selectedDeckId: deckId)
         let view = NewFlashcardViewController(presenter: presenter, newFlashcardModel: newFlashcardModel)
         
         router.view = view

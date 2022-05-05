@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Deck {
+struct Deck: Equatable {
     let id: Int
     let name: String
     let createdAt: Date
-    let flashcards: [Flashcard]?
+    var flashcards: [Flashcard]?
 }
 
 struct DeckModel {

@@ -15,6 +15,7 @@ final class DecksRouter: DecksRouterProtocol {
     weak var view: UIViewController?
     
     func showDeckDetail(_ deck: Deck) {
-        // TODO: перейти на экран с отображением карточек к колоде deck
+        let viewController = DeckDetailAssembly.assemble(with: deck)
+        view?.navigationController?.pushViewController(viewController, animated: true)
     }
 }

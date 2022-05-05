@@ -1,5 +1,5 @@
 //
-//  DecksViewController.swift
+//  DeckDetailViewController.swift
 //  Find-and-Learn
 //
 //  Created by Руслан on 03.05.2022.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class DecksViewController: UIViewController {
+final class DeckDetailViewController: UIViewController {
     // MARK: UI
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController()
-        searchController.searchBar.placeholder = R.string.localizable.decks_screen_search_bar_placeholder()
+        searchController.searchBar.placeholder = R.string.localizable.deck_detail_screen_search_bar_placeholder()
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
@@ -22,7 +22,7 @@ final class DecksViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(DecksTableViewCell.self)
+        tableView.register(DeckDetailTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
@@ -30,15 +30,29 @@ final class DecksViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var studyButton: UIButton = {
+        let button = UIButton()
+        button.setTitle(R.string.localizable.deck_detail_screen_study_button_title(), for: .normal)
+        button.titleLabel?.font = .studyButtonFont
+        button.setTextColor(R.color.buttonsTextColor())
+        button.backgroundColor = R.color.buttonsBackgroundColor()
+        button.layer.cornerRadius = .defaultCornerRadius
+        button.addTarget(self, action: #selector(didTapStudyButton), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: Dependencies & properties
     
-    private let presenter: DecksViewOutput
-    private var decksModels: [DeckModel] = []
+    private let presenter: DeckDetailViewOutput
+    private var flashcards: [Flashcard]
+    private let deckName: String
     
     // MARK: Init
     
-    init(presenter: DecksViewOutput) {
+    init(presenter: DeckDetailViewOutput, flashcards: [Flashcard]?, deckName: String) {
         self.presenter = presenter
+        self.flashcards = flashcards ?? []
+        self.deckName = deckName
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -54,90 +68,65 @@ final class DecksViewController: UIViewController {
         view.backgroundColor = R.color.defaultBackgroundColor()
         configureNavigationBar()
         configureLayout()
-        
-        presenter.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.viewDidAppear()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tabBarController?.tabBar.isHidden = true
+        presenter.viewDidAppear(with: flashcards)
     }
     
     // MARK: UI configuration
     
     private func configureNavigationBar() {
-        navigationItem.title = R.string.localizable.decks_screen_title()
+        navigationItem.title = deckName
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(didTapAddDeckButton)
+            action: #selector(didTapAddFlashcardButton)
         )
     }
     
     private func configureLayout() {
+        view.addSubview(studyButton)
+        studyButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().dividedBy(Constants.studyButtonWidthDivider)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(CGFloat.defaultInset)
+        }
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.leading.top.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.leading.top.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(studyButton.snp.top).inset(-CGFloat.defaultInset)
         }
     }
     
     // MARK: Actions
     
-    @objc private func didTapAddDeckButton() {
-        let alert = UIAlertController(
-            title: R.string.localizable.decks_screen_add_deck_title(),
-            message: nil,
-            preferredStyle: .alert
-        )
-        alert.addTextField { textField in
-            textField.placeholder = R.string.localizable.decks_screen_add_deck_text_placeholder()
-        }
-        alert.addAction(UIAlertAction(
-            title: R.string.localizable.decks_screen_add_action_title(),
-            style: .default
-        ) { _ in
-            guard let newDeckName = alert.textFields?.first?.text else { return }
-            self.presenter.didCreateNewDeck(name: newDeckName)
-        })
-        alert.addAction(UIAlertAction(
-            title: R.string.localizable.decks_screen_cancel_action_title(),
-            style: .cancel
-        ))
-        present(alert, animated: true)
+    @objc private func didTapStudyButton() {
+        presenter.didTapStudyButton()
+    }
+    
+    @objc private func didTapAddFlashcardButton() {
+        presenter.didTapAddFlashcardButton()
     }
 }
 
-// MARK: - DecksViewInput
+// MARK: - DeckDetailViewInput
 
-extension DecksViewController: DecksViewInput {
-    func showDecks(_ models: [DeckModel]) {
-        decksModels = models
+extension DeckDetailViewController: DeckDetailViewInput {
+    func showFlashcards(_ models: [Flashcard]) {
+        flashcards = models
         tableView.reloadData()
-    }
-    
-    func appendDeck(_ model: DeckModel) {
-        decksModels.append(model)
-        let indexPath = IndexPath(row: decksModels.count - 1, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
     }
 }
 
 // MARK: - UISearchResultsUpdating
 
-extension DecksViewController: UISearchResultsUpdating {
+extension DeckDetailViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
         presenter.didEnter(searchText)
@@ -146,7 +135,7 @@ extension DecksViewController: UISearchResultsUpdating {
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
 
-extension DecksViewController: UITableViewDelegate, UITableViewDataSource {
+extension DeckDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         presenter.didSelectRow(indexPath.row)
@@ -165,18 +154,28 @@ extension DecksViewController: UITableViewDelegate, UITableViewDataSource {
         forRowAt indexPath: IndexPath
     ) {
         guard editingStyle == .delete else { return }
-        decksModels.remove(at: indexPath.row)
+        flashcards.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
         presenter.didDeleteRow(indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return decksModels.count
+        return flashcards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(DecksTableViewCell.self, for: indexPath)
-        cell.configure(with: decksModels[indexPath.row])
+        let cell = tableView.dequeue(DeckDetailTableViewCell.self, for: indexPath)
+        cell.configure(with: flashcards[indexPath.row])
         return cell
     }
+}
+
+// MARK: - Constants
+
+private enum Constants {
+    static let studyButtonWidthDivider = 2
+}
+
+private extension UIFont {
+    static let studyButtonFont: UIFont = .preferredFont(forTextStyle: .headline)
 }

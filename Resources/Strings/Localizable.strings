@@ -107,6 +107,10 @@
 "new_flashcard_screen_comment_label_text" = "Дополнительная информация:";
 "new_flashcard_screen_create_reversed_flashcard_label_text" = "Создать обратную карточку";
 
+// Экран "Изменение карточки"
+"edit_flashcard_screen_title" = "Изменение карточки";
+"edit_flashcard_screen_deck_choice_label_text" = "Колода:";
+
 // Уведомления для экрана "Новая карточка"
 "new_flashcard_screen_comment_info_title" = "Дополнительная информация";
 "new_flashcard_screen_comment_info_message" = "В этом поле вы можете указать дополнительную информацию, возможность посмотреть которую будет при изучении карточки.\nВы можете использовать его для лучшего запоминания слова, приведя примеры употребления или просто сделав заметку для себя :)";

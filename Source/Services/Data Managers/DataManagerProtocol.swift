@@ -19,6 +19,9 @@ protocol DataManagerProtocol: AnyObject {
     func saveNewFlashcard(_ newFlashcard: NewFlashcard)
     func deleteDeck(deckId: Int)
     func createDeck(name: String, completion: @escaping (Deck) -> Void)
+    func deleteFlashcard(flashcardId: Int)
+    func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void)
+    func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int)
 }
 
 extension DataManagerProtocol {

@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct FlashcardModel {
-	let frontSide: String
-	let backSide: String
-	let comment: String?
-}
-
 struct NewFlashcardModel {
     var frontSide: String?
     var backSide: String?
@@ -20,10 +14,26 @@ struct NewFlashcardModel {
     var comment: String?
     var createReversed = false
     
-    init(_ flashcardModel: FlashcardModel?) {
-        frontSide = flashcardModel?.frontSide
-        backSide = flashcardModel?.backSide
-        comment = flashcardModel?.comment
+    init() { }
+    
+    init(
+        frontSide: String?,
+        backSide: String?,
+        deckIndex: Int?,
+        comment: String?,
+        createReversed: Bool = false
+    ) {
+        self.frontSide = frontSide
+        self.backSide = backSide
+        self.deckIndex = deckIndex
+        self.comment = comment
+        self.createReversed = createReversed
+    }
+    
+    init(_ flashcard: Flashcard) {
+        frontSide = flashcard.frontSide
+        backSide = flashcard.backSide
+        comment = flashcard.comment
     }
 }
 
@@ -35,8 +45,7 @@ struct NewFlashcard {
     let createReversed: Bool
 }
 
-// TODO: есть идея везде заменить FlashcardModel на Flashcard, т.к. часто нужно будет знать id карточки
-struct Flashcard {
+struct Flashcard: Equatable {
     let id: Int
     let frontSide: String
     let backSide: String

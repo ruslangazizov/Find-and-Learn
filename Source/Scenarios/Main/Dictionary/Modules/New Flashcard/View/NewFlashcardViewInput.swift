@@ -11,4 +11,5 @@ protocol NewFlashcardViewInput: AnyObject {
     func setDecks(_ decks: [String])
     func showEmptyFrontOrBackSideAlert()
     func showNoDeckChosenAlert()
+    func setCurrentDeck(index: Int)
 }
