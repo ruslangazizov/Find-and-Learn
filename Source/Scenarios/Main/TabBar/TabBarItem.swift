@@ -76,7 +76,7 @@ extension TabBarItem {
         case .dictionary:
             return DictionaryAssembly.assemble()
         case .decks:
-            return UIViewController()
+            return DecksAssembly.assemble()
         case .account:
             return AccountAssembly.assemble()
         }

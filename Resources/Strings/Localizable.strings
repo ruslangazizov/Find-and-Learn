@@ -107,6 +107,10 @@
 "new_flashcard_screen_comment_label_text" = "Дополнительная информация:";
 "new_flashcard_screen_create_reversed_flashcard_label_text" = "Создать обратную карточку";
 
+// Экран "Изменение карточки"
+"edit_flashcard_screen_title" = "Изменение карточки";
+"edit_flashcard_screen_deck_choice_label_text" = "Колода:";
+
 // Уведомления для экрана "Новая карточка"
 "new_flashcard_screen_comment_info_title" = "Дополнительная информация";
 "new_flashcard_screen_comment_info_message" = "В этом поле вы можете указать дополнительную информацию, возможность посмотреть которую будет при изучении карточки.\nВы можете использовать его для лучшего запоминания слова, приведя примеры употребления или просто сделав заметку для себя :)";
@@ -116,6 +120,22 @@
 "new_flashcard_screen_empty_front_or_back_side_message" = "Введите хотя бы одно слово для каждой стороны карточки";
 "new_flashcard_screen_no_deck_chosen_title" = "Не выбрана колода";
 "new_flashcard_screen_no_deck_chosen_message" = "Выберите колоду, в которой вы бы хотели изучать эту карточку";
+
+// Экран "Колоды"
+"decks_screen_title" = "Колоды";
+"decks_screen_search_bar_placeholder" = "Введите название колоды";
+"decks_screen_remove_deck_row_title" = "Удалить";
+
+// Уведомления для экрана "Колоды"
+"decks_screen_add_deck_title" = "Добавить колоду";
+"decks_screen_add_deck_text_placeholder" = "Введите название колоды";
+"decks_screen_add_action_title" = "Добавить";
+"decks_screen_cancel_action_title" = "Отменить";
+
+// Экран "Детальная информация по колоде"
+"deck_detail_screen_search_bar_placeholder" = "Введите лицевую или обратную сторону";
+"deck_detail_screen_study_button_title" = "Изучать";
+"deck_detail_screen_remove_flashcard_row_title" = "Удалить";
 
 // Достижения
 "achievement_iterator_name" = "Итератор";

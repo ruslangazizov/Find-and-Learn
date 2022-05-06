@@ -16,6 +16,26 @@
 		442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */; };
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
+		44435E7528212D1000737D69 /* DecksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E7428212D1000737D69 /* DecksAssembly.swift */; };
+		44435E7E28212E4400737D69 /* DecksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E7D28212E4400737D69 /* DecksRouter.swift */; };
+		44435E8028212F3900737D69 /* DecksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E7F28212F3900737D69 /* DecksInteractor.swift */; };
+		44435E822821307700737D69 /* DecksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E812821307700737D69 /* DecksPresenter.swift */; };
+		44435E842821313E00737D69 /* DecksViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E832821313E00737D69 /* DecksViewInput.swift */; };
+		44435E862821317E00737D69 /* DecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E852821317E00737D69 /* DecksViewController.swift */; };
+		44435E88282155E500737D69 /* DecksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E87282155E500737D69 /* DecksTableViewCell.swift */; };
+		44435E8B2821817C00737D69 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E8A2821817C00737D69 /* StringFormatter.swift */; };
+		44435E9128218E8C00737D69 /* DeckDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E9028218E8C00737D69 /* DeckDetailAssembly.swift */; };
+		44435E9328218E9B00737D69 /* DeckDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E9228218E9B00737D69 /* DeckDetailRouter.swift */; };
+		44435E9528218EA500737D69 /* DeckDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E9428218EA500737D69 /* DeckDetailInteractor.swift */; };
+		44435E9728218EAC00737D69 /* DeckDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E9628218EAC00737D69 /* DeckDetailPresenter.swift */; };
+		44435E9928218EC300737D69 /* DeckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E9828218EC300737D69 /* DeckDetailViewController.swift */; };
+		44435E9B28218ECA00737D69 /* DeckDetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E9A28218ECA00737D69 /* DeckDetailViewInput.swift */; };
+		44435E9D282255B200737D69 /* DeckDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E9C282255B200737D69 /* DeckDetailTableViewCell.swift */; };
+		44435EA02824286700737D69 /* EditFlashcardAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E9F2824286700737D69 /* EditFlashcardAssembly.swift */; };
+		44435EA6282428D100737D69 /* EditFlashcardViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435EA5282428D100737D69 /* EditFlashcardViewInput.swift */; };
+		44435EA82824291400737D69 /* EditFlashcardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435EA72824291400737D69 /* EditFlashcardPresenter.swift */; };
+		44435EAA28242A9600737D69 /* EditFlashcardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435EA928242A9600737D69 /* EditFlashcardInteractor.swift */; };
+		44435EAC28242AC100737D69 /* EditFlashcardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435EAB28242AC100737D69 /* EditFlashcardRouter.swift */; };
 		4443AB5F281D89B700112B35 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443AB5E281D89B700112B35 /* Deck.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
 		44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */; };
@@ -162,6 +182,26 @@
 		442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMock.swift; sourceTree = "<group>"; };
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		44435E7428212D1000737D69 /* DecksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksAssembly.swift; sourceTree = "<group>"; };
+		44435E7D28212E4400737D69 /* DecksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksRouter.swift; sourceTree = "<group>"; };
+		44435E7F28212F3900737D69 /* DecksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksInteractor.swift; sourceTree = "<group>"; };
+		44435E812821307700737D69 /* DecksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksPresenter.swift; sourceTree = "<group>"; };
+		44435E832821313E00737D69 /* DecksViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksViewInput.swift; sourceTree = "<group>"; };
+		44435E852821317E00737D69 /* DecksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksViewController.swift; sourceTree = "<group>"; };
+		44435E87282155E500737D69 /* DecksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksTableViewCell.swift; sourceTree = "<group>"; };
+		44435E8A2821817C00737D69 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		44435E9028218E8C00737D69 /* DeckDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailAssembly.swift; sourceTree = "<group>"; };
+		44435E9228218E9B00737D69 /* DeckDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailRouter.swift; sourceTree = "<group>"; };
+		44435E9428218EA500737D69 /* DeckDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailInteractor.swift; sourceTree = "<group>"; };
+		44435E9628218EAC00737D69 /* DeckDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailPresenter.swift; sourceTree = "<group>"; };
+		44435E9828218EC300737D69 /* DeckDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewController.swift; sourceTree = "<group>"; };
+		44435E9A28218ECA00737D69 /* DeckDetailViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailViewInput.swift; sourceTree = "<group>"; };
+		44435E9C282255B200737D69 /* DeckDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCell.swift; sourceTree = "<group>"; };
+		44435E9F2824286700737D69 /* EditFlashcardAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardAssembly.swift; sourceTree = "<group>"; };
+		44435EA5282428D100737D69 /* EditFlashcardViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardViewInput.swift; sourceTree = "<group>"; };
+		44435EA72824291400737D69 /* EditFlashcardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardPresenter.swift; sourceTree = "<group>"; };
+		44435EA928242A9600737D69 /* EditFlashcardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardInteractor.swift; sourceTree = "<group>"; };
+		44435EAB28242AC100737D69 /* EditFlashcardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardRouter.swift; sourceTree = "<group>"; };
 		4443AB5E281D89B700112B35 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
 		44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
@@ -334,6 +374,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				44435E892821812F00737D69 /* String Formatter */,
 				D227868F281F1653003C3D8A /* Appearance Manager */,
 				D2854ED8281D31E7006188D2 /* Achievements Manager */,
 				D2FD925328148AF000D93BC4 /* Studying Manager */,
@@ -373,6 +414,150 @@
 				44DD6AB628203D72001FE38F /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		44435E7628212D7800737D69 /* Decks */ = {
+			isa = PBXGroup;
+			children = (
+				44435E7428212D1000737D69 /* DecksAssembly.swift */,
+				44435E7B28212E2B00737D69 /* Router */,
+				44435E7A28212E2400737D69 /* Interactor */,
+				44435E7928212E1D00737D69 /* Presenter */,
+				44435E7828212E1800737D69 /* View */,
+			);
+			path = Decks;
+			sourceTree = "<group>";
+		};
+		44435E7728212D7C00737D69 /* Deck Detail */ = {
+			isa = PBXGroup;
+			children = (
+				44435E9028218E8C00737D69 /* DeckDetailAssembly.swift */,
+				44435E8F28218E6B00737D69 /* Router */,
+				44435E8E28218E6400737D69 /* Interactor */,
+				44435E8D28218E5B00737D69 /* Presenter */,
+				44435E8C28218E5500737D69 /* View */,
+			);
+			path = "Deck Detail";
+			sourceTree = "<group>";
+		};
+		44435E7828212E1800737D69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44435E832821313E00737D69 /* DecksViewInput.swift */,
+				44435E852821317E00737D69 /* DecksViewController.swift */,
+				44435E87282155E500737D69 /* DecksTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44435E7928212E1D00737D69 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				44435E812821307700737D69 /* DecksPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44435E7A28212E2400737D69 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				44435E7F28212F3900737D69 /* DecksInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		44435E7B28212E2B00737D69 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44435E7D28212E4400737D69 /* DecksRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		44435E892821812F00737D69 /* String Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				44435E8A2821817C00737D69 /* StringFormatter.swift */,
+			);
+			path = "String Formatter";
+			sourceTree = "<group>";
+		};
+		44435E8C28218E5500737D69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44435E9A28218ECA00737D69 /* DeckDetailViewInput.swift */,
+				44435E9828218EC300737D69 /* DeckDetailViewController.swift */,
+				44435E9C282255B200737D69 /* DeckDetailTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44435E8D28218E5B00737D69 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				44435E9628218EAC00737D69 /* DeckDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44435E8E28218E6400737D69 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				44435E9428218EA500737D69 /* DeckDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		44435E8F28218E6B00737D69 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44435E9228218E9B00737D69 /* DeckDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		44435E9E2824283700737D69 /* Edit Flashcard */ = {
+			isa = PBXGroup;
+			children = (
+				44435E9F2824286700737D69 /* EditFlashcardAssembly.swift */,
+				44435EA4282428BB00737D69 /* Router */,
+				44435EA3282428B600737D69 /* Interactor */,
+				44435EA2282428B100737D69 /* Presenter */,
+				44435EA1282428A500737D69 /* View */,
+			);
+			path = "Edit Flashcard";
+			sourceTree = "<group>";
+		};
+		44435EA1282428A500737D69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44435EA5282428D100737D69 /* EditFlashcardViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44435EA2282428B100737D69 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				44435EA72824291400737D69 /* EditFlashcardPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44435EA3282428B600737D69 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				44435EA928242A9600737D69 /* EditFlashcardInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		44435EA4282428BB00737D69 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				44435EAB28242AC100737D69 /* EditFlashcardRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		44499F4027F5A7E80022CF95 /* Protocols */ = {
@@ -1085,6 +1270,9 @@
 		D2FD92372813FC8700D93BC4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				44435E7628212D7800737D69 /* Decks */,
+				44435E7728212D7C00737D69 /* Deck Detail */,
+				44435E9E2824283700737D69 /* Edit Flashcard */,
 				D2FD92382813FC9400D93BC4 /* Studying */,
 			);
 			path = Modules;
@@ -1306,11 +1494,15 @@
 				D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */,
 				447F987528166803000E153D /* WordDetailViewController.swift in Sources */,
 				D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */,
+				44435E7E28212E4400737D69 /* DecksRouter.swift in Sources */,
 				D2D1168D27DE80F40026692E /* CommonButton.swift in Sources */,
+				44435E7528212D1000737D69 /* DecksAssembly.swift in Sources */,
 				444B2813281D349E0037CDA8 /* NewFlashcardView.swift in Sources */,
 				44CA542B281BE5EA00B6DDE8 /* NewFlashcardPresenter.swift in Sources */,
 				D2DFEE54281C69CC006F452E /* AchievementsInteractor.swift in Sources */,
+				44435E9728218EAC00737D69 /* DeckDetailPresenter.swift in Sources */,
 				D2D1168A27DE78CE0026692E /* CommonTextField.swift in Sources */,
+				44435E9328218E9B00737D69 /* DeckDetailRouter.swift in Sources */,
 				44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */,
 				D26EFF0C28009F480019F1EC /* UITextField+Extensions.swift in Sources */,
 				D25FCD5127F8536B0007E65D /* AccountViewController.swift in Sources */,
@@ -1319,6 +1511,7 @@
 				D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */,
 				D2FD925228146EB100D93BC4 /* FinishStudyingView.swift in Sources */,
 				D2FD923D2813FD0900D93BC4 /* StudyingViewController.swift in Sources */,
+				44435E822821307700737D69 /* DecksPresenter.swift in Sources */,
 				D20F32FE280DB07F0003D9DD /* ChangePasswordPresenter.swift in Sources */,
 				44CA5427281BE5D800B6DDE8 /* NewFlashcardRouter.swift in Sources */,
 				D217569827EB25F100C3D545 /* PasswordRecoveryViewOutput.swift in Sources */,
@@ -1335,6 +1528,7 @@
 				44DC5FE627FF090E005EACAE /* FavoriteWordsAssembly.swift in Sources */,
 				4459D86A2816E645002D2EAF /* WordDetailTableViewCell.swift in Sources */,
 				D26EFF0A280088780019F1EC /* SettingsManager.swift in Sources */,
+				44435EAC28242AC100737D69 /* EditFlashcardRouter.swift in Sources */,
 				44F379E827FC43C0001F02F4 /* HistoryWordsInteractor.swift in Sources */,
 				D20F32F9280DB0270003D9DD /* ChangePasswordViewInput.swift in Sources */,
 				D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */,
@@ -1346,14 +1540,18 @@
 				D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */,
 				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
 				4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */,
+				44435E88282155E500737D69 /* DecksTableViewCell.swift in Sources */,
 				44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */,
 				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
 				44CA5440281C4B2C00B6DDE8 /* DropdownButton.swift in Sources */,
 				D28814C127FD825F007332A8 /* RegistrationErrors.swift in Sources */,
 				D2854EDC281D35FC006188D2 /* CGFloat+Extensions.swift in Sources */,
+				44435E9B28218ECA00737D69 /* DeckDetailViewInput.swift in Sources */,
 				D2854EDA281D320D006188D2 /* AchievementsManager.swift in Sources */,
+				44435EA02824286700737D69 /* EditFlashcardAssembly.swift in Sources */,
 				D217569327EB257F00C3D545 /* PasswordRecoveryPresenter.swift in Sources */,
 				D26EFF05280085950019F1EC /* AccountInteractor.swift in Sources */,
+				44435E9528218EA500737D69 /* DeckDetailInteractor.swift in Sources */,
 				D25FCD5B27F858C10007E65D /* CircularView.swift in Sources */,
 				D26EFF0F2800A3430019F1EC /* AccountRouterProtocol.swift in Sources */,
 				44DC5FF827FF0E0B005EACAE /* FavoriteWordsPresenter.swift in Sources */,
@@ -1374,12 +1572,15 @@
 				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
 				D25FCD6227F8666C0007E65D /* Setting.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
+				44435E842821313E00737D69 /* DecksViewInput.swift in Sources */,
 				4411E53A28198C76001ABB53 /* TranslationExampleLabel.swift in Sources */,
 				447F986D281666DB000E153D /* WordDetailRouter.swift in Sources */,
 				D20F3307280DD5380003D9DD /* ChangePasswordAssembly.swift in Sources */,
+				44435E9928218EC300737D69 /* DeckDetailViewController.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,
 				D2FD925728148BD600D93BC4 /* CardAction.swift in Sources */,
 				D2DFEE4F281C64B3006F452E /* Achievement.swift in Sources */,
+				44435EA82824291400737D69 /* EditFlashcardPresenter.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				4443AB5F281D89B700112B35 /* Deck.swift in Sources */,
@@ -1390,6 +1591,7 @@
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
 				D2FD92502814632300D93BC4 /* StudyingInteractor.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
+				44435EA6282428D100737D69 /* EditFlashcardViewInput.swift in Sources */,
 				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
 				44BCCAB927F8C16E00C1189B /* RouterProtocol.swift in Sources */,
 				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
@@ -1416,18 +1618,24 @@
 				D2FD92402813FD4F00D93BC4 /* StudyingPresenter.swift in Sources */,
 				D20F3305280DD1170003D9DD /* ChangePasswordError.swift in Sources */,
 				447F9873281667EC000E153D /* WordDetailViewInput.swift in Sources */,
+				44435E9D282255B200737D69 /* DeckDetailTableViewCell.swift in Sources */,
 				44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */,
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
+				44435E9128218E8C00737D69 /* DeckDetailAssembly.swift in Sources */,
 				D21E9DB127FA08B8005513B7 /* ErrorLabel.swift in Sources */,
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
 				44CA5429281BE5E200B6DDE8 /* NewFlashcardInteractor.swift in Sources */,
 				D20F3303280DCF4B0003D9DD /* ChangePasswordResultState.swift in Sources */,
+				44435EAA28242A9600737D69 /* EditFlashcardInteractor.swift in Sources */,
 				D2DFEE4D281C6431006F452E /* AchievementsAssembly.swift in Sources */,
 				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
 				D2FD923B2813FCE400D93BC4 /* StudyingViewInput.swift in Sources */,
+				44435E862821317E00737D69 /* DecksViewController.swift in Sources */,
+				44435E8028212F3900737D69 /* DecksInteractor.swift in Sources */,
+				44435E8B2821817C00737D69 /* StringFormatter.swift in Sources */,
 				44DC5FFC27FF260D005EACAE /* FavoriteWordsTableViewCell.swift in Sources */,
 				D2037FB727FCAA9D0036E0A5 /* RegistrationAssembly.swift in Sources */,
 				44D5811827E7D74500DBCC4E /* User.swift in Sources */,

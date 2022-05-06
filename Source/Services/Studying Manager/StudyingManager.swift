@@ -8,19 +8,19 @@
 import Foundation
 
 protocol StudyingManagerProtocol: AnyObject {
-    func logFlashCard(card: FlashcardModel) -> Bool
+    func logFlashCard(card: Flashcard) -> Bool
     func restart()
-    func getLearnMoreCards() -> [FlashcardModel]
+    func getLearnMoreCards() -> [Flashcard]
 }
 
 final class StudyingManager: StudyingManagerProtocol {
     // MARK: Properties
     
-    private var learnMoreCards: [FlashcardModel] = []
+    private var learnMoreCards: [Flashcard] = []
     
     // MARK: StudyingManagerProtocol
     
-    func logFlashCard(card: FlashcardModel) -> Bool {
+    func logFlashCard(card: Flashcard) -> Bool {
         learnMoreCards.append(card)
         return learnMoreCards.count == 1
     }
@@ -29,7 +29,7 @@ final class StudyingManager: StudyingManagerProtocol {
         learnMoreCards = []
     }
     
-    func getLearnMoreCards() -> [FlashcardModel] {
+    func getLearnMoreCards() -> [Flashcard] {
         return learnMoreCards
     }
 }

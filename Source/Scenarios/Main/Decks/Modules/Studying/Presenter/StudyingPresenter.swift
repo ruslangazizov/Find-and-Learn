@@ -8,7 +8,7 @@
 import Foundation
 
 protocol StudyingViewOutput: AnyObject {
-    func actionWithCard(card: FlashcardModel, action: CardAction)
+    func actionWithCard(card: Flashcard, action: CardAction)
     func continueLearning()
     func restart()
     func endStudying()
@@ -30,7 +30,7 @@ final class StudyingPresenter: StudyingViewOutput {
     
     // MARK: StudyingViewOutput
     
-    func actionWithCard(card: FlashcardModel, action: CardAction) {
+    func actionWithCard(card: Flashcard, action: CardAction) {
         if action == .studyMore {
             interactor.studyMoreCard(card: card) {
                 view?.showHasMistakesFinish()

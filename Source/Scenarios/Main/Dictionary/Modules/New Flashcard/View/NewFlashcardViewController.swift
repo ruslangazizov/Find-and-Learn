@@ -154,6 +154,28 @@ extension NewFlashcardViewController: NewFlashcardViewInput {
             message: R.string.localizable.new_flashcard_screen_no_deck_chosen_message()
         )
     }
+    
+    func setCurrentDeck(index: Int) {
+        newFlashcardView.deckChoiceButton.selectedRow = index
+    }
+}
+
+// MARK: - EditFlashcardViewInput
+
+extension NewFlashcardViewController: EditFlashcardViewInput {
+    func changeNavigationBarTitle(_ newTitle: String) {
+        title = newTitle
+    }
+    
+    func deleteCreateReversedFlashcardOption() {
+        newFlashcardView.createReversedFlashcardStackView.removeFromSuperview()
+    }
+    
+    func changeDeckChoiceLabelText(_ newText: String) {
+        let deckChoiceLabel = newFlashcardView.deckChoiceStackView.arrangedSubviews.first
+        guard let deckChoiceLabel = deckChoiceLabel as? UILabel else { return }
+        deckChoiceLabel.text = newText
+    }
 }
 
 // MARK: - UITextViewDelegate

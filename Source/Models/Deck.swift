@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Deck {
+struct Deck: Equatable {
     let id: Int
     let name: String
     let createdAt: Date
+    var flashcards: [Flashcard]?
 }

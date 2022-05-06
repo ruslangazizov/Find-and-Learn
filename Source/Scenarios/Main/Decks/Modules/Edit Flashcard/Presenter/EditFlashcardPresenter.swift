@@ -1,36 +1,41 @@
 //
-//  NewFlashcardPresenter.swift
+//  EditFlashcardPresenter.swift
 //  Find-and-Learn
 //
-//  Created by Руслан on 29.04.2022.
+//  Created by Руслан on 05.05.2022.
 //
 
 import Foundation
 
-protocol NewFlashcardViewOutput: AnyObject {
-    func viewDidLoad()
-    func didTapSaveBarButtonItem(_ newFlashcard: NewFlashcardModel)
-}
-
-final class NewFlashcardPresenter: NewFlashcardViewOutput {
-    weak var view: NewFlashcardViewInput?
-    private let interactor: NewFlashcardInteractorProtocol
-    private let router: NewFlashcardRouterProtocol
+final class EditFlashcardPresenter: NewFlashcardViewOutput {
+    weak var view: EditFlashcardViewInput?
+    private let interactor: EditFlashcardInteractorProtocol
+    private let router: EditFlashcardRouterProtocol
     
     private var decks: [Deck] = []
-    private let selectedDeckId: Int?
+    private let flashcardId: Int
+    private let selectedDeckId: Int
     
     init(
-        interactor: NewFlashcardInteractorProtocol,
-        router: NewFlashcardRouterProtocol,
-        selectedDeckId: Int?
+        interactor: EditFlashcardInteractorProtocol,
+        router: EditFlashcardRouterProtocol,
+        flashcardId: Int,
+        selectedDeckId: Int
     ) {
         self.interactor = interactor
         self.router = router
+        self.flashcardId = flashcardId
         self.selectedDeckId = selectedDeckId
     }
     
     func viewDidLoad() {
+        view?.changeNavigationBarTitle(
+            R.string.localizable.edit_flashcard_screen_title()
+        )
+        view?.deleteCreateReversedFlashcardOption()
+        view?.changeDeckChoiceLabelText(
+            R.string.localizable.edit_flashcard_screen_deck_choice_label_text()
+        )
         interactor.getAllDecks { [weak self] decks in
             let sortedDecks = decks.sorted { $0.createdAt < $1.createdAt }
             self?.decks = sortedDecks
@@ -49,17 +54,17 @@ final class NewFlashcardPresenter: NewFlashcardViewOutput {
                 view?.showEmptyFrontOrBackSideAlert()
                 return
             }
-        guard let deckIndex = newFlashcardModel.deckIndex else {
+        guard let updatedDeckIndex = newFlashcardModel.deckIndex else {
             view?.showNoDeckChosenAlert()
             return
         }
-        interactor.saveNewFlashcard(NewFlashcard(
+        let updatedFlashcard = Flashcard(
+            id: flashcardId,
             frontSide: frontSide,
             backSide: backSide,
-            deckId: decks[deckIndex].id,
-            comment: newFlashcardModel.comment.flatMap { $0.isEmpty ? nil : $0 },
-            createReversed: newFlashcardModel.createReversed
-        ))
+            comment: newFlashcardModel.comment.flatMap { $0.isEmpty ? nil : $0 }
+        )
+        interactor.updateFlashcard(updatedFlashcard, updatedDeckId: decks[updatedDeckIndex].id)
         router.pop()
     }
 }

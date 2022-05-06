@@ -86,9 +86,10 @@ final class WordDetailPresenter: WordDetailViewOutput {
                 return text
             }
         }
-        let newFlashcardModel = FlashcardModel(
+        let newFlashcardModel = NewFlashcardModel(
             frontSide: wordDetail.word,
             backSide: translationsWithSynonyms.joined(separator: "\n"),
+            deckIndex: nil,
             comment: translationsExamples.joined(separator: "\n")
         )
         router.showNewFlashcard(newFlashcardModel)
