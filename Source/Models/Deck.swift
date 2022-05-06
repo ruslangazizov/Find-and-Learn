@@ -13,8 +13,3 @@ struct Deck: Equatable {
     let createdAt: Date
     var flashcards: [Flashcard]?
 }
-
-struct DeckModel {
-    let name: String
-    let flashcardsCountString: String?
-}

@@ -10,12 +10,13 @@ import Foundation
 protocol DecksViewOutput: AnyObject {
     func viewDidLoad()
     func viewDidAppear()
-    func didSelectRow(_ row: Int)
+    func didSelectDeck(_ deck: Deck)
     func didEnter(_ searchString: String)
-    func didDeleteRow(_ row: Int)
+    func didDeleteDeck(_ deck: Deck)
     func didCreateNewDeck(name: String)
     func didPresentAlert()
     func alertTextFieldDidChangeText(_ text: String?)
+    func getFlashcardsCountString(_ flashcardsCount: Int) -> String
 }
 
 final class DecksPresenter: DecksViewOutput {
@@ -24,7 +25,6 @@ final class DecksPresenter: DecksViewOutput {
     private let router: DecksRouterProtocol
     
     private var decks: [Deck] = []
-    private var decksModels: [DeckModel] = []
     
     init(interactor: DecksInteractorProtocol, router: DecksRouterProtocol) {
         self.interactor = interactor
@@ -33,15 +33,7 @@ final class DecksPresenter: DecksViewOutput {
     
     private func updateDecks(with decks: [Deck]) {
         self.decks = decks
-        let decksModels: [DeckModel] = decks.map {
-            var flashcardsCountString: String?
-            if let flashcardsCount = $0.flashcards?.count {
-                flashcardsCountString = interactor.formatFlashcardsCount(flashcardsCount)
-            }
-            return DeckModel(name: $0.name, flashcardsCountString: flashcardsCountString)
-        }
-        self.decksModels = decksModels
-        view?.showDecks(decksModels)
+        view?.showDecks(decks)
     }
     
     func viewDidLoad() {
@@ -58,37 +50,31 @@ final class DecksPresenter: DecksViewOutput {
         }
     }
     
-    func didSelectRow(_ row: Int) {
-        router.showDeckDetail(decks[row])
+    func didSelectDeck(_ deck: Deck) {
+        router.showDeckDetail(deck)
     }
     
     func didEnter(_ searchString: String) {
         guard !searchString.isEmpty else {
-            view?.showDecks(decksModels)
+            view?.showDecks(decks)
             return
         }
         let searchString = searchString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         view?.showDecks(
-            decksModels.filter { $0.name.lowercased().contains(searchString) }
+            decks.filter { $0.name.lowercased().contains(searchString) }
         )
     }
     
-    func didDeleteRow(_ row: Int) {
-        let removedDeck = decks.remove(at: row)
-        decksModels.remove(at: row)
-        interactor.deleteDeck(deckId: removedDeck.id)
+    func didDeleteDeck(_ deck: Deck) {
+        decks.removeAll { $0.id == deck.id }
+        interactor.deleteDeck(deckId: deck.id)
     }
     
     func didCreateNewDeck(name: String) {
-        let newDeckModel = DeckModel(
-            name: name,
-            flashcardsCountString: interactor.formatFlashcardsCount(0)
-        )
-        decksModels.append(newDeckModel)
         interactor.createDeck(name: name) { [weak self] newDeck in
             self?.decks.append(newDeck)
+            self?.view?.appendDeck(newDeck)
         }
-        view?.appendDeck(newDeckModel)
     }
     
     func didPresentAlert() {
@@ -98,5 +84,9 @@ final class DecksPresenter: DecksViewOutput {
     func alertTextFieldDidChangeText(_ text: String?) {
         let alertIsEnabled = !(text?.isEmpty ?? true)
         view?.setAlertActionIsEnabled(alertIsEnabled)
+    }
+    
+    func getFlashcardsCountString(_ flashcardsCount: Int) -> String {
+        return interactor.formatFlashcardsCount(flashcardsCount)
     }
 }

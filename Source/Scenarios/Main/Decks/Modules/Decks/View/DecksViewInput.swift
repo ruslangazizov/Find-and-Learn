@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DecksViewInput: AnyObject {
-    func showDecks(_ models: [DeckModel])
-    func appendDeck(_ model: DeckModel)
+    func showDecks(_ models: [Deck])
+    func appendDeck(_ model: Deck)
     func setAlertActionIsEnabled(_ isEnabled: Bool)
 }

@@ -33,7 +33,7 @@ final class DecksViewController: UIViewController {
     // MARK: Dependencies & properties
     
     private let presenter: DecksViewOutput
-    private var decksModels: [DeckModel] = []
+    private var decks: [Deck] = []
     private var alertAddAction: UIAlertAction?
     
     // MARK: Init
@@ -119,14 +119,14 @@ final class DecksViewController: UIViewController {
 // MARK: - DecksViewInput
 
 extension DecksViewController: DecksViewInput {
-    func showDecks(_ models: [DeckModel]) {
-        decksModels = models
+    func showDecks(_ decks: [Deck]) {
+        self.decks = decks
         tableView.reloadData()
     }
     
-    func appendDeck(_ model: DeckModel) {
-        decksModels.append(model)
-        let indexPath = IndexPath(row: decksModels.count - 1, section: 0)
+    func appendDeck(_ deck: Deck) {
+        decks.append(deck)
+        let indexPath = IndexPath(row: decks.count - 1, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
@@ -149,7 +149,7 @@ extension DecksViewController: UISearchResultsUpdating {
 extension DecksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter.didSelectRow(indexPath.row)
+        presenter.didSelectDeck(decks[indexPath.row])
     }
     
     func tableView(
@@ -165,18 +165,20 @@ extension DecksViewController: UITableViewDelegate, UITableViewDataSource {
         forRowAt indexPath: IndexPath
     ) {
         guard editingStyle == .delete else { return }
-        decksModels.remove(at: indexPath.row)
+        let removedDeck = decks.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
-        presenter.didDeleteRow(indexPath.row)
+        presenter.didDeleteDeck(removedDeck)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return decksModels.count
+        return decks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(DecksTableViewCell.self, for: indexPath)
-        cell.configure(with: decksModels[indexPath.row])
+        let deck = decks[indexPath.row]
+        let string = presenter.getFlashcardsCountString(deck.flashcards?.count ?? 0)
+        cell.configure(deckName: deck.name, flashcardsCountString: string)
         return cell
     }
 }

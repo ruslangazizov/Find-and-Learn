@@ -17,8 +17,8 @@ final class DecksTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with model: DeckModel) {
-        textLabel?.text = model.name
-        detailTextLabel?.text = model.flashcardsCountString
+    func configure(deckName: String, flashcardsCountString: String) {
+        textLabel?.text = deckName
+        detailTextLabel?.text = flashcardsCountString
     }
 }
