@@ -54,6 +54,7 @@ final class DeckDetailViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         navigationItem.title = deckName
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {
@@ -68,11 +69,6 @@ final class DeckDetailViewController: UIViewController {
         view.backgroundColor = R.color.defaultBackgroundColor()
         configureNavigationBar()
         configureLayout()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
