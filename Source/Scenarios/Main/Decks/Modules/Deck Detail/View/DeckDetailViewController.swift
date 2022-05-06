@@ -122,6 +122,11 @@ extension DeckDetailViewController: DeckDetailViewInput {
         flashcards = models
         tableView.reloadData()
     }
+    
+    func setStudyButtonIsEnabled(_ isEnabled: Bool) {
+        studyButton.isEnabled = isEnabled
+        studyButton.backgroundColor = isEnabled ? R.color.buttonsBackgroundColor() : .notEnabledButtonBackground
+    }
 }
 
 // MARK: - UISearchResultsUpdating
@@ -178,4 +183,8 @@ private enum Constants {
 
 private extension UIFont {
     static let studyButtonFont: UIFont = .preferredFont(forTextStyle: .headline)
+}
+
+private extension UIColor {
+    static let notEnabledButtonBackground: UIColor = .gray
 }

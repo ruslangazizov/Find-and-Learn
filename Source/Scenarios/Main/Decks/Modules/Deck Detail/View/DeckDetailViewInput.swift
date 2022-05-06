@@ -9,4 +9,5 @@ import Foundation
 
 protocol DeckDetailViewInput: AnyObject {
     func showFlashcards(_ models: [Flashcard])
+    func setStudyButtonIsEnabled(_ isEnabled: Bool)
 }

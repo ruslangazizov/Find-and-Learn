@@ -61,16 +61,24 @@ final class DeckDetailPresenter: DeckDetailViewOutput {
     
     func didDeleteRow(_ row: Int) {
         let removedFlashcard = deck.flashcards?.remove(at: row)
+        checkStudyButtonAvailability()
         if let removedFlashcardId = removedFlashcard?.id {
             interactor.deleteFlashcard(flashcardId: removedFlashcardId)
         }
     }
     
+    private func checkStudyButtonAvailability() {
+        let isStudyButtonEnabled = !(deck.flashcards?.isEmpty ?? false)
+        view?.setStudyButtonIsEnabled(isStudyButtonEnabled)
+    }
+    
     func viewDidAppear() {
+        checkStudyButtonAvailability()
         interactor.getFlashCards(deckId: deck.id) { [weak self] flashcards in
             if self?.deck.flashcards != flashcards {
                 self?.deck.flashcards = flashcards
                 self?.view?.showFlashcards(flashcards)
+                self?.checkStudyButtonAvailability()
             }
         }
     }
