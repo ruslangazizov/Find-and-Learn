@@ -73,7 +73,7 @@ final class DeckDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.viewDidAppear(with: flashcards)
+        presenter.viewDidAppear()
     }
     
     // MARK: UI configuration
