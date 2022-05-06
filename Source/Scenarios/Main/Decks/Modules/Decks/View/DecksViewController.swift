@@ -154,20 +154,16 @@ extension DecksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(
         _ tableView: UITableView,
-        editingStyleForRowAt indexPath: IndexPath
-    ) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
-    func tableView(
-        _ tableView: UITableView,
-        commit editingStyle: UITableViewCell.EditingStyle,
-        forRowAt indexPath: IndexPath
-    ) {
-        guard editingStyle == .delete else { return }
-        let removedDeck = decks.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        presenter.didDeleteDeck(removedDeck)
+        leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
+        let title = R.string.localizable.decks_screen_remove_deck_row_title()
+        let action = UIContextualAction(style: .destructive, title: title) { _, _, completion in
+            let removedDeck = self.decks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.presenter.didDeleteDeck(removedDeck)
+            completion(true)
+        }
+        return UISwipeActionsConfiguration(actions: [action])
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

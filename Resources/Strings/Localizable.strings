@@ -124,6 +124,7 @@
 // Экран "Колоды"
 "decks_screen_title" = "Колоды";
 "decks_screen_search_bar_placeholder" = "Введите название колоды";
+"decks_screen_remove_deck_row_title" = "Удалить";
 
 // Уведомления для экрана "Колоды"
 "decks_screen_add_deck_title" = "Добавить колоду";
@@ -134,6 +135,7 @@
 // Экран "Детальная информация по колоде"
 "deck_detail_screen_search_bar_placeholder" = "Введите лицевую или обратную сторону";
 "deck_detail_screen_study_button_title" = "Изучать";
+"deck_detail_screen_remove_flashcard_row_title" = "Удалить";
 
 // Достижения
 "achievement_iterator_name" = "Итератор";
