@@ -68,11 +68,6 @@ final class DecksViewController: UIViewController {
         presenter.viewDidAppear()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tabBarController?.tabBar.isHidden = true
-    }
-    
     // MARK: UI configuration
     
     private func configureNavigationBar() {
