@@ -45,15 +45,15 @@ final class DeckDetailViewController: UIViewController {
     
     private let presenter: DeckDetailViewOutput
     private var flashcards: [Flashcard]
-    private let deckName: String
     
     // MARK: Init
     
     init(presenter: DeckDetailViewOutput, flashcards: [Flashcard]?, deckName: String) {
         self.presenter = presenter
         self.flashcards = flashcards ?? []
-        self.deckName = deckName
         super.init(nibName: nil, bundle: nil)
+        
+        navigationItem.title = deckName
     }
     
     required init?(coder: NSCoder) {
@@ -83,7 +83,6 @@ final class DeckDetailViewController: UIViewController {
     // MARK: UI configuration
     
     private func configureNavigationBar() {
-        navigationItem.title = deckName
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
