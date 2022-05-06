@@ -14,6 +14,8 @@ protocol DecksViewOutput: AnyObject {
     func didEnter(_ searchString: String)
     func didDeleteRow(_ row: Int)
     func didCreateNewDeck(name: String)
+    func didPresentAlert()
+    func alertTextFieldDidChangeText(_ text: String?)
 }
 
 final class DecksPresenter: DecksViewOutput {
@@ -87,5 +89,14 @@ final class DecksPresenter: DecksViewOutput {
             self?.decks.append(newDeck)
         }
         view?.appendDeck(newDeckModel)
+    }
+    
+    func didPresentAlert() {
+        view?.setAlertActionIsEnabled(false)
+    }
+    
+    func alertTextFieldDidChangeText(_ text: String?) {
+        let alertIsEnabled = !(text?.isEmpty ?? true)
+        view?.setAlertActionIsEnabled(alertIsEnabled)
     }
 }

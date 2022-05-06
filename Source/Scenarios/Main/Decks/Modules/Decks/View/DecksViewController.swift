@@ -34,6 +34,7 @@ final class DecksViewController: UIViewController {
     
     private let presenter: DecksViewOutput
     private var decksModels: [DeckModel] = []
+    private var alertAddAction: UIAlertAction?
     
     // MARK: Init
     
@@ -87,26 +88,31 @@ final class DecksViewController: UIViewController {
     // MARK: Actions
     
     @objc private func didTapAddDeckButton() {
-        let alert = UIAlertController(
-            title: R.string.localizable.decks_screen_add_deck_title(),
-            message: nil,
-            preferredStyle: .alert
-        )
-        alert.addTextField { textField in
+        let alertTitle = R.string.localizable.decks_screen_add_deck_title()
+        let alert = UIAlertController(title: alertTitle, message: nil, preferredStyle: .alert)
+        alert.addTextField { [weak self] textField in
+            textField.addTarget(self, action: #selector(self?.textFieldDidChangeValue(_:)), for: .editingChanged)
             textField.placeholder = R.string.localizable.decks_screen_add_deck_text_placeholder()
         }
-        alert.addAction(UIAlertAction(
-            title: R.string.localizable.decks_screen_add_action_title(),
-            style: .default
-        ) { _ in
+        
+        let actionTitle = R.string.localizable.decks_screen_add_action_title()
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default) { _ in
             guard let newDeckName = alert.textFields?.first?.text else { return }
             self.presenter.didCreateNewDeck(name: newDeckName)
         })
+        alertAddAction = alert.actions.first
+        
         alert.addAction(UIAlertAction(
             title: R.string.localizable.decks_screen_cancel_action_title(),
             style: .cancel
         ))
+        
         present(alert, animated: true)
+        presenter.didPresentAlert()
+    }
+    
+    @objc private func textFieldDidChangeValue(_ sender: UITextField) {
+        presenter.alertTextFieldDidChangeText(sender.text)
     }
 }
 
@@ -122,6 +128,10 @@ extension DecksViewController: DecksViewInput {
         decksModels.append(model)
         let indexPath = IndexPath(row: decksModels.count - 1, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
+    }
+    
+    func setAlertActionIsEnabled(_ isEnabled: Bool) {
+        alertAddAction?.isEnabled = isEnabled
     }
 }
 
