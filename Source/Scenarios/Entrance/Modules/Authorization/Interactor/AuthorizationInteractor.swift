@@ -44,17 +44,19 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
             result(.passwordTextField(R.string.localizable.validation_error_incorrect_password()))
         } else {
             let request = AuthorizationRequest(.init(email: email, password: password))
-            networkManager.perform(request) { (resultData: Result<AuthorizationResponseModel, NetworkManagerError>) in
+            networkManager.perform(
+                request
+            ) { [weak self] (resultData: Result<AuthorizationResponseModel, NetworkManagerError>) in
                 switch resultData {
                 case .success(let model):
-                    self.dataManager.saveToken(model.getAsToken())
+                    self?.dataManager.saveToken(model.getAsToken())
                    
                     let userRequest = UserRequest(email, model.getAsToken())
-                    self.networkManager
+                    self?.networkManager
                         .perform(userRequest) { (resultResponse: Result<UserRequestModel, NetworkManagerError>) in
                             switch resultResponse {
                             case .success(let responseModel):
-                                self.dataManager.saveUser(User(
+                                self?.dataManager.saveUser(User(
                                     id: responseModel.id,
                                     email: email,
                                     userName: responseModel.username ?? "",

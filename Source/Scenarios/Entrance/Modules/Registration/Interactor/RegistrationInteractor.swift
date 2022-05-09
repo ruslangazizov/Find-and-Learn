@@ -68,18 +68,18 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
             )
             networkManager.perform(
                 RegistrationRequest(requestModel)
-            ) { (resultData: Result<RegistrationResponseModel, NetworkManagerError>) in
+            ) { [weak self] (resultData: Result<RegistrationResponseModel, NetworkManagerError>) in
                 switch resultData {
                 case .success(let model):
                     DispatchQueue.global(qos: .background).async {
-                        self.dataManager.saveEmailCode(model.emailCode)
-                        self.dataManager.saveUser(User(
+                        self?.dataManager.saveEmailCode(model.emailCode)
+                        self?.dataManager.saveUser(User(
                             email: email,
                             userName: userName,
                             password: password,
                             state: .inactive)
                         )
-                        self.dataManager.saveToken("\(HTTP.Auth.tokenType) \(model.token)")
+                        self?.dataManager.saveToken("\(HTTP.Auth.tokenType) \(model.token)")
                     }
                     result(.success)
                 case .failure:
