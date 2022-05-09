@@ -187,4 +187,7 @@ final class DataManagerMock: DataManagerProtocol {
     
     func saveUser(_ user: User) {
     }
+    
+    func saveToken(_ token: String) {
+    }
 }

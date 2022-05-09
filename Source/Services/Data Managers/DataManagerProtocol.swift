@@ -24,6 +24,7 @@ protocol DataManagerProtocol: AnyObject {
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int)
     func saveEmailCode(_ code: Int)
     func saveUser(_ user: User)
+    func saveToken(_ token: String)
 }
 
 extension DataManagerProtocol {

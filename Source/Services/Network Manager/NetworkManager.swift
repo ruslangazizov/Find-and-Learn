@@ -8,10 +8,6 @@
 import Foundation
 import Alamofire
 
-enum NetworkManagerErrors: Error {
-    case notUniqueEmail
-}
-
 protocol NetworkManagerProtocol: AnyObject {
     func perform<T: Decodable>(_ request: Request, _ completion: @escaping (Result<T, Error>) -> Void)
 }
@@ -21,12 +17,11 @@ final class NetworkManager: NetworkManagerProtocol {
     
     func perform<T: Decodable>(_ request: Request, _ completion: @escaping (Result<T, Error>) -> Void) {
         AF.request(RequestAdapter(request)).responseDecodable { (dataResponse: AFDataResponse<T>) in
-            if dataResponse.error != nil {
-                completion(.failure(NetworkManagerErrors.notUniqueEmail))
+            if let error = dataResponse.error {
+                completion(.failure(error))
             } else if let model = dataResponse.value {
                 completion(.success(model))
             }
-            print(dataResponse.response?.statusCode)
         }
     }
 }

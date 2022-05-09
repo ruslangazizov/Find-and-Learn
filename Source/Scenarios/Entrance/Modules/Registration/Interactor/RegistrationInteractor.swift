@@ -70,7 +70,6 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                 .perform(RegistrationRequest(requestModel)) { (resultData: Result<RegistrationResponseModel, Error>) in
                     switch resultData {
                     case .success(let model):
-                        print(model)
                         DispatchQueue.global(qos: .background).async {
                             self.dataManager.saveEmailCode(model.emailCode)
                             self.dataManager.saveUser(User(
@@ -81,10 +80,9 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                             )
                         }
                         result(.success)
-                    case .failure(let error):
-                        if let error = error as? NetworkManagerErrors, error == .notUniqueEmail {
-                            result(.emailTextField(R.string.localizable.validation_error_not_unique_email()))
-                        }
+                    // swiftlint:disable:next empty_enum_arguments
+                    case .failure(_):
+                        result(.emailTextField(R.string.localizable.validation_error_not_unique_email()))
                     }
                 }
         }

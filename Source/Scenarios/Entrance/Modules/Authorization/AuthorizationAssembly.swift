@@ -10,7 +10,11 @@ import UIKit
 
 final class AuthorizationAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let interactor = AuthorizationInteractor(validationManager: ValidationManager())
+        let interactor = AuthorizationInteractor(
+            validationManager: ValidationManager(),
+            networkManager: NetworkManager(),
+            dataManager: DataManagerMock()
+        )
         let router = AuthorizationRouter()
         
         let presenter = AuthorizationPresenter(interactor: interactor, router: router)
