@@ -79,7 +79,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                             password: password,
                             state: .inactive)
                         )
-                        self.dataManager.saveToken("bearer \(model.token)")
+                        self.dataManager.saveToken("\(HTTP.Auth.tokenType) \(model.token)")
                     }
                     result(.success)
                 case .failure:

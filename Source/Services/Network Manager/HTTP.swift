@@ -55,4 +55,8 @@ enum HTTP {
     enum StatusCode {
         static let server = 500...599
     }
+    
+    enum Auth {
+        static let tokenType = "bearer"
+    }
 }
