@@ -19,7 +19,7 @@ struct AuthorizationRequestModel: Encodable {
 
 struct AuthorizationRequest: Request {
     private(set) var method: HTTP.Method = .post
-    private(set) var path: String = "get_token"
+    private(set) var path: String = "auth/get_token"
     private(set) var body: HTTP.Body
     
     init(_ model: AuthorizationRequestModel) {

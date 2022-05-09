@@ -13,6 +13,7 @@ protocol Request {
     var path: String { get }
     var queries: HTTP.Queries { get }
     var body: HTTP.Body { get }
+    var token: String { get }
 }
 
 extension Request {
@@ -25,6 +26,10 @@ extension Request {
     }
     
     var body: HTTP.Body {
-        .raw(Data())
+        .none
+    }
+    
+    var token: String {
+        ""
     }
 }

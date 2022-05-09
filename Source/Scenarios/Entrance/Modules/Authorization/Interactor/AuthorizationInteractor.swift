@@ -48,6 +48,21 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
                 switch resultData {
                 case .success(let model):
                     self.dataManager.saveToken("\(model.type) \(model.token)")
+                   
+                    let userRequest = UserRequest(email, "\(model.type) \(model.token)")
+                    self.networkManager.perform(userRequest) { (resultResponse: Result<UserRequestModel, Error>) in
+                        switch resultResponse {
+                        case .success(let responseModel):
+                            self.dataManager.saveUser(User(
+                                email: email,
+                                userName: responseModel.username ?? "",
+                                password: "",
+                                state: .inactive))
+                            result(.success)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    }
                 case .failure(_):
                     result(.emailTextField(R.string.localizable.validation_error_not_right_data()))
                 }
@@ -59,4 +74,14 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
 private struct AuthorizationResponseModel: Decodable {
     let token: String
     let type: String
+}
+
+private struct UserRequestModel: Decodable {
+    let username: String?
+    let emailCode: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case username
+        case emailCode = "email_confirmation_code"
+    }
 }

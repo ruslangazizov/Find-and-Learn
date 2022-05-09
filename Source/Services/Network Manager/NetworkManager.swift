@@ -53,8 +53,17 @@ private struct RequestAdapter: URLRequestConvertible {
             urlRequest.httpBody = try JSONEncoder().encode(model)
         case .keyValue(let dictionary):
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: dictionary, options: [])
+        case .none:
+            break
         }
-        urlRequest.headers.add(.contentType("application/json"))
+        
+        if request.body != .none {
+            urlRequest.headers.add(.contentType("application/json"))
+        }
+        
+        if !request.token.isEmpty {
+            urlRequest.headers.add(.authorization(request.token))
+        }
         
         return urlRequest
     }

@@ -21,11 +21,24 @@ enum HTTP {
     }
     
     typealias Queries = [String: CustomStringConvertible]
+    
+    typealias Headers = [String: String]
    
-    enum Body {
+    enum Body: Equatable {
         case raw(Data)
         case model(AnyEncodable)
         case keyValue([String: Any])
+        case none
+        
+        static func == (lhs: HTTP.Body, rhs: HTTP.Body) -> Bool {
+            switch (lhs, rhs) {
+            case (.none, .none):
+                return true
+                
+            default:
+                return false
+            }
+        }
     }
     
     enum Method: String {
