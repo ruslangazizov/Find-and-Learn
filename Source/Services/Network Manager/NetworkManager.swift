@@ -9,16 +9,18 @@ import Foundation
 import Alamofire
 
 protocol NetworkManagerProtocol: AnyObject {
-    func perform<T: Decodable>(_ request: Request, _ completion: @escaping (Result<T, Error>) -> Void)
+    func perform<T: Decodable>(_ request: Request, _ completion: @escaping (Result<T, NetworkManagerError>) -> Void)
 }
 
 final class NetworkManager: NetworkManagerProtocol {
     // MARK: NetworkManagerProtocol
     
-    func perform<T: Decodable>(_ request: Request, _ completion: @escaping (Result<T, Error>) -> Void) {
+    func perform<T: Decodable>(_ request: Request, _ completion: @escaping (Result<T, NetworkManagerError>) -> Void) {
         AF.request(RequestAdapter(request)).responseDecodable { (dataResponse: AFDataResponse<T>) in
-            if let error = dataResponse.error {
-                completion(.failure(error))
+            if let statusCode = dataResponse.response?.statusCode, HTTP.StatusCode.server.contains(statusCode) {
+                completion(.failure(.serverProblem))
+            } else if let error = dataResponse.error {
+                completion(.failure(.init(error)))
             } else if let model = dataResponse.value {
                 completion(.success(model))
             }

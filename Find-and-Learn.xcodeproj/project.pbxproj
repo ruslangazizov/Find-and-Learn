@@ -89,6 +89,7 @@
 		C1EBC6FF900B3E2A5498E8D8 /* Pods_Find_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A4ACC204322E3866C8050E /* Pods_Find_and_Learn.framework */; };
 		D200B5F9282926D6001A63C1 /* AuthorizationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D200B5F8282926D6001A63C1 /* AuthorizationRequest.swift */; };
 		D200B5FB28293081001A63C1 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D200B5FA28293081001A63C1 /* UserRequest.swift */; };
+		D200B5FD28295C39001A63C1 /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D200B5FC28295C39001A63C1 /* NetworkManagerError.swift */; };
 		D202DF0E2826DAE80022D322 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202DF0D2826DAE80022D322 /* NetworkManager.swift */; };
 		D202DF112826DC100022D322 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202DF102826DC100022D322 /* Request.swift */; };
 		D202DF132826E23B0022D322 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202DF122826E23B0022D322 /* HTTP.swift */; };
@@ -264,6 +265,7 @@
 		773BB3E00B70B692D1E11AD0 /* Pods-Find-and-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.release.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.release.xcconfig"; sourceTree = "<group>"; };
 		D200B5F8282926D6001A63C1 /* AuthorizationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequest.swift; sourceTree = "<group>"; };
 		D200B5FA28293081001A63C1 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		D200B5FC28295C39001A63C1 /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
 		D202DF0D2826DAE80022D322 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D202DF102826DC100022D322 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D202DF122826E23B0022D322 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
@@ -839,6 +841,7 @@
 			isa = PBXGroup;
 			children = (
 				D202DF0D2826DAE80022D322 /* NetworkManager.swift */,
+				D200B5FC28295C39001A63C1 /* NetworkManagerError.swift */,
 				D202DF122826E23B0022D322 /* HTTP.swift */,
 				D202DF0F2826DBEF0022D322 /* Requests */,
 			);
@@ -1617,6 +1620,7 @@
 				44435E842821313E00737D69 /* DecksViewInput.swift in Sources */,
 				4411E53A28198C76001ABB53 /* TranslationExampleLabel.swift in Sources */,
 				447F986D281666DB000E153D /* WordDetailRouter.swift in Sources */,
+				D200B5FD28295C39001A63C1 /* NetworkManagerError.swift in Sources */,
 				D20F3307280DD5380003D9DD /* ChangePasswordAssembly.swift in Sources */,
 				44435E9928218EC300737D69 /* DeckDetailViewController.swift in Sources */,
 				44BCCAC127F8D4FF00C1189B /* SearchWordsRouter.swift in Sources */,

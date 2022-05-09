@@ -44,27 +44,28 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
             result(.passwordTextField(R.string.localizable.validation_error_incorrect_password()))
         } else {
             let request = AuthorizationRequest(.init(email: email, password: password))
-            networkManager.perform(request) { (resultData: Result<AuthorizationResponseModel, Error>) in
+            networkManager.perform(request) { (resultData: Result<AuthorizationResponseModel, NetworkManagerError>) in
                 switch resultData {
                 case .success(let model):
                     self.dataManager.saveToken(model.getAsToken())
                    
                     let userRequest = UserRequest(email, model.getAsToken())
-                    self.networkManager.perform(userRequest) { (resultResponse: Result<UserRequestModel, Error>) in
-                        switch resultResponse {
-                        case .success(let responseModel):
-                            self.dataManager.saveUser(User(
-                                id: responseModel.id,
-                                email: email,
-                                userName: responseModel.username ?? "",
-                                password: "",
-                                state: .inactive))
-                            result(.success)
-                        case .failure(let error):
-                            print(error.localizedDescription)
+                    self.networkManager
+                        .perform(userRequest) { (resultResponse: Result<UserRequestModel, NetworkManagerError>) in
+                            switch resultResponse {
+                            case .success(let responseModel):
+                                self.dataManager.saveUser(User(
+                                    id: responseModel.id,
+                                    email: email,
+                                    userName: responseModel.username ?? "",
+                                    password: "",
+                                    state: .inactive))
+                                result(.success)
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                            }
                         }
-                    }
-                case .failure(_):
+                case .failure:
                     result(.emailTextField(R.string.localizable.validation_error_not_right_data()))
                 }
             }

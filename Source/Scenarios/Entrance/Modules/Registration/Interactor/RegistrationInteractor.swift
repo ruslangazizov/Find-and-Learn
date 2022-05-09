@@ -66,26 +66,26 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                 password: password,
                 registeredAt: Date().toString(using: .registrationDateFormatter)
             )
-            networkManager
-                .perform(RegistrationRequest(requestModel)) { (resultData: Result<RegistrationResponseModel, Error>) in
-                    switch resultData {
-                    case .success(let model):
-                        DispatchQueue.global(qos: .background).async {
-                            self.dataManager.saveEmailCode(model.emailCode)
-                            self.dataManager.saveUser(User(
-                                email: email,
-                                userName: userName,
-                                password: password,
-                                state: .inactive)
-                            )
-                            self.dataManager.saveToken("bearer \(model.token)")
-                        }
-                        result(.success)
-                    // swiftlint:disable:next empty_enum_arguments
-                    case .failure(_):
-                        result(.emailTextField(R.string.localizable.validation_error_not_unique_email()))
+            networkManager.perform(
+                RegistrationRequest(requestModel)
+            ) { (resultData: Result<RegistrationResponseModel, NetworkManagerError>) in
+                switch resultData {
+                case .success(let model):
+                    DispatchQueue.global(qos: .background).async {
+                        self.dataManager.saveEmailCode(model.emailCode)
+                        self.dataManager.saveUser(User(
+                            email: email,
+                            userName: userName,
+                            password: password,
+                            state: .inactive)
+                        )
+                        self.dataManager.saveToken("bearer \(model.token)")
                     }
+                    result(.success)
+                case .failure:
+                    result(.emailTextField(R.string.localizable.validation_error_not_unique_email()))
                 }
+            }
         }
     }
 }

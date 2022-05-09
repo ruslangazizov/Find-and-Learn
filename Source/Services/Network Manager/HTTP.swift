@@ -51,4 +51,8 @@ enum HTTP {
     enum Errors: Error {
         case incorrectUrl(String)
     }
+    
+    enum StatusCode {
+        static let server = 500...599
+    }
 }
