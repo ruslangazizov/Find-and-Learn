@@ -9,6 +9,7 @@ import Foundation
 
 protocol RegistrationViewInput: AnyObject {
     func showError(_ error: RegistrationErrors)
+    func showServerProblemsAlert()
     func startLoader()
     func stopLoader()
 }

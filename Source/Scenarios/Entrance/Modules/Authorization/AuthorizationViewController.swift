@@ -290,6 +290,10 @@ extension AuthorizationViewController: AuthorizationViewInput {
         }
     }
     
+    func showServerProblemsAlert() {
+        showServerProblemAlert()
+    }
+    
     func startLoader() {
         loader.startAnimating()
         view.isUserInteractionEnabled = false

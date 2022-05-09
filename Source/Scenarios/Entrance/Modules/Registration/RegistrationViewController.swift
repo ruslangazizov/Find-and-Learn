@@ -294,6 +294,10 @@ extension RegistrationViewController: RegistrationViewInput {
         }
     }
     
+    func showServerProblemsAlert() {
+        showServerProblemAlert()
+    }
+    
     func startLoader() {
         loader.startAnimating()
         view.isUserInteractionEnabled = false

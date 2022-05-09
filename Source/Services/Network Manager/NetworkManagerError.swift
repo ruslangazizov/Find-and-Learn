@@ -11,7 +11,7 @@ import Alamofire
 enum NetworkManagerError: Error {
     case serverProblem
     case createRequestFailed(Error)
-    case serializationFailed
+    case serializationFailed(Int?)
     case invalidUrl
     case unknown
     
@@ -24,7 +24,7 @@ enum NetworkManagerError: Error {
             self = .invalidUrl
         
         case .responseSerializationFailed:
-            self = .serializationFailed
+            self = .serializationFailed(error.responseCode)
         
         default:
             self = .unknown
