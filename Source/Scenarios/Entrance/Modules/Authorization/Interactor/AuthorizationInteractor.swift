@@ -47,13 +47,14 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
             networkManager.perform(request) { (resultData: Result<AuthorizationResponseModel, Error>) in
                 switch resultData {
                 case .success(let model):
-                    self.dataManager.saveToken("\(model.type) \(model.token)")
+                    self.dataManager.saveToken(model.getAsToken())
                    
-                    let userRequest = UserRequest(email, "\(model.type) \(model.token)")
+                    let userRequest = UserRequest(email, model.getAsToken())
                     self.networkManager.perform(userRequest) { (resultResponse: Result<UserRequestModel, Error>) in
                         switch resultResponse {
                         case .success(let responseModel):
                             self.dataManager.saveUser(User(
+                                id: responseModel.id,
                                 email: email,
                                 userName: responseModel.username ?? "",
                                 password: "",
@@ -74,13 +75,19 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
 private struct AuthorizationResponseModel: Decodable {
     let token: String
     let type: String
+    
+    func getAsToken() -> String {
+        return "\(type) \(token)"
+    }
 }
 
 private struct UserRequestModel: Decodable {
+    let id: Int
     let username: String?
     let emailCode: Int
     
     enum CodingKeys: String, CodingKey {
+        case id
         case username
         case emailCode = "email_confirmation_code"
     }
