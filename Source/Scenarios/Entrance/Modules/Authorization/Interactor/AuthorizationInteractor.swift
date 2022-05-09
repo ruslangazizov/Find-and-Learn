@@ -47,7 +47,7 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
             networkManager.perform(request) { (resultData: Result<AuthorizationResponseModel, Error>) in
                 switch resultData {
                 case .success(let model):
-                    self.dataManager.saveToken(model.type + model.token)
+                    self.dataManager.saveToken("\(model.type) \(model.token)")
                 case .failure(_):
                     result(.emailTextField(R.string.localizable.validation_error_not_right_data()))
                 }

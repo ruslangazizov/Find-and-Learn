@@ -78,6 +78,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                                 password: password,
                                 state: .inactive)
                             )
+                            self.dataManager.saveToken("bearer \(model.token)")
                         }
                         result(.success)
                     // swiftlint:disable:next empty_enum_arguments
@@ -95,6 +96,7 @@ private struct RegistrationResponseModel: Decodable {
     let secondName: String
     let email: String
     let emailCode: Int
+    let token: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -102,5 +104,6 @@ private struct RegistrationResponseModel: Decodable {
         case secondName = "second_name"
         case email
         case emailCode = "email_confirmation_code"
+        case token
     }
 }
