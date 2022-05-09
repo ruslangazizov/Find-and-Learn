@@ -24,11 +24,13 @@ final class RegistrationPresenter: RegistrationViewOutput {
     // MARK: ViewOutput
     
     func registration(email: String, userName: String, password: String, confirmPassword: String) {
+        view?.startLoader()
         interactor.registration(
             email: email,
             userName: userName,
             password: password,
             confirmPassword: confirmPassword) { [weak self] state in
+                self?.view?.stopLoader()
                 switch state {
                 case .emailTextField(let message):
                     self?.view?.showError(.emailTextField(message))

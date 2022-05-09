@@ -19,4 +19,10 @@ extension DateFormatter {
         formatter.dateFormat = "d.M.yyyy"
         return formatter
     }()
+    
+    static let registrationDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:SS"
+        return formatter
+    }()
 }

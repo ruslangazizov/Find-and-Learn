@@ -181,4 +181,10 @@ final class DataManagerMock: DataManagerProtocol {
     
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int) {
     }
+    
+    func saveEmailCode(_ code: Int) {
+    }
+    
+    func saveUser(_ user: User) {
+    }
 }
