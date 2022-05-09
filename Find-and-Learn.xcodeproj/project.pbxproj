@@ -90,6 +90,7 @@
 		D200B5F9282926D6001A63C1 /* AuthorizationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D200B5F8282926D6001A63C1 /* AuthorizationRequest.swift */; };
 		D200B5FB28293081001A63C1 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D200B5FA28293081001A63C1 /* UserRequest.swift */; };
 		D200B5FD28295C39001A63C1 /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D200B5FC28295C39001A63C1 /* NetworkManagerError.swift */; };
+		D200B5FF28296D07001A63C1 /* DeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D200B5FE28296D07001A63C1 /* DeleteRequest.swift */; };
 		D202DF0E2826DAE80022D322 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202DF0D2826DAE80022D322 /* NetworkManager.swift */; };
 		D202DF112826DC100022D322 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202DF102826DC100022D322 /* Request.swift */; };
 		D202DF132826E23B0022D322 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202DF122826E23B0022D322 /* HTTP.swift */; };
@@ -266,6 +267,7 @@
 		D200B5F8282926D6001A63C1 /* AuthorizationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequest.swift; sourceTree = "<group>"; };
 		D200B5FA28293081001A63C1 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		D200B5FC28295C39001A63C1 /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
+		D200B5FE28296D07001A63C1 /* DeleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRequest.swift; sourceTree = "<group>"; };
 		D202DF0D2826DAE80022D322 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D202DF102826DC100022D322 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D202DF122826E23B0022D322 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
@@ -855,6 +857,7 @@
 				D202DF142826E5190022D322 /* RegistrationRequest.swift */,
 				D200B5F8282926D6001A63C1 /* AuthorizationRequest.swift */,
 				D200B5FA28293081001A63C1 /* UserRequest.swift */,
+				D200B5FE28296D07001A63C1 /* DeleteRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1627,6 +1630,7 @@
 				D2FD925728148BD600D93BC4 /* CardAction.swift in Sources */,
 				D2DFEE4F281C64B3006F452E /* Achievement.swift in Sources */,
 				44435EA82824291400737D69 /* EditFlashcardPresenter.swift in Sources */,
+				D200B5FF28296D07001A63C1 /* DeleteRequest.swift in Sources */,
 				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				4443AB5F281D89B700112B35 /* Deck.swift in Sources */,

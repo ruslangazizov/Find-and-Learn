@@ -12,4 +12,5 @@ protocol AccountRouterProtocol: RouterProtocol {
     func showAchievementsModule()
     func showChangePasswordModule()
     func showRegistrationModule()
+    func showEntranceFlow()
 }

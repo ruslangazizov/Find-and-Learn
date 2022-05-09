@@ -190,4 +190,8 @@ final class DataManagerMock: DataManagerProtocol {
     
     func saveToken(_ token: String) {
     }
+    
+    func getToken() -> String? {
+        return nil
+    }
 }

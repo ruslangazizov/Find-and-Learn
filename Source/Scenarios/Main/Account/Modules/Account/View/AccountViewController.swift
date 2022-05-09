@@ -145,6 +145,10 @@ extension AccountViewController: AccountViewInput {
             self?.presenter.deleteAccount()
         }
     }
+    
+    func showServerProblemsAlert() {
+        showServerProblemAlert()
+    }
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource

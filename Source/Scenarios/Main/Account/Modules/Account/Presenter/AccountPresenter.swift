@@ -59,9 +59,18 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     func exit() {
+        // TODO: delete token from keychain
+        router.showEntranceFlow()
     }
     
     func deleteAccount() {
+        interactor.deleteAccount { [weak self] result in
+            if result {
+                self?.router.showEntranceFlow()
+            } else {
+                self?.view?.showServerProblemsAlert()
+            }
+        }
     }
     
     // MARK: Private

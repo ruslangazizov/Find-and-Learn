@@ -10,6 +10,7 @@ import Alamofire
 
 protocol NetworkManagerProtocol: AnyObject {
     func perform<T: Decodable>(_ request: Request, _ completion: @escaping (Result<T, NetworkManagerError>) -> Void)
+    func perform(_ request: Request, _ completion: @escaping (Result<Int, NetworkManagerError>) -> Void)
 }
 
 final class NetworkManager: NetworkManagerProtocol {
@@ -23,6 +24,18 @@ final class NetworkManager: NetworkManagerProtocol {
                 completion(.failure(.init(error)))
             } else if let model = dataResponse.value {
                 completion(.success(model))
+            }
+        }
+    }
+    
+    func perform(_ request: Request, _ completion: @escaping (Result<Int, NetworkManagerError>) -> Void) {
+        AF.request(RequestAdapter(request)).response { dataResponse in
+            if let statusCode = dataResponse.response?.statusCode, HTTP.StatusCode.server.contains(statusCode) {
+                completion(.failure(.serverProblem))
+            } else if let error = dataResponse.error {
+                completion(.failure(.init(error)))
+            } else if let statusCode = dataResponse.response?.statusCode {
+                completion(.success(statusCode))
             }
         }
     }

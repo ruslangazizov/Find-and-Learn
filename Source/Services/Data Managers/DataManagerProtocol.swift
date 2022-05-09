@@ -25,6 +25,7 @@ protocol DataManagerProtocol: AnyObject {
     func saveEmailCode(_ code: Int)
     func saveUser(_ user: User)
     func saveToken(_ token: String)
+    func getToken() -> String?
 }
 
 extension DataManagerProtocol {
