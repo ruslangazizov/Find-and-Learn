@@ -69,6 +69,10 @@ final class ChangePasswordViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print(1)
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
