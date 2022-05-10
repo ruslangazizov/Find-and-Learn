@@ -11,7 +11,7 @@ protocol ValidationManagerProtocol: AnyObject {
     func isValidEmail(_ email: String) -> Bool
     func isValidPassword(_ password: String) -> Bool
     func isValidUserName(_ userName: String) -> Bool
-    func isEnglishCharacters(_ text: String) -> Bool
+    func areEnglishCharacters(_ text: String) -> Bool
 }
 
 final class ValidationManager: ValidationManagerProtocol {
@@ -50,7 +50,7 @@ final class ValidationManager: ValidationManagerProtocol {
         return userNamePredicate.evaluate(with: userName)
     }
     
-    func isEnglishCharacters(_ text: String) -> Bool {
+    func areEnglishCharacters(_ text: String) -> Bool {
         return englishCharactersPredicate.evaluate(with: text)
     }
 }

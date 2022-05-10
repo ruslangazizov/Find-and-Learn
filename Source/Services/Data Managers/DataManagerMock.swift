@@ -9,11 +9,6 @@ import Foundation
 
 final class DataManagerMock: DataManagerProtocol {
     func getWords(_ word: String, completion: ([Word]) -> Void) {
-        completion([
-            Word(word: "Слово1", translations: ["Перевод1", "Перевод2", "Перевод7", "Перевод8"]),
-            Word(word: "Слово2", translations: ["Перевод3", "Перевод4"]),
-            Word(word: "Слово3", translations: ["Перевод5", "Перевод6"])
-        ])
     }
     
     func getUser(completion: (User) -> Void) {
@@ -67,11 +62,6 @@ final class DataManagerMock: DataManagerProtocol {
     }
     
     func fetchFavoriteWords(completion: ([Word]) -> Void) {
-        completion([
-            Word(word: "Слово1", translations: ["Перевод1", "Перевод2", "Перевод7", "Перевод8"]),
-            Word(word: "Слово2", translations: ["Перевод3", "Перевод4"]),
-            Word(word: "Слово3", translations: ["Перевод5", "Перевод6"])
-        ])
     }
     
     func fetchWordDetail(_ word: String, completion: @escaping (WordDetail) -> Void) {

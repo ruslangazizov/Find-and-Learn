@@ -34,8 +34,7 @@ final class SearchWordsInteractor: SearchWordsInteractorProtocol {
     
     func getWords(_ word: String?, completion: @escaping ([Word]) -> Void) {
         guard let word = word,
-            word.count > 1,
-            !word.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            word.trimmingCharacters(in: .whitespacesAndNewlines).count > 1 else {
             return
         }
         
@@ -46,7 +45,7 @@ final class SearchWordsInteractor: SearchWordsInteractorProtocol {
         let request = DictionaryRequest(
             word,
             apiKey,
-            validationManager.isEnglishCharacters(word)
+            validationManager.areEnglishCharacters(word)
         )
         
         networkManager.perform(request) { (result: Result<DictionaryResponseModel, NetworkManagerError>) in
@@ -58,11 +57,6 @@ final class SearchWordsInteractor: SearchWordsInteractorProtocol {
                 
                 let word = Word(
                     word: model.body.first?.text ?? "",
-                    translations: model.body.flatMap { wordModel in
-                        wordModel.translations.map {
-                            $0.text
-                        }
-                    },
                     detailTranslations: model.body.flatMap { wordModel in
                         wordModel.translations.map {
                             Translation(

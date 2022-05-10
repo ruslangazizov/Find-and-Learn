@@ -9,12 +9,10 @@ import Foundation
 
 struct Word {
     let word: String
-    let translations: [String]
     let detailTranslations: [Translation]?
     
-    init(word: String, translations: [String], detailTranslations: [Translation]? = nil) {
+    init(word: String, detailTranslations: [Translation]? = nil) {
         self.word = word
-        self.translations = translations
         self.detailTranslations = detailTranslations
     }
 }
