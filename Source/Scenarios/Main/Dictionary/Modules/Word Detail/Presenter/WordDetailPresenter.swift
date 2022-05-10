@@ -79,7 +79,6 @@ final class WordDetailPresenter: WordDetailViewOutput {
             view?.showNoChosenTranslationsAlert()
             return
         }
-        guard let wordDetail = wordDetail else { return }
         
         let translationsWithSynonyms = chosenTranslations.map { $0.translationWithSynonyms }
         let translationsExamples = chosenTranslations.flatMap { translationModel in
@@ -92,7 +91,7 @@ final class WordDetailPresenter: WordDetailViewOutput {
             }
         }
         let newFlashcardModel = NewFlashcardModel(
-            frontSide: wordDetail.word,
+            frontSide: wordModel.word,
             backSide: translationsWithSynonyms.joined(separator: "\n"),
             deckIndex: nil,
             comment: translationsExamples.joined(separator: "\n")
