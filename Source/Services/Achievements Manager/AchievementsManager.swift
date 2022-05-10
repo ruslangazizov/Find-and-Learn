@@ -9,26 +9,57 @@ import Foundation
 import UIKit
 
 protocol AchievementsManagerProtocol: AnyObject {
-    func getAllAchievements() -> [Achievement]
+    func getAchievements() -> [Achievement]
 }
 
 final class AchievementsManager: AchievementsManagerProtocol {
-    func getAllAchievements() -> [Achievement] {
+    private let userDefaults = UserDefaults.standard
+    
+    private let achievementsDictionaryKey = "achievementsDictionaryKey"
+    
+    private func checkNewAchievements() {
+        // TODO: Проверить наличие новых достижений. При необходимости обновить userDefaults.
+    }
+    
+    private func getAchievementsDictionary() -> [String: Date?] {
+        let achievements = userDefaults.dictionary(forKey: achievementsDictionaryKey)
+        if achievements == nil {
+            let emptyDictionary: [String: Date?] = [:]
+            userDefaults.set(emptyDictionary, forKey: achievementsDictionaryKey)
+            return [:]
+        } else {
+            return achievements as? [String: Date?] ?? [:]
+        }
+    }
+    
+    private func getAllAchievements() -> [(name: String, description: String, image: UIImage?)] {
         return [
-            Achievement(
-                id: 0,
-                name: R.string.localizable.achievement_iterator_name(),
-                description: R.string.localizable.achievement_iterator_description(),
-                image: R.image.achievement_iterator_inactive(),
-                dateOfGetting: nil
+            (
+                R.string.localizable.achievement_iterator_name(),
+                R.string.localizable.achievement_iterator_description(),
+                R.image.achievement_iterator_inactive()
             ),
-            Achievement(
-                id: 1,
-                name: R.string.localizable.achievement_wasserman_name(),
-                description: R.string.localizable.achievement_wasserman_description(),
-                image: R.image.achievement_wasserman_inactive(),
-                dateOfGetting: nil
+            (
+                R.string.localizable.achievement_wasserman_name(),
+                R.string.localizable.achievement_wasserman_description(),
+                R.image.achievement_wasserman_inactive()
             )
         ]
+    }
+    
+    func getAchievements() -> [Achievement] {
+        checkNewAchievements()
+        
+        let achievementsDictionary = getAchievementsDictionary()
+        
+        return getAllAchievements().enumerated().map { index, achievement in
+            Achievement(
+                id: index,
+                name: achievement.name,
+                description: achievement.description,
+                image: achievement.image,
+                dateOfGetting: achievementsDictionary["\(index)"]?.flatMap { $0 }
+            )
+        }
     }
 }

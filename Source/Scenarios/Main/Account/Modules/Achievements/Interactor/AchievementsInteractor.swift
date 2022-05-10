@@ -27,12 +27,6 @@ final class AchievementsInteractor: AchievementsInteractorProtocol {
     // MARK: AchievementsInteractorProtocol
     
     func getAchievements(_ completion: ([Achievement]) -> Void) {
-        dataManager.getAchievements { achievements in
-            var allAchievements = achievementManager.getAllAchievements()
-            achievements.forEach {
-                allAchievements[$0.id] = $0
-            }
-            completion(allAchievements)
-        }
+        completion(achievementManager.getAchievements())
     }
 }

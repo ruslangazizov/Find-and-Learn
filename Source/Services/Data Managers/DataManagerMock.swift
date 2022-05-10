@@ -20,10 +20,6 @@ final class DataManagerMock: DataManagerProtocol {
         )
     }
     
-    func getAchievements(completion: ([Achievement]) -> Void) {
-        completion([])
-    }
-    
     func fetchHistoryWords(completion: ([HistoryWord]) -> Void) {
         let today = Date()
         let dayInterval: Double = 60 * 60 * 24
