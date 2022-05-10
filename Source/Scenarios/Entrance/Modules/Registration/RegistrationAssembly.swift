@@ -10,7 +10,15 @@ import UIKit
 
 final class RegistrationAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let interactor = RegistrationInteractor(validationManager: ValidationManager())
+        let validationManager = ValidationManager()
+        let networkManager = NetworkManager()
+        let dataManager = DataManagerMock()
+        
+        let interactor = RegistrationInteractor(
+            validationManager: validationManager,
+            networkManager: networkManager,
+            dataManager: dataManager
+        )
         let router = RegistrationRouter()
         
         let presenter = RegistrationPresenter(interactor: interactor, router: router)

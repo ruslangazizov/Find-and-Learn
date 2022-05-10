@@ -24,7 +24,9 @@ final class AuthorizationPresenter: AuthorizationViewOutput {
     // MARK: ViewOutput
     
     func enter(email: String, password: String) {
+        view?.startLoader()
         interactor.enter(email: email, password: password) { [weak self] result in
+            self?.view?.stopLoader()
             switch result {
             case .emailTextField(let message):
                 self?.view?.showError(.email(message))

@@ -26,6 +26,6 @@ final class RegistrationRouter: RegistrationRouterProtocol {
     }
     
     func finish() {
-        print("Push for main")
+        view?.navigationController?.setViewController(viewController: TabBarViewController(), animated: true)
     }
 }

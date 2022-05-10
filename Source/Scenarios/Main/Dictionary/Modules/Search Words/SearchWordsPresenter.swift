@@ -20,6 +20,7 @@ final class SearchWordsPresenter: SearchWordsViewOutput {
     weak var view: SearchWordsViewInput?
     private let router: SearchWordsRouterProtocol
     private let interactor: SearchWordsInteractorProtocol
+    private var searchTask: DispatchWorkItem?
     
     // MARK: Initializer
     
@@ -31,12 +32,25 @@ final class SearchWordsPresenter: SearchWordsViewOutput {
     // MARK: SearchWordsViewOutput
     
     func didEnterWord(_ word: String?) {
-        interactor.getWords(word) { [weak self] words in
-            let wordModels = words.map {
-                WordModel(word: $0.word, translations: $0.translations.joined(separator: ", "))
+        searchTask?.cancel()
+        
+        let task = DispatchWorkItem { [weak self] in
+            self?.interactor.getWords(word) { [weak self] words in
+                let wordModels = words.map {
+                    WordModel(
+                        word: $0.word,
+                        translations: $0.detailTranslations?.compactMap {
+                            $0.translation
+                        }
+                        .joined(separator: ", ") ?? "",
+                        detailTranslations: $0.detailTranslations
+                    )
+                }
+                self?.view?.showWords(wordModels)
             }
-            self?.view?.showWords(wordModels)
         }
+        searchTask = task
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: task)
     }
     
     func didTapFavoriteWordsBarButtonItem() {

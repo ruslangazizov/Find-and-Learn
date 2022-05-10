@@ -36,4 +36,11 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: handler))
         present(alert, animated: true, completion: nil)
     }
+    
+    func showServerProblemAlert() {
+        showOkAlert(
+            title: R.string.localizable.validation_error_server_problems_title(),
+            message: R.string.localizable.validation_error_server_problems_message()
+        )
+    }
 }

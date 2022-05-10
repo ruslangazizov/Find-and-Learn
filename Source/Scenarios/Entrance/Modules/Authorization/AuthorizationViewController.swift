@@ -82,6 +82,12 @@ final class AuthorizationViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var loader: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView(style: .large)
+        loader.hidesWhenStopped = true
+        return loader
+    }()
+    
     // MARK: Dependencies
     
     private let presenter: AuthorizationViewOutput
@@ -138,11 +144,15 @@ final class AuthorizationViewController: UIViewController {
         view.addSubview(enterButton)
         view.addSubview(registrationButton)
         view.addSubview(enterAsGuestButton)
+        view.addSubview(loader)
     }
     
     private func setupUI() {
         setupStackViews()
         setupButtons()
+        loader.snp.makeConstraints { make in
+            make.centerY.centerX.equalToSuperview()
+        }
     }
     
     private func setupStackViews() {
@@ -278,6 +288,20 @@ extension AuthorizationViewController: AuthorizationViewInput {
             passwordErrorLabel.text = message
             passwordErrorLabel.isHidden = false
         }
+    }
+    
+    func showServerProblemsAlert() {
+        showServerProblemAlert()
+    }
+    
+    func startLoader() {
+        loader.startAnimating()
+        view.isUserInteractionEnabled = false
+    }
+    
+    func stopLoader() {
+        loader.stopAnimating()
+        view.isUserInteractionEnabled = true
     }
 }
 

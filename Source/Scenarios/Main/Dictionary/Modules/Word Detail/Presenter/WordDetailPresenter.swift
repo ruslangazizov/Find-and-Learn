@@ -37,8 +37,12 @@ final class WordDetailPresenter: WordDetailViewOutput {
     
     func viewDidLoad() {
         interactor.getWordDetail(wordModel) { [weak self] wordDetail in
-            self?.wordDetail = wordDetail
-            let speechPartsModels = Dictionary(grouping: wordDetail.translations) { translation in
+            guard let self = self else { return }
+            self.wordDetail = wordDetail
+            
+            let speechPartsFromWordModel = Dictionary(
+                grouping: self.wordModel.detailTranslations ?? []
+            ) { translation in
                 translation.speechPart
             }.sorted { $0.key > $1.key }.map { speechPartString, translations in
                 SpeechPartModel(
@@ -49,12 +53,13 @@ final class WordDetailPresenter: WordDetailViewOutput {
                     }
                 )
             }
+            
             let wordDetailModel = WordDetailModel(
-                word: wordDetail.word,
+                word: self.wordModel.word,
                 isFavorite: wordDetail.isFavorite,
-                speechParts: speechPartsModels
+                speechParts: speechPartsFromWordModel
             )
-            self?.view?.showWord(wordDetailModel)
+            self.view?.showWord(wordDetailModel)
         }
     }
     
@@ -74,7 +79,6 @@ final class WordDetailPresenter: WordDetailViewOutput {
             view?.showNoChosenTranslationsAlert()
             return
         }
-        guard let wordDetail = wordDetail else { return }
         
         let translationsWithSynonyms = chosenTranslations.map { $0.translationWithSynonyms }
         let translationsExamples = chosenTranslations.flatMap { translationModel in
@@ -87,7 +91,7 @@ final class WordDetailPresenter: WordDetailViewOutput {
             }
         }
         let newFlashcardModel = NewFlashcardModel(
-            frontSide: wordDetail.word,
+            frontSide: wordModel.word,
             backSide: translationsWithSynonyms.joined(separator: "\n"),
             deckIndex: nil,
             comment: translationsExamples.joined(separator: "\n")

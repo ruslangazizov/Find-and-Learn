@@ -31,7 +31,13 @@ final class FavoriteWordsPresenter: FavoriteWordsViewOutput {
     func viewDidLoad() {
         interactor.fetchFavoriteWords { [weak self] words in
             let wordModels = words.map {
-                WordModel(word: $0.word, translations: $0.translations.joined(separator: ", "))
+                WordModel(
+                    word: $0.word,
+                    translations: $0.detailTranslations?.compactMap { translation in
+                        translation.translation
+                    }
+                    .joined(separator: ", ") ?? ""
+                )
             }
             self?.view?.showWords(wordModels)
         }

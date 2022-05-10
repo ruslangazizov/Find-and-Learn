@@ -11,6 +11,7 @@ protocol ValidationManagerProtocol: AnyObject {
     func isValidEmail(_ email: String) -> Bool
     func isValidPassword(_ password: String) -> Bool
     func isValidUserName(_ userName: String) -> Bool
+    func areEnglishCharacters(_ text: String) -> Bool
 }
 
 final class ValidationManager: ValidationManagerProtocol {
@@ -31,6 +32,10 @@ final class ValidationManager: ValidationManagerProtocol {
     
     private let userNamePredicate = NSPredicate(format: "SELF MATCHES %@", userNameRegularExpression)
     
+    private static let englishCharactersExpression = "[a-zA-z]+"
+    
+    private let englishCharactersPredicate = NSPredicate(format: "SELF MATCHES %@", englishCharactersExpression)
+    
     // MARK: ValidationManagerProtocol
     
     func isValidEmail(_ email: String) -> Bool {
@@ -43,5 +48,9 @@ final class ValidationManager: ValidationManagerProtocol {
     
     func isValidUserName(_ userName: String) -> Bool {
         return userNamePredicate.evaluate(with: userName)
+    }
+    
+    func areEnglishCharacters(_ text: String) -> Bool {
+        return englishCharactersPredicate.evaluate(with: text)
     }
 }

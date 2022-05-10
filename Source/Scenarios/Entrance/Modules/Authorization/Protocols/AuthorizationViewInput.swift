@@ -9,4 +9,7 @@ import Foundation
 
 protocol AuthorizationViewInput: AnyObject {
     func showError(_ error: AuthorizationErrors)
+    func showServerProblemsAlert()
+    func startLoader()
+    func stopLoader()
 }

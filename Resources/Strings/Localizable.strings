@@ -86,6 +86,10 @@
 "validation_error_empty_email" = "Пустой E-Mail";
 "validation_error_incorrect_user_name" = "Неверный формат никнейма";
 "validation_error_password_not_equals" = "Пароли не совпадают";
+"validation_error_not_unique_email" = "Данный E-Mail уже используется";
+"validation_error_not_right_data" = "Неверный E-Mail или пароль";
+"validation_error_server_problems_title" = "Проблемы с сервером";
+"validation_error_server_problems_message" = "Повторите попытку позже";
 
 // Успешная валидация
 "validation_success_email_sent_title" = "Письмо с восстановлением пароля отправлено";

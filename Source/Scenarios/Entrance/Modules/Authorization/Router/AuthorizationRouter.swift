@@ -32,6 +32,6 @@ final class AuthorizationRouter: AuthorizationRouterProtocol {
     }
     
     func finishFlow() {
-        print("Push for main")
+        view?.navigationController?.setViewController(viewController: TabBarViewController(), animated: true)
     }
 }

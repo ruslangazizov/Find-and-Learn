@@ -28,4 +28,8 @@ final class AccountRouter: AccountRouterProtocol {
     
     func showRegistrationModule() {
     }
+    
+    func showEntranceFlow() {
+        UIApplication.shared.windows.first?.rootViewController = EntranceAssembly.assemble()
+    }
 }

@@ -92,6 +92,12 @@ final class RegistrationViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var loader: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView(style: .large)
+        loader.hidesWhenStopped = true
+        return loader
+    }()
+    
     // MARK: Dependencies
     
     private let presenter: RegistrationViewOutput
@@ -155,6 +161,7 @@ final class RegistrationViewController: UIViewController {
         view.addSubview(confirmPasswordErrorLabel)
         buttonsStackView.addArrangedSubview(registrationButton)
         buttonsStackView.addArrangedSubview(enterButton)
+        view.addSubview(loader)
     }
     
     private func setupUI() {
@@ -182,6 +189,9 @@ final class RegistrationViewController: UIViewController {
         buttonsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
             make.bottom.equalToSuperview().inset(Constants.bottomInset)
+        }
+        loader.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
         }
     }
     
@@ -282,6 +292,20 @@ extension RegistrationViewController: RegistrationViewInput {
             confirmPasswordErrorLabel.text = message
             confirmPasswordErrorLabel.isHidden = false
         }
+    }
+    
+    func showServerProblemsAlert() {
+        showServerProblemAlert()
+    }
+    
+    func startLoader() {
+        loader.startAnimating()
+        view.isUserInteractionEnabled = false
+    }
+    
+    func stopLoader() {
+        loader.stopAnimating()
+        view.isUserInteractionEnabled = true
     }
 }
 

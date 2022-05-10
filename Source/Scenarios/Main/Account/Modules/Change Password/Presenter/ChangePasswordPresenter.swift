@@ -29,14 +29,14 @@ final class ChangePasswordPresenter: ChangePasswordViewOutput {
     // MARK: ViewOutput
     
     func changePassword(password: String, confirmPassword: String) {
-        interactor.changePassword(password: password, confirmPassword: confirmPassword) { result in
+        interactor.changePassword(password: password, confirmPassword: confirmPassword) { [weak self] result in
             switch result {
             case .password:
-                view?.showError(.password(R.string.localizable.validation_error_incorrect_password()))
+                self?.view?.showError(.password(R.string.localizable.validation_error_incorrect_password()))
             case .confirmPassword:
-                view?.showError(.confirmPassword(R.string.localizable.validation_error_password_not_equals()))
+                self?.view?.showError(.confirmPassword(R.string.localizable.validation_error_password_not_equals()))
             case .success:
-                view?.showOkAlert()
+                self?.view?.showOkAlert()
             }
         }
     }

@@ -13,7 +13,7 @@ protocol RegistrationInteractorProtocol: AnyObject {
         userName: String,
         password: String,
         confirmPassword: String,
-        _ result: (RegistrationResultState) -> Void
+        _ result: @escaping (RegistrationResultState) -> Void
     )
 }
 
@@ -21,11 +21,19 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
     // MARK: Dependencies
     
     private let validationManager: ValidationManagerProtocol
+    private let networkManager: NetworkManagerProtocol
+    private let dataManager: DataManagerProtocol
     
     // MARK: Init
     
-    init(validationManager: ValidationManagerProtocol) {
+    init(
+        validationManager: ValidationManagerProtocol,
+        networkManager: NetworkManagerProtocol,
+        dataManager: DataManagerProtocol
+    ) {
         self.validationManager = validationManager
+        self.networkManager = networkManager
+        self.dataManager = dataManager
     }
     
     // MARK: RegistrationInteractorProtocol
@@ -35,7 +43,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
         userName: String,
         password: String,
         confirmPassword: String,
-        _ result: (RegistrationResultState) -> Void
+        _ result: @escaping (RegistrationResultState) -> Void
     ) {
         guard !email.isEmpty else {
             result(.emailTextField(R.string.localizable.validation_error_empty_email()))
@@ -51,8 +59,51 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
         } else if password != confirmPassword {
             result(.confirmPasswordTextField(R.string.localizable.validation_error_password_not_equals()))
         } else {
-            // TODO: API request
-            result(.success)
+            let requestModel = RegistrationRequestModel(
+                firstName: "",
+                secondName: "",
+                email: email,
+                password: password,
+                registeredAt: Date().toString(using: .registrationDateFormatter)
+            )
+            networkManager.perform(
+                RegistrationRequest(requestModel)
+            ) { [weak self] (resultData: Result<RegistrationResponseModel, NetworkManagerError>) in
+                switch resultData {
+                case .success(let model):
+                    DispatchQueue.global(qos: .background).async {
+                        self?.dataManager.saveEmailCode(model.emailCode)
+                        self?.dataManager.saveUser(User(
+                            email: email,
+                            userName: userName,
+                            password: password,
+                            state: .inactive)
+                        )
+                        self?.dataManager.saveToken("\(HTTP.Auth.tokenType) \(model.token)")
+                    }
+                    result(.success)
+                case .failure:
+                    result(.emailTextField(R.string.localizable.validation_error_not_unique_email()))
+                }
+            }
         }
+    }
+}
+
+private struct RegistrationResponseModel: Decodable {
+    let id: Int
+    let firstName: String
+    let secondName: String
+    let email: String
+    let emailCode: Int
+    let token: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case firstName = "first_name"
+        case secondName = "second_name"
+        case email
+        case emailCode = "email_confirmation_code"
+        case token
     }
 }

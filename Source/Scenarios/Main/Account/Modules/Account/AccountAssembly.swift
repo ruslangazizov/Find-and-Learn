@@ -10,7 +10,11 @@ import UIKit
 
 final class AccountAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let interactor = AccountInteractor(dataManager: DataManagerMock(), settingsManager: SettingsManager())
+        let interactor = AccountInteractor(
+            dataManager: DataManagerMock(),
+            settingsManager: SettingsManager(),
+            networkManager: NetworkManager()
+        )
         let router = AccountRouter()
         
         let presenter = AccountPresenter(interactor: interactor, router: router)
