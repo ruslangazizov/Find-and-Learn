@@ -33,7 +33,11 @@ final class SearchWordsPresenter: SearchWordsViewOutput {
     func didEnterWord(_ word: String?) {
         interactor.getWords(word) { [weak self] words in
             let wordModels = words.map {
-                WordModel(word: $0.word, translations: $0.translations.joined(separator: ", "))
+                WordModel(
+                    word: $0.word,
+                    translations: $0.translations.joined(separator: ", "),
+                    detailTranslations: $0.detailTranslations
+                )
             }
             self?.view?.showWords(wordModels)
         }

@@ -35,6 +35,7 @@ final class SearchWordsViewController: UIViewController {
     
     private let presenter: SearchWordsViewOutput
     private var words: [WordModel] = []
+    private var searchTask: DispatchWorkItem?
     
     // MARK: Initializers
     
@@ -115,7 +116,13 @@ extension SearchWordsViewController: SearchWordsViewInput {
 extension SearchWordsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text
-        presenter.didEnterWord(searchText)
+        searchTask?.cancel()
+
+        let task = DispatchWorkItem { [weak self] in
+            self?.presenter.didEnterWord(searchText)
+        }
+        searchTask = task
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: task)
     }
 }
 

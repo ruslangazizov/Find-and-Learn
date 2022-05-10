@@ -11,7 +11,11 @@ import UIKit
 final class SearchWordsAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let router = SearchWordsRouter()
-        let interactor = SearchWordsInteractor(dataManager: DataManagerMock())
+        let interactor = SearchWordsInteractor(
+            dataManager: DataManagerMock(),
+            networkManager: NetworkManager(),
+            validationManager: ValidationManager()
+        )
         let presenter = SearchWordsPresenter(router: router, interactor: interactor)
         let view = SearchWordsViewController(presenter: presenter)
         

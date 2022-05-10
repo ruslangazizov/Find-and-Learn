@@ -194,4 +194,8 @@ final class DataManagerMock: DataManagerProtocol {
     func getToken() -> String? {
         return nil
     }
+    
+    func getApiKey() -> String? {
+        return "dict.1.1.20220509T162427Z.6fc4e65140e1e3dc.6be551b61e08e1351dce814bb39a1f6e6fb58573"
+    }
 }
