@@ -5,9 +5,45 @@
 //  Created by Руслан on 31.03.2022.
 //
 
-import Foundation
+import CoreData
 
 final class DataManagerMock: DataManagerProtocol {
+    static let shared: DataManagerProtocol = DataManagerMock()
+    
+    private init() {}
+    
+    // MARK: Core Data stack
+    
+    private lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Find_and_Learn")
+        container.loadPersistentStores { _, error in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        }
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        return container
+    }()
+    
+    private lazy var viewContext = persistentContainer.viewContext
+    
+    // MARK: Core Data Saving support
+    
+    private func saveContext() {
+        if viewContext.hasChanges {
+            do {
+                try viewContext.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+}
+
+// MARK: - Public methods
+
+extension DataManagerMock {
     func getWords(_ word: String, completion: ([Word]) -> Void) {
     }
     

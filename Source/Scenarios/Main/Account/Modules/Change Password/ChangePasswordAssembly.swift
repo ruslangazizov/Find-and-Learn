@@ -13,7 +13,7 @@ final class ChangePasswordAssembly: AssemblyProtocol {
         let interactor = ChangePasswordInteractor(
             validationManager: ValidationManager(),
             networkManager: NetworkManager(),
-            dataManager: DataManagerMock()
+            dataManager: DataManagerMock.shared
         )
         let router = ChangePasswordRouter()
         

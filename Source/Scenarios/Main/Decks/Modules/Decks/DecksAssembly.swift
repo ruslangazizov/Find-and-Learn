@@ -9,7 +9,7 @@ import UIKit
 
 final class DecksAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let interactor = DecksInteractor(dataManager: DataManagerMock(), stringFormatter: StringFormatter())
+        let interactor = DecksInteractor(dataManager: DataManagerMock.shared, stringFormatter: StringFormatter())
         let router = DecksRouter()
         
         let presenter = DecksPresenter(interactor: interactor, router: router)

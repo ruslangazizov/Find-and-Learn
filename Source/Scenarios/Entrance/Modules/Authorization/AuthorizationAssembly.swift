@@ -13,7 +13,7 @@ final class AuthorizationAssembly: AssemblyProtocol {
         let interactor = AuthorizationInteractor(
             validationManager: ValidationManager(),
             networkManager: NetworkManager(),
-            dataManager: DataManagerMock()
+            dataManager: DataManagerMock.shared
         )
         let router = AuthorizationRouter()
         
