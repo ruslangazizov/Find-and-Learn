@@ -1,5 +1,5 @@
 //
-//  TranslationEntity+CoreDataProperties.swift
+//  TranslationEntity.swift
 //  
 //
 //  Created by Руслан on 11.05.2022.
@@ -11,11 +11,9 @@ import CoreData
 
 @objc(TranslationEntity)
 public class TranslationEntity: NSManagedObject {
-    
 }
 
 extension TranslationEntity {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<TranslationEntity> {
         return NSFetchRequest<TranslationEntity>(entityName: "TranslationEntity")
     }
@@ -26,12 +24,10 @@ extension TranslationEntity {
     @NSManaged public var id: Int32
     @NSManaged public var word: WordEntity?
     @NSManaged public var examples: Set<ExampleEntity>?
-
 }
 
 // MARK: Generated accessors for examples
 extension TranslationEntity {
-
     @objc(addExamplesObject:)
     @NSManaged public func addToExamples(_ value: ExampleEntity)
 
@@ -43,5 +39,4 @@ extension TranslationEntity {
 
     @objc(removeExamples:)
     @NSManaged public func removeFromExamples(_ values: Set<ExampleEntity>)
-
 }

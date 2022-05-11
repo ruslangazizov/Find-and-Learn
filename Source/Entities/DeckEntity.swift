@@ -1,5 +1,5 @@
 //
-//  DeckEntity+CoreDataProperties.swift
+//  DeckEntity.swift
 //  
 //
 //  Created by Руслан on 11.05.2022.
@@ -11,11 +11,9 @@ import CoreData
 
 @objc(DeckEntity)
 public class DeckEntity: NSManagedObject {
-    
 }
 
 extension DeckEntity {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<DeckEntity> {
         return NSFetchRequest<DeckEntity>(entityName: "DeckEntity")
     }
@@ -24,12 +22,10 @@ extension DeckEntity {
     @NSManaged public var name: String?
     @NSManaged public var createdAt: Date?
     @NSManaged public var flashcards: Set<FlashcardEntity>?
-
 }
 
 // MARK: Generated accessors for flashcards
 extension DeckEntity {
-
     @objc(addFlashcardsObject:)
     @NSManaged public func addToFlashcards(_ value: FlashcardEntity)
 
@@ -41,5 +37,4 @@ extension DeckEntity {
 
     @objc(removeFlashcards:)
     @NSManaged public func removeFromFlashcards(_ values: Set<FlashcardEntity>)
-
 }

@@ -40,18 +40,13 @@
         <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="word" attributeType="String"/>
         <relationship name="translations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TranslationEntity" inverseName="word" inverseEntity="TranslationEntity"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="word"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="DeckEntity" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="FlashcardEntity" positionX="-54" positionY="18" width="128" height="149"/>
-        <element name="WordEntity" positionX="-45" positionY="90" width="128" height="74"/>
-        <element name="TranslationEntity" positionX="-36" positionY="99" width="128" height="119"/>
         <element name="ExampleEntity" positionX="-9" positionY="126" width="128" height="104"/>
+        <element name="FlashcardEntity" positionX="-54" positionY="18" width="128" height="149"/>
         <element name="HistoryWordEntity" positionX="0" positionY="144" width="128" height="74"/>
+        <element name="TranslationEntity" positionX="-36" positionY="99" width="128" height="119"/>
+        <element name="WordEntity" positionX="-45" positionY="90" width="128" height="74"/>
     </elements>
 </model>

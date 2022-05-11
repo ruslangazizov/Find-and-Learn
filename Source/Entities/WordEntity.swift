@@ -1,5 +1,5 @@
 //
-//  WordEntity+CoreDataProperties.swift
+//  WordEntity.swift
 //  
 //
 //  Created by Руслан on 11.05.2022.
@@ -11,11 +11,9 @@ import CoreData
 
 @objc(WordEntity)
 public class WordEntity: NSManagedObject {
-    
 }
 
 extension WordEntity {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<WordEntity> {
         return NSFetchRequest<WordEntity>(entityName: "WordEntity")
     }
@@ -23,12 +21,10 @@ extension WordEntity {
     @NSManaged public var isFavorite: Bool
     @NSManaged public var word: String?
     @NSManaged public var translations: Set<TranslationEntity>?
-
 }
 
 // MARK: Generated accessors for translations
 extension WordEntity {
-
     @objc(addTranslationsObject:)
     @NSManaged public func addToTranslations(_ value: TranslationEntity)
 
@@ -40,5 +36,4 @@ extension WordEntity {
 
     @objc(removeTranslations:)
     @NSManaged public func removeFromTranslations(_ values: Set<TranslationEntity>)
-
 }

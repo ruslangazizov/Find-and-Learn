@@ -44,7 +44,7 @@ final class DataManagerMock: DataManagerProtocol {
 // MARK: - Public methods
 
 extension DataManagerMock {
-    func getWords(_ word: String, completion: ([Word]) -> Void) {
+    func getWords(_ wordPart: String, completion: ([Word]) -> Void) {
     }
     
     func getUser(completion: (User) -> Void) {
