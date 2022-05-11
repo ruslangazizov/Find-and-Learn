@@ -14,7 +14,8 @@ public class FlashcardEntity: NSManagedObject {
 }
 
 extension FlashcardEntity {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<FlashcardEntity> {
+    @nonobjc
+    public class func fetchRequest() -> NSFetchRequest<FlashcardEntity> {
         return NSFetchRequest<FlashcardEntity>(entityName: "FlashcardEntity")
     }
 

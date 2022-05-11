@@ -14,7 +14,8 @@ public class DeckEntity: NSManagedObject {
 }
 
 extension DeckEntity {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<DeckEntity> {
+    @nonobjc
+    public class func fetchRequest() -> NSFetchRequest<DeckEntity> {
         return NSFetchRequest<DeckEntity>(entityName: "DeckEntity")
     }
 

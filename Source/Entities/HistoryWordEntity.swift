@@ -14,7 +14,8 @@ public class HistoryWordEntity: NSManagedObject {
 }
 
 extension HistoryWordEntity {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<HistoryWordEntity> {
+    @nonobjc
+    public class func fetchRequest() -> NSFetchRequest<HistoryWordEntity> {
         return NSFetchRequest<HistoryWordEntity>(entityName: "HistoryWordEntity")
     }
 

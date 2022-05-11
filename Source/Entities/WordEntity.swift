@@ -14,7 +14,8 @@ public class WordEntity: NSManagedObject {
 }
 
 extension WordEntity {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<WordEntity> {
+    @nonobjc
+    public class func fetchRequest() -> NSFetchRequest<WordEntity> {
         return NSFetchRequest<WordEntity>(entityName: "WordEntity")
     }
 

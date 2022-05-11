@@ -14,7 +14,8 @@ public class TranslationEntity: NSManagedObject {
 }
 
 extension TranslationEntity {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<TranslationEntity> {
+    @nonobjc
+    public class func fetchRequest() -> NSFetchRequest<TranslationEntity> {
         return NSFetchRequest<TranslationEntity>(entityName: "TranslationEntity")
     }
 

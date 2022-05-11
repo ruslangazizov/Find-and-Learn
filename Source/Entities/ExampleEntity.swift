@@ -14,7 +14,8 @@ public class ExampleEntity: NSManagedObject {
 }
 
 extension ExampleEntity {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ExampleEntity> {
+    @nonobjc
+    public class func fetchRequest() -> NSFetchRequest<ExampleEntity> {
         return NSFetchRequest<ExampleEntity>(entityName: "ExampleEntity")
     }
 
