@@ -50,7 +50,7 @@ final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
             result(.confirmPassword)
         } else {
             userManager.getUser { [weak self] user in
-                guard let user = user, let token = self?.dataManager.getToken() else {
+                guard let token = self?.dataManager.getToken() else {
                     return
                 }
                 let request = UserUpdateRequest(

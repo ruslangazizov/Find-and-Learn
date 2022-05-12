@@ -26,7 +26,7 @@ final class AchievementsManager: AchievementsManagerProtocol {
         if achievements == nil {
             let emptyDictionary: [String: Date?] = [:]
             userDefaults.set(emptyDictionary, forKey: achievementsDictionaryKey)
-            return [:]
+            return emptyDictionary
         } else {
             return achievements as? [String: Date?] ?? [:]
         }

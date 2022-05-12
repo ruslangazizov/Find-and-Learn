@@ -39,10 +39,6 @@ final class AccountInteractor: AccountInteractorProtocol {
     func loadSettings(_ completion: @escaping (([Setting], String) -> Void)) {
         userManager.getUser { [weak self] user in
             DispatchQueue.main.async {
-                guard let user = user else {
-                    completion([], "")
-                    return
-                }
                 completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [], user.userName)
             }
         }
@@ -50,7 +46,7 @@ final class AccountInteractor: AccountInteractorProtocol {
     
     func deleteAccount(_ completion: @escaping (Bool) -> Void) {
         userManager.getUser { [weak self] user in
-            guard let user = user, let token = self?.dataManager.getToken() else {
+            guard let token = self?.dataManager.getToken() else {
                 return
             }
             let request = DeleteRequest(user.id, token)
