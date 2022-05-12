@@ -17,6 +17,7 @@ final class RegistrationAssembly: AssemblyProtocol {
         let interactor = RegistrationInteractor(
             validationManager: validationManager,
             networkManager: networkManager,
+            userManager: UserManager(),
             dataManager: dataManager
         )
         let router = RegistrationRouter()

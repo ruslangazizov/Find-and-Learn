@@ -9,7 +9,6 @@ import Foundation
 
 protocol DataManagerProtocol: AnyObject {
     func getWords(_ word: String, completion: @escaping ([Word]) -> Void)
-    func getUser(completion: @escaping (User) -> Void)
     func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void)
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void)
     func fetchWordDetail(_ word: String, completion: @escaping (WordDetail) -> Void)
@@ -22,7 +21,6 @@ protocol DataManagerProtocol: AnyObject {
     func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void)
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int)
     func saveEmailCode(_ code: Int)
-    func saveUser(_ user: User)
     func saveToken(_ token: String)
     func getToken() -> String?
     func getApiKey() -> String?

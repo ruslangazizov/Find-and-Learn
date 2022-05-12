@@ -13,6 +13,7 @@ final class AccountAssembly: AssemblyProtocol {
         let interactor = AccountInteractor(
             dataManager: DataManagerMock.shared,
             settingsManager: SettingsManager(),
+            userManager: UserManager(),
             networkManager: NetworkManager()
         )
         let router = AccountRouter()

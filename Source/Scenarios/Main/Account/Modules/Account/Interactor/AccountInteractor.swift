@@ -17,6 +17,7 @@ final class AccountInteractor: AccountInteractorProtocol {
     
     private let dataManager: DataManagerProtocol
     private let settingsManager: SettingsManagerProtocol
+    private let userManager: UserManagerProtocol
     private let networkManager: NetworkManagerProtocol
     
     // MARK: Init
@@ -24,26 +25,32 @@ final class AccountInteractor: AccountInteractorProtocol {
     init(
         dataManager: DataManagerProtocol,
         settingsManager: SettingsManagerProtocol,
+        userManager: UserManagerProtocol,
         networkManager: NetworkManagerProtocol
     ) {
         self.dataManager = dataManager
         self.settingsManager = settingsManager
+        self.userManager = userManager
         self.networkManager = networkManager
     }
     
     // MARK: AccountInteractorProtocol
     
     func loadSettings(_ completion: @escaping (([Setting], String) -> Void)) {
-        dataManager.getUser { [weak self] user in
+        userManager.getUser { [weak self] user in
             DispatchQueue.main.async {
+                guard let user = user else {
+                    completion([], "")
+                    return
+                }
                 completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [], user.userName)
             }
         }
     }
     
     func deleteAccount(_ completion: @escaping (Bool) -> Void) {
-        dataManager.getUser { [weak self] user in
-            guard let token = self?.dataManager.getToken() else {
+        userManager.getUser { [weak self] user in
+            guard let user = user, let token = self?.dataManager.getToken() else {
                 return
             }
             let request = DeleteRequest(user.id, token)

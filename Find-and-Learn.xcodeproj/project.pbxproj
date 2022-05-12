@@ -84,6 +84,7 @@
 		44EAE9C0282BB02F00EF6A82 /* ExampleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EAE9B4282BB02F00EF6A82 /* ExampleEntity.swift */; };
 		44EAE9C1282BB02F00EF6A82 /* FlashcardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EAE9B5282BB02F00EF6A82 /* FlashcardEntity.swift */; };
 		44EAE9C6282BB02F00EF6A82 /* HistoryWordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EAE9BA282BB02F00EF6A82 /* HistoryWordEntity.swift */; };
+		44EAE9C9282D3B8E00EF6A82 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EAE9C8282D3B8E00EF6A82 /* UserManager.swift */; };
 		44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379DD27FC407B001F02F4 /* Date+Extensions.swift */; };
 		44F379E027FC41A6001F02F4 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379DF27FC41A6001F02F4 /* DateFormatter+Extensions.swift */; };
 		44F379E527FC4389001F02F4 /* HistoryWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F379E427FC4389001F02F4 /* HistoryWordsAssembly.swift */; };
@@ -270,6 +271,7 @@
 		44EAE9B4282BB02F00EF6A82 /* ExampleEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleEntity.swift; sourceTree = "<group>"; };
 		44EAE9B5282BB02F00EF6A82 /* FlashcardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcardEntity.swift; sourceTree = "<group>"; };
 		44EAE9BA282BB02F00EF6A82 /* HistoryWordEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWordEntity.swift; sourceTree = "<group>"; };
+		44EAE9C8282D3B8E00EF6A82 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		44F379DD27FC407B001F02F4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		44F379DF27FC41A6001F02F4 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		44F379E427FC4389001F02F4 /* HistoryWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsAssembly.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 		441F8B6527EC81A80066358F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				44EAE9C7282D3B7E00EF6A82 /* User Manager */,
 				D202DF0C2826DACA0022D322 /* Network Manager */,
 				44435E892821812F00737D69 /* String Formatter */,
 				D227868F281F1653003C3D8A /* Appearance Manager */,
@@ -838,6 +841,14 @@
 				44EAE9AF282BB02E00EF6A82 /* WordEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		44EAE9C7282D3B7E00EF6A82 /* User Manager */ = {
+			isa = PBXGroup;
+			children = (
+				44EAE9C8282D3B8E00EF6A82 /* UserManager.swift */,
+			);
+			path = "User Manager";
 			sourceTree = "<group>";
 		};
 		44F379E127FC4356001F02F4 /* History Words */ = {
@@ -1653,6 +1664,7 @@
 				D2268952281DD07A0095E9FA /* TabBarViewController.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
 				D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */,
+				44EAE9C9282D3B8E00EF6A82 /* UserManager.swift in Sources */,
 				44EAE9C6282BB02F00EF6A82 /* HistoryWordEntity.swift in Sources */,
 				D2DFEE4A281C609E006F452E /* AchievementsPresenter.swift in Sources */,
 				D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */,

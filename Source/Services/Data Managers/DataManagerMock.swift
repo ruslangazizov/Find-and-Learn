@@ -45,15 +45,14 @@ final class DataManagerMock: DataManagerProtocol {
 
 extension DataManagerMock {
     func getWords(_ wordPart: String, completion: ([Word]) -> Void) {
-    }
-    
-    func getUser(completion: (User) -> Void) {
-        completion(User(
-            email: "testEmail@test.com",
-            userName: "Test",
-            password: "Hash123456",
-            state: .active)
-        )
+        let fetchRequest = WordEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "word CONTAINS[c] %@", wordPart)
+        do {
+            let words = try viewContext.fetch(fetchRequest)
+            completion(words.map { Word($0) })
+        } catch {
+            completion([])
+        }
     }
     
     func fetchHistoryWords(completion: ([HistoryWord]) -> Void) {
@@ -205,9 +204,6 @@ extension DataManagerMock {
     }
     
     func saveEmailCode(_ code: Int) {
-    }
-    
-    func saveUser(_ user: User) {
     }
     
     func saveToken(_ token: String) {
