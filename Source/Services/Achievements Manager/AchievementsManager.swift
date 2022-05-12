@@ -32,17 +32,17 @@ final class AchievementsManager: AchievementsManagerProtocol {
         }
     }
     
-    private func getAllAchievements() -> [(name: String, description: String, image: UIImage?)] {
+    private func getAllAchievements() -> [AbstractAchievement] {
         return [
-            (
-                R.string.localizable.achievement_iterator_name(),
-                R.string.localizable.achievement_iterator_description(),
-                R.image.achievement_iterator_inactive()
+            .init(
+                name: R.string.localizable.achievement_iterator_name(),
+                description: R.string.localizable.achievement_iterator_description(),
+                image: R.image.achievement_iterator_inactive()
             ),
-            (
-                R.string.localizable.achievement_wasserman_name(),
-                R.string.localizable.achievement_wasserman_description(),
-                R.image.achievement_wasserman_inactive()
+            .init(
+                name: R.string.localizable.achievement_wasserman_name(),
+                description: R.string.localizable.achievement_wasserman_description(),
+                image: R.image.achievement_wasserman_inactive()
             )
         ]
     }
@@ -62,4 +62,10 @@ final class AchievementsManager: AchievementsManagerProtocol {
             )
         }
     }
+}
+
+private struct AbstractAchievement {
+    let name: String
+    let description: String
+    let image: UIImage?
 }
