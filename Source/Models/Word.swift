@@ -15,6 +15,11 @@ struct Word {
         self.word = word
         self.detailTranslations = detailTranslations
     }
+    
+    init(_ wordEntity: WordEntity) {
+        word = wordEntity.word
+        detailTranslations = wordEntity.translations.map { Translation($0) }
+    }
 }
 
 struct WordModel {
@@ -60,12 +65,46 @@ struct Translation {
     let speechPart: String
     let transcription: String?
     let examples: [Example]
+    
+    init(
+        id: Int,
+        translation: String,
+        speechPart: String,
+        transcription: String?,
+        examples: [Example]
+    ) {
+        self.id = id
+        self.translation = translation
+        self.speechPart = speechPart
+        self.transcription = transcription
+        self.examples = examples
+    }
+    
+    init(_ translationEntity: TranslationEntity) {
+        id = Int(translationEntity.id)
+        translation = translationEntity.translation
+        speechPart = translationEntity.speechPart
+        transcription = translationEntity.transcription
+        examples = translationEntity.examples.map { Example($0) }
+    }
 }
 
 struct Example {
     let id: Int
     let example: String
     let translation: String?
+    
+    init(id: Int, example: String, translation: String?) {
+        self.id = id
+        self.example = example
+        self.translation = translation
+    }
+    
+    init(_ exampleEntity: ExampleEntity) {
+        id = Int(exampleEntity.id)
+        example = exampleEntity.example
+        translation = exampleEntity.exampleTranslation
+    }
 }
 
 struct WordDetailModel {
