@@ -38,7 +38,6 @@ struct HistoryWord {
     let word: String
     let translations: [String]
     let dateAdded: Date
-    let searchesCount: Int
 }
 
 struct HistoryWordModel {

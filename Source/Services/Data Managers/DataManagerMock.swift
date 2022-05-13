@@ -59,14 +59,14 @@ extension DataManagerMock {
         let fetchRequest = WordEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "word CONTAINS[c] %@", wordPart)
         do {
-            let words = try viewContext.fetch(fetchRequest)
-            completion(words.map { Word($0) })
+            let wordsEntities = try viewContext.fetch(fetchRequest)
+            completion(wordsEntities.map { Word($0) })
         } catch {
             completion([])
         }
     }
     
-    func saveWord(_ word: Word, completion: @escaping (Bool) -> Void) {
+    func saveWord(_ word: Word) {
         let wordEntity = WordEntity(context: viewContext, word: word.word)
         wordEntity.translations = Set(word.detailTranslations?.map { translation in
             let translationId = checkId(
@@ -99,40 +99,41 @@ extension DataManagerMock {
     }
     
     func fetchHistoryWords(completion: ([HistoryWord]) -> Void) {
-        let today = Date()
-        let dayInterval: Double = 60 * 60 * 24
-        completion([
-            HistoryWord(
-                word: "Слово1",
-                translations: ["Перевод1", "Перевод2"],
-                dateAdded: today - 2 * dayInterval,
-                searchesCount: 2),
-            HistoryWord(
-                word: "Слово2",
-                translations: ["Перевод3", "Перевод4"],
-                dateAdded: today,
-                searchesCount: 1),
-            HistoryWord(
-                word: "Слово3",
-                translations: ["Перевод5", "Перевод6", "Перевод13", "Перевод14"],
-                dateAdded: today - 2 * dayInterval,
-                searchesCount: 1),
-            HistoryWord(
-                word: "Слово4",
-                translations: ["Перевод7", "Перевод8"],
-                dateAdded: today - 3 * dayInterval,
-                searchesCount: 2),
-            HistoryWord(
-                word: "Слово5",
-                translations: ["Перевод9", "Перевод10", "Перевод15"],
-                dateAdded: today - 2 * dayInterval,
-                searchesCount: 1),
-            HistoryWord(
-                word: "Слово6",
-                translations: ["Перевод11", "Перевод12"],
-                dateAdded: today - 3 * dayInterval,
-                searchesCount: 3)
-        ])
+        let fetchRequest = HistoryWordEntity.fetchRequest()
+        do {
+            let historyWordsEntities = try viewContext.fetch(fetchRequest)
+            completion(historyWordsEntities.map { historyWordEntity in
+                HistoryWord(
+                    word: historyWordEntity.word.word,
+                    translations: historyWordEntity.word.translations.map { $0.translation },
+                    dateAdded: historyWordEntity.timeOpened
+                )
+            })
+        } catch {
+            completion([])
+        }
+    }
+    
+    func addHistoryWord(wordId: Int, timeOpened: Date, completion: ((Bool) -> Void)?) {
+        let fetchRequest = WordEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", wordId)
+        do {
+            let wordEntity = try viewContext.fetch(fetchRequest).first
+            guard let wordEntity = wordEntity else {
+                completion?(false)
+                return
+            }
+            _ = HistoryWordEntity(
+                context: viewContext,
+                wordId: wordId,
+                timeOpened: timeOpened,
+                word: wordEntity
+            )
+            saveContext()
+            completion?(true)
+        } catch {
+            completion?(false)
+        }
     }
     
     func fetchFavoriteWords(completion: ([Word]) -> Void) {

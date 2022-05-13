@@ -38,7 +38,7 @@ final class HistoryWordsPresenter: HistoryWordsViewOutput {
                         HistoryWordModel(
                             word: historyWord.word,
                             translations: historyWord.translations.joined(separator: ", "),
-                            searchesCount: historyWord.searchesCount
+                            searchesCount: historyWords.count
                         )
                     }
                 }
