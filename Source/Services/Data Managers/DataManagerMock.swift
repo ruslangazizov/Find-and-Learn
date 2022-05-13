@@ -39,6 +39,17 @@ final class DataManagerMock: DataManagerProtocol {
             }
         }
     }
+    
+    private func checkId(_ objectId: Int, entityType: NSManagedObject.Type) -> Bool {
+        let fetchRequest = entityType.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", objectId)
+        do {
+            let object = try viewContext.fetch(fetchRequest).first
+            return object == nil
+        } catch {
+            return false
+        }
+    }
 }
 
 // MARK: - Public methods
@@ -53,6 +64,38 @@ extension DataManagerMock {
         } catch {
             completion([])
         }
+    }
+    
+    func saveWord(_ word: Word, completion: @escaping (Bool) -> Void) {
+        let wordEntity = WordEntity(context: viewContext, word: word.word)
+        wordEntity.translations = Set(word.detailTranslations?.map { translation in
+            let translationId = checkId(
+                translation.id, entityType: TranslationEntity.self
+            ) ? translation.id : Int.random(in: 1...1_000_000)
+            let translationEntity = TranslationEntity(
+                context: viewContext,
+                transcription: translation.transcription,
+                speechPart: translation.speechPart,
+                translation: translation.translation,
+                id: translationId,
+                word: wordEntity
+            )
+            translationEntity.examples = Set(translation.examples.map { example in
+                let exampleId = checkId(
+                    example.id, entityType: ExampleEntity.self
+                ) ? example.id : Int.random(in: 1...1_000_000)
+                return ExampleEntity(
+                    context: viewContext,
+                    id: exampleId,
+                    translationId: translationId,
+                    example: example.example,
+                    exampleTranslation: example.translation,
+                    translation: translationEntity
+                )
+            })
+            return translationEntity
+        } ?? [])
+        saveContext()
     }
     
     func fetchHistoryWords(completion: ([HistoryWord]) -> Void) {
