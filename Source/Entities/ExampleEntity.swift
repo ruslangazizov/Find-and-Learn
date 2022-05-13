@@ -24,8 +24,8 @@ public final class ExampleEntity: NSManagedObject {
     
     public init(
         context: NSManagedObjectContext,
-        id: Int32,
-        translationId: Int32,
+        id: Int,
+        translationId: Int,
         example: String,
         exampleTranslation: String?,
         translation: TranslationEntity
@@ -34,7 +34,7 @@ public final class ExampleEntity: NSManagedObject {
         let entity = NSEntityDescription.entity(forEntityName: "ExampleEntity", in: context)!
         super.init(entity: entity, insertInto: context)
         self.id = Int32(id)
-        self.translationId = translationId
+        self.translationId = Int32(translationId)
         self.example = example
         self.exampleTranslation = exampleTranslation
         self.translation = translation
