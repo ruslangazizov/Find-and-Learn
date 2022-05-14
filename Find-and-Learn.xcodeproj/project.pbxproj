@@ -146,6 +146,7 @@
 		D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CC27FD98BA007332A8 /* AuthorizationRouter.swift */; };
 		D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */; };
 		D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */; };
+		D2912B2D282FAA7800BB50A6 /* CreateDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */; };
 		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
@@ -325,6 +326,7 @@
 		D28814CC27FD98BA007332A8 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
 		D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckRequest.swift; sourceTree = "<group>"; };
 		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -864,6 +866,7 @@
 				D200B60028297390001A63C1 /* UserUpdateRequest.swift */,
 				D200B5FE28296D07001A63C1 /* DeleteRequest.swift */,
 				D200B60228297A48001A63C1 /* DictionaryRequest.swift */,
+				D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1649,6 +1652,7 @@
 				4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */,
 				D202DF152826E5190022D322 /* RegistrationRequest.swift in Sources */,
 				D2FD92502814632300D93BC4 /* StudyingInteractor.swift in Sources */,
+				D2912B2D282FAA7800BB50A6 /* CreateDeckRequest.swift in Sources */,
 				447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */,
 				44435EA6282428D100737D69 /* EditFlashcardViewInput.swift in Sources */,
 				44F379F927FC46A9001F02F4 /* HistoryWordsViewInput.swift in Sources */,
