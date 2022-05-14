@@ -177,47 +177,19 @@ extension DataManagerMock {
     }
     
     func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void) {
-        DispatchQueue.global().async {
-            let flashcards = !includeFlashcards ? nil : [
-                Flashcard(
-                    id: 34875,
-                    frontSide: "Передняя сторона 1",
-                    backSide: "Задняя сторона 1",
-                    comment: "Suspendisse ut neque at urna fermentum accumsan sit amet eget felis"
-                ),
-                Flashcard(
-                    id: 835761,
-                    frontSide: "Передняя сторона 2",
-                    backSide: "Задняя сторона 2",
-                    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                ),
-                Flashcard(
-                    id: 435738,
-                    frontSide: "Передняя сторона 3",
-                    backSide: "Задняя сторона 3",
-                    comment: "In id aliquet magna, sed rutrum justo"
+        let fetchRequest = DeckEntity.fetchRequest()
+        do {
+            let decksEntities = try viewContext.fetch(fetchRequest)
+            completion(decksEntities.map {
+                Deck(
+                    id: Int($0.id),
+                    name: $0.name,
+                    createdAt: $0.createdAt,
+                    flashcards: includeFlashcards ? $0.flashcards.map { Flashcard($0) } : nil
                 )
-            ]
-            completion([
-                Deck(
-                    id: 5432134,
-                    name: "Колода 1",
-                    createdAt: .init(timeInterval: -1800, since: Date()),
-                    flashcards: flashcards
-                ),
-                Deck(
-                    id: 7624853,
-                    name: "Колода 2",
-                    createdAt: .init(timeInterval: -1200, since: Date()),
-                    flashcards: flashcards
-                ),
-                Deck(
-                    id: 3124786,
-                    name: "Колода 3",
-                    createdAt: .init(timeInterval: -600, since: Date()),
-                    flashcards: flashcards
-                )
-            ])
+            })
+        } catch {
+            completion([])
         }
     }
     
@@ -225,12 +197,25 @@ extension DataManagerMock {
     }
     
     func deleteDeck(deckId: Int) {
+        let fetchRequest = DeckEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", deckId)
+        do {
+            if let deckEntity = try viewContext.fetch(fetchRequest).first {
+                viewContext.delete(deckEntity)
+                saveContext()
+            }
+        } catch {}
     }
     
     func createDeck(name: String, completion: @escaping (Deck) -> Void) {
-        DispatchQueue.global().async {
-            completion(Deck(id: UUID().hashValue, name: name, createdAt: Date(), flashcards: []))
-        }
+        let deckEntity = DeckEntity(context: viewContext, name: name)
+        saveContext()
+        completion(Deck(
+            id: Int(deckEntity.id),
+            name: deckEntity.name,
+            createdAt: deckEntity.createdAt,
+            flashcards: deckEntity.flashcards.map { Flashcard($0) }
+        ))
     }
     
     func deleteFlashcard(flashcardId: Int) {
