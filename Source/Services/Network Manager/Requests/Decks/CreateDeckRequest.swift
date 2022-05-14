@@ -27,6 +27,6 @@ struct CreateDeckRequest: Request {
     
     init(_ model: CreateDeckRequestModel, _ token: String) {
         self.token = token
-        body = .model(.init(model))
+        body = .model(model)
     }
 }

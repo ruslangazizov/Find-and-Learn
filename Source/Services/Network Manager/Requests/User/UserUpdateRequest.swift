@@ -23,6 +23,6 @@ struct UserUpdateRequest: Request {
     init(_ model: UserUpdateRequestModel, _ id: Int, _ token: String) {
         self.token = token
         path += "\(id)"
-        body = .model(.init(model))
+        body = .model(model)
     }
 }

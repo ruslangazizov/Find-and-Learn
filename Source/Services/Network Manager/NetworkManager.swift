@@ -14,10 +14,14 @@ protocol NetworkManagerProtocol: AnyObject {
 }
 
 final class NetworkManager: NetworkManagerProtocol {
+    // MARK: Dependencies
+    
+    private let encoder = JSONEncoder()
+    
     // MARK: NetworkManagerProtocol
     
     func perform<T: Decodable>(_ request: Request, _ completion: @escaping (Result<T, NetworkManagerError>) -> Void) {
-        AF.request(RequestAdapter(request)).responseDecodable { (dataResponse: AFDataResponse<T>) in
+        AF.request(RequestAdapter(request, encoder)).responseDecodable { (dataResponse: AFDataResponse<T>) in
             if let statusCode = dataResponse.response?.statusCode, HTTP.StatusCode.server.contains(statusCode) {
                 completion(.failure(.serverProblem))
             } else if let error = dataResponse.error {
@@ -32,7 +36,7 @@ final class NetworkManager: NetworkManagerProtocol {
     }
     
     func perform(_ request: Request, _ completion: @escaping (Result<Int, NetworkManagerError>) -> Void) {
-        AF.request(RequestAdapter(request)).response { dataResponse in
+        AF.request(RequestAdapter(request, encoder)).response { dataResponse in
             if let statusCode = dataResponse.response?.statusCode, HTTP.StatusCode.server.contains(statusCode) {
                 completion(.failure(.serverProblem))
             } else if let error = dataResponse.error {
@@ -49,9 +53,11 @@ final class NetworkManager: NetworkManagerProtocol {
 
 private struct RequestAdapter: URLRequestConvertible {
     private let request: Request
+    private let encoder: JSONEncoder
     
-    init(_ request: Request) {
+    init(_ request: Request, _ encoder: JSONEncoder) {
         self.request = request
+        self.encoder = encoder
     }
     
     func asURLRequest() throws -> URLRequest {
@@ -71,7 +77,7 @@ private struct RequestAdapter: URLRequestConvertible {
         case .raw(let data):
             urlRequest.httpBody = data
         case .model(let model):
-            urlRequest.httpBody = try JSONEncoder().encode(model)
+            urlRequest.httpBody = try encoder.encode(AnyEncodable(model))
         case .keyValue(let dictionary):
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: dictionary, options: [])
         case .none:
@@ -87,5 +93,17 @@ private struct RequestAdapter: URLRequestConvertible {
         }
         
         return urlRequest
+    }
+}
+
+private struct AnyEncodable: Encodable {
+    private let encodable: Encodable
+    
+    public init(_ encodable: Encodable) {
+        self.encodable = encodable
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        try encodable.encode(to: encoder)
     }
 }

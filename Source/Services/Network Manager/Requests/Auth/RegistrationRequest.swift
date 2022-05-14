@@ -31,6 +31,6 @@ struct RegistrationRequest: Request {
     let body: HTTP.Body
     
     init(_ model: RegistrationRequestModel) {
-        body = .model(.init(model))
+        body = .model(model)
     }
 }

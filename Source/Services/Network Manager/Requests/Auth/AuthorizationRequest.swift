@@ -23,6 +23,6 @@ struct AuthorizationRequest: Request {
     let body: HTTP.Body
     
     init(_ model: AuthorizationRequestModel) {
-        body = .model(.init(model))
+        body = .model(model)
     }
 }
