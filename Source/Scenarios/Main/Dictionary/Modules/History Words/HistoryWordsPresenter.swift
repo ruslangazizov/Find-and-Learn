@@ -34,13 +34,18 @@ final class HistoryWordsPresenter: HistoryWordsViewOutput {
                 historyWord.dateAdded.truncatingTime()
             }
                 .mapValues { historyWords in
-                    historyWords.map { historyWord in
-                        HistoryWordModel(
-                            word: historyWord.word,
-                            translations: historyWord.translations.joined(separator: ", "),
-                            searchesCount: historyWords.count
-                        )
-                    }
+                    Dictionary(grouping: historyWords) { $0.word }.values
+                        .sorted {
+                            // swiftlint:disable:next force_unwrapping
+                            $0.last!.dateAdded > $1.last!.dateAdded
+                        }
+                        .map { historyWords in
+                            HistoryWordModel(
+                                word: historyWords[0].word,
+                                translations: historyWords[0].translations.joined(separator: ", "),
+                                searchesCount: historyWords.count
+                            )
+                        }
                 }
                 .sorted {
                     $0.key > $1.key
