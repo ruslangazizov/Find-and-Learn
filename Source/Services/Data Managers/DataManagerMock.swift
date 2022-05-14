@@ -249,9 +249,6 @@ extension DataManagerMock {
         saveContext()
     }
     
-    func saveEmailCode(_ code: Int) {
-    }
-    
     func saveToken(_ token: String) {
     }
     

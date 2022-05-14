@@ -11,6 +11,8 @@ protocol UserManagerProtocol: AnyObject {
     func getUser(completion: @escaping (User) -> Void)
     func saveUser(_ user: User)
     func setEmailIsVerified()
+    func saveEmailCode(_ code: Int)
+    func getEmailCode() -> Int?
 }
 
 final class UserManager: UserManagerProtocol {
@@ -21,6 +23,7 @@ final class UserManager: UserManagerProtocol {
     private let userUsernameKey = "userUsernameKey"
     private let userPasswordKey = "userPasswordKey"
     private let accountIsActiveKey = "accountIsActiveKey"
+    private let userEmailCodeKey = "userEmailCodeKey"
     
     func getUser(completion: @escaping (User) -> Void) {
         let userId = userDefaults.integer(forKey: userIdKey)
@@ -46,5 +49,13 @@ final class UserManager: UserManagerProtocol {
     
     func setEmailIsVerified() {
         userDefaults.set(true, forKey: accountIsActiveKey)
+    }
+    
+    func saveEmailCode(_ code: Int) {
+        userDefaults.set(code, forKey: userEmailCodeKey)
+    }
+    
+    func getEmailCode() -> Int? {
+        return userDefaults.value(forKey: userEmailKey) as? Int
     }
 }

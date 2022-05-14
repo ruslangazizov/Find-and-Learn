@@ -22,7 +22,6 @@ protocol DataManagerProtocol: AnyObject {
     func deleteFlashcard(flashcardId: Int)
     func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void)
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int)
-    func saveEmailCode(_ code: Int)
     func saveToken(_ token: String)
     func getToken() -> String?
     func getApiKey() -> String?

@@ -75,7 +75,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                 switch resultData {
                 case .success(let model):
                     DispatchQueue.global(qos: .background).async {
-                        self?.dataManager.saveEmailCode(model.emailCode)
+                        self?.userManager.saveEmailCode(model.emailCode)
                         self?.userManager.saveUser(User(
                             email: email,
                             userName: userName,
