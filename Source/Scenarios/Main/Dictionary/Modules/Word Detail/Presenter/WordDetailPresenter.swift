@@ -56,7 +56,7 @@ final class WordDetailPresenter: WordDetailViewOutput {
             
             let wordDetailModel = WordDetailModel(
                 word: self.wordModel.word,
-                isFavorite: wordDetail.isFavorite,
+                isFavorite: wordDetail?.isFavorite ?? false,
                 speechParts: speechPartsFromWordModel
             )
             self.view?.showWord(wordDetailModel)

@@ -67,6 +67,13 @@ extension DataManagerMock {
     }
     
     func saveWord(_ word: Word) {
+        let fetchRequest = WordEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "word == %@", word.word)
+        do {
+            let wordEntity = try viewContext.fetch(fetchRequest).first
+            if wordEntity != nil { return }
+        } catch { return }
+        
         let wordEntity = WordEntity(context: viewContext, word: word.word)
         wordEntity.translations = Set(word.detailTranslations?.map { translation in
             let translationId = checkId(
@@ -95,6 +102,7 @@ extension DataManagerMock {
             })
             return translationEntity
         } ?? [])
+        
         saveContext()
     }
     
@@ -137,45 +145,35 @@ extension DataManagerMock {
     }
     
     func fetchFavoriteWords(completion: ([Word]) -> Void) {
+        let fetchRequest = WordEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", true)
+        do {
+            let wordsEntities = try viewContext.fetch(fetchRequest)
+            completion(wordsEntities.map { Word($0) })
+        } catch {
+            completion([])
+        }
     }
     
-    func fetchWordDetail(_ word: String, completion: @escaping (WordDetail) -> Void) {
-        completion(WordDetail(id: 1, word: "break", isFavorite: false, translations: [
-            Translation(
-                id: 1,
-                translation: "перерыв",
-                speechPart: "существительное",
-                transcription: "breɪk",
-                examples: [
-                    Example(id: 1, example: "We work without a break.", translation: "Мы работаем без перерыва."),
-                    Example(id: 2, example: "Do you need a break?", translation: "Нужен ли тебе перерыв?")
-                ]
-            ),
-            Translation(
-                id: 2,
-                translation: "разрыв",
-                speechPart: "существительное",
-                transcription: "breɪk",
-                examples: [
-                    Example(id: 4, example: "break in the pipe-line", translation: "разрыв трубопровода"),
-                    Example(id: 5, example: "text break", translation: "разрыв текста"),
-                    Example(id: 6, example: "break in relations", translation: "разрыв отношений")
-                ]
-            ),
-            Translation(
-                id: 3,
-                translation: "ломать",
-                speechPart: "глагол",
-                transcription: "breɪk",
-                examples: [
-                    Example(id: 7, example: "to break in two", translation: "разломить, сломать пополам"),
-                    Example(id: 8, example: "to break one's leg", translation: "сломать ногу")
-                ]
-            )
-        ]))
+    func fetchWordDetail(_ word: String, completion: @escaping (WordDetail?) -> Void) {
+        let fetchRequest = WordEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "word == %@", word)
+        do {
+            let wordEntity = try viewContext.fetch(fetchRequest).first
+            completion(wordEntity.map { WordDetail($0) })
+        } catch {
+            completion(nil)
+        }
     }
     
     func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
+        let fetchRequest = WordEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", wordId)
+        do {
+            let wordEntity = try viewContext.fetch(fetchRequest).first
+            wordEntity?.isFavorite = isFavorite
+            saveContext()
+        } catch {}
     }
     
     func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void) {

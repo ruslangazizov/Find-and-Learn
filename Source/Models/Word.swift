@@ -56,6 +56,13 @@ struct WordDetail {
     let word: String
     var isFavorite: Bool
     let translations: [Translation]
+    
+    init(_ wordEntity: WordEntity) {
+        id = Int(wordEntity.id)
+        word = wordEntity.word
+        isFavorite = wordEntity.isFavorite
+        translations = wordEntity.translations.map { Translation($0) }
+    }
 }
 
 struct Translation {
