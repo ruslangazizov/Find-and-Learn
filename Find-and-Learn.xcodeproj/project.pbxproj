@@ -149,6 +149,7 @@
 		D2912B2D282FAA7800BB50A6 /* CreateDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */; };
 		D2912B2F282FABCE00BB50A6 /* DeleteDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */; };
 		D2912B31282FACD200BB50A6 /* GetDecksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B30282FACD200BB50A6 /* GetDecksRequest.swift */; };
+		D2912B37282FADD900BB50A6 /* UpdateDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B36282FADD900BB50A6 /* UpdateDeckRequest.swift */; };
 		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
@@ -331,6 +332,7 @@
 		D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckRequest.swift; sourceTree = "<group>"; };
 		D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDeckRequest.swift; sourceTree = "<group>"; };
 		D2912B30282FACD200BB50A6 /* GetDecksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDecksRequest.swift; sourceTree = "<group>"; };
+		D2912B36282FADD900BB50A6 /* UpdateDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeckRequest.swift; sourceTree = "<group>"; };
 		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -1116,6 +1118,7 @@
 				D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */,
 				D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */,
 				D2912B30282FACD200BB50A6 /* GetDecksRequest.swift */,
+				D2912B36282FADD900BB50A6 /* UpdateDeckRequest.swift */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -1708,6 +1711,7 @@
 				D25FCD5827F854160007E65D /* AccountPresenter.swift in Sources */,
 				D25FCD5327F853A10007E65D /* AccountViewInput.swift in Sources */,
 				447F986F28166772000E153D /* WordDetailInteractor.swift in Sources */,
+				D2912B37282FADD900BB50A6 /* UpdateDeckRequest.swift in Sources */,
 				D26EFF0028007E560019F1EC /* UIViewController+Extensions.swift in Sources */,
 				D2268955281DD20E0095E9FA /* TabBarItem.swift in Sources */,
 				D2FD924D2814629D00D93BC4 /* StudyingAssembly.swift in Sources */,
