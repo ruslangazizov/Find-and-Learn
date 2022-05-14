@@ -15,20 +15,20 @@ protocol AchievementsManagerProtocol: AnyObject {
 final class AchievementsManager: AchievementsManagerProtocol {
     private let userDefaults = UserDefaults.standard
     
-    private let achievementsDictionaryKey = "achievementsDictionaryKey"
+    private let achievementsArrayKey = "achievementsArrayKey"
     
     private func checkNewAchievements() {
         // TODO: Проверить наличие новых достижений. При необходимости обновить userDefaults.
     }
     
-    private func getAchievementsDictionary() -> [String: Date?] {
-        let achievements = userDefaults.dictionary(forKey: achievementsDictionaryKey)
-        if achievements == nil {
-            let emptyDictionary: [String: Date?] = [:]
-            userDefaults.set(emptyDictionary, forKey: achievementsDictionaryKey)
-            return emptyDictionary
+    private func getAchievementsArray() -> [Date?] {
+        if let achievements = userDefaults.array(forKey: achievementsArrayKey) as? [Date?] {
+            return achievements
         } else {
-            return achievements as? [String: Date?] ?? [:]
+            let totalAchievementsCount = getAllAchievements().count
+            let emptyAchievementsArray: [Date?] = .init(repeating: nil, count: totalAchievementsCount)
+            userDefaults.set(emptyAchievementsArray, forKey: achievementsArrayKey)
+            return emptyAchievementsArray
         }
     }
     
@@ -50,7 +50,7 @@ final class AchievementsManager: AchievementsManagerProtocol {
     func getAchievements() -> [Achievement] {
         checkNewAchievements()
         
-        let achievementsDictionary = getAchievementsDictionary()
+        let achievementsArray = getAchievementsArray()
         
         return getAllAchievements().enumerated().map { index, achievement in
             Achievement(
@@ -58,7 +58,7 @@ final class AchievementsManager: AchievementsManagerProtocol {
                 name: achievement.name,
                 description: achievement.description,
                 image: achievement.image,
-                dateOfGetting: achievementsDictionary["\(index)"]?.flatMap { $0 }
+                dateOfGetting: achievementsArray[index]
             )
         }
     }
