@@ -11,6 +11,9 @@ struct DictionaryRequest: Request {
     private enum Constants {
         static let fromEnToRu = "en-ru"
         static let fromRuToEn = "ru-en"
+        
+        static let ruFlag = "ru"
+        static let enFlag = "en"
     }
     
     let method: HTTP.Method = .get
@@ -22,7 +25,8 @@ struct DictionaryRequest: Request {
         queries = [
             "key": key,
             "lang": isFromEnglish ? Constants.fromEnToRu : Constants.fromRuToEn,
-            "text": word
+            "text": word,
+            "ui": isFromEnglish ? Constants.ruFlag : Constants.enFlag
         ]
     }
 }
