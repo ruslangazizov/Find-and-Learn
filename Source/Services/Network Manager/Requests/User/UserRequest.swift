@@ -8,9 +8,9 @@
 import Foundation
 
 struct UserRequest: Request {
-    private(set) var method: HTTP.Method = .get
+    let method: HTTP.Method = .get
     private(set) var path: String = "users/"
-    private(set) var token: String
+    let token: String
     
     init(_ email: String, _ token: String) {
         self.token = token

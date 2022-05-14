@@ -8,9 +8,9 @@
 import Foundation
 
 struct DeleteRequest: Request {
-    private(set) var method: HTTP.Method = .delete
+    let method: HTTP.Method = .delete
     private(set) var path: String = "users/"
-    private(set) var token: String
+    let token: String
     
     init(_ id: Int, _ token: String) {
         self.token = token

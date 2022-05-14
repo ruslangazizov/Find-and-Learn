@@ -26,9 +26,9 @@ struct RegistrationRequestModel: Encodable {
 }
 
 struct RegistrationRequest: Request {
-    private(set) var method: HTTP.Method = .post
-    private(set) var path: String = "users/"
-    private(set) var body: HTTP.Body
+    let method: HTTP.Method = .post
+    let path: String = "users/"
+    let body: HTTP.Body
     
     init(_ model: RegistrationRequestModel) {
         body = .model(.init(model))
