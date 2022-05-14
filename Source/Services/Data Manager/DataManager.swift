@@ -14,11 +14,9 @@ final class DataManager: DataManagerProtocol {
     
     private init() {}
     
-    // MARK: UserDefaults
+    // MARK: KeyChain
     
-    private let userDefaults = UserDefaults.standard
-    
-    private let backendTokenUserDefaultsKey = "backendTokenUserDefaultsKey"
+    private let backendTokenKeyChainKey = "backendTokenKeyChainKey"
     
     // MARK: Core Data stack
     
@@ -275,11 +273,11 @@ extension DataManager {
     }
     
     func saveToken(_ token: String) {
-        userDefaults.set(token, forKey: backendTokenUserDefaultsKey)
+        _ = KeyChainManager.save(key: backendTokenKeyChainKey, data: Data(from: token))
     }
     
     func getToken() -> String? {
-        return userDefaults.string(forKey: backendTokenUserDefaultsKey)
+        return KeyChainManager.load(key: backendTokenKeyChainKey)?.to(type: String.self)
     }
     
     func getApiKey() -> String? {
