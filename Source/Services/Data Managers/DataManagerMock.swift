@@ -175,7 +175,22 @@ extension DataManagerMock {
         }
     }
     
-    func saveNewFlashcard(_ newFlashcard: NewFlashcard) {
+    func saveNewFlashcard(_ newFlashcard: NewFlashcard, completion: ((Bool) -> Void)?) {
+        let fetchRequest = DeckEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", newFlashcard.deckId)
+        if let deckEntity = try? viewContext.fetch(fetchRequest).first {
+            _ = FlashcardEntity(
+                context: viewContext,
+                backSide: newFlashcard.backSide,
+                frontSide: newFlashcard.frontSide,
+                deckId: newFlashcard.deckId,
+                deck: deckEntity
+            )
+            saveContext()
+            completion?(true)
+        } else {
+            completion?(false)
+        }
     }
     
     func deleteDeck(deckId: Int) {
@@ -199,15 +214,39 @@ extension DataManagerMock {
     }
     
     func deleteFlashcard(flashcardId: Int) {
-    }
-    
-    func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void) {
-        fetchDecks(includeFlashcards: true) { decks in
-            completion(decks.first { $0.id == deckId }?.flashcards)
+        let fetchRequest = FlashcardEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", flashcardId)
+        if let flashcardEntity = try? viewContext.fetch(fetchRequest).first {
+            viewContext.delete(flashcardEntity)
+            saveContext()
         }
     }
     
+    func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void) {
+        let fetchRequest = DeckEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", deckId)
+        let deckEntity = try? viewContext.fetch(fetchRequest).first
+        completion(deckEntity?.flashcards.map { Flashcard($0) })
+    }
+    
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int) {
+        let flashcardFetchRequest = FlashcardEntity.fetchRequest()
+        flashcardFetchRequest.predicate = NSPredicate(format: "id == %@", flashcard.id)
+        guard let flashcardEntity = try? viewContext.fetch(flashcardFetchRequest).first else {
+            return
+        }
+        
+        let oldDeckFetchRequest = DeckEntity.fetchRequest()
+        oldDeckFetchRequest.predicate = NSPredicate(format: "id == %@", flashcardEntity.deckId)
+        let oldDeckEntity = try? viewContext.fetch(oldDeckFetchRequest).first
+        oldDeckEntity?.flashcards.remove(flashcardEntity)
+        
+        let updatedDeckFetchRequest = DeckEntity.fetchRequest()
+        updatedDeckFetchRequest.predicate = NSPredicate(format: "id == %@", updatedDeckId)
+        let updatedDeckEntity = try? viewContext.fetch(updatedDeckFetchRequest).first
+        updatedDeckEntity?.addToFlashcards(flashcardEntity)
+        
+        saveContext()
     }
     
     func saveEmailCode(_ code: Int) {
