@@ -52,7 +52,7 @@ final class DataManagerMock: DataManagerProtocol {
 private extension DataManagerMock {
     func checkId(_ objectId: Int, entityType: NSManagedObject.Type) -> Bool {
         let fetchRequest = entityType.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", objectId)
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", objectId)
         let object = try? viewContext.fetch(fetchRequest).first
         return object == nil
     }
@@ -127,7 +127,7 @@ extension DataManagerMock {
     
     func addHistoryWord(wordId: Int, timeOpened: Date, completion: ((Bool) -> Void)?) {
         let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", wordId)
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", wordId)
         if let wordEntity = try? viewContext.fetch(fetchRequest).first {
             _ = HistoryWordEntity(
                 context: viewContext,
@@ -144,7 +144,7 @@ extension DataManagerMock {
     
     func fetchFavoriteWords(completion: ([Word]) -> Void) {
         let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", true)
+        fetchRequest.predicate = NSPredicate(format: "isFavorite == %c", true)
         do {
             let wordsEntities = try viewContext.fetch(fetchRequest)
             completion(wordsEntities.map { Word($0) })
@@ -162,7 +162,7 @@ extension DataManagerMock {
     
     func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
         let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", wordId)
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", wordId)
         let wordEntity = try? viewContext.fetch(fetchRequest).first
         wordEntity?.isFavorite = isFavorite
         saveContext()
@@ -187,15 +187,26 @@ extension DataManagerMock {
     
     func saveNewFlashcard(_ newFlashcard: NewFlashcard, completion: ((Bool) -> Void)?) {
         let fetchRequest = DeckEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", newFlashcard.deckId)
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", newFlashcard.deckId)
         if let deckEntity = try? viewContext.fetch(fetchRequest).first {
             _ = FlashcardEntity(
                 context: viewContext,
+                comment: newFlashcard.comment,
                 backSide: newFlashcard.backSide,
                 frontSide: newFlashcard.frontSide,
                 deckId: newFlashcard.deckId,
                 deck: deckEntity
             )
+            if newFlashcard.createReversed {
+                _ = FlashcardEntity(
+                    context: viewContext,
+                    comment: newFlashcard.comment,
+                    backSide: newFlashcard.frontSide,
+                    frontSide: newFlashcard.backSide,
+                    deckId: newFlashcard.deckId,
+                    deck: deckEntity
+                )
+            }
             saveContext()
             completion?(true)
         } else {
@@ -205,7 +216,7 @@ extension DataManagerMock {
     
     func deleteDeck(deckId: Int) {
         let fetchRequest = DeckEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", deckId)
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", deckId)
         if let deckEntity = try? viewContext.fetch(fetchRequest).first {
             viewContext.delete(deckEntity)
             saveContext()
@@ -225,7 +236,7 @@ extension DataManagerMock {
     
     func deleteFlashcard(flashcardId: Int) {
         let fetchRequest = FlashcardEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", flashcardId)
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", flashcardId)
         if let flashcardEntity = try? viewContext.fetch(fetchRequest).first {
             viewContext.delete(flashcardEntity)
             saveContext()
@@ -234,25 +245,29 @@ extension DataManagerMock {
     
     func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void) {
         let fetchRequest = DeckEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", deckId)
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", deckId)
         let deckEntity = try? viewContext.fetch(fetchRequest).first
         completion(deckEntity?.flashcards.map { Flashcard($0) })
     }
     
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int) {
         let flashcardFetchRequest = FlashcardEntity.fetchRequest()
-        flashcardFetchRequest.predicate = NSPredicate(format: "id == %@", flashcard.id)
+        flashcardFetchRequest.predicate = NSPredicate(format: "id == %ld", flashcard.id)
         guard let flashcardEntity = try? viewContext.fetch(flashcardFetchRequest).first else {
             return
         }
         
+        flashcardEntity.comment = flashcard.comment
+        flashcardEntity.backSide = flashcard.backSide
+        flashcardEntity.frontSide = flashcard.frontSide
+        
         let oldDeckFetchRequest = DeckEntity.fetchRequest()
-        oldDeckFetchRequest.predicate = NSPredicate(format: "id == %@", flashcardEntity.deckId)
+        oldDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", flashcardEntity.deckId)
         let oldDeckEntity = try? viewContext.fetch(oldDeckFetchRequest).first
         oldDeckEntity?.flashcards.remove(flashcardEntity)
         
         let updatedDeckFetchRequest = DeckEntity.fetchRequest()
-        updatedDeckFetchRequest.predicate = NSPredicate(format: "id == %@", updatedDeckId)
+        updatedDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", updatedDeckId)
         let updatedDeckEntity = try? viewContext.fetch(updatedDeckFetchRequest).first
         updatedDeckEntity?.addToFlashcards(flashcardEntity)
         
