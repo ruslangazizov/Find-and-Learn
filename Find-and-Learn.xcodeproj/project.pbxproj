@@ -147,6 +147,7 @@
 		D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */; };
 		D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */; };
 		D2912B2D282FAA7800BB50A6 /* CreateDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */; };
+		D2912B2F282FABCE00BB50A6 /* DeleteDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */; };
 		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
@@ -327,6 +328,7 @@
 		D28814CE27FD9FA1007332A8 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckRequest.swift; sourceTree = "<group>"; };
+		D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDeckRequest.swift; sourceTree = "<group>"; };
 		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -867,6 +869,7 @@
 				D200B5FE28296D07001A63C1 /* DeleteRequest.swift */,
 				D200B60228297A48001A63C1 /* DictionaryRequest.swift */,
 				D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */,
+				D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1690,6 +1693,7 @@
 				442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */,
 				44CA5429281BE5E200B6DDE8 /* NewFlashcardInteractor.swift in Sources */,
 				D20F3303280DCF4B0003D9DD /* ChangePasswordResultState.swift in Sources */,
+				D2912B2F282FABCE00BB50A6 /* DeleteDeckRequest.swift in Sources */,
 				44435EAA28242A9600737D69 /* EditFlashcardInteractor.swift in Sources */,
 				D2DFEE4D281C6431006F452E /* AchievementsAssembly.swift in Sources */,
 				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
