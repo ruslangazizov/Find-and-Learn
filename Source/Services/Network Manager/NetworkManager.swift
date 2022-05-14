@@ -24,6 +24,9 @@ final class NetworkManager: NetworkManagerProtocol {
                 completion(.failure(.init(error)))
             } else if let model = dataResponse.value {
                 completion(.success(model))
+            } else {
+                assertionFailure("Unknown error: \(dataResponse.debugDescription)")
+                completion(.failure(.unknown))
             }
         }
     }
@@ -36,6 +39,9 @@ final class NetworkManager: NetworkManagerProtocol {
                 completion(.failure(.init(error)))
             } else if let statusCode = dataResponse.response?.statusCode {
                 completion(.success(statusCode))
+            } else {
+                assertionFailure("Unknown error: \(dataResponse.debugDescription)")
+                completion(.failure(.unknown))
             }
         }
     }
