@@ -8,9 +8,17 @@
 import CoreData
 
 final class DataManagerMock: DataManagerProtocol {
+    // MARK: Singleton
+    
     static let shared: DataManagerProtocol = DataManagerMock()
     
     private init() {}
+    
+    // MARK: UserDefaults
+    
+    private let userDefaults = UserDefaults.standard
+    
+    private let backendTokenUserDefaultsKey = "backendTokenUserDefaultsKey"
     
     // MARK: Core Data stack
     
@@ -27,8 +35,6 @@ final class DataManagerMock: DataManagerProtocol {
     
     private lazy var viewContext = persistentContainer.viewContext
     
-    // MARK: Core Data Saving support
-    
     private func saveContext() {
         if viewContext.hasChanges {
             do {
@@ -39,8 +45,12 @@ final class DataManagerMock: DataManagerProtocol {
             }
         }
     }
-    
-    private func checkId(_ objectId: Int, entityType: NSManagedObject.Type) -> Bool {
+}
+
+// MARK: - Private methods
+
+private extension DataManagerMock {
+    func checkId(_ objectId: Int, entityType: NSManagedObject.Type) -> Bool {
         let fetchRequest = entityType.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", objectId)
         let object = try? viewContext.fetch(fetchRequest).first
@@ -250,10 +260,11 @@ extension DataManagerMock {
     }
     
     func saveToken(_ token: String) {
+        userDefaults.set(token, forKey: backendTokenUserDefaultsKey)
     }
     
     func getToken() -> String? {
-        return nil
+        return userDefaults.string(forKey: backendTokenUserDefaultsKey)
     }
     
     func getApiKey() -> String? {
