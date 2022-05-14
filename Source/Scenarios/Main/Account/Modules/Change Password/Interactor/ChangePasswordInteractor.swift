@@ -49,27 +49,26 @@ final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
         } else if password != confirmPassword {
             result(.confirmPassword)
         } else {
-            userManager.getUser { [weak self] user in
-                guard let token = self?.dataManager.getToken() else {
-                    return
-                }
-                let request = UserUpdateRequest(
-                    .init(
-                        firstName: "",
-                        secondName: "",
-                        userName: user.userName,
-                        password: password
-                    ),
-                    user.id,
-                    token
-                )
-                self?.networkManager.perform(request) { resultData in
-                    switch resultData {
-                    case .success:
-                        result(.success)
-                    case .failure:
-                        result(.password)
-                    }
+            let user = userManager.getUser()
+            guard let token = dataManager.getToken() else {
+                return
+            }
+            let request = UserUpdateRequest(
+                .init(
+                    firstName: "",
+                    secondName: "",
+                    userName: user.userName,
+                    password: password
+                ),
+                user.id,
+                token
+            )
+            networkManager.perform(request) { resultData in
+                switch resultData {
+                case .success:
+                    result(.success)
+                case .failure:
+                    result(.password)
                 }
             }
         }

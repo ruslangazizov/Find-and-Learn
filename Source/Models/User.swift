@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct User {
+struct User: Codable {
     let id: Int
     let email: String
     let userName: String
     let password: String
-    let state: AccountState
+    var state: AccountState
     
     init(
         id: Int = -1,
@@ -29,7 +29,7 @@ struct User {
     }
 }
 
-enum AccountState {
+enum AccountState: Codable {
     case guest
     case inactive
     case active

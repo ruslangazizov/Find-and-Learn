@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UserManagerProtocol: AnyObject {
-    func getUser(completion: @escaping (User) -> Void)
+    func getUser() -> User
     func saveUser(_ user: User)
     func setEmailIsVerified()
     func saveEmailCode(_ code: Int)
@@ -18,44 +18,43 @@ protocol UserManagerProtocol: AnyObject {
 final class UserManager: UserManagerProtocol {
     private let userDefaults = UserDefaults.standard
     
-    private let userIdKey = "userIdKey"
-    private let userEmailKey = "userEmailKey"
-    private let userUsernameKey = "userUsernameKey"
-    private let userPasswordKey = "userPasswordKey"
-    private let accountIsActiveKey = "accountIsActiveKey"
+    private let encoder = JSONEncoder()
+    private let decoder = JSONDecoder()
+    
+    private let userKey = "userKey"
     private let userEmailCodeKey = "userEmailCodeKey"
     
-    func getUser(completion: @escaping (User) -> Void) {
-        let userId = userDefaults.integer(forKey: userIdKey)
-        let email = userDefaults.string(forKey: userEmailKey)
-        let username = userDefaults.string(forKey: userUsernameKey)
-        let password = userDefaults.string(forKey: userPasswordKey)
-        let accountIsActiveKey = userDefaults.bool(forKey: accountIsActiveKey)
-        guard userId != 0, let email = email, let username = username, let password = password else {
-            completion(User(email: "", userName: "", password: "", state: .guest))
-            return
+    private func setEmailStatus(isVerified: Bool) {
+        var user = getUser()
+        user.state = isVerified ? .active : .inactive
+        saveUser(user)
+    }
+    
+    func getUser() -> User {
+        if let savedUser = self.userDefaults.object(forKey: self.userKey) as? Data,
+            let decodedUser = try? self.decoder.decode(User.self, from: savedUser) {
+            return decodedUser
+        } else {
+            return User(email: "", userName: "", password: "", state: .guest)
         }
-        
-        let state: AccountState = accountIsActiveKey ? .active : .inactive
-        completion(User(id: userId, email: email, userName: username, password: password, state: state))
     }
     
     func saveUser(_ user: User) {
-        userDefaults.set(user.email, forKey: userEmailKey)
-        userDefaults.set(user.userName, forKey: userUsernameKey)
-        userDefaults.set(user.password, forKey: userPasswordKey)
-        userDefaults.set(false, forKey: accountIsActiveKey)
+        if let encodedUser = try? self.encoder.encode(user) {
+            self.userDefaults.set(encodedUser, forKey: self.userKey)
+        }
     }
     
     func setEmailIsVerified() {
-        userDefaults.set(true, forKey: accountIsActiveKey)
+        setEmailStatus(isVerified: true)
     }
     
     func saveEmailCode(_ code: Int) {
         userDefaults.set(code, forKey: userEmailCodeKey)
+        setEmailStatus(isVerified: false)
     }
     
     func getEmailCode() -> Int? {
-        return userDefaults.value(forKey: userEmailKey) as? Int
+        return userDefaults.value(forKey: userEmailCodeKey) as? Int
     }
 }

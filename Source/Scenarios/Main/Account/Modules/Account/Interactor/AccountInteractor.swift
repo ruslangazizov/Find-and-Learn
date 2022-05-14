@@ -37,26 +37,24 @@ final class AccountInteractor: AccountInteractorProtocol {
     // MARK: AccountInteractorProtocol
     
     func loadSettings(_ completion: @escaping (([Setting], String) -> Void)) {
-        userManager.getUser { [weak self] user in
-            DispatchQueue.main.async {
-                completion(self?.settingsManager.getSettingsByState(by: user.state) ?? [], user.userName)
-            }
+        let user = userManager.getUser()
+        DispatchQueue.main.async {
+            completion(self.settingsManager.getSettingsByState(by: user.state), user.userName)
         }
     }
     
     func deleteAccount(_ completion: @escaping (Bool) -> Void) {
-        userManager.getUser { [weak self] user in
-            guard let token = self?.dataManager.getToken() else {
-                return
-            }
-            let request = DeleteRequest(user.id, token)
-            self?.networkManager.perform(request) { result in
-                switch result {
-                case .success:
-                    completion(true)
-                case .failure:
-                    completion(false)
-                }
+        let user = userManager.getUser()
+        guard let token = dataManager.getToken() else {
+            return
+        }
+        let request = DeleteRequest(user.id, token)
+        networkManager.perform(request) { result in
+            switch result {
+            case .success:
+                completion(true)
+            case .failure:
+                completion(false)
             }
         }
     }
