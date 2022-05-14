@@ -32,7 +32,7 @@ public final class FlashcardEntity: NSManagedObject {
         comment: String? = nil,
         backSide: String,
         frontSide: String,
-        deckId: Int32,
+        deckId: Int,
         id: Int = Int.random(in: 1...1_000_000),
         deck: DeckEntity
     ) {
@@ -44,7 +44,7 @@ public final class FlashcardEntity: NSManagedObject {
         self.comment = comment
         self.backSide = backSide
         self.frontSide = frontSide
-        self.deckId = deckId
+        self.deckId = Int32(deckId)
         self.id = Int32(id)
         self.deck = deck
     }
