@@ -13,7 +13,7 @@ enum NewFlashcardAssembly {
         let newFlashcardModel = newFlashcardModel ?? NewFlashcardModel()
         
         let router = NewFlashcardRouter()
-        let interactor = NewFlashcardInteractor(dataManager: DataManagerMock.shared)
+        let interactor = NewFlashcardInteractor(dataManager: DataManager.shared)
         let presenter = NewFlashcardPresenter(interactor: interactor, router: router, selectedDeckId: deckId)
         let view = NewFlashcardViewController(presenter: presenter, newFlashcardModel: newFlashcardModel)
         

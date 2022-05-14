@@ -13,7 +13,7 @@
 		4411E5402819B3CE001ABB53 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53F2819B3CE001ABB53 /* Flashcard.swift */; };
 		4418F43427F23B6B00F08570 /* SearchWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */; };
 		442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */; };
-		442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */; };
+		442BD8EA27F57CFC00FE3760 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* DataManager.swift */; };
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
 		44435E7528212D1000737D69 /* DecksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E7428212D1000737D69 /* DecksAssembly.swift */; };
@@ -198,7 +198,7 @@
 		4411E53F2819B3CE001ABB53 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		4418F43327F23B6B00F08570 /* SearchWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsTableViewCell.swift; sourceTree = "<group>"; };
 		442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAssembly.swift; sourceTree = "<group>"; };
-		442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMock.swift; sourceTree = "<group>"; };
+		442BD8E927F57CFC00FE3760 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		44435E7428212D1000737D69 /* DecksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksAssembly.swift; sourceTree = "<group>"; };
@@ -420,7 +420,7 @@
 				D2FD925328148AF000D93BC4 /* Studying Manager */,
 				D26EFF06280088480019F1EC /* Settings Manager */,
 				D21E9DA827F9FF64005513B7 /* Validation Managers */,
-				44D5811027E7B34000DBCC4E /* Data Managers */,
+				44D5811027E7B34000DBCC4E /* Data Manager */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -763,13 +763,13 @@
 			path = TextViews;
 			sourceTree = "<group>";
 		};
-		44D5811027E7B34000DBCC4E /* Data Managers */ = {
+		44D5811027E7B34000DBCC4E /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
 				447D708027EE55600011A7F4 /* DataManagerProtocol.swift */,
-				442BD8E927F57CFC00FE3760 /* DataManagerMock.swift */,
+				442BD8E927F57CFC00FE3760 /* DataManager.swift */,
 			);
-			path = "Data Managers";
+			path = "Data Manager";
 			sourceTree = "<group>";
 		};
 		44DC5FE427FF08F4005EACAE /* Favorite Words */ = {
@@ -1683,7 +1683,7 @@
 				D2DFEE4F281C64B3006F452E /* Achievement.swift in Sources */,
 				44435EA82824291400737D69 /* EditFlashcardPresenter.swift in Sources */,
 				D200B5FF28296D07001A63C1 /* DeleteRequest.swift in Sources */,
-				442BD8EA27F57CFC00FE3760 /* DataManagerMock.swift in Sources */,
+				442BD8EA27F57CFC00FE3760 /* DataManager.swift in Sources */,
 				D28814CF27FD9FA1007332A8 /* UINavigationController+Extensions.swift in Sources */,
 				4443AB5F281D89B700112B35 /* Deck.swift in Sources */,
 				D2278691281F1665003C3D8A /* AppearanceConfigurator.swift in Sources */,

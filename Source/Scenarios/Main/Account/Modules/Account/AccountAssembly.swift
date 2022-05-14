@@ -11,7 +11,7 @@ import UIKit
 final class AccountAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let interactor = AccountInteractor(
-            dataManager: DataManagerMock.shared,
+            dataManager: DataManager.shared,
             settingsManager: SettingsManager(),
             userManager: UserManager(),
             networkManager: NetworkManager()

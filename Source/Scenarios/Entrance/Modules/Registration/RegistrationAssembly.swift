@@ -12,7 +12,7 @@ final class RegistrationAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let validationManager = ValidationManager()
         let networkManager = NetworkManager()
-        let dataManager = DataManagerMock.shared
+        let dataManager = DataManager.shared
         
         let interactor = RegistrationInteractor(
             validationManager: validationManager,

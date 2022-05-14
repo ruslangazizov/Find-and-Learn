@@ -12,7 +12,7 @@ enum EditFlashcardAssembly {
         let editFlashcardModel = NewFlashcardModel(flashcard)
         
         let router = EditFlashcardRouter()
-        let interactor = EditFlashcardInteractor(dataManager: DataManagerMock.shared)
+        let interactor = EditFlashcardInteractor(dataManager: DataManager.shared)
         let presenter = EditFlashcardPresenter(
             interactor: interactor,
             router: router,

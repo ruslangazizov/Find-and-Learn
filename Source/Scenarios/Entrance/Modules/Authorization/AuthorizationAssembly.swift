@@ -14,7 +14,7 @@ final class AuthorizationAssembly: AssemblyProtocol {
             validationManager: ValidationManager(),
             networkManager: NetworkManager(),
             userManager: UserManager(),
-            dataManager: DataManagerMock.shared
+            dataManager: DataManager.shared
         )
         let router = AuthorizationRouter()
         

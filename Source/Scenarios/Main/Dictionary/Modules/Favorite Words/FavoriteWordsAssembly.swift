@@ -11,7 +11,7 @@ import UIKit
 final class FavoriteWordsAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let router = FavoriteWordsRouter()
-        let interactor = FavoriteWordsInteractor(dataManager: DataManagerMock.shared)
+        let interactor = FavoriteWordsInteractor(dataManager: DataManager.shared)
         let presenter = FavoriteWordsPresenter(router: router, interactor: interactor)
         let view = FavoriteWordsViewController(presenter: presenter)
         

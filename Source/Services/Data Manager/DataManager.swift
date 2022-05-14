@@ -1,5 +1,5 @@
 //
-//  DataManagerMock.swift
+//  DataManager.swift
 //  Find-and-Learn
 //
 //  Created by Руслан on 31.03.2022.
@@ -7,10 +7,10 @@
 
 import CoreData
 
-final class DataManagerMock: DataManagerProtocol {
+final class DataManager: DataManagerProtocol {
     // MARK: Singleton
     
-    static let shared: DataManagerProtocol = DataManagerMock()
+    static let shared: DataManagerProtocol = DataManager()
     
     private init() {}
     
@@ -49,7 +49,7 @@ final class DataManagerMock: DataManagerProtocol {
 
 // MARK: - Private methods
 
-private extension DataManagerMock {
+private extension DataManager {
     func checkId(_ objectId: Int, entityType: NSManagedObject.Type) -> Bool {
         let fetchRequest = entityType.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %ld", objectId)
@@ -60,7 +60,7 @@ private extension DataManagerMock {
 
 // MARK: - Public methods
 
-extension DataManagerMock {
+extension DataManager {
     func getWords(_ wordPart: String, completion: ([Word]) -> Void) {
         let fetchRequest = WordEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "word CONTAINS[c] %@", wordPart)
