@@ -52,7 +52,8 @@ public final class WordEntity: NSManagedObject {
     }
 }
 
-// MARK: Generated accessors for translations
+// MARK: - Generated accessors for translations
+
 extension WordEntity {
     @objc(addTranslationsObject:)
     @NSManaged public func addToTranslations(_ value: TranslationEntity)

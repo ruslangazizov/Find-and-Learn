@@ -58,7 +58,8 @@ public final class TranslationEntity: NSManagedObject {
     }
 }
 
-// MARK: Generated accessors for examples
+// MARK: - Generated accessors for examples
+
 extension TranslationEntity {
     @objc(addExamplesObject:)
     @NSManaged public func addToExamples(_ value: ExampleEntity)

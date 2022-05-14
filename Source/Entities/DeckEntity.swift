@@ -52,7 +52,8 @@ public final class DeckEntity: NSManagedObject {
     }
 }
 
-// MARK: Generated accessors for flashcards
+// MARK: - Generated accessors for flashcards
+
 extension DeckEntity {
     @objc(addFlashcardsObject:)
     @NSManaged public func addToFlashcards(_ value: FlashcardEntity)
