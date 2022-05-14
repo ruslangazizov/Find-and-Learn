@@ -59,7 +59,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
         } else if password != confirmPassword {
             result(.confirmPasswordTextField(R.string.localizable.validation_error_password_not_equals()))
         } else {
-            let requestModel = RegistrationRequestModel(
+            let requestModel = CreateRequestModel(
                 firstName: "",
                 secondName: "",
                 email: email,
@@ -67,7 +67,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                 registeredAt: Date().toString(using: .registrationDateFormatter)
             )
             networkManager.perform(
-                RegistrationRequest(requestModel)
+                CreateRequest(requestModel)
             ) { [weak self] (resultData: Result<RegistrationResponseModel, NetworkManagerError>) in
                 switch resultData {
                 case .success(let model):

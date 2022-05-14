@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserRequest: Request {
+struct GetUserRequest: Request {
     let method: HTTP.Method = .get
     private(set) var path: String = "users/"
     let token: String
