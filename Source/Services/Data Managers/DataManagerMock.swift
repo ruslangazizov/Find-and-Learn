@@ -43,12 +43,8 @@ final class DataManagerMock: DataManagerProtocol {
     private func checkId(_ objectId: Int, entityType: NSManagedObject.Type) -> Bool {
         let fetchRequest = entityType.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", objectId)
-        do {
-            let object = try viewContext.fetch(fetchRequest).first
-            return object == nil
-        } catch {
-            return false
-        }
+        let object = try? viewContext.fetch(fetchRequest).first
+        return object == nil
     }
 }
 
@@ -69,10 +65,7 @@ extension DataManagerMock {
     func saveWord(_ word: Word) {
         let fetchRequest = WordEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "word == %@", word.word)
-        do {
-            let wordEntity = try viewContext.fetch(fetchRequest).first
-            if wordEntity != nil { return }
-        } catch { return }
+        if (try? viewContext.fetch(fetchRequest).first) != nil { return }
         
         let wordEntity = WordEntity(context: viewContext, word: word.word)
         wordEntity.translations = Set(word.detailTranslations?.map { translation in
@@ -125,12 +118,7 @@ extension DataManagerMock {
     func addHistoryWord(wordId: Int, timeOpened: Date, completion: ((Bool) -> Void)?) {
         let fetchRequest = WordEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", wordId)
-        do {
-            let wordEntity = try viewContext.fetch(fetchRequest).first
-            guard let wordEntity = wordEntity else {
-                completion?(false)
-                return
-            }
+        if let wordEntity = try? viewContext.fetch(fetchRequest).first {
             _ = HistoryWordEntity(
                 context: viewContext,
                 wordId: wordId,
@@ -139,7 +127,7 @@ extension DataManagerMock {
             )
             saveContext()
             completion?(true)
-        } catch {
+        } else {
             completion?(false)
         }
     }
@@ -158,22 +146,16 @@ extension DataManagerMock {
     func fetchWordDetail(_ word: String, completion: @escaping (WordDetail?) -> Void) {
         let fetchRequest = WordEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "word == %@", word)
-        do {
-            let wordEntity = try viewContext.fetch(fetchRequest).first
-            completion(wordEntity.map { WordDetail($0) })
-        } catch {
-            completion(nil)
-        }
+        let wordEntity = try? viewContext.fetch(fetchRequest).first
+        completion(wordEntity.map { WordDetail($0) })
     }
     
     func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
         let fetchRequest = WordEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", wordId)
-        do {
-            let wordEntity = try viewContext.fetch(fetchRequest).first
-            wordEntity?.isFavorite = isFavorite
-            saveContext()
-        } catch {}
+        let wordEntity = try? viewContext.fetch(fetchRequest).first
+        wordEntity?.isFavorite = isFavorite
+        saveContext()
     }
     
     func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void) {
@@ -199,12 +181,10 @@ extension DataManagerMock {
     func deleteDeck(deckId: Int) {
         let fetchRequest = DeckEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", deckId)
-        do {
-            if let deckEntity = try viewContext.fetch(fetchRequest).first {
-                viewContext.delete(deckEntity)
-                saveContext()
-            }
-        } catch {}
+        if let deckEntity = try? viewContext.fetch(fetchRequest).first {
+            viewContext.delete(deckEntity)
+            saveContext()
+        }
     }
     
     func createDeck(name: String, completion: @escaping (Deck) -> Void) {
