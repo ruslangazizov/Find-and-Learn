@@ -148,6 +148,7 @@
 		D28814D427FDA1DA007332A8 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */; };
 		D2912B2D282FAA7800BB50A6 /* CreateDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */; };
 		D2912B2F282FABCE00BB50A6 /* DeleteDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */; };
+		D2912B31282FACD200BB50A6 /* GetDecksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2912B30282FACD200BB50A6 /* GetDecksRequest.swift */; };
 		D294305427F79303001CFEC6 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */; };
 		D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5A42E27E5E4E400E503AA /* R.generated.swift */; };
 		D2AB637C27DCCA0000CE4441 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AB637B27DCCA0000CE4441 /* Localizable.strings */; };
@@ -329,6 +330,7 @@
 		D28814D327FDA1DA007332A8 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckRequest.swift; sourceTree = "<group>"; };
 		D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDeckRequest.swift; sourceTree = "<group>"; };
+		D2912B30282FACD200BB50A6 /* GetDecksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDecksRequest.swift; sourceTree = "<group>"; };
 		D294305327F79303001CFEC6 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		D2A5A42E27E5E4E400E503AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D2AB637B27DCCA0000CE4441 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -870,6 +872,7 @@
 				D200B60228297A48001A63C1 /* DictionaryRequest.swift */,
 				D2912B2C282FAA7800BB50A6 /* CreateDeckRequest.swift */,
 				D2912B2E282FABCE00BB50A6 /* DeleteDeckRequest.swift */,
+				D2912B30282FACD200BB50A6 /* GetDecksRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1616,6 +1619,7 @@
 				D25FCD5B27F858C10007E65D /* CircularView.swift in Sources */,
 				D26EFF0F2800A3430019F1EC /* AccountRouterProtocol.swift in Sources */,
 				44DC5FF827FF0E0B005EACAE /* FavoriteWordsPresenter.swift in Sources */,
+				D2912B31282FACD200BB50A6 /* GetDecksRequest.swift in Sources */,
 				44F379E027FC41A6001F02F4 /* DateFormatter+Extensions.swift in Sources */,
 				44F379F027FC45BE001F02F4 /* HistoryWordsRouter.swift in Sources */,
 				44CA5425281BE5C400B6DDE8 /* NewFlashcardAssembly.swift in Sources */,
