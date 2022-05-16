@@ -273,11 +273,15 @@ extension DataManager {
     }
     
     func saveToken(_ token: String) {
-        _ = KeyChainManager.save(key: backendTokenKeyChainKey, data: Data(from: token))
+        KeyChainManager.save(key: backendTokenKeyChainKey, data: Data(from: token))
     }
     
     func getToken() -> String? {
         return KeyChainManager.load(key: backendTokenKeyChainKey)?.to(type: String.self)
+    }
+    
+    func removeToken() {
+        KeyChainManager.remove(key: backendTokenKeyChainKey)
     }
     
     func getApiKey() -> String? {

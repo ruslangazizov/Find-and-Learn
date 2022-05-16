@@ -24,6 +24,7 @@ protocol DataManagerProtocol: AnyObject {
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int)
     func saveToken(_ token: String)
     func getToken() -> String?
+    func removeToken()
     func getApiKey() -> String?
 }
 

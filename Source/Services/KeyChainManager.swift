@@ -8,15 +8,15 @@
 import Foundation
 
 enum KeyChainManager {
-    static func save(key: String, data: Data) -> OSStatus {
+    static func save(key: String, data: Data) {
         let query = [
             kSecClass as String: kSecClassGenericPassword as String,
             kSecAttrAccount as String: key,
             kSecValueData as String: data
         ] as [String: Any]
-        SecItemDelete(query as CFDictionary)
         
-        return SecItemAdd(query as CFDictionary, nil)
+        SecItemDelete(query as CFDictionary)
+        SecItemAdd(query as CFDictionary, nil)
     }
     
     static func load(key: String) -> Data? {
@@ -31,6 +31,16 @@ enum KeyChainManager {
         let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
         
         return status == noErr ? dataTypeRef as? Data : nil
+    }
+    
+    static func remove(key: String) {
+        let query = [
+            kSecClass as String: kSecClassGenericPassword as String,
+            kSecAttrAccount as String: key,
+            kSecValueData as String: kCFBooleanTrue as Any
+        ] as [CFString: Any]
+        
+        SecItemDelete(query as CFDictionary)
     }
 }
 
