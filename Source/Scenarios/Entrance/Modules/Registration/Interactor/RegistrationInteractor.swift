@@ -22,6 +22,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
     
     private let validationManager: ValidationManagerProtocol
     private let networkManager: NetworkManagerProtocol
+    private let userManager: UserManagerProtocol
     private let dataManager: DataManagerProtocol
     
     // MARK: Init
@@ -29,10 +30,12 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
     init(
         validationManager: ValidationManagerProtocol,
         networkManager: NetworkManagerProtocol,
+        userManager: UserManagerProtocol,
         dataManager: DataManagerProtocol
     ) {
         self.validationManager = validationManager
         self.networkManager = networkManager
+        self.userManager = userManager
         self.dataManager = dataManager
     }
     
@@ -72,8 +75,8 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                 switch resultData {
                 case .success(let model):
                     DispatchQueue.global(qos: .background).async {
-                        self?.dataManager.saveEmailCode(model.emailCode)
-                        self?.dataManager.saveUser(User(
+                        self?.userManager.saveEmailCode(model.emailCode)
+                        self?.userManager.saveUser(User(
                             email: email,
                             userName: userName,
                             password: password,

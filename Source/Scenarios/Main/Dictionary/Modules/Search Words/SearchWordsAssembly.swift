@@ -12,7 +12,7 @@ final class SearchWordsAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let router = SearchWordsRouter()
         let interactor = SearchWordsInteractor(
-            dataManager: DataManagerMock(),
+            dataManager: DataManager.shared,
             networkManager: NetworkManager(),
             validationManager: ValidationManager()
         )
