@@ -18,7 +18,9 @@ final class DataManager: DataManagerProtocol {
     
     private let backendTokenKeyChainKey = "backendTokenKeyChainKey"
     
-    // MARK: Core Data stack
+    // MARK: Core Data
+    
+    private let queue = DispatchQueue(label: "CoreDataSerialQueue")
     
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Find_and_Learn")
@@ -60,216 +62,244 @@ private extension DataManager {
 
 extension DataManager {
     func getWords(_ wordPart: String, completion: ([Word]) -> Void) {
-        let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "word CONTAINS[c] %@", wordPart)
-        do {
-            let wordsEntities = try viewContext.fetch(fetchRequest)
-            completion(wordsEntities.map { Word($0) })
-        } catch {
-            completion([])
+        queue.sync {
+            let fetchRequest = WordEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "word CONTAINS[c] %@", wordPart)
+            do {
+                let wordsEntities = try viewContext.fetch(fetchRequest)
+                completion(wordsEntities.map { Word($0) })
+            } catch {
+                completion([])
+            }
         }
     }
     
     func saveWord(_ word: Word) {
-        let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "word == %@", word.word)
-        if (try? viewContext.fetch(fetchRequest).first) != nil { return }
-        
-        let wordEntity = WordEntity(context: viewContext, word: word.word)
-        wordEntity.translations = Set(word.detailTranslations?.map { translation in
-            let translationId = checkId(
-                translation.id, entityType: TranslationEntity.self
-            ) ? translation.id : Int.random(in: 1...1_000_000)
-            let translationEntity = TranslationEntity(
-                context: viewContext,
-                transcription: translation.transcription,
-                speechPart: translation.speechPart,
-                translation: translation.translation,
-                id: translationId,
-                word: wordEntity
-            )
-            translationEntity.examples = Set(translation.examples.map { example in
-                let exampleId = checkId(
-                    example.id, entityType: ExampleEntity.self
-                ) ? example.id : Int.random(in: 1...1_000_000)
-                return ExampleEntity(
+        queue.sync {
+            let fetchRequest = WordEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "word == %@", word.word)
+            if (try? viewContext.fetch(fetchRequest).first) != nil { return }
+            
+            let wordEntity = WordEntity(context: viewContext, word: word.word)
+            wordEntity.translations = Set(word.detailTranslations?.map { translation in
+                let translationId = checkId(
+                    translation.id, entityType: TranslationEntity.self
+                ) ? translation.id : Int.random(in: 1...1_000_000)
+                let translationEntity = TranslationEntity(
                     context: viewContext,
-                    id: exampleId,
-                    translationId: translationId,
-                    example: example.example,
-                    exampleTranslation: example.translation,
-                    translation: translationEntity
+                    transcription: translation.transcription,
+                    speechPart: translation.speechPart,
+                    translation: translation.translation,
+                    id: translationId,
+                    word: wordEntity
                 )
-            })
-            return translationEntity
-        } ?? [])
-        
-        saveContext()
+                translationEntity.examples = Set(translation.examples.map { example in
+                    let exampleId = checkId(
+                        example.id, entityType: ExampleEntity.self
+                    ) ? example.id : Int.random(in: 1...1_000_000)
+                    return ExampleEntity(
+                        context: viewContext,
+                        id: exampleId,
+                        translationId: translationId,
+                        example: example.example,
+                        exampleTranslation: example.translation,
+                        translation: translationEntity
+                    )
+                })
+                return translationEntity
+            } ?? [])
+            
+            saveContext()
+        }
     }
     
     func fetchHistoryWords(completion: ([HistoryWord]) -> Void) {
-        let fetchRequest = HistoryWordEntity.fetchRequest()
-        do {
-            let historyWordsEntities = try viewContext.fetch(fetchRequest)
-            completion(historyWordsEntities.map { historyWordEntity in
-                HistoryWord(
-                    word: historyWordEntity.word.word,
-                    translations: historyWordEntity.word.translations.map { $0.translation },
-                    dateAdded: historyWordEntity.timeOpened
-                )
-            })
-        } catch {
-            completion([])
+        queue.sync {
+            let fetchRequest = HistoryWordEntity.fetchRequest()
+            do {
+                let historyWordsEntities = try viewContext.fetch(fetchRequest)
+                completion(historyWordsEntities.map { historyWordEntity in
+                    HistoryWord(
+                        word: historyWordEntity.word.word,
+                        translations: historyWordEntity.word.translations.map { $0.translation },
+                        dateAdded: historyWordEntity.timeOpened
+                    )
+                })
+            } catch {
+                completion([])
+            }
         }
     }
     
     func addHistoryWord(wordId: Int, timeOpened: Date, completion: ((Bool) -> Void)?) {
-        let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %ld", wordId)
-        if let wordEntity = try? viewContext.fetch(fetchRequest).first {
-            _ = HistoryWordEntity(
-                context: viewContext,
-                wordId: wordId,
-                timeOpened: timeOpened,
-                word: wordEntity
-            )
-            saveContext()
-            completion?(true)
-        } else {
-            completion?(false)
+        queue.sync {
+            let fetchRequest = WordEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %ld", wordId)
+            if let wordEntity = try? viewContext.fetch(fetchRequest).first {
+                _ = HistoryWordEntity(
+                    context: viewContext,
+                    wordId: wordId,
+                    timeOpened: timeOpened,
+                    word: wordEntity
+                )
+                saveContext()
+                completion?(true)
+            } else {
+                completion?(false)
+            }
         }
     }
     
     func fetchFavoriteWords(completion: ([Word]) -> Void) {
-        let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "isFavorite == %c", true)
-        do {
-            let wordsEntities = try viewContext.fetch(fetchRequest)
-            completion(wordsEntities.map { Word($0) })
-        } catch {
-            completion([])
+        queue.sync {
+            let fetchRequest = WordEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "isFavorite == %c", true)
+            do {
+                let wordsEntities = try viewContext.fetch(fetchRequest)
+                completion(wordsEntities.map { Word($0) })
+            } catch {
+                completion([])
+            }
         }
     }
     
     func fetchWordDetail(_ word: String, completion: @escaping (WordDetail?) -> Void) {
-        let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "word == %@", word)
-        let wordEntity = try? viewContext.fetch(fetchRequest).first
-        completion(wordEntity.map { WordDetail($0) })
+        queue.sync {
+            let fetchRequest = WordEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "word == %@", word)
+            let wordEntity = try? viewContext.fetch(fetchRequest).first
+            completion(wordEntity.map { WordDetail($0) })
+        }
     }
     
     func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
-        let fetchRequest = WordEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %ld", wordId)
-        let wordEntity = try? viewContext.fetch(fetchRequest).first
-        wordEntity?.isFavorite = isFavorite
-        saveContext()
+        queue.sync {
+            let fetchRequest = WordEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %ld", wordId)
+            let wordEntity = try? viewContext.fetch(fetchRequest).first
+            wordEntity?.isFavorite = isFavorite
+            saveContext()
+        }
     }
     
     func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void) {
-        let fetchRequest = DeckEntity.fetchRequest()
-        do {
-            let decksEntities = try viewContext.fetch(fetchRequest)
-            completion(decksEntities.map {
-                Deck(
-                    id: Int($0.id),
-                    name: $0.name,
-                    createdAt: $0.createdAt,
-                    flashcards: includeFlashcards ? $0.flashcards.map { Flashcard($0) } : nil
-                )
-            })
-        } catch {
-            completion([])
+        queue.sync {
+            let fetchRequest = DeckEntity.fetchRequest()
+            do {
+                let decksEntities = try viewContext.fetch(fetchRequest)
+                completion(decksEntities.map {
+                    Deck(
+                        id: Int($0.id),
+                        name: $0.name,
+                        createdAt: $0.createdAt,
+                        flashcards: includeFlashcards ? $0.flashcards.map { Flashcard($0) } : nil
+                    )
+                })
+            } catch {
+                completion([])
+            }
         }
     }
     
     func saveNewFlashcard(_ newFlashcard: NewFlashcard, completion: ((Bool) -> Void)?) {
-        let fetchRequest = DeckEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %ld", newFlashcard.deckId)
-        if let deckEntity = try? viewContext.fetch(fetchRequest).first {
-            _ = FlashcardEntity(
-                context: viewContext,
-                comment: newFlashcard.comment,
-                backSide: newFlashcard.backSide,
-                frontSide: newFlashcard.frontSide,
-                deckId: newFlashcard.deckId,
-                deck: deckEntity
-            )
-            if newFlashcard.createReversed {
+        queue.sync {
+            let fetchRequest = DeckEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %ld", newFlashcard.deckId)
+            if let deckEntity = try? viewContext.fetch(fetchRequest).first {
                 _ = FlashcardEntity(
                     context: viewContext,
                     comment: newFlashcard.comment,
-                    backSide: newFlashcard.frontSide,
-                    frontSide: newFlashcard.backSide,
+                    backSide: newFlashcard.backSide,
+                    frontSide: newFlashcard.frontSide,
                     deckId: newFlashcard.deckId,
                     deck: deckEntity
                 )
+                if newFlashcard.createReversed {
+                    _ = FlashcardEntity(
+                        context: viewContext,
+                        comment: newFlashcard.comment,
+                        backSide: newFlashcard.frontSide,
+                        frontSide: newFlashcard.backSide,
+                        deckId: newFlashcard.deckId,
+                        deck: deckEntity
+                    )
+                }
+                saveContext()
+                completion?(true)
+            } else {
+                completion?(false)
             }
-            saveContext()
-            completion?(true)
-        } else {
-            completion?(false)
         }
     }
     
     func deleteDeck(deckId: Int) {
-        let fetchRequest = DeckEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %ld", deckId)
-        if let deckEntity = try? viewContext.fetch(fetchRequest).first {
-            viewContext.delete(deckEntity)
-            saveContext()
+        queue.sync {
+            let fetchRequest = DeckEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %ld", deckId)
+            if let deckEntity = try? viewContext.fetch(fetchRequest).first {
+                viewContext.delete(deckEntity)
+                saveContext()
+            }
         }
     }
     
     func createDeck(name: String, completion: @escaping (Deck) -> Void) {
-        let deckEntity = DeckEntity(context: viewContext, name: name)
-        saveContext()
-        completion(Deck(
-            id: Int(deckEntity.id),
-            name: deckEntity.name,
-            createdAt: deckEntity.createdAt,
-            flashcards: deckEntity.flashcards.map { Flashcard($0) }
-        ))
+        queue.sync {
+            let deckEntity = DeckEntity(context: viewContext, name: name)
+            saveContext()
+            completion(Deck(
+                id: Int(deckEntity.id),
+                name: deckEntity.name,
+                createdAt: deckEntity.createdAt,
+                flashcards: deckEntity.flashcards.map { Flashcard($0) }
+            ))
+        }
     }
     
     func deleteFlashcard(flashcardId: Int) {
-        let fetchRequest = FlashcardEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %ld", flashcardId)
-        if let flashcardEntity = try? viewContext.fetch(fetchRequest).first {
-            viewContext.delete(flashcardEntity)
-            saveContext()
+        queue.sync {
+            let fetchRequest = FlashcardEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %ld", flashcardId)
+            if let flashcardEntity = try? viewContext.fetch(fetchRequest).first {
+                viewContext.delete(flashcardEntity)
+                saveContext()
+            }
         }
     }
     
     func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void) {
-        let fetchRequest = DeckEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %ld", deckId)
-        let deckEntity = try? viewContext.fetch(fetchRequest).first
-        completion(deckEntity?.flashcards.map { Flashcard($0) })
+        queue.sync {
+            let fetchRequest = DeckEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %ld", deckId)
+            let deckEntity = try? viewContext.fetch(fetchRequest).first
+            completion(deckEntity?.flashcards.map { Flashcard($0) })
+        }
     }
     
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int) {
-        let flashcardFetchRequest = FlashcardEntity.fetchRequest()
-        flashcardFetchRequest.predicate = NSPredicate(format: "id == %ld", flashcard.id)
-        guard let flashcardEntity = try? viewContext.fetch(flashcardFetchRequest).first else {
-            return
+        queue.sync {
+            let flashcardFetchRequest = FlashcardEntity.fetchRequest()
+            flashcardFetchRequest.predicate = NSPredicate(format: "id == %ld", flashcard.id)
+            guard let flashcardEntity = try? viewContext.fetch(flashcardFetchRequest).first else {
+                return
+            }
+            
+            flashcardEntity.comment = flashcard.comment
+            flashcardEntity.backSide = flashcard.backSide
+            flashcardEntity.frontSide = flashcard.frontSide
+            
+            let oldDeckFetchRequest = DeckEntity.fetchRequest()
+            oldDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", flashcardEntity.deckId)
+            let oldDeckEntity = try? viewContext.fetch(oldDeckFetchRequest).first
+            oldDeckEntity?.flashcards.remove(flashcardEntity)
+            
+            let updatedDeckFetchRequest = DeckEntity.fetchRequest()
+            updatedDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", updatedDeckId)
+            let updatedDeckEntity = try? viewContext.fetch(updatedDeckFetchRequest).first
+            updatedDeckEntity?.addToFlashcards(flashcardEntity)
+            
+            saveContext()
         }
-        
-        flashcardEntity.comment = flashcard.comment
-        flashcardEntity.backSide = flashcard.backSide
-        flashcardEntity.frontSide = flashcard.frontSide
-        
-        let oldDeckFetchRequest = DeckEntity.fetchRequest()
-        oldDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", flashcardEntity.deckId)
-        let oldDeckEntity = try? viewContext.fetch(oldDeckFetchRequest).first
-        oldDeckEntity?.flashcards.remove(flashcardEntity)
-        
-        let updatedDeckFetchRequest = DeckEntity.fetchRequest()
-        updatedDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", updatedDeckId)
-        let updatedDeckEntity = try? viewContext.fetch(updatedDeckFetchRequest).first
-        updatedDeckEntity?.addToFlashcards(flashcardEntity)
-        
-        saveContext()
     }
     
     func saveToken(_ token: String) {
