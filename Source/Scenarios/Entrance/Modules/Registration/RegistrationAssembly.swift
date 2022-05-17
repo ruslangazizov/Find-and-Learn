@@ -12,11 +12,12 @@ final class RegistrationAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let validationManager = ValidationManager()
         let networkManager = NetworkManager()
-        let dataManager = DataManagerMock()
+        let dataManager = DataManager.shared
         
         let interactor = RegistrationInteractor(
             validationManager: validationManager,
             networkManager: networkManager,
+            userManager: UserManager(),
             dataManager: dataManager
         )
         let router = RegistrationRouter()

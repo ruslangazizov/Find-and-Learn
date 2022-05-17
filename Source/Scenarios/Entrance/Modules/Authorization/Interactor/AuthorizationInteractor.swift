@@ -16,6 +16,7 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
     
     private let validationManager: ValidationManagerProtocol
     private let networkManager: NetworkManagerProtocol
+    private let userManager: UserManagerProtocol
     private let dataManager: DataManagerProtocol
     
     // MARK: Init
@@ -23,10 +24,12 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
     init(
         validationManager: ValidationManagerProtocol,
         networkManager: NetworkManagerProtocol,
+        userManager: UserManagerProtocol,
         dataManager: DataManagerProtocol
     ) {
         self.validationManager = validationManager
         self.networkManager = networkManager
+        self.userManager = userManager
         self.dataManager = dataManager
     }
     
@@ -56,7 +59,7 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
                         .perform(userRequest) { (resultResponse: Result<UserRequestModel, NetworkManagerError>) in
                             switch resultResponse {
                             case .success(let responseModel):
-                                self?.dataManager.saveUser(User(
+                                self?.userManager.saveUser(User(
                                     id: responseModel.id,
                                     email: email,
                                     userName: responseModel.username ?? "",

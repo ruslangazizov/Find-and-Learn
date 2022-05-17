@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G527" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DeckEntity" representedClassName="DeckEntity" syncable="YES">
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="flashcards" toMany="YES" deletionRule="Cascade" destinationEntity="FlashcardEntity" inverseName="deck" inverseEntity="FlashcardEntity"/>
+    </entity>
+    <entity name="ExampleEntity" representedClassName="ExampleEntity" syncable="YES">
+        <attribute name="example" attributeType="String"/>
+        <attribute name="exampleTranslation" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="translationId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="translation" maxCount="1" deletionRule="Nullify" destinationEntity="TranslationEntity" inverseName="examples" inverseEntity="TranslationEntity"/>
+    </entity>
+    <entity name="FlashcardEntity" representedClassName="FlashcardEntity" syncable="YES">
+        <attribute name="backSide" attributeType="String"/>
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="deckId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="forgetsCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="frontSide" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="remembersCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="deck" maxCount="1" deletionRule="Nullify" destinationEntity="DeckEntity" inverseName="flashcards" inverseEntity="DeckEntity"/>
+    </entity>
+    <entity name="HistoryWordEntity" representedClassName="HistoryWordEntity" syncable="YES">
+        <attribute name="timeOpened" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wordId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="word" maxCount="1" deletionRule="Nullify" destinationEntity="WordEntity"/>
+    </entity>
+    <entity name="TranslationEntity" representedClassName="TranslationEntity" syncable="YES">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="speechPart" attributeType="String"/>
+        <attribute name="transcription" optional="YES" attributeType="String"/>
+        <attribute name="translation" attributeType="String"/>
+        <relationship name="examples" toMany="YES" deletionRule="Cascade" destinationEntity="ExampleEntity" inverseName="translation" inverseEntity="ExampleEntity"/>
+        <relationship name="word" maxCount="1" deletionRule="Nullify" destinationEntity="WordEntity" inverseName="translations" inverseEntity="WordEntity"/>
+    </entity>
+    <entity name="WordEntity" representedClassName="WordEntity" syncable="YES">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="word" attributeType="String"/>
+        <relationship name="translations" toMany="YES" deletionRule="Cascade" destinationEntity="TranslationEntity" inverseName="word" inverseEntity="TranslationEntity"/>
+    </entity>
+    <elements>
+        <element name="DeckEntity" positionX="-63" positionY="-18" width="128" height="14"/>
+        <element name="ExampleEntity" positionX="-9" positionY="126" width="128" height="14"/>
+        <element name="FlashcardEntity" positionX="-54" positionY="18" width="128" height="14"/>
+        <element name="HistoryWordEntity" positionX="0" positionY="144" width="128" height="14"/>
+        <element name="TranslationEntity" positionX="-36" positionY="99" width="128" height="14"/>
+        <element name="WordEntity" positionX="-45" positionY="90" width="128" height="89"/>
+    </elements>
+</model>

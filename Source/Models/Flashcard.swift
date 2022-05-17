@@ -50,4 +50,18 @@ struct Flashcard: Equatable {
     let frontSide: String
     let backSide: String
     let comment: String?
+    
+    init(id: Int, frontSide: String, backSide: String, comment: String?) {
+        self.id = id
+        self.frontSide = frontSide
+        self.backSide = backSide
+        self.comment = comment
+    }
+    
+    init(_ flashcardEntity: FlashcardEntity) {
+        id = Int(flashcardEntity.id)
+        frontSide = flashcardEntity.frontSide
+        backSide = flashcardEntity.backSide
+        comment = flashcardEntity.comment
+    }
 }
