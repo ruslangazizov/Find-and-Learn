@@ -53,8 +53,8 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
                 switch resultData {
                 case .success(let model):
                     self?.dataManager.saveToken(model.getAsToken())
-                    
-                    let userRequest = UserRequest(email, model.getAsToken())
+                   
+                    let userRequest = GetUserRequest(email, model.getAsToken())
                     self?.networkManager
                         .perform(userRequest) { (resultResponse: Result<UserRequestModel, NetworkManagerError>) in
                             switch resultResponse {

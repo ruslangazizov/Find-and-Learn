@@ -15,14 +15,14 @@ struct UserUpdateRequestModel: Encodable {
 }
 
 struct UserUpdateRequest: Request {
-    private(set) var method: HTTP.Method = .put
+    let method: HTTP.Method = .put
     private(set) var path: String = "users/"
-    private(set) var body: HTTP.Body
-    private(set) var token: String
+    let body: HTTP.Body
+    let token: String
     
     init(_ model: UserUpdateRequestModel, _ id: Int, _ token: String) {
         self.token = token
         path += "\(id)"
-        body = .model(.init(model))
+        body = .model(model)
     }
 }

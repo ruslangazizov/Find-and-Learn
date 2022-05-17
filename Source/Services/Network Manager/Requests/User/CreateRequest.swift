@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct RegistrationRequestModel: Encodable {
-    let id = Int.random(in: 0...1_000_000)
+struct CreateRequestModel: Encodable {
+    let id = Int.random(in: 1...1_000_000)
     let firstName: String
     let secondName: String
     let email: String
@@ -25,12 +25,12 @@ struct RegistrationRequestModel: Encodable {
     }
 }
 
-struct RegistrationRequest: Request {
-    private(set) var method: HTTP.Method = .post
-    private(set) var path: String = "users/"
-    private(set) var body: HTTP.Body
+struct CreateRequest: Request {
+    let method: HTTP.Method = .post
+    let path: String = "users/"
+    let body: HTTP.Body
     
-    init(_ model: RegistrationRequestModel) {
-        body = .model(.init(model))
+    init(_ model: CreateRequestModel) {
+        body = .model(model)
     }
 }

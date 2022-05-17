@@ -8,25 +8,13 @@
 import Foundation
 
 enum HTTP {
-    struct AnyEncodable: Encodable {
-        private let encodable: Encodable
-
-        public init(_ encodable: Encodable) {
-            self.encodable = encodable
-        }
-
-        func encode(to encoder: Encoder) throws {
-            try encodable.encode(to: encoder)
-        }
-    }
-    
     typealias Queries = [String: CustomStringConvertible]
     
     typealias Headers = [String: String]
    
     enum Body: Equatable {
         case raw(Data)
-        case model(AnyEncodable)
+        case model(Encodable)
         case keyValue([String: Any])
         case none
         
