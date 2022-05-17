@@ -8,7 +8,7 @@
 import Foundation
 
 struct CreateRequestModel: Encodable {
-    let id = Int.random(in: 0...1_000_000)
+    let id = Int.random(in: 1...1_000_000)
     let firstName: String
     let secondName: String
     let email: String

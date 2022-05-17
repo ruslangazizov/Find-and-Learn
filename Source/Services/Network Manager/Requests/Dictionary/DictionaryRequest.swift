@@ -13,7 +13,6 @@ struct DictionaryRequest: Request {
         static let fromRuToEn = "ru-en"
         
         static let ruFlag = "ru"
-        static let enFlag = "en"
     }
     
     let method: HTTP.Method = .get
@@ -26,7 +25,7 @@ struct DictionaryRequest: Request {
             "key": key,
             "lang": isFromEnglish ? Constants.fromEnToRu : Constants.fromRuToEn,
             "text": word,
-            "ui": isFromEnglish ? Constants.ruFlag : Constants.enFlag
+            "ui": Constants.ruFlag
         ]
     }
 }
