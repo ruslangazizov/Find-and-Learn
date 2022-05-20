@@ -27,7 +27,6 @@ final class AchievementsManager: AchievementsManagerProtocol {
         } else {
             let totalAchievementsCount = getAllAchievements().count
             let emptyAchievementsArray: [Date?] = .init(repeating: nil, count: totalAchievementsCount)
-            userDefaults.set(emptyAchievementsArray, forKey: achievementsArrayKey)
             return emptyAchievementsArray
         }
     }
