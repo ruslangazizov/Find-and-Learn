@@ -14,18 +14,18 @@ protocol FavoriteWordsInteractorProtocol: AnyObject {
 final class FavoriteWordsInteractor: FavoriteWordsInteractorProtocol {
     // MARK: Dependencies
     
-    private let dataManager: DataManagerProtocol
+    private let wordsRepository: WordsRepositoryProtocol
     
     // MARK: Initializers
     
-    init(dataManager: DataManagerProtocol) {
-        self.dataManager = dataManager
+    init(wordsRepository: WordsRepositoryProtocol) {
+        self.wordsRepository = wordsRepository
     }
     
     // MARK: FavoriteWordsInteractorProtocol
     
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void) {
-        dataManager.fetchFavoriteWords { words in
+        wordsRepository.fetchFavoriteWords { words in
             DispatchQueue.main.async {
                 completion(words)
             }

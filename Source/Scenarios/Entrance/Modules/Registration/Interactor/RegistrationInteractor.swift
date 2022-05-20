@@ -23,7 +23,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
     private let validationManager: ValidationManagerProtocol
     private let networkManager: NetworkManagerProtocol
     private let userManager: UserManagerProtocol
-    private let dataManager: DataManagerProtocol
+    private let tokensManager: TokensManagerProtocol
     
     // MARK: Init
     
@@ -31,12 +31,12 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
         validationManager: ValidationManagerProtocol,
         networkManager: NetworkManagerProtocol,
         userManager: UserManagerProtocol,
-        dataManager: DataManagerProtocol
+        tokensManager: TokensManagerProtocol
     ) {
         self.validationManager = validationManager
         self.networkManager = networkManager
         self.userManager = userManager
-        self.dataManager = dataManager
+        self.tokensManager = tokensManager
     }
     
     // MARK: RegistrationInteractorProtocol
@@ -82,7 +82,7 @@ final class RegistrationInteractor: RegistrationInteractorProtocol {
                             password: password,
                             state: .inactive)
                         )
-                        self?.dataManager.saveToken("\(HTTP.Auth.tokenType) \(model.token)")
+                        self?.tokensManager.saveToken("\(HTTP.Auth.tokenType) \(model.token)")
                     }
                     result(.success)
                 case .failure:

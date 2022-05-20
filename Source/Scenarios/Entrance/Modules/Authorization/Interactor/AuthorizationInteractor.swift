@@ -17,7 +17,7 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
     private let validationManager: ValidationManagerProtocol
     private let networkManager: NetworkManagerProtocol
     private let userManager: UserManagerProtocol
-    private let dataManager: DataManagerProtocol
+    private let tokensManager: TokensManagerProtocol
     
     // MARK: Init
     
@@ -25,12 +25,12 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
         validationManager: ValidationManagerProtocol,
         networkManager: NetworkManagerProtocol,
         userManager: UserManagerProtocol,
-        dataManager: DataManagerProtocol
+        tokensManager: TokensManagerProtocol
     ) {
         self.validationManager = validationManager
         self.networkManager = networkManager
         self.userManager = userManager
-        self.dataManager = dataManager
+        self.tokensManager = tokensManager
     }
     
     // MARK: AuthorizationInteractorProtocol
@@ -52,7 +52,7 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
             ) { [weak self] (resultData: Result<AuthorizationResponseModel, NetworkManagerError>) in
                 switch resultData {
                 case .success(let model):
-                    self?.dataManager.saveToken(model.getAsToken())
+                    self?.tokensManager.saveToken(model.getAsToken())
                    
                     let userRequest = GetUserRequest(email, model.getAsToken())
                     self?.networkManager

@@ -14,18 +14,18 @@ protocol HistoryWordsInteractorProtocol: AnyObject {
 final class HistoryWordsInteractor: HistoryWordsInteractorProtocol {
     // MARK: Dependencies
     
-    private let dataManager: DataManagerProtocol
+    private let wordsRepository: WordsRepositoryProtocol
     
     // MARK: Initializer
     
-    init(dataManager: DataManagerProtocol) {
-        self.dataManager = dataManager
+    init(wordsRepository: WordsRepositoryProtocol) {
+        self.wordsRepository = wordsRepository
     }
     
     // MARK: HistoryWordsInteractorProtocol
     
     func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void) {
-        dataManager.fetchHistoryWords { historyWords in
+        wordsRepository.fetchHistoryWords { historyWords in
             DispatchQueue.main.async {
                 completion(historyWords)
             }

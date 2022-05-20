@@ -11,7 +11,9 @@ import UIKit
 final class HistoryWordsAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
         let router = HistoryWordsRouter()
-        let interactor = HistoryWordsInteractor(dataManager: DataManager.shared)
+        let interactor = HistoryWordsInteractor(
+            wordsRepository: WordsRepository(coreDataManager: CoreDataManager.shared)
+        )
         let presenter = HistoryWordsPresenter(interactor: interactor, router: router)
         let view = HistoryWordsViewController(presenter: presenter)
         

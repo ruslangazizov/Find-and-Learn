@@ -14,12 +14,12 @@ protocol AchievementsInteractorProtocol: AnyObject {
 final class AchievementsInteractor: AchievementsInteractorProtocol {
     // MARK: Dependencies
     
-    private let dataManager: DataManagerProtocol
+    private let dataManager: CoreDataManagerProtocol
     private let achievementManager: AchievementsManagerProtocol
     
     // MARK: Init
     
-    init(dataManager: DataManagerProtocol, achievementManager: AchievementsManagerProtocol) {
+    init(dataManager: CoreDataManagerProtocol, achievementManager: AchievementsManagerProtocol) {
         self.dataManager = dataManager
         self.achievementManager = achievementManager
     }
