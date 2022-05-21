@@ -76,18 +76,15 @@ final class FlashcardsRepository: FlashcardsRepositoryProtocol {
             flashcardEntity.backSide = flashcard.backSide
             flashcardEntity.frontSide = flashcard.frontSide
             
-            let oldDeckFetchRequest = DeckEntity.fetchRequest()
-            oldDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", flashcardEntity.deckId)
-            self.coreDataManager.mutate(oldDeckFetchRequest) { oldDecksEntities in
-                let oldDeckEntity = oldDecksEntities?.first
-                oldDeckEntity?.flashcards.remove(flashcardEntity)
-            }
-            
-            let updatedDeckFetchRequest = DeckEntity.fetchRequest()
-            updatedDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", updatedDeckId)
-            self.coreDataManager.mutate(updatedDeckFetchRequest) { updatedDecksEntities in
-                let updatedDeckEntity = updatedDecksEntities?.first
-                updatedDeckEntity?.addToFlashcards(flashcardEntity)
+            if flashcardEntity.deckId != updatedDeckId {
+                let updatedDeckFetchRequest = DeckEntity.fetchRequest()
+                updatedDeckFetchRequest.predicate = NSPredicate(format: "id == %ld", updatedDeckId)
+                self.coreDataManager.mutate(updatedDeckFetchRequest) { updatedDecksEntities in
+                    guard let updatedDeckEntity = updatedDecksEntities?.first else { return }
+                    
+                    flashcardEntity.deck = updatedDeckEntity
+                    flashcardEntity.deckId = Int32(updatedDeckId)
+                }
             }
         }
     }
