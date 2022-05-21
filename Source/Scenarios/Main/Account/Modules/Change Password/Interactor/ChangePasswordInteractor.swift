@@ -21,7 +21,7 @@ final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
     private let validationManager: ValidationManagerProtocol
     private let networkManager: NetworkManagerProtocol
     private let userManager: UserManagerProtocol
-    private let dataManager: DataManagerProtocol
+    private let tokensManager: TokensManagerProtocol
     
     // MARK: Init
     
@@ -29,12 +29,12 @@ final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
         validationManager: ValidationManagerProtocol,
         networkManager: NetworkManagerProtocol,
         userManager: UserManagerProtocol,
-        dataManager: DataManagerProtocol
+        tokensManager: TokensManagerProtocol
     ) {
         self.validationManager = validationManager
         self.networkManager = networkManager
         self.userManager = userManager
-        self.dataManager = dataManager
+        self.tokensManager = tokensManager
     }
     
     // MARK: ChangePasswordInteractorProtocol
@@ -50,7 +50,7 @@ final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
             result(.confirmPassword)
         } else {
             let user = userManager.getUser()
-            guard let token = dataManager.getToken() else {
+            guard let token = tokensManager.getToken() else {
                 return
             }
             let request = UserUpdateRequest(

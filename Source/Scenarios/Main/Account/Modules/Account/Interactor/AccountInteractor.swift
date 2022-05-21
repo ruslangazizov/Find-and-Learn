@@ -15,7 +15,7 @@ protocol AccountInteractorProtocol: AnyObject {
 final class AccountInteractor: AccountInteractorProtocol {
     // MARK: Dependencies
     
-    private let dataManager: DataManagerProtocol
+    private let tokensManager: TokensManagerProtocol
     private let settingsManager: SettingsManagerProtocol
     private let userManager: UserManagerProtocol
     private let networkManager: NetworkManagerProtocol
@@ -23,12 +23,12 @@ final class AccountInteractor: AccountInteractorProtocol {
     // MARK: Init
     
     init(
-        dataManager: DataManagerProtocol,
+        tokensManager: TokensManagerProtocol,
         settingsManager: SettingsManagerProtocol,
         userManager: UserManagerProtocol,
         networkManager: NetworkManagerProtocol
     ) {
-        self.dataManager = dataManager
+        self.tokensManager = tokensManager
         self.settingsManager = settingsManager
         self.userManager = userManager
         self.networkManager = networkManager
@@ -45,7 +45,7 @@ final class AccountInteractor: AccountInteractorProtocol {
     
     func deleteAccount(_ completion: @escaping (Bool) -> Void) {
         let user = userManager.getUser()
-        guard let token = dataManager.getToken() else {
+        guard let token = tokensManager.getToken() else {
             return
         }
         let request = DeleteRequest(user.id, token)

@@ -14,18 +14,18 @@ protocol SearchWordsInteractorProtocol: AnyObject {
 final class SearchWordsInteractor: SearchWordsInteractorProtocol {
     // MARK: Dependencies
     
-    private let dataManager: DataManagerProtocol
+    private let tokensManager: TokensManagerProtocol
     private let networkManager: NetworkManagerProtocol
     private let validationManager: ValidationManagerProtocol
     
     // MARK: Initializer
     
     init(
-        dataManager: DataManagerProtocol,
+        tokensManager: TokensManagerProtocol,
         networkManager: NetworkManagerProtocol,
         validationManager: ValidationManagerProtocol
     ) {
-        self.dataManager = dataManager
+        self.tokensManager = tokensManager
         self.networkManager = networkManager
         self.validationManager = validationManager
     }
@@ -38,7 +38,7 @@ final class SearchWordsInteractor: SearchWordsInteractorProtocol {
             return
         }
         
-        guard let apiKey = dataManager.getApiKey() else {
+        guard let apiKey = tokensManager.getApiKey() else {
             return
         }
         

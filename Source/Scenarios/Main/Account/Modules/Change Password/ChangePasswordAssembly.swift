@@ -14,7 +14,7 @@ final class ChangePasswordAssembly: AssemblyProtocol {
             validationManager: ValidationManager(),
             networkManager: NetworkManager(),
             userManager: UserManager(),
-            dataManager: DataManager.shared
+            tokensManager: TokensManager()
         )
         let router = ChangePasswordRouter()
         

@@ -11,7 +11,9 @@ final class DeckDetailAssembly: TransitionAssemblyProtocol {
     typealias DataModel = Deck
     
     static func assemble(with model: Deck) -> UIViewController {
-        let interactor = DeckDetailInteractor(dataManager: DataManager.shared)
+        let interactor = DeckDetailInteractor(
+            flashcardsRepository: FlashcardsRepository(coreDataManager: CoreDataManager.shared)
+        )
         let router = DeckDetailRouter()
         
         let presenter = DeckDetailPresenter(interactor: interactor, router: router, deck: model)

@@ -13,14 +13,14 @@ protocol WordDetailInteractorProtocol: AnyObject {
 }
 
 final class WordDetailInteractor: WordDetailInteractorProtocol {
-    private let dataManager: DataManagerProtocol
+    private let wordsRepository: WordsRepositoryProtocol
     
-    init(dataManager: DataManagerProtocol) {
-        self.dataManager = dataManager
+    init(wordsRepository: WordsRepositoryProtocol) {
+        self.wordsRepository = wordsRepository
     }
     
     func getWordDetail(_ wordModel: WordModel, completion: @escaping (WordDetail?) -> Void) {
-        dataManager.fetchWordDetail(wordModel.word) { wordDetail in
+        wordsRepository.fetchWordDetail(wordModel.word) { wordDetail in
             DispatchQueue.main.async {
                 completion(wordDetail)
             }
@@ -28,6 +28,6 @@ final class WordDetailInteractor: WordDetailInteractorProtocol {
     }
     
     func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
-        dataManager.changeWordStatus(wordId, isFavorite: isFavorite)
+        wordsRepository.changeWordStatus(wordId, isFavorite: isFavorite)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 final class AchievementsAssembly: AssemblyProtocol {
     static func assemble() -> UIViewController {
-        let dataManager = DataManager.shared
+        let dataManager = CoreDataManager.shared
         let achievementsManager = AchievementsManager()
         let interactor = AchievementsInteractor(dataManager: dataManager, achievementManager: achievementsManager)
         

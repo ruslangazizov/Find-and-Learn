@@ -12,7 +12,10 @@ enum EditFlashcardAssembly {
         let editFlashcardModel = NewFlashcardModel(flashcard)
         
         let router = EditFlashcardRouter()
-        let interactor = EditFlashcardInteractor(dataManager: DataManager.shared)
+        let interactor = EditFlashcardInteractor(
+            decksRepository: DecksRepository(coreDataManager: CoreDataManager.shared),
+            flashcardsRepository: FlashcardsRepository(coreDataManager: CoreDataManager.shared)
+        )
         let presenter = EditFlashcardPresenter(
             interactor: interactor,
             router: router,

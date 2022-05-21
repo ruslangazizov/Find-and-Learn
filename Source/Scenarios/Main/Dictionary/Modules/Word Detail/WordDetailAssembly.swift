@@ -13,7 +13,9 @@ final class WordDetailAssembly: TransitionAssemblyProtocol {
     
     static func assemble(with model: WordModel) -> UIViewController {
         let router = WordDetailRouter()
-        let interactor = WordDetailInteractor(dataManager: DataManager.shared)
+        let interactor = WordDetailInteractor(
+            wordsRepository: WordsRepository(coreDataManager: CoreDataManager.shared)
+        )
         let presenter = WordDetailPresenter(interactor: interactor, router: router, wordModel: model)
         let view = WordDetailViewController(presenter: presenter)
         

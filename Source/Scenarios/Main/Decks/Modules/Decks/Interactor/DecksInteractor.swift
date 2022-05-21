@@ -15,16 +15,16 @@ protocol DecksInteractorProtocol: AnyObject {
 }
 
 final class DecksInteractor: DecksInteractorProtocol {
-    private let dataManager: DataManagerProtocol
+    private let decksRepository: DecksRepositoryProtocol
     private let stringFormatter: StringFormatterProtocol
     
-    init(dataManager: DataManagerProtocol, stringFormatter: StringFormatterProtocol) {
-        self.dataManager = dataManager
+    init(decksRepository: DecksRepositoryProtocol, stringFormatter: StringFormatterProtocol) {
+        self.decksRepository = decksRepository
         self.stringFormatter = stringFormatter
     }
     
     func fetchDecks(completion: @escaping ([Deck]) -> Void) {
-        dataManager.fetchDecks(includeFlashcards: true) { decks in
+        decksRepository.fetchDecks(includeFlashcards: true) { decks in
             DispatchQueue.main.async {
                 completion(decks)
             }
@@ -36,11 +36,11 @@ final class DecksInteractor: DecksInteractorProtocol {
     }
     
     func deleteDeck(deckId: Int) {
-        dataManager.deleteDeck(deckId: deckId)
+        decksRepository.deleteDeck(deckId: deckId)
     }
     
     func createDeck(name: String, completion: @escaping (Deck) -> Void) {
-        dataManager.createDeck(name: name) { newDeck in
+        decksRepository.createDeck(name: name) { newDeck in
             DispatchQueue.main.async {
                 completion(newDeck)
             }

@@ -13,14 +13,16 @@ protocol NewFlashcardInteractorProtocol: AnyObject {
 }
 
 final class NewFlashcardInteractor: NewFlashcardInteractorProtocol {
-    private let dataManager: DataManagerProtocol
+    private let decksRepository: DecksRepositoryProtocol
+    private let flashcardsRepository: FlashcardsRepositoryProtocol
     
-    init(dataManager: DataManagerProtocol) {
-        self.dataManager = dataManager
+    init(decksRepository: DecksRepositoryProtocol, flashcardsRepository: FlashcardsRepositoryProtocol) {
+        self.decksRepository = decksRepository
+        self.flashcardsRepository = flashcardsRepository
     }
     
     func getAllDecks(completion: @escaping ([Deck]) -> Void) {
-        dataManager.fetchDecks { decks in
+        decksRepository.fetchDecks { decks in
             DispatchQueue.main.async {
                 completion(decks)
             }
@@ -28,6 +30,6 @@ final class NewFlashcardInteractor: NewFlashcardInteractorProtocol {
     }
     
     func saveNewFlashcard(_ newFlashcard: NewFlashcard) {
-        dataManager.saveNewFlashcard(newFlashcard)
+        flashcardsRepository.saveNewFlashcard(newFlashcard)
     }
 }

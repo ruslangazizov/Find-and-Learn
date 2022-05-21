@@ -13,18 +13,18 @@ protocol DeckDetailInteractorProtocol: AnyObject {
 }
 
 final class DeckDetailInteractor: DeckDetailInteractorProtocol {
-    private let dataManager: DataManagerProtocol
+    private let flashcardsRepository: FlashcardsRepositoryProtocol
     
-    init(dataManager: DataManagerProtocol) {
-        self.dataManager = dataManager
+    init(flashcardsRepository: FlashcardsRepositoryProtocol) {
+        self.flashcardsRepository = flashcardsRepository
     }
     
     func deleteFlashcard(flashcardId: Int) {
-        dataManager.deleteFlashcard(flashcardId: flashcardId)
+        flashcardsRepository.deleteFlashcard(flashcardId: flashcardId)
     }
     
     func getFlashCards(deckId: Int, completion: @escaping ([Flashcard]) -> Void) {
-        dataManager.fetchFlashcards(deckId: deckId) { flashcards in
+        flashcardsRepository.fetchFlashcards(deckId: deckId) { flashcards in
             DispatchQueue.main.async {
                 completion(flashcards ?? [])
             }
