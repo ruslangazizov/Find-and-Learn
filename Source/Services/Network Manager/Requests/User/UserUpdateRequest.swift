@@ -12,6 +12,13 @@ struct UserUpdateRequestModel: Encodable {
     let secondName: String
     let userName: String
     let password: String
+    
+    enum CodingKeys: String, CodingKey {
+        case firstName = "first_name"
+        case secondName = "second_name"
+        case userName = "username"
+        case password = "hashed_password"
+    }
 }
 
 struct UserUpdateRequest: Request {
