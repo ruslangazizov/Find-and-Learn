@@ -13,6 +13,7 @@ protocol UserManagerProtocol: AnyObject {
     func setEmailIsVerified()
     func saveEmailCode(_ code: Int)
     func getEmailCode() -> Int?
+    func updateUserName(_ userName: String) -> User
 }
 
 final class UserManager: UserManagerProtocol {
@@ -56,5 +57,12 @@ final class UserManager: UserManagerProtocol {
     
     func getEmailCode() -> Int? {
         return userDefaults.value(forKey: userEmailCodeKey) as? Int
+    }
+    
+    func updateUserName(_ userName: String) -> User {
+        var user = getUser()
+        user.userName = userName
+        saveUser(user)
+        return user
     }
 }

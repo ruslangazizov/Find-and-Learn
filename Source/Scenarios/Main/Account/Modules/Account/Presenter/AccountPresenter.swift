@@ -31,6 +31,7 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     func changeUserName(for userName: String) {
+        interactor.changeUserName(userName)
     }
     
     func changeAvatar(for avatar: UIImage) {
