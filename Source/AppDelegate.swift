@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppearanceConfigurator.configure()
         
         window = UIWindow()
+        window?.rootViewController = AppAssembly.assemble()
         window?.makeKeyAndVisible()
         return true
     }

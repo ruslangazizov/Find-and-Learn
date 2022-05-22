@@ -10,6 +10,7 @@ import Foundation
 protocol AccountInteractorProtocol: AnyObject {
     func loadSettings(_ completion: @escaping (([Setting], String) -> Void))
     func deleteAccount(_ completion: @escaping (Bool) -> Void)
+    func removeToken()
 }
 
 final class AccountInteractor: AccountInteractorProtocol {
@@ -57,5 +58,9 @@ final class AccountInteractor: AccountInteractorProtocol {
                 completion(false)
             }
         }
+    }
+    
+    func removeToken() {
+        tokensManager.removeToken()
     }
 }

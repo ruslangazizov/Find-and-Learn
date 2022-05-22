@@ -59,7 +59,7 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     func exit() {
-        // TODO: delete token from keychain
+        interactor.removeToken()
         router.showEntranceFlow()
     }
     
