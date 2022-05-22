@@ -23,6 +23,7 @@
 		442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */; };
 		442BD8EA27F57CFC00FE3760 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* CoreDataManager.swift */; };
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
+		443039C12839532300D9488C /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443039C02839532300D9488C /* DependencyManager.swift */; };
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
 		44435E7528212D1000737D69 /* DecksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E7428212D1000737D69 /* DecksAssembly.swift */; };
 		44435E7E28212E4400737D69 /* DecksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E7D28212E4400737D69 /* DecksRouter.swift */; };
@@ -222,6 +223,7 @@
 		442BD8E727F5789400FE3760 /* DictionaryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAssembly.swift; sourceTree = "<group>"; };
 		442BD8E927F57CFC00FE3760 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
+		443039C02839532300D9488C /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		44435E7428212D1000737D69 /* DecksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksAssembly.swift; sourceTree = "<group>"; };
 		44435E7D28212E4400737D69 /* DecksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksRouter.swift; sourceTree = "<group>"; };
@@ -448,8 +450,10 @@
 				D2FD925328148AF000D93BC4 /* Studying Manager */,
 				D26EFF06280088480019F1EC /* Settings Manager */,
 				D21E9DA827F9FF64005513B7 /* Validation Managers */,
+				44247B502837D5F500383C9A /* Tokens Manager */,
 				44D5811027E7B34000DBCC4E /* Data Managers */,
 				44EAE9CA283018D300EF6A82 /* KeyChainManager.swift */,
+				443039C02839532300D9488C /* DependencyManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -502,13 +506,13 @@
 			path = Flashcards;
 			sourceTree = "<group>";
 		};
-		44247B502837D5F500383C9A /* Tokens */ = {
+		44247B502837D5F500383C9A /* Tokens Manager */ = {
 			isa = PBXGroup;
 			children = (
 				44247B512837D61C00383C9A /* TokensManagerProtocol.swift */,
 				44247B532837D64A00383C9A /* TokensManager.swift */,
 			);
-			path = Tokens;
+			path = "Tokens Manager";
 			sourceTree = "<group>";
 		};
 		4443518A27F7139400C5BE28 /* Extensions */ = {
@@ -840,7 +844,6 @@
 		44D5811027E7B34000DBCC4E /* Data Managers */ = {
 			isa = PBXGroup;
 			children = (
-				44247B502837D5F500383C9A /* Tokens */,
 				44247B4B2837D0C100383C9A /* Flashcards */,
 				44247B462837CBD900383C9A /* Decks */,
 				44247B41283554D800383C9A /* Words */,
@@ -1753,6 +1756,7 @@
 				44F379E827FC43C0001F02F4 /* HistoryWordsInteractor.swift in Sources */,
 				44247B4F2837D10800383C9A /* FlashcardsRepositoryProtocol.swift in Sources */,
 				D20F32F9280DB0270003D9DD /* ChangePasswordViewInput.swift in Sources */,
+				443039C12839532300D9488C /* DependencyManager.swift in Sources */,
 				D2FB5D5A27EDA5B300CBDB00 /* AuthorizationViewOutput.swift in Sources */,
 				D2DFEE51281C65AF006F452E /* AchievementTableViewCell.swift in Sources */,
 				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
