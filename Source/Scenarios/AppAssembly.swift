@@ -11,10 +11,10 @@ import UIKit
 enum AppAssembly {
     static func assemble() -> UIViewController {
         let tokensManager: TokensManagerProtocol = TokensManager()
-        let userActivityRepository: UserActivityRepositoryProtocol = UserActivityRepository()
+        let userManager: UserManagerProtocol = UserManager()
         
-        if tokensManager.getToken() == nil || userActivityRepository.isFirstEntrance() {
-            userActivityRepository.setFirstEntrance()
+        if tokensManager.getToken() == nil || userManager.isFirstEntrance() {
+            userManager.setFirstEntrance()
             return EntranceAssembly.assemble()
         } else {
             return TabBarViewController()
