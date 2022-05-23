@@ -63,7 +63,7 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
                                     id: responseModel.id,
                                     email: email,
                                     userName: responseModel.username ?? "",
-                                    password: "",
+                                    password: password,
                                     state: .inactive))
                                 result(.success)
                             case .failure(let error):

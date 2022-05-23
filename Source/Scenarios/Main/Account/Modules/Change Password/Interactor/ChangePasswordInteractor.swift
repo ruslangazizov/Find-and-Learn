@@ -55,8 +55,6 @@ final class ChangePasswordInteractor: ChangePasswordInteractorProtocol {
             }
             let request = UserUpdateRequest(
                 .init(
-                    firstName: "",
-                    secondName: "",
                     userName: user.userName,
                     password: password
                 ),
