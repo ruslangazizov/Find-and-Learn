@@ -24,6 +24,7 @@
 		442BD8EA27F57CFC00FE3760 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8E927F57CFC00FE3760 /* CoreDataManager.swift */; };
 		442BD8EC27F57D4500FE3760 /* SearchWordsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */; };
 		443039C12839532300D9488C /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443039C02839532300D9488C /* DependencyManager.swift */; };
+		443039C3283C9EC400D9488C /* Container+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443039C2283C9EC400D9488C /* Container+Extensions.swift */; };
 		4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */; };
 		44435E7528212D1000737D69 /* DecksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E7428212D1000737D69 /* DecksAssembly.swift */; };
 		44435E7E28212E4400737D69 /* DecksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435E7D28212E4400737D69 /* DecksRouter.swift */; };
@@ -224,6 +225,7 @@
 		442BD8E927F57CFC00FE3760 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		442BD8EB27F57D4500FE3760 /* SearchWordsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsAssembly.swift; sourceTree = "<group>"; };
 		443039C02839532300D9488C /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		443039C2283C9EC400D9488C /* Container+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Extensions.swift"; sourceTree = "<group>"; };
 		4443518B27F713D200C5BE28 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		44435E7428212D1000737D69 /* DecksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksAssembly.swift; sourceTree = "<group>"; };
 		44435E7D28212E4400737D69 /* DecksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksRouter.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 				D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */,
 				44DD6AB628203D72001FE38F /* String+Extensions.swift */,
 				D202DF162826EA850022D322 /* HTTPMethod+Extensions.swift */,
+				443039C2283C9EC400D9488C /* Container+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1881,6 +1884,7 @@
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
 				D2FD923B2813FCE400D93BC4 /* StudyingViewInput.swift in Sources */,
 				44435E862821317E00737D69 /* DecksViewController.swift in Sources */,
+				443039C3283C9EC400D9488C /* Container+Extensions.swift in Sources */,
 				44EAE9BF282BB02F00EF6A82 /* DeckEntity.swift in Sources */,
 				44435E8028212F3900737D69 /* DecksInteractor.swift in Sources */,
 				44435E8B2821817C00737D69 /* StringFormatter.swift in Sources */,
