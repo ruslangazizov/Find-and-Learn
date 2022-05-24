@@ -28,4 +28,11 @@ extension Container {
         }
         return viewController
     }
+    
+    func resolveAsViewController<Service, Arg1, Arg2, Arg3>(_ serviceType: Service.Type, arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3) -> UIViewController {
+        guard let viewController = resolve(serviceType, arguments: arg1, arg2, arg3) as? UIViewController else {
+            fatalError("Unable to cast \(serviceType.self)'s conforming class instance to UIViewController")
+        }
+        return viewController
+    }
 }

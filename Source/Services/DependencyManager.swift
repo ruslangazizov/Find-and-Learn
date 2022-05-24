@@ -14,6 +14,7 @@ enum DependencyManager {
         registerServices(using: container)
         registerEntranceFlow(using: container)
         registerDictionaryFlow(using: container)
+        registerDecksFlow(using: container)
         
         return container
     }
@@ -114,12 +115,12 @@ enum DependencyManager {
             return viewController
         }
         
-        container.register(WordDetailViewInput.self) { (resolver, arg1: WordModel) in
+        container.register(WordDetailViewInput.self) { (resolver, wordModel: WordModel) in
             let interactor = WordDetailInteractor(
                 wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
             )
             let router = WordDetailRouter()
-            let presenter = WordDetailPresenter(interactor: interactor, router: router, wordModel: arg1)
+            let presenter = WordDetailPresenter(interactor: interactor, router: router, wordModel: wordModel)
             let view = WordDetailViewController(presenter: presenter)
             
             presenter.view = view
@@ -128,17 +129,88 @@ enum DependencyManager {
             return view
         }
         
-        container.register(NewFlashcardViewInput.self) { (resolver, arg1: NewFlashcardModel, arg2: Int?) in
+        container.register(NewFlashcardViewInput.self) {
+            (resolver, flashcardModel: NewFlashcardModel, deckId: Int?) in
             let interactor = NewFlashcardInteractor(
                 decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
                 flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
             )
             let router = NewFlashcardRouter()
-            let presenter = NewFlashcardPresenter(interactor: interactor, router: router, selectedDeckId: arg2)
-            let viewController = NewFlashcardViewController(presenter: presenter, newFlashcardModel: arg1)
+            let presenter = NewFlashcardPresenter(interactor: interactor, router: router, selectedDeckId: deckId)
+            let viewController = NewFlashcardViewController(presenter: presenter, newFlashcardModel: flashcardModel)
             
             router.view = viewController
             presenter.view = viewController
+            
+            return viewController
+        }
+    }
+    
+    private static func registerDecksFlow(using container: Container) {
+        container.register(DecksViewInput.self) { resolver in
+            let interactor = DecksInteractor(
+                decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
+                stringFormatter: resolver.resolve(StringFormatterProtocol.self)!
+            )
+            let router = DecksRouter()
+            let presenter = DecksPresenter(interactor: interactor, router: router)
+            let viewController = DecksViewController(presenter: presenter)
+            
+            presenter.view = viewController
+            router.view = viewController
+            
+            return viewController
+        }
+        
+        container.register(DeckDetailViewInput.self) { (resolver, deck: Deck) in
+            let interactor = DeckDetailInteractor(
+                flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
+            )
+            let router = DeckDetailRouter()
+            let presenter = DeckDetailPresenter(interactor: interactor, router: router, deck: deck)
+            let viewController = DeckDetailViewController(
+                presenter: presenter,
+                flashcards: deck.flashcards,
+                deckName: deck.name
+            )
+            
+            presenter.view = viewController
+            router.view = viewController
+            
+            return viewController
+        }
+        
+        container.register(EditFlashcardViewInput.self) {
+            (resolver, editFlashcardModel: NewFlashcardModel, flashcardId: Int, selectedDeckId: Int) in
+            let interactor = EditFlashcardInteractor(
+                decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
+                flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
+            )
+            let router = EditFlashcardRouter()
+            let presenter = EditFlashcardPresenter(
+                interactor: interactor,
+                router: router,
+                flashcardId: flashcardId,
+                selectedDeckId: selectedDeckId
+            )
+            let view = NewFlashcardViewController(presenter: presenter, newFlashcardModel: editFlashcardModel)
+            
+            router.view = view
+            presenter.view = view
+            
+            return view
+        }
+        
+        container.register(StudyingViewInput.self) { (resolver, models: [Flashcard]) in
+            let interactor = StudyingInteractor(
+                studyingManager: resolver.resolve(StudyingManagerProtocol.self)!
+            )
+            let router = StudyingRouter()
+            let presenter = StudyingPresenter(router: router, interactor: interactor)
+            let viewController = StudyingViewController(presenter: presenter, cards: models)
+            
+            presenter.view = viewController
+            router.view = viewController
             
             return viewController
         }
