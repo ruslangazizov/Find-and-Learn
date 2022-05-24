@@ -23,7 +23,7 @@ enum KeyChainManager {
     static func load(key: String) -> Data? {
         let query = [
             kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: key as AnyObject,
+            kSecAttrAccount as String: key,
             kSecReturnData as String: kCFBooleanTrue as Any,
             kSecMatchLimit as String: kSecMatchLimitOne
         ] as [String: Any]
@@ -36,23 +36,10 @@ enum KeyChainManager {
     
     static func remove(key: String) {
         let query = [
-            kSecClass as String: kSecClassGenericPassword as String,
-            kSecAttrAccount as String: key,
-            kSecValueData as String: kCFBooleanTrue as Any
-        ] as [CFString: Any]
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key
+        ] as [String: Any]
         
         SecItemDelete(query as CFDictionary)
-    }
-}
-
-extension Data {
-    init<T>(from value: T) {
-        self = withUnsafePointer(to: value) { (ptr: UnsafePointer<T>) -> Data in
-            return Data(buffer: UnsafeBufferPointer(start: ptr, count: 1))
-        }
-    }
-
-    func to<T>(type: T.Type) -> T {
-        return withUnsafeBytes { $0.load(as: T.self) }
     }
 }

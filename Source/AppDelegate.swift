@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = DependencyManager.registerAll()
         
         window = UIWindow()
+        window?.rootViewController = AppAssembly.assemble()
         window?.makeKeyAndVisible()
         return true
     }

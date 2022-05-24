@@ -11,11 +11,18 @@ final class TokensManager: TokensManagerProtocol {
     private let backendTokenKeyChainKey = "backendTokenKeyChainKey"
     
     func saveToken(_ token: String) {
-        KeyChainManager.save(key: backendTokenKeyChainKey, data: Data(from: token))
+        guard let data = token.data(using: .utf8) else {
+            assertionFailure("Unable to convert token from String to Data type")
+            return
+        }
+        KeyChainManager.save(key: backendTokenKeyChainKey, data: data)
     }
     
     func getToken() -> String? {
-        return KeyChainManager.load(key: backendTokenKeyChainKey)?.to(type: String.self)
+        if let data = KeyChainManager.load(key: backendTokenKeyChainKey) {
+            return String(data: data, encoding: .utf8)
+        }
+        return nil
     }
     
     func removeToken() {

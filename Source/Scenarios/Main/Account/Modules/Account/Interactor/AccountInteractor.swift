@@ -10,6 +10,8 @@ import Foundation
 protocol AccountInteractorProtocol: AnyObject {
     func loadSettings(_ completion: @escaping (([Setting], String) -> Void))
     func deleteAccount(_ completion: @escaping (Bool) -> Void)
+    func removeToken()
+    func changeUserName(_ userName: String)
 }
 
 final class AccountInteractor: AccountInteractorProtocol {
@@ -56,6 +58,20 @@ final class AccountInteractor: AccountInteractorProtocol {
             case .failure:
                 completion(false)
             }
+        }
+    }
+    
+    func removeToken() {
+        tokensManager.removeToken()
+    }
+    
+    func changeUserName(_ userName: String) {
+        let user = userManager.updateUserName(userName)
+        guard let token = tokensManager.getToken() else {
+            return
+        }
+        let request = UserUpdateRequest(.init(user), user.id, token)
+        networkManager.perform(request) { _ in
         }
     }
 }
