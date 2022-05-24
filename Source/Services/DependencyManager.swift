@@ -13,6 +13,7 @@ enum DependencyManager {
         
         registerServices(using: container)
         registerEntranceFlow(using: container)
+        registerDictionaryFlow(using: container)
         
         return container
     }
@@ -63,6 +64,81 @@ enum DependencyManager {
             
             presenter.view = viewController
             router.view = viewController
+            
+            return viewController
+        }
+    }
+    
+    private static func registerDictionaryFlow(using container: Container) {
+        container.register(SearchWordsViewInput.self) { resolver in
+            let interactor = SearchWordsInteractor(
+                tokensManager: resolver.resolve(TokensManagerProtocol.self)!,
+                networkManager: resolver.resolve(NetworkManagerProtocol.self)!,
+                validationManager: resolver.resolve(ValidationManagerProtocol.self)!
+            )
+            let router = SearchWordsRouter(container: container)
+            let presenter = SearchWordsPresenter(router: router, interactor: interactor)
+            let viewController = SearchWordsViewController(presenter: presenter)
+            
+            presenter.view = viewController
+            router.view = viewController
+            
+            return viewController
+        }
+        
+        container.register(FavoriteWordsViewInput.self) { resolver in
+            let interactor = FavoriteWordsInteractor(
+                wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
+            )
+            let router = FavoriteWordsRouter()
+            let presenter = FavoriteWordsPresenter(router: router, interactor: interactor)
+            let viewController = FavoriteWordsViewController(presenter: presenter)
+            
+            presenter.view = viewController
+            router.view = viewController
+            
+            return viewController
+        }
+        
+        container.register(HistoryWordsViewInput.self) { resolver in
+            let interactor = HistoryWordsInteractor(
+                wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
+            )
+            let router = HistoryWordsRouter()
+            let presenter = HistoryWordsPresenter(interactor: interactor, router: router)
+            let viewController = HistoryWordsViewController(presenter: presenter)
+            
+            presenter.view = viewController
+            router.view = viewController
+            
+            return viewController
+        }
+        
+        container.register(WordDetailViewInput.self) { (resolver, arg1: WordModel) in
+            let interactor = WordDetailInteractor(
+                wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
+            )
+            let router = WordDetailRouter()
+            let presenter = WordDetailPresenter(interactor: interactor, router: router, wordModel: arg1)
+            let view = WordDetailViewController(presenter: presenter)
+            
+            presenter.view = view
+            router.view = view
+            
+            return view
+        }
+        
+        container.register(NewFlashcardViewInput.self) { (resolver, arg1: NewFlashcardModel, arg2: Int?) in
+            let interactor = NewFlashcardInteractor(
+                decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
+                flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
+            )
+            let router = NewFlashcardRouter()
+            let presenter = NewFlashcardPresenter(interactor: interactor, router: router, selectedDeckId: arg2)
+            let viewController = NewFlashcardViewController(presenter: presenter, newFlashcardModel: arg1)
+            
+            router.view = viewController
+            presenter.view = viewController
             
             return viewController
         }
