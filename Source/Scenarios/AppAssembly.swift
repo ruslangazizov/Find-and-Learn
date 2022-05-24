@@ -7,17 +7,18 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 enum AppAssembly {
-    static func assemble() -> UIViewController {
+    static func assemble(using container: Container) -> UIViewController {
         let tokensManager: TokensManagerProtocol = TokensManager()
         let userManager: UserManagerProtocol = UserManager()
         
         if tokensManager.getToken() == nil || userManager.isFirstEntrance() {
             userManager.setFirstEntrance()
-            return EntranceAssembly.assemble()
+            return EntranceAssembly.assemble(using: container)
         } else {
-            return TabBarViewController()
+            return TabBarViewController(container: container)
         }
     }
 }
