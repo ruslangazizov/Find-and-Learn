@@ -6,21 +6,10 @@
 //
 
 import UIKit
+import Swinject
 
-final class DecksAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let interactor = DecksInteractor(
-            decksRepository: DecksRepository(coreDataManager: CoreDataManager.shared),
-            stringFormatter: StringFormatter()
-        )
-        let router = DecksRouter()
-        
-        let presenter = DecksPresenter(interactor: interactor, router: router)
-        let view = DecksViewController(presenter: presenter)
-        
-        presenter.view = view
-        router.view = view
-        
-        return view
+enum DecksAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(DecksViewInput.self)
     }
 }

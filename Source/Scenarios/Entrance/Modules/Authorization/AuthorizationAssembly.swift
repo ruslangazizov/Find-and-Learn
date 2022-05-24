@@ -7,24 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class AuthorizationAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let interactor = AuthorizationInteractor(
-            validationManager: ValidationManager(),
-            networkManager: NetworkManager(),
-            userManager: UserManager(),
-            tokensManager: TokensManager()
-        )
-        let router = AuthorizationRouter()
-        
-        let presenter = AuthorizationPresenter(interactor: interactor, router: router)
-        
-        let viewController = AuthorizationViewController(presenter: presenter)
-        
-        presenter.view = viewController
-        router.view = viewController
-        
-        return viewController
+enum AuthorizationAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(AuthorizationViewInput.self)
     }
 }

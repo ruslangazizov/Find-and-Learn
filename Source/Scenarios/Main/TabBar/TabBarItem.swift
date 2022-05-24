@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 enum TabBarItem: CaseIterable {
     case dictionary
@@ -71,14 +72,14 @@ extension TabBarItem {
         return item
     }
     
-    var asController: UIViewController {
+    func asController(using container: Container) -> UIViewController {
         switch self {
         case .dictionary:
-            return DictionaryAssembly.assemble()
+            return DictionaryAssembly.assemble(using: container)
         case .decks:
-            return DecksAssembly.assemble()
+            return DecksAssembly.assemble(using: container)
         case .account:
-            return AccountAssembly.assemble()
+            return AccountAssembly.assemble(using: container)
         }
     }
 }

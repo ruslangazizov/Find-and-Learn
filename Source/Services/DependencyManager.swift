@@ -92,7 +92,7 @@ enum DependencyManager {
             let interactor = FavoriteWordsInteractor(
                 wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
             )
-            let router = FavoriteWordsRouter()
+            let router = FavoriteWordsRouter(container: container)
             let presenter = FavoriteWordsPresenter(router: router, interactor: interactor)
             let viewController = FavoriteWordsViewController(presenter: presenter)
             
@@ -106,7 +106,7 @@ enum DependencyManager {
             let interactor = HistoryWordsInteractor(
                 wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
             )
-            let router = HistoryWordsRouter()
+            let router = HistoryWordsRouter(container: container)
             let presenter = HistoryWordsPresenter(interactor: interactor, router: router)
             let viewController = HistoryWordsViewController(presenter: presenter)
             
@@ -120,7 +120,7 @@ enum DependencyManager {
             let interactor = WordDetailInteractor(
                 wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
             )
-            let router = WordDetailRouter()
+            let router = WordDetailRouter(container: container)
             let presenter = WordDetailPresenter(interactor: interactor, router: router, wordModel: wordModel)
             let view = WordDetailViewController(presenter: presenter)
             
@@ -130,8 +130,7 @@ enum DependencyManager {
             return view
         }
         
-        container.register(NewFlashcardViewInput.self) {
-            (resolver, flashcardModel: NewFlashcardModel, deckId: Int?) in
+        container.register(NewFlashcardViewInput.self) { (resolver, flashcardModel: NewFlashcardModel, deckId: Int?) in
             let interactor = NewFlashcardInteractor(
                 decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
                 flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
@@ -153,7 +152,7 @@ enum DependencyManager {
                 decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
                 stringFormatter: resolver.resolve(StringFormatterProtocol.self)!
             )
-            let router = DecksRouter()
+            let router = DecksRouter(container: container)
             let presenter = DecksPresenter(interactor: interactor, router: router)
             let viewController = DecksViewController(presenter: presenter)
             
@@ -167,7 +166,7 @@ enum DependencyManager {
             let interactor = DeckDetailInteractor(
                 flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
             )
-            let router = DeckDetailRouter()
+            let router = DeckDetailRouter(container: container)
             let presenter = DeckDetailPresenter(interactor: interactor, router: router, deck: deck)
             let viewController = DeckDetailViewController(
                 presenter: presenter,
@@ -181,8 +180,7 @@ enum DependencyManager {
             return viewController
         }
         
-        container.register(EditFlashcardViewInput.self) {
-            (resolver, editFlashcardModel: NewFlashcardModel, flashcardId: Int, selectedDeckId: Int) in
+        container.register(EditFlashcardViewInput.self) { (resolver, arg1: NewFlashcardModel, arg2: Int, arg3: Int) in
             let interactor = EditFlashcardInteractor(
                 decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
                 flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
@@ -191,10 +189,10 @@ enum DependencyManager {
             let presenter = EditFlashcardPresenter(
                 interactor: interactor,
                 router: router,
-                flashcardId: flashcardId,
-                selectedDeckId: selectedDeckId
+                flashcardId: arg2,
+                selectedDeckId: arg3
             )
-            let view = NewFlashcardViewController(presenter: presenter, newFlashcardModel: editFlashcardModel)
+            let view = NewFlashcardViewController(presenter: presenter, newFlashcardModel: arg1)
             
             router.view = view
             presenter.view = view

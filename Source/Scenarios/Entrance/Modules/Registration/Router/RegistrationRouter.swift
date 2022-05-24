@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 protocol RegistrationRouterProtocol: RouterProtocol {
     func showAuthorization()
@@ -18,14 +19,23 @@ final class RegistrationRouter: RegistrationRouterProtocol {
     
     weak var view: UIViewController?
     
+    private let container: Container
+    
+    // MARK: Init
+    
+    init(container: Container) {
+        self.container = container
+    }
+    
     // MARK: RegistrationRouterProtocol
     
     func showAuthorization() {
-        let viewController = AuthorizationAssembly.assemble()
+        let viewController = AuthorizationAssembly.assemble(using: container)
         view?.navigationController?.setViewController(viewController: viewController, animated: true)
     }
     
     func finish() {
-        view?.navigationController?.setViewController(viewController: TabBarViewController(), animated: true)
+        let tabBarViewController = TabBarViewController(container: container)
+        view?.navigationController?.setViewController(viewController: tabBarViewController, animated: true)
     }
 }

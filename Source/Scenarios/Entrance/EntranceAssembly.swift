@@ -7,10 +7,13 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class EntranceAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let startViewController = UINavigationController(rootViewController: AuthorizationAssembly.assemble())
+enum EntranceAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        let startViewController = UINavigationController(
+            rootViewController: AuthorizationAssembly.assemble(using: container)
+        )
         startViewController.isNavigationBarHidden = true
         return startViewController
     }

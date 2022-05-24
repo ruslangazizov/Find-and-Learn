@@ -7,20 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class StudyingAssembly: TransitionAssemblyProtocol {
-    typealias DataModel = [Flashcard]
-    
-    static func assemble(with models: [Flashcard]) -> UIViewController {
-        let interactor = StudyingInteractor(studyingManager: StudyingManager())
-        let router = StudyingRouter()
-        
-        let presenter = StudyingPresenter(router: router, interactor: interactor)
-        let viewController = StudyingViewController(presenter: presenter, cards: models)
-        
-        presenter.view = viewController
-        router.view = viewController
-        
-        return viewController
+enum StudyingAssembly {
+    static func assemble(with models: [Flashcard], using container: Container) -> UIViewController {
+        return container.resolveAsViewController(StudyingViewInput.self, argument: models)
     }
 }

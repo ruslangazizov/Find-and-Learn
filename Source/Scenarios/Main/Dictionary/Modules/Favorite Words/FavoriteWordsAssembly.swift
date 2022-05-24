@@ -7,19 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class FavoriteWordsAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let router = FavoriteWordsRouter()
-        let interactor = FavoriteWordsInteractor(
-            wordsRepository: WordsRepository(coreDataManager: CoreDataManager.shared)
-        )
-        let presenter = FavoriteWordsPresenter(router: router, interactor: interactor)
-        let view = FavoriteWordsViewController(presenter: presenter)
-        
-        presenter.view = view
-        router.view = view
-        
-        return view
+enum FavoriteWordsAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(FavoriteWordsViewInput.self)
     }
 }

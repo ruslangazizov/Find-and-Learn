@@ -48,7 +48,6 @@
 		44435EAC28242AC100737D69 /* EditFlashcardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44435EAB28242AC100737D69 /* EditFlashcardRouter.swift */; };
 		4443AB5F281D89B700112B35 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443AB5E281D89B700112B35 /* Deck.swift */; };
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
-		44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */; };
 		444B2813281D349E0037CDA8 /* NewFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B2812281D349E0037CDA8 /* NewFlashcardView.swift */; };
 		4459D86A2816E645002D2EAF /* WordDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
@@ -249,7 +248,6 @@
 		44435EAB28242AC100737D69 /* EditFlashcardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardRouter.swift; sourceTree = "<group>"; };
 		4443AB5E281D89B700112B35 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
-		44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
 		444B2812281D349E0037CDA8 /* NewFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardView.swift; sourceTree = "<group>"; };
 		4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailTableViewCell.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
@@ -686,7 +684,6 @@
 			isa = PBXGroup;
 			children = (
 				44BCCAB827F8C16E00C1189B /* RouterProtocol.swift */,
-				44499F4527F5A90D0022CF95 /* AssemblyProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1768,7 +1765,6 @@
 				44CA5438281C38AF00B6DDE8 /* FieldStackView.swift in Sources */,
 				D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */,
 				D200B5F9282926D6001A63C1 /* AuthorizationRequest.swift in Sources */,
-				44499F4627F5A90D0022CF95 /* AssemblyProtocol.swift in Sources */,
 				4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */,
 				44435E88282155E500737D69 /* DecksTableViewCell.swift in Sources */,
 				44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */,

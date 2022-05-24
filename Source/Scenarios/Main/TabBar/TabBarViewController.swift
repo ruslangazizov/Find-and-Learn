@@ -6,8 +6,24 @@
 //
 import Foundation
 import UIKit
+import Swinject
 
 final class TabBarViewController: UITabBarController {
+    // MARK: Dependencies
+    
+    private let container: Container
+    
+    // MARK: Init
+    
+    init(container: Container) {
+        self.container = container
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -36,7 +52,7 @@ final class TabBarViewController: UITabBarController {
     
     private func setupControllers() {
         let viewControllers = TabBarItem.allCases.map { item -> UIViewController in
-            let controller = item.asController
+            let controller = item.asController(using: container)
             controller.tabBarItem = item.asTabBarItem
             return UINavigationController(rootViewController: controller)
         }

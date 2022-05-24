@@ -7,22 +7,16 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 enum NewFlashcardAssembly {
-    static func assemble(with newFlashcardModel: NewFlashcardModel?, deckId: Int? = nil) -> UIViewController {
+    static func assemble(
+        with newFlashcardModel: NewFlashcardModel?,
+        deckId: Int? = nil,
+        using container: Container
+    ) -> UIViewController {
         let newFlashcardModel = newFlashcardModel ?? NewFlashcardModel()
         
-        let router = NewFlashcardRouter()
-        let interactor = NewFlashcardInteractor(
-            decksRepository: DecksRepository(coreDataManager: CoreDataManager.shared),
-            flashcardsRepository: FlashcardsRepository(coreDataManager: CoreDataManager.shared)
-        )
-        let presenter = NewFlashcardPresenter(interactor: interactor, router: router, selectedDeckId: deckId)
-        let view = NewFlashcardViewController(presenter: presenter, newFlashcardModel: newFlashcardModel)
-        
-        router.view = view
-        presenter.view = view
-        
-        return view
+        return container.resolveAsViewController(NewFlashcardViewInput.self, arguments: newFlashcardModel, deckId)
     }
 }

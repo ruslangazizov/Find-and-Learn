@@ -7,21 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class SearchWordsAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let router = SearchWordsRouter()
-        let interactor = SearchWordsInteractor(
-            tokensManager: TokensManager(),
-            networkManager: NetworkManager(),
-            validationManager: ValidationManager()
-        )
-        let presenter = SearchWordsPresenter(router: router, interactor: interactor)
-        let view = SearchWordsViewController(presenter: presenter)
-        
-        presenter.view = view
-        router.view = view
-        
-        return view
+enum SearchWordsAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(SearchWordsViewInput.self)
     }
 }

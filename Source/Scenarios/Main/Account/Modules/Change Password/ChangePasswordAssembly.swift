@@ -7,23 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class ChangePasswordAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let interactor = ChangePasswordInteractor(
-            validationManager: ValidationManager(),
-            networkManager: NetworkManager(),
-            userManager: UserManager(),
-            tokensManager: TokensManager()
-        )
-        let router = ChangePasswordRouter()
-        
-        let presenter = ChangePasswordPresenter(interactor: interactor, router: router)
-        let viewController = ChangePasswordViewController(presenter: presenter)
-        
-        presenter.view = viewController
-        router.view = viewController
-        
-        return viewController
+enum ChangePasswordAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(ChangePasswordViewInput.self)
     }
 }
