@@ -15,6 +15,7 @@ enum DependencyManager {
         registerEntranceFlow(using: container)
         registerDictionaryFlow(using: container)
         registerDecksFlow(using: container)
+        registerAccountFlow(using: container)
         
         return container
     }
@@ -208,6 +209,54 @@ enum DependencyManager {
             let router = StudyingRouter()
             let presenter = StudyingPresenter(router: router, interactor: interactor)
             let viewController = StudyingViewController(presenter: presenter, cards: models)
+            
+            presenter.view = viewController
+            router.view = viewController
+            
+            return viewController
+        }
+    }
+    
+    private static func registerAccountFlow(using container: Container) {
+        container.register(AchievementsViewInput.self) { resolver in
+            let interactor = AchievementsInteractor(
+                achievementManager: resolver.resolve(AchievementsManagerProtocol.self)!
+            )
+            let presenter = AchievementsPresenter(interactor: interactor)
+            let viewController = AchievementsViewController(presenter: presenter)
+            
+            presenter.view = viewController
+            
+            return viewController
+        }
+        
+        container.register(ChangePasswordViewInput.self) { resolver in
+            let interactor = ChangePasswordInteractor(
+                validationManager: resolver.resolve(ValidationManagerProtocol.self)!,
+                networkManager: resolver.resolve(NetworkManagerProtocol.self)!,
+                userManager: resolver.resolve(UserManagerProtocol.self)!,
+                tokensManager: resolver.resolve(TokensManagerProtocol.self)!
+            )
+            let router = ChangePasswordRouter()
+            let presenter = ChangePasswordPresenter(interactor: interactor, router: router)
+            let viewController = ChangePasswordViewController(presenter: presenter)
+            
+            presenter.view = viewController
+            router.view = viewController
+            
+            return viewController
+        }
+        
+        container.register(AccountViewInput.self) { resolver in
+            let interactor = AccountInteractor(
+                tokensManager: resolver.resolve(TokensManagerProtocol.self)!,
+                settingsManager: resolver.resolve(SettingsManagerProtocol.self)!,
+                userManager: resolver.resolve(UserManagerProtocol.self)!,
+                networkManager: resolver.resolve(NetworkManagerProtocol.self)!
+            )
+            let router = AccountRouter(container: container)
+            let presenter = AccountPresenter(interactor: interactor, router: router)
+            let viewController = AccountViewController(presenter: presenter)
             
             presenter.view = viewController
             router.view = viewController
