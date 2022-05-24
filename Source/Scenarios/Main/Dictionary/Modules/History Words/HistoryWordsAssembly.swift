@@ -7,19 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class HistoryWordsAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let router = HistoryWordsRouter()
-        let interactor = HistoryWordsInteractor(
-            wordsRepository: WordsRepository(coreDataManager: CoreDataManager.shared)
-        )
-        let presenter = HistoryWordsPresenter(interactor: interactor, router: router)
-        let view = HistoryWordsViewController(presenter: presenter)
-        
-        presenter.view = view
-        router.view = view
-        
-        return view
+enum HistoryWordsAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(HistoryWordsViewInput.self)
     }
 }

@@ -7,17 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class AchievementsAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let dataManager = CoreDataManager.shared
-        let achievementsManager = AchievementsManager()
-        let interactor = AchievementsInteractor(dataManager: dataManager, achievementManager: achievementsManager)
-        
-        let presenter = AchievementsPresenter(interactor: interactor)
-        let viewController = AchievementsViewController(presenter: presenter)
-        presenter.view = viewController
-        
-        return viewController
+enum AchievementsAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(AchievementsViewInput.self)
     }
 }

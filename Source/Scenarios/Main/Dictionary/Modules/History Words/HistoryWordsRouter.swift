@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 protocol HistoryWordsRouterProtocol: RouterProtocol {
     func showWordDetail(_ word: WordModel)
@@ -15,8 +16,14 @@ protocol HistoryWordsRouterProtocol: RouterProtocol {
 final class HistoryWordsRouter: HistoryWordsRouterProtocol {
     weak var view: UIViewController?
     
+    private let container: Container
+    
+    init(container: Container) {
+        self.container = container
+    }
+    
     func showWordDetail(_ word: WordModel) {
-        let wordDetailViewController = WordDetailAssembly.assemble(with: word)
+        let wordDetailViewController = WordDetailAssembly.assemble(with: word, using: container)
         view?.navigationController?.pushViewController(wordDetailViewController, animated: true)
     }
 }

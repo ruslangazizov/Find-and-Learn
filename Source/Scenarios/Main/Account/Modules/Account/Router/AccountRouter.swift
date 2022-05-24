@@ -7,11 +7,20 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 final class AccountRouter: AccountRouterProtocol {
     // MARK: Dependencies
     
     weak var view: UIViewController?
+    
+    private let container: Container
+    
+    // MARK: Init
+    
+    init(container: Container) {
+        self.container = container
+    }
     
     // MARK: AccountRouterProtocol
     
@@ -19,17 +28,19 @@ final class AccountRouter: AccountRouterProtocol {
     }
     
     func showAchievementsModule() {
-        view?.navigationController?.pushViewController(AchievementsAssembly.assemble(), animated: true)
+        let achievementsViewController = AchievementsAssembly.assemble(using: container)
+        view?.navigationController?.pushViewController(achievementsViewController, animated: true)
     }
     
     func showChangePasswordModule() {
-        view?.navigationController?.pushViewController(ChangePasswordAssembly.assemble(), animated: true)
+        let changePasswordViewController = ChangePasswordAssembly.assemble(using: container)
+        view?.navigationController?.pushViewController(changePasswordViewController, animated: true)
     }
     
     func showRegistrationModule() {
     }
     
     func showEntranceFlow() {
-        UIApplication.shared.windows.first?.rootViewController = EntranceAssembly.assemble()
+        UIApplication.shared.windows.first?.rootViewController = EntranceAssembly.assemble(using: container)
     }
 }

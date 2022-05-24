@@ -6,27 +6,14 @@
 //
 
 import UIKit
+import Swinject
 
 enum EditFlashcardAssembly {
-    static func assemble(with flashcard: Flashcard, deckId: Int) -> UIViewController {
+    static func assemble(with flashcard: Flashcard, deckId: Int, using container: Container) -> UIViewController {
         let editFlashcardModel = NewFlashcardModel(flashcard)
         
-        let router = EditFlashcardRouter()
-        let interactor = EditFlashcardInteractor(
-            decksRepository: DecksRepository(coreDataManager: CoreDataManager.shared),
-            flashcardsRepository: FlashcardsRepository(coreDataManager: CoreDataManager.shared)
+        return container.resolveAsViewController(
+            EditFlashcardViewInput.self, arguments: editFlashcardModel, flashcard.id, deckId
         )
-        let presenter = EditFlashcardPresenter(
-            interactor: interactor,
-            router: router,
-            flashcardId: flashcard.id,
-            selectedDeckId: deckId
-        )
-        let view = NewFlashcardViewController(presenter: presenter, newFlashcardModel: editFlashcardModel)
-        
-        router.view = view
-        presenter.view = view
-        
-        return view
     }
 }

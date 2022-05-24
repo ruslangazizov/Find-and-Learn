@@ -7,9 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class DictionaryAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        return SearchWordsAssembly.assemble()
+enum DictionaryAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return SearchWordsAssembly.assemble(using: container)
     }
 }

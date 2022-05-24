@@ -7,23 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class AccountAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let interactor = AccountInteractor(
-            tokensManager: TokensManager(),
-            settingsManager: SettingsManager(),
-            userManager: UserManager(),
-            networkManager: NetworkManager()
-        )
-        let router = AccountRouter()
-        
-        let presenter = AccountPresenter(interactor: interactor, router: router)
-        let viewController = AccountViewController(presenter: presenter)
-        
-        presenter.view = viewController
-        router.view = viewController
-        
-        return viewController
+enum AccountAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(AccountViewInput.self)
     }
 }

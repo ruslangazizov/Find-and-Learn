@@ -6,26 +6,10 @@
 //
 
 import UIKit
+import Swinject
 
-final class DeckDetailAssembly: TransitionAssemblyProtocol {
-    typealias DataModel = Deck
-    
-    static func assemble(with model: Deck) -> UIViewController {
-        let interactor = DeckDetailInteractor(
-            flashcardsRepository: FlashcardsRepository(coreDataManager: CoreDataManager.shared)
-        )
-        let router = DeckDetailRouter()
-        
-        let presenter = DeckDetailPresenter(interactor: interactor, router: router, deck: model)
-        let view = DeckDetailViewController(
-            presenter: presenter,
-            flashcards: model.flashcards,
-            deckName: model.name
-        )
-        
-        presenter.view = view
-        router.view = view
-        
-        return view
+enum DeckDetailAssembly {
+    static func assemble(with model: Deck, using container: Container) -> UIViewController {
+        return container.resolveAsViewController(DeckDetailViewInput.self, argument: model)
     }
 }

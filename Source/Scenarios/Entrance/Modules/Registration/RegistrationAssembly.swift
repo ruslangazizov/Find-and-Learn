@@ -7,24 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class RegistrationAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let interactor = RegistrationInteractor(
-            validationManager: ValidationManager(),
-            networkManager: NetworkManager(),
-            userManager: UserManager(),
-            tokensManager: TokensManager()
-        )
-        let router = RegistrationRouter()
-        
-        let presenter = RegistrationPresenter(interactor: interactor, router: router)
-        
-        let viewController = RegistrationViewController(presenter: presenter)
-        
-        presenter.view = viewController
-        router.view = viewController
-        
-        return viewController
+enum RegistrationAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(RegistrationViewInput.self)
     }
 }

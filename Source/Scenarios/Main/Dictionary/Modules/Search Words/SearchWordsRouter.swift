@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 protocol SearchWordsRouterProtocol: RouterProtocol {
     func showFavoriteWords()
@@ -17,18 +18,24 @@ protocol SearchWordsRouterProtocol: RouterProtocol {
 final class SearchWordsRouter: SearchWordsRouterProtocol {
     weak var view: UIViewController?
     
+    private let container: Container
+    
+    init(container: Container) {
+        self.container = container
+    }
+    
     func showFavoriteWords() {
-        let favoriteWordsViewController = FavoriteWordsAssembly.assemble()
+        let favoriteWordsViewController = FavoriteWordsAssembly.assemble(using: container)
         view?.navigationController?.pushViewController(favoriteWordsViewController, animated: true)
     }
     
     func showHistoryWords() {
-        let historyWordsViewController = HistoryWordsAssembly.assemble()
+        let historyWordsViewController = HistoryWordsAssembly.assemble(using: container)
         view?.navigationController?.pushViewController(historyWordsViewController, animated: true)
     }
     
     func showWordDetail(_ word: WordModel) {
-        let wordDetailViewController = WordDetailAssembly.assemble(with: word)
+        let wordDetailViewController = WordDetailAssembly.assemble(with: word, using: container)
         view?.navigationController?.pushViewController(wordDetailViewController, animated: true)
     }
 }

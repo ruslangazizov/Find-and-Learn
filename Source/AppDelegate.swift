@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         AppearanceConfigurator.configure()
+        let container = DependencyManager.registerAll()
         
         window = UIWindow()
-        window?.rootViewController = AppAssembly.assemble()
+        window?.rootViewController = AppAssembly.assemble(using: container)
         window?.makeKeyAndVisible()
         return true
     }

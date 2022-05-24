@@ -7,21 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class WordDetailAssembly: TransitionAssemblyProtocol {
-    typealias DataModel = WordModel
-    
-    static func assemble(with model: WordModel) -> UIViewController {
-        let router = WordDetailRouter()
-        let interactor = WordDetailInteractor(
-            wordsRepository: WordsRepository(coreDataManager: CoreDataManager.shared)
-        )
-        let presenter = WordDetailPresenter(interactor: interactor, router: router, wordModel: model)
-        let view = WordDetailViewController(presenter: presenter)
-        
-        presenter.view = view
-        router.view = view
-        
-        return view
+enum WordDetailAssembly {
+    static func assemble(with model: WordModel, using container: Container) -> UIViewController {
+        return container.resolveAsViewController(WordDetailViewInput.self, argument: model)
     }
 }

@@ -7,19 +7,10 @@
 
 import Foundation
 import UIKit
+import Swinject
 
-final class PasswordRecoveryAssembly: AssemblyProtocol {
-    static func assemble() -> UIViewController {
-        let interactor = PasswordRecoveryInteractor(validationManager: ValidationManager())
-        let router = PasswordRecoveryRouter()
-        
-        let presenter = PasswordRecoveryPresenter(interactor: interactor, router: router)
-        
-        let viewController = PasswordRecoveryViewController(presenter: presenter)
-        
-        presenter.view = viewController
-        router.view = viewController
-        
-        return viewController
+enum PasswordRecoveryAssembly {
+    static func assemble(using container: Container) -> UIViewController {
+        return container.resolveAsViewController(PasswordRecoveryViewInput.self)
     }
 }

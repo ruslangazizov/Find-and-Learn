@@ -8,7 +8,8 @@
 import Foundation
 
 enum KeyChainManager {
-    static func save(key: String, data: Data) {
+    @discardableResult
+    static func save(key: String, data: Data) -> OSStatus {
         let query = [
             kSecClass as String: kSecClassGenericPassword as String,
             kSecAttrAccount as String: key,
@@ -16,7 +17,7 @@ enum KeyChainManager {
         ] as [String: Any]
         
         SecItemDelete(query as CFDictionary)
-        SecItemAdd(query as CFDictionary, nil)
+        return SecItemAdd(query as CFDictionary, nil)
     }
     
     static func load(key: String) -> Data? {
