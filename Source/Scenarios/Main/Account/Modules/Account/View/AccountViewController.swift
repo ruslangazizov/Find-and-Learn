@@ -33,6 +33,8 @@ final class AccountViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var loadingView = LoadingView()
+    
     // MARK: Dependencies
     
     private let presenter: AccountViewOutput
@@ -102,6 +104,12 @@ final class AccountViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.leading.bottom.trailing.top.equalToSuperview()
         }
+        
+        view.addSubview(loadingView)
+        loadingView.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+            make.width.height.equalTo(Constants.loadingViewSize)
+        }
     }
     
     @objc private func hideKeyboard() {
@@ -132,6 +140,16 @@ extension AccountViewController: AccountViewInput {
         showAskAlert(message: R.string.localizable.alert_download_dictionary()) { [weak self] _ in
             self?.presenter.downloadDictionary()
         }
+    }
+    
+    func showDictionaryDownloadingStarted() {
+        loadingView.showSpinner()
+        view.isUserInteractionEnabled = false
+    }
+    
+    func showDictionaryDownloadingEnded() {
+        loadingView.hideSpinner()
+        view.isUserInteractionEnabled = true
     }
     
     func askForExit() {
@@ -207,6 +225,8 @@ private extension AccountViewController {
         static let bottomInset = 15
         
         static let bottomOffset = 20
+        
+        static let loadingViewSize = 100
     }
 }
 

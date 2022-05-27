@@ -33,6 +33,14 @@ final class NetworkManager: NetworkManagerProtocol {
                 completion(.failure(.unknown))
             }
         }
+        AF.request(RequestAdapter(request, encoder)).responseString(encoding: .utf8) { dataResponse in
+            switch dataResponse.result {
+            case .success(let string):
+                debugPrint(string)
+            case.failure(let error):
+                debugPrint(error.localizedDescription)
+            }
+        }
     }
     
     func perform(_ request: Request, _ completion: @escaping (Result<Int, NetworkManagerError>) -> Void) {

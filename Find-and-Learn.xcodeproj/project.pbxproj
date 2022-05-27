@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440E82412840A97100DB9BC6 /* PopularWordsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E82402840A97100DB9BC6 /* PopularWordsRequest.swift */; };
+		440E82432840AB7500DB9BC6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E82422840AB7500DB9BC6 /* LoadingView.swift */; };
 		4411E53A28198C76001ABB53 /* TranslationExampleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */; };
 		4411E53C28199265001ABB53 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */; };
 		4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */; };
@@ -208,6 +210,8 @@
 
 /* Begin PBXFileReference section */
 		0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.debug.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.debug.xcconfig"; sourceTree = "<group>"; };
+		440E82402840A97100DB9BC6 /* PopularWordsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularWordsRequest.swift; sourceTree = "<group>"; };
+		440E82422840AB7500DB9BC6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationExampleLabel.swift; sourceTree = "<group>"; };
 		4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -1157,6 +1161,7 @@
 				D2FD92412814005C00D93BC4 /* FlashCardView.swift */,
 				D2FD92452814209C00D93BC4 /* MessageView.swift */,
 				D2FD925128146EB100D93BC4 /* FinishStudyingView.swift */,
+				440E82422840AB7500DB9BC6 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1260,6 +1265,7 @@
 			isa = PBXGroup;
 			children = (
 				D200B60228297A48001A63C1 /* DictionaryRequest.swift */,
+				440E82402840A97100DB9BC6 /* PopularWordsRequest.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -1713,6 +1719,7 @@
 				447F987528166803000E153D /* WordDetailViewController.swift in Sources */,
 				D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */,
 				D202DF132826E23B0022D322 /* HTTP.swift in Sources */,
+				440E82432840AB7500DB9BC6 /* LoadingView.swift in Sources */,
 				44435E7E28212E4400737D69 /* DecksRouter.swift in Sources */,
 				D202DF0E2826DAE80022D322 /* NetworkManager.swift in Sources */,
 				44247B43283554E500383C9A /* WordsRepository.swift in Sources */,
@@ -1844,6 +1851,7 @@
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
 				44247B452835550100383C9A /* WordsRepositoryProtocol.swift in Sources */,
 				447F9871281667C0000E153D /* WordDetailPresenter.swift in Sources */,
+				440E82412840A97100DB9BC6 /* PopularWordsRequest.swift in Sources */,
 				D2FD925528148B2A00D93BC4 /* StudyingManager.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
