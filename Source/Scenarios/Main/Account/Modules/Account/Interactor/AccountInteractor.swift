@@ -90,10 +90,10 @@ final class AccountInteractor: AccountInteractorProtocol {
                 models.map { popularWord in
                     Word(
                         word: popularWord.text,
-                        detailTranslations: popularWord.definitions.flatMap { popularDefinition in
-                            popularDefinition.translations.compactMap { popularTranslation in
-                                guard let speechPart = popularDefinition.speechPart else { return nil }
-                                return Translation(
+                        detailTranslations: popularWord.definitions.flatMap { popularDefinition -> [Translation] in
+                            guard let speechPart = popularDefinition.speechPart else { return [] }
+                            return popularDefinition.translations.map { popularTranslation in
+                                Translation(
                                     id: Int.random(in: 1...1_000_000),
                                     translation: popularTranslation.text,
                                     speechPart: speechPart,

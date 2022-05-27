@@ -27,7 +27,7 @@ final class LoadingView: UIView {
     
     private func configureView() {
         isHidden = true
-        backgroundColor = .white
+        backgroundColor = R.color.defaultBackgroundColor()
         layer.cornerRadius = .cornerRadius
         layer.borderWidth = .borderWidth
         layer.borderColor = .borderColor

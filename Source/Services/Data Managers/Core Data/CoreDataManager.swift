@@ -43,6 +43,13 @@ final class CoreDataManager {
             }
         }
     }
+    
+    private func checkId(_ objectId: Int, entityType: NSManagedObject.Type) -> Bool {
+        let fetchRequest = entityType.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", objectId)
+        let object = try? viewContext.fetch(fetchRequest).first
+        return object == nil
+    }
 }
 
 // MARK: - DataManagerProtocol
@@ -64,11 +71,8 @@ extension CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
-    func checkId(_ objectId: Int, entityType: NSManagedObject.Type) -> Bool {
-        let fetchRequest = entityType.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %ld", objectId)
-        let object = try? viewContext.fetch(fetchRequest).first
-        return object == nil
+    func getAvailableId(initialId id: Int, for entityType: NSManagedObject.Type) -> Int {
+        return checkId(id, entityType: entityType) ? id : getAvailableId(initialId: id + 1, for: entityType)
     }
     
     func contextProvider(_ provider: @escaping (NSManagedObjectContext) -> Void) {
