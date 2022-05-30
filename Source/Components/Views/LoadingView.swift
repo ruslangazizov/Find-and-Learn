@@ -40,12 +40,12 @@ final class LoadingView: UIView {
         }
     }
     
-    func showSpinner() {
+    func startAnimating() {
         activityIndicatorView.startAnimating()
         isHidden = false
     }
     
-    func hideSpinner() {
+    func stopAnimating() {
         activityIndicatorView.stopAnimating()
         isHidden = true
     }

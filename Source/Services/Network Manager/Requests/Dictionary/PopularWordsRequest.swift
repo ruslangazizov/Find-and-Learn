@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class PopularWordsRequest: Request {
+struct PopularWordsRequest: Request {
     let method: HTTP.Method = .get
     let path: String = "words/starter_pack"
     let token: String

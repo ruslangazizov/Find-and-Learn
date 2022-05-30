@@ -143,12 +143,12 @@ extension AccountViewController: AccountViewInput {
     }
     
     func showDictionaryDownloadingStarted() {
-        loadingView.showSpinner()
+        loadingView.startAnimating()
         view.isUserInteractionEnabled = false
     }
     
     func showDictionaryDownloadingEnded() {
-        loadingView.hideSpinner()
+        loadingView.stopAnimating()
         view.isUserInteractionEnabled = true
     }
     

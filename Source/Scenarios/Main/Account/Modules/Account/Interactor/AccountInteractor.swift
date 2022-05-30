@@ -24,6 +24,8 @@ final class AccountInteractor: AccountInteractorProtocol {
     private let networkManager: NetworkManagerProtocol
     private let wordsRepository: WordsRepositoryProtocol
     
+    private typealias DownloadWordsResponseModel = Result<[PopularWordResponseModel], NetworkManagerError>
+    
     // MARK: Init
     
     init(
@@ -83,8 +85,7 @@ final class AccountInteractor: AccountInteractorProtocol {
         guard let token = tokensManager.getToken() else { return }
         let request = PopularWordsRequest(token)
         
-        typealias ResponseModelOrError = Result<[PopularWordResponseModel], NetworkManagerError>
-        networkManager.perform(request) { [weak self] (result: ResponseModelOrError) in
+        networkManager.perform(request) { [weak self] (result: DownloadWordsResponseModel) in
             switch result {
             case .success(let models):
                 models.map { popularWord in
