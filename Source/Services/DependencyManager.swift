@@ -250,7 +250,8 @@ enum DependencyManager {
                 tokensManager: resolver.resolve(TokensManagerProtocol.self)!,
                 settingsManager: resolver.resolve(SettingsManagerProtocol.self)!,
                 userManager: resolver.resolve(UserManagerProtocol.self)!,
-                networkManager: resolver.resolve(NetworkManagerProtocol.self)!
+                networkManager: resolver.resolve(NetworkManagerProtocol.self)!,
+                wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
             )
             let router = AccountRouter(container: container)
             let presenter = AccountPresenter(interactor: interactor, router: router)

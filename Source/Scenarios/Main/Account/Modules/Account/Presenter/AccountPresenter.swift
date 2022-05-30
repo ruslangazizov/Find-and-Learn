@@ -57,6 +57,10 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     func downloadDictionary() {
+        view?.showDictionaryDownloadingStarted()
+        interactor.downloadPopularWords { [weak self] in
+            self?.view?.showDictionaryDownloadingEnded()
+        }
     }
     
     func exit() {

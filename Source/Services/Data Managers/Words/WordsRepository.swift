@@ -30,11 +30,16 @@ final class WordsRepository: WordsRepositoryProtocol {
             guard let self = self, wordsEntities?.first == nil else { return }
             
             self.coreDataManager.contextProvider { context in
-                let wordEntity = WordEntity(context: context, word: word.word)
-                wordEntity.translations = Set(word.detailTranslations?.map { translation in
-                    let translationId = self.coreDataManager.checkId(
-                        translation.id, entityType: TranslationEntity.self
-                    ) ? translation.id : Int.random(in: 1...1_000_000)
+                let wordId = Int.random(in: 1...1_000_000)
+                let wordEntity = WordEntity(
+                    context: context,
+                    word: word.word,
+                    id: self.coreDataManager.getAvailableId(initialId: wordId, for: WordEntity.self)
+                )
+                word.detailTranslations?.forEach { translation in
+                    let translationId = self.coreDataManager.getAvailableId(
+                        initialId: translation.id, for: TranslationEntity.self
+                    )
                     let translationEntity = TranslationEntity(
                         context: context,
                         transcription: translation.transcription,
@@ -43,21 +48,17 @@ final class WordsRepository: WordsRepositoryProtocol {
                         id: translationId,
                         word: wordEntity
                     )
-                    translationEntity.examples = Set(translation.examples.map { example in
-                        let exampleId = self.coreDataManager.checkId(
-                            example.id, entityType: ExampleEntity.self
-                        ) ? example.id : Int.random(in: 1...1_000_000)
-                        return ExampleEntity(
+                    translation.examples.forEach { example in
+                        _ = ExampleEntity(
                             context: context,
-                            id: exampleId,
+                            id: self.coreDataManager.getAvailableId(initialId: example.id, for: ExampleEntity.self),
                             translationId: translationId,
                             example: example.example,
                             exampleTranslation: example.translation,
                             translation: translationEntity
                         )
-                    })
-                    return translationEntity
-                } ?? [])
+                    }
+                }
             }
         }
     }

@@ -12,6 +12,7 @@ protocol AccountInteractorProtocol: AnyObject {
     func deleteAccount(_ completion: @escaping (Bool) -> Void)
     func removeToken()
     func changeUserName(_ userName: String)
+    func downloadPopularWords(_ completion: @escaping () -> Void)
 }
 
 final class AccountInteractor: AccountInteractorProtocol {
@@ -21,6 +22,9 @@ final class AccountInteractor: AccountInteractorProtocol {
     private let settingsManager: SettingsManagerProtocol
     private let userManager: UserManagerProtocol
     private let networkManager: NetworkManagerProtocol
+    private let wordsRepository: WordsRepositoryProtocol
+    
+    private typealias DownloadWordsResponseModel = Result<[PopularWordResponseModel], NetworkManagerError>
     
     // MARK: Init
     
@@ -28,12 +32,14 @@ final class AccountInteractor: AccountInteractorProtocol {
         tokensManager: TokensManagerProtocol,
         settingsManager: SettingsManagerProtocol,
         userManager: UserManagerProtocol,
-        networkManager: NetworkManagerProtocol
+        networkManager: NetworkManagerProtocol,
+        wordsRepository: WordsRepositoryProtocol
     ) {
         self.tokensManager = tokensManager
         self.settingsManager = settingsManager
         self.userManager = userManager
         self.networkManager = networkManager
+        self.wordsRepository = wordsRepository
     }
     
     // MARK: AccountInteractorProtocol
@@ -73,5 +79,77 @@ final class AccountInteractor: AccountInteractorProtocol {
         let request = UserUpdateRequest(.init(user), user.id, token)
         networkManager.perform(request) { _ in
         }
+    }
+    
+    func downloadPopularWords(_ completion: @escaping () -> Void) {
+        guard let token = tokensManager.getToken() else { return }
+        let request = PopularWordsRequest(token)
+        
+        networkManager.perform(request) { [weak self] (result: DownloadWordsResponseModel) in
+            switch result {
+            case .success(let models):
+                models.map { popularWord in
+                    Word(
+                        word: popularWord.text,
+                        detailTranslations: popularWord.definitions.flatMap { popularDefinition -> [Translation] in
+                            guard let speechPart = popularDefinition.speechPart else { return [] }
+                            return popularDefinition.translations.map { popularTranslation in
+                                Translation(
+                                    id: Int.random(in: 1...1_000_000),
+                                    translation: popularTranslation.text,
+                                    speechPart: speechPart,
+                                    transcription: popularDefinition.transcription,
+                                    examples: popularTranslation.examples.map { popularExample in
+                                        Example(
+                                            id: Int.random(in: 1...1_000_000),
+                                            example: popularExample.text,
+                                            translation: popularExample.translations.joined(separator: ", ")
+                                        )
+                                    }
+                                )
+                            }
+                        }
+                    )
+                }
+                .forEach {
+                    self?.wordsRepository.saveWord($0)
+                }
+            case .failure(let error):
+                assertionFailure(error.localizedDescription.debugDescription)
+            }
+            completion()
+        }
+    }
+}
+
+private struct PopularWordResponseModel: Decodable {
+    let text: String
+    let definitions: [PopularDefinitionResponseModel]
+}
+
+private struct PopularDefinitionResponseModel: Decodable {
+    let speechPart: String?
+    let transcription: String?
+    let translations: [PopularTranslationResponseModel]
+    
+    enum CodingKeys: String, CodingKey {
+        case speechPart = "speech_part"
+        case transcription
+        case translations
+    }
+}
+
+private struct PopularTranslationResponseModel: Decodable {
+    let text: String
+    let examples: [PopularExampleResponseModel]
+}
+
+private struct PopularExampleResponseModel: Decodable {
+    let text: String
+    let translations: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case text
+        case translations = "example_translations"
     }
 }
