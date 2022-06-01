@@ -25,6 +25,8 @@ final class AccountRouter: AccountRouterProtocol {
     // MARK: AccountRouterProtocol
     
     func showConfirmEmailModule() {
+        let confirmEmailViewController = ConfirmEmailAssembly.assemble(using: container)
+        view?.navigationController?.pushViewController(confirmEmailViewController, animated: true)
     }
     
     func showAchievementsModule() {

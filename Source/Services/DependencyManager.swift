@@ -217,6 +217,20 @@ enum DependencyManager {
     }
     
     private static func registerAccountFlow(using container: Container) {
+        container.register(ConfirmEmailViewInput.self) { resolver in
+            let router = ConfirmEmailRouter()
+            let interactor = ConfirmEmailInteractor(
+                userManager: resolver.resolve(UserManagerProtocol.self)!
+            )
+            let presenter = ConfirmEmailPresenter(interactor: interactor, router: router)
+            let viewController = ConfirmEmailViewController(presenter: presenter)
+            
+            router.view = viewController
+            presenter.view = viewController
+            
+            return viewController
+        }
+        
         container.register(AchievementsViewInput.self) { resolver in
             let interactor = AchievementsInteractor(
                 achievementManager: resolver.resolve(AchievementsManagerProtocol.self)!

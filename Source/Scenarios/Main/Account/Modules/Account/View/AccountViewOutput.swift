@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AccountViewOutput: AnyObject {
-    func viewDidLoad()
+    func viewWillAppear()
     func changeUserName(for userName: String)
     func changeAvatar(for avatar: UIImage)
     func settingsTapped(with type: SettingType)

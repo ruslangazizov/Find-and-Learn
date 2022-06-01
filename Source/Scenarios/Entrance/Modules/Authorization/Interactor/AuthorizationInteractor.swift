@@ -64,7 +64,9 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
                                     email: email,
                                     userName: responseModel.username ?? "",
                                     password: password,
-                                    state: .inactive))
+                                    state: .inactive
+                                ))
+                                self?.userManager.saveEmailCode(responseModel.emailCode)
                                 result(.success)
                             case .failure(let error):
                                 print(error.localizedDescription)

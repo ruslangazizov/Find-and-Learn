@@ -24,7 +24,7 @@ final class AccountPresenter: AccountViewOutput {
     
     // MARK: ViewOutput
     
-    func viewDidLoad() {
+    func viewWillAppear() {
         interactor.loadSettings { [weak self] settings, userName in
             self?.view?.setup(with: settings, userName: userName)
         }
