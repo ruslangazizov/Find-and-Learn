@@ -76,7 +76,8 @@ enum DependencyManager {
             let interactor = SearchWordsInteractor(
                 tokensManager: resolver.resolve(TokensManagerProtocol.self)!,
                 networkManager: resolver.resolve(NetworkManagerProtocol.self)!,
-                validationManager: resolver.resolve(ValidationManagerProtocol.self)!
+                validationManager: resolver.resolve(ValidationManagerProtocol.self)!,
+                wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
             )
             let router = SearchWordsRouter(container: container)
             let presenter = SearchWordsPresenter(router: router, interactor: interactor)
