@@ -79,7 +79,7 @@ final class DeckDetailTableViewCell: UITableViewCell {
     }
 }
 
-// MARK: Constants
+// MARK: - Constants
 
 private extension CGFloat {
     static let standardFontSize: CGFloat = 17
