@@ -13,6 +13,7 @@ final class ConfirmEmailViewController: UIViewController {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.confirm_email_screen_label_text()
+        label.textColor = R.color.textColor()
         return label
     }()
     
@@ -85,13 +86,13 @@ final class ConfirmEmailViewController: UIViewController {
         
         view.addSubview(label)
         label.snp.makeConstraints { make in
-            make.bottom.equalTo(textField.snp.top).inset(-CGFloat.viewsSpacing)
+            make.bottom.equalTo(textField.snp.top).inset(-CGFloat.defaultInset)
             make.leading.trailing.equalTo(textField)
         }
         
         view.addSubview(button)
         button.snp.makeConstraints { make in
-            make.top.equalTo(textField.snp.bottom).offset(CGFloat.viewsSpacing)
+            make.top.equalTo(textField.snp.bottom).offset(CGFloat.defaultInset)
             make.leading.trailing.equalTo(textField)
         }
     }
@@ -126,10 +127,4 @@ extension ConfirmEmailViewController: ConfirmEmailViewInput {
             completion()
         }
     }
-}
-
-// MARK: - Constants
-
-private extension CGFloat {
-    static let viewsSpacing: CGFloat = 16
 }
