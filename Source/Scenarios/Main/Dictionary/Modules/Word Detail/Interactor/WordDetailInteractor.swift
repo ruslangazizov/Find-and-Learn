@@ -10,6 +10,7 @@ import Foundation
 protocol WordDetailInteractorProtocol: AnyObject {
     func getWordDetail(_ wordModel: WordModel, completion: @escaping (WordDetail?) -> Void)
     func changeWordStatus(_ wordId: Int, isFavorite: Bool)
+    func addHistoryWord(_ wordId: Int)
 }
 
 final class WordDetailInteractor: WordDetailInteractorProtocol {
@@ -29,5 +30,9 @@ final class WordDetailInteractor: WordDetailInteractorProtocol {
     
     func changeWordStatus(_ wordId: Int, isFavorite: Bool) {
         wordsRepository.changeWordStatus(wordId, isFavorite: isFavorite)
+    }
+    
+    func addHistoryWord(_ wordId: Int) {
+        wordsRepository.addHistoryWord(wordId: wordId)
     }
 }

@@ -37,7 +37,8 @@ final class WordDetailPresenter: WordDetailViewOutput {
     
     func viewDidLoad() {
         interactor.getWordDetail(wordModel) { [weak self] wordDetail in
-            guard let self = self else { return }
+            guard let self = self, let wordDetail = wordDetail else { return }
+            self.interactor.addHistoryWord(wordDetail.id)
             self.wordDetail = wordDetail
             
             let speechPartsFromWordModel = Dictionary(
@@ -56,7 +57,7 @@ final class WordDetailPresenter: WordDetailViewOutput {
             
             let wordDetailModel = WordDetailModel(
                 word: self.wordModel.word,
-                isFavorite: wordDetail?.isFavorite ?? false,
+                isFavorite: wordDetail.isFavorite,
                 speechParts: speechPartsFromWordModel
             )
             self.view?.showWord(wordDetailModel)
