@@ -57,12 +57,13 @@ final class AccountViewController: UIViewController {
         super.viewDidLoad()
         configure()
         setupLayout()
+        
+        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        presenter.viewWillAppear()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

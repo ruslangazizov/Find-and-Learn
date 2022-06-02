@@ -15,6 +15,7 @@
 		440E824D28480C4600DB9BC6 /* ConfirmEmailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E824C28480C4600DB9BC6 /* ConfirmEmailViewInput.swift */; };
 		440E824F28480CC100DB9BC6 /* ConfirmEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E824E28480CC100DB9BC6 /* ConfirmEmailPresenter.swift */; };
 		440E825128480D4100DB9BC6 /* ConfirmEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E825028480D4100DB9BC6 /* ConfirmEmailInteractor.swift */; };
+		440E82532848C32200DB9BC6 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */; };
 		4411E53A28198C76001ABB53 /* TranslationExampleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */; };
 		4411E53C28199265001ABB53 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */; };
 		4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */; };
@@ -224,6 +225,7 @@
 		440E824C28480C4600DB9BC6 /* ConfirmEmailViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewInput.swift; sourceTree = "<group>"; };
 		440E824E28480CC100DB9BC6 /* ConfirmEmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailPresenter.swift; sourceTree = "<group>"; };
 		440E825028480D4100DB9BC6 /* ConfirmEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailInteractor.swift; sourceTree = "<group>"; };
+		440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
 		4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationExampleLabel.swift; sourceTree = "<group>"; };
 		4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				44DD6AB628203D72001FE38F /* String+Extensions.swift */,
 				D202DF162826EA850022D322 /* HTTPMethod+Extensions.swift */,
 				443039C2283C9EC400D9488C /* Container+Extensions.swift */,
+				440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1932,6 +1935,7 @@
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
 				D2FD923B2813FCE400D93BC4 /* StudyingViewInput.swift in Sources */,
 				44435E862821317E00737D69 /* DecksViewController.swift in Sources */,
+				440E82532848C32200DB9BC6 /* Notification.Name+Extensions.swift in Sources */,
 				443039C3283C9EC400D9488C /* Container+Extensions.swift in Sources */,
 				44EAE9BF282BB02F00EF6A82 /* DeckEntity.swift in Sources */,
 				44435E8028212F3900737D69 /* DecksInteractor.swift in Sources */,

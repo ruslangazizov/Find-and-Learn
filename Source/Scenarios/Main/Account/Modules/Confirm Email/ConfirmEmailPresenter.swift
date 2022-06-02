@@ -36,6 +36,7 @@ final class ConfirmEmailPresenter: ConfirmEmailViewOutput {
         }
         
         if interactor.checkEmailConfirmationCode(code) {
+            NotificationCenter.default.post(name: .didConfirmEmail, object: nil)
             view?.showSuccessAlert {
                 self.router.showPreviousModule()
             }
