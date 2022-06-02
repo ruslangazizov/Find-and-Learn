@@ -112,6 +112,7 @@ final class WordDetailViewController: UIViewController {
 extension WordDetailViewController: WordDetailViewInput {
     func showWord(_ wordDetail: WordDetailModel) {
         self.wordDetail = wordDetail
+        setIsFavoriteWord(wordDetail.isFavorite)
         title = wordDetail.word
         tableView.reloadData()
     }

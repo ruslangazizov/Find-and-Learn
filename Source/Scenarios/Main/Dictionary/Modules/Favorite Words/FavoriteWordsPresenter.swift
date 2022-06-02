@@ -33,10 +33,11 @@ final class FavoriteWordsPresenter: FavoriteWordsViewOutput {
             let wordModels = words.map {
                 WordModel(
                     word: $0.word,
-                    translations: $0.detailTranslations?.compactMap { translation in
-                        translation.translation
+                    translations: $0.detailTranslations?.compactMap {
+                        $0.translation
                     }
-                    .joined(separator: ", ") ?? ""
+                    .joined(separator: ", ") ?? "",
+                    detailTranslations: $0.detailTranslations
                 )
             }
             self?.view?.showWords(wordModels)
