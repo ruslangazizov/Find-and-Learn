@@ -95,6 +95,7 @@ final class ChangePasswordViewController: UIViewController {
     // MARK: Private
     
     private func configure() {
+        title = R.string.localizable.change_password_screen_title()
         view.backgroundColor = R.color.defaultBackgroundColor()
         
         passwordTextField.delegate = self

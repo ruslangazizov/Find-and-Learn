@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		440E82412840A97100DB9BC6 /* PopularWordsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E82402840A97100DB9BC6 /* PopularWordsRequest.swift */; };
 		440E82432840AB7500DB9BC6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E82422840AB7500DB9BC6 /* LoadingView.swift */; };
+		440E824628480B2300DB9BC6 /* ConfirmEmailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E824528480B2300DB9BC6 /* ConfirmEmailRouter.swift */; };
+		440E824828480BD900DB9BC6 /* ConfirmEmailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E824728480BD900DB9BC6 /* ConfirmEmailAssembly.swift */; };
+		440E824A28480C2600DB9BC6 /* ConfirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E824928480C2600DB9BC6 /* ConfirmEmailViewController.swift */; };
+		440E824D28480C4600DB9BC6 /* ConfirmEmailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E824C28480C4600DB9BC6 /* ConfirmEmailViewInput.swift */; };
+		440E824F28480CC100DB9BC6 /* ConfirmEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E824E28480CC100DB9BC6 /* ConfirmEmailPresenter.swift */; };
+		440E825128480D4100DB9BC6 /* ConfirmEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E825028480D4100DB9BC6 /* ConfirmEmailInteractor.swift */; };
+		440E82532848C32200DB9BC6 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */; };
 		4411E53A28198C76001ABB53 /* TranslationExampleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */; };
 		4411E53C28199265001ABB53 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */; };
 		4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */; };
@@ -212,6 +219,13 @@
 		0A42D9ADE903C246D73484BC /* Pods-Find-and-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-and-Learn.debug.xcconfig"; path = "Target Support Files/Pods-Find-and-Learn/Pods-Find-and-Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		440E82402840A97100DB9BC6 /* PopularWordsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularWordsRequest.swift; sourceTree = "<group>"; };
 		440E82422840AB7500DB9BC6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		440E824528480B2300DB9BC6 /* ConfirmEmailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailRouter.swift; sourceTree = "<group>"; };
+		440E824728480BD900DB9BC6 /* ConfirmEmailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailAssembly.swift; sourceTree = "<group>"; };
+		440E824928480C2600DB9BC6 /* ConfirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewController.swift; sourceTree = "<group>"; };
+		440E824C28480C4600DB9BC6 /* ConfirmEmailViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewInput.swift; sourceTree = "<group>"; };
+		440E824E28480CC100DB9BC6 /* ConfirmEmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailPresenter.swift; sourceTree = "<group>"; };
+		440E825028480D4100DB9BC6 /* ConfirmEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailInteractor.swift; sourceTree = "<group>"; };
+		440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
 		4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationExampleLabel.swift; sourceTree = "<group>"; };
 		4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -434,6 +448,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		440E824428480B0D00DB9BC6 /* Confirm Email */ = {
+			isa = PBXGroup;
+			children = (
+				440E824728480BD900DB9BC6 /* ConfirmEmailAssembly.swift */,
+				440E824528480B2300DB9BC6 /* ConfirmEmailRouter.swift */,
+				440E824E28480CC100DB9BC6 /* ConfirmEmailPresenter.swift */,
+				440E824B28480C3C00DB9BC6 /* View */,
+				440E825028480D4100DB9BC6 /* ConfirmEmailInteractor.swift */,
+			);
+			path = "Confirm Email";
+			sourceTree = "<group>";
+		};
+		440E824B28480C3C00DB9BC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				440E824928480C2600DB9BC6 /* ConfirmEmailViewController.swift */,
+				440E824C28480C4600DB9BC6 /* ConfirmEmailViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		441F8B6427EC7F500066358F /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +573,7 @@
 				44DD6AB628203D72001FE38F /* String+Extensions.swift */,
 				D202DF162826EA850022D322 /* HTTPMethod+Extensions.swift */,
 				443039C2283C9EC400D9488C /* Container+Extensions.swift */,
+				440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1004,6 +1040,7 @@
 		D20F32F2280DAF8C0003D9DD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				440E824428480B0D00DB9BC6 /* Confirm Email */,
 				D2DFEE42281C54A6006F452E /* Achievements */,
 				D20F32F4280DAFD20003D9DD /* Change Password */,
 				D20F32F3280DAF960003D9DD /* Account */,
@@ -1715,6 +1752,7 @@
 				D2DFEE45281C5FFD006F452E /* AchievementsViewController.swift in Sources */,
 				D21E9DAE27FA07AB005513B7 /* PasswordRecoveryErrors.swift in Sources */,
 				D21E9DAC27FA000B005513B7 /* ValidationManager.swift in Sources */,
+				440E824D28480C4600DB9BC6 /* ConfirmEmailViewInput.swift in Sources */,
 				44EAE9C1282BB02F00EF6A82 /* FlashcardEntity.swift in Sources */,
 				447F987528166803000E153D /* WordDetailViewController.swift in Sources */,
 				D2FD92462814209C00D93BC4 /* MessageView.swift in Sources */,
@@ -1778,6 +1816,7 @@
 				4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */,
 				44435E88282155E500737D69 /* DecksTableViewCell.swift in Sources */,
 				44F379ED27FC4510001F02F4 /* HistoryWordsPresenter.swift in Sources */,
+				440E824A28480C2600DB9BC6 /* ConfirmEmailViewController.swift in Sources */,
 				44F379F727FC466A001F02F4 /* HistoryWordsViewController.swift in Sources */,
 				D202DF112826DC100022D322 /* Request.swift in Sources */,
 				44CA5440281C4B2C00B6DDE8 /* DropdownButton.swift in Sources */,
@@ -1807,6 +1846,7 @@
 				D2268952281DD07A0095E9FA /* TabBarViewController.swift in Sources */,
 				D2FB5D5827EDA5A700CBDB00 /* AuthorizationViewInput.swift in Sources */,
 				D26EFF112800A4240019F1EC /* AccountRouter.swift in Sources */,
+				440E824F28480CC100DB9BC6 /* ConfirmEmailPresenter.swift in Sources */,
 				44EAE9C9282D3B8E00EF6A82 /* UserManager.swift in Sources */,
 				44EAE9C6282BB02F00EF6A82 /* HistoryWordEntity.swift in Sources */,
 				D2DFEE4A281C609E006F452E /* AchievementsPresenter.swift in Sources */,
@@ -1853,6 +1893,7 @@
 				447F9871281667C0000E153D /* WordDetailPresenter.swift in Sources */,
 				440E82412840A97100DB9BC6 /* PopularWordsRequest.swift in Sources */,
 				D2FD925528148B2A00D93BC4 /* StudyingManager.swift in Sources */,
+				440E825128480D4100DB9BC6 /* ConfirmEmailInteractor.swift in Sources */,
 				D2A5A42F27E5E4E500E503AA /* R.generated.swift in Sources */,
 				D223696B27FB5A6500C5F1C3 /* Notification+Extensions.swift in Sources */,
 				4411E5402819B3CE001ABB53 /* Flashcard.swift in Sources */,
@@ -1875,6 +1916,7 @@
 				44435E9D282255B200737D69 /* DeckDetailTableViewCell.swift in Sources */,
 				44DC5FF427FF0C6C005EACAE /* FavoriteWordsRouter.swift in Sources */,
 				D2912B3A282FB0DD00BB50A6 /* GetAchievementsRequest.swift in Sources */,
+				440E824628480B2300DB9BC6 /* ConfirmEmailRouter.swift in Sources */,
 				44F379DE27FC407B001F02F4 /* Date+Extensions.swift in Sources */,
 				44E59E7627C7A7B00061C14D /* AppDelegate.swift in Sources */,
 				44435E9128218E8C00737D69 /* DeckDetailAssembly.swift in Sources */,
@@ -1886,12 +1928,14 @@
 				44435EAA28242A9600737D69 /* EditFlashcardInteractor.swift in Sources */,
 				D2DFEE4D281C6431006F452E /* AchievementsAssembly.swift in Sources */,
 				44F379F527FC4616001F02F4 /* HistoryWordsTableViewCell.swift in Sources */,
+				440E824828480BD900DB9BC6 /* ConfirmEmailAssembly.swift in Sources */,
 				44EAE9BB282BB02F00EF6A82 /* WordEntity.swift in Sources */,
 				447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */,
 				D200B5FB28293081001A63C1 /* GetUserRequest.swift in Sources */,
 				44BE5DDC27E530490024F268 /* SearchWordsViewController.swift in Sources */,
 				D2FD923B2813FCE400D93BC4 /* StudyingViewInput.swift in Sources */,
 				44435E862821317E00737D69 /* DecksViewController.swift in Sources */,
+				440E82532848C32200DB9BC6 /* Notification.Name+Extensions.swift in Sources */,
 				443039C3283C9EC400D9488C /* Container+Extensions.swift in Sources */,
 				44EAE9BF282BB02F00EF6A82 /* DeckEntity.swift in Sources */,
 				44435E8028212F3900737D69 /* DecksInteractor.swift in Sources */,

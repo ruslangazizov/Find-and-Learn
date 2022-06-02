@@ -44,9 +44,22 @@
 "account_screen_user_name_placeholder" = "Никнейм";
 
 // Экран "Смена пароля"
+"change_password_screen_title" = "Смена пароля";
 "change_password_screen_password_placeholder" = "Пароль";
 "change_password_screen_confirm_password_placeholder" = "Повторите пароль";
 "change_password_screen_change_password" = "Изменить пароль";
+
+// Экран "Подтверждение E-Mail"
+"confirm_email_screen_title" = "Подтверждение E-Mail";
+"confirm_email_screen_label_text" = "Код подтверждения:";
+"confirm_email_screen_text_placeholder" = "Введите код подтверждения";
+"confirm_email_screen_button_title" = "Подтвердить";
+
+// Уведомления для экрана "Подтверждение E-Mail"
+"confirm_email_screen_error_alert_title" = "Неправильный код";
+"confirm_email_screen_error_alert_message" = "Код подтверждения должен состоять из 4 цифр";
+"confirm_email_screen_success_alert_title" = "E-Mail подтвержден!";
+"confirm_email_screen_success_alert_message" = "Теперь вам доступен полный фунционал приложения :)";
 
 // Экран "Изучение слов"
 "studying_screen_study_more" = "Изучать еще";

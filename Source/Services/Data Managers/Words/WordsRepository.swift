@@ -18,7 +18,9 @@ final class WordsRepository: WordsRepositoryProtocol {
         let fetchRequest = WordEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "word CONTAINS[c] %@", wordPart)
         coreDataManager.fetch(fetchRequest) { wordsEntities in
-            completion(wordsEntities?.map { Word($0) } ?? [])
+            DispatchQueue.main.async {
+                completion(wordsEntities?.map { Word($0) } ?? [])
+            }
         }
     }
     

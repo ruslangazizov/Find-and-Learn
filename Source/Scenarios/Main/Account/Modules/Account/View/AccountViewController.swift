@@ -57,6 +57,7 @@ final class AccountViewController: UIViewController {
         super.viewDidLoad()
         configure()
         setupLayout()
+        
         presenter.viewDidLoad()
     }
     

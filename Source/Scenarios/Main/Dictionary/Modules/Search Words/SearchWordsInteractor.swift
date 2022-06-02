@@ -17,66 +17,54 @@ final class SearchWordsInteractor: SearchWordsInteractorProtocol {
     private let tokensManager: TokensManagerProtocol
     private let networkManager: NetworkManagerProtocol
     private let validationManager: ValidationManagerProtocol
+    private let wordsRepository: WordsRepositoryProtocol
     
     // MARK: Initializer
     
     init(
         tokensManager: TokensManagerProtocol,
         networkManager: NetworkManagerProtocol,
-        validationManager: ValidationManagerProtocol
+        validationManager: ValidationManagerProtocol,
+        wordsRepository: WordsRepositoryProtocol
     ) {
         self.tokensManager = tokensManager
         self.networkManager = networkManager
         self.validationManager = validationManager
+        self.wordsRepository = wordsRepository
     }
     
     // MARK: SearchWordsInteractorProtocol
     
     func getWords(_ word: String?, completion: @escaping ([Word]) -> Void) {
-        guard let word = word,
-            word.trimmingCharacters(in: .whitespacesAndNewlines).count > 1 else {
+        guard let word = word?.trimmingCharacters(in: .whitespacesAndNewlines),
+            word.count > 1 else {
             return
         }
         
-        guard let apiKey = tokensManager.getApiKey() else {
-            return
-        }
-        
-        let request = DictionaryRequest(
-            word,
-            apiKey,
-            validationManager.areEnglishCharacters(word)
-        )
-        
-        networkManager.perform(request) { (result: Result<DictionaryResponseModel, NetworkManagerError>) in
-            switch result {
-            case .success(let model):
-                if model.body.isEmpty {
-                    return
-                }
-                
-                let word = Word(
-                    word: model.body.first?.text ?? "",
-                    detailTranslations: model.body.flatMap { wordModel in
-                        wordModel.translations.map {
-                            Translation(
-                                id: -1,
-                                translation: $0.text,
-                                speechPart: $0.pos,
-                                transcription: wordModel.transcription,
-                                examples: $0.examples?.map { example in
-                                    Example(
-                                        id: -1,
-                                        example: example.text,
-                                        translation: example.translations.first?.text)
-                                } ?? []
-                            )
-                        }
+        wordsRepository.getWords(word) { [weak self] words in
+            if !words.isEmpty {
+                completion(words)
+                return
+            }
+            
+            guard let self = self, let apiKey = self.tokensManager.getApiKey() else { return }
+            let request = DictionaryRequest(word, apiKey, self.validationManager.areEnglishCharacters(word))
+            
+            self.networkManager.perform(request) { (result: Result<DictionaryResponseModel, NetworkManagerError>) in
+                switch result {
+                case .success(let model):
+                    if model.body.isEmpty {
+                        completion([])
+                        return
                     }
-                )
-                completion([word])
-            case .failure(let error):
-                print(error)
+                    
+                    let word = model.asWord()
+                    self.wordsRepository.saveWord(word)
+                    completion([word])
+                case .failure(let error):
+                    print(error)
+                    completion([])
+                }
             }
         }
     }
@@ -87,6 +75,28 @@ private struct DictionaryResponseModel: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case body = "def"
+    }
+    
+    func asWord() -> Word {
+        return Word(
+            word: body.first?.text ?? "",
+            detailTranslations: body.flatMap { wordModel in
+                wordModel.translations.map {
+                    Translation(
+                        id: Int.random(in: 1...1_000_000),
+                        translation: $0.text,
+                        speechPart: $0.pos,
+                        transcription: wordModel.transcription,
+                        examples: $0.examples?.map { example in
+                            Example(
+                                id: Int.random(in: 1...1_000_000),
+                                example: example.text,
+                                translation: example.translations.first?.text)
+                        } ?? []
+                    )
+                }
+            }
+        )
     }
 }
 

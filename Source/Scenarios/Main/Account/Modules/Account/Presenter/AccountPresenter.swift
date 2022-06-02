@@ -15,19 +15,24 @@ final class AccountPresenter: AccountViewOutput {
     private let interactor: AccountInteractorProtocol
     private let router: AccountRouterProtocol
     
-    // MARK: Init
+    // MARK: Init & deinit
     
     init(interactor: AccountInteractorProtocol, router: AccountRouterProtocol) {
         self.interactor = interactor
         self.router = router
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(loadSettings), name: .didConfirmEmail, object: nil
+        )
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .didConfirmEmail, object: nil)
     }
     
     // MARK: ViewOutput
     
     func viewDidLoad() {
-        interactor.loadSettings { [weak self] settings, userName in
-            self?.view?.setup(with: settings, userName: userName)
-        }
+        loadSettings()
     }
     
     func changeUserName(for userName: String) {
@@ -79,6 +84,12 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     // MARK: Private
+    
+    @objc private func loadSettings() {
+        interactor.loadSettings { [weak self] settings, userName in
+            self?.view?.setup(with: settings, userName: userName)
+        }
+    }
     
     private func showConfirmEmail() {
         router.showConfirmEmailModule()
