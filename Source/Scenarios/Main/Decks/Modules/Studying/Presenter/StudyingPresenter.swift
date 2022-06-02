@@ -36,6 +36,7 @@ final class StudyingPresenter: StudyingViewOutput {
                 view?.showHasMistakesFinish()
             }
         }
+        interactor.saveActionWithCard(card: card, action: action)
     }
     
     func continueLearning() {

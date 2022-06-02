@@ -11,6 +11,7 @@ protocol StudyingInteractorProtocol: AnyObject {
     func getLearnMoreWords(_ completion: ([Flashcard]) -> Void)
     func studyMoreCard(card: Flashcard, _ completion: () -> Void)
     func restartManager()
+    func saveActionWithCard(card: Flashcard, action: CardAction)
 }
 
 final class StudyingInteractor: StudyingInteractorProtocol {
@@ -18,10 +19,13 @@ final class StudyingInteractor: StudyingInteractorProtocol {
     
     private let studyingManager: StudyingManagerProtocol
     
+    private let flashcardsRepository: FlashcardsRepositoryProtocol
+    
     // MARK: Init
     
-    init(studyingManager: StudyingManagerProtocol) {
+    init(studyingManager: StudyingManagerProtocol, flashcardsRepository: FlashcardsRepositoryProtocol) {
         self.studyingManager = studyingManager
+        self.flashcardsRepository = flashcardsRepository
     }
     
     // MARK: StudyingInteractorProtocol
@@ -39,5 +43,9 @@ final class StudyingInteractor: StudyingInteractorProtocol {
     
     func restartManager() {
         studyingManager.restart()
+    }
+    
+    func saveActionWithCard(card: Flashcard, action: CardAction) {
+        flashcardsRepository.addFlashcardAction(flashcardId: card.id, action: action)
     }
 }

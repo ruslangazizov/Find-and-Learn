@@ -12,6 +12,7 @@ protocol FlashcardsRepositoryProtocol: AnyObject {
     func deleteFlashcard(flashcardId: Int)
     func fetchFlashcards(deckId: Int, completion: @escaping ([Flashcard]?) -> Void)
     func updateFlashcard(_ flashcard: Flashcard, updatedDeckId: Int)
+    func addFlashcardAction(flashcardId: Int, action: CardAction)
 }
 
 extension FlashcardsRepositoryProtocol {
