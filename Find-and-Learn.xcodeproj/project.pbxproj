@@ -16,7 +16,6 @@
 		440E824F28480CC100DB9BC6 /* ConfirmEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E824E28480CC100DB9BC6 /* ConfirmEmailPresenter.swift */; };
 		440E825128480D4100DB9BC6 /* ConfirmEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E825028480D4100DB9BC6 /* ConfirmEmailInteractor.swift */; };
 		440E82532848C32200DB9BC6 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */; };
-		440E82552848F00700DB9BC6 /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E82542848F00700DB9BC6 /* NSMutableAttributedString+Extensions.swift */; };
 		4411E53A28198C76001ABB53 /* TranslationExampleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */; };
 		4411E53C28199265001ABB53 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */; };
 		4411E53E28199637001ABB53 /* WordDetailSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */; };
@@ -227,7 +226,6 @@
 		440E824E28480CC100DB9BC6 /* ConfirmEmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailPresenter.swift; sourceTree = "<group>"; };
 		440E825028480D4100DB9BC6 /* ConfirmEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailInteractor.swift; sourceTree = "<group>"; };
 		440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
-		440E82542848F00700DB9BC6 /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationExampleLabel.swift; sourceTree = "<group>"; };
 		4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		4411E53D28199637001ABB53 /* WordDetailSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -573,7 +571,6 @@
 				4411E53B28199265001ABB53 /* UIStackView+Extensions.swift */,
 				D2854EDB281D35FC006188D2 /* CGFloat+Extensions.swift */,
 				44DD6AB628203D72001FE38F /* String+Extensions.swift */,
-				440E82542848F00700DB9BC6 /* NSMutableAttributedString+Extensions.swift */,
 				D202DF162826EA850022D322 /* HTTPMethod+Extensions.swift */,
 				443039C2283C9EC400D9488C /* Container+Extensions.swift */,
 				440E82522848C32200DB9BC6 /* Notification.Name+Extensions.swift */,
@@ -1856,7 +1853,6 @@
 				D2BC64BE27FC444F00F2E15F /* AuthorizationInteractor.swift in Sources */,
 				4443518C27F713D200C5BE28 /* UITableView+Extensions.swift in Sources */,
 				D25FCD5D27F85EB80007E65D /* AccountAssembly.swift in Sources */,
-				440E82552848F00700DB9BC6 /* NSMutableAttributedString+Extensions.swift in Sources */,
 				D25FCD6227F8666C0007E65D /* Setting.swift in Sources */,
 				442BD8E827F5789400FE3760 /* DictionaryAssembly.swift in Sources */,
 				44435E842821313E00737D69 /* DecksViewInput.swift in Sources */,

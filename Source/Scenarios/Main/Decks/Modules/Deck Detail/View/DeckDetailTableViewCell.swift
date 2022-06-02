@@ -12,8 +12,16 @@ final class DeckDetailTableViewCell: UITableViewCell {
     
     private lazy var frontSideLabel = UILabel()
     
-    private lazy var statisticsLabel: UILabel = {
+    private lazy var remembersCountLabel: UILabel = {
         let label = UILabel()
+        label.textColor = R.color.learnedColor()
+        label.font = .boldSystemFont(ofSize: .standardFontSize)
+        return label
+    }()
+    
+    private lazy var forgetsCountLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = R.color.studyMoreColor()
         label.font = .boldSystemFont(ofSize: .standardFontSize)
         return label
     }()
@@ -42,15 +50,16 @@ final class DeckDetailTableViewCell: UITableViewCell {
     func configure(with model: Flashcard) {
         frontSideLabel.text = model.frontSide
         backSideLabel.text = model.backSide
-        
-        let remembersString = "\(model.remembersCount)  ".applyingColor(R.color.learnedColor() ?? .green)
-        let forgetsString = "\(model.forgetsCount)".applyingColor(R.color.studyMoreColor() ?? .orange)
-        statisticsLabel.attributedText = remembersString.appending(forgetsString)
+        remembersCountLabel.text = "\(model.remembersCount)"
+        forgetsCountLabel.text = "\(model.forgetsCount)"
     }
     
     private func setupSubviews() {
-        contentView.addSubview(statisticsLabel)
-        statisticsLabel.snp.makeConstraints { make in
+        let statisticsStackView = UIStackView(arrangedSubviews: [remembersCountLabel, forgetsCountLabel])
+        statisticsStackView.spacing = .smallInset
+        
+        contentView.addSubview(statisticsStackView)
+        statisticsStackView.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
         }
         
@@ -58,14 +67,14 @@ final class DeckDetailTableViewCell: UITableViewCell {
         frontSideLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(CGFloat.shortInset)
-            make.trailing.equalTo(statisticsLabel.snp.leading)
+            make.trailing.equalTo(statisticsStackView.snp.leading)
         }
         
         contentView.addSubview(backSideLabel)
         backSideLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(CGFloat.shortInset)
-            make.leading.equalTo(statisticsLabel.snp.trailing)
+            make.leading.equalTo(statisticsStackView.snp.trailing)
         }
     }
 }
