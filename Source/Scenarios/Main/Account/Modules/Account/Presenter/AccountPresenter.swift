@@ -15,7 +15,7 @@ final class AccountPresenter: AccountViewOutput {
     private let interactor: AccountInteractorProtocol
     private let router: AccountRouterProtocol
     
-    // MARK: Init
+    // MARK: Init & deinit
     
     init(interactor: AccountInteractorProtocol, router: AccountRouterProtocol) {
         self.interactor = interactor
@@ -23,6 +23,10 @@ final class AccountPresenter: AccountViewOutput {
         NotificationCenter.default.addObserver(
             self, selector: #selector(loadSettings), name: .didConfirmEmail, object: nil
         )
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .didConfirmEmail, object: nil)
     }
     
     // MARK: ViewOutput
