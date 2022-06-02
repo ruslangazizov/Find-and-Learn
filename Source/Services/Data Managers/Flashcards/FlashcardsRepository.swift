@@ -88,4 +88,19 @@ final class FlashcardsRepository: FlashcardsRepositoryProtocol {
             }
         }
     }
+    
+    func addFlashcardAction(flashcardId: Int, action: CardAction) {
+        let fetchRequest = FlashcardEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", flashcardId)
+        coreDataManager.mutate(fetchRequest) { flashcardsEntities in
+            guard let flashcardEntity = flashcardsEntities?.first else { return }
+            
+            switch action {
+            case .learned:
+                flashcardEntity.remembersCount += 1
+            case .studyMore:
+                flashcardEntity.forgetsCount += 1
+            }
+        }
+    }
 }

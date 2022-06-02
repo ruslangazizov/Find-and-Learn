@@ -27,6 +27,7 @@ final class DeckDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
         tableView.backgroundColor = R.color.defaultBackgroundColor()
+        tableView.rowHeight = .standardTableViewRowHeight
         return tableView
     }()
     
@@ -71,9 +72,9 @@ final class DeckDetailViewController: UIViewController {
         configureLayout()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        presenter.viewDidAppear()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
     }
     
     // MARK: UI configuration
@@ -183,4 +184,8 @@ private extension UIFont {
 
 private extension UIColor {
     static let notEnabledButtonBackground: UIColor = .gray
+}
+
+private extension CGFloat {
+    static let standardTableViewRowHeight: CGFloat = 44
 }

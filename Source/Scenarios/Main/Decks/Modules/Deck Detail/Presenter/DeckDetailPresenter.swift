@@ -13,7 +13,7 @@ protocol DeckDetailViewOutput: AnyObject {
     func didTapStudyButton()
     func didTapAddFlashcardButton()
     func didDeleteRow(_ row: Int)
-    func viewDidAppear()
+    func viewWillAppear()
 }
 
 final class DeckDetailPresenter: DeckDetailViewOutput {
@@ -72,7 +72,7 @@ final class DeckDetailPresenter: DeckDetailViewOutput {
         view?.setStudyButtonIsEnabled(isStudyButtonEnabled)
     }
     
-    func viewDidAppear() {
+    func viewWillAppear() {
         checkStudyButtonAvailability()
         interactor.getFlashCards(deckId: deck.id) { [weak self] flashcards in
             if self?.deck.flashcards != flashcards {

@@ -17,4 +17,8 @@ extension String {
         )
         return attributedString
     }
+    
+    func applyingColor(_ foregroundColor: UIColor) -> NSMutableAttributedString {
+        return applyColorForRange(of: self, with: foregroundColor)
+    }
 }
