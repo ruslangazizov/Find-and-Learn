@@ -12,7 +12,8 @@ final class LogoLabel: UILabel {
         super.init(frame: .zero)
         
         font = .preferredFont(forTextStyle: .largeTitle)
-        text = "Find & Learn"
+        text = R.string.localizable.application_name()
+        textColor = R.color.tabBarActiveIconColor()
     }
     
     required init?(coder: NSCoder) {

@@ -166,3 +166,6 @@
 "tab_bar_dictionary" = "Словарь";
 "tab_bar_decks" = "Колоды";
 "tab_bar_account" = "Аккаунт";
+
+// Название приложения
+"application_name" = "Find & Learn";
