@@ -69,7 +69,7 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     func exit() {
-        interactor.removeToken()
+        interactor.deleteUserInfo()
         router.showEntranceFlow()
     }
     

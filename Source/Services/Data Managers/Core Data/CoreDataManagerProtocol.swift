@@ -12,4 +12,5 @@ protocol CoreDataManagerProtocol: AnyObject {
     func getAvailableId(initialId id: Int, for entityType: NSManagedObject.Type) -> Int
     func contextProvider(_ provider: @escaping (NSManagedObjectContext) -> Void)
     func mutate<T: NSManagedObject>(_ fetchRequest: NSFetchRequest<T>, mutation: @escaping ([T]?) -> Void)
+    func deleteAllEntitiesFor<EntityType: NSManagedObject>(_ fetchRequest: NSFetchRequest<EntityType>)
 }

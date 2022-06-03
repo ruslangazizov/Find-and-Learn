@@ -12,7 +12,9 @@ protocol WordsRepositoryProtocol {
     func saveWord(_ word: Word)
     func fetchHistoryWords(completion: @escaping ([HistoryWord]) -> Void)
     func addHistoryWord(wordId: Int, timeOpened: Date, completion: ((Bool) -> Void)?)
+    func deleteHistoryWords()
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void)
+    func deleteFavoriteWords()
     func fetchWordDetail(_ word: String, completion: @escaping (WordDetail?) -> Void)
     func changeWordStatus(_ wordId: Int, isFavorite: Bool)
 }

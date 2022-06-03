@@ -39,6 +39,11 @@ final class DecksRepository: DecksRepositoryProtocol {
         }
     }
     
+    func deleteDecks() {
+        let fetchRequest = DeckEntity.fetchRequest()
+        coreDataManager.deleteAllEntitiesFor(fetchRequest)
+    }
+    
     func createDeck(name: String, completion: @escaping (Deck) -> Void) {
         coreDataManager.contextProvider { context in
             let deckEntity = DeckEntity(context: context, name: name)

@@ -14,7 +14,7 @@ enum AppAssembly {
         let tokensManager: TokensManagerProtocol = TokensManager()
         let userManager: UserManagerProtocol = UserManager()
         
-        if tokensManager.getToken() == nil || userManager.isFirstEntrance() {
+        if tokensManager.getToken() == nil && userManager.isFirstEntrance() {
             userManager.setFirstEntrance()
             return EntranceAssembly.assemble(using: container)
         } else {

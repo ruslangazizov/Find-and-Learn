@@ -98,11 +98,26 @@ final class WordsRepository: WordsRepositoryProtocol {
         }
     }
     
+    func deleteHistoryWords() {
+        let fetchRequest = HistoryWordEntity.fetchRequest()
+        coreDataManager.deleteAllEntitiesFor(fetchRequest)
+    }
+    
     func fetchFavoriteWords(completion: @escaping ([Word]) -> Void) {
         let fetchRequest = WordEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "isFavorite == %c", true)
         coreDataManager.fetch(fetchRequest) { wordsEntities in
             completion(wordsEntities?.map { Word($0) } ?? [])
+        }
+    }
+    
+    func deleteFavoriteWords() {
+        let fetchRequest = WordEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "isFavorite == %c", true)
+        coreDataManager.mutate(fetchRequest) { wordsEntities in
+            wordsEntities?.forEach { wordEntity in
+                wordEntity.isFavorite = false
+            }
         }
     }
     
