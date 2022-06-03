@@ -16,6 +16,7 @@ protocol UserManagerProtocol: AnyObject {
     func updateUserName(_ userName: String) -> User
     func isFirstEntrance() -> Bool
     func setFirstEntrance(_ value: Bool)
+    func deleteAllUserInfo()
 }
 
 final class UserManager: UserManagerProtocol {
@@ -66,8 +67,10 @@ final class UserManager: UserManagerProtocol {
     
     func updateUserName(_ userName: String) -> User {
         var user = getUser()
-        user.userName = userName
-        saveUser(user)
+        if user.id != -1 {
+            user.userName = userName
+            saveUser(user)
+        }
         return user
     }
     
@@ -77,6 +80,12 @@ final class UserManager: UserManagerProtocol {
     
     func setFirstEntrance(_ value: Bool) {
         userDefaults.set(value, forKey: Keys.isFirstEntrance)
+    }
+    
+    func deleteAllUserInfo() {
+        userDefaults.removeObject(forKey: Keys.userKey)
+        userDefaults.removeObject(forKey: Keys.userEmailCodeKey)
+        setFirstEntrance(false)
     }
 }
 

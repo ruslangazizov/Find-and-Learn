@@ -81,4 +81,12 @@ extension CoreDataManager: CoreDataManagerProtocol {
             self.saveContext()
         }
     }
+    
+    func deleteAllEntitiesFor<EntityType: NSManagedObject>(_ fetchRequest: NSFetchRequest<EntityType>) {
+        fetch(fetchRequest) { entities in
+            entities?.forEach {
+                self.viewContext.delete($0)
+            }
+        }
+    }
 }

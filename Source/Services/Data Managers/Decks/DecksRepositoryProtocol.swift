@@ -10,6 +10,7 @@ import Foundation
 protocol DecksRepositoryProtocol: AnyObject {
     func fetchDecks(includeFlashcards: Bool, completion: @escaping ([Deck]) -> Void)
     func deleteDeck(deckId: Int)
+    func deleteDecks()
     func createDeck(name: String, completion: @escaping (Deck) -> Void)
 }
 

@@ -10,7 +10,7 @@ import Foundation
 protocol AccountInteractorProtocol: AnyObject {
     func loadSettings(_ completion: @escaping (([Setting], String) -> Void))
     func deleteAccount(_ completion: @escaping (Bool) -> Void)
-    func removeToken()
+    func deleteUserInfo()
     func changeUserName(_ userName: String)
     func downloadPopularWords(_ completion: @escaping () -> Void)
 }
@@ -23,6 +23,7 @@ final class AccountInteractor: AccountInteractorProtocol {
     private let userManager: UserManagerProtocol
     private let networkManager: NetworkManagerProtocol
     private let wordsRepository: WordsRepositoryProtocol
+    private let decksRepository: DecksRepositoryProtocol
     
     private typealias DownloadWordsResponseModel = Result<[PopularWordResponseModel], NetworkManagerError>
     
@@ -33,13 +34,15 @@ final class AccountInteractor: AccountInteractorProtocol {
         settingsManager: SettingsManagerProtocol,
         userManager: UserManagerProtocol,
         networkManager: NetworkManagerProtocol,
-        wordsRepository: WordsRepositoryProtocol
+        wordsRepository: WordsRepositoryProtocol,
+        decksRepository: DecksRepositoryProtocol
     ) {
         self.tokensManager = tokensManager
         self.settingsManager = settingsManager
         self.userManager = userManager
         self.networkManager = networkManager
         self.wordsRepository = wordsRepository
+        self.decksRepository = decksRepository
     }
     
     // MARK: AccountInteractorProtocol
@@ -57,9 +60,10 @@ final class AccountInteractor: AccountInteractorProtocol {
             return
         }
         let request = DeleteRequest(user.id, token)
-        networkManager.perform(request) { result in
+        networkManager.perform(request) { [weak self] result in
             switch result {
             case .success:
+                self?.deleteUserInfo()
                 completion(true)
             case .failure:
                 completion(false)
@@ -67,8 +71,12 @@ final class AccountInteractor: AccountInteractorProtocol {
         }
     }
     
-    func removeToken() {
+    func deleteUserInfo() {
         tokensManager.removeToken()
+        userManager.deleteAllUserInfo()
+        wordsRepository.deleteHistoryWords()
+        wordsRepository.deleteFavoriteWords()
+        decksRepository.deleteDecks()
     }
     
     func changeUserName(_ userName: String) {
