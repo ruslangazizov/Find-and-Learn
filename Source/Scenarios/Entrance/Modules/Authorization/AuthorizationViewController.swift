@@ -10,6 +10,8 @@ import UIKit
 final class AuthorizationViewController: UIViewController {
     // MARK: UI
     
+    private lazy var logoLabel = LogoLabel()
+    
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.authorization_screen_email_placeholder(),
@@ -135,6 +137,7 @@ final class AuthorizationViewController: UIViewController {
     }
     
     private func addSubviews() {
+        view.addSubview(logoLabel)
         view.addSubview(textFieldsStackView)
         textFieldsStackView.addArrangedSubview(emailTextField)
         view.addSubview(emailErrorLabel)
@@ -148,6 +151,10 @@ final class AuthorizationViewController: UIViewController {
     }
     
     private func setupUI() {
+        logoLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(view.frame.height * .multiplierForLogoLabel)
+        }
         setupStackViews()
         setupButtons()
         loader.snp.makeConstraints { make in
@@ -334,6 +341,7 @@ private extension AuthorizationViewController {
 private extension CGFloat {
     static let textFieldsSpacing: CGFloat = 30
     
+    static let multiplierForLogoLabel = 0.125
     static let multiplierForStackView = 0.35
     static let multiplierForEnterButton = 1.5
     

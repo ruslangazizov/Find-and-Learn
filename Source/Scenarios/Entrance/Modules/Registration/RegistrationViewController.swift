@@ -11,6 +11,8 @@ import SnapKit
 final class RegistrationViewController: UIViewController {    
     // MARK: UI
     
+    private lazy var logoLabel = LogoLabel()
+    
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.registration_screen_email_placeholder(),
@@ -149,6 +151,7 @@ final class RegistrationViewController: UIViewController {
     }
     
     private func addSubviews() {
+        view.addSubview(logoLabel)
         view.addSubview(textFieldsStackView)
         view.addSubview(buttonsStackView)
         textFieldsStackView.addArrangedSubview(emailTextField)
@@ -165,6 +168,10 @@ final class RegistrationViewController: UIViewController {
     }
     
     private func setupUI() {
+        logoLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(view.frame.height * .multiplierForLogoLabel)
+        }
         let topInset = view.frame.height / .multiplierForTextFieldStackViews
         textFieldsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
@@ -346,6 +353,8 @@ private extension CGFloat {
     static let textFieldsSpacing: CGFloat = 30
     
     static let buttonsSpacing: CGFloat = 10
+    
+    static let multiplierForLogoLabel: CGFloat = 0.08
     
     static let multiplierForTextFieldStackViews: CGFloat = 5
     
