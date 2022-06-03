@@ -10,12 +10,18 @@ import Foundation
 protocol UserManagerProtocol: AnyObject {
     func getUser() -> User
     func saveUser(_ user: User)
+    func updateUserName(_ userName: String) -> User
+    
     func setEmailIsVerified()
     func saveEmailCode(_ code: Int)
     func getEmailCode() -> Int?
-    func updateUserName(_ userName: String) -> User
+    
     func isFirstEntrance() -> Bool
     func setFirstEntrance(_ value: Bool)
+    
+    func didDownloadDictionary() -> Bool
+    func setDidDownloadDictionary(_ didDownloadDictionary: Bool)
+    
     func deleteAllUserInfo()
 }
 
@@ -24,6 +30,7 @@ final class UserManager: UserManagerProtocol {
         static let isFirstEntrance = "isFirstEntrance"        
         static let userKey = "userKey"
         static let userEmailCodeKey = "userEmailCodeKey"
+        static let didDownloadDictionary = "didDownloadDictionary"
     }
     
     private let userDefaults = UserDefaults.standard
@@ -80,6 +87,14 @@ final class UserManager: UserManagerProtocol {
     
     func setFirstEntrance(_ value: Bool) {
         userDefaults.set(value, forKey: Keys.isFirstEntrance)
+    }
+    
+    func didDownloadDictionary() -> Bool {
+        return userDefaults.bool(forKey: Keys.didDownloadDictionary)
+    }
+    
+    func setDidDownloadDictionary(_ didDownloadDictionary: Bool) {
+        userDefaults.set(didDownloadDictionary, forKey: Keys.didDownloadDictionary)
     }
     
     func deleteAllUserInfo() {

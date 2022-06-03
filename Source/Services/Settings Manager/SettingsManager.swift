@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SettingsManagerProtocol: AnyObject {
-    func getSettingsByState(by state: AccountState) -> [Setting]
+    func getSettingsByState(_ state: AccountState, includeDownloadDictionary: Bool) -> [Setting]
 }
 
 final class SettingsManager: SettingsManagerProtocol {
@@ -39,14 +39,16 @@ final class SettingsManager: SettingsManagerProtocol {
     
     // MARK: SettingsManagerProtocol
     
-    func getSettingsByState(by state: AccountState) -> [Setting] {
+    func getSettingsByState(_ state: AccountState, includeDownloadDictionary: Bool) -> [Setting] {
+        let settings: [Setting]
         switch state {
         case .guest:
-            return guestsSettings
+            settings = guestsSettings
         case .inactive:
-            return inactiveSettings
+            settings = inactiveSettings
         case .active:
-            return activeAccountSettings
+            settings = activeAccountSettings
         }
+        return includeDownloadDictionary ? settings : settings.filter { $0.type != .downloadDictionary }
     }
 }

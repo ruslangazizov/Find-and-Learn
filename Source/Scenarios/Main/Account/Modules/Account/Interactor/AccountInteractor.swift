@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AccountInteractorProtocol: AnyObject {
-    func loadSettings(_ completion: @escaping (([Setting], String) -> Void))
+    func loadSettings() -> (settings: [Setting], userName: String)
     func deleteAccount(_ completion: @escaping (Bool) -> Void)
     func deleteUserInfo()
     func changeUserName(_ userName: String)
@@ -47,11 +47,11 @@ final class AccountInteractor: AccountInteractorProtocol {
     
     // MARK: AccountInteractorProtocol
     
-    func loadSettings(_ completion: @escaping (([Setting], String) -> Void)) {
+    func loadSettings() -> (settings: [Setting], userName: String) {
         let user = userManager.getUser()
-        DispatchQueue.main.async {
-            completion(self.settingsManager.getSettingsByState(by: user.state), user.userName)
-        }
+        let didDownloadDictionary = userManager.didDownloadDictionary()
+        let settings = settingsManager.getSettingsByState(user.state, includeDownloadDictionary: !didDownloadDictionary)
+        return (settings, user.userName)
     }
     
     func deleteAccount(_ completion: @escaping (Bool) -> Void) {
@@ -122,6 +122,7 @@ final class AccountInteractor: AccountInteractorProtocol {
                 .forEach {
                     self?.wordsRepository.saveWord($0)
                 }
+                self?.userManager.setDidDownloadDictionary(true)
             case .failure(let error):
                 assertionFailure(error.localizedDescription.debugDescription)
             }
