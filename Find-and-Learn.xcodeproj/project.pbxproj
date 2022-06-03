@@ -59,6 +59,7 @@
 		44449EFB27F04ABF008A9624 /* SystemIconsNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */; };
 		444B2813281D349E0037CDA8 /* NewFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B2812281D349E0037CDA8 /* NewFlashcardView.swift */; };
 		4459D86A2816E645002D2EAF /* WordDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */; };
+		446BA27A284A5E4A00C234F5 /* LogoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446BA279284A5E4A00C234F5 /* LogoLabel.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
 		447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */; };
 		447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */; };
@@ -269,6 +270,7 @@
 		44449EFA27F04ABF008A9624 /* SystemIconsNames.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemIconsNames.strings; sourceTree = "<group>"; };
 		444B2812281D349E0037CDA8 /* NewFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardView.swift; sourceTree = "<group>"; };
 		4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailTableViewCell.swift; sourceTree = "<group>"; };
+		446BA279284A5E4A00C234F5 /* LogoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLabel.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
 		447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsPresenter.swift; sourceTree = "<group>"; };
 		447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsInteractor.swift; sourceTree = "<group>"; };
@@ -1141,6 +1143,7 @@
 		D21E9DAF27FA08A3005513B7 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
+				446BA279284A5E4A00C234F5 /* LogoLabel.swift */,
 				D21E9DB027FA08B8005513B7 /* ErrorLabel.swift */,
 				4411E53928198C76001ABB53 /* TranslationExampleLabel.swift */,
 			);
@@ -1888,6 +1891,7 @@
 				D2037FB527FCA3970036E0A5 /* AuthorizationResultState.swift in Sources */,
 				44DD6AB728203D72001FE38F /* String+Extensions.swift in Sources */,
 				D2FD92422814005C00D93BC4 /* FlashCardView.swift in Sources */,
+				446BA27A284A5E4A00C234F5 /* LogoLabel.swift in Sources */,
 				D228053627FAC2E000D8B60E /* UIButton+Extensions.swift in Sources */,
 				44247B452835550100383C9A /* WordsRepositoryProtocol.swift in Sources */,
 				447F9871281667C0000E153D /* WordDetailPresenter.swift in Sources */,
@@ -2096,7 +2100,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Find and Learn";
+				INFOPLIST_KEY_CFBundleDisplayName = "Find & Learn";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -2126,7 +2130,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Find and Learn";
+				INFOPLIST_KEY_CFBundleDisplayName = "Find & Learn";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

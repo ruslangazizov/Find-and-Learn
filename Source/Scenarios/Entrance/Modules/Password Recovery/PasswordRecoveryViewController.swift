@@ -10,6 +10,8 @@ import UIKit
 final class PasswordRecoveryViewController: UIViewController {
     // MARK: UI
     
+    private lazy var logoLabel = LogoLabel()
+    
     private lazy var emailTextField: UITextField = {
         let textField = CommonTextField(
             placeholder: R.string.localizable.password_recovery_screen_email_placeholder(),
@@ -94,6 +96,12 @@ final class PasswordRecoveryViewController: UIViewController {
     }
     
     private func setupLayout() {
+        view.addSubview(logoLabel)
+        logoLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(view.frame.height * .multiplierForLogoLabel)
+        }
+        
         view.addSubview(emailTextField)
         emailTextField.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.sidesInsets)
@@ -220,6 +228,8 @@ private extension PasswordRecoveryViewController {
 
 private extension CGFloat {
     static let buttonsSpacing: CGFloat = 20
+    
+    static let multiplierForLogoLabel = 0.2
     
     static let multiplierForEmailTextField = 0.5
     
