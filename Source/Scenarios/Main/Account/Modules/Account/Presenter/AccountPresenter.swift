@@ -86,9 +86,8 @@ final class AccountPresenter: AccountViewOutput {
     // MARK: Private
     
     @objc private func loadSettings() {
-        interactor.loadSettings { [weak self] settings, userName in
-            self?.view?.setup(with: settings, userName: userName)
-        }
+        let (settings, userName) = interactor.loadSettings()
+        view?.setup(with: settings, userName: userName)
     }
     
     private func showConfirmEmail() {
