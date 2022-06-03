@@ -204,7 +204,8 @@ enum DependencyManager {
         container.register(StudyingViewInput.self) { (resolver, models: [Flashcard]) in
             let interactor = StudyingInteractor(
                 studyingManager: resolver.resolve(StudyingManagerProtocol.self)!,
-                flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
+                flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!,
+                achievementsManager: resolver.resolve(AchievementsManagerProtocol.self)!
             )
             let router = StudyingRouter()
             let presenter = StudyingPresenter(router: router, interactor: interactor)

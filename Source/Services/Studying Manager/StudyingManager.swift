@@ -11,12 +11,16 @@ protocol StudyingManagerProtocol: AnyObject {
     func logFlashCard(card: Flashcard) -> Bool
     func restart()
     func getLearnMoreCards() -> [Flashcard]
+    func addLearnedCard(card: Flashcard)
+    func getLearnedCards() -> [Flashcard]
 }
 
 final class StudyingManager: StudyingManagerProtocol {
     // MARK: Properties
     
     private var learnMoreCards: [Flashcard] = []
+    
+    private var learnedCards: [Flashcard] = []
     
     // MARK: StudyingManagerProtocol
     
@@ -31,5 +35,13 @@ final class StudyingManager: StudyingManagerProtocol {
     
     func getLearnMoreCards() -> [Flashcard] {
         return learnMoreCards
+    }
+    
+    func addLearnedCard(card: Flashcard) {
+        learnedCards.append(card)
+    }
+    
+    func getLearnedCards() -> [Flashcard] {
+        return learnedCards
     }
 }

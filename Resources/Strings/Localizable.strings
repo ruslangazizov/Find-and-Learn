@@ -159,6 +159,8 @@
 "achievement_iterator_description" = "На протяжении 7 дней каждый день изучать хотя бы 1 колоду";
 "achievement_wasserman_name" = "Вассерман";
 "achievement_wasserman_description" = "5 раз полностью вспомнить все слова в колоде";
+"achievement_tina_kandelaki_name" = "Тина Канделаки";
+"achievement_tina_kandelaki_description" = "Полностью вспомнить все слова в колоде, состоящей минимум из 10 карточек";
 
 // ТабБар
 "tab_bar_dictionary" = "Словарь";
