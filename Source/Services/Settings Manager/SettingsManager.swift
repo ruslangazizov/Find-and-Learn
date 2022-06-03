@@ -49,6 +49,6 @@ final class SettingsManager: SettingsManagerProtocol {
         case .active:
             settings = activeAccountSettings
         }
-        return includeDownloadDictionary ? settings : settings.filter { $0.type != .registration }
+        return includeDownloadDictionary ? settings : settings.filter { $0.type != .downloadDictionary }
     }
 }
