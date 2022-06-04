@@ -118,9 +118,7 @@ enum DependencyManager {
         }
         
         container.register(WordDetailViewInput.self) { (resolver, wordModel: WordModel) in
-            let interactor = WordDetailInteractor(
-                wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
-            )
+            let interactor = WordDetailInteractor(wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!)
             let router = WordDetailRouter(container: container)
             let presenter = WordDetailPresenter(interactor: interactor, router: router, wordModel: wordModel)
             let view = WordDetailViewController(presenter: presenter)
@@ -268,7 +266,8 @@ enum DependencyManager {
                 networkManager: resolver.resolve(NetworkManagerProtocol.self)!,
                 wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!,
                 decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
-                filesManager: resolver.resolve(FilesManagerProtocol.self)!
+                filesManager: resolver.resolve(FilesManagerProtocol.self)!,
+                achievementsManager: resolver.resolve(AchievementsManagerProtocol.self)!
             )
             let router = AccountRouter(container: container)
             let presenter = AccountPresenter(interactor: interactor, router: router)

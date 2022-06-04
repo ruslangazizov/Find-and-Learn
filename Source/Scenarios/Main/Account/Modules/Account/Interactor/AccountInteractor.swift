@@ -27,6 +27,7 @@ final class AccountInteractor: AccountInteractorProtocol {
     private let wordsRepository: WordsRepositoryProtocol
     private let decksRepository: DecksRepositoryProtocol
     private let filesManager: FilesManagerProtocol
+    private let achievementsManager: AchievementsManagerProtocol
     
     private typealias DownloadWordsResponseModel = Result<[PopularWordResponseModel], NetworkManagerError>
     
@@ -39,7 +40,8 @@ final class AccountInteractor: AccountInteractorProtocol {
         networkManager: NetworkManagerProtocol,
         wordsRepository: WordsRepositoryProtocol,
         decksRepository: DecksRepositoryProtocol,
-        filesManager: FilesManagerProtocol
+        filesManager: FilesManagerProtocol,
+        achievementsManager: AchievementsManagerProtocol
     ) {
         self.tokensManager = tokensManager
         self.settingsManager = settingsManager
@@ -48,6 +50,7 @@ final class AccountInteractor: AccountInteractorProtocol {
         self.wordsRepository = wordsRepository
         self.decksRepository = decksRepository
         self.filesManager = filesManager
+        self.achievementsManager = achievementsManager
     }
     
     // MARK: AccountInteractorProtocol
@@ -84,6 +87,7 @@ final class AccountInteractor: AccountInteractorProtocol {
         wordsRepository.deleteFavoriteWords()
         decksRepository.deleteDecks()
         filesManager.deleteAvatar()
+        achievementsManager.deleteAchievements()
     }
     
     func changeUserName(_ userName: String) {

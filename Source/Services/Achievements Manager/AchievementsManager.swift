@@ -11,6 +11,7 @@ import UIKit
 protocol AchievementsManagerProtocol: AnyObject {
     func addAchievement(_ achievement: AchievementsEnum)
     func getAchievements() -> [Achievement]
+    func deleteAchievements()
 }
 
 final class AchievementsManager: AchievementsManagerProtocol {
@@ -77,6 +78,10 @@ final class AchievementsManager: AchievementsManagerProtocol {
                 dateOfGetting: dateOfGetting
             )
         }
+    }
+    
+    func deleteAchievements() {
+        userDefaults.removeObject(forKey: achievementsArrayKey)
     }
 }
 
