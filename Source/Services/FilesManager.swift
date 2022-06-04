@@ -43,14 +43,9 @@ final class FilesManager: FilesManagerProtocol {
     
     func deleteAvatar() {
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        guard let documentDirectory = documentDirectory else {
-            return
-        }
-        let url = documentDirectory.appendingPathComponent(avatarImageName)
-        do {
-            try FileManager.default.removeItem(at: url)
-        } catch {
-            assertionFailure("Unable to delete avatar at \(url)")
+        if let documentDirectory = documentDirectory {
+            let url = documentDirectory.appendingPathComponent(avatarImageName)
+            try? FileManager.default.removeItem(at: url)
         }
     }
 }
