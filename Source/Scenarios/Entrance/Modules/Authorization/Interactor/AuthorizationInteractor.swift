@@ -70,6 +70,7 @@ final class AuthorizationInteractor: AuthorizationInteractorProtocol {
                                 result(.success)
                             case .failure(let error):
                                 print(error.localizedDescription)
+                                result(.emailTextField(R.string.localizable.validation_error_not_right_data()))
                             }
                         }
                 case .failure:
