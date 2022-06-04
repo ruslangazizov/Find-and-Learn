@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AccountInteractorProtocol: AnyObject {
-    func loadSettings() -> (settings: [Setting], userName: String)
+    func loadSettings() -> UserSettings
     func deleteAccount(_ completion: @escaping (Bool) -> Void)
     func deleteUserInfo()
     func changeUserName(_ userName: String)
     func downloadPopularWords(_ completion: @escaping () -> Void)
+    func saveAvatarImage(_ image: UIImage)
 }
 
 final class AccountInteractor: AccountInteractorProtocol {
@@ -24,6 +26,7 @@ final class AccountInteractor: AccountInteractorProtocol {
     private let networkManager: NetworkManagerProtocol
     private let wordsRepository: WordsRepositoryProtocol
     private let decksRepository: DecksRepositoryProtocol
+    private let filesManager: FilesManagerProtocol
     
     private typealias DownloadWordsResponseModel = Result<[PopularWordResponseModel], NetworkManagerError>
     
@@ -35,7 +38,8 @@ final class AccountInteractor: AccountInteractorProtocol {
         userManager: UserManagerProtocol,
         networkManager: NetworkManagerProtocol,
         wordsRepository: WordsRepositoryProtocol,
-        decksRepository: DecksRepositoryProtocol
+        decksRepository: DecksRepositoryProtocol,
+        filesManager: FilesManagerProtocol
     ) {
         self.tokensManager = tokensManager
         self.settingsManager = settingsManager
@@ -43,15 +47,17 @@ final class AccountInteractor: AccountInteractorProtocol {
         self.networkManager = networkManager
         self.wordsRepository = wordsRepository
         self.decksRepository = decksRepository
+        self.filesManager = filesManager
     }
     
     // MARK: AccountInteractorProtocol
     
-    func loadSettings() -> (settings: [Setting], userName: String) {
+    func loadSettings() -> UserSettings {
         let user = userManager.getUser()
         let didDownloadDictionary = userManager.didDownloadDictionary()
         let settings = settingsManager.getSettingsByState(user.state, includeDownloadDictionary: !didDownloadDictionary)
-        return (settings, user.userName)
+        let avatarImage = filesManager.getAvatar()
+        return UserSettings(settings: settings, userName: user.userName, avatarImage: avatarImage)
     }
     
     func deleteAccount(_ completion: @escaping (Bool) -> Void) {
@@ -77,6 +83,7 @@ final class AccountInteractor: AccountInteractorProtocol {
         wordsRepository.deleteHistoryWords()
         wordsRepository.deleteFavoriteWords()
         decksRepository.deleteDecks()
+        filesManager.deleteAvatar()
     }
     
     func changeUserName(_ userName: String) {
@@ -128,6 +135,10 @@ final class AccountInteractor: AccountInteractorProtocol {
             }
             completion()
         }
+    }
+    
+    func saveAvatarImage(_ image: UIImage) {
+        filesManager.saveAvatar(image)
     }
 }
 

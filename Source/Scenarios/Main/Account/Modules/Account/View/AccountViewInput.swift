@@ -5,10 +5,10 @@
 //  Created by Роман Сницарюк on 02.04.2022.
 //
 
-import Foundation
+import UIKit
 
 protocol AccountViewInput: AnyObject {
-    func setup(with settings: [Setting], userName: String?)
+    func setup(with userSettings: UserSettings)
     func askForDownloadingDictionary()
     func showDictionaryDownloadingStarted()
     func showDictionaryDownloadingEnded()

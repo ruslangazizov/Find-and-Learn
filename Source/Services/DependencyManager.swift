@@ -221,9 +221,7 @@ enum DependencyManager {
     private static func registerAccountFlow(using container: Container) {
         container.register(ConfirmEmailViewInput.self) { resolver in
             let router = ConfirmEmailRouter()
-            let interactor = ConfirmEmailInteractor(
-                userManager: resolver.resolve(UserManagerProtocol.self)!
-            )
+            let interactor = ConfirmEmailInteractor(userManager: resolver.resolve(UserManagerProtocol.self)!)
             let presenter = ConfirmEmailPresenter(interactor: interactor, router: router)
             let viewController = ConfirmEmailViewController(presenter: presenter)
             
@@ -269,7 +267,8 @@ enum DependencyManager {
                 userManager: resolver.resolve(UserManagerProtocol.self)!,
                 networkManager: resolver.resolve(NetworkManagerProtocol.self)!,
                 wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!,
-                decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!
+                decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
+                filesManager: resolver.resolve(FilesManagerProtocol.self)!
             )
             let router = AccountRouter(container: container)
             let presenter = AccountPresenter(interactor: interactor, router: router)
@@ -302,6 +301,8 @@ enum DependencyManager {
         container.register(WordsRepositoryProtocol.self) { resolver in
             WordsRepository(coreDataManager: resolver.resolve(CoreDataManagerProtocol.self)!)
         }
+        
+        container.register(FilesManagerProtocol.self) { _ in FilesManager() }.inObjectScope(.container)
     }
     // swiftlint:enable force_unwrapping
 }
