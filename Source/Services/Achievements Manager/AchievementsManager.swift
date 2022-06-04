@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AchievementsManagerProtocol: AnyObject {
-    func addTinaKandelakiAchievement()
+    func addAchievement(_ achievement: AchievementsEnum)
     func getAchievements() -> [Achievement]
 }
 
@@ -55,10 +55,10 @@ final class AchievementsManager: AchievementsManagerProtocol {
         ]
     }
     
-    func addTinaKandelakiAchievement() {
+    func addAchievement(_ achievement: AchievementsEnum) {
         var achievements = getAchievementsArray()
-        guard achievements[2] == nil else { return }
-        achievements[2] = Date()
+        guard achievements[achievement.rawValue] == nil else { return }
+        achievements[achievement.rawValue] = Date()
         if let data = try? encoder.encode(achievements) {
             userDefaults.set(data, forKey: achievementsArrayKey)
         }
@@ -85,4 +85,10 @@ private struct AbstractAchievement {
     let description: String
     let activeImage: UIImage?
     let inactiveImage: UIImage?
+}
+
+enum AchievementsEnum: Int {
+    case iterator = 0
+    case wasserman
+    case tinaKandelaki
 }

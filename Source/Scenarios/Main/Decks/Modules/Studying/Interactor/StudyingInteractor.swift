@@ -62,7 +62,7 @@ final class StudyingInteractor: StudyingInteractorProtocol {
     
     func checkAchievement(totalCardCount: Int) {
         if totalCardCount == studyingManager.getLearnedCards().count && totalCardCount >= 10 {
-            achievementsManager.addTinaKandelakiAchievement()
+            achievementsManager.addAchievement(.tinaKandelaki)
         }
     }
 }
