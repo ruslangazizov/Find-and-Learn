@@ -90,7 +90,7 @@ To get a local copy up and running follow these simple steps:
    ```sh
    open Find-and-Learn.xcworkspace
    ```
-5. When Xcode opens, launch the app using a simulator or your device by choosing Product -> Run
+5. When Xcode opens, launch the app using a simulator or your device by hitting Product -> Run
 
 
 
