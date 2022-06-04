@@ -10,4 +10,5 @@ import Foundation
 protocol StudyingViewInput: AnyObject {
     func showHasMistakesFinish()
     func continueLearning(cards: [Flashcard])
+    func getCards() -> [Flashcard]
 }

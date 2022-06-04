@@ -248,6 +248,10 @@ extension StudyingViewController: StudyingViewInput {
         self.cards = cards
         start()
     }
+    
+    func getCards() -> [Flashcard] {
+        return cards
+    }
 }
 
 // MARK: - Constants

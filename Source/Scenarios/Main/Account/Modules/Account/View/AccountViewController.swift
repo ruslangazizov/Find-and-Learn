@@ -131,9 +131,12 @@ final class AccountViewController: UIViewController {
 // MARK: - ViewInput
 
 extension AccountViewController: AccountViewInput {
-    func setup(with settings: [Setting], userName: String?) {
-        self.settings = settings
-        userNameTextField.text = userName
+    func setup(with userSettings: UserSettings) {
+        self.settings = userSettings.settings
+        userNameTextField.text = userSettings.userName
+        if userSettings.avatarImage != nil {
+            avatarView.image = userSettings.avatarImage
+        }
         tableView.reloadData()
     }
     

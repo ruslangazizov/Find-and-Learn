@@ -118,9 +118,7 @@ enum DependencyManager {
         }
         
         container.register(WordDetailViewInput.self) { (resolver, wordModel: WordModel) in
-            let interactor = WordDetailInteractor(
-                wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!
-            )
+            let interactor = WordDetailInteractor(wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!)
             let router = WordDetailRouter(container: container)
             let presenter = WordDetailPresenter(interactor: interactor, router: router, wordModel: wordModel)
             let view = WordDetailViewController(presenter: presenter)
@@ -204,7 +202,8 @@ enum DependencyManager {
         container.register(StudyingViewInput.self) { (resolver, models: [Flashcard]) in
             let interactor = StudyingInteractor(
                 studyingManager: resolver.resolve(StudyingManagerProtocol.self)!,
-                flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!
+                flashcardsRepository: resolver.resolve(FlashcardsRepositoryProtocol.self)!,
+                achievementsManager: resolver.resolve(AchievementsManagerProtocol.self)!
             )
             let router = StudyingRouter()
             let presenter = StudyingPresenter(router: router, interactor: interactor)
@@ -220,9 +219,7 @@ enum DependencyManager {
     private static func registerAccountFlow(using container: Container) {
         container.register(ConfirmEmailViewInput.self) { resolver in
             let router = ConfirmEmailRouter()
-            let interactor = ConfirmEmailInteractor(
-                userManager: resolver.resolve(UserManagerProtocol.self)!
-            )
+            let interactor = ConfirmEmailInteractor(userManager: resolver.resolve(UserManagerProtocol.self)!)
             let presenter = ConfirmEmailPresenter(interactor: interactor, router: router)
             let viewController = ConfirmEmailViewController(presenter: presenter)
             
@@ -268,7 +265,9 @@ enum DependencyManager {
                 userManager: resolver.resolve(UserManagerProtocol.self)!,
                 networkManager: resolver.resolve(NetworkManagerProtocol.self)!,
                 wordsRepository: resolver.resolve(WordsRepositoryProtocol.self)!,
-                decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!
+                decksRepository: resolver.resolve(DecksRepositoryProtocol.self)!,
+                filesManager: resolver.resolve(FilesManagerProtocol.self)!,
+                achievementsManager: resolver.resolve(AchievementsManagerProtocol.self)!
             )
             let router = AccountRouter(container: container)
             let presenter = AccountPresenter(interactor: interactor, router: router)
@@ -301,6 +300,8 @@ enum DependencyManager {
         container.register(WordsRepositoryProtocol.self) { resolver in
             WordsRepository(coreDataManager: resolver.resolve(CoreDataManagerProtocol.self)!)
         }
+        
+        container.register(FilesManagerProtocol.self) { _ in FilesManager() }.inObjectScope(.container)
     }
     // swiftlint:enable force_unwrapping
 }

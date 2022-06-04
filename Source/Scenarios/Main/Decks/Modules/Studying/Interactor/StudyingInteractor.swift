@@ -12,6 +12,7 @@ protocol StudyingInteractorProtocol: AnyObject {
     func studyMoreCard(card: Flashcard, _ completion: () -> Void)
     func restartManager()
     func saveActionWithCard(card: Flashcard, action: CardAction)
+    func checkAchievement(totalCardCount: Int)
 }
 
 final class StudyingInteractor: StudyingInteractorProtocol {
@@ -21,11 +22,18 @@ final class StudyingInteractor: StudyingInteractorProtocol {
     
     private let flashcardsRepository: FlashcardsRepositoryProtocol
     
+    private let achievementsManager: AchievementsManagerProtocol
+    
     // MARK: Init
     
-    init(studyingManager: StudyingManagerProtocol, flashcardsRepository: FlashcardsRepositoryProtocol) {
+    init(
+        studyingManager: StudyingManagerProtocol,
+        flashcardsRepository: FlashcardsRepositoryProtocol,
+        achievementsManager: AchievementsManagerProtocol
+    ) {
         self.studyingManager = studyingManager
         self.flashcardsRepository = flashcardsRepository
+        self.achievementsManager = achievementsManager
     }
     
     // MARK: StudyingInteractorProtocol
@@ -47,5 +55,14 @@ final class StudyingInteractor: StudyingInteractorProtocol {
     
     func saveActionWithCard(card: Flashcard, action: CardAction) {
         flashcardsRepository.addFlashcardAction(flashcardId: card.id, action: action)
+        if action == .learned {
+            studyingManager.addLearnedCard(card: card)
+        }
+    }
+    
+    func checkAchievement(totalCardCount: Int) {
+        if totalCardCount == studyingManager.getLearnedCards().count && totalCardCount >= 10 {
+            achievementsManager.addAchievement(.tinaKandelaki)
+        }
     }
 }

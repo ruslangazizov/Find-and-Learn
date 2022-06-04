@@ -5,7 +5,7 @@
 //  Created by Руслан on 21.03.2022.
 //
 
-import Foundation
+import UIKit
 
 struct User: Codable {
     let id: Int
@@ -33,4 +33,10 @@ enum AccountState: Codable {
     case guest
     case inactive
     case active
+}
+
+struct UserSettings {
+    let settings: [Setting]
+    let userName: String
+    let avatarImage: UIImage?
 }

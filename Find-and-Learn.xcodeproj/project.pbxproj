@@ -60,6 +60,7 @@
 		444B2813281D349E0037CDA8 /* NewFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B2812281D349E0037CDA8 /* NewFlashcardView.swift */; };
 		4459D86A2816E645002D2EAF /* WordDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */; };
 		446BA27A284A5E4A00C234F5 /* LogoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446BA279284A5E4A00C234F5 /* LogoLabel.swift */; };
+		446BA27C284B23E900C234F5 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446BA27B284B23E900C234F5 /* FilesManager.swift */; };
 		447D707027EE4E490011A7F4 /* SearchWordsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */; };
 		447D707527EE4EA90011A7F4 /* SearchWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */; };
 		447D707F27EE54810011A7F4 /* SearchWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */; };
@@ -271,6 +272,7 @@
 		444B2812281D349E0037CDA8 /* NewFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashcardView.swift; sourceTree = "<group>"; };
 		4459D8692816E645002D2EAF /* WordDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailTableViewCell.swift; sourceTree = "<group>"; };
 		446BA279284A5E4A00C234F5 /* LogoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLabel.swift; sourceTree = "<group>"; };
+		446BA27B284B23E900C234F5 /* FilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
 		447D706F27EE4E490011A7F4 /* SearchWordsViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsViewInput.swift; sourceTree = "<group>"; };
 		447D707427EE4EA90011A7F4 /* SearchWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsPresenter.swift; sourceTree = "<group>"; };
 		447D707E27EE54810011A7F4 /* SearchWordsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsInteractor.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 				44D5811027E7B34000DBCC4E /* Data Managers */,
 				44EAE9CA283018D300EF6A82 /* KeyChainManager.swift */,
 				443039C02839532300D9488C /* DependencyManager.swift */,
+				446BA27B284B23E900C234F5 /* FilesManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1812,6 +1815,7 @@
 				D2DFEE51281C65AF006F452E /* AchievementTableViewCell.swift in Sources */,
 				D2FB5D5327EDA50900CBDB00 /* AuthorizationViewController.swift in Sources */,
 				D2DFEE47281C6042006F452E /* AchievementsViewInput.swift in Sources */,
+				446BA27C284B23E900C234F5 /* FilesManager.swift in Sources */,
 				D217569627EB25E200C3D545 /* PasswordRecoveryViewInput.swift in Sources */,
 				44CA5438281C38AF00B6DDE8 /* FieldStackView.swift in Sources */,
 				D28814CD27FD98BA007332A8 /* AuthorizationRouter.swift in Sources */,

@@ -40,6 +40,7 @@ final class AccountPresenter: AccountViewOutput {
     }
     
     func changeAvatar(for avatar: UIImage) {
+        interactor.saveAvatarImage(avatar)
     }
     
     func settingsTapped(with type: SettingType) {
@@ -86,8 +87,8 @@ final class AccountPresenter: AccountViewOutput {
     // MARK: Private
     
     @objc private func loadSettings() {
-        let (settings, userName) = interactor.loadSettings()
-        view?.setup(with: settings, userName: userName)
+        let userSettings = interactor.loadSettings()
+        view?.setup(with: userSettings)
     }
     
     private func showConfirmEmail() {

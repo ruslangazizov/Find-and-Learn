@@ -51,6 +51,7 @@ final class StudyingPresenter: StudyingViewOutput {
     }
     
     func endStudying() {
+        interactor.checkAchievement(totalCardCount: view?.getCards().count ?? 0)
         router.goToPreviousModule()
     }
 }
