@@ -9,6 +9,11 @@
 import Foundation
 import CoreData
 
+// TODO: (r.akhmadeev) название в @objc(...) следует писать, когда хочешь переименовать сущность для objc контекста.
+// В данном случае переименования нет, поэтому можно просто писать @objc
+// актуально для всех MO
+
+// TODO: (r.akhmadeev) Изменить public -> internal. Актуально для всех MO
 @objc(DeckEntity)
 public final class DeckEntity: NSManagedObject {
     @nonobjc

@@ -14,6 +14,7 @@ protocol StringFormatterProtocol: AnyObject {
 final class StringFormatter: StringFormatterProtocol {
     func formatFlashcardsCount(_ count: Int) -> String {
         let countString = "\(count) "
+        // TODO: (r.akhmadeev) Можно заменить на (11 ... 14)
         if [11, 12, 13, 14].contains(count % 100) {
             return countString + "карточек"
         }

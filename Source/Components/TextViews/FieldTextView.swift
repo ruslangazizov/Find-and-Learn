@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: (r.akhmadeev) Нет смысла плодить новую сущность, не наделяя ее новым поведением. Простую конфигурацию можно вынести в extension
 final class FieldTextView: UITextView {
     init(borderColor: CGColor, cornerRadius: CGFloat, borderWidth: CGFloat) {
         super.init(frame: .zero, textContainer: nil)

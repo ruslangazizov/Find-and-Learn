@@ -71,7 +71,8 @@ extension TabBarItem {
 
         return item
     }
-    
+
+    // TODO: (r.akhmadeev) А почему бы не резолвить из контейнера напрямую, не используя доп обертку в виде Assembly?
     func asController(using container: Container) -> UIViewController {
         switch self {
         case .dictionary:

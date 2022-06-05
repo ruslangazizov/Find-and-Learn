@@ -21,7 +21,9 @@ final class AchievementsManager: AchievementsManagerProtocol {
     
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
-    
+
+    // TODO: (r.akhmadeev) UserDefaults умеет хранить Date и массивы с ним напрямую. Сериализация не нужна
+    // https://developer.apple.com/documentation/foundation/userdefaults
     private func getAchievementsArray() -> [Date?] {
         if let data = userDefaults.object(forKey: achievementsArrayKey) as? Data,
             let achievements = try? decoder.decode([Date?].self, from: data) {

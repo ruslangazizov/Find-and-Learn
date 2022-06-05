@@ -33,6 +33,7 @@ final class CommonTextField: UITextField {
     }
     
     // MARK: Override
+    // TODO: (r.akhmadeev) public не нужен
     
     override public func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: Constants.padding)

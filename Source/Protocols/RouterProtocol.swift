@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// TODO: (r.akhmadeev) Для чего нужно? наверное можно убрать
 protocol RouterProtocol: AnyObject {
     var view: UIViewController? { get set }
 }

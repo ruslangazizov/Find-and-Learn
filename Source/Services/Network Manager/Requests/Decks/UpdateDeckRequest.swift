@@ -9,6 +9,7 @@ import Foundation
 
 struct UpdateDeckRequest: Request {
     let method: HTTP.Method = .put
+    // TODO: (r.akhmadeev) private(set) поместить ниже internal свойств
     private(set) var path: String = "decks/"
     let token: String
     let body: HTTP.Body

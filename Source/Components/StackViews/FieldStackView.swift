@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: (r.akhmadeev) Нет смысла плодить новую сущность, не наделяя ее новым поведением. Простую конфигурацию можно вынести в extension
 final class FieldStackView: UIStackView {
     init(titleView: UIView, fieldView: UIView, spacing: CGFloat) {
         super.init(frame: .zero)

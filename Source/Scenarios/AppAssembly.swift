@@ -11,6 +11,7 @@ import Swinject
 
 enum AppAssembly {
     static func assemble(using container: Container) -> UIViewController {
+        // TODO: (r.akhmadeev) резолвить зависимости из контейнера
         let tokensManager: TokensManagerProtocol = TokensManager()
         let userManager: UserManagerProtocol = UserManager()
         

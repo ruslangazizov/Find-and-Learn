@@ -28,7 +28,8 @@ final class TokensManager: TokensManagerProtocol {
     func removeToken() {
         KeyChainManager.remove(key: backendTokenKeyChainKey)
     }
-    
+
+    // TODO: (r.akhmadeev) Выглядит немного архаично, будто на джаве писали) Можно заменить на get-only свойство
     func getApiKey() -> String? {
         return "dict.1.1.20220509T162427Z.6fc4e65140e1e3dc.6be551b61e08e1351dce814bb39a1f6e6fb58573"
     }

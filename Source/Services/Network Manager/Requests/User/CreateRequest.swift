@@ -8,6 +8,7 @@
 import Foundation
 
 struct CreateRequestModel: Encodable {
+    // TODO: (r.akhmadeev) Обычно id бек генерит. К тому же для прода рандом из мульена вариантов - маловато. МБ UUID() юзать?
     let id = Int.random(in: 1...1_000_000)
     let firstName: String
     let secondName: String

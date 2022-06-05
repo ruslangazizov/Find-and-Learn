@@ -13,6 +13,7 @@ extension Date {
     }
     
     func truncatingTime() -> Date {
+        // TODO: (r.akhmadeev) подумать над тем, как можно не пересоздавать DateFormatter. Как вариант - сделать его static
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let dateString = formatter.string(from: self)
