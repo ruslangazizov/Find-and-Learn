@@ -26,8 +26,7 @@
 
 
 
-<!-- FEATURES -->
-## Featues
+## Features
 
 *  Create decks and flashcards, specifying the front side, the back side and, if neccesary, the comment (might be useful for usage examples)
 *  Search for translations of words and quickly create flashcards based on them and examples of their use
@@ -40,7 +39,6 @@
 
 
 
-<!-- TOOLS -->
 ## Tools
 
 * [SwiftLint](https://github.com/realm/SwiftLint) - A tool to enforce Swift style and conventions
@@ -55,7 +53,6 @@
 
 
 
-<!-- SCREENSHOTS -->
 ## Screenshots
 
 <p align="middle">
@@ -69,7 +66,6 @@
 
 
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps:
@@ -94,14 +90,12 @@ To get a local copy up and running follow these simple steps:
 
 
 
-<!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
-<!-- CONTACT -->
 ## Contact
 
 Ruslan Gazizov - [@etimesoy](https://t.me/etimesoy) - ruslangazizov36@gmail.com
